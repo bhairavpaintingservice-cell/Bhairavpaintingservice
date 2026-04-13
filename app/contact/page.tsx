@@ -71,8 +71,8 @@ export default function ContactPage() {
 
   try {
     await emailjs.send(
-      "bf97jMaFJWXAQVAN_",
-      "UaetlNr4N6Hs93CyYSZpj",
+      "service_2zy0x0p",
+      "template_zlc9l99",
       {
         name: formData.name,
         phone: formData.phone,
@@ -80,7 +80,7 @@ export default function ContactPage() {
         service: formData.service,
         message: formData.message,
       },
-      "YOUR_PUBLIC_KEY"
+      "vLWZyTtI0Jyri4AH"
     )
 
     setIsSubmitted(true)
