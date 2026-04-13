@@ -6,6 +6,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Phone, Mail, MapPin, Clock, Send, CheckCircle } from "lucide-react"
+import emailjs from "@emailjs/browser"
 
 const contactInfo = [
   {
@@ -52,17 +53,51 @@ export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
+  // const handleSubmit = async (e: React.FormEvent) => {
+  //   e.preventDefault()
+  //   setIsSubmitting(true)
     
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500))
+  //   // Simulate form submission
+  //   await new Promise((resolve) => setTimeout(resolve, 1500))
     
-    setIsSubmitting(false)
+  //   setIsSubmitting(false)
+  //   setIsSubmitted(true)
+  //   setFormData({ name: "", email: "", phone: "", service: "", message: "" })
+  // }
+
+  const handleSubmit = async (e) => {
+  e.preventDefault()
+  setIsSubmitting(true)
+
+  try {
+    await emailjs.send(
+      "bf97jMaFJWXAQVAN_",
+      "UaetlNr4N6Hs93CyYSZpj",
+      {
+        name: formData.name,
+        phone: formData.phone,
+        email: formData.email,
+        service: formData.service,
+        message: formData.message,
+      },
+      "YOUR_PUBLIC_KEY"
+    )
+
     setIsSubmitted(true)
-    setFormData({ name: "", email: "", phone: "", service: "", message: "" })
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      service: "",
+      message: "",
+    })
+  } catch (error) {
+    console.error("FAILED...", error)
+    alert("Something went wrong")
   }
+
+  setIsSubmitting(false)
+}
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
