@@ -31,7 +31,7 @@ export function Footer() {
               </span>
             </Link>
             <p className="mt-4 text-sm text-primary-foreground/70 leading-relaxed">
-              Professional painting services in Mumbai with 10+ years of experience. 
+              Professional painting services in Mumbai with 50+ years of experience. 
               Transforming homes and offices into beautiful spaces.
             </p>
             <div className="mt-6 flex items-center gap-2">
