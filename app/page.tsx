@@ -128,10 +128,14 @@ export default function HomePage() {
       {/* ── STATS ── */}
       <section className="bg-orange-500 py-10">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="grid grid-cols-3 divide-x divide-white/30 text-center text-white">
+          <div className="grid grid-cols-2 gap-y-8 md:grid-cols-4 divide-x divide-white/30 text-center text-white">
             <div className="px-4">
               <p className="text-4xl font-black">47+</p>
               <p className="mt-1 text-sm font-semibold">Years Experience</p>
+            </div>
+            <div className="px-4">
+              <p className="text-4xl font-black">500+</p>
+              <p className="mt-1 text-sm font-semibold">Projects Completed</p>
             </div>
             <div className="px-4">
               <p className="text-4xl font-black">8</p>
