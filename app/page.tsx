@@ -17,7 +17,7 @@ const services = [
 ]
 
 const features = [
-  { icon: "🏆", title: "50+ Years Experience", description: "Trusted name in Mumbai painting industry since decades." },
+  { icon: "🏆", title: "47+ Years Experience", description: "Trusted name in Mumbai painting industry since decades." },
   { icon: "👷", title: "Trained Professionals", description: "Skilled & experienced painters for every type of work." },
   { icon: "🆓", title: "Free Site Visit", description: "Get a free site visit & quotation before any commitment." },
   { icon: "💰", title: "Budget & Premium Packages", description: "Options for every budget — no compromise on quality." },
@@ -86,7 +86,7 @@ export default function HomePage() {
         <div className="absolute right-32 bottom-20 w-64 h-64 rounded-full bg-[#2238a8] opacity-25" />
         <div className="relative z-10 mx-auto max-w-7xl px-6 py-24 lg:px-8 text-center w-full">
           <div className="inline-flex items-center gap-2 rounded-full border border-orange-400 px-5 py-2 text-xs font-bold uppercase tracking-widest text-orange-400 mb-8">
-            ★ 50+ YEARS EXPERIENCE | TRUSTED PAINTING SERVICE
+            ★ 47+ YEARS EXPERIENCE | TRUSTED PAINTING SERVICE
           </div>
           <h1 className="text-4xl font-black text-white sm:text-5xl lg:text-6xl leading-tight">
             Trusted Painting Services In
@@ -130,7 +130,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid grid-cols-3 divide-x divide-white/30 text-center text-white">
             <div className="px-4">
-              <p className="text-4xl font-black">50+</p>
+              <p className="text-4xl font-black">47+</p>
               <p className="mt-1 text-sm font-semibold">Years Experience</p>
             </div>
             <div className="px-4">
@@ -179,7 +179,7 @@ export default function HomePage() {
           <h2 className="mt-3 text-3xl font-black text-gray-900 sm:text-4xl">
             Why <span className="text-orange-500">Bhairav Painting Service?</span>
           </h2>
-          <p className="mt-3 text-gray-500 max-w-xl">50+ years of trust, quality and professional painting services in Mumbai region.</p>
+          <p className="mt-3 text-gray-500 max-w-xl">47+ years of trust, quality and professional painting services in Mumbai region.</p>
           <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {features.map((feature) => (
               <div key={feature.title} className="flex gap-4 rounded-xl border border-gray-100 bg-gray-50 p-5 hover:shadow-sm transition-shadow">
