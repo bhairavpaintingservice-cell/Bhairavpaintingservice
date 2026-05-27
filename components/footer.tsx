@@ -34,7 +34,7 @@ export function Footer() {
               <span className="text-xl font-black text-black bg-white px-2 py-1 rounded">BHAIRAV PAINTING SERVICES</span>
             </Link>
             <p className="mt-4 text-sm text-white/70 leading-relaxed">
-              Professional painting contractor based in Bhiwandi, serving Mumbai, Thane, Kalyan & surrounding areas with 50+ years of experience.
+              Professional painting contractor based in Bhiwandi, serving Mumbai, Thane, Kalyan & surrounding areas with 47+ years of experience.
             </p>
             <div className="mt-6 space-y-3">
               <a href="tel:+919158800517" className="flex items-center gap-3 text-sm text-white/80 hover:text-white transition-colors">
