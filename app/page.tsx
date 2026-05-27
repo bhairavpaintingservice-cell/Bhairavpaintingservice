@@ -1,295 +1,368 @@
+"use client"
+
 import Image from "next/image"
 import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Phone, CheckCircle, Star, Clock, Users, Award } from "lucide-react"
+import { useState } from "react"
+import { Phone, MessageCircle, CheckCircle, MapPin } from "lucide-react"
 
 const services = [
-  {
-    title: "Residential Painting",
-    description: "Transform your home with expert interior and exterior painting services.",
-    image: "/images/residential.jpg",
-    href: "/services#residential",
-  },
-  {
-    title: "Commercial Painting",
-    description: "Professional solutions for offices, shops, and commercial spaces.",
-    image: "/images/commercial.jpg",
-    href: "/services#commercial",
-  },
-  {
-    title: "Exterior Painting",
-    description: "Weather-resistant finishes for buildings and exterior surfaces.",
-    image: "/images/exterior.jpg",
-    href: "/services#building",
-  },
-  {
-    title: "Textured Finishes",
-    description: "Custom accent walls, stencils, and decorative painting.",
-    image: "/images/texture.jpg",
-    href: "/services#designer",
-  },
+  { title: "Residential Painting", description: "Quality painting for homes, societies & housing complexes. Clean, professional finish.", image: "/images/residential.jpg", href: "/services/residential" },
+  { title: "Interior Painting", description: "Modern wall painting for rooms, halls & flats. Best quality paints with perfect finish.", image: "/images/portfolio-bedroom.jpg", href: "/services/interior" },
+  { title: "Building Painting", description: "Complete building painting for societies & commercial complexes. Long-lasting results.", image: "/images/portfolio-building.jpg", href: "/services/building" },
+  { title: "Exterior Painting", description: "Weather-resistant exterior painting solutions. Durable, fade-resistant finish.", image: "/images/exterior.jpg", href: "/services/exterior" },
+  { title: "Commercial Painting", description: "Office, showroom & commercial space painting. Minimal disruption, fast completion.", image: "/images/portfolio-office.jpg", href: "/services/commercial" },
+  { title: "Texture Painting", description: "Premium texture finishes for luxury interiors. Give your walls a designer look.", image: "/images/texture.jpg", href: "/services/texture" },
+  { title: "Waterproofing", description: "Complete waterproofing for terrace, bathroom & exterior walls. Permanent solution.", image: "/images/exterior.jpg", href: "/services/waterproofing" },
+  { title: "Designer Wall Painting", description: "Custom wall art, stencil work & decorative painting for premium interiors.", image: "/images/portfolio-accent.jpg", href: "/services/designer" },
 ]
 
 const features = [
-  {
-    icon: Users,
-    title: "Professional Team",
-    description: "Skilled painters with years of experience",
-  },
-  {
-    icon: Award,
-    title: "Premium Quality",
-    description: "Top-grade paints and materials only",
-  },
-  {
-    icon: Clock,
-    title: "On-Time Completion",
-    description: "We respect your time and deadlines",
-  },
-  {
-    icon: CheckCircle,
-    title: "100% Satisfaction",
-    description: "Quality guarantee on every project",
-  },
+  { icon: "🏆", title: "50+ Years Experience", description: "Trusted name in Mumbai painting industry since decades." },
+  { icon: "👷", title: "Trained Professionals", description: "Skilled & experienced painters for every type of work." },
+  { icon: "🆓", title: "Free Site Visit", description: "Get a free site visit & quotation before any commitment." },
+  { icon: "💰", title: "Budget & Premium Packages", description: "Options for every budget — no compromise on quality." },
+  { icon: "📦", title: "Material + Labour", description: "We handle everything — material supply & painting work." },
+  { icon: "⚡", title: "Fast Completion", description: "On-time project delivery with minimal disruption." },
+  { icon: "🖌️", title: "Clean & Professional", description: "We clean up completely after the work is done." },
+  { icon: "👁️", title: "Owner Supervised", description: "Every project personally supervised by the owner." },
 ]
 
-const testimonials = [
-  {
-    name: "Priya Sharma",
-    role: "Homeowner, Andheri",
-    content: "Bhavirav and his team did an amazing job painting our entire apartment. The attention to detail was impressive, and they completed the work ahead of schedule!",
-    rating: 5,
-  },
-  {
-    name: "Rajesh Patel",
-    role: "Business Owner, Bandra",
-    content: "We hired them for our office renovation. Professional service, clean work, and the results exceeded our expectations. Highly recommend!",
-    rating: 5,
-  },
-  {
-    name: "Anita Desai",
-    role: "Homeowner, Juhu",
-    content: "The textured accent wall they created in our living room is absolutely stunning. True craftsmen who take pride in their work.",
-    rating: 5,
-  },
+const steps = [
+  { number: "1", title: "Free Site Visit", description: "We visit your site for free assessment" },
+  { number: "2", title: "Quotation", description: "Detailed quote & consultation provided" },
+  { number: "3", title: "Surface Prep", description: "Thorough surface preparation done" },
+  { number: "4", title: "Painting", description: "Professional painting execution" },
+  { number: "5", title: "Final Cleanup", description: "Inspection & complete site cleanup" },
 ]
 
-const stats = [
-  { value: "500+", label: "Happy Customers" },
-  { value: "10+", label: "Years Experience" },
-  { value: "5.0", label: "Star Rating" },
-  { value: "100%", label: "Satisfaction" },
+const projects = [
+  { title: "Interior Painting", image: "/images/portfolio-bedroom.jpg" },
+  { title: "Texture Wall", image: "/images/texture.jpg" },
+  { title: "Building Exterior", image: "/images/portfolio-building.jpg" },
+  { title: "Commercial Space", image: "/images/portfolio-office.jpg" },
+  { title: "Designer Wall", image: "/images/portfolio-accent.jpg" },
+  { title: "Waterproofing", image: "/images/exterior.jpg" },
 ]
+
+const reviews = [
+  { name: "Anita Kanwar", text: "Good work, and I have done single coat of paint to my house the single coat finishing was so good, no need to do double coat." },
+  { name: "Pradeep Rajpurohit", text: "Fast kaam aur perfect finishing, highly satisfied." },
+  { name: "Narendra Singh", text: "Excellent painting work, neat finishing and on time service. Highly recommended." },
+  { name: "Om Prakash", text: "Professional and reliable painting services. From site visit to final finishing, everything was smooth. Used branded paints and delivered quality results. Strongly recommend." },
+  { name: "Kamlesh Vishwakarma", text: "One of the best painting services in the area. Honest person, hardworking team and excellent finishing. Completed my house painting without any complaints. 100% satisfied." },
+  { name: "Dhrmesh Kamble", text: "Ghar ke renovation mein sabse achha experience inke saath raha. Communication clear, price fair aur kaam beyond expectations." },
+  { name: "Rakesh Gupta", text: "Very professional and clean work. Thoroughly impressed with the results. Always on time. Highly recommended." },
+  { name: "Avadhut Mestry", text: "Bhairav Painting Service ne ek chhota kaam tha, lekin usse bhi bahut hi dhyan se, time se aur clean tarike se complete kiya." },
+  { name: "Laxmi Kapse", text: "Main affordable rate mein quality kaam dhoond raha tha, aur Bhairav Painting Service perfect nikla. Budget-friendly aur quality work." },
+]
+
+const areas = ["Bhiwandi", "Thane", "Kalyan", "Dombivli", "Navi Mumbai", "Mumbai", "Kasheli", "Kalher", "Andheri", "Vasai", "Virar"]
+
+const serviceOptions = [
+  "Residential Painting", "Interior Painting", "Building Painting", "Exterior Painting",
+  "Commercial Painting", "Texture Painting", "Waterproofing", "Designer Wall Painting", "Other (Please Specify)",
+]
+
+const heroPills = ["Free Site Visit", "Material + Labour", "Labour Only Available", "Trained Painters", "Owner Supervised", "Budget & Premium Packages"]
 
 export default function HomePage() {
+  const [form, setForm] = useState({ name: "", phone: "", service: "", area: "", message: "" })
+
+  const handleSubmit = () => {
+    if (!form.name || !form.phone) {
+      alert("Please enter your name and phone number.")
+      return
+    }
+    const msg = `Hi, I need a painting quote.%0AName: ${encodeURIComponent(form.name)}%0APhone: ${encodeURIComponent(form.phone)}%0AService: ${encodeURIComponent(form.service || "Not specified")}%0AArea: ${encodeURIComponent(form.area || "Not specified")}%0AMessage: ${encodeURIComponent(form.message || "-")}`
+    window.open(`https://wa.me/919158800517?text=${msg}`, "_blank")
+  }
+
   return (
     <div className="flex flex-col">
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center pt-20">
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/images/hero-painting.jpg"
-            alt="Professional painting service"
-            fill
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-foreground/60" />
-        </div>
-        
-        <div className="relative z-10 mx-auto max-w-7xl px-6 py-24 lg:px-8">
-          <div className="max-w-2xl">
-            <p className="text-sm font-medium uppercase tracking-widest text-primary-foreground/80">
-              Professional Painting Services in Mumbai
-            </p>
-            <h1 className="mt-4 font-serif text-4xl font-bold tracking-tight text-primary-foreground sm:text-5xl lg:text-6xl text-balance">
-              Transforming Your Homes and Offices
-            </h1>
-            <p className="mt-6 text-lg leading-relaxed text-primary-foreground/80">
-              With over 10 years of experience, we bring your vision to life with precision, 
-              quality, and care. From residential to commercial, we handle it all.
-            </p>
-            <div className="mt-10 flex flex-col sm:flex-row gap-4">
-              <Button asChild size="lg" className="bg-primary-foreground text-foreground hover:bg-primary-foreground/90">
-                <Link href="/contact">Get a Free Quote</Link>
-              </Button>
-              <Button asChild size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10">
-                <a href="tel:+919158800517" className="flex items-center gap-2">
-                  <Phone className="h-5 w-5" />
-                  Call Now
-                </a>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Stats Section */}
-      <section className="bg-foreground py-12">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
-            {stats.map((stat) => (
-              <div key={stat.label} className="text-center">
-                <p className="font-serif text-3xl font-bold text-primary-foreground sm:text-4xl">
-                  {stat.value}
-                </p>
-                <p className="mt-1 text-sm text-primary-foreground/70">{stat.label}</p>
-              </div>
-            ))}
+      {/* ── HERO ── */}
+      <section className="relative min-h-screen bg-[#1B2B8A] flex items-center pt-20 overflow-hidden">
+        <div className="absolute right-0 top-0 w-96 h-96 rounded-full bg-[#2238a8] opacity-40 translate-x-1/2 -translate-y-1/4" />
+        <div className="absolute right-32 bottom-20 w-64 h-64 rounded-full bg-[#2238a8] opacity-25" />
+        <div className="relative z-10 mx-auto max-w-7xl px-6 py-24 lg:px-8 text-center w-full">
+          <div className="inline-flex items-center gap-2 rounded-full border border-orange-400 px-5 py-2 text-xs font-bold uppercase tracking-widest text-orange-400 mb-8">
+            ★ 50+ YEARS EXPERIENCE | TRUSTED PAINTING SERVICE
           </div>
-        </div>
-      </section>
-
-      {/* Services Section */}
-      <section className="py-24 bg-background">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="text-center">
-            <p className="text-sm font-medium uppercase tracking-widest text-muted-foreground">
-              Our Services
-            </p>
-            <h2 className="mt-2 font-serif text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              Complete Painting Solutions
-            </h2>
-            <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-              From homes to offices, we offer comprehensive painting services tailored to your needs.
-            </p>
-          </div>
-
-          <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {services.map((service) => (
-              <Link key={service.title} href={service.href} className="group">
-                <Card className="overflow-hidden border-0 shadow-sm transition-shadow hover:shadow-lg">
-                  <div className="relative aspect-[4/3] overflow-hidden">
-                    <Image
-                      src={service.image}
-                      alt={service.title}
-                      fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                  </div>
-                  <CardContent className="p-6">
-                    <h3 className="font-semibold text-foreground group-hover:text-accent transition-colors">
-                      {service.title}
-                    </h3>
-                    <p className="mt-2 text-sm text-muted-foreground">
-                      {service.description}
-                    </p>
-                  </CardContent>
-                </Card>
-              </Link>
-            ))}
-          </div>
-
-          <div className="mt-12 text-center">
-            <Button asChild size="lg" variant="outline">
-              <Link href="/services">View All Services</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Why Choose Us Section */}
-      <section className="py-24 bg-secondary">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
-            <div>
-              <p className="text-sm font-medium uppercase tracking-widest text-muted-foreground">
-                Why Choose Us
-              </p>
-              <h2 className="mt-2 font-serif text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-                Excellence in Every Brushstroke
-              </h2>
-              <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
-                At Bhavirav Painting Service, we believe that great painting is more than just 
-                applying color to walls. It&apos;s about understanding your vision, using the right 
-                techniques, and delivering results that transform spaces.
-              </p>
-              
-              <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-6">
-                {features.map((feature) => (
-                  <div key={feature.title} className="flex gap-4">
-                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-foreground">
-                      <feature.icon className="h-6 w-6 text-primary-foreground" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-foreground">{feature.title}</h3>
-                      <p className="mt-1 text-sm text-muted-foreground">{feature.description}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-            
-            <div className="relative aspect-square lg:aspect-[4/5]">
-              <Image
-                src="/images/texture.jpg"
-                alt="Quality painting work"
-                fill
-                className="object-cover rounded-lg"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials Section */}
-      <section className="py-24 bg-background">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="text-center">
-            <p className="text-sm font-medium uppercase tracking-widest text-muted-foreground">
-              Testimonials
-            </p>
-            <h2 className="mt-2 font-serif text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              What Our Clients Say
-            </h2>
-          </div>
-
-          <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {testimonials.map((testimonial) => (
-              <Card key={testimonial.name} className="border-0 shadow-sm">
-                <CardContent className="p-8">
-                  <div className="flex gap-1">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="h-5 w-5 fill-accent text-accent" />
-                    ))}
-                  </div>
-                  <p className="mt-6 text-muted-foreground leading-relaxed">
-                    &ldquo;{testimonial.content}&rdquo;
-                  </p>
-                  <div className="mt-6 border-t border-border pt-6">
-                    <p className="font-semibold text-foreground">{testimonial.name}</p>
-                    <p className="text-sm text-muted-foreground">{testimonial.role}</p>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-24 bg-foreground">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8 text-center">
-          <h2 className="font-serif text-3xl font-bold tracking-tight text-primary-foreground sm:text-4xl">
-            Ready to Transform Your Space?
-          </h2>
-          <p className="mt-4 text-lg text-primary-foreground/80 max-w-2xl mx-auto">
-            Get in touch today for a free consultation and quote. Let&apos;s bring your vision to life.
+          <h1 className="text-4xl font-black text-white sm:text-5xl lg:text-6xl leading-tight">
+            Trusted Painting Services In
+          </h1>
+          <h1 className="text-4xl font-black text-orange-500 sm:text-5xl lg:text-6xl mt-2 leading-tight">
+            Mumbai, Thane & Bhiwandi
+          </h1>
+          <p className="mt-6 text-lg text-white/75 max-w-2xl mx-auto">
+            Interior, Exterior, Texture & Designer Painting — Professional work with Owner Supervision. Free Site Visit Available!
           </p>
-          <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
-            <Button asChild size="lg" className="bg-primary-foreground text-foreground hover:bg-primary-foreground/90">
-              <Link href="/contact">Get Free Quote</Link>
-            </Button>
-            <Button asChild size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10">
-              <a href="tel:+919158800517" className="flex items-center gap-2">
-                <Phone className="h-5 w-5" />
-                +91 9158800517
-              </a>
-            </Button>
+          <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20a%20free%20painting%20quote"
+              target="_blank" rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 rounded-lg bg-orange-500 px-8 py-4 text-base font-bold text-white hover:bg-orange-600 transition-colors"
+            >
+              <MessageCircle className="h-5 w-5" />
+              Get Free Quote on WhatsApp
+            </a>
+            <a
+              href="tel:+919158800517"
+              className="flex items-center justify-center gap-2 rounded-lg border-2 border-white px-8 py-4 text-base font-bold text-white hover:bg-white/10 transition-colors"
+            >
+              <Phone className="h-5 w-5" />
+              Call Now: 9158800517
+            </a>
+          </div>
+          <div className="mt-12 flex flex-wrap justify-center gap-3">
+            {heroPills.map((item) => (
+              <span key={item} className="flex items-center gap-1.5 rounded-full border border-white/30 bg-white/10 px-4 py-2 text-sm text-white">
+                <CheckCircle className="h-4 w-4 text-orange-400 shrink-0" />
+                {item}
+              </span>
+            ))}
           </div>
         </div>
       </section>
+
+      {/* ── STATS ── */}
+      <section className="bg-orange-500 py-10">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="grid grid-cols-3 divide-x divide-white/30 text-center text-white">
+            <div className="px-4">
+              <p className="text-4xl font-black">50+</p>
+              <p className="mt-1 text-sm font-semibold">Years Experience</p>
+            </div>
+            <div className="px-4">
+              <p className="text-4xl font-black">8</p>
+              <p className="mt-1 text-sm font-semibold">Service Types</p>
+            </div>
+            <div className="px-4">
+              <p className="text-4xl font-black">FREE</p>
+              <p className="mt-1 text-sm font-semibold">Site Visit</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── SERVICES ── */}
+      <section className="py-20 bg-gray-50">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <span className="inline-block rounded-full border border-gray-300 px-4 py-1 text-xs font-semibold uppercase tracking-widest text-gray-500">Our Services</span>
+          <h2 className="mt-3 text-3xl font-black text-gray-900 sm:text-4xl">
+            Professional <span className="text-orange-500">Painting Services</span>
+          </h2>
+          <p className="mt-3 text-gray-500 max-w-xl">Complete painting solutions for homes, flats, offices and buildings across Mumbai region.</p>
+          <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {services.map((service) => (
+              <div key={service.title} className="overflow-hidden rounded-xl bg-white shadow-sm hover:shadow-md transition-shadow">
+                <div className="relative h-52">
+                  <Image src={service.image} alt={service.title} fill className="object-cover" />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-lg font-bold text-[#1B2B8A]">{service.title}</h3>
+                  <p className="mt-2 text-sm text-gray-500">{service.description}</p>
+                  <Link href={service.href} className="mt-4 inline-flex items-center rounded-lg bg-[#1B2B8A] px-4 py-2 text-sm font-semibold text-white hover:bg-[#152270] transition-colors">
+                    View Service →
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── WHY CHOOSE US ── */}
+      <section className="py-20 bg-white">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <span className="inline-block rounded-full border border-gray-300 px-4 py-1 text-xs font-semibold uppercase tracking-widest text-gray-500">Why Choose Us</span>
+          <h2 className="mt-3 text-3xl font-black text-gray-900 sm:text-4xl">
+            Why <span className="text-orange-500">Bhairav Painting Service?</span>
+          </h2>
+          <p className="mt-3 text-gray-500 max-w-xl">50+ years of trust, quality and professional painting services in Mumbai region.</p>
+          <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {features.map((feature) => (
+              <div key={feature.title} className="flex gap-4 rounded-xl border border-gray-100 bg-gray-50 p-5 hover:shadow-sm transition-shadow">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-orange-500 text-xl">
+                  {feature.icon}
+                </div>
+                <div>
+                  <h3 className="font-bold text-gray-900 text-sm">{feature.title}</h3>
+                  <p className="mt-1 text-xs text-gray-500">{feature.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── OUR PROCESS ── */}
+      <section className="py-20 bg-[#1B2B8A]">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <span className="inline-block rounded-full border border-orange-400 px-4 py-1 text-xs font-semibold uppercase tracking-widest text-orange-400">Our Process</span>
+          <h2 className="mt-3 text-3xl font-black text-white sm:text-4xl">
+            Our Painting <span className="text-orange-500">Process</span>
+          </h2>
+          <p className="mt-3 text-white/70">Simple, transparent process from first call to final result.</p>
+          <div className="mt-12 grid grid-cols-2 gap-8 md:grid-cols-5">
+            {steps.map((step, index) => (
+              <div key={step.number} className="flex flex-col items-center text-center">
+                <div className="relative flex h-16 w-16 items-center justify-center rounded-full bg-orange-500 text-2xl font-black text-white">
+                  {step.number}
+                  {index < steps.length - 1 && (
+                    <span className="absolute -right-8 top-1/2 -translate-y-1/2 text-white/40 text-lg hidden md:block">→</span>
+                  )}
+                </div>
+                <h3 className="mt-4 font-bold text-white text-sm">{step.title}</h3>
+                <p className="mt-1 text-xs text-white/60">{step.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── RECENT PROJECTS ── */}
+      <section className="py-20 bg-gray-50">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <span className="inline-block rounded-full border border-gray-300 px-4 py-1 text-xs font-semibold uppercase tracking-widest text-gray-500">Our Work</span>
+          <h2 className="mt-3 text-3xl font-black text-gray-900 sm:text-4xl">
+            Our Recent <span className="text-orange-500">Projects</span>
+          </h2>
+          <p className="mt-3 text-gray-500">Real painting projects completed by our team across Mumbai region.</p>
+          <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {projects.map((project) => (
+              <div key={project.title} className="group relative h-60 overflow-hidden rounded-xl">
+                <Image src={project.image} alt={project.title} fill className="object-cover transition-transform duration-500 group-hover:scale-105" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                <div className="absolute bottom-4 left-4">
+                  <p className="text-lg font-bold text-white">{project.title}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── REVIEWS ── */}
+      <section className="py-20 bg-white">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <span className="inline-block rounded-full border border-gray-300 px-4 py-1 text-xs font-semibold uppercase tracking-widest text-gray-500">Customer Reviews</span>
+          <h2 className="mt-3 text-3xl font-black text-gray-900 sm:text-4xl">
+            What Our <span className="text-orange-500">Customers Say</span>
+          </h2>
+          <p className="mt-3 text-gray-500">Real Google reviews from our happy customers.</p>
+          <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {reviews.map((review) => (
+              <div key={review.name} className="rounded-xl bg-gray-50 p-6 border-l-4 border-orange-500">
+                <div className="flex gap-0.5">
+                  {[...Array(5)].map((_, i) => <span key={i} className="text-orange-500 text-lg">★</span>)}
+                </div>
+                <p className="mt-3 text-sm italic text-gray-600">"{review.text}"</p>
+                <p className="mt-4 font-bold text-gray-900 text-sm">{review.name}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── AREAS ── */}
+      <section className="py-20 bg-gray-50">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <span className="inline-block rounded-full border border-gray-300 px-4 py-1 text-xs font-semibold uppercase tracking-widest text-gray-500">Service Areas</span>
+          <h2 className="mt-3 text-3xl font-black text-gray-900 sm:text-4xl">
+            Areas <span className="text-orange-500">We Serve</span>
+          </h2>
+          <p className="mt-3 text-gray-500">Professional painting services across Mumbai Metropolitan Region.</p>
+          <div className="mt-8 flex flex-wrap gap-3">
+            {areas.map((area) => (
+              <span key={area} className="flex items-center gap-2 rounded-full bg-[#1B2B8A] px-5 py-2.5 text-sm font-semibold text-white">
+                <MapPin className="h-4 w-4" />
+                {area}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── CTA + FORM ── */}
+      <section className="py-20 bg-orange-500">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="text-center">
+            <h2 className="text-3xl font-black text-white sm:text-4xl">Book Your Free Painting Site Visit Today!</h2>
+            <p className="mt-3 text-white/85">Get a free consultation & quote. No obligation. Call or WhatsApp us now!</p>
+            <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
+              <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20a%20free%20site%20visit" target="_blank" rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 rounded-lg border-2 border-white bg-white px-6 py-3 text-sm font-bold text-orange-500 hover:bg-white/90 transition-colors">
+                <MessageCircle className="h-5 w-5" /> WhatsApp Now
+              </a>
+              <a href="tel:+919158800517"
+                className="flex items-center justify-center gap-2 rounded-lg border-2 border-white px-6 py-3 text-sm font-bold text-white hover:bg-white/10 transition-colors">
+                <Phone className="h-5 w-5" /> Call: 9158800517
+              </a>
+              <a href="mailto:bhairavpaintingservice@gmail.com"
+                className="flex items-center justify-center gap-2 rounded-lg border-2 border-white px-6 py-3 text-sm font-bold text-white hover:bg-white/10 transition-colors">
+                📧 Email Us
+              </a>
+            </div>
+          </div>
+
+          {/* Form */}
+          <div className="mt-12 mx-auto max-w-2xl rounded-2xl bg-orange-600 p-8">
+            <h3 className="text-center text-xl font-bold text-white mb-6">📋 Get Free Quote — Fill Form Below</h3>
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+              <div>
+                <label className="block text-xs font-bold uppercase tracking-wide text-white/80 mb-1">Your Name *</label>
+                <input type="text" placeholder="Enter your name" value={form.name}
+                  onChange={(e) => setForm({ ...form, name: e.target.value })}
+                  className="w-full rounded-lg bg-white px-4 py-3 text-sm text-gray-900 outline-none focus:ring-2 focus:ring-orange-300" />
+              </div>
+              <div>
+                <label className="block text-xs font-bold uppercase tracking-wide text-white/80 mb-1">Phone Number *</label>
+                <input type="tel" placeholder="+91 XXXXX XXXXX" value={form.phone}
+                  onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                  className="w-full rounded-lg bg-white px-4 py-3 text-sm text-gray-900 outline-none focus:ring-2 focus:ring-orange-300" />
+              </div>
+              <div>
+                <label className="block text-xs font-bold uppercase tracking-wide text-white/80 mb-1">Service Required</label>
+                <select value={form.service} onChange={(e) => setForm({ ...form, service: e.target.value })}
+                  className="w-full rounded-lg bg-white px-4 py-3 text-sm text-gray-900 outline-none focus:ring-2 focus:ring-orange-300">
+                  <option value="">Select Service</option>
+                  {serviceOptions.map((opt) => <option key={opt} value={opt}>{opt}</option>)}
+                </select>
+              </div>
+              <div>
+                <label className="block text-xs font-bold uppercase tracking-wide text-white/80 mb-1">Your Area</label>
+                <input type="text" placeholder="e.g. Bhiwandi, Thane" value={form.area}
+                  onChange={(e) => setForm({ ...form, area: e.target.value })}
+                  className="w-full rounded-lg bg-white px-4 py-3 text-sm text-gray-900 outline-none focus:ring-2 focus:ring-orange-300" />
+              </div>
+            </div>
+            <div className="mt-4">
+              <label className="block text-xs font-bold uppercase tracking-wide text-white/80 mb-1">Message (Optional)</label>
+              <textarea rows={3} placeholder="Tell us about your project..." value={form.message}
+                onChange={(e) => setForm({ ...form, message: e.target.value })}
+                className="w-full rounded-lg bg-white px-4 py-3 text-sm text-gray-900 outline-none resize-none focus:ring-2 focus:ring-orange-300" />
+            </div>
+            <button onClick={handleSubmit}
+              className="mt-6 w-full rounded-lg bg-[#1B2B8A] py-4 text-base font-bold text-white hover:bg-[#152270] transition-colors">
+              🚀 Send Enquiry on WhatsApp
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* ── FLOATING BUTTONS ── */}
+      <a href="https://wa.me/919158800517" target="_blank" rel="noopener noreferrer"
+        className="fixed bottom-24 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-green-500 text-white shadow-lg hover:bg-green-600 transition-colors"
+        aria-label="WhatsApp">
+        <MessageCircle className="h-7 w-7" />
+      </a>
+      <a href="tel:+919158800517"
+        className="fixed bottom-6 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-red-500 text-white shadow-lg hover:bg-red-600 transition-colors"
+        aria-label="Call">
+        <Phone className="h-7 w-7" />
+      </a>
+
     </div>
   )
 }
