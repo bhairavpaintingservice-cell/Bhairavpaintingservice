@@ -94,11 +94,11 @@ export default function ResidentialPaintingPage() {
       {/* ── SERVICE TYPES ── */}
       <section className="py-20 bg-gray-50">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <span className="inline-block rounded-full border border-gray-300 px-4 py-1 text-xs font-semibold uppercase tracking-widest text-gray-500">What We Offer</span>
-          <h2 className="mt-3 text-3xl font-black text-gray-900 sm:text-4xl">
+          <span className="inline-block rounded-full border border-gray-300 px-4 py-1 text-xs font-semibold uppercase tracking-widest text-[#6b7280]">What We Offer</span>
+          <h2 className="mt-3 text-3xl font-black text-[#111827] sm:text-4xl">
             Residential <span className="text-orange-500">Painting Services</span>
           </h2>
-          <p className="mt-3 text-gray-500 max-w-xl">
+          <p className="mt-3 text-[#6b7280] max-w-xl">
             From 1BHK flats in Bhiwandi to villas in Thane — we handle all types of residential painting across Mumbai region.
           </p>
           <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -108,7 +108,7 @@ export default function ResidentialPaintingPage() {
                   <CheckCircle className="h-6 w-6 text-orange-500 shrink-0 mt-0.5" />
                   <div>
                     <h3 className="font-bold text-[#1B2B8A]">{s.title}</h3>
-                    <p className="mt-1 text-sm text-gray-500">{s.description}</p>
+                    <p className="mt-1 text-sm text-[#6b7280]">{s.description}</p>
                   </div>
                 </div>
               </div>
@@ -120,11 +120,11 @@ export default function ResidentialPaintingPage() {
       {/* ── BEFORE AFTER ── */}
       <section className="py-20 bg-white">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <span className="inline-block rounded-full border border-gray-300 px-4 py-1 text-xs font-semibold uppercase tracking-widest text-gray-500">Our Work</span>
-          <h2 className="mt-3 text-3xl font-black text-gray-900 sm:text-4xl">
+          <span className="inline-block rounded-full border border-gray-300 px-4 py-1 text-xs font-semibold uppercase tracking-widest text-[#6b7280]">Our Work</span>
+          <h2 className="mt-3 text-3xl font-black text-[#111827] sm:text-4xl">
             Before & <span className="text-orange-500">After Results</span>
           </h2>
-          <p className="mt-3 text-gray-500">Real residential painting work done across Mumbai, Thane & Bhiwandi.</p>
+          <p className="mt-3 text-[#6b7280]">Real residential painting work done across Mumbai, Thane & Bhiwandi.</p>
           <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-3">
             {beforeAfter.map((item) => (
               <div key={item.label} className="group relative h-64 overflow-hidden rounded-xl shadow-sm">
@@ -146,11 +146,11 @@ export default function ResidentialPaintingPage() {
       {/* ── GEO CONTENT ── */}
       <section className="py-20 bg-gray-50">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <span className="inline-block rounded-full border border-gray-300 px-4 py-1 text-xs font-semibold uppercase tracking-widest text-gray-500">Service Areas</span>
-          <h2 className="mt-3 text-3xl font-black text-gray-900 sm:text-4xl">
+          <span className="inline-block rounded-full border border-gray-300 px-4 py-1 text-xs font-semibold uppercase tracking-widest text-[#6b7280]">Service Areas</span>
+          <h2 className="mt-3 text-3xl font-black text-[#111827] sm:text-4xl">
             Residential Painting Across <span className="text-orange-500">Mumbai Region</span>
           </h2>
-          <p className="mt-4 text-gray-600 max-w-3xl leading-relaxed">
+          <p className="mt-4 text-[#4b5563] max-w-3xl leading-relaxed">
             Bhairav Painting Service provides professional residential painting in <strong>Bhiwandi, Thane, Kalyan, Mumbai, Navi Mumbai, Virar, Vasai, Mira Road, Nalasopara, Borivali, Andheri, Dombivli</strong> and surrounding areas.
             Whether you need flat painting in Bhiwandi, home painting in Thane, or society painting in Kalyan — our trained painters deliver quality results on time.
           </p>
@@ -188,18 +188,18 @@ export default function ResidentialPaintingPage() {
                 <label className="block text-xs font-bold uppercase tracking-wide text-white/80 mb-1">Your Name *</label>
                 <input type="text" placeholder="Enter your name" value={form.name}
                   onChange={(e) => setForm({ ...form, name: e.target.value })}
-                  className="w-full rounded-lg bg-white px-4 py-3 text-sm text-gray-900 outline-none" />
+                  className="w-full rounded-lg bg-white px-4 py-3 text-sm text-[#111827] outline-none" />
               </div>
               <div>
                 <label className="block text-xs font-bold uppercase tracking-wide text-white/80 mb-1">Phone Number *</label>
                 <input type="tel" placeholder="+91 XXXXX XXXXX" value={form.phone}
                   onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                  className="w-full rounded-lg bg-white px-4 py-3 text-sm text-gray-900 outline-none" />
+                  className="w-full rounded-lg bg-white px-4 py-3 text-sm text-[#111827] outline-none" />
               </div>
               <div>
                 <label className="block text-xs font-bold uppercase tracking-wide text-white/80 mb-1">Service Type</label>
                 <select value={form.service} onChange={(e) => setForm({ ...form, service: e.target.value })}
-                  className="w-full rounded-lg bg-white px-4 py-3 text-sm text-gray-900 outline-none">
+                  className="w-full rounded-lg bg-white px-4 py-3 text-sm text-[#111827] outline-none">
                   <option value="">Select Service</option>
                   {serviceOptions.map((opt) => <option key={opt} value={opt}>{opt}</option>)}
                 </select>
@@ -208,14 +208,14 @@ export default function ResidentialPaintingPage() {
                 <label className="block text-xs font-bold uppercase tracking-wide text-white/80 mb-1">Your Area</label>
                 <input type="text" placeholder="e.g. Bhiwandi, Thane" value={form.area}
                   onChange={(e) => setForm({ ...form, area: e.target.value })}
-                  className="w-full rounded-lg bg-white px-4 py-3 text-sm text-gray-900 outline-none" />
+                  className="w-full rounded-lg bg-white px-4 py-3 text-sm text-[#111827] outline-none" />
               </div>
             </div>
             <div className="mt-4">
               <label className="block text-xs font-bold uppercase tracking-wide text-white/80 mb-1">Message (Optional)</label>
               <textarea rows={3} placeholder="Tell us about your project..." value={form.message}
                 onChange={(e) => setForm({ ...form, message: e.target.value })}
-                className="w-full rounded-lg bg-white px-4 py-3 text-sm text-gray-900 outline-none resize-none" />
+                className="w-full rounded-lg bg-white px-4 py-3 text-sm text-[#111827] outline-none resize-none" />
             </div>
             <button onClick={handleSubmit}
               className="mt-6 w-full rounded-lg bg-[#1B2B8A] py-4 text-base font-bold text-white hover:bg-[#152270] transition-colors">
