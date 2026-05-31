@@ -39,7 +39,8 @@ const beforeAfter = [
   { image: "/images/residential/res-before-after-2.jpg", location: "Thane", property: "3BHK Apartment", work: "Full Interior Painting" },
   { image: "/images/residential/res-before-after-3.jpg", location: "Kalyan", property: "1BHK Flat", work: "Wall Colour Change + Putty" },
   { image: "/images/residential/res-interior.jpg", location: "Navi Mumbai", property: "New Flat", work: "First-time Painting" },
-  { image: "/images/residential/res-before-after-2.jpg", location: "Mumbai", property: "Rental Flat", work: "Quick Repainting — 2 Days" },
+  { image: "/images/residential/res-interior.jpg", location: "Mumbai", property: "Villa", work: "Interior + Exterior Painting" },
+  { image: "/images/residential/res-before-after-2.jpg", location: "Bhiwandi", property: "Rental Flat", work: "Quick Repainting — 2 Days" },
 ]
 
 const recentProjects = [
