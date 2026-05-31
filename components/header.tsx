@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { useState } from "react"
 import { Menu, X, MessageCircle } from "lucide-react"
 
@@ -17,11 +18,18 @@ export function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 lg:px-8">
         {/* Logo */}
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5">
-            <span className="text-xl font-black tracking-tight text-black">BHAIRAV PAINTING SERVICES</span>
+            <Image
+              src="/images/logo.png"
+              alt="Bhairav Painting Services Logo"
+              width={180}
+              height={60}
+              className="h-14 w-auto object-contain"
+              priority
+            />
           </Link>
         </div>
 
@@ -71,7 +79,13 @@ export function Header() {
           <div className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm">
             <div className="flex items-center justify-between">
               <Link href="/" className="-m-1.5 p-1.5" onClick={() => setMobileMenuOpen(false)}>
-                <span className="text-lg font-black text-black">BHAIRAV PAINTING SERVICES</span>
+                <Image
+                  src="/images/logo.png"
+                  alt="Bhairav Painting Services Logo"
+                  width={150}
+                  height={50}
+                  className="h-12 w-auto object-contain"
+                />
               </Link>
               <button
                 type="button"
