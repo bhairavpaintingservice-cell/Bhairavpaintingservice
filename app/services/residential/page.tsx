@@ -39,14 +39,13 @@ const beforeAfter = [
   { image: "/images/residential/res-before-after-2.jpg", location: "Thane", property: "3BHK Apartment", work: "Full Interior Painting" },
   { image: "/images/residential/res-before-after-3.jpg", location: "Kalyan", property: "1BHK Flat", work: "Wall Colour Change + Putty" },
   { image: "/images/residential/res-interior.jpg", location: "Navi Mumbai", property: "New Flat", work: "First-time Painting" },
-  { image: "/images/residential/res-collage.jpg", location: "Mumbai", property: "Villa", work: "Interior + Exterior Painting" },
-  { image: "/images/residential/res-before-after-1.jpg", location: "Bhiwandi", property: "Rental Flat", work: "Quick Repainting — 2 Days" },
+  { image: "/images/residential/res-before-after-2.jpg", location: "Mumbai", property: "Rental Flat", work: "Quick Repainting — 2 Days" },
 ]
 
 const recentProjects = [
-  { image: "/images/residential/res-before-after-2.jpg", location: "Bhiwandi", property: "2BHK Flat", service: "Interior Repainting", duration: "3 days" },
-  { image: "/images/residential/res-interior.jpg", location: "Thane", property: "3BHK Apartment", service: "Full Interior Painting", duration: "4 days" },
-  { image: "/images/residential/res-before-after-3.jpg", location: "Kalyan", property: "Villa", service: "Interior + Exterior", duration: "6 days" },
+  { image: "/images/residential/res-before-after-2.jpg", location: "Bhiwandi", property: "2BHK Flat", service: "Interior Repainting" },
+  { image: "/images/residential/res-interior.jpg", location: "Thane", property: "3BHK Apartment", service: "Full Interior Painting" },
+  { image: "/images/residential/res-before-after-3.jpg", location: "Kalyan", property: "Flat Repainting", service: "Interior + Putty Work" },
 ]
 
 const reviews = [
@@ -58,7 +57,7 @@ const reviews = [
   { name: "Rakesh Gupta", location: "Bhiwandi", text: "Very professional and clean work. Thoroughly impressed. Always on time. Highly recommended." },
 ]
 
-const areas = ["Mumbai", "Thane", "Bhiwandi", "Kalyan", "Navi Mumbai"]
+const areas = ["Mumbai", "Thane", "Bhiwandi", "Kalyan", "Navi Mumbai", "Dombivli", "Kasheli", "Kalher", "Andheri", "Vasai", "Virar"]
 
 const faqs = [
   { q: "How much does 1BHK painting cost in Mumbai?", a: "1BHK painting cost in Mumbai & Bhiwandi depends on wall condition, paint brand & finish type. We provide a free site visit & detailed written quotation before any commitment. Contact us for an accurate estimate." },
@@ -128,11 +127,11 @@ export default function ResidentialPaintingPage() {
       {/* 2. TRUST BAR */}
       <section className="bg-orange-500 py-8">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 text-center text-white gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-white/30 text-center text-white">
             <div className="px-4 py-2"><p className="text-2xl font-black">47+</p><p className="text-xs font-semibold mt-1">Years Experience</p></div>
             <div className="px-4 py-2"><p className="text-2xl font-black">FREE</p><p className="text-xs font-semibold mt-1">Site Visit</p></div>
-            <div className="px-4 py-2"><p className="text-2xl font-black">✅</p><p className="text-xs font-semibold mt-1">Material + Labour</p></div>
-            <div className="px-4 py-2"><p className="text-2xl font-black">✅</p><p className="text-xs font-semibold mt-1">Trained Painters</p></div>
+            <div className="px-4 py-2"><p className="text-2xl font-black">500+</p><p className="text-xs font-semibold mt-1">Projects Done</p></div>
+            <div className="px-4 py-2"><p className="text-2xl font-black">✓</p><p className="text-xs font-semibold mt-1">Trained Painters</p></div>
           </div>
         </div>
       </section>
@@ -243,7 +242,7 @@ export default function ResidentialPaintingPage() {
                     <div className="flex items-center gap-2 text-xs" style={{color:"#6b7280"}}><MapPin className="h-3.5 w-3.5 text-orange-500" /><span>Location: {p.location}</span></div>
                     <div className="flex items-center gap-2 text-xs" style={{color:"#6b7280"}}><CheckCircle className="h-3.5 w-3.5 text-orange-500" /><span>Property: {p.property}</span></div>
                     <div className="flex items-center gap-2 text-xs" style={{color:"#6b7280"}}><CheckCircle className="h-3.5 w-3.5 text-orange-500" /><span>Service: {p.service}</span></div>
-                    <div className="flex items-center gap-2 text-xs" style={{color:"#6b7280"}}><CheckCircle className="h-3.5 w-3.5 text-orange-500" /><span>Completed in: {p.duration}</span></div>
+
                   </div>
                 </div>
               </div>
