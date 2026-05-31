@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { Phone, Mail, MapPin, MessageCircle, Clock } from "lucide-react"
 
 const services = [
@@ -31,7 +32,13 @@ export function Footer() {
           {/* Brand */}
           <div>
             <Link href="/">
-              <span className="text-xl font-black text-black bg-white px-2 py-1 rounded">BHAIRAV PAINTING SERVICES</span>
+              <Image
+                src="/images/logo.png"
+                alt="Bhairav Painting Services Logo"
+                width={160}
+                height={55}
+                className="h-14 w-auto object-contain brightness-0 invert"
+              />
             </Link>
             <p className="mt-4 text-sm text-white/70 leading-relaxed">
               Professional painting contractor based in Bhiwandi, serving Mumbai, Thane, Kalyan & surrounding areas with 47+ years of experience.
