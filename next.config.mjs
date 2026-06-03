@@ -6,6 +6,14 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  async rewrites() {
+    return [
+      {
+        source: '/sitemap_index.xml',
+        destination: '/api/sitemap-index',
+      },
+    ]
+  },
 }
 
 export default nextConfig
