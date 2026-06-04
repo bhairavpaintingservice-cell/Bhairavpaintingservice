@@ -31,6 +31,10 @@ export const metadata: Metadata = {
     'painter near me mumbai',
     'bhairav painting service'
   ],
+  robots: {
+    index: true,
+    follow: true,
+  },
   openGraph: {
     title: 'Bhairav Painting Service | Mumbai & Bhiwandi',
     description: 'Professional painting services — Residential, Commercial, Exterior & Designer finishes. 47+ years experience.',
