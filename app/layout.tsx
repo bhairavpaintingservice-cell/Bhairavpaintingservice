@@ -16,6 +16,7 @@ const playfair = Playfair_Display({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://bhairavpainting.vercel.app'),
   title: 'Bhairav Painting Service | Professional Painters in Mumbai & Bhiwandi',
   description: 'Bhairav Painting Service — Mumbai & Bhiwandi ke trusted painting contractors. Residential, Commercial, Exterior & Texture painting. 47+ years experience. Call +91 9158800517',
   keywords: [
