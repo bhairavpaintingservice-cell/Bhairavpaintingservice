@@ -67,6 +67,43 @@ export const metadata: Metadata = {
   },
 }
 
+
+const schemaMarkup = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Bhairav Painting Service",
+  "description": "Professional painting services in Mumbai & Bhiwandi — Residential, Commercial, Exterior & Texture painting.",
+  "url": "https://bhairavpainting.vercel.app",
+  "telephone": "+919158800517",
+  "email": "bhairavpaintingservice@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Shop No. 03, H. No. 167/4, Gr. floor, Near Devji Nagar Bus Stop, Opp. Muthoot Finance, Narpoli",
+    "addressLocality": "Bhiwandi",
+    "addressRegion": "Maharashtra",
+    "postalCode": "421302",
+    "addressCountry": "IN"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "19.3024",
+    "longitude": "73.0596"
+  },
+  "areaServed": ["Mumbai", "Bhiwandi", "Thane", "Virar", "Vasai", "Mira Road", "Borivali", "Nalasopara"],
+  "serviceType": [
+    "Interior Painting",
+    "Exterior Painting",
+    "Texture Painting",
+    "Commercial Painting",
+    "Waterproofing",
+    "False Ceiling",
+    "Designer Painting"
+  ],
+  "image": "https://bhairavpainting.vercel.app/og-image.jpg",
+  "priceRange": "₹₹",
+  "openingHours": "Mo-Su 08:00-20:00"
+}
+
 export default function RootLayout({
   children,
 }: {
@@ -81,6 +118,10 @@ export default function RootLayout({
         </main>
         <Footer />
         <Analytics />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
+        />
       </body>
     </html>
   )
