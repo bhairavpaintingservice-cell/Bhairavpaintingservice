@@ -6,14 +6,14 @@ import { useState } from "react"
 import { Phone, MessageCircle, CheckCircle, MapPin } from "lucide-react"
 
 const services = [
-  { title: "Residential Painting", description: "Quality painting for homes, societies & housing complexes. Clean, professional finish.", image: "/images/residential.jpg", href: "/services/residential" },
-  { title: "Interior Painting", description: "Modern wall painting for rooms, halls & flats. Best quality paints with perfect finish.", image: "/images/portfolio-bedroom.jpg", href: "/services/interior" },
-  { title: "Building Painting", description: "Complete building painting for societies & commercial complexes. Long-lasting results.", image: "/images/portfolio-building.jpg", href: "/services/building" },
+  { title: "Residential Painting", description: "Quality painting for homes, societies & housing complexes. Clean, professional finish.", image: "/images/residential.webp", href: "/services/residential" },
+  { title: "Interior Painting", description: "Modern wall painting for rooms, halls & flats. Best quality paints with perfect finish.", image: "/images/portfolio-bedroom.webp", href: "/services/interior" },
+  { title: "Building Painting", description: "Complete building painting for societies & commercial complexes. Long-lasting results.", image: "/images/portfolio-building.webp", href: "/services/building" },
   { title: "Exterior Painting", description: "Weather-resistant exterior painting solutions. Durable, fade-resistant finish.", image: "/images/exterior.jpg", href: "/services/exterior" },
-  { title: "Commercial Painting", description: "Office, showroom & commercial space painting. Minimal disruption, fast completion.", image: "/images/portfolio-office.jpg", href: "/services/commercial" },
-  { title: "Texture Painting", description: "Premium texture finishes for luxury interiors. Give your walls a designer look.", image: "/images/texture.jpg", href: "/services/texture" },
+  { title: "Commercial Painting", description: "Office, showroom & commercial space painting. Minimal disruption, fast completion.", image: "/images/portfolio-office.webp", href: "/services/commercial" },
+  { title: "Texture Painting", description: "Premium texture finishes for luxury interiors. Give your walls a designer look.", image: "/images/texture.webp", href: "/services/texture" },
   { title: "Waterproofing", description: "Complete waterproofing for terrace, bathroom & exterior walls. Permanent solution.", image: "/images/exterior.jpg", href: "/services/waterproofing" },
-  { title: "Designer Wall Painting", description: "Custom wall art, stencil work & decorative painting for premium interiors.", image: "/images/portfolio-accent.jpg", href: "/services/designer" },
+  { title: "Designer Wall Painting", description: "Custom wall art, stencil work & decorative painting for premium interiors.", image: "/images/portfolio-accent.webp", href: "/services/designer" },
 ]
 
 const features = [
@@ -36,11 +36,11 @@ const steps = [
 ]
 
 const projects = [
-  { title: "Interior Painting", image: "/images/portfolio-bedroom.jpg" },
-  { title: "Texture Wall", image: "/images/texture.jpg" },
-  { title: "Building Exterior", image: "/images/portfolio-building.jpg" },
-  { title: "Commercial Space", image: "/images/portfolio-office.jpg" },
-  { title: "Designer Wall", image: "/images/portfolio-accent.jpg" },
+  { title: "Interior Painting", image: "/images/portfolio-bedroom.webp" },
+  { title: "Texture Wall", image: "/images/texture.webp" },
+  { title: "Building Exterior", image: "/images/portfolio-building.webp" },
+  { title: "Commercial Space", image: "/images/portfolio-office.webp" },
+  { title: "Designer Wall", image: "/images/portfolio-accent.webp" },
   { title: "Waterproofing", image: "/images/exterior.jpg" },
 ]
 
