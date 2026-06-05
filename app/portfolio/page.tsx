@@ -20,7 +20,7 @@ const projects = [
     title: "Modern Living Room",
     category: "residential",
     location: "Andheri West",
-    image: "/images/residential.jpg",
+    image: "/images/residential.webp",
     description: "Complete interior transformation with warm neutral tones",
   },
   {
@@ -28,7 +28,7 @@ const projects = [
     title: "Master Bedroom Suite",
     category: "residential",
     location: "Bandra",
-    image: "/images/portfolio-bedroom.jpg",
+    image: "/images/portfolio-bedroom.webp",
     description: "Elegant grey palette creating a serene atmosphere",
   },
   {
@@ -36,7 +36,7 @@ const projects = [
     title: "Corporate Office",
     category: "commercial",
     location: "Lower Parel",
-    image: "/images/commercial.jpg",
+    image: "/images/commercial.webp",
     description: "Professional office space with clean white finish",
   },
   {
@@ -44,7 +44,7 @@ const projects = [
     title: "Tech Startup Office",
     category: "commercial",
     location: "Powai",
-    image: "/images/portfolio-office.jpg",
+    image: "/images/portfolio-office.webp",
     description: "Modern open-plan workspace transformation",
   },
   {
@@ -60,7 +60,7 @@ const projects = [
     title: "Apartment Complex",
     category: "exterior",
     location: "Malad",
-    image: "/images/portfolio-building.jpg",
+    image: "/images/portfolio-building.webp",
     description: "Large-scale exterior project with waterproofing",
   },
   {
@@ -68,7 +68,7 @@ const projects = [
     title: "Textured Feature Wall",
     category: "designer",
     location: "Worli",
-    image: "/images/texture.jpg",
+    image: "/images/texture.webp",
     description: "Custom textured accent wall with metallic finish",
   },
   {
@@ -76,7 +76,7 @@ const projects = [
     title: "Artistic Accent Wall",
     category: "designer",
     location: "Khar",
-    image: "/images/portfolio-accent.jpg",
+    image: "/images/portfolio-accent.webp",
     description: "Designer textured wall with warm earth tones",
   },
 ]
