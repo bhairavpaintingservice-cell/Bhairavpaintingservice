@@ -184,7 +184,7 @@ export default function AboutPage() {
             
             <div className="relative aspect-[4/3] order-1 lg:order-2">
               <Image
-                src="/images/team.jpg"
+                src="/images/team.webp"
                 alt="Our professional painting team"
                 fill
                 className="object-cover rounded-lg"
