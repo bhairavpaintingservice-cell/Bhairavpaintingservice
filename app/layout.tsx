@@ -42,6 +42,20 @@ export const metadata: Metadata = {
     siteName: 'Bhairav Painting Service',
     locale: 'en_IN',
     type: 'website',
+    images: [
+      {
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Bhairav Painting Service - Professional Painters in Mumbai',
+      }
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Bhairav Painting Service | Mumbai & Bhiwandi',
+    description: 'Professional painting services — Residential, Commercial, Exterior & Designer finishes. 47+ years experience.',
+    images: ['/og-image.jpg'],
   },
   icons: {
     icon: [
