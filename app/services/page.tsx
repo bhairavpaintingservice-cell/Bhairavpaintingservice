@@ -16,7 +16,7 @@ const services = [
     title: "Residential Painting",
     subtitle: "Transform Your Home",
     description: "Whether you are moving into a new home or refreshing your current space, our residential painting services cover everything from single rooms to entire properties. We work with you to choose the perfect colors and finishes that reflect your style.",
-    image: "/images/residential.jpg",
+    image: "/images/residential.webp",
     features: [
       "Interior wall painting",
       "Exterior house painting",
@@ -31,7 +31,7 @@ const services = [
     title: "Commercial Painting",
     subtitle: "Professional Business Spaces",
     description: "First impressions matter. Our commercial painting services help businesses create professional, inviting environments. We offer flexible scheduling including weekends to minimize disruption to your operations.",
-    image: "/images/commercial.jpg",
+    image: "/images/commercial.webp",
     features: [
       "Office spaces",
       "Retail stores and showrooms",
@@ -61,7 +61,7 @@ const services = [
     title: "Designer & Textured Painting",
     subtitle: "Artistic Finishes",
     description: "Add character and depth to your walls with our designer painting services. From elegant textures to custom stencils, we create stunning accent features that make your space unique.",
-    image: "/images/texture.jpg",
+    image: "/images/texture.webp",
     features: [
       "Textured accent walls",
       "Stencil patterns and designs",
