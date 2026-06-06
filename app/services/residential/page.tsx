@@ -14,6 +14,9 @@ const serviceCards = [
   { title: "Villa Painting", desc: "Complete interior & exterior painting for villas & bungalows.", icon: "🏡" },
   { title: "Society Painting", desc: "Large-scale society & housing complex painting. Minimal resident disruption.", icon: "🏢" },
   { title: "Rental Flat Painting", desc: "Quick, clean painting for rental flats. Ready for new tenants fast.", icon: "🔑" },
+  { q: "Ghar khali karna padega painting ke liye?", a: "Nahi, ghar khali karna zaroori nahi. Hum ek ek room ka kaam karte hain aur furniture cover karke kaam karte hain taaki aap ghar mein rehte hue painting karwa sako. Agar aap chahein toh ghar khali karke bhi kaam karwa sakte hain — dono options available hain." },
+  { q: "Paint finish options kaunse available hain?", a: "Hum multiple finish options provide karte hain — Matte, Silk, Semi-Gloss aur Gloss. Bedroom ke liye matte, living room ke liye silk aur kitchen/bathroom ke liye semi-gloss best rehta hai." },
+  { q: "Interior paint kitne saal tak chalta hai?", a: "Achi quality paint aur proper application se interior paint 5-7 saal tak chalta hai. Asian Paints, Berger ya Nerolac ke premium range 8-10 saal tak bhi chal sakti hai." },
 ]
 
 const whyUs = [
