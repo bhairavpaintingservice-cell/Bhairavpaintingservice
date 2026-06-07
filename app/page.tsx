@@ -65,6 +65,31 @@ const serviceOptions = [
 
 const heroPills = ["Free Site Visit", "Material + Labour", "Labour Only Available", "Trained Painters", "Owner Supervised", "Budget & Premium Packages"]
 
+
+const faqs = [
+  { q: "Bhairav Painting Service ko choose kyu karein?", a: "47+ saal ke experience, trained painters, quality paint brands, transparent pricing aur time pe kaam complete karna — yahi hamaari pehchaan hai Mumbai, Thane aur Bhiwandi mein." },
+  { q: "Kitne saal ka experience hai?", a: "Bhairav Painting Service ko 47+ saal ka experience hai. Hazaron residential aur commercial projects successfully complete kiye hain." },
+  { q: "Kya free site visit aur quotation available hai?", a: "Haan! Hum free site visit aur quotation provide karte hain. Call ya WhatsApp karein aur hum aapke ghar aakar estimate denge." },
+  { q: "Kya hidden charges hote hain?", a: "Bilkul nahi. Humara quotation 100% transparent hai — jo quote diya wahi final price. Koi hidden charges nahi." },
+  { q: "WhatsApp par quotation mil sakta hai?", a: "Haan! +91 9158800517 par WhatsApp karein — photos bhejein aur hum estimate de denge." },
+  { q: "Same-day site visit available hai?", a: "Haan, availability ke hisaab se same-day site visit possible hai. Jaldi contact karein!" },
+  { q: "Material + labour package provide karte hain?", a: "Haan! Complete package available hai — paint material aur labour dono saath. Alag alag arrange karne ki zaroorat nahi." },
+  { q: "House painting ki cost kaise calculate hoti hai?", a: "Cost calculate hoti hai — total area (sq ft), paint brand, finish type aur surface condition ke hisaab se. Free site visit mein hum exact estimate dete hain." },
+  { q: "Final quotation mein kya-kya include hota hai?", a: "Labour charges, paint material, surface preparation, primer, putty aur cleaning — sab include hota hai. Koi hidden charges nahi." },
+  { q: "Society painting ke liye special rates available hain?", a: "Haan! Society aur bulk projects ke liye special rates available hain. Contact karein aur hum best deal denge." },
+  { q: "Painting work start karne se pehle kya process hota hai?", a: "Pehle free site visit, phir quotation, approval ke baad surface preparation — wall cleaning, putty, primer — phir painting shuru hoti hai." },
+  { q: "Site inspection kyu zaroori hai?", a: "Site inspection se wall condition, area measurement aur paint requirement accurately pata chalta hai — taaki koi surprise na aaye baad mein." },
+  { q: "Painting ke baad free cleaning bhi karte hain?", a: "Haan! Kaam complete hone ke baad hum free poori cleaning karte hain — furniture covers hatana, floor cleaning — sab hamaari responsibility hai." },
+  { q: "Painting ke baad maintenance kaise karein?", a: "Painted walls ko direct paani se bachayein, dry cloth se saaf karein aur 2-3 saal baad touch-up karwayein taaki paint fresh rahe." },
+  { q: "Kya quality paint brands use karte hain?", a: "Haan! Hum Asian Paints, Berger, Nerolac aur Dulux jaise trusted brands use karte hain. Customer ki choice ke hisaab se brand select hoti hai." },
+  { q: "Kya previous projects ke photos dekh sakte hain?", a: "Haan! Hamare portfolio mein previous projects ki photos hain. Website par dekh sakte hain ya WhatsApp par bhi bhej sakte hain." },
+  { q: "Aapke painters trained aur experienced hain?", a: "Haan! Hamare saare painters trained aur experienced hain. Quality aur safety dono ka dhyan rakha jata hai har project mein." },
+  { q: "Residential aur commercial dono projects handle karte hain?", a: "Haan! Hum ghar, office, shop, society aur commercial buildings — sab handle karte hain." },
+  { q: "Kin areas mein service available hai?", a: "Bhiwandi, Thane, Kalyan, Dombivli, Navi Mumbai, Mumbai, Kasheli, Kalher, Andheri, Vasai aur Virar mein professional painting services available hain." },
+  { q: "Kya societies aur builder projects bhi lete hain?", a: "Haan! Societies, builder projects aur large commercial projects ke liye special teams available hain." },
+  { q: "Emergency painting service available hai?", a: "Haan! Emergency situations mein jaldi service provide karne ki koshish karte hain. Call ya WhatsApp karein — hum response denge." },
+]
+
 export default function HomePage() {
   const [form, setForm] = useState({ name: "", phone: "", service: "", area: "", message: "" })
 
