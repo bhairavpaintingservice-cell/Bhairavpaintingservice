@@ -76,6 +76,9 @@ const faqs = [
   { q: "Do you work on weekends?", a: "Yes. We work all days including weekends to suit your schedule and minimize disruption." },
   { q: "What areas do you cover for residential painting?", a: "We serve Mumbai, Thane, Bhiwandi, Kalyan and Navi Mumbai for all residential painting work." },
   { q: "How do I book a free site visit?", a: "Simply call us on +91 9158800517 or WhatsApp us. We will schedule a free visit at your convenient time — no charges, no obligation." },
+  { q: "Ghar khali karna padega painting ke liye?", a: "Nahi, ghar khali karna zaroori nahi. Hum ek ek room ka kaam karte hain aur furniture cover karke kaam karte hain taaki aap ghar mein rehte hue painting karwa sako. Agar aap chahein toh ghar khali karke bhi kaam karwa sakte hain — dono options available hain." },
+  { q: "Paint finish options kaunse available hain?", a: "Hum multiple finish options provide karte hain — Matte, Silk, Semi-Gloss aur Gloss. Bedroom ke liye matte, living room ke liye silk aur kitchen/bathroom ke liye semi-gloss best rehta hai." },
+  { q: "Interior paint kitne saal tak chalta hai?", a: "Achi quality paint aur proper application se interior paint 5-7 saal tak chalta hai. Asian Paints, Berger ya Nerolac ke premium range 8-10 saal tak bhi chal sakti hai." },
 ]
 
 const serviceOptions = [
