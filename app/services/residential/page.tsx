@@ -6,17 +6,14 @@ import { useState } from "react"
 import { Phone, MessageCircle, CheckCircle, MapPin, ChevronDown } from "lucide-react"
 
 const serviceCards = [
-  { title: "1 BHK Painting", desc: "Complete 1BHK flat painting — walls, ceiling, doors & windows. Quick completion.", icon: "🏠" },
-  { title: "2 BHK Painting", desc: "Professional 2BHK painting with quality finish. Interior + ceiling included.", icon: "🏠" },
-  { title: "3 BHK Painting", desc: "Full 3BHK flat painting. Surface prep, putty, primer & final coat.", icon: "🏠" },
-  { title: "Flat Repainting", desc: "Refresh your old flat with new colours. Crack filling & putty included.", icon: "🖌️" },
-  { title: "New Flat Painting", desc: "First-time painting for newly constructed flats. Premium finish guaranteed.", icon: "✨" },
-  { title: "Villa Painting", desc: "Complete interior & exterior painting for villas & bungalows.", icon: "🏡" },
-  { title: "Society Painting", desc: "Large-scale society & housing complex painting. Minimal resident disruption.", icon: "🏢" },
-  { title: "Rental Flat Painting", desc: "Quick, clean painting for rental flats. Ready for new tenants fast.", icon: "🔑" },
-  { q: "Ghar khali karna padega painting ke liye?", a: "Nahi, ghar khali karna zaroori nahi. Hum ek ek room ka kaam karte hain aur furniture cover karke kaam karte hain taaki aap ghar mein rehte hue painting karwa sako. Agar aap chahein toh ghar khali karke bhi kaam karwa sakte hain — dono options available hain." },
-  { q: "Paint finish options kaunse available hain?", a: "Hum multiple finish options provide karte hain — Matte, Silk, Semi-Gloss aur Gloss. Bedroom ke liye matte, living room ke liye silk aur kitchen/bathroom ke liye semi-gloss best rehta hai." },
-  { q: "Interior paint kitne saal tak chalta hai?", a: "Achi quality paint aur proper application se interior paint 5-7 saal tak chalta hai. Asian Paints, Berger ya Nerolac ke premium range 8-10 saal tak bhi chal sakti hai." },
+  { title: "1 BHK Painting", desc: "Complete 1BHK flat painting — walls, ceiling, doors & windows. Quick completion.", icon: "🏠", image: "/images/residential/res-1bhk.jpg" },
+  { title: "2 BHK Painting", desc: "Professional 2BHK painting with quality finish. Interior + ceiling included.", icon: "🏠", image: "/images/residential/res-2bhk.jpg" },
+  { title: "3 BHK Painting", desc: "Full 3BHK flat painting. Surface prep, putty, primer & final coat.", icon: "🏠", image: "/images/residential/res-3bhk.jpg" },
+  { title: "Flat Repainting", desc: "Refresh your old flat with new colours. Crack filling & putty included.", icon: "🖌️", image: "/images/residential/res-flat.jpg" },
+  { title: "New Flat Painting", desc: "First-time painting for newly constructed flats. Premium finish guaranteed.", icon: "✨", image: "/images/residential/res-new-flat.jpg" },
+  { title: "Villa Painting", desc: "Complete interior & exterior painting for villas & bungalows.", icon: "🏡", image: "/images/residential/res-villa.jpg" },
+  { title: "Society Painting", desc: "Large-scale society & housing complex painting. Minimal resident disruption.", icon: "🏢", image: "/images/residential/res-society.jpg" },
+  { title: "Rental Flat Painting", desc: "Quick, clean painting for rental flats. Ready for new tenants fast.", icon: "🔑", image: "/images/residential/res-rental.jpg" },
 ]
 
 const whyUs = [
@@ -150,10 +147,15 @@ export default function ResidentialPaintingPage() {
           <p className="mt-3 max-w-xl text-sm" style={{color:"#6b7280"}}>From 1BHK flats to large villas — we handle all types of residential painting across Mumbai & Bhiwandi.</p>
           <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {serviceCards.map((s) => (
-              <div key={s.title} className="rounded-xl bg-white border border-gray-100 p-5 hover:shadow-md transition-shadow">
-                <div className="text-3xl mb-3">{s.icon}</div>
-                <h3 className="font-bold text-sm" style={{color:"#1B2B8A"}}>{s.title}</h3>
-                <p className="mt-1 text-xs" style={{color:"#6b7280"}}>{s.desc}</p>
+              <div key={s.title} className="rounded-xl bg-white border border-gray-100 overflow-hidden hover:shadow-md transition-shadow">
+                <div className="relative h-40 w-full">
+                  <Image src={s.image} alt={s.title} fill className="object-cover" />
+                </div>
+                <div className="p-5">
+                  <div className="text-2xl mb-2">{s.icon}</div>
+                  <h3 className="font-bold text-sm" style={{color:"#1B2B8A"}}>{s.title}</h3>
+                  <p className="mt-1 text-xs" style={{color:"#6b7280"}}>{s.desc}</p>
+                </div>
               </div>
             ))}
           </div>
