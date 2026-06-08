@@ -110,9 +110,9 @@ export default function ResidentialPaintingPage() {
           <h1 className="text-4xl font-black text-white sm:text-5xl lg:text-6xl leading-tight">
             Residential Painting Services in
           </h1>
-          <h1 className="text-4xl font-black text-orange-500 sm:text-5xl lg:text-6xl mt-2 leading-tight">
+          <span className="text-4xl font-black text-orange-500 sm:text-5xl lg:text-6xl mt-2 leading-tight block">
             Mumbai, Thane & Bhiwandi
-          </h1>
+          </span>
           <p className="mt-6 text-lg text-white/75 max-w-2xl mx-auto">
             47+ years of experience in flat, apartment, villa and society painting. Professional work with owner supervision. Free site visit available!
           </p>
