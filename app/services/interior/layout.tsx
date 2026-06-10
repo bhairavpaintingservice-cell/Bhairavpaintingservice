@@ -1,8 +1,8 @@
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Interior Painting Services in Mumbai, Thane & Bhiwandi | Bhairav Painting Service",
-  description: "Professional interior painting for homes, flats & apartments in Mumbai, Thane, Bhiwandi & Kalyan. Bedroom, living room, kitchen painting. 47+ years experience. Free site visit.",
+  title: "Interior Painting Mumbai & Bhiwandi | Bhairav Painting",
+  description: "Interior painting for homes & flats in Mumbai, Thane & Bhiwandi. Bedroom, living room, kitchen. Free site visit. Call +91 9158800517.",
   keywords: [
     "interior painting mumbai",
     "interior painting bhiwandi",
