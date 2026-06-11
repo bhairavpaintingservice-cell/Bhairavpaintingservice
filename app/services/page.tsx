@@ -6,7 +6,7 @@ import { Check, Phone } from "lucide-react"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Our Services | Bhavirav Painting Service",
+  title: "Our Services | Bhairav Painting Service",
   description: "Professional painting services including residential, commercial, building, and designer textured painting in Mumbai.",
 }
 
