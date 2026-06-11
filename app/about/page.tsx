@@ -6,8 +6,8 @@ import { Target, Heart, Award, Users } from "lucide-react"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "About Us | Bhavirav Painting Service",
-  description: "Learn about Bhavirav Painting Service - Mumbai's trusted painting professionals with 10+ years of experience transforming homes and offices.",
+  title: "About Us | Bhairav Painting Service",
+  description: "Learn about Bhairav Painting Service - Mumbai's trusted painting professionals with 10+ years of experience transforming homes and offices.",
 }
 
 const values = [
@@ -54,7 +54,7 @@ export default function AboutPage() {
               Our Story
             </h1>
             <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
-              Founded in 2015, Bhavirav Painting Service was born from a simple vision: 
+              Founded in 2015, Bhairav Painting Service was born from a simple vision: 
               to make professional painting services accessible, reliable, and stress-free 
               for every home and business in Mumbai.
             </p>
@@ -69,7 +69,7 @@ export default function AboutPage() {
             <div className="relative aspect-[4/3] lg:aspect-square">
               <Image
                 src="/images/founder.jpg"
-                alt="Bhavirav - Founder"
+                alt="Bhairav - Founder"
                 fill
                 className="object-cover rounded-lg"
               />
@@ -80,13 +80,13 @@ export default function AboutPage() {
                 Meet Our Founder
               </h2>
               <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
-                Bhavirav started his journey as a painter over 10 years ago, learning the 
+                Bhairav started his journey as a painter over 10 years ago, learning the 
                 craft from experienced masters and developing an eye for detail that sets 
                 his work apart.
               </p>
               <p className="mt-4 text-muted-foreground leading-relaxed">
                 What began as individual projects soon grew through word-of-mouth 
-                recommendations from satisfied customers. Today, Bhavirav leads a team of 
+                recommendations from satisfied customers. Today, Bhairav leads a team of 
                 skilled professionals who share his passion for transforming spaces and 
                 exceeding customer expectations.
               </p>
@@ -95,7 +95,7 @@ export default function AboutPage() {
                 perfect colors and finishes.&rdquo;
               </p>
               <p className="mt-4 font-semibold text-foreground">
-                — Bhavirav, Founder & Lead Painter
+                — Bhairav, Founder & Lead Painter
               </p>
             </div>
           </div>
