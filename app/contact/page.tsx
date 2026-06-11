@@ -311,7 +311,7 @@ export default function ContactPage() {
                     Prefer to call?
                   </h3>
                   <p className="mt-2 text-primary-foreground/80 text-sm">
-                    Speak directly with Bhavirav for immediate assistance with your project.
+                    Speak directly with Bhairav for immediate assistance with your project.
                   </p>
                   <Button
                     asChild
