@@ -156,6 +156,33 @@ export default function WaterproofingPage() {
         </div>
       </section>
 
+
+      {/* BEFORE & AFTER */}
+      <section className="py-16 px-4 bg-gray-50">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-orange-500 text-xs font-bold uppercase tracking-widest mb-2">Before & After</p>
+          <h2 className="text-3xl font-black text-gray-900 mb-3">Real Waterproofing Projects</h2>
+          <p className="text-gray-500 mb-8">Mumbai, Thane & Bhiwandi mein completed projects.</p>
+          <div className="grid sm:grid-cols-3 gap-5">
+            {[
+              { title: "Terrace Waterproofing — Bhiwandi", desc: "450 sq ft • Dr Fixit • 3 Days" },
+              { title: "Roof Leakage Repair — Thane", desc: "280 sq ft • Membrane Coating • 2 Days" },
+              { title: "Bathroom Waterproofing — Thane", desc: "80 sq ft • Dr Fixit Pidifin 2K • 1 Day" },
+            ].map((p) => (
+              <div key={p.title} className="bg-white border rounded-xl overflow-hidden shadow-sm">
+                <div className="h-48 bg-gradient-to-br from-blue-50 to-orange-50 flex items-center justify-center">
+                  <span className="text-5xl">💧</span>
+                </div>
+                <div className="p-4">
+                  <h3 className="font-bold text-sm text-gray-900">{p.title}</h3>
+                  <p className="text-xs text-gray-500 mt-1">{p.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-3xl mx-auto">
@@ -213,6 +240,56 @@ export default function WaterproofingPage() {
                 {icon} {label}
               </Link>
             ))}
+          </div>
+        </div>
+      </section>
+
+
+      {/* CONTACT FORM */}
+      <section className="py-16 px-4 bg-gray-50" id="contact">
+        <div className="max-w-xl mx-auto">
+          <p className="text-orange-500 text-xs font-bold uppercase tracking-widest mb-2 text-center">Get Free Quote</p>
+          <h2 className="text-3xl font-black text-gray-900 mb-2 text-center">Book Free Site Visit</h2>
+          <p className="text-gray-500 text-center mb-8 text-sm">Fill the form — we will call you back to confirm your free waterproofing site visit.</p>
+          <div className="bg-white border rounded-2xl p-8 shadow-sm">
+            <div className="space-y-4">
+              <div>
+                <label className="block text-sm font-semibold text-gray-700 mb-1">Your Name *</label>
+                <input type="text" placeholder="Enter your name" className="w-full border rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-orange-400" />
+              </div>
+              <div>
+                <label className="block text-sm font-semibold text-gray-700 mb-1">Phone Number *</label>
+                <input type="tel" placeholder="+91 XXXXX XXXXX" className="w-full border rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-orange-400" />
+              </div>
+              <div>
+                <label className="block text-sm font-semibold text-gray-700 mb-1">Waterproofing Type</label>
+                <select className="w-full border rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-orange-400">
+                  <option>Select Type</option>
+                  <option>Terrace Waterproofing</option>
+                  <option>Roof Leakage Repair</option>
+                  <option>Bathroom Waterproofing</option>
+                  <option>Damp Wall Treatment</option>
+                  <option>Interior Waterproofing</option>
+                  <option>Exterior Waterproofing</option>
+                  <option>Basement Waterproofing</option>
+                  <option>Not Sure / Multiple Areas</option>
+                </select>
+              </div>
+              <div>
+                <label className="block text-sm font-semibold text-gray-700 mb-1">Your Area / Location</label>
+                <input type="text" placeholder="e.g. Bhiwandi, Thane, Kalyan..." className="w-full border rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-orange-400" />
+              </div>
+              <div>
+                <label className="block text-sm font-semibold text-gray-700 mb-1">Describe the Problem (Optional)</label>
+                <textarea placeholder="e.g. Terrace leakage, bathroom seepage, damp walls..." rows={3} className="w-full border rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-orange-400 resize-none" />
+              </div>
+              <a
+                href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20Waterproofing%20quote"
+                className="block w-full bg-green-500 hover:bg-green-600 text-white font-bold py-4 rounded-lg text-center transition"
+              >
+                🚀 Send Enquiry on WhatsApp
+              </a>
+            </div>
           </div>
         </div>
       </section>
