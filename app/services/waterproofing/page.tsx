@@ -151,7 +151,9 @@ export default function WaterproofingPage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
             {recentProjects.map((p, i) => (
               <div key={i} className="bg-white border rounded-xl overflow-hidden shadow-sm">
-                <img src={p.img} alt={p.title} className="w-full h-32 object-cover" />
+                <div className="w-full h-36 bg-gray-100 flex items-center justify-center overflow-hidden">
+                  <img src={p.img} alt={p.title} className="w-full h-full object-cover object-center" />
+                </div>
                 <div className="p-3 text-center">
                   <h3 className="font-bold text-sm text-gray-900 mb-1">{p.title}</h3>
                   <p className="text-xs text-gray-500">📍 {p.location} • 📐 {p.area}</p>
