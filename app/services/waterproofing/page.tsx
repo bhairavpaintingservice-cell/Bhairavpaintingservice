@@ -82,7 +82,7 @@ const areas = ["Mumbai", "Thane", "Bhiwandi", "Kalyan", "Navi Mumbai", "Dombivli
 
 const recentProjects = [
   { title: "Terrace Waterproofing", location: "Bhiwandi", area: "450 sq ft", material: "Dr Fixit Membrane", time: "3 Days", img: "/images/waterproofing/waterproof-project-terrace.jpg" },
-  { title: "Roof Leakage Repair", location: "Thane", area: "280 sq ft", material: "Liquid Membrane", time: "2 Days", img: "/images/waterproofing/waterproof-before-leakage.jpg" },
+  { title: "Roof Leakage Repair", location: "Thane", area: "280 sq ft", material: "Liquid Membrane", time: "2 Days", img: "/images/waterproofing/waterproof-project-roof.jpg" },
   { title: "Bathroom Waterproofing", location: "Thane", area: "80 sq ft", material: "Dr Fixit Pidifin 2K", time: "1 Day", img: "/images/waterproofing/waterproof-project-bathroom.jpg" },
   { title: "Damp Wall Treatment", location: "Bhiwandi", area: "3 Rooms", material: "Anti-damp Coating", time: "2 Days", img: "/images/waterproofing/waterproof-project-wall.jpg" },
 ]
