@@ -81,10 +81,10 @@ const faqs = [
 const areas = ["Mumbai", "Thane", "Bhiwandi", "Kalyan", "Navi Mumbai", "Dombivli", "Kasheli", "Kalher", "Andheri", "Vasai", "Virar", "Ulhasnagar"]
 
 const recentProjects = [
-  { title: "Terrace Waterproofing", location: "Bhiwandi", area: "450 sq ft", material: "Dr Fixit Membrane", time: "3 Days" },
-  { title: "Roof Leakage Repair", location: "Thane", area: "280 sq ft", material: "Liquid Membrane", time: "2 Days" },
-  { title: "Bathroom Waterproofing", location: "Thane", area: "80 sq ft", material: "Dr Fixit Pidifin 2K", time: "1 Day" },
-  { title: "Damp Wall Treatment", location: "Bhiwandi", area: "3 Rooms", material: "Anti-damp Coating", time: "2 Days" },
+  { title: "Terrace Waterproofing", location: "Bhiwandi", area: "450 sq ft", material: "Dr Fixit Membrane", time: "3 Days", img: "/images/waterproofing/waterproof-project-terrace.jpg" },
+  { title: "Roof Leakage Repair", location: "Thane", area: "280 sq ft", material: "Liquid Membrane", time: "2 Days", img: "/images/waterproofing/waterproof-before-leakage.jpg" },
+  { title: "Bathroom Waterproofing", location: "Thane", area: "80 sq ft", material: "Dr Fixit Pidifin 2K", time: "1 Day", img: "/images/waterproofing/waterproof-project-bathroom.jpg" },
+  { title: "Damp Wall Treatment", location: "Bhiwandi", area: "3 Rooms", material: "Anti-damp Coating", time: "2 Days", img: "/images/waterproofing/waterproof-project-wall.jpg" },
 ]
 
 export default function WaterproofingPage() {
@@ -150,12 +150,13 @@ export default function WaterproofingPage() {
           <p className="text-center text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Recent Completed Projects</p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
             {recentProjects.map((p, i) => (
-              <div key={i} className="bg-white border rounded-xl p-4 text-center shadow-sm">
-                <h3 className="font-bold text-sm text-gray-900 mb-1">{p.title}</h3>
-                <p className="text-xs text-gray-500">📍 {p.location}</p>
-                <p className="text-xs text-gray-500">📐 {p.area}</p>
-                <p className="text-xs text-orange-600 font-semibold mt-1">{p.material}</p>
-                <p className="text-xs text-gray-400">⏱ {p.time}</p>
+              <div key={i} className="bg-white border rounded-xl overflow-hidden shadow-sm">
+                <img src={p.img} alt={p.title} className="w-full h-32 object-cover" />
+                <div className="p-3 text-center">
+                  <h3 className="font-bold text-sm text-gray-900 mb-1">{p.title}</h3>
+                  <p className="text-xs text-gray-500">📍 {p.location} • 📐 {p.area}</p>
+                  <p className="text-xs text-orange-600 font-semibold mt-1">{p.material}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -251,14 +252,12 @@ export default function WaterproofingPage() {
           <p className="text-gray-500 mb-8">Real waterproofing jobs — before and after results from Mumbai, Thane & Bhiwandi.</p>
           <div className="grid sm:grid-cols-3 gap-5">
             {[
-              { label: "⚠️ Before", title: "Damp Wall — Bhiwandi", desc: "Severe dampness, mould patches & paint peeling on interior wall.", color: "from-red-50 to-orange-50" },
-              { label: "✅ After", title: "Exterior Wall — Thane", desc: "Fully waterproofed exterior wall. No seepage, clean protected finish.", color: "from-green-50 to-blue-50" },
-              { label: "✅ After", title: "Terrace — Bhiwandi", desc: "Terrace completely waterproofed. No more leakage to floor below.", color: "from-blue-50 to-orange-50" },
+              { label: "⚠️ Before", title: "Ceiling Leakage — Mumbai", desc: "Severe roof leakage during monsoon — water dripping through ceiling.", img: "/images/waterproofing/waterproof-before-leakage.jpg" },
+              { label: "⚠️ Before", title: "Damp Wall — Bhiwandi", desc: "Paint peeling & seepage damage on interior wall due to moisture.", img: "/images/waterproofing/waterproof-project-wall.jpg" },
+              { label: "✅ After", title: "Terrace Waterproofing — Bhiwandi", desc: "Terrace completely waterproofed with liquid membrane. Monsoon-ready.", img: "/images/waterproofing/waterproof-after.jpg" },
             ].map((p, i) => (
               <div key={i} className="bg-white border rounded-xl overflow-hidden shadow-sm">
-                <div className={`h-48 bg-gradient-to-br ${p.color} flex items-center justify-center`}>
-                  <span className="text-6xl">💧</span>
-                </div>
+                <img src={p.img} alt={p.title} className="w-full h-48 object-cover" />
                 <div className="p-4">
                   <span className={`text-xs font-bold px-2 py-1 rounded-full mb-2 inline-block ${p.label.includes('✅') ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`}>{p.label}</span>
                   <h3 className="font-bold text-sm text-gray-900 mt-1">{p.title}</h3>
