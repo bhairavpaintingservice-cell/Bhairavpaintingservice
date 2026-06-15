@@ -10,7 +10,7 @@ const designerServices = [
   { icon: "🖌️", title: "Accent Wall", desc: "Bold single-wall colour or finish to create a focal point in any room.", tag: "Trending", location: "Bhiwandi", img: "/images/designer/accent-wall.jpg" },
   { icon: "✨", title: "Feature Wall", desc: "Full feature wall treatment — combination of colour, texture & design.", tag: "Premium", location: "Mumbai", img: "/images/designer/feature-wall.jpg" },
   { icon: "🥇", title: "Metallic Designer Wall", desc: "Gold, silver & copper metallic finishes for a luxury statement wall.", tag: "Luxury", location: "Navi Mumbai", img: "/images/designer/metallic-wall.jpg" },
-  { icon: "🎭", title: "Combination Finish", desc: "Mix of texture + stencil or designer print + solid colour. Custom-designed to your taste.", tag: "Custom", location: "Navi Mumbai", img: "" },
+  { icon: "🎭", title: "Combination Finish", desc: "Mix of texture + stencil or designer print + solid colour. Custom-designed to your taste.", tag: "Custom", location: "Navi Mumbai", img: "/images/designer/combination-finish.jpg" },
 ]
 
 const textureTypes = [
