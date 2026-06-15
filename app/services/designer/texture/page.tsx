@@ -210,20 +210,6 @@ footer { background: #1a0e02; color: #c8b888; padding: 40px 24px 20px; }
 
       `}</style>
 
-{/* NAVBAR */}
-<nav>
-  <a href="https://bhairavpainting.vercel.app/" className="logo">
-    <img src="https://bhairavpainting.vercel.app/images/logo-icon.png" alt="Bhairav Painting" height="40" />
-    <span>BHAIRAV PAINTING SERVICES</span>
-  </a>
-  <ul className="nav-links">
-    <li><a href="https://bhairavpainting.vercel.app/">Home</a></li>
-    <li><a href="https://bhairavpainting.vercel.app/services">Services</a></li>
-    <li><a href="https://bhairavpainting.vercel.app/about">About Us</a></li>
-    <li><a href="https://bhairavpainting.vercel.app/contact">Contact</a></li>
-  </ul>
-  <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20Designer%20Wall%20or%20Texture%20Painting" className="nav-cta">WhatsApp Us</a>
-</nav>
 
 {/* HERO */}
 <section className="hero">
@@ -701,40 +687,6 @@ footer { background: #1a0e02; color: #c8b888; padding: 40px 24px 20px; }
 </section>
 
 {/* FOOTER */}
-<footer>
-  <div className="footer-inner">
-    <div className="footer-col">
-      <h4>BHAIRAV PAINTING SERVICES</h4>
-      <p>Professional painting contractor — designer wall, texture & waterproofing services across Bhiwandi, Mumbai, Thane, Kalyan & beyond. 47+ years experience.</p>
-      <a href="tel:+919158800517">+91 9158800517</a>
-      <a href="mailto:bhairavpaintingservice@gmail.com">bhairavpaintingservice@gmail.com</a>
-      <p>Bhiwandi, Maharashtra</p>
-    </div>
-    <div className="footer-col">
-      <h4>Our Services</h4>
-      <a href="https://bhairavpainting.vercel.app/services/residential">Residential Painting</a>
-      <a href="https://bhairavpainting.vercel.app/services/interior">Interior Painting</a>
-      <a href="https://bhairavpainting.vercel.app/services/building">Building Painting</a>
-      <a href="https://bhairavpainting.vercel.app/services/commercial">Commercial Painting</a>
-      <a href="https://bhairavpainting.vercel.app/services/texture-designer">Designer Wall & Texture</a>
-      <a href="https://bhairavpainting.vercel.app/services/waterproofing">Waterproofing</a>
-    </div>
-    <div className="footer-col">
-      <h4>Quick Links</h4>
-      <a href="https://bhairavpainting.vercel.app/">Home</a>
-      <a href="https://bhairavpainting.vercel.app/services">Services</a>
-      <a href="https://bhairavpainting.vercel.app/gallery">Gallery</a>
-      <a href="https://bhairavpainting.vercel.app/about">About</a>
-      <a href="https://bhairavpainting.vercel.app/contact">Contact</a>
-    </div>
-    <div className="footer-col">
-      <h4>Service Areas</h4>
-      <p>Bhiwandi · Thane · Kalyan · Mumbai · Navi Mumbai · Vasai · Virar · Andheri · Dombivli · Kasheli · Kalher</p>
-    </div>
-  </div>
-  <div className="footer-bottom">
-    © 2026 Bhairav Painting Service. All rights reserved. | Bhiwandi, Maharashtra
-  </div>
 </footer>
     </>
   );
