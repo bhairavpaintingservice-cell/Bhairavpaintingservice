@@ -6,11 +6,11 @@ import { Phone, MessageCircle, ChevronDown, CheckCircle, Star, Clock, Award, Shi
 import type { Metadata } from "next"
 
 const designerServices = [
-  { icon: "🎨", title: "Stencil Wall Design", desc: "Custom stencil patterns on feature walls. Geometric, floral, abstract — any design.", tag: "Most Popular", location: "Thane" },
-  { icon: "🖌️", title: "Accent Wall", desc: "Bold single-wall colour or finish to create a focal point in any room.", tag: "Trending", location: "Bhiwandi" },
-  { icon: "✨", title: "Feature Wall", desc: "Full feature wall treatment — combination of colour, texture & design.", tag: "Premium", location: "Mumbai" },
-  { icon: "🥇", title: "Metallic Designer Wall", desc: "Gold, silver & copper metallic finishes for a luxury statement wall.", tag: "Luxury", location: "Navi Mumbai" },
-  { icon: "🎭", title: "Combination Finish", desc: "Mix of texture + stencil or designer print + solid colour. Custom-designed to your taste.", tag: "Custom", location: "Navi Mumbai" },
+  { icon: "🎨", title: "Stencil Wall Design", desc: "Custom stencil patterns on feature walls. Geometric, floral, abstract — any design.", tag: "Most Popular", location: "Thane", img: "/images/designer/stencil-wall.jpg" },
+  { icon: "🖌️", title: "Accent Wall", desc: "Bold single-wall colour or finish to create a focal point in any room.", tag: "Trending", location: "Bhiwandi", img: "/images/designer/accent-wall.jpg" },
+  { icon: "✨", title: "Feature Wall", desc: "Full feature wall treatment — combination of colour, texture & design.", tag: "Premium", location: "Mumbai", img: "" },
+  { icon: "🥇", title: "Metallic Designer Wall", desc: "Gold, silver & copper metallic finishes for a luxury statement wall.", tag: "Luxury", location: "Navi Mumbai", img: "" },
+  { icon: "🎭", title: "Combination Finish", desc: "Mix of texture + stencil or designer print + solid colour. Custom-designed to your taste.", tag: "Custom", location: "Navi Mumbai", img: "" },
 ]
 
 const textureTypes = [
@@ -118,13 +118,19 @@ export default function DesignerTexturePage() {
           <p className="text-gray-500 mb-8">Premium designer wall finishes for homes, flats & commercial spaces.</p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {designerServices.map(s => (
-              <div key={s.title} className="bg-white border rounded-xl p-6 hover:border-orange-400 hover:-translate-y-1 transition-all shadow-sm">
-                <span className="text-4xl mb-4 block">{s.icon}</span>
-                <h3 className="font-bold text-base text-gray-900 mb-2">{s.title}</h3>
-                <p className="text-sm text-gray-500 mb-3">{s.desc}</p>
-                <div className="flex items-center justify-between">
-                  <span className="inline-block bg-orange-50 border border-orange-200 text-orange-600 text-xs font-bold px-3 py-1 rounded-full">{s.tag}</span>
-                  <span className="text-xs text-gray-400">📍 {s.location}</span>
+              <div key={s.title} className="bg-white border rounded-xl overflow-hidden hover:border-orange-400 hover:-translate-y-1 transition-all shadow-sm">
+                {s.img ? (
+                  <img src={s.img} alt={s.title} className="w-full h-44 object-cover" />
+                ) : (
+                  <div className="w-full h-44 bg-gray-100 flex items-center justify-center text-4xl">{s.icon}</div>
+                )}
+                <div className="p-5">
+                  <h3 className="font-bold text-base text-gray-900 mb-2">{s.title}</h3>
+                  <p className="text-sm text-gray-500 mb-3">{s.desc}</p>
+                  <div className="flex items-center justify-between">
+                    <span className="inline-block bg-orange-50 border border-orange-200 text-orange-600 text-xs font-bold px-3 py-1 rounded-full">{s.tag}</span>
+                    <span className="text-xs text-gray-400">📍 {s.location}</span>
+                  </div>
                 </div>
               </div>
             ))}
