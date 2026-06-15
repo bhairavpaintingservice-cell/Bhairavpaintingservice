@@ -11,7 +11,6 @@ export default function TextureDesignerPage() {
     <>
       <style>{`
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
 :root {
   --primary: #f97316;
   --primary-dark: #ea6c00;
@@ -27,7 +26,6 @@ export default function TextureDesignerPage() {
   --radius: 12px;
 }
 
-body { font-family: 'Segoe UI', Arial, sans-serif; color: var(--text); background: var(--bg); line-height: 1.6; }
 
 /* ─── NAVBAR ─── */
 nav {
