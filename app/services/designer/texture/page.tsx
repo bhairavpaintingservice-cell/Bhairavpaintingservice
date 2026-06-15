@@ -487,8 +487,7 @@ export default function TextureDesignerPage() {
   </div>
 </section>
 
-{/* FOOTER */}
-</footer>
+
     </>
   );
 }
