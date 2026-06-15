@@ -14,7 +14,7 @@ const designerServices = [
 ]
 
 const textureTypes = [
-  { icon: "🏖️", title: "Sand Texture", desc: "Grainy sand-effect finish that adds warmth & depth to walls. Popular for living rooms & bedrooms.", tag: "Most Popular" },
+  { icon: "🏖️", title: "Sand Texture", desc: "Grainy sand-effect finish that adds warmth & depth to walls. Popular for living rooms & bedrooms.", tag: "Most Popular", img: "/images/designer/texture-sand.jpg" },
   { icon: "🧽", title: "Sponge Texture", desc: "Soft sponge-dabbed pattern giving walls a rich, layered look. Great for bedrooms & feature walls.", tag: "Budget-Friendly" },
   { icon: "🪨", title: "Rustic / Stone Texture", desc: "Earthy stone or brick-effect finish for a raw, natural look. Perfect for accent walls & TV walls.", tag: "Trending" },
   { icon: "✨", title: "Metallic Texture", desc: "Shiny metallic finish — gold, silver, copper tones. Adds glamour & elegance to living rooms.", tag: "Luxury" },
@@ -146,11 +146,17 @@ export default function DesignerTexturePage() {
           <p className="text-gray-500 mb-8">Whole room texture finishes — budget to luxury options available.</p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {textureTypes.map(t => (
-              <div key={t.title} className="bg-gray-50 border rounded-xl p-5 hover:border-orange-400 transition shadow-sm">
-                <span className="text-3xl mb-3 block">{t.icon}</span>
-                <span className="text-xs bg-orange-50 text-orange-600 font-bold px-2 py-0.5 rounded-full mb-2 inline-block">{t.tag}</span>
-                <h3 className="font-bold text-sm text-gray-900 mb-2">{t.title}</h3>
-                <p className="text-xs text-gray-500">{t.desc}</p>
+              <div key={t.title} className="bg-gray-50 border rounded-xl overflow-hidden hover:border-orange-400 transition shadow-sm">
+                {t.img ? (
+                  <img src={t.img} alt={t.title} className="w-full h-40 object-cover" />
+                ) : (
+                  <div className="w-full h-40 bg-gray-100 flex items-center justify-center text-3xl">{t.icon}</div>
+                )}
+                <div className="p-4">
+                  <span className="text-xs bg-orange-50 text-orange-600 font-bold px-2 py-0.5 rounded-full mb-2 inline-block">{t.tag}</span>
+                  <h3 className="font-bold text-sm text-gray-900 mb-2">{t.title}</h3>
+                  <p className="text-xs text-gray-500">{t.desc}</p>
+                </div>
               </div>
             ))}
           </div>
