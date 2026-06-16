@@ -17,7 +17,7 @@ const textureTypes = [
   { icon: "🏖️", title: "Sand Texture", desc: "Grainy sand-effect finish that adds warmth & depth to walls. Popular for living rooms & bedrooms.", tag: "Most Popular", img: "/images/designer/texture-sand.jpg" },
   { icon: "🧽", title: "Sponge Texture", desc: "Soft sponge-dabbed pattern giving walls a rich, layered look. Great for bedrooms & feature walls.", tag: "Budget-Friendly", img: "/images/designer/texture-sponge.jpg" },
   { icon: "🪨", title: "Rustic / Stone Texture", desc: "Earthy stone or brick-effect finish for a raw, natural look. Perfect for accent walls & TV walls.", tag: "Trending", img: "/images/designer/texture-rustic.jpg" },
-  { icon: "✨", title: "Metallic Texture", desc: "Shiny metallic finish — gold, silver, copper tones. Adds glamour & elegance to living rooms.", tag: "Luxury" },
+  { icon: "✨", title: "Metallic Texture", desc: "Shiny metallic finish — gold, silver, copper tones. Adds glamour & elegance to living rooms.", tag: "Luxury", img: "/images/designer/texture-metallic.jpg" },
 ]
 
 const whyUs = [
