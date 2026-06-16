@@ -29,6 +29,15 @@ const galleryProjects = [
   { title: "Texture Finish", location: "Kalyan", img: "/images/designer/texture-project.jpg" },
   { title: "Combination Finish", location: "Thane", img: "/images/designer/combination-project.jpg" },
 ]
+
+const areaPaint = [
+  { title: "Living Room Wall", desc: "Stencil designs, accent walls & texture finishes for living rooms.", img: "/images/designer/area-living-room.jpg", alt: "Designer wall painting in living room Mumbai Thane Bhiwandi" },
+  { title: "Bedroom Accent Wall", desc: "Soft accent walls & soothing texture finishes for bedrooms.", img: "/images/designer/area-bedroom.jpg", alt: "Bedroom accent wall painting Thane Bhiwandi" },
+  { title: "TV Unit Feature Wall", desc: "Premium feature walls behind TV units — texture + designer finish.", img: "/images/designer/area-tv-wall.jpg", alt: "TV unit feature wall designer painting Mumbai" },
+  { title: "Hall / Foyer Wall", desc: "Bold texture finishes for halls & foyers — first impression matters.", img: "/images/designer/area-hall.jpg", alt: "Hall foyer texture wall painting Bhiwandi Thane" },
+  { title: "Office Feature Wall", desc: "Professional designer walls for offices & corporate spaces.", img: "/images/designer/area-office.jpg", alt: "Office feature wall designer painting Mumbai Navi Mumbai" },
+  { title: "Shop / Showroom Wall", desc: "Attractive designer & texture finishes for shops & showrooms.", img: "/images/designer/area-shop.jpg", alt: "Shop showroom designer wall painting Kalyan Thane" },
+]
 const whyUs = [
   { icon: <Award size={20} />, title: "47+ Years Experience", desc: "Decades of designer & texture painting experience across Mumbai, Thane & Bhiwandi." },
   { icon: <Shield size={20} />, title: "Premium Materials Only", desc: "Asian Paints, Berger & premium texture materials — no cheap alternatives." },
@@ -300,6 +309,27 @@ export default function DesignerTexturePage() {
                   </div>
                 </div>
               ) : null
+            ))}
+          </div>
+        </div>
+      </section>
+
+
+      {/* AREAS WE PAINT */}
+      <section className="py-16 px-4 bg-gray-50">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-orange-500 text-xs font-bold uppercase tracking-widest mb-2">Where We Work</p>
+          <h2 className="text-3xl font-black text-gray-900 mb-3">Areas We Paint</h2>
+          <p className="text-gray-500 mb-8">Designer wall & texture painting for every room — homes, offices & commercial spaces.</p>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-5">
+            {areaPaint.map((a, i) => (
+              <div key={i} className="bg-white border rounded-xl overflow-hidden shadow-sm hover:border-orange-400 hover:-translate-y-1 transition-all">
+                <img src={a.img} alt={a.alt} title={a.title} className="w-full h-44 object-cover" loading="lazy" />
+                <div className="p-4">
+                  <h3 className="font-bold text-sm text-gray-900 mb-1">{a.title}</h3>
+                  <p className="text-xs text-gray-500">{a.desc}</p>
+                </div>
+              </div>
             ))}
           </div>
         </div>
