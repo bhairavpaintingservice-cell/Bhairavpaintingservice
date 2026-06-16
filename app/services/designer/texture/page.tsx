@@ -138,7 +138,7 @@ export default function DesignerTexturePage() {
             {designerServices.map(s => (
               <div key={s.title} className="bg-white border rounded-xl overflow-hidden hover:border-orange-400 hover:-translate-y-1 transition-all shadow-sm">
                 {s.img ? (
-                  <img src={s.img} alt={s.title} className="w-full h-44 object-cover" />
+                  <img src={s.img} alt={`${s.title} - Designer Wall Painting Mumbai Thane Bhiwandi`} title={s.title} loading="lazy" className="w-full h-44 object-cover" />
                 ) : (
                   <div className="w-full h-44 bg-gray-100 flex items-center justify-center text-4xl">{s.icon}</div>
                 )}
@@ -166,7 +166,7 @@ export default function DesignerTexturePage() {
             {textureTypes.map(t => (
               <div key={t.title} className="bg-gray-50 border rounded-xl overflow-hidden hover:border-orange-400 transition shadow-sm">
                 {t.img ? (
-                  <img src={t.img} alt={t.title} className="w-full h-40 object-cover" />
+                  <img src={t.img} alt={`${t.title} - Texture Painting Mumbai Thane Bhiwandi`} title={t.title} loading="lazy" className="w-full h-40 object-cover" />
                 ) : (
                   <div className="w-full h-40 bg-gray-100 flex items-center justify-center text-3xl">{t.icon}</div>
                 )}
@@ -302,7 +302,7 @@ export default function DesignerTexturePage() {
             {galleryProjects.map((p, i) => (
               p.img ? (
                 <div key={i} className="relative group overflow-hidden rounded-xl shadow-sm">
-                  <img src={p.img} alt={p.title} className="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-300" />
+                  <img src={p.img} alt={`${p.title} - Designer Texture Painting ${p.location} Mumbai Thane`} title={p.title} loading="lazy" className="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-300" />
                   <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3">
                     <p className="text-white text-xs font-bold">{p.title}</p>
                     <p className="text-gray-300 text-xs">📍 {p.location}</p>
