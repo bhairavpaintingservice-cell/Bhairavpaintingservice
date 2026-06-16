@@ -26,7 +26,7 @@ const galleryProjects = [
   { title: "Accent Wall", location: "Bhiwandi", img: "/images/designer/accent-project.jpg" },
   { title: "Feature Wall", location: "Mumbai", img: "/images/designer/feature-project.jpg" },
   { title: "Metallic Designer Wall", location: "Navi Mumbai", img: "/images/designer/metallic-project.jpg" },
-  { title: "Texture Finish", location: "Kalyan", img: "" },
+  { title: "Texture Finish", location: "Kalyan", img: "/images/designer/texture-project.jpg" },
   { title: "Combination Finish", location: "Thane", img: "" },
 ]
 const whyUs = [
