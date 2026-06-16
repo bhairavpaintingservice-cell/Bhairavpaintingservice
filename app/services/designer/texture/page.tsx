@@ -20,6 +20,15 @@ const textureTypes = [
   { icon: "✨", title: "Metallic Texture", desc: "Shiny metallic finish — gold, silver, copper tones. Adds glamour & elegance to living rooms.", tag: "Luxury", img: "/images/designer/texture-metallic.jpg" },
 ]
 
+
+const galleryProjects = [
+  { title: "Stencil Wall Design", location: "Thane", img: "/images/designer/stencil-project.jpg" },
+  { title: "Accent Wall", location: "Bhiwandi", img: "/images/designer/accent-project.jpg" },
+  { title: "Feature Wall", location: "Mumbai", img: "" },
+  { title: "Metallic Designer Wall", location: "Navi Mumbai", img: "" },
+  { title: "Texture Finish", location: "Kalyan", img: "" },
+  { title: "Combination Finish", location: "Thane", img: "" },
+]
 const whyUs = [
   { icon: <Award size={20} />, title: "47+ Years Experience", desc: "Decades of designer & texture painting experience across Mumbai, Thane & Bhiwandi." },
   { icon: <Shield size={20} />, title: "Premium Materials Only", desc: "Asian Paints, Berger & premium texture materials — no cheap alternatives." },
@@ -273,6 +282,29 @@ export default function DesignerTexturePage() {
           </div>
         </div>
       </section>
+
+      {/* GALLERY */}
+      <section className="py-16 px-4 bg-white">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-orange-500 text-xs font-bold uppercase tracking-widest mb-2">Our Work</p>
+          <h2 className="text-3xl font-black text-gray-900 mb-3">Recent Projects</h2>
+          <p className="text-gray-500 mb-8">Real projects done by us across Mumbai, Thane, Bhiwandi & nearby areas.</p>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            {galleryProjects.map((p, i) => (
+              p.img ? (
+                <div key={i} className="relative group overflow-hidden rounded-xl shadow-sm">
+                  <img src={p.img} alt={p.title} className="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-300" />
+                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3">
+                    <p className="text-white text-xs font-bold">{p.title}</p>
+                    <p className="text-gray-300 text-xs">📍 {p.location}</p>
+                  </div>
+                </div>
+              ) : null
+            ))}
+          </div>
+        </div>
+      </section>
+
 
       {/* RELATED */}
       <section className="py-12 px-4 bg-white">
