@@ -24,7 +24,7 @@ const textureTypes = [
 const galleryProjects = [
   { title: "Stencil Wall Design", location: "Thane", img: "/images/designer/stencil-project.jpg" },
   { title: "Accent Wall", location: "Bhiwandi", img: "/images/designer/accent-project.jpg" },
-  { title: "Feature Wall", location: "Mumbai", img: "" },
+  { title: "Feature Wall", location: "Mumbai", img: "/images/designer/feature-project.jpg" },
   { title: "Metallic Designer Wall", location: "Navi Mumbai", img: "" },
   { title: "Texture Finish", location: "Kalyan", img: "" },
   { title: "Combination Finish", location: "Thane", img: "" },
