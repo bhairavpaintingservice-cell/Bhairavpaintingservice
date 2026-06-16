@@ -37,6 +37,7 @@ const areaPaint = [
   { title: "Hall / Foyer Wall", desc: "Bold texture finishes for halls & foyers — first impression matters.", img: "/images/designer/area-hall.jpg", alt: "Hall foyer texture wall painting Bhiwandi Thane" },
   { title: "Office Feature Wall", desc: "Professional designer walls for offices & corporate spaces.", img: "/images/designer/area-office.jpg", alt: "Office feature wall designer painting Mumbai Navi Mumbai" },
   { title: "Shop / Showroom Wall", desc: "Attractive designer & texture finishes for shops & showrooms.", img: "/images/designer/area-shop.jpg", alt: "Shop showroom designer wall painting Kalyan Thane" },
+  { title: "Kids Room Wall", desc: "Fun & creative wall designs for kids rooms — stencils, themes & colours.", img: "/images/designer/area-kids-room.jpg", alt: "Kids room wall painting designer stencil Mumbai Thane Bhiwandi" },
 ]
 const whyUs = [
   { icon: <Award size={20} />, title: "47+ Years Experience", desc: "Decades of designer & texture painting experience across Mumbai, Thane & Bhiwandi." },
