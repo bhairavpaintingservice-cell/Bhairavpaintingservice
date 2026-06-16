@@ -27,7 +27,7 @@ const galleryProjects = [
   { title: "Feature Wall", location: "Mumbai", img: "/images/designer/feature-project.jpg" },
   { title: "Metallic Designer Wall", location: "Navi Mumbai", img: "/images/designer/metallic-project.jpg" },
   { title: "Texture Finish", location: "Kalyan", img: "/images/designer/texture-project.jpg" },
-  { title: "Combination Finish", location: "Thane", img: "" },
+  { title: "Combination Finish", location: "Thane", img: "/images/designer/combination-project.jpg" },
 ]
 const whyUs = [
   { icon: <Award size={20} />, title: "47+ Years Experience", desc: "Decades of designer & texture painting experience across Mumbai, Thane & Bhiwandi." },
