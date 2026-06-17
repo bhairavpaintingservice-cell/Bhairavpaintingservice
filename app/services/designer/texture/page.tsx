@@ -304,6 +304,9 @@ export default function DesignerTexturePage() {
               p.img ? (
                 <div key={i} className="relative group overflow-hidden rounded-xl shadow-sm">
                   <img src={p.img} alt={`${p.title} - Designer Texture Painting ${p.location} Mumbai Thane`} title={p.title} loading="lazy" className="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-300" />
+                  <div className="absolute inset-0 bg-[#1B2B8A]/55 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <span className="bg-orange-500 text-white px-4 py-2 rounded-lg text-sm font-bold">View More →</span>
+                  </div>
                   <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3">
                     <p className="text-white text-xs font-bold">{p.title}</p>
                     <p className="text-gray-300 text-xs">📍 {p.location}</p>
@@ -421,6 +424,9 @@ export default function DesignerTexturePage() {
         </div>
       </section>
 
+      {/* Floating Buttons */}
+      <a href="https://wa.me/919158800517" target="_blank" rel="noopener noreferrer" className="fixed bottom-24 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-green-500 text-white shadow-lg"><MessageCircle className="h-7 w-7"/></a>
+      <a href="tel:+919158800517" className="fixed bottom-6 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-red-500 text-white shadow-lg"><Phone className="h-7 w-7"/></a>
     </main>
   )
 }
