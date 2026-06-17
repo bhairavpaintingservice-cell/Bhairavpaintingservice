@@ -7,8 +7,8 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
     },
     sitemap: [
-      'https://bhairavpainting.vercel.app/sitemap.xml',
-      'https://bhairavpainting.vercel.app/sitemap_index.xml',
+      'https://bhairavpaintingservice.vercel.app/sitemap.xml',
+      'https://bhairavpaintingservice.vercel.app/sitemap_index.xml',
     ],
   }
 }
