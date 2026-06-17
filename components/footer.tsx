@@ -5,9 +5,10 @@ import { Phone, Mail, MapPin, MessageCircle, Clock } from "lucide-react"
 const services = [
   { name: "Residential Painting", href: "/services/residential" },
   { name: "Interior Painting", href: "/services/interior" },
-  { name: "Building & Exterior Painting", href: "/services/building" },
+  { name: "Building Painting", href: "/services/building" },
+  { name: "Exterior Painting", href: "/services/exterior" },
   { name: "Commercial Painting", href: "/services/commercial" },
-  { name: "Texture & Designer Finishes", href: "/services/texture" },
+  { name: "Texture & Designer Finishes", href: "/services/designer/texture" },
   { name: "Waterproofing", href: "/services/waterproofing" },
 ]
 
