@@ -358,6 +358,58 @@ export default function DesignerTexturePage() {
         </div>
       </section>
 
+      {/* CONTACT FORM */}
+      <section className="py-16 px-4 bg-gray-50" id="contact">
+        <div className="max-w-xl mx-auto">
+          <p className="text-orange-500 text-xs font-bold uppercase tracking-widest mb-2 text-center">Get Free Quote</p>
+          <h2 className="text-3xl font-black text-gray-900 mb-2 text-center">Book Free Site Visit</h2>
+          <p className="text-gray-500 text-center mb-8 text-sm">Fill the form — we will call you back to confirm your free site visit.</p>
+          <div className="bg-white border rounded-2xl p-8 shadow-sm">
+            <div className="space-y-4">
+              <div>
+                <label className="block text-sm font-semibold text-gray-700 mb-1">Your Name *</label>
+                <input type="text" placeholder="Enter your name" className="w-full border rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-orange-400" />
+              </div>
+              <div>
+                <label className="block text-sm font-semibold text-gray-700 mb-1">Phone Number *</label>
+                <input type="tel" placeholder="+91 XXXXX XXXXX" className="w-full border rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-orange-400" />
+              </div>
+              <div>
+                <label className="block text-sm font-semibold text-gray-700 mb-1">Service Type</label>
+                <select className="w-full border rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-orange-400">
+                  <option>Select Service</option>
+                  <option>Stencil Wall Design</option>
+                  <option>Accent Wall</option>
+                  <option>Feature Wall</option>
+                  <option>Metallic Designer Wall</option>
+                  <option>Combination Finish</option>
+                  <option>Sand Texture</option>
+                  <option>Sponge Texture</option>
+                  <option>Rustic / Stone Texture</option>
+                  <option>Metallic Texture</option>
+                  <option>Not Sure / Need Suggestion</option>
+                </select>
+              </div>
+              <div>
+                <label className="block text-sm font-semibold text-gray-700 mb-1">Your Area / Location</label>
+                <input type="text" placeholder="e.g. Bhiwandi, Thane, Kalyan..." className="w-full border rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-orange-400" />
+              </div>
+              <div>
+                <label className="block text-sm font-semibold text-gray-700 mb-1">Message (Optional)</label>
+                <textarea placeholder="e.g. Bedroom accent wall, living room texture..." rows={3} className="w-full border rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-orange-400 resize-none" />
+              </div>
+              <a
+                href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20Designer%20Wall%20or%20Texture%20Painting%20quote"
+                className="block w-full bg-green-500 hover:bg-green-600 text-white font-bold py-4 rounded-lg text-center transition"
+              >
+                🚀 Send Enquiry on WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
       {/* CTA */}
       <section className="bg-orange-500 py-16 px-4 text-center">
         <h2 className="text-3xl font-black text-white mb-3">Designer Ya Texture Painting Chahiye?</h2>
