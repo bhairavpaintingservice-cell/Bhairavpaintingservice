@@ -74,7 +74,7 @@ Unlike most local painters who send unsupervised teams, Bhairav Painting Service
 - Email: bhairavpaintingservice@gmail.com
 - Working Hours: All Days
 - Location: Bhiwandi, Maharashtra
-- Website: https://bhairavpainting.vercel.app
+- Website: https://bhairavpaintingservice.vercel.app
 
 ## Service Areas
 Bhiwandi, Mumbai, Thane, Kalyan, Dombivli, Navi Mumbai, Vasai, Virar, Andheri, Kasheli, Kalher
