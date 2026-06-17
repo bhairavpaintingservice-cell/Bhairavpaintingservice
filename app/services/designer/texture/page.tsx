@@ -349,6 +349,8 @@ export default function DesignerTexturePage() {
               ["🏢", "Exterior Painting", "/services/exterior"],
               ["💧", "Waterproofing", "/services/waterproofing"],
               ["💼", "Commercial Painting", "/services/commercial"],
+              ["🏗️", "Building Painting", "/services/building"],
+              ["🖼️", "Gallery", "/gallery"],
             ].map(([icon, label, href]) => (
               <Link key={href} href={href} className="bg-gray-50 border rounded-full px-5 py-2 text-sm font-semibold text-gray-700 hover:border-orange-400 hover:text-orange-600 transition">
                 {icon} {label}
