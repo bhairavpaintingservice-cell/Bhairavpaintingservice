@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Exterior Painting Services | Bhairav Painting Service",
     description: "Professional exterior painting for homes, buildings & societies. 47+ years experience. Free site visit.",
-    url: "https://bhairavpainting.vercel.app/services/exterior",
+    url: "https://bhairavpaintingservice.vercel.app/services/exterior",
     siteName: "Bhairav Painting Service",
     locale: "en_IN",
     type: "website",
