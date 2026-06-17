@@ -11,9 +11,8 @@ const services = [
   { title: "Building Painting", description: "Complete building painting for societies & commercial complexes. Long-lasting results.", image: "/images/portfolio-building.webp", href: "/services/building" },
   { title: "Exterior Painting", description: "Weather-resistant exterior painting solutions. Durable, fade-resistant finish.", image: "/images/exterior-new.jpg", href: "/services/exterior" },
   { title: "Commercial Painting", description: "Office, showroom & commercial space painting. Minimal disruption, fast completion.", image: "/images/portfolio-office.webp", href: "/services/commercial" },
-  { title: "Texture Painting", description: "Premium texture finishes for luxury interiors. Give your walls a designer look.", image: "/images/texture.webp", href: "/services/texture" },
+  { title: "Designer Wall & Texture Painting", description: "Custom designer wall art & premium texture finishes — stencil work, accent walls & decorative painting for luxury interiors.", image: "/images/texture.webp", href: "/services/designer/texture" },
   { title: "Waterproofing", description: "Complete waterproofing for terrace, bathroom & exterior walls. Permanent solution.", image: "/images/waterproofing.jpg", href: "/services/waterproofing" },
-  { title: "Designer Wall Painting", description: "Custom wall art, stencil work & decorative painting for premium interiors.", image: "/images/portfolio-accent.webp", href: "/services/designer" },
 ]
 
 const features = [
