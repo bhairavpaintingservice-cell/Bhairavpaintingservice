@@ -16,7 +16,7 @@ const playfair = Playfair_Display({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://bhairavpainting.vercel.app'),
+  metadataBase: new URL('https://bhairavpaintingservice.vercel.app'),
   title: 'Bhairav Painting Service | Mumbai & Bhiwandi',
   description: 'Trusted painting contractors in Mumbai & Bhiwandi. Residential, Commercial & Texture painting. 47+ years experience. Free site visit!',
   keywords: [
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Bhairav Painting Service | Mumbai & Bhiwandi',
     description: 'Professional painting services — Residential, Commercial, Exterior & Designer finishes. 47+ years experience.',
-    url: 'https://bhairavpainting.vercel.app',
+    url: 'https://bhairavpaintingservice.vercel.app',
     siteName: 'Bhairav Painting Service',
     locale: 'en_IN',
     type: 'website',
@@ -73,7 +73,7 @@ const schemaMarkup = {
   "@type": "LocalBusiness",
   "name": "Bhairav Painting Service",
   "description": "Professional painting services in Mumbai & Bhiwandi — Residential, Commercial, Exterior & Texture painting.",
-  "url": "https://bhairavpainting.vercel.app",
+  "url": "https://bhairavpaintingservice.vercel.app",
   "telephone": "+919158800517",
   "email": "bhairavpaintingservice@gmail.com",
   "address": {
@@ -99,7 +99,7 @@ const schemaMarkup = {
     "False Ceiling",
     "Designer Painting"
   ],
-  "image": "https://bhairavpainting.vercel.app/og-image.jpg",
+  "image": "https://bhairavpaintingservice.vercel.app/og-image.jpg",
   "priceRange": "₹₹",
   "openingHours": "Mo-Su 08:00-20:00"
 }
