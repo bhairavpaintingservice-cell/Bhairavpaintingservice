@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Interior Painting Services | Bhairav Painting Service",
     description: "Professional interior painting for homes & flats. Bedroom, living room, kitchen. 47+ years experience. Free site visit.",
-    url: "https://bhairavpainting.vercel.app/services/interior",
+    url: "https://bhairavpaintingservice.vercel.app/services/interior",
     siteName: "Bhairav Painting Service",
     locale: "en_IN",
     type: "website",
