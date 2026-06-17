@@ -342,18 +342,20 @@ export default function DesignerTexturePage() {
         <div className="max-w-5xl mx-auto">
           <p className="text-orange-500 text-xs font-bold uppercase tracking-widest mb-2">Related Services</p>
           <h2 className="text-2xl font-black text-gray-900 mb-6">Other Services We Offer</h2>
-          <div className="flex flex-wrap gap-3">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
             {[
-              ["🏠", "Residential Painting", "/services/residential"],
-              ["🖌️", "Interior Painting", "/services/interior"],
-              ["🏢", "Exterior Painting", "/services/exterior"],
-              ["💧", "Waterproofing", "/services/waterproofing"],
-              ["💼", "Commercial Painting", "/services/commercial"],
-              ["🏗️", "Building Painting", "/services/building"],
-              ["🎨", "Designer & Texture Painting", "/services/designer/texture"],
-            ].map(([icon, label, href]) => (
-              <Link key={href} href={href} className="bg-gray-50 border rounded-full px-5 py-2 text-sm font-semibold text-gray-700 hover:border-orange-400 hover:text-orange-600 transition">
-                {icon} {label}
+              ["Residential Painting", "/services/residential", "/images/residential.webp"],
+              ["Interior Painting", "/services/interior", "/images/portfolio-bedroom.webp"],
+              ["Exterior Painting", "/services/exterior", "/images/exterior-new.jpg"],
+              ["Waterproofing", "/services/waterproofing", "/images/waterproofing.jpg"],
+              ["Commercial Painting", "/services/commercial", "/images/commercial.webp"],
+              ["Building Painting", "/services/building", "/images/portfolio-building.webp"],
+            ].map(([label, href, img]) => (
+              <Link key={href} href={href} className="group block bg-gray-50 border rounded-xl overflow-hidden hover:border-orange-400 transition shadow-sm">
+                <img src={img} alt={`${label} Mumbai Thane Bhiwandi`} loading="lazy" className="w-full h-28 object-cover group-hover:scale-105 transition-transform duration-300" />
+                <div className="p-2 text-center">
+                  <span className="text-xs font-bold text-gray-700 group-hover:text-orange-600 transition">{label}</span>
+                </div>
               </Link>
             ))}
           </div>
