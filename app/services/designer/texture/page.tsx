@@ -255,31 +255,6 @@ export default function DesignerTexturePage() {
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="py-16 px-4 bg-white">
-        <div className="max-w-3xl mx-auto">
-          <p className="text-orange-500 text-xs font-bold uppercase tracking-widest mb-2 text-center">FAQs</p>
-          <h2 className="text-3xl font-black text-gray-900 mb-3 text-center">Frequently Asked Questions</h2>
-          <p className="text-gray-500 text-center mb-8">Common questions about designer wall & texture painting.</p>
-          <div className="space-y-3">
-            {faqs.map((faq, i) => (
-              <div key={i} className="bg-gray-50 border rounded-xl overflow-hidden">
-                <button
-                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                  className="w-full flex justify-between items-center p-5 text-left font-semibold text-gray-900 hover:bg-gray-100 transition"
-                >
-                  {faq.q}
-                  <ChevronDown size={18} className={`text-orange-500 transition-transform flex-shrink-0 ml-3 ${openFaq === i ? "rotate-180" : ""}`} />
-                </button>
-                {openFaq === i && (
-                  <div className="px-5 pb-5 text-gray-600 text-sm leading-relaxed">{faq.a}</div>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* AREAS */}
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-5xl mx-auto">
@@ -339,6 +314,31 @@ export default function DesignerTexturePage() {
         </div>
       </section>
 
+
+      {/* FAQ */}
+      <section className="py-16 px-4 bg-white">
+        <div className="max-w-3xl mx-auto">
+          <p className="text-orange-500 text-xs font-bold uppercase tracking-widest mb-2 text-center">FAQs</p>
+          <h2 className="text-3xl font-black text-gray-900 mb-3 text-center">Frequently Asked Questions</h2>
+          <p className="text-gray-500 text-center mb-8">Common questions about designer wall & texture painting.</p>
+          <div className="space-y-3">
+            {faqs.map((faq, i) => (
+              <div key={i} className="bg-gray-50 border rounded-xl overflow-hidden">
+                <button
+                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                  className="w-full flex justify-between items-center p-5 text-left font-semibold text-gray-900 hover:bg-gray-100 transition"
+                >
+                  {faq.q}
+                  <ChevronDown size={18} className={`text-orange-500 transition-transform flex-shrink-0 ml-3 ${openFaq === i ? "rotate-180" : ""}`} />
+                </button>
+                {openFaq === i && (
+                  <div className="px-5 pb-5 text-gray-600 text-sm leading-relaxed">{faq.a}</div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* RELATED */}
       <section className="py-12 px-4 bg-white">
