@@ -340,17 +340,20 @@ export default function WaterproofingPage() {
         <div className="max-w-5xl mx-auto">
           <p className="text-orange-500 text-xs font-bold uppercase tracking-widest mb-2">Related Services</p>
           <h2 className="text-2xl font-black text-gray-900 mb-6">Other Services We Offer</h2>
-          <div className="flex flex-wrap gap-3">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
             {[
-              ["🏠", "Residential Painting", "/services/residential"],
-              ["🖌️", "Interior Painting", "/services/interior"],
-              ["🏢", "Exterior Painting", "/services/exterior"],
-              ["🎨", "Texture Painting", "/services/texture"],
-              ["✨", "Designer Painting", "/services/designer"],
-              ["💼", "Commercial Painting", "/services/commercial"],
-            ].map(([icon, label, href]) => (
-              <Link key={href} href={href} className="bg-gray-50 border rounded-full px-5 py-2 text-sm font-semibold text-gray-700 hover:border-orange-400 hover:text-orange-600 transition">
-                {icon} {label}
+              ["Residential Painting", "/services/residential", "/images/residential.webp"],
+              ["Interior Painting", "/services/interior", "/images/portfolio-bedroom.webp"],
+              ["Exterior Painting", "/services/exterior", "/images/exterior-new.jpg"],
+              ["Designer Painting", "/services/designer", "/images/designer/accent-wall.jpg"],
+              ["Texture Painting", "/services/designer/texture", "/images/texture.webp"],
+              ["Commercial Painting", "/services/commercial", "/images/commercial.webp"],
+            ].map(([label, href, img]) => (
+              <Link key={href} href={href} className="group block bg-gray-50 border rounded-xl overflow-hidden hover:border-orange-400 transition shadow-sm">
+                <img src={img} alt={`${label} Mumbai Thane Bhiwandi`} loading="lazy" className="w-full h-28 object-cover group-hover:scale-105 transition-transform duration-300" />
+                <div className="p-2 text-center">
+                  <span className="text-xs font-bold text-gray-700 group-hover:text-orange-600 transition">{label}</span>
+                </div>
               </Link>
             ))}
           </div>
@@ -371,47 +374,52 @@ export default function WaterproofingPage() {
         </div>
       </section>
 
-      {/* CONTACT FORM */}
-      <section className="py-16 px-4 bg-white" id="contact">
-        <div className="max-w-xl mx-auto">
-          <p className="text-orange-500 text-xs font-bold uppercase tracking-widest mb-2 text-center">Get Free Quote</p>
-          <h2 className="text-3xl font-black text-gray-900 mb-2 text-center">Book Free Site Visit</h2>
-          <p className="text-gray-500 text-center mb-8 text-sm">Fill the form — we will call you back to confirm your free waterproofing site visit.</p>
-          <div className="bg-white border rounded-2xl p-8 shadow-sm">
-            <div className="space-y-4">
-              <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-1">Your Name *</label>
-                <input type="text" placeholder="Enter your name" className="w-full border rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-orange-400" />
-              </div>
-              <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-1">Phone Number *</label>
-                <input type="tel" placeholder="+91 XXXXX XXXXX" className="w-full border rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-orange-400" />
-              </div>
-              <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-1">Waterproofing Type</label>
-                <select className="w-full border rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-orange-400">
-                  <option>Select Type</option>
-                  <option>Terrace Waterproofing</option>
-                  <option>Roof Leakage Repair</option>
-                  <option>Bathroom Waterproofing</option>
-                  <option>Damp Wall Treatment</option>
-                  <option>Exterior Waterproofing</option>
-                  <option>Basement Waterproofing</option>
-                  <option>Not Sure / Multiple Areas</option>
-                </select>
-              </div>
-              <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-1">Your Area / Location</label>
-                <input type="text" placeholder="e.g. Bhiwandi, Thane, Kalyan..." className="w-full border rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-orange-400" />
-              </div>
-              <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-1">Describe the Problem (Optional)</label>
-                <textarea placeholder="e.g. Terrace leakage, bathroom seepage, damp walls..." rows={3} className="w-full border rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-orange-400 resize-none" />
-              </div>
-              <a
-                href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20Waterproofing%20quote"
-                className="block w-full bg-green-500 hover:bg-green-600 text-white font-bold py-4 rounded-lg text-center transition"
-              >
+      {/* CONTACT FORM + CTA - Combined Orange Section */}
+      <section className="bg-orange-500 py-16 px-4 text-center" id="contact">
+        <h2 className="text-3xl md:text-4xl font-black text-white mb-3">Get A Free Waterproofing Quote</h2>
+        <p className="text-orange-100 mb-8">Serving Mumbai, Thane, Bhiwandi, Kalyan & Navi Mumbai. Free site visit — no obligation.</p>
+        <div className="flex gap-4 justify-center flex-wrap mb-10">
+          <a href="tel:+919158800517" className="bg-white text-orange-600 font-bold px-8 py-3 rounded-lg flex items-center gap-2 hover:bg-orange-50 transition">
+            <Phone size={18} /> Call Now
+          </a>
+          <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20Waterproofing%20quote" className="border-2 border-white text-white font-bold px-8 py-3 rounded-lg flex items-center gap-2 hover:bg-white hover:text-orange-600 transition">
+            <MessageCircle size={18} /> WhatsApp Now
+          </a>
+        </div>
+        <div className="max-w-2xl mx-auto bg-orange-600 rounded-2xl p-8 shadow-lg text-left">
+          <h3 className="text-white font-bold text-lg text-center mb-6">📋 Free Quote — Fill Form Below</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label className="block text-xs font-bold text-orange-200 uppercase tracking-widest mb-1">Your Name *</label>
+              <input type="text" placeholder="Enter your name" className="w-full rounded-lg px-4 py-3 text-sm focus:outline-none bg-white text-gray-800" />
+            </div>
+            <div>
+              <label className="block text-xs font-bold text-orange-200 uppercase tracking-widest mb-1">Phone Number *</label>
+              <input type="tel" placeholder="+91 XXXXX XXXXX" className="w-full rounded-lg px-4 py-3 text-sm focus:outline-none bg-white text-gray-800" />
+            </div>
+            <div>
+              <label className="block text-xs font-bold text-orange-200 uppercase tracking-widest mb-1">Waterproofing Type</label>
+              <select className="w-full rounded-lg px-4 py-3 text-sm focus:outline-none bg-white text-gray-800">
+                <option>Select Type</option>
+                <option>Terrace Waterproofing</option>
+                <option>Roof Leakage Repair</option>
+                <option>Bathroom Waterproofing</option>
+                <option>Damp Wall Treatment</option>
+                <option>Exterior Waterproofing</option>
+                <option>Basement Waterproofing</option>
+                <option>Not Sure / Multiple Areas</option>
+              </select>
+            </div>
+            <div>
+              <label className="block text-xs font-bold text-orange-200 uppercase tracking-widest mb-1">Your Area</label>
+              <input type="text" placeholder="e.g. Bhiwandi, Thane, Kalyan..." className="w-full rounded-lg px-4 py-3 text-sm focus:outline-none bg-white text-gray-800" />
+            </div>
+            <div className="md:col-span-2">
+              <label className="block text-xs font-bold text-orange-200 uppercase tracking-widest mb-1">Describe the Problem (Optional)</label>
+              <textarea placeholder="e.g. Terrace leakage, bathroom seepage, damp walls..." rows={3} className="w-full rounded-lg px-4 py-3 text-sm focus:outline-none bg-white text-gray-800 resize-none" />
+            </div>
+            <div className="md:col-span-2">
+              <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20Waterproofing%20quote" className="block w-full bg-blue-900 hover:bg-blue-800 text-white font-bold py-4 rounded-lg text-center transition text-lg">
                 🚀 Send Enquiry on WhatsApp
               </a>
             </div>
@@ -419,20 +427,9 @@ export default function WaterproofingPage() {
         </div>
       </section>
 
-      {/* CTA BANNER */}
-      <section className="bg-orange-500 py-16 px-4 text-center">
-        <h2 className="text-3xl font-black text-white mb-3">Leakage Problem Hai? Free Site Visit Book Karo!</h2>
-        <p className="text-orange-100 mb-8">Mumbai, Thane, Bhiwandi, Kalyan & Navi Mumbai. We assess, suggest & quote on the spot.</p>
-        <div className="flex gap-4 justify-center flex-wrap">
-          <a href="tel:+919158800517" className="bg-white text-orange-600 font-bold px-8 py-3 rounded-lg flex items-center gap-2 hover:bg-orange-50 transition">
-            <Phone size={18} /> Call Now
-          </a>
-          <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20Waterproofing%20quote" className="bg-green-500 text-white font-bold px-8 py-3 rounded-lg flex items-center gap-2 hover:bg-green-600 transition">
-            <MessageCircle size={18} /> WhatsApp Now
-          </a>
-        </div>
-      </section>
-
+      {/* Floating Buttons */}
+      <a href="https://wa.me/919158800517" target="_blank" rel="noopener noreferrer" className="fixed bottom-24 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-green-500 text-white shadow-lg"><MessageCircle className="h-7 w-7"/></a>
+      <a href="tel:+919158800517" className="fixed bottom-6 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-red-500 text-white shadow-lg"><Phone className="h-7 w-7"/></a>
     </main>
   )
 }
