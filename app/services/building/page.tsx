@@ -6,9 +6,16 @@ import { useState } from "react"
 import { Phone, MessageCircle, CheckCircle, MapPin, ChevronDown } from "lucide-react"
 
 const servicesIncluded = [
-  "Exterior Building Painting","Society Repainting","Waterproofing","Crack Filling",
-  "Terrace Coating","Staircase Painting","Parking Area Painting","Common Area Painting",
-  "Compound Wall Painting","Metal Railing Painting",
+  { title: "Exterior Building Painting", img: "/images/building/service-exterior-building.jpg" },
+  { title: "Society Repainting", img: "/images/building/service-society-repainting.jpg" },
+  { title: "Waterproofing", img: "/images/building/service-waterproofing.jpg" },
+  { title: "Crack Filling", img: "/images/building/service-crack-filling.jpg" },
+  { title: "Terrace Coating", img: "/images/building/service-terrace-coating.jpg" },
+  { title: "Staircase Painting", img: "/images/building/service-staircase-painting.jpg" },
+  { title: "Parking Area Painting", img: "/images/building/service-parking-area.jpg" },
+  { title: "Common Area Painting", img: "/images/building/service-common-area.jpg" },
+  { title: "Compound Wall Painting", img: "/images/building/service-compound-wall.jpg" },
+  { title: "Metal Railing Painting", img: "/images/building/service-metal-railing.jpg" },
 ]
 
 const whoFor = [
@@ -128,11 +135,15 @@ export default function BuildingPaintingPage() {
           <span className="inline-block rounded-full border border-gray-300 px-4 py-1 text-xs font-semibold uppercase tracking-widest" style={{color:"#6b7280"}}>What's Included</span>
           <h2 className="mt-3 text-3xl font-black sm:text-4xl" style={{color:"#1B2B8A"}}>Building Painting Services Include</h2>
           <p className="mt-3 text-sm max-w-xl" style={{color:"#6b7280"}}>Complete end-to-end service — everything a building or society needs in one project.</p>
-          <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
             {servicesIncluded.map((s, i) => (
-              <div key={i} className="flex items-center gap-3 rounded-xl border border-gray-100 bg-gray-50 px-4 py-3">
-                <CheckCircle className="h-5 w-5 text-orange-500 shrink-0" />
-                <span className="text-sm font-medium" style={{color:"#1B2B8A"}}>{s}</span>
+              <div key={i} className="group relative overflow-hidden rounded-xl shadow-sm border border-gray-100">
+                <img src={s.img} alt={`${s.title} Mumbai Thane Bhiwandi`} loading="lazy" className="w-full h-36 object-cover group-hover:scale-105 transition-transform duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-3 flex items-end gap-2">
+                  <CheckCircle className="h-4 w-4 text-orange-400 shrink-0 mb-0.5" />
+                  <span className="text-white text-xs font-bold leading-tight">{s.title}</span>
+                </div>
               </div>
             ))}
           </div>
