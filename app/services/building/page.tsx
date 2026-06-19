@@ -19,12 +19,12 @@ const servicesIncluded = [
 ]
 
 const whoFor = [
-  { icon: "🏢", title: "Housing Societies", desc: "CHS committees & RWAs" },
-  { icon: "🏗️", title: "Apartment Complexes", desc: "G+4 to G+20 buildings" },
-  { icon: "👷", title: "Builders & Developers", desc: "New construction handover" },
-  { icon: "🏬", title: "Commercial Buildings", desc: "Offices, IT parks, malls" },
-  { icon: "🏫", title: "Schools & Hospitals", desc: "Institutional projects" },
-  { icon: "🏭", title: "Industrial Premises", desc: "Warehouses, factories" },
+  { img: "/images/building/clients/housing-societies.jpg", title: "Housing Societies", desc: "Society repainting and maintenance services for residential complexes.", bullets: ["Society Repainting", "Waterproofing", "Common Area Painting"] },
+  { img: "/images/building/clients/apartment-complexes.jpg", title: "Apartment Complexes", desc: "Painting solutions for multi-tower residential projects.", bullets: ["Exterior Painting", "Staircase Painting", "Terrace Coating"] },
+  { img: "/images/building/clients/builders-developers.jpg", title: "Builders & Developers", desc: "Project handover and new construction painting services.", bullets: ["New Building Painting", "Exterior Finishes", "Waterproofing"] },
+  { img: "/images/building/clients/commercial-buildings.jpg", title: "Commercial Buildings", desc: "Professional painting for commercial properties.", bullets: ["Office Painting", "Exterior Painting", "Maintenance Painting"] },
+  { img: "/images/building/clients/schools-hospitals.jpg", title: "Schools & Hospitals", desc: "Painting for institutional buildings.", bullets: ["Interior Painting", "Exterior Painting", "Maintenance Work"] },
+  { img: "/images/building/clients/industrial-premises.jpg", title: "Industrial Premises", desc: "Large-scale industrial painting solutions.", bullets: ["Warehouse Painting", "Factory Painting", "Protective Coatings"] },
 ]
 
 const problems = [
@@ -156,11 +156,23 @@ export default function BuildingPaintingPage() {
           <span className="inline-block rounded-full border border-gray-300 px-4 py-1 text-xs font-semibold uppercase tracking-widest" style={{color:"#6b7280"}}>Who We Work With</span>
           <h2 className="mt-3 text-3xl font-black sm:text-4xl" style={{color:"#1B2B8A"}}>We Specialize in Large-Scale Projects</h2>
           <p className="mt-3 text-sm max-w-xl" style={{color:"#6b7280"}}>Not just homes — we handle the big jobs that need proper planning, coordination & experience.</p>
-          <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {whoFor.map((w, i) => (
-              <div key={i} className="flex items-center gap-3 rounded-xl border border-gray-100 bg-white px-4 py-4">
-                <span className="text-2xl">{w.icon}</span>
-                <div><h3 className="font-bold text-sm" style={{color:"#1B2B8A"}}>{w.title}</h3><p className="text-xs mt-0.5" style={{color:"#6b7280"}}>{w.desc}</p></div>
+              <div key={i} className="group rounded-2xl border border-gray-100 bg-white overflow-hidden shadow-sm hover:shadow-md transition">
+                <div className="overflow-hidden h-44">
+                  <img src={w.img} alt={`${w.title} painting service Mumbai Thane Bhiwandi`} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                </div>
+                <div className="p-5">
+                  <h3 className="font-black text-base mb-1" style={{color:"#1B2B8A"}}>{w.title}</h3>
+                  <p className="text-xs mb-3" style={{color:"#6b7280"}}>{w.desc}</p>
+                  <div className="flex flex-col gap-1">
+                    {w.bullets.map((b, j) => (
+                      <span key={j} className="text-xs text-gray-700 flex items-center gap-1.5">
+                        <span className="text-orange-500 font-bold">✓</span> {b}
+                      </span>
+                    ))}
+                  </div>
+                </div>
               </div>
             ))}
           </div>
