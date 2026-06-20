@@ -28,12 +28,12 @@ const whoFor = [
 ]
 
 const problems = [
-  { icon: "🎨", title: "Exterior Paint Peeling", desc: "Old paint chipping & flaking off walls" },
-  { icon: "💧", title: "Water Seepage", desc: "Moisture entering through walls or terrace" },
-  { icon: "🧱", title: "Wall Cracks", desc: "Structural & surface cracks needing filling" },
-  { icon: "🌫️", title: "Faded Paint", desc: "Sun & weather worn-out exterior color" },
-  { icon: "⚫", title: "Damp Patches", desc: "Dark patches from moisture build-up" },
-  { icon: "🌧️", title: "Terrace Leakage", desc: "Water leaking through terrace into flats below" },
+  { img: "/images/building/problems/paint-peeling.jpg", title: "Exterior Paint Peeling", desc: "Old paint chipping & flaking off walls", bullets: ["Surface Preparation", "Crack Filling", "Premium Repaint"] },
+  { img: "/images/building/problems/water-seepage.jpg", title: "Water Seepage", desc: "Moisture entering through walls or terrace", bullets: ["Waterproof Treatment", "Damp Proofing", "Anti-Seepage Coating"] },
+  { img: "/images/building/problems/wall-cracks.jpg", title: "Wall Cracks", desc: "Structural & surface cracks needing filling", bullets: ["Crack Filling", "Surface Leveling", "Weather-Proof Finish"] },
+  { img: "/images/building/problems/faded-paint.jpg", title: "Faded Paint", desc: "Sun & weather worn-out exterior color", bullets: ["UV Resistant Paint", "Exterior Repainting", "Long-Lasting Finish"] },
+  { img: "/images/building/problems/damp-patches.jpg", title: "Damp Patches", desc: "Dark patches from moisture build-up", bullets: ["Anti-Fungal Treatment", "Damp Wall Repair", "Moisture Barrier"] },
+  { img: "/images/building/problems/terrace-leakage.jpg", title: "Terrace Leakage", desc: "Water leaking through terrace into flats below", bullets: ["Terrace Waterproofing", "Terrace Coating", "Leakage Repair"] },
 ]
 
 const whyUs = [
@@ -185,11 +185,23 @@ export default function BuildingPaintingPage() {
           <span className="inline-block rounded-full border border-gray-300 px-4 py-1 text-xs font-semibold uppercase tracking-widest" style={{color:"#6b7280"}}>Common Issues</span>
           <h2 className="mt-3 text-3xl font-black sm:text-4xl" style={{color:"#1B2B8A"}}>Common Building Problems We Solve</h2>
           <p className="mt-3 text-sm max-w-xl" style={{color:"#6b7280"}}>If your building shows any of these signs, it's time for professional attention.</p>
-          <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {problems.map((p, i) => (
-              <div key={i} className="flex gap-3 rounded-xl bg-orange-50 p-4">
-                <span className="text-xl shrink-0">{p.icon}</span>
-                <div><h3 className="font-bold text-sm" style={{color:"#1B2B8A"}}>{p.title}</h3><p className="text-xs mt-0.5" style={{color:"#6b7280"}}>{p.desc}</p></div>
+              <div key={i} className="group rounded-2xl border border-gray-100 bg-white overflow-hidden shadow-sm hover:shadow-md transition">
+                <div className="overflow-hidden h-44">
+                  <img src={p.img} alt={`${p.title} - Building problem Mumbai Thane Bhiwandi`} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                </div>
+                <div className="p-5">
+                  <h3 className="font-black text-base mb-1" style={{color:"#1B2B8A"}}>{p.title}</h3>
+                  <p className="text-xs mb-3" style={{color:"#6b7280"}}>{p.desc}</p>
+                  <div className="flex flex-col gap-1">
+                    {p.bullets.map((b, j) => (
+                      <span key={j} className="text-xs text-gray-700 flex items-center gap-1.5">
+                        <span className="text-orange-500 font-bold">✓</span> {b}
+                      </span>
+                    ))}
+                  </div>
+                </div>
               </div>
             ))}
           </div>
