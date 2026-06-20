@@ -147,6 +147,11 @@ export default function BuildingPaintingPage() {
               </div>
             ))}
           </div>
+          <div className="mt-8 rounded-xl bg-blue-50 border border-blue-100 p-6">
+            <p className="text-sm leading-relaxed text-gray-600">
+              Bhairav Painting Service provides a complete range of building painting and maintenance services for housing societies, apartment complexes and commercial buildings across Mumbai, Thane, Bhiwandi and Kalyan. Our building painting services include <strong className="text-gray-900">exterior building painting, society repainting, waterproofing, crack filling, terrace coating, staircase painting, parking area painting, common area painting, compound wall painting and metal railing painting</strong> — all managed by our experienced team under direct owner supervision. We handle projects of all sizes, from G+4 societies to large multi-tower complexes with hundreds of flats.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -292,6 +297,11 @@ export default function BuildingPaintingPage() {
               <div key={i} className="text-center min-w-[100px]"><p className="text-xl font-black text-orange-400">{num}</p><p className="text-xs text-white/70 mt-1">{lbl}</p></div>
             ))}
           </div>
+          <div className="mt-8 rounded-xl bg-white/10 p-6">
+            <p className="text-sm leading-relaxed text-white/80">
+              Choosing the right contractor for building or society painting in Mumbai, Thane and Bhiwandi is critical — a poorly executed project means peeling paint, recurring leakage and wasted money within 2–3 years. Bhairav Painting Service has been trusted by housing societies, apartment complexes, builders and commercial property owners for over <strong className="text-white">47 years</strong> because we combine proper surface preparation, quality branded paints, experienced workmanship and complete accountability. Every project is personally supervised by the owner — not outsourced or delegated — ensuring consistent quality from the first coat to the final cleanup.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -370,6 +380,11 @@ export default function BuildingPaintingPage() {
                 <p className="mt-1 text-xs text-white/60">{s.desc}</p>
               </div>
             ))}
+          </div>
+          <div className="mt-10 rounded-xl bg-white/10 p-6">
+            <p className="text-sm leading-relaxed text-white/80">
+              Our building painting process begins with a <strong className="text-white">free site visit and inspection</strong> where we assess the surface condition, identify problem areas such as cracks, seepage or peeling, and measure the area accurately. We then provide a detailed written quotation suitable for society AGM presentation. Once approved, we begin with thorough <strong className="text-white">surface preparation</strong> — cleaning, crack filling, waterproofing where needed, and applying primer — before the actual painting begins. We use only branded premium exterior paints and apply the required number of coats for a durable, long-lasting finish. The project is completed with full cleanup, and we do a joint inspection with the society representative before handing over.
+            </p>
           </div>
         </div>
       </section>
