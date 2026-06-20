@@ -205,6 +205,70 @@ export default function BuildingPaintingPage() {
               </div>
             ))}
           </div>
+
+          {/* Explanatory Paragraph */}
+          <div className="mt-12 rounded-2xl bg-orange-50 border border-orange-100 p-8">
+            <p className="text-sm leading-relaxed" style={{color:"#4b5563"}}>
+              Building exteriors in Mumbai, Thane, Bhiwandi and surrounding areas face constant exposure to sun, rain, humidity and pollution. Over time, issues such as paint peeling, wall cracks, water seepage, damp patches and terrace leakage can damage both the appearance and structural integrity of the property. Bhairav Painting Service provides professional building painting, waterproofing, crack filling and exterior maintenance solutions for housing societies, apartment complexes, commercial buildings and industrial premises across Mumbai, Thane, Bhiwandi, Kalyan and Navi Mumbai. Our experienced team inspects each property thoroughly, identifies the root cause of the damage, and recommends the most suitable long-lasting repair, waterproofing and repainting solution. Whether it is a single building or a large residential complex, we ensure proper surface preparation, quality materials and a durable finish that protects the structure for years.
+            </p>
+          </div>
+
+          {/* Problem → Solution Table */}
+          <div className="mt-10">
+            <h3 className="text-lg font-black mb-4" style={{color:"#1B2B8A"}}>Problem → Solution at a Glance</h3>
+            <div className="overflow-x-auto rounded-xl border border-gray-100">
+              <table className="w-full text-sm">
+                <thead className="bg-[#1B2B8A] text-white">
+                  <tr>
+                    <th className="px-6 py-3 text-left font-bold">Problem</th>
+                    <th className="px-6 py-3 text-left font-bold">Our Solution</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    ["Paint Peeling", "Surface Preparation + Exterior Repainting"],
+                    ["Water Seepage", "Waterproofing Treatment + Anti-Seepage Coating"],
+                    ["Wall Cracks", "Crack Filling + Surface Leveling + Repaint"],
+                    ["Faded Paint", "UV Resistant Exterior Repaint"],
+                    ["Damp Patches", "Anti-Fungal Treatment + Damp Proofing"],
+                    ["Terrace Leakage", "Terrace Waterproofing + Protective Coating"],
+                  ].map(([prob, sol], i) => (
+                    <tr key={i} className={i % 2 === 0 ? "bg-white" : "bg-gray-50"}>
+                      <td className="px-6 py-3 font-semibold" style={{color:"#1B2B8A"}}>{prob}</td>
+                      <td className="px-6 py-3" style={{color:"#4b5563"}}>{sol}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          {/* Problems FAQs */}
+          <div className="mt-10">
+            <h3 className="text-lg font-black mb-4" style={{color:"#1B2B8A"}}>Frequently Asked Questions</h3>
+            <div className="space-y-3 max-w-3xl">
+              {[
+                { q: "Why is exterior paint peeling from my building?", a: "Exterior paint peeling is caused by moisture trapped behind the paint surface, poor surface preparation before painting, low-quality paint, or age. In Mumbai and surrounding areas, the combination of heavy monsoon rain and summer heat accelerates this process. Proper surface preparation, waterproof primer and quality exterior paint can prevent peeling for 5–7 years." },
+                { q: "How do I know if my building needs waterproofing?", a: "Signs that your building needs waterproofing include damp patches on interior walls or ceilings, water stains, mold or fungal growth, terrace water pooling, and cracks that allow water entry. If you notice any of these, a free site inspection by our team will help identify the extent of the problem and the best solution." },
+                { q: "Can wall cracks cause water seepage?", a: "Yes — even hairline cracks in exterior walls can allow water to penetrate during rain, leading to internal damp patches, paint bubbling and structural damage over time. Early crack filling with appropriate compounds followed by exterior repainting prevents water seepage from worsening." },
+                { q: "How often should a housing society repaint its building?", a: "For housing societies in Mumbai, Thane and Bhiwandi, exterior repainting every 4–6 years is recommended. High-rise buildings or those near the coast may need repainting every 3–4 years due to higher moisture and salt exposure. Regular maintenance painting extends the life of the structure." },
+                { q: "What is the best waterproofing solution for terraces?", a: "For terraces in Mumbai and surrounding areas, a combination of crack filling, waterproof membrane application and protective terrace coating provides the best long-term protection. Bhairav Painting Service recommends and applies proven waterproofing systems suited to local climate conditions, with a free site visit and written quotation before work begins." },
+              ].map((faq, i) => (
+                <div key={i} className="rounded-xl border border-gray-100 bg-gray-50 p-5">
+                  <p className="font-bold text-sm mb-2" style={{color:"#1B2B8A"}}>Q: {faq.q}</p>
+                  <p className="text-sm" style={{color:"#4b5563"}}>{faq.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Geo Paragraph */}
+          <div className="mt-8 rounded-xl border-l-4 border-orange-500 bg-white p-6">
+            <p className="text-sm leading-relaxed" style={{color:"#4b5563"}}>
+              <strong style={{color:"#111827"}}>Bhairav Painting Service</strong> provides building painting, waterproofing, crack filling and exterior maintenance services across <strong style={{color:"#111827"}}>Mumbai, Thane, Bhiwandi, Kalyan, Dombivli, Navi Mumbai, Vasai, Virar, Andheri and Kasheli</strong>. Contact us for a free site visit and written quotation — no obligation.
+            </p>
+          </div>
+
         </div>
       </section>
 
