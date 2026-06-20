@@ -313,22 +313,22 @@ export default function BuildingPaintingPage() {
           <span className="inline-block rounded-full border border-gray-300 px-4 py-1 text-xs font-semibold uppercase tracking-widest" style={{color:"#6b7280"}}>Transformation</span>
           <h2 className="mt-3 text-3xl font-black sm:text-4xl" style={{color:"#1B2B8A"}}>Before & After — See the Difference</h2>
           <p className="mt-3 text-sm max-w-xl" style={{color:"#6b7280"}}>Real building painting projects by Bhairav Painting Service across Mumbai & Bhiwandi.</p>
-          <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2">
+          <div style={{display:"grid", gridTemplateColumns:"repeat(2, 1fr)", gap:"24px"}} className="mt-10">
             {beforeAfter.map((ba, i) => (
-              <div key={i} className="rounded-2xl overflow-hidden border border-gray-100 bg-white shadow-sm hover:shadow-md transition">
-                <div className="grid grid-cols-2">
-                  <div className="relative h-44">
+              <div key={i} style={{borderRadius:"16px", overflow:"hidden", border:"1px solid #f0f0f0", background:"#fff", boxShadow:"0 1px 4px rgba(0,0,0,0.08)"}}>
+                <div style={{display:"grid", gridTemplateColumns:"1fr 1fr"}}>
+                  <div style={{position:"relative", height:"180px"}}>
                     <Image src={ba.before} alt={`Before building painting - ${ba.caption}`} fill className="object-cover"/>
-                    <span className="absolute top-2 left-2 bg-black/75 text-white text-xs font-bold px-2 py-1 rounded uppercase">Before</span>
+                    <span style={{position:"absolute", top:"8px", left:"8px", background:"rgba(0,0,0,0.75)", color:"#fff", fontSize:"10px", fontWeight:"700", padding:"2px 8px", borderRadius:"4px"}}>BEFORE</span>
                   </div>
-                  <div className="relative h-44">
+                  <div style={{position:"relative", height:"180px"}}>
                     <Image src={ba.after} alt={`After building painting - ${ba.caption} by Bhairav Painting Service`} fill className="object-cover"/>
-                    <span className="absolute top-2 left-2 bg-orange-500 text-white text-xs font-bold px-2 py-1 rounded uppercase">After</span>
+                    <span style={{position:"absolute", top:"8px", left:"8px", background:"#f97316", color:"#fff", fontSize:"10px", fontWeight:"700", padding:"2px 8px", borderRadius:"4px"}}>AFTER</span>
                   </div>
                 </div>
-                <div className="p-4">
-                  <p className="text-xs font-bold" style={{color:"#1B2B8A"}}>📍 {ba.caption}</p>
-                  <p className="text-xs mt-1" style={{color:"#6b7280"}}>{ba.service}</p>
+                <div style={{padding:"12px 16px"}}>
+                  <p style={{fontSize:"12px", fontWeight:"700", color:"#1B2B8A"}}>📍 {ba.caption}</p>
+                  <p style={{fontSize:"11px", color:"#6b7280", marginTop:"2px"}}>{ba.service}</p>
                 </div>
               </div>
             ))}
