@@ -49,6 +49,7 @@ const beforeAfter = [
   { before: "/images/exterior-new.jpg", after: "/images/portfolio-building.webp", caption: "Bhiwandi — G+5 Residential Society", service: "Exterior Painting + Waterproofing" },
   { before: "/images/residential.webp", after: "/images/exterior-new.jpg", caption: "Thane — G+7 Apartment Complex", service: "Full Exterior + Common Area Painting" },
   { before: "/images/portfolio-building.webp", after: "/images/residential.webp", caption: "Kalyan — G+4 Society", service: "Exterior Repainting + Crack Filling" },
+  { before: "/images/waterproofing.jpg", after: "/images/portfolio-building.webp", caption: "Navi Mumbai — Commercial Building", service: "Exterior Painting + Terrace Coating" },
 ]
 
 const recentProjects = [
@@ -312,7 +313,7 @@ export default function BuildingPaintingPage() {
           <span className="inline-block rounded-full border border-gray-300 px-4 py-1 text-xs font-semibold uppercase tracking-widest" style={{color:"#6b7280"}}>Transformation</span>
           <h2 className="mt-3 text-3xl font-black sm:text-4xl" style={{color:"#1B2B8A"}}>Before & After — See the Difference</h2>
           <p className="mt-3 text-sm max-w-xl" style={{color:"#6b7280"}}>Real building painting projects by Bhairav Painting Service across Mumbai & Bhiwandi.</p>
-          <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2">
             {beforeAfter.map((ba, i) => (
               <div key={i} className="rounded-2xl overflow-hidden border border-gray-100 bg-white shadow-sm hover:shadow-md transition">
                 <div className="grid grid-cols-2">
