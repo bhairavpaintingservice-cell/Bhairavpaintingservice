@@ -173,6 +173,36 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── ABOUT ── */}
+      <section className="py-20 bg-white">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <span className="inline-block rounded-full border border-gray-300 px-4 py-1 text-xs font-semibold uppercase tracking-widest text-gray-500">About Us</span>
+          <h2 className="mt-3 text-3xl font-black text-gray-900 sm:text-4xl">
+            About <span className="text-orange-500">Bhairav Painting Service</span>
+          </h2>
+          <div className="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-10">
+            <div className="space-y-4 text-sm leading-relaxed text-gray-600">
+              <p>Bhairav Painting Service is a trusted painting contractor based in Bhiwandi, serving Mumbai, Thane, Kalyan, Dombivli, Navi Mumbai and surrounding areas for over <strong className="text-gray-900">47 years</strong>. We specialize in residential painting, interior painting, exterior painting, building and society painting, commercial painting, waterproofing, texture painting and designer wall painting.</p>
+              <p>Every project — whether a single room or a large housing society — is personally supervised by the owner to ensure quality, cleanliness and on-time delivery. We use only branded paints including <strong className="text-gray-900">Asian Paints, Berger, Nerolac and Dulux</strong>, and offer both material + labour and labour-only packages to suit every budget.</p>
+              <p>Our process is simple and transparent: free site visit, honest quotation, thorough surface preparation, professional painting, and complete cleanup. No hidden charges, no surprises — just quality work you can trust.</p>
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              {[
+                { num: "47+", label: "Years in Business" },
+                { num: "500+", label: "Projects Completed" },
+                { num: "11+", label: "Areas Covered" },
+                { num: "100%", label: "Owner Supervised" },
+              ].map((s, i) => (
+                <div key={i} className="rounded-xl bg-orange-50 border border-orange-100 p-6 text-center">
+                  <p className="text-3xl font-black text-orange-500">{s.num}</p>
+                  <p className="mt-1 text-xs font-semibold text-gray-600">{s.label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── SERVICES ── */}
       <section className="py-20 bg-gray-50">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -293,6 +323,40 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── PROBLEMS WE SOLVE ── */}
+      <section className="py-20 bg-gray-50">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <span className="inline-block rounded-full border border-gray-300 px-4 py-1 text-xs font-semibold uppercase tracking-widest text-gray-500">Common Issues</span>
+          <h2 className="mt-3 text-3xl font-black text-gray-900 sm:text-4xl">
+            Common Painting <span className="text-orange-500">Problems We Solve</span>
+          </h2>
+          <p className="mt-3 text-gray-500 max-w-xl">If your home or building has any of these issues, we have the right solution.</p>
+          <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              { icon: "🎨", title: "Paint Peeling & Flaking", desc: "Old or poor-quality paint chipping off walls — we strip, prepare and repaint for a long-lasting finish." },
+              { icon: "💧", title: "Water Seepage & Damp Walls", desc: "Moisture entering through walls or terrace — treated with waterproofing and anti-seepage coatings." },
+              { icon: "🧱", title: "Wall Cracks", desc: "Surface or structural cracks filled professionally before repainting to prevent further damage." },
+              { icon: "🌫️", title: "Faded & Dull Exterior", desc: "Sun and rain-worn exterior walls — repainted with UV-resistant weather-proof exterior paint." },
+              { icon: "⚫", title: "Damp Patches & Mold", desc: "Dark patches from moisture build-up treated with anti-fungal solution and damp-proof paint." },
+              { icon: "🌧️", title: "Terrace Leakage", desc: "Water leaking through terrace into flats below — resolved with terrace waterproofing and protective coating." },
+            ].map((p, i) => (
+              <div key={i} className="flex gap-4 rounded-xl bg-white border border-gray-100 p-5 shadow-sm">
+                <span className="text-2xl shrink-0">{p.icon}</span>
+                <div>
+                  <h3 className="font-bold text-sm text-gray-900">{p.title}</h3>
+                  <p className="mt-1 text-xs text-gray-500">{p.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="mt-8 rounded-xl border-l-4 border-orange-500 bg-white p-6">
+            <p className="text-sm leading-relaxed text-gray-600">
+              Homes and buildings across <strong className="text-gray-900">Mumbai, Thane, Bhiwandi, Kalyan and Navi Mumbai</strong> face constant wear from monsoon rain, humidity, heat and pollution. Bhairav Painting Service provides professional solutions for all common painting and waterproofing problems — with proper surface preparation, quality materials and owner-supervised execution.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* ── AREAS ── */}
       <section className="py-20 bg-gray-50">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -308,6 +372,11 @@ export default function HomePage() {
                 {area}
               </span>
             ))}
+          </div>
+          <div className="mt-8 rounded-xl border-l-4 border-orange-500 bg-white p-6">
+            <p className="text-sm leading-relaxed text-gray-600">
+              Bhairav Painting Service provides residential painting, interior painting, exterior painting, building and society painting, commercial painting, waterproofing, texture painting and designer wall painting across <strong className="text-gray-900">Bhiwandi, Thane, Kalyan, Dombivli, Navi Mumbai, Mumbai, Kasheli, Kalher, Andheri, Vasai and Virar</strong>. We offer free site visits across all these areas — call or WhatsApp us to schedule your visit today.
+            </p>
           </div>
         </div>
       </section>
