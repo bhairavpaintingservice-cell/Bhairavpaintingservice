@@ -45,17 +45,13 @@ const whyUs = [
   { icon: "📅", title: "Timeline Commitment", desc: "We give a written timeline & stick to it. Society gets project done before monsoon." },
 ]
 
-const beforeAfter = [
-  { before: "/images/exterior-new.jpg", after: "/images/portfolio-building.webp", caption: "Bhiwandi — G+5 Residential Society", service: "Exterior Painting + Waterproofing" },
-  { before: "/images/residential.webp", after: "/images/exterior-new.jpg", caption: "Thane — G+7 Apartment Complex", service: "Full Exterior + Common Area Painting" },
-  { before: "/images/portfolio-building.webp", after: "/images/residential.webp", caption: "Kalyan — G+4 Society", service: "Exterior Repainting + Crack Filling" },
-  { before: "/images/waterproofing.jpg", after: "/images/portfolio-building.webp", caption: "Navi Mumbai — Commercial Building", service: "Exterior Painting + Terrace Coating" },
-]
-
-const recentProjects = [
-  { image: "/images/portfolio-building.webp", title: "Project 1 — Bhiwandi", type: "G+5 Society", scope: "Exterior + Waterproofing", brand: "Asian Paints Apex", duration: "18 Days" },
-  { image: "/images/exterior-new.jpg", title: "Project 2 — Thane", type: "G+7 Complex", scope: "Full Exterior", brand: "Berger WeatherCoat", duration: "22 Days" },
-  { image: "/images/residential.webp", title: "Project 3 — Kalyan", type: "G+4 Society", scope: "Exterior + Common Areas", brand: "Nerolac Excel", duration: "12 Days" },
+const projects = [
+  { before: "/images/exterior-new.jpg", after: "/images/portfolio-building.webp", title: "Project 1 — Bhiwandi", type: "G+5 Society", scope: "Exterior + Waterproofing", brand: "Asian Paints Apex", duration: "18 Days" },
+  { before: "/images/residential.webp", after: "/images/exterior-new.jpg", title: "Project 2 — Thane", type: "G+7 Complex", scope: "Full Exterior", brand: "Berger WeatherCoat", duration: "22 Days" },
+  { before: "/images/portfolio-building.webp", after: "/images/residential.webp", title: "Project 3 — Kalyan", type: "G+4 Society", scope: "Exterior + Common Areas", brand: "Nerolac Excel", duration: "12 Days" },
+  { before: "/images/waterproofing.jpg", after: "/images/portfolio-building.webp", title: "Project 4 — Navi Mumbai", type: "Commercial Building", scope: "Exterior + Terrace Coating", brand: "Dulux Weathershield", duration: "15 Days" },
+  { before: "/images/building/clients/housing-societies.jpg", after: "/images/building/clients/apartment-complexes.jpg", title: "Project 5 — Dombivli", type: "G+6 Society", scope: "Full Exterior + Crack Filling", brand: "Asian Paints Apex", duration: "20 Days" },
+  { before: "/images/building/clients/builders-developers.jpg", after: "/images/building/clients/commercial-buildings.jpg", title: "Project 6 — Mumbai", type: "G+10 Complex", scope: "Exterior + Staircase + Common Area", brand: "Berger WeatherCoat", duration: "30 Days" },
 ]
 
 const areas = ["Bhiwandi", "Thane", "Kalyan", "Dombivli", "Navi Mumbai", "Mumbai", "Kasheli"]
@@ -311,50 +307,30 @@ export default function BuildingPaintingPage() {
       <section className="py-20 bg-gray-50">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <span className="inline-block rounded-full border border-gray-300 px-4 py-1 text-xs font-semibold uppercase tracking-widest" style={{color:"#6b7280"}}>Transformation</span>
-          <h2 className="mt-3 text-3xl font-black sm:text-4xl" style={{color:"#1B2B8A"}}>Before & After — See the Difference</h2>
-          <p className="mt-3 text-sm max-w-xl" style={{color:"#6b7280"}}>Real building painting projects by Bhairav Painting Service across Mumbai & Bhiwandi.</p>
+          <h2 className="mt-3 text-3xl font-black sm:text-4xl" style={{color:"#1B2B8A"}}>Before & After — Real Projects</h2>
+          <p className="mt-3 text-sm max-w-xl" style={{color:"#6b7280"}}>Real building painting projects by Bhairav Painting Service across Mumbai, Thane & Bhiwandi.</p>
           <div style={{display:"grid", gridTemplateColumns:"repeat(2, 1fr)", gap:"24px"}} className="mt-10">
-            {beforeAfter.map((ba, i) => (
+            {projects.map((p, i) => (
               <div key={i} style={{borderRadius:"16px", overflow:"hidden", border:"1px solid #f0f0f0", background:"#fff", boxShadow:"0 1px 4px rgba(0,0,0,0.08)"}}>
                 <div style={{display:"grid", gridTemplateColumns:"1fr 1fr"}}>
                   <div style={{position:"relative", height:"180px"}}>
-                    <Image src={ba.before} alt={`Before building painting - ${ba.caption}`} fill className="object-cover"/>
+                    <Image src={p.before} alt={`Before building painting - ${p.title} Mumbai Thane Bhiwandi`} fill className="object-cover"/>
                     <span style={{position:"absolute", top:"8px", left:"8px", background:"rgba(0,0,0,0.75)", color:"#fff", fontSize:"10px", fontWeight:"700", padding:"2px 8px", borderRadius:"4px"}}>BEFORE</span>
                   </div>
                   <div style={{position:"relative", height:"180px"}}>
-                    <Image src={ba.after} alt={`After building painting - ${ba.caption} by Bhairav Painting Service`} fill className="object-cover"/>
+                    <Image src={p.after} alt={`After building painting - ${p.title} by Bhairav Painting Service`} fill className="object-cover"/>
                     <span style={{position:"absolute", top:"8px", left:"8px", background:"#f97316", color:"#fff", fontSize:"10px", fontWeight:"700", padding:"2px 8px", borderRadius:"4px"}}>AFTER</span>
                   </div>
                 </div>
-                <div style={{padding:"12px 16px"}}>
-                  <p style={{fontSize:"12px", fontWeight:"700", color:"#1B2B8A"}}>📍 {ba.caption}</p>
-                  <p style={{fontSize:"11px", color:"#6b7280", marginTop:"2px"}}>{ba.service}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* RECENT PROJECTS */}
-      <section className="py-20 bg-white">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <span className="inline-block rounded-full border border-gray-300 px-4 py-1 text-xs font-semibold uppercase tracking-widest" style={{color:"#6b7280"}}>Recent Work</span>
-          <h2 className="mt-3 text-3xl font-black sm:text-4xl" style={{color:"#1B2B8A"}}>Recent Society Painting Projects</h2>
-          <p className="mt-3 text-sm max-w-xl" style={{color:"#6b7280"}}>Real projects with real details — because society committees need transparency.</p>
-          <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
-            {recentProjects.map((p, i) => (
-              <div key={i} className="overflow-hidden rounded-xl border border-gray-100 shadow-sm">
-                <div className="relative h-48"><Image src={p.image} alt={p.title} fill className="object-cover" /></div>
-                <div className="p-5">
-                  <h3 className="font-bold text-sm" style={{color:"#1B2B8A"}}>{p.title}</h3>
-                  <div className="mt-3 grid grid-cols-2 gap-2">
-                    <div><p className="text-xs" style={{color:"#9ca3af"}}>Building Type</p><p className="text-xs font-bold" style={{color:"#111827"}}>{p.type}</p></div>
-                    <div><p className="text-xs" style={{color:"#9ca3af"}}>Scope</p><p className="text-xs font-bold" style={{color:"#111827"}}>{p.scope}</p></div>
-                    <div><p className="text-xs" style={{color:"#9ca3af"}}>Paint Brand</p><p className="text-xs font-bold" style={{color:"#111827"}}>{p.brand}</p></div>
-                    <div><p className="text-xs" style={{color:"#9ca3af"}}>Duration</p><p className="text-xs font-bold" style={{color:"#111827"}}>{p.duration}</p></div>
+                <div style={{padding:"14px 16px"}}>
+                  <h3 style={{fontSize:"13px", fontWeight:"700", color:"#1B2B8A", marginBottom:"8px"}}>{p.title}</h3>
+                  <div style={{display:"grid", gridTemplateColumns:"1fr 1fr", gap:"6px"}}>
+                    <div><p style={{fontSize:"10px", color:"#9ca3af"}}>Building Type</p><p style={{fontSize:"11px", fontWeight:"700", color:"#111827"}}>{p.type}</p></div>
+                    <div><p style={{fontSize:"10px", color:"#9ca3af"}}>Scope</p><p style={{fontSize:"11px", fontWeight:"700", color:"#111827"}}>{p.scope}</p></div>
+                    <div><p style={{fontSize:"10px", color:"#9ca3af"}}>Paint Brand</p><p style={{fontSize:"11px", fontWeight:"700", color:"#111827"}}>{p.brand}</p></div>
+                    <div><p style={{fontSize:"10px", color:"#9ca3af"}}>Duration</p><p style={{fontSize:"11px", fontWeight:"700", color:"#111827"}}>{p.duration}</p></div>
                   </div>
-                  <span className="inline-block mt-3 bg-orange-50 text-orange-600 text-xs font-bold px-3 py-1 rounded-full">✅ Completed</span>
+                  <span style={{display:"inline-block", marginTop:"10px", background:"#fff7ed", color:"#ea580c", fontSize:"11px", fontWeight:"700", padding:"3px 12px", borderRadius:"999px"}}>✅ Completed</span>
                 </div>
               </div>
             ))}
