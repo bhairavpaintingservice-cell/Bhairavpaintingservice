@@ -51,7 +51,7 @@ const projects = [
   { before: "/images/building/projects/p3-before.jpg", after: "/images/building/projects/p3-after.jpg", title: "Apartment Exterior Renovation — Kalyan", type: "Residential Apartment", scope: "Exterior + Common Area Painting", brand: "Nerolac Excel", duration: "12 Days" },
   { before: "/images/building/projects/p4-before.jpg", after: "/images/building/projects/p4-after.jpg", title: "Commercial Building Painting — Navi Mumbai", type: "Commercial Building", scope: "Exterior + Terrace Coating", brand: "Dulux Weathershield", duration: "15 Days" },
   { before: "/images/building/projects/p5-before.jpg", after: "/images/building/projects/p5-after.jpg", title: "Society Crack Repair & Repainting — Dombivli", type: "Residential Society", scope: "Exterior Painting + Crack Filling", brand: "Asian Paints Apex", duration: "20 Days" },
-  { before: "/images/building/clients/builders-developers.jpg", after: "/images/building/clients/commercial-buildings.jpg", title: "Project 6 — Mumbai", type: "G+10 Complex", scope: "Exterior + Staircase + Common Area", brand: "Berger WeatherCoat", duration: "30 Days" },
+  { before: "/images/building/projects/p6-before.jpg", after: "/images/building/projects/p6-after.jpg", title: "High-Rise Building Exterior — Mumbai", type: "Commercial Complex", scope: "Exterior + Staircase + Common Areas", brand: "Berger WeatherCoat", duration: "30 Days" },
 ]
 
 const areas = ["Bhiwandi", "Thane", "Kalyan", "Dombivli", "Navi Mumbai", "Mumbai", "Kasheli"]
