@@ -44,12 +44,13 @@ const processSteps = [
 ]
 
 const beforeAfter = [
-  { image: "/images/interior/ba-living-room.jpg", title: "Living Room — Thane", sub: "Full Interior Painting" },
-  { image: "/images/interior/ba-bedroom-old.jpg", title: "Bedroom — Bhiwandi", sub: "Interior Repainting + Putty" },
-  { image: "/images/interior/ba-hall.jpg", title: "2BHK Hall — Mumbai", sub: "Complete Interior Repaint" },
-  { image: "/images/interior/ba-kitchen-old.jpg", title: "Kitchen — Kalyan", sub: "Moisture-Resistant Paint" },
-  { image: "/images/interior/card-kids.jpg", title: "Kids Room — Bhiwandi", sub: "Colourful Safe Paints" },
-  { image: "/images/interior/ba-new-flat.jpg", title: "New Flat — Navi Mumbai", sub: "First-time Painting" },
+  { image: "/images/interior/card-bedroom.jpg", title: "Bedroom Painting", sub: "Full Interior Repainting" },
+  { image: "/images/interior/card-kitchen.jpg", title: "Kitchen Painting", sub: "Complete Kitchen Makeover" },
+  { image: "/images/interior/card-dining.jpg", title: "Dining Room Painting", sub: "Full Interior Painting" },
+  { image: "/images/interior/card-study.jpg", title: "Study Room Painting", sub: "Complete Room Makeover" },
+  { image: "/images/interior/card-kids.jpg", title: "Kids Room Painting", sub: "Themed Wall Art & Painting" },
+  { image: "/images/interior/card-pooja.jpg", title: "Pooja Room Painting", sub: "Complete Pooja Room Makeover" },
+  { image: "/images/interior/card-staircase.jpg", title: "Staircase Painting", sub: "Full Staircase Repainting" },
 ]
 
 const recentProjects = [
