@@ -311,14 +311,23 @@ export default function BuildingPaintingPage() {
           <p className="mt-3 text-sm max-w-xl" style={{color:"#6b7280"}}>Real building painting projects by Bhairav Painting Service across Mumbai, Thane & Bhiwandi.</p>
           <div style={{display:"grid", gridTemplateColumns:"repeat(3, 1fr)", gap:"20px"}} className="mt-10">
             {projects.map((p, i) => (
-              <div key={i} className="group relative overflow-hidden rounded-xl" style={{height:"220px"}}>
-                <Image src={p.after} alt={`${p.title} - Building painting by Bhairav Painting Service Mumbai Thane Bhiwandi`} fill className="object-cover group-hover:scale-105 transition-transform duration-300"/>
-                <div className="absolute inset-0 bg-[#1B2B8A]/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                  <span className="bg-orange-500 text-white px-4 py-2 rounded-lg text-sm font-bold">View More →</span>
+              <div key={i} className="group rounded-xl overflow-hidden border border-gray-100 bg-white shadow-sm hover:shadow-md transition">
+                <div style={{display:"grid", gridTemplateColumns:"1fr 1fr"}}>
+                  <div style={{position:"relative", height:"160px"}}>
+                    <Image src={p.before} alt={`Before - ${p.title}`} fill className="object-cover"/>
+                    <span style={{position:"absolute", top:"6px", left:"6px", background:"rgba(0,0,0,0.75)", color:"#fff", fontSize:"9px", fontWeight:"700", padding:"2px 6px", borderRadius:"4px"}}>BEFORE</span>
+                  </div>
+                  <div style={{position:"relative", height:"160px"}}>
+                    <Image src={p.after} alt={`After - ${p.title} by Bhairav Painting Service`} fill className="object-cover group-hover:scale-105 transition-transform duration-300"/>
+                    <span style={{position:"absolute", top:"6px", left:"6px", background:"#f97316", color:"#fff", fontSize:"9px", fontWeight:"700", padding:"2px 6px", borderRadius:"4px"}}>AFTER</span>
+                    <div className="absolute inset-0 bg-[#1B2B8A]/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                      <span className="bg-orange-500 text-white px-3 py-1.5 rounded-lg text-xs font-bold">View More →</span>
+                    </div>
+                  </div>
                 </div>
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
-                  <p className="text-white text-sm font-bold">{p.title}</p>
-                  <p className="text-gray-300 text-xs mt-0.5">{p.scope}</p>
+                <div style={{padding:"12px 14px"}}>
+                  <p style={{fontSize:"12px", fontWeight:"700", color:"#1B2B8A"}}>{p.title}</p>
+                  <p style={{fontSize:"11px", color:"#6b7280", marginTop:"2px"}}>{p.scope}</p>
                 </div>
               </div>
             ))}
