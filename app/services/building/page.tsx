@@ -308,7 +308,7 @@ export default function BuildingPaintingPage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <span className="inline-block rounded-full border border-gray-300 px-4 py-1 text-xs font-semibold uppercase tracking-widest" style={{color:"#6b7280"}}>Transformation</span>
           <h2 className="mt-3 text-3xl font-black sm:text-4xl" style={{color:"#1B2B8A"}}>Before & After — Real Projects</h2>
-          <p className="mt-3 text-sm max-w-xl" style={{color:"#6b7280"}}>Real building painting projects by Bhairav Painting Service across Mumbai, Thane & Bhiwandi.</p>
+          <p className="mt-3 text-sm max-w-2xl" style={{color:"#6b7280"}}>Explore residential, commercial and society painting projects completed by Bhairav Painting Service over the last 47+ years.</p>
           <div style={{display:"grid", gridTemplateColumns:"repeat(3, 1fr)", gap:"20px"}} className="mt-10">
             {projects.map((p, i) => (
               <div key={i} className="group rounded-xl overflow-hidden border border-gray-100 bg-white shadow-sm hover:shadow-md transition">
