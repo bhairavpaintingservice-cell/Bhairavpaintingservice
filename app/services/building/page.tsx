@@ -82,9 +82,12 @@ const faqs = [
 
 const relatedServices = [
   { title: "Residential Painting", href: "/services/residential", image: "/images/residential.webp" },
+  { title: "Interior Painting", href: "/services/interior", image: "/images/portfolio-bedroom.webp" },
   { title: "Exterior Painting", href: "/services/exterior", image: "/images/exterior-new.jpg" },
   { title: "Commercial Painting", href: "/services/commercial", image: "/images/portfolio-office.webp" },
-  { title: "Interior Painting", href: "/services/interior", image: "/images/portfolio-bedroom.webp" },
+  { title: "Waterproofing", href: "/services/waterproofing", image: "/images/waterproofing.jpg" },
+  { title: "Designer Painting", href: "/services/designer", image: "/images/designer/accent-wall.jpg" },
+  { title: "Texture Painting", href: "/services/designer/texture", image: "/images/texture.webp" },
 ]
 
 const serviceOptions = ["Society Exterior Painting", "Building Repainting", "Waterproofing", "Common Area Painting", "New Construction Painting", "Other"]
