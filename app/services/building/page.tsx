@@ -309,28 +309,16 @@ export default function BuildingPaintingPage() {
           <span className="inline-block rounded-full border border-gray-300 px-4 py-1 text-xs font-semibold uppercase tracking-widest" style={{color:"#6b7280"}}>Transformation</span>
           <h2 className="mt-3 text-3xl font-black sm:text-4xl" style={{color:"#1B2B8A"}}>Before & After — Real Projects</h2>
           <p className="mt-3 text-sm max-w-xl" style={{color:"#6b7280"}}>Real building painting projects by Bhairav Painting Service across Mumbai, Thane & Bhiwandi.</p>
-          <div style={{display:"grid", gridTemplateColumns:"repeat(2, 1fr)", gap:"24px"}} className="mt-10">
+          <div style={{display:"grid", gridTemplateColumns:"repeat(3, 1fr)", gap:"20px"}} className="mt-10">
             {projects.map((p, i) => (
-              <div key={i} style={{borderRadius:"16px", overflow:"hidden", border:"1px solid #f0f0f0", background:"#fff", boxShadow:"0 1px 4px rgba(0,0,0,0.08)"}}>
-                <div style={{display:"grid", gridTemplateColumns:"1fr 1fr"}}>
-                  <div style={{position:"relative", height:"180px"}}>
-                    <Image src={p.before} alt={`Before building painting - ${p.title} Mumbai Thane Bhiwandi`} fill className="object-cover"/>
-                    <span style={{position:"absolute", top:"8px", left:"8px", background:"rgba(0,0,0,0.75)", color:"#fff", fontSize:"10px", fontWeight:"700", padding:"2px 8px", borderRadius:"4px"}}>BEFORE</span>
-                  </div>
-                  <div style={{position:"relative", height:"180px"}}>
-                    <Image src={p.after} alt={`After building painting - ${p.title} by Bhairav Painting Service`} fill className="object-cover"/>
-                    <span style={{position:"absolute", top:"8px", left:"8px", background:"#f97316", color:"#fff", fontSize:"10px", fontWeight:"700", padding:"2px 8px", borderRadius:"4px"}}>AFTER</span>
-                  </div>
+              <div key={i} className="group relative overflow-hidden rounded-xl" style={{height:"220px"}}>
+                <Image src={p.after} alt={`${p.title} - Building painting by Bhairav Painting Service Mumbai Thane Bhiwandi`} fill className="object-cover group-hover:scale-105 transition-transform duration-300"/>
+                <div className="absolute inset-0 bg-[#1B2B8A]/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <span className="bg-orange-500 text-white px-4 py-2 rounded-lg text-sm font-bold">View More →</span>
                 </div>
-                <div style={{padding:"14px 16px"}}>
-                  <h3 style={{fontSize:"13px", fontWeight:"700", color:"#1B2B8A", marginBottom:"8px"}}>{p.title}</h3>
-                  <div style={{display:"grid", gridTemplateColumns:"1fr 1fr", gap:"6px"}}>
-                    <div><p style={{fontSize:"10px", color:"#9ca3af"}}>Building Type</p><p style={{fontSize:"11px", fontWeight:"700", color:"#111827"}}>{p.type}</p></div>
-                    <div><p style={{fontSize:"10px", color:"#9ca3af"}}>Scope</p><p style={{fontSize:"11px", fontWeight:"700", color:"#111827"}}>{p.scope}</p></div>
-                    <div><p style={{fontSize:"10px", color:"#9ca3af"}}>Paint Brand</p><p style={{fontSize:"11px", fontWeight:"700", color:"#111827"}}>{p.brand}</p></div>
-                    <div><p style={{fontSize:"10px", color:"#9ca3af"}}>Duration</p><p style={{fontSize:"11px", fontWeight:"700", color:"#111827"}}>{p.duration}</p></div>
-                  </div>
-                  <span style={{display:"inline-block", marginTop:"10px", background:"#fff7ed", color:"#ea580c", fontSize:"11px", fontWeight:"700", padding:"3px 12px", borderRadius:"999px"}}>✅ Completed</span>
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+                  <p className="text-white text-sm font-bold">{p.title}</p>
+                  <p className="text-gray-300 text-xs mt-0.5">{p.scope}</p>
                 </div>
               </div>
             ))}
