@@ -418,7 +418,7 @@ export default function BuildingPaintingPage() {
           <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-4">
             {relatedServices.map((s, i) => (
               <Link key={i} href={s.href} className="overflow-hidden rounded-xl bg-white border-2 border-gray-100 hover:border-orange-400 transition-colors text-center">
-                <div className="relative h-24"><Image src={s.image} alt={s.title} fill className="object-cover"/></div>
+                <div className="relative h-24"><Image src={s.image} alt={`${s.title} in Mumbai Thane Bhiwandi - Bhairav Painting Service`} fill className="object-cover"/></div>
                 <div className="p-3"><span className="text-xs font-bold" style={{color:"#1B2B8A"}}>{s.title}</span></div>
               </Link>
             ))}
