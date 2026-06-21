@@ -317,11 +317,11 @@ export default function BuildingPaintingPage() {
               <div key={i} className="group rounded-xl overflow-hidden border border-gray-100 bg-white shadow-sm hover:shadow-md transition">
                 <div style={{display:"grid", gridTemplateColumns:"1fr 1fr"}}>
                   <div style={{position:"relative", height:"160px"}}>
-                    <Image src={p.before} alt={`Before - ${p.title}`} fill className="object-cover"/>
+                    <Image src={p.before} alt={`Before building painting - ${p.title} Mumbai Thane Bhiwandi`} fill className="object-cover"/>
                     <span style={{position:"absolute", top:"6px", left:"6px", background:"rgba(0,0,0,0.75)", color:"#fff", fontSize:"9px", fontWeight:"700", padding:"2px 6px", borderRadius:"4px"}}>BEFORE</span>
                   </div>
                   <div style={{position:"relative", height:"160px"}}>
-                    <Image src={p.after} alt={`After - ${p.title} by Bhairav Painting Service`} fill className="object-cover group-hover:scale-105 transition-transform duration-300"/>
+                    <Image src={p.after} alt={`After building painting - ${p.title} by Bhairav Painting Service Mumbai Thane Bhiwandi`} fill className="object-cover group-hover:scale-105 transition-transform duration-300"/>
                     <span style={{position:"absolute", top:"6px", left:"6px", background:"#f97316", color:"#fff", fontSize:"9px", fontWeight:"700", padding:"2px 6px", borderRadius:"4px"}}>AFTER</span>
                     <div className="absolute inset-0 bg-[#1B2B8A]/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                       <span className="bg-orange-500 text-white px-3 py-1.5 rounded-lg text-xs font-bold">View More →</span>
