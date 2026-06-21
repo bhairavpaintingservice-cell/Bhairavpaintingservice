@@ -47,7 +47,7 @@ const whyUs = [
 
 const projects = [
   { before: "/images/building/projects/p1-before.jpg", after: "/images/building/projects/p1-after.jpg", title: "Society Repainting & Waterproofing — Bhiwandi", type: "Residential Society", scope: "Exterior Painting + Waterproofing", brand: "Asian Paints Apex", duration: "18 Days" },
-  { before: "/images/residential.webp", after: "/images/exterior-new.jpg", title: "Project 2 — Thane", type: "G+7 Complex", scope: "Full Exterior", brand: "Berger WeatherCoat", duration: "22 Days" },
+  { before: "/images/building/projects/p2-before.jpg", after: "/images/building/projects/p2-after.jpg", title: "Luxury Villa Exterior Painting — Thane", type: "Independent Villa", scope: "Full Exterior Repainting", brand: "Berger WeatherCoat", duration: "22 Days" },
   { before: "/images/portfolio-building.webp", after: "/images/residential.webp", title: "Project 3 — Kalyan", type: "G+4 Society", scope: "Exterior + Common Areas", brand: "Nerolac Excel", duration: "12 Days" },
   { before: "/images/waterproofing.jpg", after: "/images/portfolio-building.webp", title: "Project 4 — Navi Mumbai", type: "Commercial Building", scope: "Exterior + Terrace Coating", brand: "Dulux Weathershield", duration: "15 Days" },
   { before: "/images/building/clients/housing-societies.jpg", after: "/images/building/clients/apartment-complexes.jpg", title: "Project 5 — Dombivli", type: "G+6 Society", scope: "Full Exterior + Crack Filling", brand: "Asian Paints Apex", duration: "20 Days" },
