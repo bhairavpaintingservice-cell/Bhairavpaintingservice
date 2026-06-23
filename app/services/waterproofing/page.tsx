@@ -155,18 +155,18 @@ export default function WaterproofingPage() {
           <p className="mt-2 text-sm text-gray-500 max-w-2xl">Explore waterproofing projects completed by Bhairav Painting Service across Mumbai, Thane, Bhiwandi & Kalyan.</p>
           <div style={{display:"grid", gridTemplateColumns:"repeat(3, 1fr)", gap:"20px"}} className="mt-8">
             {projects.map((p, i) => (
-              <div key={i} className="group rounded-xl overflow-hidden border border-gray-100 bg-white shadow-sm hover:shadow-md transition">
+              <div key={i} className="group rounded-xl overflow-hidden border border-gray-100 bg-white shadow-sm hover:shadow-md transition relative">
+                <div className="absolute inset-0 bg-[#1B2B8A]/0 group-hover:bg-[#1B2B8A]/10 transition-all z-10 flex items-center justify-center pointer-events-none">
+                  <span className="bg-orange-500 text-white px-3 py-1.5 rounded-lg text-xs font-bold opacity-0 group-hover:opacity-100 transition-opacity" style={{position:"absolute", top:"50%", left:"50%", transform:"translate(-50%,-50%)", zIndex:20, whiteSpace:"nowrap"}}>View More →</span>
+                </div>
                 <div style={{display:"grid", gridTemplateColumns:"1fr 1fr"}}>
                   <div style={{position:"relative", height:"160px"}}>
                     <img src={p.before} alt={`Before waterproofing - ${p.title} Mumbai Thane Bhiwandi`} style={{width:"100%", height:"100%", objectFit:"cover"}} loading="lazy"/>
-                    <span style={{position:"absolute", top:"6px", left:"6px", background:"rgba(0,0,0,0.75)", color:"#fff", fontSize:"9px", fontWeight:"700", padding:"2px 6px", borderRadius:"4px"}}>BEFORE</span>
+                    <span style={{position:"absolute", top:"6px", left:"6px", background:"rgba(0,0,0,0.75)", color:"#fff", fontSize:"9px", fontWeight:"700", padding:"2px 6px", borderRadius:"4px", zIndex:5}}>BEFORE</span>
                   </div>
                   <div style={{position:"relative", height:"160px"}}>
-                    <img src={p.after} alt={`After waterproofing - ${p.title} by Bhairav Painting Service`} style={{width:"100%", height:"100%", objectFit:"cover"}} loading="lazy" className="group-hover:scale-105 transition-transform duration-300"/>
-                    <span style={{position:"absolute", top:"6px", left:"6px", background:"#f97316", color:"#fff", fontSize:"9px", fontWeight:"700", padding:"2px 6px", borderRadius:"4px"}}>AFTER</span>
-                    <div className="absolute inset-0 bg-[#1B2B8A]/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                      <span className="bg-orange-500 text-white px-3 py-1.5 rounded-lg text-xs font-bold">View More →</span>
-                    </div>
+                    <img src={p.after} alt={`After waterproofing - ${p.title} by Bhairav Painting Service Mumbai Thane Bhiwandi`} style={{width:"100%", height:"100%", objectFit:"cover"}} loading="lazy"/>
+                    <span style={{position:"absolute", top:"6px", left:"6px", background:"#f97316", color:"#fff", fontSize:"9px", fontWeight:"700", padding:"2px 6px", borderRadius:"4px", zIndex:5}}>AFTER</span>
                   </div>
                 </div>
                 <div style={{padding:"12px 14px"}}>
