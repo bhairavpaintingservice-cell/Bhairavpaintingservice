@@ -118,7 +118,7 @@ export default function WaterproofingPage() {
               <span key={p} className="bg-white/10 border border-white/20 text-gray-300 text-xs font-semibold px-3 py-1 rounded-full">{p}</span>
             ))}
           </div>
-          <div className="flex gap-3 justify-center flex-wrap mb-10">
+          <div className="flex gap-3 justify-center flex-wrap mb-6">
             <a href="tel:+919158800517" className="bg-orange-500 hover:bg-orange-600 text-white font-bold px-7 py-3 rounded-lg flex items-center gap-2 transition">
               <Phone size={16} /> Call Now
             </a>
@@ -126,6 +126,7 @@ export default function WaterproofingPage() {
               <MessageCircle size={16} /> WhatsApp
             </a>
           </div>
+          <a href="tel:+919158800517" className="inline-block text-orange-400 font-black text-2xl mb-8 hover:text-orange-300 transition">+91 91588 00517</a>
           <div className="flex justify-center gap-10 flex-wrap">
             {[["47+", "Years Experience"], ["500+", "Projects Done"], ["Free", "Site Visit"], ["Same Day", "Response"]].map(([val, label]) => (
               <div key={label} className="text-center">
@@ -140,6 +141,7 @@ export default function WaterproofingPage() {
       {/* TRUST BAR */}
       <section className="bg-white border-b py-4 px-4">
         <div className="max-w-5xl mx-auto flex flex-wrap items-center justify-center gap-3">
+          <span className="flex items-center gap-2 bg-yellow-50 border border-yellow-200 text-yellow-700 text-xs font-bold px-4 py-2 rounded-full">⭐ 4.8★ Google Rating — 200+ Reviews</span>
           <span className="text-xs font-bold text-gray-400 uppercase tracking-wider mr-2">Trusted Brands:</span>
           {["✅ Dr Fixit (Pidilite)", "✅ Asian Paints SmartCare", "✅ Berger WeatherCoat", "✅ Nerolac", "✅ Pidilite STP"].map(b => (
             <span key={b} className="bg-gray-50 border rounded-lg px-3 py-1.5 text-sm font-bold text-gray-700">{b}</span>
@@ -205,11 +207,12 @@ export default function WaterproofingPage() {
           <p className="text-gray-500 mb-8">Most demanded services — terrace, roof, bathroom aur damp wall treatment.</p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {services.map(s => (
-              <div key={s.title} className="bg-white border rounded-xl p-6 hover:border-orange-400 hover:-translate-y-1 transition-all shadow-sm">
+              <div key={s.title} className="bg-white border rounded-xl p-6 hover:border-orange-400 hover:-translate-y-1 transition-all shadow-sm flex flex-col">
                 <span className="text-4xl mb-4 block">{s.icon}</span>
                 <h3 className="font-bold text-base text-gray-900 mb-2">{s.title}</h3>
                 <p className="text-sm text-gray-500 mb-3">{s.desc}</p>
-                <span className="inline-block bg-orange-50 border border-orange-200 text-orange-600 text-xs font-bold px-3 py-1 rounded-full">{s.tag}</span>
+                <span className="inline-block bg-orange-50 border border-orange-200 text-orange-600 text-xs font-bold px-3 py-1 rounded-full mb-4">{s.tag}</span>
+                <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20Waterproofing%20quote" className="mt-auto block text-center bg-[#1B2B8A] hover:bg-blue-900 text-white text-xs font-bold px-4 py-2 rounded-lg transition">Get Quote for This →</a>
               </div>
             ))}
           </div>
@@ -292,6 +295,36 @@ export default function WaterproofingPage() {
                 <div>
                   <h3 className="font-bold text-gray-900 text-sm mb-1">{g.title}</h3>
                   <p className="text-xs text-gray-500">{g.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* REVIEWS */}
+      <section className="py-16 px-4 bg-white">
+        <div className="max-w-5xl mx-auto">
+          <div className="flex items-center gap-3 mb-2">
+            <span className="text-orange-500 text-xs font-bold uppercase tracking-widest">Customer Reviews</span>
+            <span className="bg-yellow-50 border border-yellow-200 text-yellow-700 text-xs font-bold px-3 py-1 rounded-full">⭐ 4.8★ Google Rating</span>
+          </div>
+          <h2 className="text-3xl font-black text-gray-900 mb-8">What Our Customers Say</h2>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {[
+              { name: "Rajesh Sharma", area: "Bhiwandi", text: "Terrace waterproofing bahut achha kiya. Pichle 2 saal se koi leakage nahi aayi. Owner khud aake supervise karta hai — bahut trustworthy service hai.", stars: 5 },
+              { name: "Priya Mehta", area: "Thane", text: "Bathroom mein seepage problem thi — Dr Fixit use karke permanent solution diya. Price bhi reasonable tha aur kaam ek din mein ho gaya.", stars: 5 },
+              { name: "Suresh Patil", area: "Kalyan", text: "Society ki terrace waterproofing karwai — 450 sq ft ka kaam 3 din mein complete. Committee members sab khush hain. Highly recommend!", stars: 5 },
+              { name: "Anita Desai", area: "Navi Mumbai", text: "Damp wall problem 3 saal se thi — kisi ne solve nahi kiya. Bhairav ne root cause identify karke permanent treatment diya. Excellent work!", stars: 5 },
+              { name: "Mohammad Shaikh", area: "Mumbai", text: "Basement waterproofing ke liye contact kiya — same day site visit mili. Quotation clear tha, koi hidden charges nahi. Kaam excellent hai.", stars: 5 },
+              { name: "Kavita Joshi", area: "Dombivli", text: "Monsoon se pehle roof leakage fix karwai — bilkul sahi decision tha. Is baar baarish mein ghar ke andar ek bhi drop nahi aayi!", stars: 5 },
+            ].map((r, i) => (
+              <div key={i} className="bg-gray-50 border rounded-xl p-5">
+                <div className="flex gap-0.5 mb-3">{"★★★★★".split("").map((s, j) => <span key={j} className="text-yellow-400 text-sm">{s}</span>)}</div>
+                <p className="text-sm text-gray-600 mb-4 leading-relaxed">"{r.text}"</p>
+                <div>
+                  <p className="text-sm font-bold text-gray-900">{r.name}</p>
+                  <p className="text-xs text-gray-400">📍 {r.area}</p>
                 </div>
               </div>
             ))}
@@ -400,8 +433,18 @@ export default function WaterproofingPage() {
               </select>
             </div>
             <div>
-              <label className="block text-xs font-bold text-orange-200 uppercase tracking-widest mb-1">Your Area</label>
+              <label className="block text-xs font-bold text-orange-200 uppercase tracking-widest mb-1">Your Area / Location</label>
               <input type="text" placeholder="e.g. Bhiwandi, Thane, Kalyan..." className="w-full rounded-lg px-4 py-3 text-sm focus:outline-none bg-white text-gray-800" />
+            </div>
+            <div>
+              <label className="block text-xs font-bold text-orange-200 uppercase tracking-widest mb-1">When Do You Need Work?</label>
+              <select className="w-full rounded-lg px-4 py-3 text-sm focus:outline-none bg-white text-gray-800">
+                <option>Select Urgency</option>
+                <option>🚨 Urgent — Leaking Now</option>
+                <option>Within This Week</option>
+                <option>Within This Month</option>
+                <option>Just Enquiring / Planning</option>
+              </select>
             </div>
             <div className="md:col-span-2">
               <label className="block text-xs font-bold text-orange-200 uppercase tracking-widest mb-1">Describe the Problem (Optional)</label>
