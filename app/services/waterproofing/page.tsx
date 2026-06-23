@@ -260,31 +260,6 @@ export default function WaterproofingPage() {
         </div>
       </section>
 
-      {/* BEFORE & AFTER */}
-      <section className="py-16 px-4 bg-white">
-        <div className="max-w-5xl mx-auto">
-          <p className="text-orange-500 text-xs font-bold uppercase tracking-widest mb-2">Before & After</p>
-          <h2 className="text-3xl font-black text-gray-900 mb-3">Before & After Waterproofing Results</h2>
-          <p className="text-gray-500 mb-8">Real waterproofing jobs — before and after results from Mumbai, Thane & Bhiwandi.</p>
-          <div className="grid sm:grid-cols-3 gap-5">
-            {[
-              { label: "⚠️ Before", title: "Ceiling Leakage — Mumbai", desc: "Severe roof leakage during monsoon — water dripping through ceiling.", img: "/images/waterproofing/waterproof-before-leakage.jpg" },
-              { label: "⚠️ Before", title: "Damp Wall — Bhiwandi", desc: "Paint peeling & seepage damage on interior wall due to moisture.", img: "/images/waterproofing/waterproof-project-wall.jpg" },
-              { label: "✅ After", title: "Terrace Waterproofing — Bhiwandi", desc: "Terrace completely waterproofed with liquid membrane. Monsoon-ready.", img: "/images/waterproofing/waterproof-after.jpg" },
-            ].map((p, i) => (
-              <div key={i} className="bg-white border rounded-xl overflow-hidden shadow-sm">
-                <img src={p.img} alt={p.title} className="w-full h-48 object-cover" />
-                <div className="p-4">
-                  <span className={`text-xs font-bold px-2 py-1 rounded-full mb-2 inline-block ${p.label.includes('✅') ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`}>{p.label}</span>
-                  <h3 className="font-bold text-sm text-gray-900 mt-1">{p.title}</h3>
-                  <p className="text-xs text-gray-500 mt-1">{p.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* WATERPROOFING METHODS */}
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-5xl mx-auto">
