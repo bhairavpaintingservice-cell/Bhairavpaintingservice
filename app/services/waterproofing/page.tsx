@@ -80,11 +80,14 @@ const faqs = [
 
 const areas = ["Mumbai", "Thane", "Bhiwandi", "Kalyan", "Navi Mumbai", "Dombivli", "Kasheli", "Kalher", "Andheri", "Vasai", "Virar", "Ulhasnagar"]
 
-const recentProjects = [
-  { title: "Terrace Waterproofing", location: "Bhiwandi", area: "450 sq ft", material: "Dr Fixit Membrane", time: "3 Days", img: "/images/waterproofing/waterproof-project-terrace.jpg" },
-  { title: "Roof Leakage Repair", location: "Thane", area: "280 sq ft", material: "Liquid Membrane", time: "2 Days", img: "/images/waterproofing/waterproof-project-roof.jpg" },
-  { title: "Bathroom Waterproofing", location: "Thane", area: "80 sq ft", material: "Dr Fixit Pidifin 2K", time: "1 Day", img: "/images/waterproofing/waterproof-project-bathroom.jpg" },
-  { title: "Damp Wall Treatment", location: "Bhiwandi", area: "3 Rooms", material: "Anti-damp Coating", time: "2 Days", img: "/images/waterproofing/waterproof-project-wall.jpg" },
+const projects = [
+  { before: "/images/waterproofing/p1-before.jpg", after: "/images/waterproofing/p1-after.jpg", title: "Terrace Waterproofing — Bhiwandi", scope: "450 sq ft • Dr Fixit Membrane • 3 Days" },
+  { before: "/images/waterproofing/p2-before.jpg", after: "/images/waterproofing/p2-after.jpg", title: "Roof Leakage Repair — Thane", scope: "280 sq ft • Liquid Membrane • 2 Days" },
+  { before: "/images/waterproofing/p3-before.jpg", after: "/images/waterproofing/p3-after.jpg", title: "Bathroom Waterproofing — Thane", scope: "80 sq ft • Dr Fixit Pidifin 2K • 1 Day" },
+  { before: "/images/waterproofing/p4-before.jpg", after: "/images/waterproofing/p4-after.jpg", title: "Damp Wall Treatment — Bhiwandi", scope: "3 Rooms • Anti-damp Coating • 2 Days" },
+  { before: "/images/waterproofing/p5-before.jpg", after: "/images/waterproofing/p5-after.jpg", title: "Exterior Waterproofing — Mumbai", scope: "Building Exterior • Weather Coat • 4 Days" },
+  { before: "/images/waterproofing/p6-before.jpg", after: "/images/waterproofing/p6-after.jpg", title: "Basement Waterproofing — Kalyan", scope: "Basement • Crystalline Coating • 3 Days" },
+  { before: "/images/waterproofing/p7-before.jpg", after: "/images/waterproofing/p7-after.jpg", title: "Seepage Repair — Navi Mumbai", scope: "Interior Walls • Anti-Seepage • 2 Days" },
 ]
 
 export default function WaterproofingPage() {
@@ -144,20 +147,31 @@ export default function WaterproofingPage() {
         </div>
       </section>
 
-      {/* RECENT PROJECTS STRIP */}
-      <section className="bg-gray-50 py-8 px-4">
+      {/* PROJECTS */}
+      <section className="bg-gray-50 py-16 px-4">
         <div className="max-w-5xl mx-auto">
-          <p className="text-center text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Recent Completed Projects</p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-            {recentProjects.map((p, i) => (
-              <div key={i} className="bg-white border rounded-xl overflow-hidden shadow-sm">
-                <div className="w-full h-36 bg-gray-100 flex items-center justify-center overflow-hidden">
-                  <img src={p.img} alt={p.title} className="w-full h-full object-cover object-center" />
+          <span className="inline-block rounded-full border border-gray-300 px-4 py-1 text-xs font-semibold uppercase tracking-widest text-gray-500">Transformation</span>
+          <h2 className="mt-3 text-3xl font-black text-gray-900">Before & After — Real Projects</h2>
+          <p className="mt-2 text-sm text-gray-500 max-w-2xl">Explore waterproofing projects completed by Bhairav Painting Service across Mumbai, Thane, Bhiwandi & Kalyan.</p>
+          <div style={{display:"grid", gridTemplateColumns:"repeat(3, 1fr)", gap:"20px"}} className="mt-8">
+            {projects.map((p, i) => (
+              <div key={i} className="group rounded-xl overflow-hidden border border-gray-100 bg-white shadow-sm hover:shadow-md transition">
+                <div style={{display:"grid", gridTemplateColumns:"1fr 1fr"}}>
+                  <div style={{position:"relative", height:"160px"}}>
+                    <img src={p.before} alt={`Before waterproofing - ${p.title} Mumbai Thane Bhiwandi`} style={{width:"100%", height:"100%", objectFit:"cover"}} loading="lazy"/>
+                    <span style={{position:"absolute", top:"6px", left:"6px", background:"rgba(0,0,0,0.75)", color:"#fff", fontSize:"9px", fontWeight:"700", padding:"2px 6px", borderRadius:"4px"}}>BEFORE</span>
+                  </div>
+                  <div style={{position:"relative", height:"160px"}}>
+                    <img src={p.after} alt={`After waterproofing - ${p.title} by Bhairav Painting Service`} style={{width:"100%", height:"100%", objectFit:"cover"}} loading="lazy" className="group-hover:scale-105 transition-transform duration-300"/>
+                    <span style={{position:"absolute", top:"6px", left:"6px", background:"#f97316", color:"#fff", fontSize:"9px", fontWeight:"700", padding:"2px 6px", borderRadius:"4px"}}>AFTER</span>
+                    <div className="absolute inset-0 bg-[#1B2B8A]/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                      <span className="bg-orange-500 text-white px-3 py-1.5 rounded-lg text-xs font-bold">View More →</span>
+                    </div>
+                  </div>
                 </div>
-                <div className="p-3 text-center">
-                  <h3 className="font-bold text-sm text-gray-900 mb-1">{p.title}</h3>
-                  <p className="text-xs text-gray-500">📍 {p.location} • 📐 {p.area}</p>
-                  <p className="text-xs text-orange-600 font-semibold mt-1">{p.material}</p>
+                <div style={{padding:"12px 14px"}}>
+                  <p style={{fontSize:"12px", fontWeight:"700", color:"#1B2B8A"}}>📍 {p.title}</p>
+                  <p style={{fontSize:"11px", color:"#6b7280", marginTop:"2px"}}>{p.scope}</p>
                 </div>
               </div>
             ))}
