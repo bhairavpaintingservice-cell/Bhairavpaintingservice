@@ -407,6 +407,33 @@ export default function CommercialPaintingPage() {
         </div>
       </section>
 
+      {/* PROJECT TIMELINE */}
+      <section className="py-20 bg-gray-50">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <span className="inline-block rounded-full border border-gray-300 px-4 py-1 text-xs font-semibold uppercase tracking-widest" style={{color:"#6b7280"}}>Timeline</span>
+          <h2 className="mt-3 text-3xl font-black sm:text-4xl" style={{color:"#1B2B8A"}}>How Long Will It Take?</h2>
+          <p className="mt-3 text-sm max-w-xl" style={{color:"#6b7280"}}>Typical project durations — actual timelines depend on area size, surface condition & scope of work.</p>
+          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { type: "Small Office", size: "Up to 1500 sq ft", duration: "2–4 Days", icon: "🏢" },
+              { type: "Retail Store / Showroom", size: "1500–3000 sq ft", duration: "2–5 Days", icon: "🏪" },
+              { type: "Warehouse / Factory", size: "Large Area", duration: "5–10 Days", icon: "🏭" },
+              { type: "Commercial Building", size: "Multi-Floor", duration: "Depends on Area", icon: "🏗️" },
+            ].map((item, i) => (
+              <div key={i} className="rounded-xl bg-white border border-gray-200 p-6 shadow-sm flex flex-col gap-3">
+                <span className="text-4xl">{item.icon}</span>
+                <div>
+                  <p className="font-black text-2xl" style={{color:"#f97316"}}>{item.duration}</p>
+                  <p className="font-bold text-sm mt-1" style={{color:"#1B2B8A"}}>{item.type}</p>
+                  <p className="text-xs mt-0.5" style={{color:"#6b7280"}}>{item.size}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <p className="mt-6 text-xs" style={{color:"#9ca3af"}}>* Timelines are estimates. Exact schedule confirmed after free site visit.</p>
+        </div>
+      </section>
+
       {/* QUALITY PROMISE */}
       <section className="py-20 bg-white">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
