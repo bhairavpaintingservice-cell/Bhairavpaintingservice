@@ -246,6 +246,34 @@ export default function CommercialPaintingPage() {
         </div>
       </section>
 
+      {/* INDUSTRIES WE SERVE */}
+      <section className="py-20 bg-gray-50">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <span className="inline-block rounded-full border border-gray-300 px-4 py-1 text-xs font-semibold uppercase tracking-widest" style={{color:"#6b7280"}}>Industries</span>
+          <h2 className="mt-3 text-3xl font-black sm:text-4xl" style={{color:"#1B2B8A"}}>Industries We Serve</h2>
+          <p className="mt-3 text-sm max-w-xl" style={{color:"#6b7280"}}>From corporate offices to industrial units — we handle commercial painting across all business types in Mumbai, Thane & Bhiwandi.</p>
+          <div className="mt-10 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+            {[
+              { icon: "🏢", label: "Corporate Offices" },
+              { icon: "🏪", label: "Retail Stores" },
+              { icon: "🏨", label: "Hotels & Restaurants" },
+              { icon: "🏭", label: "Factories & Warehouses" },
+              { icon: "🏥", label: "Hospitals & Clinics" },
+              { icon: "🏫", label: "Schools & Colleges" },
+              { icon: "🏦", label: "Banks & Offices" },
+              { icon: "🛍️", label: "Shopping Malls" },
+              { icon: "💪", label: "Gyms & Fitness" },
+              { icon: "🏗️", label: "Commercial Complexes" },
+            ].map((item, i) => (
+              <div key={i} className="flex flex-col items-center justify-center gap-2 rounded-xl border border-gray-200 bg-white p-4 text-center shadow-sm">
+                <span className="text-3xl">{item.icon}</span>
+                <p className="text-xs font-semibold" style={{color:"#1B2B8A"}}>{item.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* PROCESS */}
       <section className="py-20 bg-[#1B2B8A]">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
