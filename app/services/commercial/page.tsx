@@ -144,19 +144,37 @@ export default function CommercialPaintingPage() {
           <h2 className="mt-3 text-3xl font-black sm:text-4xl" style={{color:"#1B2B8A"}}>Commercial Painting We Handle</h2>
           <p className="mt-3 text-sm max-w-xl" style={{color:"#6b7280"}}>From single offices to multi-location retail chains — scheduled around your business hours.</p>
           <div className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {serviceCards.map((s, i) => (
-              <div key={i} className="overflow-hidden rounded-xl border border-gray-100 bg-gray-50">
-                <div className="relative h-40"><Image src={s.img} alt={s.title} fill className="object-cover" /></div>
-                <div className="p-5">
+            {serviceCards.map((s, i) => {
+              const waMsg = encodeURIComponent(`Hi, I need a quote for ${s.title}. Please contact me.`)
+              const quoteMsg = encodeURIComponent(`Hi, I want a free site visit for ${s.title}. Please contact me.`)
+              const waUrl = `https://wa.me/919158800517?text=${waMsg}`
+              const quoteUrl = `https://wa.me/919158800517?text=${quoteMsg}`
+              return (
+              <div key={i} className="overflow-hidden rounded-xl border border-gray-100 bg-white shadow-sm flex flex-col">
+                <div className="relative h-44"><Image src={s.img} alt={s.title} fill className="object-cover" /></div>
+                <div className="p-5 flex flex-col flex-1">
                   <h3 className="font-bold text-base" style={{color:"#1B2B8A"}}>{s.title}</h3>
-                  <ul className="mt-2 space-y-1">
+                  <ul className="mt-2 space-y-1 flex-1">
                     {s.points.map((pt) => (
                       <li key={pt} className="flex items-start gap-2 text-xs" style={{color:"#6b7280"}}><CheckCircle className="h-3.5 w-3.5 text-orange-500 shrink-0 mt-0.5"/>{pt}</li>
                     ))}
                   </ul>
+                  <div className="mt-4 flex gap-2">
+                    <a href={waUrl} target="_blank" rel="noopener noreferrer"
+                      className="flex-1 flex items-center justify-center gap-1.5 rounded-lg py-2 text-xs font-semibold text-white"
+                      style={{backgroundColor:"#25D366"}}>
+                      <MessageCircle className="h-3.5 w-3.5" /> WhatsApp
+                    </a>
+                    <a href={quoteUrl} target="_blank" rel="noopener noreferrer"
+                      className="flex-1 flex items-center justify-center gap-1.5 rounded-lg py-2 text-xs font-semibold border"
+                      style={{color:"#1B2B8A", borderColor:"#1B2B8A"}}>
+                      Free Quote
+                    </a>
+                  </div>
                 </div>
               </div>
-            ))}
+              )
+            })}
           </div>
         </div>
       </section>
