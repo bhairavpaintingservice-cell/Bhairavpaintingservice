@@ -407,6 +407,39 @@ export default function CommercialPaintingPage() {
         </div>
       </section>
 
+      {/* QUALITY PROMISE */}
+      <section className="py-20 bg-white">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="rounded-2xl p-10 lg:p-14" style={{backgroundColor:"#f0f4ff", border:"1px solid #d0dafa"}}>
+            <div className="flex flex-col lg:flex-row gap-10 items-start">
+              <div className="flex-1">
+                <span className="inline-block rounded-full border border-gray-300 px-4 py-1 text-xs font-semibold uppercase tracking-widest" style={{color:"#6b7280"}}>Our Promise</span>
+                <h2 className="mt-3 text-3xl font-black sm:text-4xl" style={{color:"#1B2B8A"}}>Our Quality Promise</h2>
+                <p className="mt-3 text-sm" style={{color:"#6b7280"}}>Every commercial project we take on comes with a clear quality commitment — no shortcuts, no excuses.</p>
+              </div>
+              <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {[
+                  { icon: "🎨", title: "Premium Paint Brands Only", desc: "Asian Paints, Berger, Nerolac, Dulux — no local or unbranded paints" },
+                  { icon: "📋", title: "Manufacturer Guidelines Followed", desc: "Correct coats, drying time & application as per brand specs" },
+                  { icon: "🧱", title: "Proper Surface Preparation", desc: "Cleaning, crack filling, putty & primer before final coats" },
+                  { icon: "👁️", title: "Owner Supervised Execution", desc: "Every site personally checked by the owner — not just labour" },
+                  { icon: "🔧", title: "Post-Project Support", desc: "Any defect due to our work is rectified at no extra cost" },
+                  { icon: "📄", title: "Written Quotation", desc: "No hidden costs — everything agreed in writing before work starts" },
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start gap-3 rounded-xl bg-white p-4 shadow-sm">
+                    <span className="text-2xl">{item.icon}</span>
+                    <div>
+                      <p className="text-sm font-bold" style={{color:"#1B2B8A"}}>{item.title}</p>
+                      <p className="text-xs mt-0.5" style={{color:"#6b7280"}}>{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="py-20 bg-gray-50">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
