@@ -317,10 +317,9 @@ export default function CommercialPaintingPage() {
                 <div className="relative h-48"><Image src={p.image} alt={p.title} fill className="object-cover" /></div>
                 <div className="p-5">
                   <h3 className="font-bold text-sm" style={{color:"#1B2B8A"}}>{p.title}</h3>
-                  <div className="mt-3 grid grid-cols-3 gap-2">
+                  <div className="mt-3 grid grid-cols-2 gap-2">
                     <div><p className="text-xs" style={{color:"#9ca3af"}}>Type</p><p className="text-xs font-bold" style={{color:"#111827"}}>{p.type}</p></div>
                     <div><p className="text-xs" style={{color:"#9ca3af"}}>Scope</p><p className="text-xs font-bold" style={{color:"#111827"}}>{p.scope}</p></div>
-                    <div><p className="text-xs" style={{color:"#9ca3af"}}>Area</p><p className="text-xs font-bold" style={{color:"#111827"}}>{p.area}</p></div>
                   </div>
                 </div>
               </div>
