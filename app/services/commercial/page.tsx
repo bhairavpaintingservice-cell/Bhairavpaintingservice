@@ -6,21 +6,21 @@ import { useState } from "react"
 import { Phone, MessageCircle, CheckCircle, MapPin, ChevronDown } from "lucide-react"
 
 const serviceCards = [
-  { title: "Office Painting", img: "/images/portfolio-office.webp", points: ["Office Interiors", "Cabins & Meeting Rooms", "Reception & Common Areas"] },
-  { title: "Shop & Showroom Painting", img: "/images/commercial.webp", points: ["Storefronts", "Display Areas", "Billing & Customer Zones"] },
-  { title: "Warehouse & Factory Painting", img: "/images/building/service-exterior-building.jpg", points: ["Storage Areas", "Factory Floors", "Industrial Walls & Roofing"] },
-  { title: "Restaurant & Hotel Painting", img: "/images/portfolio-building.webp", points: ["Dining Areas", "Kitchens", "Guest Rooms & Lobbies"] },
-  { title: "Retail Chain Painting", img: "/images/portfolio-office.webp", points: ["Multi-Branch Projects", "Consistent Brand Finish", "Phased Scheduling"] },
-  { title: "Co-working & Business Centers", img: "/images/commercial.webp", points: ["Shared Workspaces", "Cabins & Lounges", "Common Pantry Areas"] },
+  { title: "Office Painting", img: "/images/commercial/commercial-office.jpg", points: ["Office Interiors", "Cabins & Meeting Rooms", "Reception & Common Areas"] },
+  { title: "Shop & Showroom Painting", img: "/images/commercial/commercial-showroom.jpg", points: ["Storefronts", "Display Areas", "Billing & Customer Zones"] },
+  { title: "Warehouse & Factory Painting", img: "/images/commercial/commercial-warehouse.jpg", points: ["Storage Areas", "Factory Floors", "Industrial Walls & Roofing"] },
+  { title: "Restaurant & Hotel Painting", img: "/images/commercial/commercial-restaurant.jpg", points: ["Dining Areas", "Kitchens", "Guest Rooms & Lobbies"] },
+  { title: "Retail Chain Painting", img: "/images/commercial/commercial-retail.jpg", points: ["Multi-Branch Projects", "Consistent Brand Finish", "Phased Scheduling"] },
+  { title: "Co-working & Business Centers", img: "/images/commercial/commercial-coworking.jpg", points: ["Shared Workspaces", "Cabins & Lounges", "Common Pantry Areas"] },
 ]
 
 const whoFor = [
-  { title: "Office Owners", desc: "Corporate & small business offices", img: "/images/portfolio-office.webp", points: ["Cabin & workstation painting", "Reception area finish", "Weekend scheduling"] },
-  { title: "Shop & Showroom Owners", desc: "Retail storefronts", img: "/images/commercial.webp", points: ["Storefront branding finish", "Display area painting", "Fast turnaround"] },
-  { title: "Restaurant & Hotel Owners", desc: "F&B & hospitality", img: "/images/portfolio-building.webp", points: ["Kitchen-safe coatings", "Off-hours work", "Guest room painting"] },
-  { title: "Warehouse / Factory Managers", desc: "Industrial properties", img: "/images/building/service-exterior-building.jpg", points: ["Large-area coverage", "Floor marking", "Industrial coatings"] },
+  { title: "Office Owners", desc: "Corporate & small business offices", img: "/images/commercial/commercial-office.jpg", points: ["Cabin & workstation painting", "Reception area finish", "Weekend scheduling"] },
+  { title: "Shop & Showroom Owners", desc: "Retail storefronts", img: "/images/commercial/commercial-showroom.jpg", points: ["Storefront branding finish", "Display area painting", "Fast turnaround"] },
+  { title: "Restaurant & Hotel Owners", desc: "F&B & hospitality", img: "/images/commercial/commercial-restaurant.jpg", points: ["Kitchen-safe coatings", "Off-hours work", "Guest room painting"] },
+  { title: "Warehouse / Factory Managers", desc: "Industrial properties", img: "/images/commercial/commercial-warehouse.jpg", points: ["Large-area coverage", "Floor marking", "Industrial coatings"] },
   { title: "Builders & Developers", desc: "New commercial handover", img: "/images/building/service-society-repainting.jpg", points: ["New construction painting", "Bulk project pricing", "Timeline-bound delivery"] },
-  { title: "Retail Chain Owners", desc: "Multi-branch businesses", img: "/images/portfolio-office.webp", points: ["Consistent finish across branches", "Phased rollout", "Single point of contact"] },
+  { title: "Retail Chain Owners", desc: "Multi-branch businesses", img: "/images/commercial/commercial-retail.jpg", points: ["Consistent finish across branches", "Phased rollout", "Single point of contact"] },
 ]
 
 const problems = [
@@ -51,15 +51,15 @@ const processSteps = [
 ]
 
 const recentTransformations = [
-  { image: "/images/portfolio-office.webp", title: "Office Repaint — Bhiwandi", desc: "Complete interior repaint" },
-  { image: "/images/commercial.webp", title: "Showroom Repaint — Thane", desc: "Storefront & display area" },
-  { image: "/images/portfolio-building.webp", title: "Restaurant Repaint — Mumbai", desc: "Interior + exterior finish" },
+  { image: "/images/commercial/commercial-office.jpg", title: "Office Repaint — Bhiwandi", desc: "Complete interior repaint" },
+  { image: "/images/commercial/commercial-showroom.jpg", title: "Showroom Repaint — Thane", desc: "Storefront & display area" },
+  { image: "/images/commercial/commercial-restaurant.jpg", title: "Restaurant Repaint — Mumbai", desc: "Interior + exterior finish" },
 ]
 
 const recentProjects = [
-  { image: "/images/portfolio-office.webp", title: "Project 1 — Bhiwandi", type: "Corporate Office", scope: "Full Interior Painting" },
-  { image: "/images/commercial.webp", title: "Project 2 — Thane", type: "Retail Showroom", scope: "Storefront Repaint" },
-  { image: "/images/portfolio-building.webp", title: "Project 3 — Mumbai", type: "Restaurant", scope: "Interior + Exterior" },
+  { image: "/images/commercial/commercial-office.jpg", title: "Project 1 — Bhiwandi", type: "Corporate Office", scope: "Full Interior Painting" },
+  { image: "/images/commercial/commercial-showroom.jpg", title: "Project 2 — Thane", type: "Retail Showroom", scope: "Storefront Repaint" },
+  { image: "/images/commercial/commercial-restaurant.jpg", title: "Project 3 — Mumbai", type: "Restaurant", scope: "Interior + Exterior" },
 ]
 
 const reviews = [
