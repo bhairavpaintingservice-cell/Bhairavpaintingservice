@@ -137,6 +137,30 @@ export default function CommercialPaintingPage() {
         </div>
       </section>
 
+      {/* NUMBERS SECTION */}
+      <section className="py-12" style={{backgroundColor:"#1B2B8A"}}>
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
+            <div>
+              <p className="text-4xl font-black text-white">47+</p>
+              <p className="mt-1 text-sm font-semibold text-blue-200">Years Experience</p>
+            </div>
+            <div>
+              <p className="text-4xl font-black text-white">500+</p>
+              <p className="mt-1 text-sm font-semibold text-blue-200">Projects Completed</p>
+            </div>
+            <div>
+              <p className="text-4xl font-black text-white">100%</p>
+              <p className="mt-1 text-sm font-semibold text-blue-200">Owner Supervised</p>
+            </div>
+            <div>
+              <p className="text-4xl font-black text-orange-400">Free</p>
+              <p className="mt-1 text-sm font-semibold text-blue-200">Site Inspection</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* SERVICE CARDS */}
       <section className="py-20 bg-white">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
