@@ -150,24 +150,26 @@ export default function CommercialPaintingPage() {
               const waUrl = `https://wa.me/919158800517?text=${waMsg}`
               const quoteUrl = `https://wa.me/919158800517?text=${quoteMsg}`
               return (
-              <div key={i} className="overflow-hidden rounded-xl border border-gray-100 bg-white shadow-sm flex flex-col">
+              <div key={i} className="overflow-hidden rounded-xl shadow-sm flex flex-col">
                 <div className="relative h-44"><Image src={s.img} alt={s.title} fill className="object-cover" /></div>
-                <div className="p-5 flex flex-col flex-1">
-                  <h3 className="font-bold text-base" style={{color:"#1B2B8A"}}>{s.title}</h3>
-                  <ul className="mt-2 space-y-1 flex-1">
-                    {s.points.map((pt) => (
-                      <li key={pt} className="flex items-start gap-2 text-xs" style={{color:"#6b7280"}}><CheckCircle className="h-3.5 w-3.5 text-orange-500 shrink-0 mt-0.5"/>{pt}</li>
-                    ))}
-                  </ul>
-                  <div className="mt-4 flex gap-2">
+                <div className="p-4 flex items-center justify-between gap-3" style={{backgroundColor:"#1B2B8A"}}>
+                  <div className="flex-1 min-w-0">
+                    <h3 className="font-bold text-sm text-white">{s.title}</h3>
+                    <ul className="mt-1 space-y-0.5">
+                      {s.points.map((pt) => (
+                        <li key={pt} className="flex items-center gap-1.5 text-xs text-blue-200"><CheckCircle className="h-3 w-3 text-orange-400 shrink-0"/>{pt}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="flex flex-col gap-2 shrink-0">
                     <a href={waUrl} target="_blank" rel="noopener noreferrer"
-                      className="flex-1 flex items-center justify-center gap-1.5 rounded-lg py-2 text-xs font-semibold text-white"
+                      className="flex items-center justify-center gap-1.5 rounded-lg px-3 py-2 text-xs font-semibold text-white"
                       style={{backgroundColor:"#25D366"}}>
                       <MessageCircle className="h-3.5 w-3.5" /> WhatsApp
                     </a>
                     <a href={quoteUrl} target="_blank" rel="noopener noreferrer"
-                      className="flex-1 flex items-center justify-center gap-1.5 rounded-lg py-2 text-xs font-semibold border"
-                      style={{color:"#1B2B8A", borderColor:"#1B2B8A"}}>
+                      className="flex items-center justify-center gap-1.5 rounded-lg px-3 py-2 text-xs font-semibold bg-white"
+                      style={{color:"#1B2B8A"}}>
                       Free Quote
                     </a>
                   </div>
