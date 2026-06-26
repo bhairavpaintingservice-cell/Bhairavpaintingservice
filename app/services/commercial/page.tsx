@@ -50,16 +50,13 @@ const processSteps = [
   { num: "6", title: "Cleanup & Handover", desc: "Final inspection, cleanup & handover" },
 ]
 
-const recentTransformations = [
-  { image: "/images/commercial/commercial-office.jpg", title: "Office Repaint — Bhiwandi", desc: "Complete interior repaint" },
-  { image: "/images/commercial/commercial-showroom.jpg", title: "Showroom Repaint — Thane", desc: "Storefront & display area" },
-  { image: "/images/commercial/commercial-restaurant.jpg", title: "Restaurant Repaint — Mumbai", desc: "Interior + exterior finish" },
-]
-
-const recentProjects = [
-  { image: "/images/commercial/commercial-office.jpg", title: "Project 1 — Bhiwandi", type: "Corporate Office", scope: "Full Interior Painting" },
-  { image: "/images/commercial/commercial-showroom.jpg", title: "Project 2 — Thane", type: "Retail Showroom", scope: "Storefront Repaint" },
-  { image: "/images/commercial/commercial-restaurant.jpg", title: "Project 3 — Mumbai", type: "Restaurant", scope: "Interior + Exterior" },
+const commercialProjects = [
+  { image: "/images/commercial/commercial-office.jpg", title: "Corporate Office — Bhiwandi", type: "Office Painting", scope: "Full Interior Repaint", area: "2200 sq ft" },
+  { image: "/images/commercial/commercial-showroom.jpg", title: "Retail Showroom — Thane", type: "Shop & Showroom", scope: "Storefront & Display Area", area: "1800 sq ft" },
+  { image: "/images/commercial/commercial-restaurant.jpg", title: "Restaurant — Mumbai", type: "Restaurant & Hotel", scope: "Interior + Exterior", area: "3000 sq ft" },
+  { image: "/images/commercial/commercial-warehouse.jpg", title: "Warehouse — Bhiwandi", type: "Warehouse & Factory", scope: "Industrial Wall Coating", area: "8000 sq ft" },
+  { image: "/images/commercial/commercial-retail.jpg", title: "Retail Chain — Kalyan", type: "Retail Chain", scope: "Multi-Branch Repaint", area: "1500 sq ft each" },
+  { image: "/images/commercial/commercial-coworking.jpg", title: "Co-working Space — Navi Mumbai", type: "Co-working Center", scope: "Full Interior Painting", area: "4000 sq ft" },
 ]
 
 const reviews = [
@@ -308,39 +305,22 @@ export default function CommercialPaintingPage() {
         </div>
       </section>
 
-      {/* RECENT TRANSFORMATIONS */}
+      {/* RECENT PROJECTS */}
       <section className="py-20 bg-gray-50">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <span className="inline-block rounded-full border border-gray-300 px-4 py-1 text-xs font-semibold uppercase tracking-widest" style={{color:"#6b7280"}}>Recent Work</span>
-          <h2 className="mt-3 text-3xl font-black sm:text-4xl" style={{color:"#1B2B8A"}}>Recent Commercial Transformations</h2>
-          <div className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-3">
-            {recentTransformations.map((t, i) => (
-              <div key={i} className="overflow-hidden rounded-xl border border-gray-100 bg-white">
-                <div className="relative h-44"><Image src={t.image} alt={t.title} fill className="object-cover" /></div>
-                <div className="p-4">
-                  <p className="font-bold text-sm" style={{color:"#1B2B8A"}}>{t.title}</p>
-                  <p className="text-xs mt-1" style={{color:"#6b7280"}}>{t.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* RECENT PROJECTS */}
-      <section className="py-20 bg-white">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <span className="inline-block rounded-full border border-gray-300 px-4 py-1 text-xs font-semibold uppercase tracking-widest" style={{color:"#6b7280"}}>Recent Projects</span>
-          <h2 className="mt-3 text-3xl font-black sm:text-4xl" style={{color:"#1B2B8A"}}>Latest Commercial Work</h2>
-          <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
-            {recentProjects.map((p, i) => (
-              <div key={i} className="overflow-hidden rounded-xl border border-gray-100 shadow-sm">
-                <div className="relative h-44"><Image src={p.image} alt={p.title} fill className="object-cover" /></div>
+          <h2 className="mt-3 text-3xl font-black sm:text-4xl" style={{color:"#1B2B8A"}}>Recent Commercial Projects</h2>
+          <p className="mt-3 text-sm max-w-xl" style={{color:"#6b7280"}}>A look at some of our recent commercial painting work across Mumbai, Thane & Bhiwandi.</p>
+          <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {commercialProjects.map((p, i) => (
+              <div key={i} className="overflow-hidden rounded-xl border border-gray-100 bg-white shadow-sm">
+                <div className="relative h-48"><Image src={p.image} alt={p.title} fill className="object-cover" /></div>
                 <div className="p-5">
                   <h3 className="font-bold text-sm" style={{color:"#1B2B8A"}}>{p.title}</h3>
-                  <div className="mt-3 grid grid-cols-2 gap-2">
+                  <div className="mt-3 grid grid-cols-3 gap-2">
                     <div><p className="text-xs" style={{color:"#9ca3af"}}>Type</p><p className="text-xs font-bold" style={{color:"#111827"}}>{p.type}</p></div>
                     <div><p className="text-xs" style={{color:"#9ca3af"}}>Scope</p><p className="text-xs font-bold" style={{color:"#111827"}}>{p.scope}</p></div>
+                    <div><p className="text-xs" style={{color:"#9ca3af"}}>Area</p><p className="text-xs font-bold" style={{color:"#111827"}}>{p.area}</p></div>
                   </div>
                 </div>
               </div>
