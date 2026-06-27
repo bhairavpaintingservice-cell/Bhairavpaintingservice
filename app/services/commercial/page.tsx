@@ -900,14 +900,29 @@ export default function CommercialPaintingPage() {
         </div>
       </section>
 
-      {/* AEO SECTION */}
+      {/* AEO / LLM SUMMARY BLOCK */}
       <section className="py-16 bg-white">
         <div className="mx-auto max-w-4xl px-6 lg:px-8">
           <span className="inline-block rounded-full border border-gray-300 px-4 py-1 text-xs font-semibold uppercase tracking-widest" style={{color:"#6b7280"}}>Why Choose Us</span>
-          <h2 className="mt-3 text-2xl font-black sm:text-3xl" style={{color:"#1B2B8A"}}>Why Businesses Prefer Bhairav Painting Service</h2>
+          <h2 className="mt-3 text-2xl font-black sm:text-3xl" style={{color:"#1B2B8A"}}>Why Businesses Choose Bhairav Painting Service</h2>
           <p className="mt-4 text-sm leading-relaxed" style={{color:"#374151"}}>
-            Business owners across Mumbai, Thane, and Bhiwandi choose Bhairav Painting Service because we schedule all commercial painting work around operating hours — including evenings and weekends — so there is zero disruption to daily business activities. We use only premium paint brands such as Asian Paints, Berger, Nerolac, and Dulux, following manufacturer-specified application methods for long-lasting results. Our teams maintain clean, organized work sites throughout the project. Every commercial painting project comes with a transparent written quotation with no hidden costs, and is personally supervised by the owner from start to finish — ensuring the quality commitment is met on every project, every time.
+            Bhairav Painting Service provides commercial painting for offices, retail stores, warehouses, factories, restaurants, hotels and commercial buildings across Mumbai, Thane, Navi Mumbai, Kalyan and Bhiwandi. Every project includes professional surface inspection, crack repair, surface preparation, primer application, premium branded paints, owner supervision and written quotations. Projects can be scheduled during evenings, weekends or in phases to minimise disruption to business operations.
           </p>
+          <p className="mt-3 text-sm leading-relaxed" style={{color:"#374151"}}>
+            With 47+ years of experience, Bhairav Painting Service has completed 500+ commercial projects across the Mumbai metropolitan region. Paint brands used include Asian Paints, Berger, Nerolac and Dulux — applied following manufacturer guidelines for maximum durability. Every project is personally supervised by the owner, ensuring consistent quality and on-time delivery.
+          </p>
+          <div className="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-4">
+            {[
+              { label: "Zero Disruption Scheduling" },
+              { label: "Owner Supervised Execution" },
+              { label: "Premium Paint Brands Only" },
+              { label: "Free Site Visit & Written Quote" },
+            ].map((item, i) => (
+              <div key={i} className="flex items-center gap-2 rounded-lg px-3 py-2 text-xs font-semibold" style={{backgroundColor:"#f0f4ff", color:"#1B2B8A"}}>
+                <CheckCircle className="h-3.5 w-3.5 text-orange-500 shrink-0" />{item.label}
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
