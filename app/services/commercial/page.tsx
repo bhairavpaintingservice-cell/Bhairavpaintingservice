@@ -744,18 +744,17 @@ export default function CommercialPaintingPage() {
           </p>
           <div className="mt-10 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
             {[
-              { icon: "🎨", label: "Existing Paint Condition", desc: "Peeling, bubbling or fading checked" },
-              { icon: "💧", label: "Moisture & Seepage", desc: "Damp walls identified before painting" },
-              { icon: "🧱", label: "Wall Cracks", desc: "Hairline to structural cracks assessed" },
-              { icon: "💪", label: "Surface Strength", desc: "Weak or hollow plaster identified" },
-              { icon: "🔬", label: "Coating Compatibility", desc: "Previous paint type checked for adhesion" },
-              { icon: "☀️", label: "Interior or Exterior", desc: "Correct paint system recommended" },
-              { icon: "👣", label: "Foot Traffic Level", desc: "High-traffic areas get durable coatings" },
-              { icon: "📋", label: "Written Report", desc: "Full inspection summary provided free" },
+              { label: "Existing Paint Condition", desc: "Peeling, bubbling or fading checked" },
+              { label: "Moisture & Seepage", desc: "Damp walls identified before painting" },
+              { label: "Wall Cracks", desc: "Hairline to structural cracks assessed" },
+              { label: "Surface Strength", desc: "Weak or hollow plaster identified" },
+              { label: "Coating Compatibility", desc: "Previous paint type checked for adhesion" },
+              { label: "Interior or Exterior", desc: "Correct paint system recommended" },
+              { label: "Foot Traffic Level", desc: "High-traffic areas get durable coatings" },
+              { label: "Written Report", desc: "Full inspection summary provided free" },
             ].map((item, i) => (
               <div key={i} className="rounded-xl bg-white border border-gray-200 p-4 shadow-sm">
-                <span className="text-2xl">{item.icon}</span>
-                <p className="mt-2 font-bold text-xs" style={{color:"#1B2B8A"}}>{item.label}</p>
+                <p className="font-bold text-xs" style={{color:"#1B2B8A"}}>{item.label}</p>
                 <p className="mt-0.5 text-xs" style={{color:"#6b7280"}}>{item.desc}</p>
               </div>
             ))}
