@@ -323,7 +323,6 @@ export default function CommercialPaintingPage() {
                   <div className="mt-3 grid grid-cols-2 gap-2">
                     <div><p className="text-xs" style={{color:"#9ca3af"}}>Type</p><p className="text-xs font-bold" style={{color:"#111827"}}>{p.type}</p></div>
                     <div><p className="text-xs" style={{color:"#9ca3af"}}>Scope</p><p className="text-xs font-bold" style={{color:"#111827"}}>{p.scope}</p></div>
-                    <div><p className="text-xs" style={{color:"#9ca3af"}}>Duration</p><p className="text-xs font-bold" style={{color:"#111827"}}>{p.duration}</p></div>
                     <div><p className="text-xs" style={{color:"#9ca3af"}}>Paint</p><p className="text-xs font-bold" style={{color:"#111827"}}>{p.paint}</p></div>
                   </div>
                 </div>
