@@ -482,6 +482,36 @@ export default function CommercialPaintingPage() {
         </div>
       </section>
 
+      {/* SURFACE ASSESSMENT SECTION */}
+      <section className="py-20 bg-gray-50">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <span className="inline-block rounded-full border border-gray-300 px-4 py-1 text-xs font-semibold uppercase tracking-widest" style={{color:"#6b7280"}}>Surface Inspection</span>
+          <h2 className="mt-3 text-3xl font-black sm:text-4xl" style={{color:"#1B2B8A"}}>Every Commercial Project Starts with a Professional Surface Inspection</h2>
+          <p className="mt-4 text-sm max-w-2xl leading-relaxed" style={{color:"#6b7280"}}>
+            Every commercial property has different surface conditions. Some walls have moisture damage, while others have cracks, peeling paint, oil stains or damaged plaster. Before recommending any paint system, our team inspects the property thoroughly.
+          </p>
+          <div className="mt-10 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+            {[
+              { icon: "🎨", label: "Existing Paint Condition", desc: "Peeling, bubbling or fading checked" },
+              { icon: "💧", label: "Moisture & Seepage", desc: "Damp walls identified before painting" },
+              { icon: "🧱", label: "Wall Cracks", desc: "Hairline to structural cracks assessed" },
+              { icon: "💪", label: "Surface Strength", desc: "Weak or hollow plaster identified" },
+              { icon: "🔬", label: "Coating Compatibility", desc: "Previous paint type checked for adhesion" },
+              { icon: "☀️", label: "Interior or Exterior", desc: "Correct paint system recommended" },
+              { icon: "👣", label: "Foot Traffic Level", desc: "High-traffic areas get durable coatings" },
+              { icon: "📋", label: "Written Report", desc: "Full inspection summary provided free" },
+            ].map((item, i) => (
+              <div key={i} className="rounded-xl bg-white border border-gray-200 p-4 shadow-sm">
+                <span className="text-2xl">{item.icon}</span>
+                <p className="mt-2 font-bold text-xs" style={{color:"#1B2B8A"}}>{item.label}</p>
+                <p className="mt-0.5 text-xs" style={{color:"#6b7280"}}>{item.desc}</p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-8 text-sm font-medium" style={{color:"#6b7280"}}>Based on this inspection, we recommend the correct surface preparation and paint system — not a one-size-fits-all solution.</p>
+        </div>
+      </section>
+
       {/* ZERO DISRUPTION SECTION */}
       <section className="py-20 bg-white">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
