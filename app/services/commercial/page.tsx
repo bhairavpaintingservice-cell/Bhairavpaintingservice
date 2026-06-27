@@ -446,6 +446,25 @@ export default function CommercialPaintingPage() {
         </div>
       </section>
 
+      {/* BETTER CTA */}
+      <section className="py-20" style={{backgroundColor:"#1B2B8A"}}>
+        <div className="mx-auto max-w-4xl px-6 lg:px-8 text-center">
+          <h2 className="text-3xl font-black text-white sm:text-4xl">Need Painting Without Interrupting Your Business?</h2>
+          <p className="mt-4 text-blue-200 text-sm max-w-2xl mx-auto">We work around your schedule — evenings, weekends, or phased room-by-room. Zero disruption to your operations.</p>
+          <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="https://wa.me/919158800517?text=Hi%2C%20I%20want%20to%20schedule%20a%20free%20site%20visit%20for%20commercial%20painting." target="_blank" rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 rounded-lg px-8 py-4 text-base font-bold text-white transition-colors"
+              style={{backgroundColor:"#25D366"}}>
+              <MessageCircle className="h-5 w-5" /> Schedule FREE Site Visit
+            </a>
+            <a href="tel:+919158800517"
+              className="flex items-center justify-center gap-2 rounded-lg border-2 border-white px-8 py-4 text-base font-bold text-white hover:bg-white/10 transition-colors">
+              <Phone className="h-5 w-5" /> Call: +91 9158800517
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="py-20 bg-gray-50">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
