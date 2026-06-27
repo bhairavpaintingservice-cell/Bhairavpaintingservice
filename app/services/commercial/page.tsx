@@ -51,12 +51,12 @@ const processSteps = [
 ]
 
 const commercialProjects = [
-  { image: "/images/commercial/commercial-office.jpg", title: "Corporate Office — Bhiwandi", type: "Office Painting", scope: "Full Interior Repaint", area: "2200 sq ft" },
-  { image: "/images/commercial/commercial-showroom.jpg", title: "Retail Showroom — Thane", type: "Shop & Showroom", scope: "Storefront & Display Area", area: "1800 sq ft" },
-  { image: "/images/commercial/commercial-restaurant.jpg", title: "Restaurant — Mumbai", type: "Restaurant & Hotel", scope: "Interior + Exterior", area: "3000 sq ft" },
-  { image: "/images/commercial/commercial-warehouse.jpg", title: "Warehouse — Bhiwandi", type: "Warehouse & Factory", scope: "Industrial Wall Coating", area: "8000 sq ft" },
-  { image: "/images/commercial/commercial-retail.jpg", title: "Retail Chain — Kalyan", type: "Retail Chain", scope: "Multi-Branch Repaint", area: "1500 sq ft each" },
-  { image: "/images/commercial/commercial-coworking.jpg", title: "Co-working Space — Navi Mumbai", type: "Co-working Center", scope: "Full Interior Painting", area: "4000 sq ft" },
+  { image: "/images/commercial/commercial-office.jpg", title: "Corporate Office", type: "Office Painting", scope: "Full Interior Repaint", duration: "4 Days", paint: "Asian Paints Royale" },
+  { image: "/images/commercial/commercial-showroom.jpg", title: "Retail Showroom", type: "Shop & Showroom", scope: "Storefront & Display Area", duration: "3 Days", paint: "Berger Silk" },
+  { image: "/images/commercial/commercial-restaurant.jpg", title: "Restaurant", type: "Restaurant & Hotel", scope: "Interior + Exterior", duration: "5 Days", paint: "Asian Paints Apex" },
+  { image: "/images/commercial/commercial-warehouse.jpg", title: "Warehouse", type: "Warehouse & Factory", scope: "Industrial Wall Coating", duration: "8 Days", paint: "Nerolac Excel" },
+  { image: "/images/commercial/commercial-retail.jpg", title: "Retail Chain", type: "Retail Chain", scope: "Multi-Branch Repaint", duration: "6 Days", paint: "Dulux Weathershield" },
+  { image: "/images/commercial/commercial-coworking.jpg", title: "Co-working Space", type: "Co-working Center", scope: "Full Interior Painting", duration: "5 Days", paint: "Asian Paints Royale" },
 ]
 
 const reviews = [
@@ -323,6 +323,8 @@ export default function CommercialPaintingPage() {
                   <div className="mt-3 grid grid-cols-2 gap-2">
                     <div><p className="text-xs" style={{color:"#9ca3af"}}>Type</p><p className="text-xs font-bold" style={{color:"#111827"}}>{p.type}</p></div>
                     <div><p className="text-xs" style={{color:"#9ca3af"}}>Scope</p><p className="text-xs font-bold" style={{color:"#111827"}}>{p.scope}</p></div>
+                    <div><p className="text-xs" style={{color:"#9ca3af"}}>Duration</p><p className="text-xs font-bold" style={{color:"#111827"}}>{p.duration}</p></div>
+                    <div><p className="text-xs" style={{color:"#9ca3af"}}>Paint</p><p className="text-xs font-bold" style={{color:"#111827"}}>{p.paint}</p></div>
                   </div>
                 </div>
               </div>
