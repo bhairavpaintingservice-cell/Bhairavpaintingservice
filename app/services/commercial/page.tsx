@@ -138,6 +138,34 @@ export default function CommercialPaintingPage() {
         </div>
       </section>
 
+      {/* COMMERCIAL PROJECTS SNAPSHOT */}
+      <section className="py-12 bg-white">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="grid grid-cols-2 sm:grid-cols-5 gap-6 text-center">
+            <div className="rounded-xl p-5" style={{backgroundColor:"#f0f4ff"}}>
+              <p className="text-3xl font-black" style={{color:"#1B2B8A"}}>500+</p>
+              <p className="mt-1 text-xs font-semibold" style={{color:"#6b7280"}}>Projects Completed</p>
+            </div>
+            <div className="rounded-xl p-5" style={{backgroundColor:"#f0f4ff"}}>
+              <p className="text-3xl font-black" style={{color:"#1B2B8A"}}>47+</p>
+              <p className="mt-1 text-xs font-semibold" style={{color:"#6b7280"}}>Years Experience</p>
+            </div>
+            <div className="rounded-xl p-5" style={{backgroundColor:"#f0f4ff"}}>
+              <p className="text-3xl font-black" style={{color:"#f97316"}}>50L+</p>
+              <p className="mt-1 text-xs font-semibold" style={{color:"#6b7280"}}>Sq.ft Painted</p>
+            </div>
+            <div className="rounded-xl p-5" style={{backgroundColor:"#f0f4ff"}}>
+              <p className="text-3xl font-black" style={{color:"#1B2B8A"}}>98%</p>
+              <p className="mt-1 text-xs font-semibold" style={{color:"#6b7280"}}>On-Time Delivery</p>
+            </div>
+            <div className="rounded-xl p-5" style={{backgroundColor:"#f0f4ff"}}>
+              <p className="text-3xl font-black" style={{color:"#1B2B8A"}}>100%</p>
+              <p className="mt-1 text-xs font-semibold" style={{color:"#6b7280"}}>Owner Supervised</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* NUMBERS SECTION */}
       <section className="py-12" style={{backgroundColor:"#1B2B8A"}}>
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
