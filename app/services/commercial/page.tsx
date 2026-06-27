@@ -742,7 +742,7 @@ export default function CommercialPaintingPage() {
           <p className="mt-4 text-sm max-w-2xl leading-relaxed" style={{color:"#6b7280"}}>
             Every commercial property has different surface conditions. Some walls have moisture damage, while others have cracks, peeling paint, oil stains or damaged plaster. Before recommending any paint system, our team inspects the property thoroughly.
           </p>
-          <div className="mt-10 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-3xl">
             {[
               { label: "Existing Paint Condition", desc: "Peeling, bubbling or fading checked" },
               { label: "Moisture & Seepage", desc: "Damp walls identified before painting" },
@@ -753,9 +753,12 @@ export default function CommercialPaintingPage() {
               { label: "Foot Traffic Level", desc: "High-traffic areas get durable coatings" },
               { label: "Written Report", desc: "Full inspection summary provided free" },
             ].map((item, i) => (
-              <div key={i} className="rounded-xl bg-white border border-gray-200 p-4 shadow-sm">
-                <p className="font-bold text-xs" style={{color:"#1B2B8A"}}>{item.label}</p>
-                <p className="mt-0.5 text-xs" style={{color:"#6b7280"}}>{item.desc}</p>
+              <div key={i} className="flex items-start gap-2">
+                <CheckCircle className="h-4 w-4 text-orange-500 shrink-0 mt-0.5" />
+                <div>
+                  <p className="text-sm font-semibold" style={{color:"#1B2B8A"}}>{item.label}</p>
+                  <p className="text-xs" style={{color:"#6b7280"}}>{item.desc}</p>
+                </div>
               </div>
             ))}
           </div>
