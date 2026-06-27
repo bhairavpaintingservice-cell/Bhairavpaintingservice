@@ -530,6 +530,28 @@ export default function CommercialPaintingPage() {
         </div>
       </section>
 
+      {/* LOCAL SEO SECTION */}
+      <section className="py-16 bg-gray-50">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <h2 className="text-2xl font-black" style={{color:"#1B2B8A"}}>Commercial Painting Services Across Mumbai Region</h2>
+          <p className="mt-4 text-sm leading-relaxed" style={{color:"#6b7280"}}>
+            Bhairav Painting Service provides professional commercial painting in Mumbai, Thane, Bhiwandi, Kalyan, and Navi Mumbai. 
+            Whether you need office painting in Thane, warehouse painting in Bhiwandi, shop painting in Kalyan, or commercial building painting in Mumbai — 
+            our experienced team handles projects of all sizes with minimal disruption to your business operations.
+          </p>
+          <p className="mt-3 text-sm leading-relaxed" style={{color:"#6b7280"}}>
+            As a trusted commercial painting contractor with 47+ years of experience, we specialize in office painting, 
+            retail store painting, restaurant painting, factory painting, and co-working space painting across the Mumbai metropolitan region. 
+            Every project includes a free site visit, written quotation, and owner-supervised execution.
+          </p>
+          <div className="mt-6 flex flex-wrap gap-2">
+            {["Commercial Painting Mumbai", "Office Painting Thane", "Warehouse Painting Bhiwandi", "Shop Painting Kalyan", "Commercial Painting Navi Mumbai", "Office Painting Contractor", "Factory Painting Mumbai", "Restaurant Painting Thane"].map((tag, i) => (
+              <span key={i} className="rounded-full border border-gray-300 px-3 py-1 text-xs font-medium" style={{color:"#6b7280"}}>{tag}</span>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <a href="https://wa.me/919158800517" target="_blank" rel="noopener noreferrer" className="fixed bottom-24 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-green-500 text-white shadow-lg"><MessageCircle className="h-7 w-7"/></a>
       <a href="tel:+919158800517" className="fixed bottom-6 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-red-500 text-white shadow-lg"><Phone className="h-7 w-7"/></a>
     </div>
