@@ -482,6 +482,49 @@ export default function CommercialPaintingPage() {
         </div>
       </section>
 
+      {/* LOCAL EXPERTISE / MUMBAI CLIMATE */}
+      <section className="py-20 bg-white">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <span className="inline-block rounded-full border border-gray-300 px-4 py-1 text-xs font-semibold uppercase tracking-widest" style={{color:"#6b7280"}}>Local Expertise</span>
+          <h2 className="mt-3 text-3xl font-black sm:text-4xl" style={{color:"#1B2B8A"}}>Commercial Painting Across Mumbai's Climate</h2>
+          <p className="mt-4 text-sm max-w-2xl leading-relaxed" style={{color:"#6b7280"}}>
+            Commercial buildings across Mumbai, Thane, Navi Mumbai, Kalyan and Bhiwandi face heavy monsoon rains, high humidity, coastal salt air, dust and intense summer sunlight. These conditions are significantly more demanding than most other parts of India.
+          </p>
+          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { icon: "🌧️", title: "Heavy Monsoon", desc: "4–6 months of heavy rain causes seepage, dampness and paint failure on poorly protected surfaces." },
+              { icon: "💧", title: "High Humidity", desc: "Coastal humidity accelerates paint degradation — wrong paint systems fail within 1–2 years." },
+              { icon: "☀️", title: "Intense UV", desc: "Strong summer sunlight causes fading and chalking on exterior surfaces painted with inferior products." },
+              { icon: "🌫️", title: "Industrial Dust", desc: "Bhiwandi and Thane industrial zones produce heavy dust that affects surface adhesion and finish life." },
+            ].map((item, i) => (
+              <div key={i} className="rounded-xl border border-gray-200 p-6 shadow-sm">
+                <span className="text-4xl">{item.icon}</span>
+                <h3 className="mt-3 font-bold text-sm" style={{color:"#1B2B8A"}}>{item.title}</h3>
+                <p className="mt-1 text-xs leading-relaxed" style={{color:"#6b7280"}}>{item.desc}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-10 rounded-2xl p-8" style={{backgroundColor:"#f0f4ff", border:"1px solid #d0dafa"}}>
+            <h3 className="font-black text-lg" style={{color:"#1B2B8A"}}>How We Address Mumbai's Climate Challenges</h3>
+            <div className="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-4">
+              {[
+                { title: "Weatherproof Exterior Systems", desc: "Asian Paints Apex, Berger WeatherCoat and Nerolac Excel — specifically selected for Mumbai's monsoon and humidity." },
+                { title: "Anti-Fungal Treatments", desc: "Damp-prone areas treated with anti-fungal primers before painting to prevent mould and discolouration." },
+                { title: "Correct Application Season", desc: "Exterior painting scheduled outside monsoon months for best adhesion and long-lasting results." },
+              ].map((item, i) => (
+                <div key={i} className="flex items-start gap-3">
+                  <CheckCircle className="h-5 w-5 text-orange-500 shrink-0 mt-0.5" />
+                  <div>
+                    <p className="font-bold text-sm" style={{color:"#1B2B8A"}}>{item.title}</p>
+                    <p className="text-xs mt-1" style={{color:"#6b7280"}}>{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* HIDDEN COST SECTION */}
       <section className="py-20 bg-gray-50">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
