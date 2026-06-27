@@ -114,7 +114,7 @@ export default function CommercialPaintingPage() {
         <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 py-16 text-center">
           <div className="inline-flex items-center gap-2 rounded-full border border-orange-400 px-5 py-2 text-xs font-bold uppercase tracking-widest text-orange-400 mb-6">★ COMMERCIAL PAINTING SPECIALISTS</div>
           <h1 className="text-4xl font-black sm:text-5xl lg:text-6xl leading-tight" style={{color:"#f97316"}}>Commercial Painting Services in Mumbai, Thane &amp; Bhiwandi</h1>
-          <p className="mt-6 text-lg text-white/75 max-w-2xl mx-auto">47+ years painting offices, shops, showrooms, warehouses &amp; restaurants — with minimal disruption to your business.</p>
+          <p className="mt-6 text-lg text-white/75 max-w-2xl mx-auto">Trusted Commercial Painting Contractors with 47+ Years of Experience. We complete office, retail, warehouse, factory and commercial building painting projects with minimal business disruption, premium paint brands and owner-supervised quality.</p>
           <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
             <a href="#contact" className="flex items-center justify-center gap-2 rounded-lg bg-orange-500 px-8 py-4 text-base font-bold text-white hover:bg-orange-600 transition-colors"><MessageCircle className="h-5 w-5" /> Get Free Quote</a>
             <a href="tel:+919158800517" className="flex items-center justify-center gap-2 rounded-lg border-2 border-white px-8 py-4 text-base font-bold text-white hover:bg-white/10 transition-colors"><Phone className="h-5 w-5" /> Call Now: 9158800517</a>
