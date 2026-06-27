@@ -819,6 +819,72 @@ export default function CommercialPaintingPage() {
         </div>
       </section>
 
+      {/* CHECKLIST + COST FACTORS + EEAT */}
+      <section className="py-20 bg-gray-50">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+            {/* Checklist */}
+            <div className="rounded-2xl bg-white border border-gray-200 p-6 shadow-sm">
+              <span className="inline-block rounded-full border border-gray-300 px-3 py-1 text-xs font-semibold uppercase tracking-widest" style={{color:"#6b7280"}}>Free Checklist</span>
+              <h3 className="mt-3 text-lg font-black" style={{color:"#1B2B8A"}}>Before Hiring a Commercial Painting Contractor</h3>
+              <p className="mt-2 text-xs" style={{color:"#6b7280"}}>Use this checklist to evaluate any contractor before signing.</p>
+              <ul className="mt-4 space-y-2">
+                {["GST Invoice Provided", "Surface Preparation Included", "Branded Paints Used", "Written Quotation Given", "Owner Supervision Confirmed", "Project Timeline Shared", "Site & Furniture Protection", "Warranty on Workmanship", "Post-Work Cleanup Included"].map((pt, i) => (
+                  <li key={i} className="flex items-center gap-2 text-xs" style={{color:"#374151"}}>
+                    <CheckCircle className="h-3.5 w-3.5 text-orange-500 shrink-0" />{pt}
+                  </li>
+                ))}
+              </ul>
+              <a href="https://wa.me/919158800517?text=Hi%2C%20I%20want%20to%20hire%20a%20commercial%20painting%20contractor.%20Please%20share%20details." target="_blank" rel="noopener noreferrer"
+                className="mt-5 flex items-center justify-center gap-2 rounded-lg py-2.5 text-xs font-bold text-white"
+                style={{backgroundColor:"#25D366"}}>
+                <MessageCircle className="h-3.5 w-3.5" /> WhatsApp Us
+              </a>
+            </div>
+
+            {/* Cost Factors */}
+            <div className="rounded-2xl bg-white border border-gray-200 p-6 shadow-sm">
+              <span className="inline-block rounded-full border border-gray-300 px-3 py-1 text-xs font-semibold uppercase tracking-widest" style={{color:"#6b7280"}}>Cost Guide</span>
+              <h3 className="mt-3 text-lg font-black" style={{color:"#1B2B8A"}}>What Affects Commercial Painting Cost?</h3>
+              <p className="mt-2 text-xs" style={{color:"#6b7280"}}>These factors determine the final cost of any commercial painting project.</p>
+              <ul className="mt-4 space-y-2">
+                {["Total carpet area & ceiling height", "Existing wall condition & repairs needed", "Number of paint coats required", "Premium vs standard paint grade", "Work during office hours or weekends", "Scaffolding requirement", "Surface crack & plaster repairs", "Waterproofing requirements", "Project completion deadline"].map((pt, i) => (
+                  <li key={i} className="flex items-start gap-2 text-xs" style={{color:"#374151"}}>
+                    <CheckCircle className="h-3.5 w-3.5 text-orange-500 shrink-0 mt-0.5" />{pt}
+                  </li>
+                ))}
+              </ul>
+              <a href="https://wa.me/919158800517?text=Hi%2C%20I%20want%20a%20quotation%20for%20commercial%20painting.%20Please%20contact%20me." target="_blank" rel="noopener noreferrer"
+                className="mt-5 flex items-center justify-center gap-2 rounded-lg py-2.5 text-xs font-bold text-white"
+                style={{backgroundColor:"#25D366"}}>
+                <MessageCircle className="h-3.5 w-3.5" /> Get Free Quote
+              </a>
+            </div>
+
+            {/* E-E-A-T */}
+            <div className="rounded-2xl p-6 shadow-sm" style={{backgroundColor:"#1B2B8A"}}>
+              <span className="inline-block rounded-full border border-white/30 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-blue-200">Our Promise</span>
+              <h3 className="mt-3 text-lg font-black text-white">Every Commercial Project Includes</h3>
+              <p className="mt-2 text-xs text-blue-200">No shortcuts. No surprises. Every single project.</p>
+              <ul className="mt-4 space-y-2">
+                {["Free Site Inspection", "Written Estimate", "Professional Surface Assessment", "Crack Repair & Filling", "Primer Application", "Premium Branded Paint", "Owner Supervision Throughout", "Final Quality Inspection", "Professional Cleanup"].map((pt, i) => (
+                  <li key={i} className="flex items-center gap-2 text-xs text-white">
+                    <CheckCircle className="h-3.5 w-3.5 text-orange-400 shrink-0" />{pt}
+                  </li>
+                ))}
+              </ul>
+              <a href="https://wa.me/919158800517?text=Hi%2C%20I%20want%20to%20discuss%20a%20commercial%20painting%20project." target="_blank" rel="noopener noreferrer"
+                className="mt-5 flex items-center justify-center gap-2 rounded-lg py-2.5 text-xs font-bold"
+                style={{backgroundColor:"#f97316", color:"white"}}>
+                <MessageCircle className="h-3.5 w-3.5" /> Discuss Your Project
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
       {/* BETTER CTA */}
       <section className="py-20" style={{backgroundColor:"#1B2B8A"}}>
         <div className="mx-auto max-w-4xl px-6 lg:px-8 text-center">
