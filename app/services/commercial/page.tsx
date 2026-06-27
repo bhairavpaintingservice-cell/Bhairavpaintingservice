@@ -240,20 +240,38 @@ export default function CommercialPaintingPage() {
           <span className="inline-block rounded-full border border-gray-300 px-4 py-1 text-xs font-semibold uppercase tracking-widest" style={{color:"#6b7280"}}>Who Is This For</span>
           <h2 className="mt-3 text-3xl font-black sm:text-4xl" style={{color:"#1B2B8A"}}>Built for Business Owners</h2>
           <div className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {whoFor.map((w, i) => (
-              <div key={i} className="overflow-hidden rounded-xl border border-gray-100 bg-white">
+            {whoFor.map((w, i) => {
+              const waMsg = encodeURIComponent(`Hi, I need a quote for ${w.title}. Please contact me.`)
+              const quoteMsg = encodeURIComponent(`Hi, I want a free site visit for ${w.title}. Please contact me.`)
+              return (
+              <div key={i} className="overflow-hidden rounded-xl border border-gray-100 shadow-sm flex flex-col">
                 <div className="relative h-36"><Image src={w.img} alt={w.title} fill className="object-cover" /></div>
-                <div className="p-5">
-                  <h3 className="font-bold text-sm" style={{color:"#1B2B8A"}}>{w.title}</h3>
-                  <p className="text-xs mt-0.5" style={{color:"#6b7280"}}>{w.desc}</p>
-                  <ul className="mt-3 space-y-1">
-                    {w.points.map((pt) => (
-                      <li key={pt} className="flex items-start gap-2 text-xs" style={{color:"#6b7280"}}><CheckCircle className="h-3.5 w-3.5 text-orange-500 shrink-0 mt-0.5"/>{pt}</li>
-                    ))}
-                  </ul>
+                <div className="p-4 flex items-center justify-between gap-3 flex-1" style={{backgroundColor:"#1B2B8A"}}>
+                  <div className="flex-1 min-w-0">
+                    <h3 className="font-bold text-sm text-white">{w.title}</h3>
+                    <p className="text-xs mt-0.5 text-blue-200">{w.desc}</p>
+                    <ul className="mt-2 space-y-0.5">
+                      {w.points.map((pt) => (
+                        <li key={pt} className="flex items-center gap-1.5 text-xs text-blue-200"><CheckCircle className="h-3 w-3 text-orange-400 shrink-0"/>{pt}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="flex flex-col gap-2 shrink-0">
+                    <a href={`https://wa.me/919158800517?text=${waMsg}`} target="_blank" rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-1.5 rounded-lg px-3 py-2 text-xs font-semibold text-white"
+                      style={{backgroundColor:"#25D366"}}>
+                      <MessageCircle className="h-3.5 w-3.5" /> WhatsApp
+                    </a>
+                    <a href={`https://wa.me/919158800517?text=${quoteMsg}`} target="_blank" rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-1.5 rounded-lg px-3 py-2 text-xs font-semibold bg-white"
+                      style={{color:"#1B2B8A"}}>
+                      Free Quote
+                    </a>
+                  </div>
                 </div>
               </div>
-            ))}
+              )
+            })}
           </div>
         </div>
       </section>
