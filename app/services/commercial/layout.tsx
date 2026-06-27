@@ -46,11 +46,72 @@ const serviceSchema = {
   "areaServed": ["Mumbai", "Thane", "Bhiwandi", "Kalyan", "Navi Mumbai"]
 }
 
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Bhairav Painting Service",
+  "image": "https://bhairavpaintingservice.vercel.app/images/logo.png",
+  "url": "https://bhairavpaintingservice.vercel.app",
+  "telephone": "+919158800517",
+  "email": "Bhairavpaintingservice@gmail.com",
+  "description": "Professional commercial painting contractor with 47+ years experience serving Mumbai, Thane, Bhiwandi and Kalyan.",
+  "foundingDate": "1977",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Bhiwandi",
+    "addressRegion": "Maharashtra",
+    "addressCountry": "IN"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 19.3002,
+    "longitude": 73.0595
+  },
+  "areaServed": [
+    { "@type": "City", "name": "Mumbai" },
+    { "@type": "City", "name": "Thane" },
+    { "@type": "City", "name": "Bhiwandi" },
+    { "@type": "City", "name": "Kalyan" },
+    { "@type": "City", "name": "Navi Mumbai" }
+  ],
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "opens": "08:00",
+    "closes": "19:00"
+  },
+  "priceRange": "₹₹",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Commercial Painting Services",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Office Painting" }},
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Shop & Showroom Painting" }},
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Warehouse & Factory Painting" }},
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Restaurant & Hotel Painting" }},
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Retail Chain Painting" }},
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Co-working & Business Centers" }}
+    ]
+  }
+}
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://bhairavpaintingservice.vercel.app" },
+    { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://bhairavpaintingservice.vercel.app/services" },
+    { "@type": "ListItem", "position": 3, "name": "Commercial Painting", "item": "https://bhairavpaintingservice.vercel.app/services/commercial" }
+  ]
+}
+
 export default function CommercialLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       {children}
     </>
   )
