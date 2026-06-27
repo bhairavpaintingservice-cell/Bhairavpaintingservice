@@ -482,6 +482,43 @@ export default function CommercialPaintingPage() {
         </div>
       </section>
 
+      {/* PAINT SELECTION GUIDE */}
+      <section className="py-20 bg-gray-50">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <span className="inline-block rounded-full border border-gray-300 px-4 py-1 text-xs font-semibold uppercase tracking-widest" style={{color:"#6b7280"}}>Paint Guide</span>
+          <h2 className="mt-3 text-3xl font-black sm:text-4xl" style={{color:"#1B2B8A"}}>Which Paint is Best for Commercial Properties?</h2>
+          <p className="mt-3 text-sm max-w-xl" style={{color:"#6b7280"}}>Different commercial spaces require different paint systems. Here is what we recommend based on property type.</p>
+          <div className="mt-10 overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
+            <table className="w-full text-sm">
+              <thead>
+                <tr style={{backgroundColor:"#1B2B8A"}}>
+                  <th className="px-6 py-4 text-left text-xs font-bold text-white uppercase tracking-wider">Property Type</th>
+                  <th className="px-6 py-4 text-left text-xs font-bold text-white uppercase tracking-wider">Recommended Paint</th>
+                  <th className="px-6 py-4 text-left text-xs font-bold text-white uppercase tracking-wider">Key Benefit</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  { property: "Office", paint: "Low VOC Washable Emulsion", benefit: "Safe for occupied spaces, easy to clean" },
+                  { property: "Retail Store", paint: "Washable Interior Paint", benefit: "Durable in high-traffic areas" },
+                  { property: "Restaurant", paint: "Moisture Resistant Washable Paint", benefit: "Handles steam, grease & frequent cleaning" },
+                  { property: "Warehouse", paint: "Heavy Duty Industrial Coating", benefit: "Abrasion & dust resistant" },
+                  { property: "Factory", paint: "Industrial Protective Paint", benefit: "Chemical & impact resistant" },
+                  { property: "Commercial Exterior", paint: "Weatherproof Exterior Paint", benefit: "Mumbai monsoon & UV resistant" },
+                ].map((row, i) => (
+                  <tr key={i} className={i % 2 === 0 ? "bg-white" : "bg-gray-50"}>
+                    <td className="px-6 py-4 font-semibold text-xs" style={{color:"#1B2B8A"}}>{row.property}</td>
+                    <td className="px-6 py-4 text-xs" style={{color:"#111827"}}>{row.paint}</td>
+                    <td className="px-6 py-4 text-xs" style={{color:"#6b7280"}}>{row.benefit}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="mt-4 text-xs" style={{color:"#9ca3af"}}>* Exact paint brand and grade recommended after free site inspection based on actual surface conditions.</p>
+        </div>
+      </section>
+
       {/* BUILDER SECTION */}
       <section className="py-20" style={{backgroundColor:"#1B2B8A"}}>
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
