@@ -674,16 +674,16 @@ export default function CommercialPaintingPage() {
             </div>
             <div className="grid grid-cols-2 gap-4">
               {[
-                { icon: "🏗️", label: "New Commercial Buildings" },
-                { icon: "🏢", label: "Office Complexes" },
-                { icon: "🛍️", label: "Retail Developments" },
-                { icon: "🏬", label: "Shopping Centres" },
-                { icon: "🏘️", label: "Mixed-Use Projects" },
-                { icon: "🔑", label: "Commercial Handover" },
+                { img: "/images/commercial/builder-new-building.jpg", label: "New Commercial Buildings" },
+                { img: "/images/commercial/builder-office-complex.jpg", label: "Office Complexes" },
+                { img: "/images/commercial/builder-retail.jpg", label: "Retail Developments" },
+                { img: "/images/commercial/builder-mall.jpg", label: "Shopping Centres" },
+                { img: "/images/commercial/builder-mixed-use.jpg", label: "Mixed-Use Projects" },
+                { img: "/images/commercial/builder-handover.jpg", label: "Commercial Handover" },
               ].map((item, i) => (
-                <div key={i} className="rounded-xl p-4 text-center" style={{backgroundColor:"rgba(255,255,255,0.1)"}}>
-                  <span className="text-3xl">{item.icon}</span>
-                  <p className="mt-2 text-xs font-semibold text-white">{item.label}</p>
+                <div key={i} className="overflow-hidden rounded-xl" style={{backgroundColor:"rgba(255,255,255,0.1)"}}>
+                  <div className="relative h-28"><Image src={item.img} alt={item.label} fill className="object-cover" /></div>
+                  <p className="py-2 px-3 text-xs font-semibold text-white text-center">{item.label}</p>
                 </div>
               ))}
             </div>
