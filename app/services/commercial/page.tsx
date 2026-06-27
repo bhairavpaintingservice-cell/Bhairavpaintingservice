@@ -251,20 +251,22 @@ export default function CommercialPaintingPage() {
           <p className="mt-3 text-sm max-w-xl" style={{color:"#6b7280"}}>From corporate offices to industrial units — we handle commercial painting across all business types in Mumbai, Thane & Bhiwandi.</p>
           <div className="mt-10 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
             {[
-              { icon: "🏢", label: "Corporate Offices" },
-              { icon: "🏪", label: "Retail Stores" },
-              { icon: "🏨", label: "Hotels & Restaurants" },
-              { icon: "🏭", label: "Factories & Warehouses" },
-              { icon: "🏥", label: "Hospitals & Clinics" },
-              { icon: "🏫", label: "Schools & Colleges" },
-              { icon: "🏦", label: "Banks & Offices" },
-              { icon: "🛍️", label: "Shopping Malls" },
-              { icon: "💪", label: "Gyms & Fitness" },
-              { icon: "🏗️", label: "Commercial Complexes" },
+              { img: "/images/commercial/industry-corporate.jpg", label: "Corporate Offices" },
+              { img: "/images/commercial/industry-retail.jpg", label: "Retail Stores" },
+              { img: "/images/commercial/industry-hotel.jpg", label: "Hotels & Restaurants" },
+              { img: "/images/commercial/industry-factory.jpg", label: "Factories & Warehouses" },
+              { img: "/images/commercial/industry-hospital.jpg", label: "Hospitals & Clinics" },
+              { img: "/images/commercial/industry-school.jpg", label: "Schools & Colleges" },
+              { img: "/images/commercial/industry-bank.jpg", label: "Banks & Offices" },
+              { img: "/images/commercial/industry-mall.jpg", label: "Shopping Malls" },
+              { img: "/images/commercial/industry-gym.jpg", label: "Gyms & Fitness" },
+              { img: "/images/commercial/industry-complex.jpg", label: "Commercial Complexes" },
             ].map((item, i) => (
-              <div key={i} className="flex flex-col items-center justify-center gap-2 rounded-xl border border-gray-200 bg-white p-4 text-center shadow-sm">
-                <span className="text-3xl">{item.icon}</span>
-                <p className="text-xs font-semibold" style={{color:"#1B2B8A"}}>{item.label}</p>
+              <div key={i} className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm">
+                <div className="relative h-28"><Image src={item.img} alt={item.label} fill className="object-cover" /></div>
+                <div className="p-2 text-center">
+                  <p className="text-xs font-semibold" style={{color:"#1B2B8A"}}>{item.label}</p>
+                </div>
               </div>
             ))}
           </div>
