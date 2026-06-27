@@ -482,6 +482,55 @@ export default function CommercialPaintingPage() {
         </div>
       </section>
 
+      {/* BUILDER SECTION */}
+      <section className="py-20" style={{backgroundColor:"#1B2B8A"}}>
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <span className="inline-block rounded-full border border-white/30 px-4 py-1 text-xs font-semibold uppercase tracking-widest text-blue-200">Builders & Developers</span>
+              <h2 className="mt-3 text-3xl font-black sm:text-4xl text-white">Commercial Painting for Builders & Developers</h2>
+              <p className="mt-4 text-sm leading-relaxed text-blue-200">
+                Builders require painting contractors who can manage timelines, labour and quality across large projects. We work with builders, developers and contractors for new commercial buildings, office complexes, retail developments and commercial handover painting across Mumbai, Thane, Bhiwandi and Kalyan.
+              </p>
+              <ul className="mt-6 space-y-3">
+                {[
+                  "Follow project schedules & site engineer coordination",
+                  "Owner-supervised quality throughout execution",
+                  "Large team capacity for multi-floor projects",
+                  "Written quotation with scope & timeline",
+                  "Premium branded paints — Asian Paints, Berger, Nerolac, Dulux",
+                  "Handover-ready finish with snag list support",
+                ].map((pt, i) => (
+                  <li key={i} className="flex items-start gap-2 text-sm text-white">
+                    <CheckCircle className="h-4 w-4 text-orange-400 shrink-0 mt-0.5" />{pt}
+                  </li>
+                ))}
+              </ul>
+              <a href="https://wa.me/919158800517?text=Hi%2C%20I%20am%20a%20builder%20and%20need%20commercial%20painting%20for%20my%20project." target="_blank" rel="noopener noreferrer"
+                className="mt-8 inline-flex items-center gap-2 rounded-lg px-6 py-3 text-sm font-bold text-white"
+                style={{backgroundColor:"#25D366"}}>
+                <MessageCircle className="h-4 w-4" /> WhatsApp for Builder Enquiry
+              </a>
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              {[
+                { icon: "🏗️", label: "New Commercial Buildings" },
+                { icon: "🏢", label: "Office Complexes" },
+                { icon: "🛍️", label: "Retail Developments" },
+                { icon: "🏬", label: "Shopping Centres" },
+                { icon: "🏘️", label: "Mixed-Use Projects" },
+                { icon: "🔑", label: "Commercial Handover" },
+              ].map((item, i) => (
+                <div key={i} className="rounded-xl p-4 text-center" style={{backgroundColor:"rgba(255,255,255,0.1)"}}>
+                  <span className="text-3xl">{item.icon}</span>
+                  <p className="mt-2 text-xs font-semibold text-white">{item.label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* OFFICE PAINTING CHALLENGES */}
       <section className="py-20 bg-white">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
