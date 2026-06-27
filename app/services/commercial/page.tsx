@@ -6,12 +6,12 @@ import { useState } from "react"
 import { Phone, MessageCircle, CheckCircle, MapPin, ChevronDown } from "lucide-react"
 
 const serviceCards = [
-  { title: "Office Painting", img: "/images/commercial/commercial-office.jpg", points: ["Office Interiors", "Cabins & Meeting Rooms", "Reception & Common Areas"] },
-  { title: "Shop & Showroom Painting", img: "/images/commercial/commercial-showroom.jpg", points: ["Storefronts", "Display Areas", "Billing & Customer Zones"] },
-  { title: "Warehouse & Factory Painting", img: "/images/commercial/commercial-warehouse.jpg", points: ["Storage Areas", "Factory Floors", "Industrial Walls & Roofing"] },
-  { title: "Restaurant & Hotel Painting", img: "/images/commercial/commercial-restaurant.jpg", points: ["Dining Areas", "Kitchens", "Guest Rooms & Lobbies"] },
-  { title: "Retail Chain Painting", img: "/images/commercial/commercial-retail.jpg", points: ["Multi-Branch Projects", "Consistent Brand Finish", "Phased Scheduling"] },
-  { title: "Co-working & Business Centers", img: "/images/commercial/commercial-coworking.jpg", points: ["Shared Workspaces", "Cabins & Lounges", "Common Pantry Areas"] },
+  { title: "Office Painting", img: "/images/commercial/commercial-office.jpg", points: ["Office Interiors", "Cabins & Meeting Rooms", "Reception & Common Areas"], gallery: "/gallery/office-painting" },
+  { title: "Shop & Showroom Painting", img: "/images/commercial/commercial-showroom.jpg", points: ["Storefronts", "Display Areas", "Billing & Customer Zones"], gallery: "/gallery/showroom-painting" },
+  { title: "Warehouse & Factory Painting", img: "/images/commercial/commercial-warehouse.jpg", points: ["Storage Areas", "Factory Floors", "Industrial Walls & Roofing"], gallery: "/gallery/warehouse-painting" },
+  { title: "Restaurant & Hotel Painting", img: "/images/commercial/commercial-restaurant.jpg", points: ["Dining Areas", "Kitchens", "Guest Rooms & Lobbies"], gallery: "/gallery/restaurant-painting" },
+  { title: "Retail Chain Painting", img: "/images/commercial/commercial-retail.jpg", points: ["Multi-Branch Projects", "Consistent Brand Finish", "Phased Scheduling"], gallery: "/gallery/retail-painting" },
+  { title: "Co-working & Business Centers", img: "/images/commercial/commercial-coworking.jpg", points: ["Shared Workspaces", "Cabins & Lounges", "Common Pantry Areas"], gallery: "/gallery/coworking-painting" },
 ]
 
 const whoFor = [
@@ -204,7 +204,12 @@ export default function CommercialPaintingPage() {
               const quoteUrl = `https://wa.me/919158800517?text=${quoteMsg}`
               return (
               <div key={i} className="overflow-hidden rounded-xl shadow-sm flex flex-col">
-                <div className="relative h-44"><Image src={s.img} alt={s.title} fill className="object-cover" /></div>
+                <div className="relative h-44 group">
+                  <Image src={s.img} alt={s.title} fill className="object-cover" />
+                  <Link href={s.gallery} className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <span className="rounded-full bg-white px-4 py-2 text-xs font-bold" style={{color:"#1B2B8A"}}>View More →</span>
+                  </Link>
+                </div>
                 <div className="p-4 flex items-center justify-between gap-3" style={{backgroundColor:"#1B2B8A"}}>
                   <div className="flex-1 min-w-0">
                     <h3 className="font-bold text-sm text-white">{s.title}</h3>
