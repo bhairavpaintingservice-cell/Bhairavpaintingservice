@@ -312,11 +312,25 @@ export default function CommercialPaintingPage() {
               { img: "/images/commercial/industry-gym.jpg", label: "Gyms & Fitness", desc: "Workout areas, walls & locker rooms" },
               { img: "/images/commercial/industry-complex.jpg", label: "Commercial Complexes", desc: "Exterior facades & common areas" },
             ].map((item, i) => (
-              <div key={i} className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm">
+              <div key={i} className="overflow-hidden rounded-xl shadow-sm flex flex-col">
                 <div className="relative h-28"><Image src={item.img} alt={item.label} fill className="object-cover" /></div>
-                <div className="p-3">
-                  <p className="text-xs font-bold" style={{color:"#1B2B8A"}}>{item.label}</p>
-                  <p className="text-xs mt-0.5" style={{color:"#6b7280"}}>{item.desc}</p>
+                <div className="p-3 flex items-center justify-between gap-2 flex-1" style={{backgroundColor:"#1B2B8A"}}>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-xs font-bold text-white">{item.label}</p>
+                    <p className="text-xs mt-0.5 text-blue-200">{item.desc}</p>
+                  </div>
+                  <div className="flex flex-col gap-1.5 shrink-0">
+                    <a href={`https://wa.me/919158800517?text=${encodeURIComponent('Hi, I need painting for ' + item.label + '. Please contact me.')}`} target="_blank" rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-1 rounded-lg px-2 py-1.5 text-xs font-semibold text-white"
+                      style={{backgroundColor:"#25D366"}}>
+                      <MessageCircle className="h-3 w-3" /> WhatsApp
+                    </a>
+                    <a href={`https://wa.me/919158800517?text=${encodeURIComponent('Hi, I want a free site visit for ' + item.label + ' painting.')}`} target="_blank" rel="noopener noreferrer"
+                      className="flex items-center justify-center rounded-lg px-2 py-1.5 text-xs font-semibold bg-white"
+                      style={{color:"#1B2B8A"}}>
+                      Free Quote
+                    </a>
+                  </div>
                 </div>
               </div>
             ))}
@@ -365,19 +379,37 @@ export default function CommercialPaintingPage() {
           <h2 className="mt-3 text-3xl font-black sm:text-4xl" style={{color:"#1B2B8A"}}>Recent Commercial Projects</h2>
           <p className="mt-3 text-sm max-w-xl" style={{color:"#6b7280"}}>A look at some of our recent commercial painting work across Mumbai, Thane & Bhiwandi.</p>
           <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {commercialProjects.map((p, i) => (
-              <div key={i} className="overflow-hidden rounded-xl border border-gray-100 bg-white shadow-sm">
+            {commercialProjects.map((p, i) => {
+              const waMsg = encodeURIComponent(`Hi, I need a quote for ${p.type} similar to your ${p.title} project.`)
+              const quoteMsg = encodeURIComponent(`Hi, I want a free site visit for ${p.type}. Please contact me.`)
+              return (
+              <div key={i} className="overflow-hidden rounded-xl shadow-sm flex flex-col">
                 <div className="relative h-48"><Image src={p.image} alt={p.title} fill className="object-cover" /></div>
-                <div className="p-5">
-                  <h3 className="font-bold text-sm" style={{color:"#1B2B8A"}}>{p.title}</h3>
-                  <div className="mt-3 grid grid-cols-2 gap-2">
-                    <div><p className="text-xs" style={{color:"#9ca3af"}}>Type</p><p className="text-xs font-bold" style={{color:"#111827"}}>{p.type}</p></div>
-                    <div><p className="text-xs" style={{color:"#9ca3af"}}>Scope</p><p className="text-xs font-bold" style={{color:"#111827"}}>{p.scope}</p></div>
-                    <div><p className="text-xs" style={{color:"#9ca3af"}}>Paint</p><p className="text-xs font-bold" style={{color:"#111827"}}>{p.paint}</p></div>
+                <div className="p-4 flex items-center justify-between gap-3 flex-1" style={{backgroundColor:"#1B2B8A"}}>
+                  <div className="flex-1 min-w-0">
+                    <h3 className="font-bold text-sm text-white">{p.title}</h3>
+                    <div className="mt-2 space-y-0.5">
+                      <p className="text-xs text-blue-200"><span className="text-blue-300">Type:</span> {p.type}</p>
+                      <p className="text-xs text-blue-200"><span className="text-blue-300">Scope:</span> {p.scope}</p>
+                      <p className="text-xs text-blue-200"><span className="text-blue-300">Paint:</span> {p.paint}</p>
+                    </div>
+                  </div>
+                  <div className="flex flex-col gap-2 shrink-0">
+                    <a href={`https://wa.me/919158800517?text=${waMsg}`} target="_blank" rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-1.5 rounded-lg px-3 py-2 text-xs font-semibold text-white"
+                      style={{backgroundColor:"#25D366"}}>
+                      <MessageCircle className="h-3.5 w-3.5" /> WhatsApp
+                    </a>
+                    <a href={`https://wa.me/919158800517?text=${quoteMsg}`} target="_blank" rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-1.5 rounded-lg px-3 py-2 text-xs font-semibold bg-white"
+                      style={{color:"#1B2B8A"}}>
+                      Free Quote
+                    </a>
                   </div>
                 </div>
               </div>
-            ))}
+              )
+            })}
           </div>
         </div>
       </section>
