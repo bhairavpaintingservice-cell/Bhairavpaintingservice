@@ -482,6 +482,55 @@ export default function CommercialPaintingPage() {
         </div>
       </section>
 
+      {/* HIDDEN COST SECTION */}
+      <section className="py-20 bg-gray-50">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <span className="inline-block rounded-full border border-gray-300 px-4 py-1 text-xs font-semibold uppercase tracking-widest" style={{color:"#6b7280"}}>Quality Matters</span>
+              <h2 className="mt-3 text-3xl font-black sm:text-4xl" style={{color:"#1B2B8A"}}>The Hidden Cost of Low-Quality Painting</h2>
+              <p className="mt-4 text-sm leading-relaxed" style={{color:"#6b7280"}}>
+                Many commercial properties require repainting within 2–3 years because surface preparation was skipped or low-quality paint was used. What seems cheaper upfront often costs significantly more over time.
+              </p>
+              <p className="mt-3 text-sm leading-relaxed" style={{color:"#6b7280"}}>
+                Proper crack repair, surface preparation, primer application and premium paint significantly increase the life of the finish — reducing the frequency and cost of repainting cycles.
+              </p>
+              <div className="mt-6 rounded-xl p-6" style={{backgroundColor:"#fef2f2", border:"1px solid #fecaca"}}>
+                <p className="font-bold text-sm mb-3" style={{color:"#dc2626"}}>Poor-quality projects often suffer from:</p>
+                <div className="grid grid-cols-2 gap-2">
+                  {["Peeling paint", "Bubbling walls", "Uneven finish", "Poor colour consistency", "Early fading", "Frequent maintenance"].map((pt, i) => (
+                    <div key={i} className="flex items-center gap-2 text-xs" style={{color:"#7f1d1d"}}>
+                      <span className="text-red-500">✗</span> {pt}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+            <div className="rounded-2xl p-8" style={{backgroundColor:"#f0f4ff", border:"1px solid #d0dafa"}}>
+              <p className="font-bold text-sm mb-4" style={{color:"#1B2B8A"}}>✅ What proper painting includes:</p>
+              <div className="space-y-3">
+                {[
+                  { step: "01", title: "Surface Cleaning", desc: "Dust, grease and old loose paint removed before work begins" },
+                  { step: "02", title: "Crack Filling", desc: "All cracks and gaps filled with appropriate compounds" },
+                  { step: "03", title: "Putty Application", desc: "Smooth base layer for even finish" },
+                  { step: "04", title: "Primer Coat", desc: "Correct primer for adhesion and durability" },
+                  { step: "05", title: "Premium Paint", desc: "Branded paint applied in correct number of coats" },
+                  { step: "06", title: "Quality Check", desc: "Owner inspection before handover" },
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start gap-3">
+                    <span className="text-xs font-black rounded-full w-6 h-6 flex items-center justify-center shrink-0 text-white" style={{backgroundColor:"#1B2B8A"}}>{item.step}</span>
+                    <div>
+                      <p className="text-xs font-bold" style={{color:"#1B2B8A"}}>{item.title}</p>
+                      <p className="text-xs" style={{color:"#6b7280"}}>{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* MAINTENANCE GUIDE */}
       <section className="py-20 bg-white">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
