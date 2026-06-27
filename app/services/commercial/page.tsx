@@ -926,6 +926,56 @@ export default function CommercialPaintingPage() {
         </div>
       </section>
 
+      {/* KNOWLEDGE CENTRE */}
+      <section className="py-20 bg-gray-50">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <span className="inline-block rounded-full border border-gray-300 px-4 py-1 text-xs font-semibold uppercase tracking-widest" style={{color:"#6b7280"}}>Knowledge Centre</span>
+          <h2 className="mt-3 text-3xl font-black sm:text-4xl" style={{color:"#1B2B8A"}}>Commercial Painting Knowledge Centre</h2>
+          <p className="mt-3 text-sm max-w-xl" style={{color:"#6b7280"}}>Helpful guides for business owners, facility managers and builders planning commercial painting projects.</p>
+          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {[
+              {
+                title: "How to Choose the Right Commercial Paint",
+                content: "Choosing the right paint for a commercial property depends on the type of space, usage, and exposure. Office interiors need low-VOC washable emulsions that are safe for occupied spaces. Retail stores require durable washable paints that can handle daily cleaning. Restaurants need moisture-resistant paint that withstands steam, grease and regular scrubbing. Warehouses and factories require industrial coatings that resist abrasion, dust and heavy usage. For exterior surfaces in Mumbai, weatherproof paints like Asian Paints Apex or Berger WeatherCoat are recommended to handle monsoon rains and humidity. Always choose paint based on the specific environment — not just cost."
+              },
+              {
+                title: "Office Painting Checklist Before Work Starts",
+                content: "Before commercial office painting begins, a proper checklist ensures smooth execution. First, confirm the work schedule — after office hours or weekends — to avoid disruption. Ensure all furniture, electronics and networking equipment will be covered and protected. Check that surface preparation includes crack filling, putty and primer before final coats. Confirm the paint brand and grade being used. Ask for a written quotation with scope of work, number of coats and timeline. Verify that the team will do daily cleanup so the office is ready for the next working day. Owner supervision should be confirmed for all quality checks."
+              },
+              {
+                title: "Signs Your Commercial Building Needs Repainting",
+                content: "Commercial buildings show clear signs when repainting is overdue. Peeling or flaking paint on walls or ceilings is an immediate indicator. Visible dampness, staining or mould growth suggests moisture has penetrated the paint layer. Fading and chalking on exterior surfaces means the paint has lost its protective properties. Cracks in walls that have been previously painted over need attention before the next paint cycle. If customers or employees are noticing a tired or unprofessional appearance, it is time to repaint. Regular inspection every 2 years helps identify these issues early and prevents expensive repair work later."
+              },
+              {
+                title: "How Monsoon Affects Commercial Exterior Paint",
+                content: "Mumbai's monsoon season puts significant stress on commercial building exteriors. Heavy rainfall, combined with high humidity, causes moisture to penetrate paint layers that were not properly prepared or sealed. This leads to bubbling, peeling, seepage and mould growth — especially on north-facing walls and areas with poor drainage. Exterior painting should ideally be completed before monsoon — between November and May — for best adhesion and drying. During this window, surfaces are dry enough for proper surface preparation and paint application. Weatherproof exterior paint systems with anti-fungal properties provide significantly better protection against Mumbai's monsoon conditions."
+              },
+              {
+                title: "Difference Between Industrial & Commercial Painting",
+                content: "Industrial and commercial painting are often confused but serve different purposes. Commercial painting covers offices, retail stores, restaurants, hotels and public-facing business spaces where aesthetics and professional appearance are important. Industrial painting covers factories, warehouses, manufacturing units and storage facilities where durability, chemical resistance and safety are the primary requirements. Industrial coatings are heavier, more durable and formulated to withstand physical impact, chemicals, heat and heavy machinery movement. Commercial paints focus on appearance, washability and occupant safety. Both require different surface preparation methods, paint systems and application techniques."
+              },
+              {
+                title: "Best Paint Finishes for Offices & Retail Stores",
+                content: "The right paint finish affects both appearance and durability in commercial spaces. For office walls, a matte or low-sheen finish is preferred as it hides surface imperfections and reduces glare. For high-traffic areas like corridors and reception zones, a satin or semi-gloss finish is better as it is easier to clean and more durable. For retail stores, a satin finish provides a balance between appearance and washability — important for spaces that are cleaned daily. Ceilings in commercial spaces are typically finished in matte white for maximum light reflection. Accent walls in offices and retail spaces can use deeper colours in semi-gloss for a professional, modern look."
+              },
+              {
+                title: "How to Reduce Business Downtime During Painting",
+                content: "Minimising business downtime during commercial painting requires careful planning. The most effective approach is phased painting — completing one section or floor while the rest remains operational. For offices, work can be scheduled after business hours or during weekends. Retail stores can be painted in sections, keeping most of the floor space open for customers. Restaurants can be painted during weekly closing days or early mornings before opening. Advance planning of work schedules, protecting furniture and equipment, and ensuring daily cleanup before business hours resume are key to zero-disruption painting. Discuss the full schedule with your contractor before work begins."
+              },
+              {
+                title: "Commercial Painting Cost Factors Explained",
+                content: "Commercial painting costs depend on several factors. Surface area is the primary factor — larger spaces require more material and labour. Surface condition affects cost significantly — walls with cracks, dampness or old peeling paint require more preparation work. The number of paint coats required depends on the surface and paint type — typically two finish coats over primer. Paint brand and grade chosen affects material cost — premium branded paints cost more but last longer and reduce repainting frequency. Type of space also matters — industrial coatings for warehouses cost more than standard emulsions for offices. Always get a written quotation with clear scope before work begins to avoid surprises."
+              },
+            ].map((article, i) => (
+              <div key={i} className="rounded-xl bg-white border border-gray-200 p-6 shadow-sm">
+                <h3 className="font-black text-base" style={{color:"#1B2B8A"}}>{article.title}</h3>
+                <p className="mt-3 text-xs leading-relaxed" style={{color:"#6b7280"}}>{article.content}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* LOCAL SEO SECTION */}
       <section className="py-16 bg-gray-50">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
