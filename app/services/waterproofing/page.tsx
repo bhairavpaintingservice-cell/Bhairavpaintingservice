@@ -81,13 +81,13 @@ const faqs = [
 const areas = ["Mumbai", "Thane", "Bhiwandi", "Kalyan", "Navi Mumbai", "Dombivli", "Kasheli", "Kalher", "Andheri", "Vasai", "Virar", "Ulhasnagar"]
 
 const projects = [
-  { before: "/images/waterproofing/p1-before.jpg", after: "/images/waterproofing/p1-after.jpg", title: "Terrace Waterproofing — Bhiwandi", scope: "450 sq ft • Dr Fixit Membrane • 3 Days" },
-  { before: "/images/waterproofing/p2-before.jpg", after: "/images/waterproofing/p2-after.jpg", title: "Roof Leakage Repair — Thane", scope: "280 sq ft • Liquid Membrane • 2 Days" },
-  { before: "/images/waterproofing/p3-before.jpg", after: "/images/waterproofing/p3-after.jpg", title: "Bathroom Waterproofing — Thane", scope: "80 sq ft • Dr Fixit Pidifin 2K • 1 Day" },
-  { before: "/images/waterproofing/p4-before.jpg", after: "/images/waterproofing/p4-after.jpg", title: "Damp Wall Treatment — Bhiwandi", scope: "3 Rooms • Anti-damp Coating • 2 Days" },
-  { before: "/images/waterproofing/p5-before.jpg", after: "/images/waterproofing/p5-after.jpg", title: "Exterior Waterproofing — Mumbai", scope: "Building Exterior • Weather Coat • 4 Days" },
-  { before: "/images/waterproofing/p6-before.jpg", after: "/images/waterproofing/p6-after.jpg", title: "Basement Waterproofing — Kalyan", scope: "Basement • Crystalline Coating • 3 Days" },
-  { before: "/images/waterproofing/p7-before.jpg", after: "/images/waterproofing/p7-after.jpg", title: "Seepage Repair — Navi Mumbai", scope: "Interior Walls • Anti-Seepage • 2 Days" },
+  { before: "/images/waterproofing/p1-before.jpg", after: "/images/waterproofing/p1-after.jpg", title: "Terrace Waterproofing — Bhiwandi", scope: "450 sq ft • Dr Fixit Membrane • 3 Days", problem: "Terrace leakage during monsoon — water dripping into flat below.", solution: "Dr Fixit liquid membrane waterproofing + crack filling." },
+  { before: "/images/waterproofing/p2-before.jpg", after: "/images/waterproofing/p2-after.jpg", title: "Roof Leakage Repair — Thane", scope: "280 sq ft • Liquid Membrane • 2 Days", problem: "Ceiling stains and water dripping from roof during rain.", solution: "Roof crack repair + Pidilite liquid membrane application." },
+  { before: "/images/waterproofing/p3-before.jpg", after: "/images/waterproofing/p3-after.jpg", title: "Bathroom Waterproofing — Thane", scope: "80 sq ft • Dr Fixit Pidifin 2K • 1 Day", problem: "Bathroom floor seepage causing damp ceiling in flat below.", solution: "Dr Fixit Pidifin 2K waterproofing on floor and walls." },
+  { before: "/images/waterproofing/p4-before.jpg", after: "/images/waterproofing/p4-after.jpg", title: "Damp Wall Treatment — Bhiwandi", scope: "3 Rooms • Anti-damp Coating • 2 Days", problem: "Paint peeling and damp patches on interior walls due to moisture.", solution: "Anti-damp primer + waterproof putty + anti-fungal paint." },
+  { before: "/images/waterproofing/p5-before.jpg", after: "/images/waterproofing/p5-after.jpg", title: "Exterior Waterproofing — Mumbai", scope: "Building Exterior • Weather Coat • 4 Days", problem: "Exterior wall cracks allowing water seepage during monsoon.", solution: "Crack filling + Berger WeatherCoat exterior waterproofing." },
+  { before: "/images/waterproofing/p6-before.jpg", after: "/images/waterproofing/p6-after.jpg", title: "Basement Waterproofing — Kalyan", scope: "Basement • Crystalline Coating • 3 Days", problem: "Basement walls wet due to high water table and rain seepage.", solution: "Crystalline waterproofing compound + injection grouting." },
+  { before: "/images/waterproofing/p7-before.jpg", after: "/images/waterproofing/p7-after.jpg", title: "Seepage Repair — Navi Mumbai", scope: "Interior Walls • Anti-Seepage • 2 Days", problem: "Corner and floor junction seepage causing mold growth.", solution: "Anti-seepage treatment + tile joint sealing + anti-fungal coat." },
 ]
 
 export default function WaterproofingPage() {
@@ -173,7 +173,9 @@ export default function WaterproofingPage() {
                 </div>
                 <div style={{padding:"12px 14px"}}>
                   <p style={{fontSize:"12px", fontWeight:"700", color:"#1B2B8A"}}>📍 {p.title}</p>
-                  <p style={{fontSize:"11px", color:"#6b7280", marginTop:"2px"}}>{p.scope}</p>
+                  <p style={{fontSize:"11px", color:"#6b7280", marginTop:"2px", marginBottom:"8px"}}>{p.scope}</p>
+                  <p style={{fontSize:"11px", color:"#dc2626"}}><strong>Problem:</strong> {p.problem}</p>
+                  <p style={{fontSize:"11px", color:"#16a34a", marginTop:"4px"}}><strong>Solution:</strong> {p.solution}</p>
                 </div>
               </div>
             ))}
@@ -216,6 +218,43 @@ export default function WaterproofingPage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* SERVICE DESCRIPTIONS */}
+      <section className="py-16 px-4 bg-white">
+        <div className="max-w-5xl mx-auto space-y-12">
+
+          <div id="terrace-waterproofing">
+            <h2 className="text-2xl font-black text-gray-900 mb-3">Terrace Waterproofing Services in Mumbai, Thane & Bhiwandi</h2>
+            <p className="text-sm leading-relaxed text-gray-600">Terrace waterproofing is the most critical waterproofing service for any flat or building in Mumbai, Thane and Bhiwandi. During monsoon, an unprotected terrace allows rainwater to seep through cracks and joints, damaging the roof slab, ceiling of the floor below, and interior walls. Bhairav Painting Service uses <strong className="text-gray-900">Dr Fixit liquid membrane and Asian Paints SmartCare</strong> waterproofing systems for terrace treatment. Our process includes crack filling, application of waterproof membrane, and a protective coating. A well-waterproofed terrace lasts 8–10 years with proper maintenance. We serve housing societies, individual homes, villas and commercial buildings for terrace waterproofing across Mumbai, Thane, Bhiwandi and Kalyan. Free site visit available — we inspect, measure and quote on the same day.</p>
+          </div>
+
+          <div id="roof-leakage-repair">
+            <h2 className="text-2xl font-black text-gray-900 mb-3">Roof Leakage Repair — Mumbai, Thane & Bhiwandi</h2>
+            <p className="text-sm leading-relaxed text-gray-600">Roof leakage is an emergency — water dripping through your ceiling during rain can damage furniture, electrical fittings and flooring within hours. Bhairav Painting Service provides same-day emergency roof leakage repair across Mumbai, Thane and Bhiwandi. We identify the exact point of leakage — whether it is a crack in the roof slab, failed waterproofing membrane, or damaged parapet joint — and apply the appropriate repair. We use <strong className="text-gray-900">Pidilite Dr Fixit and Berger WeatherCoat</strong> products for roof leakage repair. Our waterproofing solution is not a temporary patch — it is a long-lasting repair that addresses the root cause. Emergency visits are available — call or WhatsApp and we will respond same day.</p>
+          </div>
+
+          <div id="bathroom-waterproofing">
+            <h2 className="text-2xl font-black text-gray-900 mb-3">Bathroom Waterproofing Services — Thane, Bhiwandi & Kalyan</h2>
+            <p className="text-sm leading-relaxed text-gray-600">Bathroom leakage is one of the most common problems in flats and apartments across Mumbai and Thane. Water seeping through bathroom floors and walls damages the ceiling of the flat below, causes mold growth, and weakens the structure over time. Bhairav Painting Service provides complete bathroom waterproofing using <strong className="text-gray-900">Dr Fixit Pidifin 2K</strong> — a professional-grade waterproofing compound that bonds with the surface and creates a permanent water barrier. We waterproof bathroom floors, walls, and the joints between floor and wall — which is where most leakage originates. The work is typically completed in 1–2 days and requires 24 hours curing before tiling or use.</p>
+          </div>
+
+          <div id="damp-wall-treatment">
+            <h2 className="text-2xl font-black text-gray-900 mb-3">Damp Wall Treatment — Anti-Damp Waterproofing in Mumbai & Thane</h2>
+            <p className="text-sm leading-relaxed text-gray-600">Damp walls — characterized by dark patches, peeling paint, white salt deposits and musty smell — are caused by moisture entering the wall from outside, rising damp from the ground, or plumbing leakage. Bhairav Painting Service provides professional damp wall diagnosis and treatment across Mumbai, Thane, Bhiwandi and Kalyan. We first identify the source of dampness — exterior seepage, rising damp, or internal plumbing — and then apply the appropriate treatment including <strong className="text-gray-900">anti-damp primer, waterproof putty and anti-fungal paint</strong>. Simply repainting a damp wall without treating the root cause will not solve the problem — the damp patches will return within months. Our treatment provides a long-lasting solution.</p>
+          </div>
+
+          <div id="exterior-waterproofing">
+            <h2 className="text-2xl font-black text-gray-900 mb-3">Exterior Wall Waterproofing — Buildings & Societies in Mumbai & Thane</h2>
+            <p className="text-sm leading-relaxed text-gray-600">Exterior walls of buildings in Mumbai, Thane and Bhiwandi face constant exposure to monsoon rain, humidity and sun. Over time, exterior walls develop cracks, the paint peels and water begins to penetrate — causing dampness on interior walls and structural damage. Bhairav Painting Service provides exterior wall waterproofing for individual homes, villas, housing societies and commercial buildings. We use <strong className="text-gray-900">Berger WeatherCoat and Asian Paints Apex Weatherproof</strong> — premium weather-resistant coatings that protect the exterior wall surface for 5–7 years. Our process includes crack filling, waterproof primer and two coats of weather-resistant exterior paint. Free site visit and quotation available across Mumbai, Thane, Bhiwandi and Kalyan.</p>
+          </div>
+
+          <div id="basement-waterproofing">
+            <h2 className="text-2xl font-black text-gray-900 mb-3">Basement Waterproofing & Commercial Waterproofing — Mumbai & Thane</h2>
+            <p className="text-sm leading-relaxed text-gray-600">Basements in Mumbai and Thane are highly vulnerable to water seepage due to the high water table and heavy monsoon rainfall. A wet basement damages stored goods, creates health hazards from mold, and weakens the foundation of the building. Bhairav Painting Service provides professional basement waterproofing using <strong className="text-gray-900">crystalline waterproofing compounds and injection grouting</strong> — techniques that penetrate the concrete and create a permanent water barrier from within. We also handle commercial waterproofing for offices, warehouses, factories and industrial premises. Higher-ticket commercial projects receive dedicated project management — site visit, written scope of work, phased execution and written warranty on completion.</p>
+          </div>
+
         </div>
       </section>
 
@@ -386,13 +425,22 @@ export default function WaterproofingPage() {
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-5xl mx-auto">
           <p className="text-orange-500 text-xs font-bold uppercase tracking-widest mb-2">Service Areas</p>
-          <h2 className="text-3xl font-black text-gray-900 mb-6">Areas We Serve</h2>
-          <div className="flex flex-wrap gap-3 mb-6">
-            {areas.map(a => (
-              <span key={a} className="bg-orange-50 border border-orange-200 text-orange-700 font-semibold text-sm px-4 py-2 rounded-full">{a}</span>
+          <h2 className="text-3xl font-black text-gray-900 mb-8">Waterproofing Services Near You</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {[
+              { city: "Waterproofing in Mumbai", desc: "Bhairav Painting Service provides terrace waterproofing, roof leakage repair, bathroom waterproofing and damp wall treatment across all areas of Mumbai including Andheri, Borivali, Dadar, Bandra, Kurla, Chembur and Mulund. Same-day emergency site visits available for active roof leakage during monsoon. Free inspection and written quotation for all Mumbai locations." },
+              { city: "Waterproofing in Thane", desc: "We provide complete waterproofing solutions for homes, housing societies and commercial buildings across Thane city and surrounding areas including Ghodbunder Road, Majiwada, Manpada, Pokhran Road and Kolshet. Terrace waterproofing, bathroom waterproofing and exterior wall treatment available with free site visit and same-day response." },
+              { city: "Waterproofing in Bhiwandi", desc: "Bhiwandi is our primary service base — we have completed 200+ waterproofing projects across Bhiwandi including residential societies, industrial premises and commercial buildings. Terrace waterproofing, roof leakage repair, damp wall treatment and basement waterproofing available. Free site visit with same-day quotation for all Bhiwandi locations." },
+              { city: "Waterproofing in Kalyan", desc: "We provide waterproofing services across Kalyan and Dombivli for residential flats, bungalows and housing societies. Terrace waterproofing, bathroom seepage repair and exterior wall waterproofing are our most requested services in Kalyan. Free site visit available — call or WhatsApp to schedule an inspection at your Kalyan property." },
+              { city: "Waterproofing in Navi Mumbai", desc: "Bhairav Painting Service covers all sectors of Navi Mumbai including Vashi, Kharghar, Belapur, Panvel, Airoli and Nerul for waterproofing services. Whether it is a terrace leakage, damp wall or bathroom seepage in your Navi Mumbai flat or society, our team provides free site inspection and long-lasting waterproofing solutions using Dr Fixit and Asian Paints products." },
+              { city: "Waterproofing in Dombivli & Ambarnath", desc: "We serve Dombivli East, Dombivli West and Ambarnath for residential and commercial waterproofing. Roof leakage repair, terrace waterproofing and bathroom waterproofing are available with free site visit. Our team covers all areas of Dombivli and Ambarnath — call or WhatsApp for a same-day site inspection." },
+            ].map((a, i) => (
+              <div key={i} className="bg-white rounded-xl border border-gray-100 p-5 shadow-sm">
+                <h3 className="font-black text-base text-gray-900 mb-2">📍 {a.city}</h3>
+                <p className="text-xs leading-relaxed text-gray-600">{a.desc}</p>
+              </div>
             ))}
           </div>
-          <p className="text-gray-500 text-sm leading-relaxed">We provide terrace, roof, bathroom, interior, exterior, basement and damp wall waterproofing services for homes, flats, villas, offices and commercial buildings across Mumbai, Thane, Bhiwandi, Kalyan and Navi Mumbai. Free site visit available — call or WhatsApp to book.</p>
         </div>
       </section>
 
