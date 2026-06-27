@@ -482,6 +482,49 @@ export default function CommercialPaintingPage() {
         </div>
       </section>
 
+      {/* OFFICE PAINTING CHALLENGES */}
+      <section className="py-20 bg-white">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            <div>
+              <span className="inline-block rounded-full border border-gray-300 px-4 py-1 text-xs font-semibold uppercase tracking-widest" style={{color:"#6b7280"}}>Office Painting</span>
+              <h2 className="mt-3 text-3xl font-black sm:text-4xl" style={{color:"#1B2B8A"}}>Office Painting Requires Careful Planning</h2>
+              <p className="mt-4 text-sm leading-relaxed" style={{color:"#6b7280"}}>
+                Painting an office is different from painting a home. Commercial offices contain workstations, glass cabins, conference rooms, networking equipment and employees working throughout the day. Our team handles every aspect with minimal disruption.
+              </p>
+              <ul className="mt-6 space-y-3">
+                {[
+                  "All furniture, electronics and flooring protected before work begins",
+                  "Dust minimised through proper surface preparation techniques",
+                  "Work scheduled after office hours or during weekends",
+                  "Glass cabins & partitions masked and protected",
+                  "Networking cables and server rooms handled with extra care",
+                  "Daily cleanup so office is ready for next working day",
+                ].map((pt, i) => (
+                  <li key={i} className="flex items-start gap-2 text-sm" style={{color:"#374151"}}>
+                    <CheckCircle className="h-4 w-4 text-orange-500 shrink-0 mt-0.5" />{pt}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="space-y-4">
+              {[
+                { title: "Warehouse & Factory Painting", icon: "🏭", desc: "Warehouse walls and floors experience constant movement from forklifts, loading equipment and storage operations. We recommend durable industrial coatings that resist dust, abrasion and frequent cleaning while maintaining a professional appearance." },
+                { title: "Restaurant & Hotel Painting", icon: "🍽️", desc: "Restaurants operate in high-humidity environments where kitchen steam, grease and regular cleaning affect paint performance. We select washable, moisture-resistant paint systems that improve durability and hygiene while keeping the space attractive." },
+              ].map((item, i) => (
+                <div key={i} className="rounded-xl border border-gray-200 p-6 shadow-sm">
+                  <div className="flex items-center gap-3 mb-3">
+                    <span className="text-3xl">{item.icon}</span>
+                    <h3 className="font-bold text-base" style={{color:"#1B2B8A"}}>{item.title}</h3>
+                  </div>
+                  <p className="text-sm leading-relaxed" style={{color:"#6b7280"}}>{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* SURFACE ASSESSMENT SECTION */}
       <section className="py-20 bg-gray-50">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
