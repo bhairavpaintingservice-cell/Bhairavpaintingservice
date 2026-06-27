@@ -718,15 +718,15 @@ export default function CommercialPaintingPage() {
             </div>
             <div className="space-y-4">
               {[
-                { title: "Warehouse & Factory Painting", icon: "🏭", desc: "Warehouse walls and floors experience constant movement from forklifts, loading equipment and storage operations. We recommend durable industrial coatings that resist dust, abrasion and frequent cleaning while maintaining a professional appearance." },
-                { title: "Restaurant & Hotel Painting", icon: "🍽️", desc: "Restaurants operate in high-humidity environments where kitchen steam, grease and regular cleaning affect paint performance. We select washable, moisture-resistant paint systems that improve durability and hygiene while keeping the space attractive." },
+                { title: "Warehouse & Factory Painting", img: "/images/commercial/challenge-warehouse.jpg", desc: "Warehouse walls and floors experience constant movement from forklifts, loading equipment and storage operations. We recommend durable industrial coatings that resist dust, abrasion and frequent cleaning while maintaining a professional appearance." },
+                { title: "Restaurant & Hotel Painting", img: "/images/commercial/challenge-restaurant.jpg", desc: "Restaurants operate in high-humidity environments where kitchen steam, grease and regular cleaning affect paint performance. We select washable, moisture-resistant paint systems that improve durability and hygiene while keeping the space attractive." },
               ].map((item, i) => (
-                <div key={i} className="rounded-xl border border-gray-200 p-6 shadow-sm">
-                  <div className="flex items-center gap-3 mb-3">
-                    <span className="text-3xl">{item.icon}</span>
-                    <h3 className="font-bold text-base" style={{color:"#1B2B8A"}}>{item.title}</h3>
+                <div key={i} className="overflow-hidden rounded-xl border border-gray-200 shadow-sm">
+                  <div className="relative h-40"><Image src={item.img} alt={item.title} fill className="object-cover" /></div>
+                  <div className="p-4">
+                    <h3 className="font-bold text-sm" style={{color:"#1B2B8A"}}>{item.title}</h3>
+                    <p className="mt-1 text-xs leading-relaxed" style={{color:"#6b7280"}}>{item.desc}</p>
                   </div>
-                  <p className="text-sm leading-relaxed" style={{color:"#6b7280"}}>{item.desc}</p>
                 </div>
               ))}
             </div>
