@@ -482,6 +482,34 @@ export default function CommercialPaintingPage() {
         </div>
       </section>
 
+      {/* MAINTENANCE GUIDE */}
+      <section className="py-20 bg-white">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <span className="inline-block rounded-full border border-gray-300 px-4 py-1 text-xs font-semibold uppercase tracking-widest" style={{color:"#6b7280"}}>Maintenance Guide</span>
+          <h2 className="mt-3 text-3xl font-black sm:text-4xl" style={{color:"#1B2B8A"}}>How Often Should Commercial Buildings Be Repainted?</h2>
+          <p className="mt-3 text-sm max-w-xl" style={{color:"#6b7280"}}>Repainting intervals depend on usage, sunlight exposure, moisture and maintenance. These are typical guidelines for Mumbai region commercial properties.</p>
+          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {[
+              { type: "Office Interiors", interval: "Every 5–7 Years", icon: "🏢", color: "#e0e7ff" },
+              { type: "Retail Stores", interval: "Every 3–5 Years", icon: "🏪", color: "#fef3c7" },
+              { type: "Hotels & Restaurants", interval: "Every 2–4 Years", icon: "🏨", color: "#fee2e2" },
+              { type: "Warehouse Interiors", interval: "Every 5–8 Years", icon: "🏭", color: "#d1fae5" },
+              { type: "Commercial Exterior", interval: "Every 5–7 Years", icon: "🏗️", color: "#ede9fe" },
+              { type: "High-Traffic Areas", interval: "Every 2–3 Years", icon: "👣", color: "#fce7f3" },
+            ].map((item, i) => (
+              <div key={i} className="rounded-xl p-6 flex items-center gap-4" style={{backgroundColor:item.color}}>
+                <span className="text-4xl">{item.icon}</span>
+                <div>
+                  <p className="font-black text-lg" style={{color:"#1B2B8A"}}>{item.interval}</p>
+                  <p className="text-sm font-semibold mt-0.5" style={{color:"#374151"}}>{item.type}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <p className="mt-6 text-xs" style={{color:"#9ca3af"}}>* Intervals vary based on paint quality, surface preparation, exposure and usage. Get a free inspection to know when your property needs repainting.</p>
+        </div>
+      </section>
+
       {/* PAINT SELECTION GUIDE */}
       <section className="py-20 bg-gray-50">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
