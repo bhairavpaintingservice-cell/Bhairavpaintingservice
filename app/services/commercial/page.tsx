@@ -251,21 +251,22 @@ export default function CommercialPaintingPage() {
           <p className="mt-3 text-sm max-w-xl" style={{color:"#6b7280"}}>From corporate offices to industrial units — we handle commercial painting across all business types in Mumbai, Thane & Bhiwandi.</p>
           <div className="mt-10 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
             {[
-              { img: "/images/commercial/industry-corporate.jpg", label: "Corporate Offices" },
-              { img: "/images/commercial/industry-retail.jpg", label: "Retail Stores" },
-              { img: "/images/commercial/industry-hotel.jpg", label: "Hotels & Restaurants" },
-              { img: "/images/commercial/industry-factory.jpg", label: "Factories & Warehouses" },
-              { img: "/images/commercial/industry-hospital.jpg", label: "Hospitals & Clinics" },
-              { img: "/images/commercial/industry-school.jpg", label: "Schools & Colleges" },
-              { img: "/images/commercial/industry-bank.jpg", label: "Banks & Offices" },
-              { img: "/images/commercial/industry-mall.jpg", label: "Shopping Malls" },
-              { img: "/images/commercial/industry-gym.jpg", label: "Gyms & Fitness" },
-              { img: "/images/commercial/industry-complex.jpg", label: "Commercial Complexes" },
+              { img: "/images/commercial/industry-corporate.jpg", label: "Corporate Offices", desc: "Office interiors, cabins & common areas" },
+              { img: "/images/commercial/industry-retail.jpg", label: "Retail Stores", desc: "Storefronts, display areas & billing zones" },
+              { img: "/images/commercial/industry-hotel.jpg", label: "Hotels & Restaurants", desc: "Lobbies, dining areas & guest rooms" },
+              { img: "/images/commercial/industry-factory.jpg", label: "Factories & Warehouses", desc: "Industrial walls, floors & roofing" },
+              { img: "/images/commercial/industry-hospital.jpg", label: "Hospitals & Clinics", desc: "Corridors, wards & reception areas" },
+              { img: "/images/commercial/industry-school.jpg", label: "Schools & Colleges", desc: "Classrooms, corridors & common areas" },
+              { img: "/images/commercial/industry-bank.jpg", label: "Banks & Offices", desc: "Waiting areas, counters & cabins" },
+              { img: "/images/commercial/industry-mall.jpg", label: "Shopping Malls", desc: "Atriums, corridors & retail spaces" },
+              { img: "/images/commercial/industry-gym.jpg", label: "Gyms & Fitness", desc: "Workout areas, walls & locker rooms" },
+              { img: "/images/commercial/industry-complex.jpg", label: "Commercial Complexes", desc: "Exterior facades & common areas" },
             ].map((item, i) => (
               <div key={i} className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm">
                 <div className="relative h-28"><Image src={item.img} alt={item.label} fill className="object-cover" /></div>
-                <div className="p-2 text-center">
-                  <p className="text-xs font-semibold" style={{color:"#1B2B8A"}}>{item.label}</p>
+                <div className="p-3">
+                  <p className="text-xs font-bold" style={{color:"#1B2B8A"}}>{item.label}</p>
+                  <p className="text-xs mt-0.5" style={{color:"#6b7280"}}>{item.desc}</p>
                 </div>
               </div>
             ))}
