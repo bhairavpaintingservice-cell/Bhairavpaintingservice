@@ -5,13 +5,55 @@ import Link from "next/link"
 import { Phone, MessageCircle, ChevronDown, CheckCircle, Shield, Star, Clock, Award } from "lucide-react"
 
 const services = [
-  { icon: "🏠", title: "Terrace Waterproofing", desc: "Complete terrace waterproofing with membrane coating. Monsoon-ready solution for flat & sloped terraces.", tag: "Starts ₹45/sq ft" },
-  { icon: "🔧", title: "Roof Leakage Repair", desc: "Permanent roof leakage fix. Crack sealing + protective coating. Emergency same-day visits available.", tag: "Free Inspection" },
-  { icon: "🚿", title: "Bathroom Waterproofing", desc: "Stop seepage to flat below. Floor + wall waterproofing treatment. Bina tiles tode bhi possible.", tag: "1 Day Work" },
-  { icon: "💧", title: "Damp Wall Treatment", desc: "Anti-damp coating + crack filling for wet walls. Mould removal. Permanent source-level treatment.", tag: "Permanent Fix" },
-  { icon: "🏢", title: "Exterior Waterproofing", desc: "Weather-resistant coating for exterior walls. Rain + UV protection. Building exterior protection.", tag: "Long Lasting" },
-  { icon: "🏗️", title: "Basement Waterproofing", desc: "Groundwater protection for basement. Moisture barrier treatment. Underground parking bhi.", tag: "Expert Team" },
-  { icon: "🏘️", title: "Society & Building", desc: "Large scale waterproofing for societies, buildings & commercial properties. Special bulk rates.", tag: "Special Rates" },
+  {
+    icon: "🏠", title: "Terrace Waterproofing", desc: "Complete terrace waterproofing with membrane coating. Monsoon-ready solution.", tag: "Starts ₹45/sq ft",
+    what: "Terrace leakage Mumbai, Thane aur Bhiwandi mein sabse common problem hai. Monsoon mein terrace slab ke cracks aur aged waterproof layer se paani andar seep karta hai — top floor ceiling stains, damp walls aur structural damage hota hai. Timely waterproofing se yeh sab roka ja sakta hai.",
+    signs: ["Ceiling stains in top floor flat", "Damp walls after rain", "Paint peeling from ceiling", "Moss or algae on terrace"],
+    process: ["Surface inspection & crack mapping", "Crack filling with polymer compound", "Waterproof membrane application (Dr Fixit)", "Protective coating", "Water ponding test"],
+    bestFor: "Residential flats, villas, housing societies, commercial buildings"
+  },
+  {
+    icon: "🔧", title: "Roof Leakage Repair", desc: "Permanent roof leakage fix. Emergency same-day visits available.", tag: "Free Inspection",
+    what: "Roof leakage ek emergency hai — baarish mein ceiling se paani tapakna furniture, electrical aur flooring ko hours mein damage karta hai. Hum leakage ka exact source identify karte hain — slab crack, failed membrane ya parapet joint — aur permanent fix karte hain, temporary patch nahi.",
+    signs: ["Water dripping from ceiling during rain", "Brown stains on ceiling", "Wet ceiling or walls", "Leakage from light fittings"],
+    process: ["Emergency site visit", "Leakage source identification", "Crack sealing & joint repair", "Liquid membrane application", "Flood test to confirm repair"],
+    bestFor: "Top floor flats, bungalows, old buildings, terraces with pooling water"
+  },
+  {
+    icon: "🚿", title: "Bathroom Waterproofing", desc: "Stop seepage to flat below. Floor + wall waterproofing treatment.", tag: "1 Day Work",
+    what: "Bathroom leakage Mumbai aur Thane ke flats ki common problem hai. Bathroom floor se paani seep karke neeche wale flat ki ceiling damage karta hai aur mold grow karta hai. Dr Fixit Pidifin 2K se floor, walls aur floor-wall junction waterproof kiya jata hai — jahan se seepage sabse zyada hoti hai.",
+    signs: ["Damp ceiling in flat below", "Loose or hollow floor tiles", "Fungal smell in bathroom", "Water marks on adjacent walls"],
+    process: ["Inspection of floor & wall joints", "Surface preparation", "Dr Fixit Pidifin 2K — 2 coats", "Junction sealing", "24 hrs curing before use"],
+    bestFor: "Apartments, flats, bathrooms, kitchens, wet areas under renovation"
+  },
+  {
+    icon: "💧", title: "Damp Wall Treatment", desc: "Anti-damp coating + crack filling. Permanent source-level treatment.", tag: "Permanent Fix",
+    what: "Damp walls — dark patches, peeling paint, white salt deposits aur musty smell — sirf repaint karne se theek nahi hote. Source treat karna zaroori hai. Hum pehle dampness ka source identify karte hain — exterior seepage, rising damp ya plumbing leakage — phir root cause treatment karte hain.",
+    signs: ["Dark damp patches on walls", "Paint bubbling or peeling repeatedly", "White powdery salt deposits", "Musty smell in room"],
+    process: ["Damp source identification", "Exterior crack sealing if needed", "Anti-damp primer application", "Waterproof putty on affected area", "Anti-fungal paint — 2 coats"],
+    bestFor: "Ground floor flats, old buildings, walls adjacent to bathrooms, exterior-facing walls"
+  },
+  {
+    icon: "🏢", title: "Exterior Waterproofing", desc: "Weather-resistant coating. Rain + UV protection for building exterior.", tag: "Long Lasting",
+    what: "Mumbai, Thane aur Bhiwandi ki buildings ke exterior walls monsoon rain, humidity aur sun ke constant exposure mein rehte hain. Time ke saath cracks develop hote hain aur paani penetrate karta hai — interior dampness aur structural damage hota hai. Berger WeatherCoat aur Asian Paints Apex 5-7 saal tak protection dete hain.",
+    signs: ["Exterior paint peeling or fading", "Damp interior walls after rain", "Visible cracks on exterior walls", "Efflorescence on outer surface"],
+    process: ["Exterior crack filling", "Waterproof primer application", "2 coats weather-resistant paint", "Joint sealing at windows & edges"],
+    bestFor: "Individual homes, villas, housing societies, commercial buildings"
+  },
+  {
+    icon: "🏗️", title: "Basement Waterproofing", desc: "Groundwater protection. Moisture barrier treatment for basement.", tag: "Expert Team",
+    what: "Mumbai aur Thane ke basements high water table aur heavy monsoon ki wajah se water seepage ke zyada exposed hain. Wet basement stored goods damage karta hai, mold health hazard create karta hai aur building foundation weaken karta hai. Crystalline compounds aur injection grouting concrete ke andar penetrate karke permanent barrier banate hain.",
+    signs: ["Wet basement walls or floor", "Water pooling in basement", "Mold or fungal growth", "Damp smell in basement area"],
+    process: ["Water entry point mapping", "Crack injection grouting", "Crystalline waterproofing compound", "Drainage layer if needed", "Final inspection & warranty"],
+    bestFor: "Basement parking, storage areas, underground structures, commercial basements"
+  },
+  {
+    icon: "🏘️", title: "Society & Building Waterproofing", desc: "Large scale waterproofing for societies & commercial properties.", tag: "Special Rates",
+    what: "Housing societies aur large buildings ke liye waterproofing complex project hota hai — multiple floors, common areas, terraces, external walls aur parking — sab ek saath coordinate karna padta hai. Bhairav Painting Service society committees ke saath kaam karta hai — AGM-ready quotation, phased execution aur minimum resident disruption ke saath.",
+    signs: ["Multiple flats with leakage complaints", "Society terrace needing treatment", "External wall dampness across floors", "Common area waterproofing needed"],
+    process: ["Full building inspection & assessment", "AGM-ready written quotation", "Phased execution — floor by floor", "Minimum resident disruption", "Final inspection & written warranty"],
+    bestFor: "Housing societies, CHS committees, apartment complexes, commercial buildings"
+  },
 ]
 
 const signs = [
@@ -251,112 +293,47 @@ export default function WaterproofingPage() {
         <div className="max-w-5xl mx-auto">
           <p className="text-orange-500 text-xs font-bold uppercase tracking-widest mb-2">Waterproofing Services</p>
           <h2 className="text-3xl font-black text-gray-900 mb-3">7 Waterproofing Services We Provide</h2>
-          <p className="text-gray-500 mb-8">Most demanded services — terrace, roof, bathroom aur damp wall treatment.</p>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <p className="text-gray-500 mb-10">Terrace, roof, bathroom, damp wall, exterior, basement aur society waterproofing — complete solutions.</p>
+          <div className="space-y-8">
             {services.map(s => (
-              <div key={s.title} className="bg-white border rounded-xl p-6 hover:border-orange-400 hover:-translate-y-1 transition-all shadow-sm flex flex-col">
-                <span className="text-4xl mb-4 block">{s.icon}</span>
-                <h3 className="font-bold text-base text-gray-900 mb-2">{s.title}</h3>
-                <p className="text-sm text-gray-500 mb-3">{s.desc}</p>
-                <span className="inline-block bg-orange-50 border border-orange-200 text-orange-600 text-xs font-bold px-3 py-1 rounded-full mb-4">{s.tag}</span>
-                <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20Waterproofing%20quote" className="mt-auto block text-center bg-[#1B2B8A] hover:bg-blue-900 text-white text-xs font-bold px-4 py-2 rounded-lg transition">Get Quote for This →</a>
+              <div key={s.title} className="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-md transition">
+                {/* Header */}
+                <div className="flex items-start justify-between mb-4 flex-wrap gap-3">
+                  <div className="flex items-center gap-3">
+                    <span className="text-3xl">{s.icon}</span>
+                    <h3 className="font-black text-lg text-gray-900">{s.title}</h3>
+                  </div>
+                  <span className="bg-orange-50 border border-orange-200 text-orange-600 text-xs font-bold px-3 py-1 rounded-full">{s.tag}</span>
+                </div>
+                {/* What is it */}
+                <p className="text-sm text-gray-600 leading-relaxed mb-5">{s.what}</p>
+                {/* 3 columns */}
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-5">
+                  <div className="bg-red-50 rounded-xl p-4">
+                    <p className="text-xs font-bold text-red-600 uppercase tracking-widest mb-2">Common Signs</p>
+                    <ul className="space-y-1">
+                      {s.signs.map((sign, i) => <li key={i} className="text-xs text-gray-600 flex gap-2"><span className="text-red-400">•</span>{sign}</li>)}
+                    </ul>
+                  </div>
+                  <div className="bg-blue-50 rounded-xl p-4">
+                    <p className="text-xs font-bold text-blue-600 uppercase tracking-widest mb-2">Our Process</p>
+                    <ul className="space-y-1">
+                      {s.process.map((step, i) => <li key={i} className="text-xs text-gray-600 flex gap-2"><span className="text-blue-400">✓</span>{step}</li>)}
+                    </ul>
+                  </div>
+                  <div className="bg-green-50 rounded-xl p-4">
+                    <p className="text-xs font-bold text-green-600 uppercase tracking-widest mb-2">Best For</p>
+                    <p className="text-xs text-gray-600 leading-relaxed">{s.bestFor}</p>
+                  </div>
+                </div>
+                {/* CTA */}
+                <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20Waterproofing%20quote" className="inline-block bg-[#1B2B8A] hover:bg-blue-900 text-white text-xs font-bold px-5 py-2.5 rounded-lg transition">Get Quote for This →</a>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* SERVICE DESCRIPTIONS */}
-      <section className="py-16 px-4 bg-white">
-        <div className="max-w-5xl mx-auto space-y-14">
-
-          <div id="terrace-waterproofing">
-            <h2 className="text-2xl font-black text-gray-900 mb-4">Terrace Waterproofing Services in Mumbai, Thane & Bhiwandi</h2>
-            <p className="text-sm leading-relaxed text-gray-600 mb-4">Terrace leakage Mumbai, Thane, Bhiwandi aur Kalyan mein sabse common waterproofing problem hai. Monsoon ke dauran terrace slab mein cracks aur damaged waterproof layers ki wajah se paani concrete ke andar seep karta hai. Agar timely repair na kiya jaye to seepage ceiling stains, damp walls aur paint peeling ka reason ban sakti hai — aur structure ko permanent damage bhi ho sakta hai.</p>
-            <div className="grid sm:grid-cols-2 gap-6 mb-4">
-              <div className="bg-blue-50 rounded-xl p-4">
-                <p className="text-xs font-bold text-blue-700 uppercase mb-2">Our Process</p>
-                <ul className="space-y-1 text-xs text-gray-600">
-                  {["Surface inspection & crack mapping","Crack filling with polymer compound","Waterproof membrane application (Dr Fixit)","Protective coating layer","Water ponding test before handover"].map((s,i) => <li key={i} className="flex gap-2"><span className="text-blue-400">✓</span>{s}</li>)}
-                </ul>
-              </div>
-              <div className="bg-green-50 rounded-xl p-4">
-                <p className="text-xs font-bold text-green-700 uppercase mb-2">Suitable For</p>
-                <ul className="space-y-1 text-xs text-gray-600">
-                  {["Residential flats & bungalows","Housing societies & apartments","Villas & independent homes","Commercial buildings & offices","Industrial premises"].map((s,i) => <li key={i} className="flex gap-2"><span className="text-green-400">✓</span>{s}</li>)}
-                </ul>
-              </div>
-            </div>
-            <p className="text-xs text-gray-500 bg-orange-50 border border-orange-100 rounded-lg p-3">Products used: Dr Fixit Liquid Membrane, Dr Fixit Roofseal, Asian Paints SmartCare Damp Proof. Warranty: 5 years on workmanship.</p>
-          </div>
-
-          <div id="roof-leakage-repair">
-            <h2 className="text-2xl font-black text-gray-900 mb-4">Roof Leakage Repair — Mumbai, Thane & Bhiwandi</h2>
-            <p className="text-sm leading-relaxed text-gray-600 mb-4">Roof leakage ek emergency hai — rain ke dauran ceiling se paani tapakna furniture, electrical fittings aur flooring ko ghanton mein damage kar sakta hai. Bhairav Painting Service Mumbai, Thane aur Bhiwandi mein same-day emergency roof leakage repair provide karta hai. Hum leakage ka exact point identify karte hain — chahe roof slab mein crack ho, waterproofing membrane fail ho gayi ho, ya parapet joint damaged ho — aur appropriate repair apply karte hain.</p>
-            <div className="grid sm:grid-cols-2 gap-6 mb-4">
-              <div className="bg-blue-50 rounded-xl p-4">
-                <p className="text-xs font-bold text-blue-700 uppercase mb-2">Our Process</p>
-                <ul className="space-y-1 text-xs text-gray-600">
-                  {["Emergency site visit & leakage point identification","Crack sealing & joint repair","Liquid membrane application","Parapet & edge waterproofing","Flood test to confirm repair"].map((s,i) => <li key={i} className="flex gap-2"><span className="text-blue-400">✓</span>{s}</li>)}
-                </ul>
-              </div>
-              <div className="bg-green-50 rounded-xl p-4">
-                <p className="text-xs font-bold text-green-700 uppercase mb-2">Benefits</p>
-                <ul className="space-y-1 text-xs text-gray-600">
-                  {["Permanent fix — not a temporary patch","Root cause addressed","Same-day emergency response","Written warranty on repair","No disruption to daily routine"].map((s,i) => <li key={i} className="flex gap-2"><span className="text-green-400">✓</span>{s}</li>)}
-                </ul>
-              </div>
-            </div>
-            <p className="text-xs text-gray-500 bg-orange-50 border border-orange-100 rounded-lg p-3">Products used: Pidilite Dr Fixit, Berger WeatherCoat Waterproof. Emergency visits available — call +91 91588 00517.</p>
-          </div>
-
-          <div id="bathroom-waterproofing">
-            <h2 className="text-2xl font-black text-gray-900 mb-4">Bathroom Waterproofing — Thane, Bhiwandi & Kalyan</h2>
-            <p className="text-sm leading-relaxed text-gray-600 mb-4">Bathroom leakage Mumbai aur Thane ke flats mein sabse common problem hai. Bathroom floor se paani seep karke neeche wale flat ki ceiling ko damage karta hai, mold growth karta hai aur structure ko weaken karta hai. Bhairav Painting Service Dr Fixit Pidifin 2K use karke professional bathroom waterproofing provide karta hai — yeh compound surface ke saath bond karke permanent water barrier create karta hai. Hum bathroom floor, walls aur floor-wall junction ko waterproof karte hain — jahan se sabse zyada leakage hoti hai.</p>
-            <div className="grid sm:grid-cols-2 gap-6 mb-4">
-              <div className="bg-blue-50 rounded-xl p-4">
-                <p className="text-xs font-bold text-blue-700 uppercase mb-2">Our Process</p>
-                <ul className="space-y-1 text-xs text-gray-600">
-                  {["Remove existing tiles if needed","Clean & prepare surface","Apply Dr Fixit Pidifin 2K (2 coats)","Waterproof floor-wall junction","Allow 24 hrs curing before use"].map((s,i) => <li key={i} className="flex gap-2"><span className="text-blue-400">✓</span>{s}</li>)}
-                </ul>
-              </div>
-              <div className="bg-green-50 rounded-xl p-4">
-                <p className="text-xs font-bold text-green-700 uppercase mb-2">Suitable For</p>
-                <ul className="space-y-1 text-xs text-gray-600">
-                  {["Bathroom & toilet floors","Wet area walls","Kitchen platform waterproofing","Balcony waterproofing","New construction bathrooms"].map((s,i) => <li key={i} className="flex gap-2"><span className="text-green-400">✓</span>{s}</li>)}
-                </ul>
-              </div>
-            </div>
-            <p className="text-xs text-gray-500 bg-orange-50 border border-orange-100 rounded-lg p-3">Products used: Dr Fixit Pidifin 2K, Dr Fixit Bathseal. Work completed in 1–2 days.</p>
-          </div>
-
-          <div id="damp-wall-treatment">
-            <h2 className="text-2xl font-black text-gray-900 mb-4">Damp Wall Treatment — Mumbai, Thane & Bhiwandi</h2>
-            <p className="text-sm leading-relaxed text-gray-600 mb-4">Damp walls — dark patches, peeling paint, white salt deposits aur musty smell se pahchane jaate hain — bahar se moisture aane, ground se rising damp, ya plumbing leakage ki wajah se hote hain. Sirf wall ko repaint karna koi solution nahi hai — damp patches months mein wapas aa jaate hain. Bhairav Painting Service pehle dampness ka source identify karta hai aur phir appropriate treatment apply karta hai jismein anti-damp primer, waterproof putty aur anti-fungal paint shamil hoti hai.</p>
-            <div className="grid sm:grid-cols-2 gap-6 mb-4">
-              <div className="bg-blue-50 rounded-xl p-4">
-                <p className="text-xs font-bold text-blue-700 uppercase mb-2">Our Process</p>
-                <ul className="space-y-1 text-xs text-gray-600">
-                  {["Damp source identification","Exterior crack sealing if needed","Anti-damp primer application","Waterproof putty on affected area","Anti-fungal paint — 2 coats"].map((s,i) => <li key={i} className="flex gap-2"><span className="text-blue-400">✓</span>{s}</li>)}
-                </ul>
-              </div>
-              <div className="bg-green-50 rounded-xl p-4">
-                <p className="text-xs font-bold text-green-700 uppercase mb-2">Signs You Need This</p>
-                <ul className="space-y-1 text-xs text-gray-600">
-                  {["Dark damp patches on wall","Paint peeling repeatedly","White salt deposits on wall","Musty smell in room","Mold or fungal growth"].map((s,i) => <li key={i} className="flex gap-2"><span className="text-green-400">•</span>{s}</li>)}
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <div id="exterior-waterproofing">
-            <h2 className="text-2xl font-black text-gray-900 mb-4">Exterior Wall Waterproofing — Buildings & Societies</h2>
-            <p className="text-sm leading-relaxed text-gray-600 mb-4">Mumbai, Thane aur Bhiwandi ki buildings ke exterior walls monsoon rain, humidity aur sun ke constant exposure mein rehte hain. Time ke saath exterior walls mein cracks develop hote hain, paint peels hoti hai aur paani penetrate karta hai — interior dampness aur structural damage hota hai. Bhairav Painting Service individual homes, villas, housing societies aur commercial buildings ke liye exterior wall waterproofing provide karta hai using Berger WeatherCoat aur Asian Paints Apex — premium weather-resistant coatings jo 5–7 saal tak protection deti hain.</p>
-            <p className="text-xs text-gray-500 bg-orange-50 border border-orange-100 rounded-lg p-3">Products: Berger WeatherCoat, Asian Paints Apex Weatherproof. Process: Crack filling → waterproof primer → 2 coats exterior paint.</p>
-          </div>
-
-        </div>
-      </section>
 
       {/* WHY CHOOSE */}
       <section className="py-16 px-4 bg-white">
