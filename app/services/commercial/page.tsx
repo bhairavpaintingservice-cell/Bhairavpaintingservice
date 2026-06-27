@@ -482,6 +482,61 @@ export default function CommercialPaintingPage() {
         </div>
       </section>
 
+      {/* ZERO DISRUPTION SECTION */}
+      <section className="py-20 bg-white">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <span className="inline-block rounded-full border border-gray-300 px-4 py-1 text-xs font-semibold uppercase tracking-widest" style={{color:"#6b7280"}}>Zero Disruption</span>
+              <h2 className="mt-3 text-3xl font-black sm:text-4xl" style={{color:"#1B2B8A"}}>Zero Business Disruption Planning</h2>
+              <p className="mt-4 text-sm leading-relaxed" style={{color:"#6b7280"}}>
+                Commercial painting isn't just about applying paint — it's about completing the work without affecting your daily operations. Before starting any project, we create a work schedule based on your business hours.
+              </p>
+              <div className="mt-6 space-y-4">
+                {[
+                  { icon: "🏢", title: "Offices", desc: "Painting completed after working hours or during weekends — your team continues working without interruption." },
+                  { icon: "🍽️", title: "Restaurants", desc: "Work scheduled during weekly closing days or early mornings before opening hours." },
+                  { icon: "🏪", title: "Retail Stores", desc: "Section-by-section phased painting keeps your store operational throughout the project." },
+                  { icon: "🏭", title: "Warehouses & Factories", desc: "Work planned around production schedules to minimise downtime while maintaining safety standards." },
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start gap-4 rounded-xl p-4" style={{backgroundColor:"#f0f4ff"}}>
+                    <span className="text-2xl">{item.icon}</span>
+                    <div>
+                      <p className="font-bold text-sm" style={{color:"#1B2B8A"}}>{item.title}</p>
+                      <p className="text-xs mt-0.5" style={{color:"#6b7280"}}>{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="rounded-2xl p-8" style={{backgroundColor:"#1B2B8A"}}>
+              <h3 className="text-xl font-black text-white">Our Disruption-Free Promise</h3>
+              <p className="mt-2 text-sm text-blue-200">Every commercial project follows a structured approach:</p>
+              <ul className="mt-6 space-y-3">
+                {[
+                  "Pre-project site visit & schedule planning",
+                  "Work timed around your business hours",
+                  "Furniture & equipment fully covered & protected",
+                  "Dust minimised through proper surface prep",
+                  "Section-by-section work for large spaces",
+                  "Daily site cleanup before business opens",
+                  "Owner present on site throughout execution",
+                ].map((pt, i) => (
+                  <li key={i} className="flex items-start gap-2 text-sm text-white">
+                    <CheckCircle className="h-4 w-4 text-orange-400 shrink-0 mt-0.5" />{pt}
+                  </li>
+                ))}
+              </ul>
+              <a href="https://wa.me/919158800517?text=Hi%2C%20I%20want%20to%20discuss%20commercial%20painting%20with%20zero%20disruption." target="_blank" rel="noopener noreferrer"
+                className="mt-8 flex items-center justify-center gap-2 rounded-lg px-6 py-3 text-sm font-bold text-white"
+                style={{backgroundColor:"#25D366"}}>
+                <MessageCircle className="h-4 w-4" /> Discuss Your Project
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* BETTER CTA */}
       <section className="py-20" style={{backgroundColor:"#1B2B8A"}}>
         <div className="mx-auto max-w-4xl px-6 lg:px-8 text-center">
