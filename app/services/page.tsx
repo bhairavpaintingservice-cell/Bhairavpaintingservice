@@ -4,65 +4,72 @@ import { CheckCircle, MessageCircle, Phone } from "lucide-react"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Painting Services in Mumbai, Thane & Bhiwandi | Bhairav Painting Service",
-  description: "Professional painting services — residential, commercial, building, waterproofing, exterior and designer texture painting. 47+ years experience. Free site visit.",
+  title: "Professional Painting Services in Mumbai, Thane & Navi Mumbai | Bhairav Painting Service",
+  description: "Complete painting services — residential, interior, exterior, commercial, building, waterproofing, texture and wood painting. 47+ years experience. Free site visit across Mumbai, Thane, Bhiwandi & Kalyan.",
 }
 
 const services = [
-  {
-    title: "Residential Painting",
-    subtitle: "Home Interiors & Exteriors",
-    desc: "Complete home painting — bedrooms, living rooms, kitchens, bathrooms and exteriors. Premium branded paints, proper surface preparation and owner-supervised quality.",
-    img: "/images/residential.webp",
-    href: "/services/residential",
-    waMsg: "Hi, I need a quote for Residential Painting. Please contact me.",
-    points: ["Interior & Exterior", "All Room Types", "Surface Preparation Included", "Premium Paint Brands"],
-  },
-  {
-    title: "Commercial Painting",
-    subtitle: "Offices, Shops & Businesses",
-    desc: "Professional painting for offices, retail stores, restaurants, warehouses and co-working spaces. Off-hours scheduling available for zero business disruption.",
-    img: "/images/commercial.webp",
-    href: "/services/commercial",
-    waMsg: "Hi, I need a quote for Commercial Painting. Please contact me.",
-    points: ["Offices & Showrooms", "Restaurants & Hotels", "Warehouses & Factories", "Weekend Scheduling"],
-  },
-  {
-    title: "Building & Society Painting",
-    subtitle: "Large Scale Projects",
-    desc: "Complete exterior repainting for residential societies, apartment buildings and commercial complexes. Scaffolding, waterproofing and common area painting included.",
-    img: "/images/portfolio-building.webp",
-    href: "/services/building",
-    waMsg: "Hi, I need a quote for Building & Society Painting. Please contact me.",
-    points: ["Society Repainting", "Common Area Painting", "Waterproofing Included", "Scaffolding Arranged"],
-  },
-  {
-    title: "Exterior Painting",
-    subtitle: "Weather Protection & Finish",
-    desc: "Exterior painting with weatherproof paint systems designed for Mumbai's monsoon, humidity and UV conditions. Crack repair and surface preparation included.",
-    img: "/images/exterior-new.jpg",
-    href: "/services/exterior",
-    waMsg: "Hi, I need a quote for Exterior Painting. Please contact me.",
-    points: ["Weatherproof Systems", "Crack Repair Included", "Anti-Fungal Treatment", "Monsoon Ready"],
-  },
-  {
-    title: "Waterproofing",
-    subtitle: "Roof, Terrace & Wall Seepage",
-    desc: "Stop roof leaks, wall seepage and damp problems with professional waterproofing. Dr Fixit, Asian Paints SmartCare and Pidilite products used.",
-    img: "/images/waterproofing.jpg",
-    href: "/services/waterproofing",
-    waMsg: "Hi, I need a quote for Waterproofing. Please contact me.",
-    points: ["Terrace Waterproofing", "Wall Seepage Treatment", "Bathroom Waterproofing", "Permanent Solutions"],
-  },
-  {
-    title: "Designer & Texture Painting",
-    subtitle: "Premium Finish & Textures",
-    desc: "Add character to your walls with designer textures, metallic finishes, Venetian plaster and custom patterns. Transform any room into a statement space.",
-    img: "/images/texture.webp",
-    href: "/services/designer/texture",
-    waMsg: "Hi, I need a quote for Designer & Texture Painting. Please contact me.",
-    points: ["Texture Finishes", "Metallic & Venetian", "Accent Walls", "Custom Patterns"],
-  },
+  { title: "Residential Painting", subtitle: "Homes & Apartments", img: "/images/residential.webp", href: "/services/residential", points: ["Interior & Exterior", "All Room Types", "Surface Preparation", "Premium Paints"] },
+  { title: "Interior Painting", subtitle: "Rooms & Living Spaces", img: "/images/interior-painting.jpg", href: "/services/interior", points: ["Bedrooms & Living Rooms", "Kitchen & Bathrooms", "Ceiling & Trim", "Designer Finishes"] },
+  { title: "Exterior Painting", subtitle: "Weather Protection", img: "/images/exterior-new.jpg", href: "/services/exterior", points: ["Weatherproof Systems", "Crack Repair", "Anti-Fungal Treatment", "Monsoon Ready"] },
+  { title: "Commercial Painting", subtitle: "Offices & Businesses", img: "/images/commercial.webp", href: "/services/commercial", points: ["Offices & Showrooms", "Restaurants & Hotels", "Warehouses", "Weekend Scheduling"] },
+  { title: "Building & Society Painting", subtitle: "Large Scale Projects", img: "/images/portfolio-building.webp", href: "/services/building", points: ["Society Repainting", "Common Areas", "Waterproofing", "Scaffolding"] },
+  { title: "Waterproofing", subtitle: "Leakage & Seepage Solutions", img: "/images/waterproofing.jpg", href: "/services/waterproofing", points: ["Terrace Waterproofing", "Wall Seepage", "Bathroom", "Permanent Fix"] },
+  { title: "Designer & Texture Painting", subtitle: "Premium Finishes", img: "/images/texture.webp", href: "/services/designer/texture", points: ["Texture Finishes", "Metallic & Venetian", "Accent Walls", "Custom Patterns"] },
+  { title: "Wood & Metal Painting", subtitle: "Doors, Windows & Gates", img: "/images/wood-metal-painting.jpg", href: "/services/residential", points: ["Doors & Windows", "Grills & Gates", "Furniture Polish", "Anti-Rust Coating"] },
+]
+
+const whyUs = [
+  { title: "47+ Years Experience", desc: "Trusted painting contractor since 1977 serving Mumbai region." },
+  { title: "Skilled Painters", desc: "Trained, experienced team with attention to detail on every project." },
+  { title: "Premium Paint Brands", desc: "Asian Paints, Berger, Nerolac & Dulux — branded paints only." },
+  { title: "On-Time Completion", desc: "Projects delivered on schedule — timeline committed upfront." },
+  { title: "Clean Work Process", desc: "Furniture protected, dust minimised, daily site cleanup." },
+  { title: "Owner Supervised", desc: "Every project personally supervised by the owner for quality." },
+]
+
+const process = [
+  { step: "01", title: "Free Site Visit", desc: "We visit your property at no charge to understand the scope of work." },
+  { step: "02", title: "Surface Inspection", desc: "Walls, cracks, dampness and existing paint condition assessed." },
+  { step: "03", title: "Written Quotation", desc: "Detailed written quote with scope, materials and timeline — no hidden costs." },
+  { step: "04", title: "Colour Selection", desc: "We help you choose the right colours and finish for your space." },
+  { step: "05", title: "Surface Preparation", desc: "Crack filling, putty application and primer coat before painting." },
+  { step: "06", title: "Painting", desc: "Premium branded paint applied in correct coats per specifications." },
+  { step: "07", title: "Final Inspection", desc: "Owner walkthrough to ensure every detail meets quality standards." },
+  { step: "08", title: "Project Handover", desc: "Site cleaned, furniture restored, project handed over to your satisfaction." },
+]
+
+const problems = [
+  { problem: "Damp Walls", solution: "Anti-fungal primer + moisture-resistant paint after treating the source of dampness." },
+  { problem: "Water Leakage", solution: "Professional waterproofing with Dr Fixit or Asian Paints SmartCare before repainting." },
+  { problem: "Peeling Paint", solution: "Complete removal of loose paint, surface preparation and fresh premium coat." },
+  { problem: "Wall Cracks", solution: "Crack filling compound, mesh reinforcement if needed, then putty and paint." },
+  { problem: "Faded Exterior", solution: "Weatherproof exterior paint system with UV and monsoon resistance." },
+  { problem: "Fungus & Algae", solution: "Anti-fungal treatment, surface cleaning and moisture-resistant paint system." },
+  { problem: "Ceiling Stains", solution: "Stain-blocking primer followed by premium ceiling paint for clean finish." },
+  { problem: "Poor Old Finish", solution: "Surface levelling with putty, sanding and fresh branded paint for smooth result." },
+]
+
+const faqs = [
+  { q: "How much does painting cost per sq ft in Mumbai?", a: "Painting cost depends on surface condition, paint brand, number of coats and scope. We provide a free site visit and written quotation — no hidden charges." },
+  { q: "How long does residential painting take?", a: "A standard 2BHK apartment takes 5–7 days for complete interior painting including surface preparation, putty, primer and two finish coats." },
+  { q: "Do you provide warranty on painting work?", a: "Yes — any defect due to our workmanship is rectified at no extra cost. Paint manufacturer warranty depends on the brand and product selected." },
+  { q: "Which paint brands do you use?", a: "We use Asian Paints, Berger, Nerolac and Dulux — premium branded paints only. No local or unbranded products are used on our projects." },
+  { q: "Can you do waterproofing along with painting?", a: "Yes — we handle waterproofing and painting together. Waterproofing is always done before exterior or terrace painting for best results." },
+  { q: "Do you paint during monsoon?", a: "Interior painting can be done during monsoon. Exterior painting is best avoided during heavy rain — we advise the best timing after site inspection." },
+  { q: "What is included in surface preparation?", a: "Surface preparation includes cleaning, crack filling, putty application and primer coat — all included before final paint coats." },
+  { q: "Do you serve Navi Mumbai and Kalyan?", a: "Yes — we serve Mumbai, Thane, Bhiwandi, Kalyan, Navi Mumbai and Dombivli. Mira Road and Nalasopara are outside our service area." },
+  { q: "Can you work on weekends for commercial projects?", a: "Yes — we offer evening, night and weekend scheduling for commercial projects to avoid business disruption." },
+  { q: "Do you offer colour consultation?", a: "Yes — our team helps you select the right colours, finishes and paint systems based on your space and requirements." },
+]
+
+const serviceAreas = [
+  { area: "Mumbai", types: "Residential, Commercial, Building" },
+  { area: "Thane", types: "Residential, Commercial, Exterior" },
+  { area: "Bhiwandi", types: "Warehouse, Factory, Commercial" },
+  { area: "Kalyan", types: "Residential, Society, Exterior" },
+  { area: "Navi Mumbai", types: "Residential, Commercial, Building" },
+  { area: "Dombivli", types: "Residential, Society, Exterior" },
 ]
 
 export default function ServicesPage() {
@@ -70,20 +77,29 @@ export default function ServicesPage() {
     <main>
       {/* HERO */}
       <section className="pt-32 pb-16" style={{backgroundColor:"#1B2B8A"}}>
-        <div className="mx-auto max-w-7xl px-6 lg:px-8 text-center">
-          <span className="inline-block rounded-full border border-white/30 px-4 py-1 text-xs font-semibold uppercase tracking-widest text-blue-200">Our Services</span>
-          <h1 className="mt-4 text-4xl font-black text-white sm:text-5xl">Complete Painting Solutions</h1>
-          <p className="mt-4 text-lg text-blue-200 max-w-2xl mx-auto">From single rooms to entire buildings — residential, commercial, waterproofing and designer finishes. 47+ years of experience across Mumbai, Thane & Bhiwandi.</p>
-          <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20a%20painting%20quote.%20Please%20contact%20me." target="_blank" rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 rounded-lg px-8 py-4 text-base font-bold text-white"
-              style={{backgroundColor:"#25D366"}}>
-              <MessageCircle className="h-5 w-5" /> Get Free Quote on WhatsApp
-            </a>
-            <a href="tel:+919158800517"
-              className="flex items-center justify-center gap-2 rounded-lg border-2 border-white px-8 py-4 text-base font-bold text-white hover:bg-white/10 transition-colors">
-              <Phone className="h-5 w-5" /> Call: +91 9158800517
-            </a>
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="max-w-3xl">
+            <span className="inline-block rounded-full border border-white/30 px-4 py-1 text-xs font-semibold uppercase tracking-widest text-blue-200">Bhairav Painting Service</span>
+            <h1 className="mt-4 text-4xl font-black text-white sm:text-5xl leading-tight">Professional Painting Services in Mumbai, Thane & Navi Mumbai</h1>
+            <p className="mt-4 text-lg text-blue-200 max-w-2xl">Bhairav Painting Service provides residential, interior, exterior, commercial, building, waterproofing and designer texture painting across Mumbai, Thane, Bhiwandi, Kalyan and Navi Mumbai. Every project includes free site inspection, surface preparation, premium branded paints and owner-supervised execution.</p>
+            <div className="mt-8 flex flex-col sm:flex-row gap-4">
+              <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20a%20painting%20quote.%20Please%20contact%20me." target="_blank" rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 rounded-lg px-8 py-4 text-base font-bold text-white"
+                style={{backgroundColor:"#25D366"}}>
+                <MessageCircle className="h-5 w-5" /> Get Free Quote on WhatsApp
+              </a>
+              <a href="tel:+919158800517"
+                className="flex items-center justify-center gap-2 rounded-lg border-2 border-white px-8 py-4 text-base font-bold text-white hover:bg-white/10 transition-colors">
+                <Phone className="h-5 w-5" /> Call: +91 9158800517
+              </a>
+            </div>
+            <div className="mt-8 flex flex-wrap gap-4">
+              {["47+ Years Experience","500+ Projects","Premium Paint Brands","Free Site Visit"].map((badge, i) => (
+                <span key={i} className="flex items-center gap-1.5 rounded-full bg-white/10 px-3 py-1.5 text-xs font-semibold text-white">
+                  <CheckCircle className="h-3.5 w-3.5 text-orange-400" />{badge}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -106,21 +122,21 @@ export default function ServicesPage() {
           <span className="inline-block rounded-full border border-gray-300 px-4 py-1 text-xs font-semibold uppercase tracking-widest" style={{color:"#6b7280"}}>What We Offer</span>
           <h2 className="mt-3 text-3xl font-black sm:text-4xl" style={{color:"#1B2B8A"}}>All Painting Services</h2>
           <p className="mt-3 text-sm max-w-xl" style={{color:"#6b7280"}}>Click any service to learn more — or WhatsApp us directly for a free quote.</p>
-          <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {services.map((s, i) => {
-              const waUrl = `https://wa.me/919158800517?text=${encodeURIComponent(s.waMsg)}`
-              const quoteUrl = `https://wa.me/919158800517?text=${encodeURIComponent(s.waMsg.replace('need a quote', 'want a free site visit'))}`
+              const waUrl = `https://wa.me/919158800517?text=${encodeURIComponent("Hi, I need a quote for " + s.title + ". Please contact me.")}`
+              const quoteUrl = `https://wa.me/919158800517?text=${encodeURIComponent("Hi, I want a free site visit for " + s.title + ". Please contact me.")}`
               return (
                 <div key={i} className="overflow-hidden rounded-xl shadow-sm flex flex-col">
-                  <Link href={s.href} className="relative h-48 block group">
-                    <Image src={s.img} alt={s.title} fill className="object-cover" />
+                  <Link href={s.href} className="relative h-44 block group">
+                    <Image src={s.img} alt={s.title + " in Mumbai"} fill className="object-cover" />
                     <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity">
                       <span className="rounded-full bg-white px-4 py-2 text-xs font-bold" style={{color:"#1B2B8A"}}>View Service →</span>
                     </div>
                   </Link>
                   <div className="p-4 flex items-start justify-between gap-3 flex-1" style={{backgroundColor:"#1B2B8A"}}>
                     <div className="flex-1 min-w-0">
-                      <p className="text-xs font-semibold text-orange-400 uppercase tracking-wide">{s.subtitle}</p>
+                      <p className="text-xs font-semibold text-orange-400">{s.subtitle}</p>
                       <h3 className="font-bold text-sm text-white mt-0.5">{s.title}</h3>
                       <ul className="mt-2 space-y-0.5">
                         {s.points.map((pt) => (
@@ -155,20 +171,30 @@ export default function ServicesPage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <span className="inline-block rounded-full border border-gray-300 px-4 py-1 text-xs font-semibold uppercase tracking-widest" style={{color:"#6b7280"}}>Why Choose Us</span>
           <h2 className="mt-3 text-3xl font-black sm:text-4xl" style={{color:"#1B2B8A"}}>Why Bhairav Painting Service?</h2>
-          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { title: "47+ Years Experience", desc: "Trusted painting contractor since 1977 — serving Mumbai, Thane & Bhiwandi." },
-              { title: "Owner Supervised", desc: "Every project personally supervised by the owner — not just labour." },
-              { title: "Premium Paint Brands", desc: "Asian Paints, Berger, Nerolac & Dulux — branded paints only, no shortcuts." },
-              { title: "Free Site Visit", desc: "100% free site inspection & written quotation — no obligation." },
-              { title: "Surface Preparation", desc: "Crack filling, putty & primer included — not just topcoat painting." },
-              { title: "Zero Disruption", desc: "Evening & weekend scheduling for commercial projects." },
-              { title: "Clean Work Site", desc: "Daily cleanup — furniture protected, dust minimised throughout." },
-              { title: "Written Quotation", desc: "No hidden costs — everything agreed in writing before work starts." },
-            ].map((item, i) => (
-              <div key={i} className="rounded-xl border border-gray-200 p-5 shadow-sm">
-                <CheckCircle className="h-5 w-5 text-orange-500" />
-                <h3 className="mt-3 font-bold text-sm" style={{color:"#1B2B8A"}}>{item.title}</h3>
+          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {whyUs.map((item, i) => (
+              <div key={i} className="rounded-xl border border-gray-200 p-6 shadow-sm">
+                <CheckCircle className="h-6 w-6 text-orange-500" />
+                <h3 className="mt-3 font-bold text-base" style={{color:"#1B2B8A"}}>{item.title}</h3>
+                <p className="mt-1 text-sm leading-relaxed" style={{color:"#6b7280"}}>{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* PROCESS */}
+      <section className="py-20 bg-gray-50">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <span className="inline-block rounded-full border border-gray-300 px-4 py-1 text-xs font-semibold uppercase tracking-widest" style={{color:"#6b7280"}}>How We Work</span>
+          <h2 className="mt-3 text-3xl font-black sm:text-4xl" style={{color:"#1B2B8A"}}>Our Painting Process</h2>
+          <p className="mt-3 text-sm max-w-xl" style={{color:"#6b7280"}}>A structured, transparent process from first call to final handover.</p>
+          <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-4">
+            {process.map((item, i) => (
+              <div key={i} className="flex flex-col items-center text-center">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full text-white font-black text-sm" style={{backgroundColor:"#1B2B8A"}}>{item.step}</div>
+                {i < process.length - 1 && <div className="hidden lg:block absolute" />}
+                <h3 className="mt-3 font-bold text-xs" style={{color:"#1B2B8A"}}>{item.title}</h3>
                 <p className="mt-1 text-xs leading-relaxed" style={{color:"#6b7280"}}>{item.desc}</p>
               </div>
             ))}
@@ -176,20 +202,108 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* BOTTOM CTA */}
+      {/* PROPERTY TYPES */}
+      <section className="py-20 bg-white">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <span className="inline-block rounded-full border border-gray-300 px-4 py-1 text-xs font-semibold uppercase tracking-widest" style={{color:"#6b7280"}}>Who We Serve</span>
+          <h2 className="mt-3 text-3xl font-black sm:text-4xl" style={{color:"#1B2B8A"}}>Property Types We Paint</h2>
+          <div className="mt-10 grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {[
+              { category: "Residential", color: "#e0e7ff", items: ["Apartments & Flats", "Villas & Bungalows", "Independent Houses", "Housing Societies", "Penthouse & Duplex", "Studio Apartments"] },
+              { category: "Commercial", color: "#fef3c7", items: ["Offices & Co-working", "Shops & Showrooms", "Hotels & Restaurants", "Warehouses & Factories", "Hospitals & Clinics", "Schools & Colleges"] },
+              { category: "Builders & Developers", color: "#d1fae5", items: ["New Construction Painting", "Residential Projects", "Commercial Projects", "Society Repainting", "Handover Painting", "Mixed-Use Developments"] },
+            ].map((cat, i) => (
+              <div key={i} className="rounded-2xl p-6" style={{backgroundColor:cat.color}}>
+                <h3 className="font-black text-lg" style={{color:"#1B2B8A"}}>{cat.category}</h3>
+                <ul className="mt-4 space-y-2">
+                  {cat.items.map((item, j) => (
+                    <li key={j} className="flex items-center gap-2 text-sm" style={{color:"#374151"}}>
+                      <CheckCircle className="h-4 w-4 text-orange-500 shrink-0" />{item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* COMMON PROBLEMS */}
+      <section className="py-20 bg-gray-50">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <span className="inline-block rounded-full border border-gray-300 px-4 py-1 text-xs font-semibold uppercase tracking-widest" style={{color:"#6b7280"}}>Common Problems</span>
+          <h2 className="mt-3 text-3xl font-black sm:text-4xl" style={{color:"#1B2B8A"}}>Common Painting Problems & Solutions</h2>
+          <p className="mt-3 text-sm max-w-xl" style={{color:"#6b7280"}}>Identifying the right problem leads to the right solution. Here is what we commonly fix across Mumbai properties.</p>
+          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {problems.map((item, i) => (
+              <div key={i} className="rounded-xl bg-white border border-gray-200 p-5 shadow-sm">
+                <p className="font-black text-sm" style={{color:"#dc2626"}}>Problem: {item.problem}</p>
+                <p className="mt-2 text-xs leading-relaxed" style={{color:"#6b7280"}}><span className="font-semibold" style={{color:"#1B2B8A"}}>Solution: </span>{item.solution}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SERVICE AREAS */}
       <section className="py-20" style={{backgroundColor:"#1B2B8A"}}>
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <span className="inline-block rounded-full border border-white/30 px-4 py-1 text-xs font-semibold uppercase tracking-widest text-blue-200">Service Areas</span>
+          <h2 className="mt-3 text-3xl font-black text-white sm:text-4xl">Areas We Serve</h2>
+          <p className="mt-3 text-sm text-blue-200 max-w-xl">Professional painting services across the Mumbai metropolitan region.</p>
+          <div className="mt-10 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+            {serviceAreas.map((item, i) => (
+              <div key={i} className="rounded-xl p-4 text-center" style={{backgroundColor:"rgba(255,255,255,0.1)"}}>
+                <p className="font-black text-white text-base">{item.area}</p>
+                <p className="mt-1 text-xs text-blue-200">{item.types}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-20 bg-white">
+        <div className="mx-auto max-w-4xl px-6 lg:px-8">
+          <span className="inline-block rounded-full border border-gray-300 px-4 py-1 text-xs font-semibold uppercase tracking-widest" style={{color:"#6b7280"}}>FAQ</span>
+          <h2 className="mt-3 text-3xl font-black sm:text-4xl" style={{color:"#1B2B8A"}}>Frequently Asked Questions</h2>
+          <div className="mt-10 space-y-4">
+            {faqs.map((faq, i) => (
+              <div key={i} className="rounded-xl border border-gray-200 p-5">
+                <p className="font-bold text-sm" style={{color:"#1B2B8A"}}>Q: {faq.q}</p>
+                <p className="mt-2 text-sm leading-relaxed" style={{color:"#6b7280"}}>{faq.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FINAL CTA */}
+      <section className="py-20 bg-orange-500">
         <div className="mx-auto max-w-4xl px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-black text-white sm:text-4xl">Ready to Start Your Project?</h2>
-          <p className="mt-4 text-blue-200 text-sm max-w-xl mx-auto">Get a free site visit and written quotation — no obligation. We serve Mumbai, Thane, Bhiwandi, Kalyan & Navi Mumbai.</p>
+          <h2 className="text-3xl font-black text-white sm:text-4xl">Ready to Transform Your Property?</h2>
+          <p className="mt-4 text-white/90 text-sm max-w-xl mx-auto">Free site inspection, free estimate and expert consultation — no obligation. Serving Mumbai, Thane, Bhiwandi, Kalyan & Navi Mumbai.</p>
+          <div className="mt-6 flex flex-wrap justify-center gap-3">
+            {["Free Site Inspection","Free Estimate","Expert Consultation","No Hidden Costs"].map((b, i) => (
+              <span key={i} className="flex items-center gap-1.5 rounded-full bg-white/20 px-3 py-1.5 text-xs font-semibold text-white">
+                <CheckCircle className="h-3.5 w-3.5" />{b}
+              </span>
+            ))}
+          </div>
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="https://wa.me/919158800517?text=Hi%2C%20I%20want%20to%20schedule%20a%20free%20site%20visit." target="_blank" rel="noopener noreferrer"
+            <a href="tel:+919158800517"
+              className="flex items-center justify-center gap-2 rounded-lg bg-white px-8 py-4 text-base font-bold"
+              style={{color:"#f97316"}}>
+              <Phone className="h-5 w-5" /> Call Now
+            </a>
+            <a href="https://wa.me/919158800517?text=Hi%2C%20I%20want%20a%20free%20site%20inspection." target="_blank" rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 rounded-lg px-8 py-4 text-base font-bold text-white"
               style={{backgroundColor:"#25D366"}}>
-              <MessageCircle className="h-5 w-5" /> Schedule Free Site Visit
+              <MessageCircle className="h-5 w-5" /> WhatsApp
             </a>
-            <a href="tel:+919158800517"
-              className="flex items-center justify-center gap-2 rounded-lg border-2 border-white px-8 py-4 text-base font-bold text-white hover:bg-white/10 transition-colors">
-              <Phone className="h-5 w-5" /> Call: +91 9158800517
+            <a href="https://wa.me/919158800517?text=Hi%2C%20I%20want%20a%20free%20painting%20quote." target="_blank" rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 rounded-lg border-2 border-white px-8 py-4 text-base font-bold text-white">
+              Get Free Quote
             </a>
           </div>
         </div>
