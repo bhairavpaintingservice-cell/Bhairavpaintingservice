@@ -549,6 +549,57 @@ export default function WaterproofingPage() {
         </div>
       </section>
 
+      {/* MONSOON PLANNING */}
+      <section className="py-16 px-4 bg-blue-950 text-white">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-orange-400 text-xs font-bold uppercase tracking-widest mb-2">Seasonal Guide</p>
+          <h2 className="text-3xl font-black text-white mb-3">Monsoon Waterproofing Planning — Mumbai, Thane & Bhiwandi</h2>
+          <p className="text-blue-200 mb-10 text-sm">Mumbai mein monsoon June se September tak rehta hai. Sahi planning se aap leakage aur damage se bach sakte hain.</p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-10">
+            <div className="bg-white/10 rounded-2xl p-6 border border-blue-800">
+              <p className="text-orange-400 font-black text-sm mb-1">🌤️ Pre-Monsoon</p>
+              <p className="text-blue-200 text-xs mb-4">March — May</p>
+              <ul className="space-y-2">
+                {["Full terrace inspection","Crack identification & mapping","Drain & pipe cleaning","Waterproofing treatment","Parapet joint sealing","Terrace water ponding test"].map((s,i) => <li key={i} className="text-xs text-white/80 flex gap-2"><span className="text-orange-400">✓</span>{s}</li>)}
+              </ul>
+              <div className="mt-4 bg-orange-500/20 rounded-lg p-3">
+                <p className="text-xs text-orange-300 font-bold">Best Time to Waterproof</p>
+                <p className="text-xs text-white/70 mt-1">Surface dry rehta hai — membrane properly cure hoti hai. Monsoon se pehle 4-6 weeks ka time ideal hai.</p>
+              </div>
+            </div>
+            <div className="bg-white/10 rounded-2xl p-6 border border-blue-800">
+              <p className="text-blue-300 font-black text-sm mb-1">🌧️ During Monsoon</p>
+              <p className="text-blue-200 text-xs mb-4">June — September</p>
+              <ul className="space-y-2">
+                {["Monitor terrace drainage","Check for new leakage points","Emergency leak repair available","Temporary waterproofing possible","Document damage for post-monsoon repair","Same-day emergency visits"].map((s,i) => <li key={i} className="text-xs text-white/80 flex gap-2"><span className="text-blue-400">•</span>{s}</li>)}
+              </ul>
+              <div className="mt-4 bg-blue-500/20 rounded-lg p-3">
+                <p className="text-xs text-blue-300 font-bold">Emergency Available</p>
+                <p className="text-xs text-white/70 mt-1">Active leakage ke liye same-day emergency visit available hai — call +91 91588 00517.</p>
+              </div>
+            </div>
+            <div className="bg-white/10 rounded-2xl p-6 border border-blue-800">
+              <p className="text-green-400 font-black text-sm mb-1">☀️ Post-Monsoon</p>
+              <p className="text-blue-200 text-xs mb-4">October — November</p>
+              <ul className="space-y-2">
+                {["Full damage assessment","Permanent crack repair","Waterproofing treatment","Damp wall treatment","Exterior repainting","Annual maintenance check"].map((s,i) => <li key={i} className="text-xs text-white/80 flex gap-2"><span className="text-green-400">✓</span>{s}</li>)}
+              </ul>
+              <div className="mt-4 bg-green-500/20 rounded-lg p-3">
+                <p className="text-xs text-green-300 font-bold">Post-Monsoon Priority</p>
+                <p className="text-xs text-white/70 mt-1">Monsoon ke baad surface dry hone ke baad permanent treatment karna sabse effective hota hai.</p>
+              </div>
+            </div>
+          </div>
+          <div className="bg-white/10 rounded-2xl p-6 border border-blue-800">
+            <h3 className="text-white font-black text-base mb-4">Mumbai Climate & Waterproofing — What You Need to Know</h3>
+            <div className="grid sm:grid-cols-2 gap-4 text-xs text-white/80">
+              <p>Mumbai mein annual rainfall 2,400mm+ hoti hai — India ke wettest cities mein se ek. Is wajah se Mumbai, Thane aur Bhiwandi ki buildings ko high-grade waterproofing ki zaroorat hoti hai jo standard cities se zyada durable ho.</p>
+              <p>Coastal proximity ki wajah se salt-laden air bhi building materials ko corrode karta hai. Premium waterproofing systems jo UV resistance aur salt resistance dono provide karte hain woh Mumbai ke liye best hain — Dr Fixit, Asian Paints SmartCare aur PU-based systems.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CASE STUDY */}
       <section className="py-16 px-4 bg-blue-950 text-white">
         <div className="max-w-5xl mx-auto">
