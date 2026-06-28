@@ -521,6 +521,78 @@ export default function WaterproofingPage() {
         </div>
       </section>
 
+      {/* MONSOON PLANNING */}
+      <section className="py-16 px-4 bg-blue-950 text-white">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-orange-400 text-xs font-bold uppercase tracking-widest mb-2">Seasonal Guide</p>
+          <h2 className="text-3xl font-black text-white mb-3">Monsoon Waterproofing Planning — Mumbai & Thane</h2>
+          <p className="text-blue-200 mb-10 text-sm">Mumbai mein monsoon June se September tak rehta hai. Pre-monsoon preparation se aap ₹50,000+ ki repair cost bachaa sakte hain.</p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-10">
+            {[
+              {
+                period: "Pre-Monsoon (March–May)",
+                color: "bg-green-500",
+                icon: "☀️",
+                tasks: [
+                  "Terrace inspection — cracks, joints check",
+                  "Old waterproof layer condition assess",
+                  "Drainage aur gutters clean karo",
+                  "Parapet walls aur joints check",
+                  "Terrace waterproofing apply karo",
+                  "Bathroom aur wet area check karo",
+                  "Exterior wall cracks fill karo",
+                ]
+              },
+              {
+                period: "During Monsoon (June–Sept)",
+                color: "bg-orange-500",
+                icon: "🌧️",
+                tasks: [
+                  "Active leakage ke liye emergency repair available",
+                  "Temporary sealants for urgent leaks",
+                  "Drainage blockage clear karo",
+                  "Damp wall areas monitor karo",
+                  "Leakage source document karo",
+                  "Permanent repair post-monsoon plan karo",
+                  "Society ko informed rakho",
+                ]
+              },
+              {
+                period: "Post-Monsoon (Oct–Nov)",
+                color: "bg-blue-500",
+                icon: "🍂",
+                tasks: [
+                  "Full building inspection karo",
+                  "Monsoon damage assess karo",
+                  "Permanent waterproofing repairs plan karo",
+                  "New cracks identify aur fill karo",
+                  "Exterior repainting schedule karo",
+                  "Society waterproofing project plan karo",
+                  "Next monsoon ke liye prepare karo",
+                ]
+              }
+            ].map((s, i) => (
+              <div key={i} className="bg-white/10 rounded-2xl p-5 border border-white/20">
+                <span className="text-3xl mb-2 block">{s.icon}</span>
+                <div className={`inline-block ${s.color} text-white text-xs font-bold px-3 py-1 rounded-full mb-3`}>{s.period}</div>
+                <ul className="space-y-2">
+                  {s.tasks.map((t, j) => (
+                    <li key={j} className="text-xs text-blue-100 flex gap-2">
+                      <span className="text-orange-400 shrink-0">✓</span>{t}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+          <div className="bg-white/10 rounded-2xl p-6 border border-white/20">
+            <h3 className="font-black text-white text-base mb-3">🚨 Emergency Leakage During Monsoon?</h3>
+            <p className="text-blue-200 text-sm leading-relaxed mb-4">Agar monsoon mein active leakage hai — paani tap kar raha hai — toh hum same-day emergency site visit karte hain Mumbai, Thane aur Bhiwandi mein. Temporary seal laga ke aage permanent repair schedule karte hain.</p>
+            <a href="tel:+919158800517" className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold px-6 py-3 rounded-lg text-sm transition">📞 Call Now — Emergency Visit</a>
+          </div>
+        </div>
+      </section>
+
       {/* HIDDEN COST */}
       <section className="py-16 px-4 bg-red-950 text-white">
         <div className="max-w-5xl mx-auto">
