@@ -104,6 +104,24 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      {/* TRUST STRIP */}
+      <section className="py-3 bg-gray-900 overflow-hidden">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="flex flex-wrap justify-center gap-6 text-center">
+            {[
+              "✅ Trusted Since 1977",
+              "✅ GST Registered Business",
+              "✅ Owner Supervised Every Project",
+              "✅ Premium Paint Brands Only",
+              "✅ Written Quotation",
+              "✅ No Hidden Charges",
+            ].map((item, i) => (
+              <span key={i} className="text-xs font-semibold text-gray-300">{item}</span>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* TRUST BAR */}
       <section className="bg-orange-500 py-8">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
