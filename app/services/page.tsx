@@ -263,6 +263,33 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      {/* LOCAL CONTENT */}
+      <section className="py-20 bg-gray-50">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <span className="inline-block rounded-full border border-gray-300 px-4 py-1 text-xs font-semibold uppercase tracking-widest" style={{color:"#6b7280"}}>Local Expertise</span>
+          <h2 className="mt-3 text-3xl font-black sm:text-4xl" style={{color:"#1B2B8A"}}>Painting Services Across Mumbai Region</h2>
+          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              { city: "Painting Services in Mumbai", desc: "We provide residential, commercial and building painting services across all areas of Mumbai including Andheri, Borivali, Dadar, Kurla, Chembur, Mulund and surrounding areas. Exterior painting with weatherproof systems suited to Mumbai's coastal humidity and heavy monsoon." },
+              { city: "Painting Services in Thane", desc: "Complete painting services in Thane — residential apartments, commercial offices, retail stores and housing society repainting. Surface preparation, premium branded paints and owner-supervised execution for all Thane projects." },
+              { city: "Painting Services in Navi Mumbai", desc: "Professional painting contractor serving Navi Mumbai — Vashi, Kharghar, Nerul, Panvel and surrounding areas. Residential, commercial and waterproofing services with free site visit and written quotation." },
+              { city: "Painting Services in Kalyan", desc: "Painting services in Kalyan and Dombivli — residential homes, apartments, commercial spaces and housing societies. Experienced team with knowledge of local building styles and climate conditions." },
+              { city: "Painting Services in Bhiwandi", desc: "Specialised commercial and industrial painting in Bhiwandi — warehouses, factories, offices and commercial complexes. Durable industrial coatings and commercial paint systems for Bhiwandi's industrial zone properties." },
+              { city: "Painting Services in Dombivli", desc: "Residential and commercial painting services in Dombivli — apartments, independent houses, offices and retail spaces. Free site visit, written quotation and premium branded paints for all Dombivli projects." },
+            ].map((item, i) => (
+              <div key={i} className="rounded-xl bg-white border border-gray-200 p-6 shadow-sm">
+                <h3 className="font-bold text-base" style={{color:"#1B2B8A"}}>{item.city}</h3>
+                <p className="mt-2 text-xs leading-relaxed" style={{color:"#6b7280"}}>{item.desc}</p>
+                <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20painting%20services.%20Please%20contact%20me." target="_blank" rel="noopener noreferrer"
+                  className="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold" style={{color:"#f97316"}}>
+                  <MessageCircle className="h-3.5 w-3.5" /> Get Free Quote →
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* SERVICE AREAS */}
       <section className="py-20" style={{backgroundColor:"#1B2B8A"}}>
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
