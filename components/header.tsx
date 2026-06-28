@@ -3,11 +3,20 @@
 import Link from "next/link"
 import Image from "next/image"
 import { useState } from "react"
-import { Menu, X, MessageCircle } from "lucide-react"
+import { Menu, X, MessageCircle, ChevronDown } from "lucide-react"
+
+const services = [
+  { name: "Residential Painting", href: "/services/residential" },
+  { name: "Interior Painting", href: "/services/interior" },
+  { name: "Building Painting", href: "/services/building" },
+  { name: "Exterior Painting", href: "/services/exterior" },
+  { name: "Commercial Painting", href: "/services/commercial" },
+  { name: "Texture & Designer Finishes", href: "/services/designer/texture" },
+  { name: "Waterproofing", href: "/services/waterproofing" },
+]
 
 const navigation = [
   { name: "Home", href: "/" },
-  { name: "Services", href: "/services" },
   { name: "About Us", href: "/about" },
   { name: "Contact", href: "/contact" },
   { name: "Gallery", href: "/gallery" },
@@ -15,6 +24,7 @@ const navigation = [
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [servicesOpen, setServicesOpen] = useState(false)
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm">
@@ -30,7 +40,27 @@ export function Header() {
             <Menu className="h-6 w-6" />
           </button>
         </div>
-        <div className="hidden lg:flex lg:gap-x-8">
+        <div className="hidden lg:flex lg:gap-x-8 items-center">
+          <Link href="/" className="text-sm font-medium text-gray-700 transition-colors hover:text-[#1B2B8A]">Home</Link>
+
+          {/* Services Dropdown */}
+          <div className="relative" onMouseEnter={() => setServicesOpen(true)} onMouseLeave={() => setServicesOpen(false)}>
+            <Link href="/services" className="flex items-center gap-1 text-sm font-medium text-gray-700 transition-colors hover:text-[#1B2B8A]">
+              Services <ChevronDown className="h-4 w-4" />
+            </Link>
+            {servicesOpen && (
+              <div className="absolute top-full left-0 mt-1 w-56 rounded-xl bg-white shadow-lg border border-gray-100 py-2 z-50">
+                <p className="px-4 py-1.5 text-xs font-bold uppercase tracking-widest" style={{color:"#f97316"}}>OUR SERVICES</p>
+                {services.map((s) => (
+                  <Link key={s.name} href={s.href}
+                    className="block px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-[#1B2B8A] transition-colors">
+                    {s.name}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
+
           {navigation.map((item) => (
             <Link key={item.name} href={item.href} className="text-sm font-medium text-gray-700 transition-colors hover:text-[#1B2B8A]">{item.name}</Link>
           ))}
@@ -42,6 +72,8 @@ export function Header() {
           </a>
         </div>
       </nav>
+
+      {/* Mobile Menu */}
       {mobileMenuOpen && (
         <div className="lg:hidden">
           <div className="fixed inset-0 z-50 bg-black/50" onClick={() => setMobileMenuOpen(false)} />
@@ -57,7 +89,14 @@ export function Header() {
             </div>
             <div className="mt-6 flow-root">
               <div className="-my-6 divide-y divide-gray-200">
-                <div className="space-y-2 py-6">
+                <div className="space-y-1 py-6">
+                  <Link href="/" className="-mx-3 block rounded-lg px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50" onClick={() => setMobileMenuOpen(false)}>Home</Link>
+                  <div>
+                    <p className="px-3 pt-3 pb-1 text-xs font-bold uppercase tracking-widest" style={{color:"#f97316"}}>Services</p>
+                    {services.map((s) => (
+                      <Link key={s.name} href={s.href} className="-mx-3 block rounded-lg px-6 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50" onClick={() => setMobileMenuOpen(false)}>{s.name}</Link>
+                    ))}
+                  </div>
                   {navigation.map((item) => (
                     <Link key={item.name} href={item.href} className="-mx-3 block rounded-lg px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50" onClick={() => setMobileMenuOpen(false)}>{item.name}</Link>
                   ))}
