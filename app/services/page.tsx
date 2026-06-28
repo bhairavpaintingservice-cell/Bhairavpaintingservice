@@ -278,36 +278,6 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* FINAL CTA */}
-      <section className="py-20 bg-orange-500">
-        <div className="mx-auto max-w-4xl px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-black text-white sm:text-4xl">Ready to Transform Your Property?</h2>
-          <p className="mt-4 text-white/90 text-sm max-w-xl mx-auto">Free site inspection, free estimate and expert consultation — no obligation. Serving Mumbai, Thane, Bhiwandi, Kalyan & Navi Mumbai.</p>
-          <div className="mt-6 flex flex-wrap justify-center gap-3">
-            {["Free Site Inspection","Free Estimate","Expert Consultation","No Hidden Costs"].map((b, i) => (
-              <span key={i} className="flex items-center gap-1.5 rounded-full bg-white/20 px-3 py-1.5 text-xs font-semibold text-white">
-                <CheckCircle className="h-3.5 w-3.5" />{b}
-              </span>
-            ))}
-          </div>
-          <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="tel:+919158800517"
-              className="flex items-center justify-center gap-2 rounded-lg bg-white px-8 py-4 text-base font-bold"
-              style={{color:"#f97316"}}>
-              <Phone className="h-5 w-5" /> Call Now
-            </a>
-            <a href="https://wa.me/919158800517?text=Hi%2C%20I%20want%20a%20free%20site%20inspection." target="_blank" rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 rounded-lg px-8 py-4 text-base font-bold text-white"
-              style={{backgroundColor:"#25D366"}}>
-              <MessageCircle className="h-5 w-5" /> WhatsApp
-            </a>
-            <a href="https://wa.me/919158800517?text=Hi%2C%20I%20want%20a%20free%20painting%20quote." target="_blank" rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 rounded-lg border-2 border-white px-8 py-4 text-base font-bold text-white">
-              Get Free Quote
-            </a>
-          </div>
-        </div>
-      </section>
     </main>
   )
 }
