@@ -447,6 +447,60 @@ export default function WaterproofingPage() {
         </div>
       </section>
 
+      {/* COMPARISON GUIDE */}
+      <section className="py-16 px-4 bg-gray-50">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-orange-500 text-xs font-bold uppercase tracking-widest mb-2">Choosing the Right System</p>
+          <h2 className="text-3xl font-black text-gray-900 mb-3">Which Waterproofing System is Right for You?</h2>
+          <p className="text-gray-500 mb-8 text-sm">PU, Cementitious aur Liquid Membrane — teenon mein kya fark hai aur kaunsa system kahan use hota hai.</p>
+          <div className="overflow-x-auto rounded-2xl border border-gray-100 shadow-sm mb-8">
+            <table className="w-full text-xs">
+              <thead style={{background:"#1B2B8A"}} className="text-white">
+                <tr>
+                  <th className="px-4 py-4 text-left font-bold">System</th>
+                  <th className="px-4 py-4 text-left font-bold">Best For</th>
+                  <th className="px-4 py-4 text-left font-bold">Lifespan</th>
+                  <th className="px-4 py-4 text-left font-bold">Flexibility</th>
+                  <th className="px-4 py-4 text-left font-bold">Cost Level</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  ["Liquid Membrane", "Terrace, Roof, Exterior Walls", "8–12 years", "High", "Medium"],
+                  ["Cementitious Waterproofing", "Bathroom, Water Tank, Basement", "5–10 years", "Low", "Low–Medium"],
+                  ["Polyurethane (PU)", "Terrace, Roof, Expansion Joints", "10–15 years", "Very High", "High"],
+                  ["Bituminous Coating", "Foundation, Underground, Basement", "8–12 years", "Medium", "Medium"],
+                  ["Crystalline Waterproofing", "Concrete Structures, Basement", "Permanent", "N/A", "Medium–High"],
+                  ["Acrylic Waterproof Coat", "Exterior Walls, Light Duty", "3–5 years", "Medium", "Low"],
+                ].map(([system, bestFor, life, flex, cost], i) => (
+                  <tr key={i} className={i % 2 === 0 ? "bg-white" : "bg-gray-50"}>
+                    <td className="px-4 py-3 font-bold text-gray-900">{system}</td>
+                    <td className="px-4 py-3 text-gray-600">{bestFor}</td>
+                    <td className="px-4 py-3 text-orange-600 font-semibold">{life}</td>
+                    <td className="px-4 py-3 text-gray-600">{flex}</td>
+                    <td className="px-4 py-3 text-gray-600">{cost}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <div className="grid sm:grid-cols-3 gap-5">
+            {[
+              { title: "Terrace & Roof", rec: "Liquid Membrane or PU Waterproofing", why: "High flexibility handle karta hai thermal expansion aur contraction. Mumbai monsoon ke liye ideal — ponding water bhi withstand karta hai.", icon: "🏠" },
+              { title: "Bathroom & Wet Areas", rec: "Cementitious Waterproofing (Dr Fixit Pidifin)", why: "Tile bonding ke saath compatible. Bathroom floor aur wall ke liye industry standard — affordable aur durable.", icon: "🚿" },
+              { title: "Basement & Foundation", rec: "Crystalline or Bituminous Waterproofing", why: "Hydrostatic pressure withstand karta hai. Concrete ke andar crystallize hokar permanent barrier banata hai — groundwater ke liye best.", icon: "🏗️" },
+            ].map((r, i) => (
+              <div key={i} className="bg-white border border-gray-100 rounded-2xl p-5 shadow-sm">
+                <span className="text-3xl mb-3 block">{r.icon}</span>
+                <h3 className="font-black text-sm text-gray-900 mb-1">{r.title}</h3>
+                <p className="text-xs font-bold text-orange-600 mb-2">Recommended: {r.rec}</p>
+                <p className="text-xs text-gray-600 leading-relaxed">{r.why}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* EXPERT GUIDE */}
       <section className="py-16 px-4 bg-white">
         <div className="max-w-5xl mx-auto">
