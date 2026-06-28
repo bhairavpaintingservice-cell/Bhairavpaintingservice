@@ -199,25 +199,30 @@ export default function WaterproofingPage() {
           <p className="mt-2 text-sm text-gray-500 max-w-2xl">Explore waterproofing projects completed by Bhairav Painting Service across Mumbai, Thane, Bhiwandi & Kalyan.</p>
           <div style={{display:"grid", gridTemplateColumns:"repeat(3, 1fr)", gap:"20px"}} className="mt-8">
             {projects.map((p, i) => (
-              <div key={i} className="group rounded-xl overflow-hidden border border-gray-100 bg-white shadow-sm hover:shadow-md transition relative">
-                <div className="absolute inset-0 bg-[#1B2B8A]/0 group-hover:bg-[#1B2B8A]/10 transition-all z-10 flex items-center justify-center pointer-events-none">
-                  <span className="bg-orange-500 text-white px-3 py-1.5 rounded-lg text-xs font-bold opacity-0 group-hover:opacity-100 transition-opacity" style={{position:"absolute", top:"50%", left:"50%", transform:"translate(-50%,-50%)", zIndex:20, whiteSpace:"nowrap"}}>View More →</span>
-                </div>
+              <div key={i} className="group rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition" style={{background:"#1B2B8A"}}>
                 <div style={{display:"grid", gridTemplateColumns:"1fr 1fr"}}>
                   <div style={{position:"relative", height:"160px"}}>
                     <img src={p.before} alt={`Before waterproofing - ${p.title} Mumbai Thane Bhiwandi`} style={{width:"100%", height:"100%", objectFit:"cover"}} loading="lazy"/>
-                    <span style={{position:"absolute", top:"6px", left:"6px", background:"rgba(0,0,0,0.75)", color:"#fff", fontSize:"9px", fontWeight:"700", padding:"2px 6px", borderRadius:"4px", zIndex:5}}>BEFORE</span>
+                    <span style={{position:"absolute", top:"6px", left:"6px", background:"rgba(0,0,0,0.75)", color:"#fff", fontSize:"9px", fontWeight:"700", padding:"2px 6px", borderRadius:"4px"}}>BEFORE</span>
                   </div>
                   <div style={{position:"relative", height:"160px"}}>
-                    <img src={p.after} alt={`After waterproofing - ${p.title} by Bhairav Painting Service Mumbai Thane Bhiwandi`} style={{width:"100%", height:"100%", objectFit:"cover"}} loading="lazy"/>
-                    <span style={{position:"absolute", top:"6px", left:"6px", background:"#f97316", color:"#fff", fontSize:"9px", fontWeight:"700", padding:"2px 6px", borderRadius:"4px", zIndex:5}}>AFTER</span>
+                    <img src={p.after} alt={`After waterproofing - ${p.title} by Bhairav Painting Service`} style={{width:"100%", height:"100%", objectFit:"cover"}} loading="lazy"/>
+                    <span style={{position:"absolute", top:"6px", left:"6px", background:"#f97316", color:"#fff", fontSize:"9px", fontWeight:"700", padding:"2px 6px", borderRadius:"4px"}}>AFTER</span>
                   </div>
                 </div>
-                <div style={{padding:"12px 14px"}}>
-                  <p style={{fontSize:"12px", fontWeight:"700", color:"#1B2B8A"}}>📍 {p.title}</p>
-                  <p style={{fontSize:"11px", color:"#6b7280", marginTop:"2px", marginBottom:"8px"}}>{p.scope}</p>
-                  <p style={{fontSize:"11px", color:"#dc2626"}}><strong>Problem:</strong> {p.problem}</p>
-                  <p style={{fontSize:"11px", color:"#16a34a", marginTop:"4px"}}><strong>Solution:</strong> {p.solution}</p>
+                <div style={{padding:"14px 16px"}}>
+                  <p style={{fontSize:"13px", fontWeight:"700", color:"#fff", marginBottom:"6px"}}>📍 {p.title}</p>
+                  <p style={{fontSize:"11px", color:"rgba(255,255,255,0.7)", marginBottom:"4px"}}>{p.scope}</p>
+                  <p style={{fontSize:"11px", color:"#fca5a5", marginBottom:"2px"}}><strong>Problem:</strong> {p.problem}</p>
+                  <p style={{fontSize:"11px", color:"#86efac", marginBottom:"12px"}}><strong>Solution:</strong> {p.solution}</p>
+                  <div style={{display:"grid", gridTemplateColumns:"1fr 1fr", gap:"8px"}}>
+                    <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20Waterproofing%20quote" style={{display:"flex", alignItems:"center", justifyContent:"center", gap:"6px", background:"#25D366", color:"#fff", fontSize:"11px", fontWeight:"700", padding:"8px", borderRadius:"8px", textDecoration:"none"}}>
+                      💬 WhatsApp
+                    </a>
+                    <a href="#contact" style={{display:"flex", alignItems:"center", justifyContent:"center", background:"#fff", color:"#1B2B8A", fontSize:"11px", fontWeight:"700", padding:"8px", borderRadius:"8px", textDecoration:"none"}}>
+                      Free Quote
+                    </a>
+                  </div>
                 </div>
               </div>
             ))}
