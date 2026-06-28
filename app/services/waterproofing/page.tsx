@@ -403,6 +403,50 @@ export default function WaterproofingPage() {
         </div>
       </section>
 
+      {/* TIMELINE GUIDE */}
+      <section className="py-16 px-4 bg-white">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-orange-500 text-xs font-bold uppercase tracking-widest mb-2">Planning Guide</p>
+          <h2 className="text-3xl font-black text-gray-900 mb-3">Waterproofing Timeline Guide</h2>
+          <p className="text-gray-500 mb-8">Har waterproofing service kitne din mein complete hoti hai — realistic timeline with preparation and curing time.</p>
+          <div className="overflow-x-auto rounded-2xl border border-gray-100 shadow-sm">
+            <table className="w-full text-sm">
+              <thead style={{background:"#1B2B8A"}} className="text-white">
+                <tr>
+                  <th className="px-5 py-4 text-left text-xs font-bold uppercase">Service</th>
+                  <th className="px-5 py-4 text-left text-xs font-bold uppercase">Work Duration</th>
+                  <th className="px-5 py-4 text-left text-xs font-bold uppercase">Curing Time</th>
+                  <th className="px-5 py-4 text-left text-xs font-bold uppercase">Total Timeline</th>
+                  <th className="px-5 py-4 text-left text-xs font-bold uppercase">Best Season</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  ["Bathroom Waterproofing", "1 Day", "24–48 hrs", "2–3 Days", "Any season"],
+                  ["Roof Leakage Repair", "1–2 Days", "24 hrs", "2–3 Days", "Dry weather"],
+                  ["Terrace Waterproofing", "2–4 Days", "48–72 hrs", "5–7 Days", "Oct–May (pre-monsoon ideal)"],
+                  ["Damp Wall Treatment", "1–2 Days", "24 hrs", "2–3 Days", "Any season"],
+                  ["Exterior Waterproofing", "3–5 Days", "48 hrs", "5–7 Days", "Oct–May"],
+                  ["Basement Waterproofing", "3–5 Days", "72 hrs", "7–10 Days", "Post-monsoon"],
+                  ["Society Waterproofing", "7–30 Days", "48–72 hrs", "Depends on size", "Oct–May ideal"],
+                ].map(([service, work, cure, total, season], i) => (
+                  <tr key={i} className={i % 2 === 0 ? "bg-white" : "bg-gray-50"}>
+                    <td className="px-5 py-3 font-semibold text-gray-900 text-xs">{service}</td>
+                    <td className="px-5 py-3 text-gray-600 text-xs">{work}</td>
+                    <td className="px-5 py-3 text-gray-600 text-xs">{cure}</td>
+                    <td className="px-5 py-3 font-bold text-orange-600 text-xs">{total}</td>
+                    <td className="px-5 py-3 text-gray-600 text-xs">{season}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <div className="mt-6 rounded-xl bg-orange-50 border border-orange-100 p-5">
+            <p className="text-sm text-gray-600 leading-relaxed"><strong className="text-gray-900">Pro Tip:</strong> October se May tak ka time waterproofing ke liye best hai Mumbai, Thane aur Bhiwandi mein. Pre-monsoon waterproofing (March–May) se aap monsoon ki tension se free rehte hain. Emergency repairs monsoon mein bhi ho sakti hain — hum same-day visit karte hain active leakage ke liye.</p>
+          </div>
+        </div>
+      </section>
+
       {/* EXPERT GUIDE */}
       <section className="py-16 px-4 bg-white">
         <div className="max-w-5xl mx-auto">
