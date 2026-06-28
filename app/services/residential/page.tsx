@@ -165,6 +165,167 @@ export default function ResidentialPaintingPage() {
         </div>
       </section>
 
+      {/* COMMON PROBLEMS */}
+      <section className="py-16 px-4 bg-white">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-orange-500 text-xs font-bold uppercase tracking-widest mb-2">Common Problems</p>
+          <h2 className="text-3xl font-black text-gray-900 mb-4">Common Problems Homeowners Face</h2>
+          <p className="text-sm leading-relaxed text-gray-600 mb-8">Mumbai, Thane, Bhiwandi, Kalyan aur Navi Mumbai mein ghar ki walls sirf time ke saath purani nahi hoti, balki humidity, monsoon, seepage aur daily wear & tear ki wajah se bhi damage hone lagti hain. Paint peeling, damp patches, ceiling stains aur wall cracks gradually home ki appearance aur protection dono ko affect karte hain.</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+            {[
+              { icon: "🎨", title: "Paint Peeling", desc: "Interior walls par paint peel hone lagta hai — poor surface prep ya moisture ki wajah se." },
+              { icon: "💧", title: "Damp Patches & Fungus", desc: "Monsoon ke baad walls pe dark patches aur fungus develop ho jaate hain." },
+              { icon: "🟡", title: "Ceiling Water Stains", desc: "Ceiling par yellow water stains — terrace leakage ya bathroom seepage ki wajah se." },
+              { icon: "🧱", title: "Wall Cracks", desc: "Repainting ke baad bhi cracks wapas aa jaate hain — proper treatment zaroori hai." },
+              { icon: "🏠", title: "Outdated Look", desc: "Ghar ka colour aur finish outdated lag raha hai — fresh look chahiye." },
+              { icon: "🔑", title: "New Flat / Rental Ready", desc: "Naya flat possession ke baad premium finish ya rental ke liye repaint karna." },
+            ].map((p, i) => (
+              <div key={i} className="flex gap-4 bg-gray-50 border border-gray-100 rounded-xl p-4">
+                <span className="text-2xl shrink-0">{p.icon}</span>
+                <div>
+                  <h3 className="font-bold text-sm text-gray-900 mb-1">{p.title}</h3>
+                  <p className="text-xs text-gray-500">{p.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="bg-orange-50 border border-orange-100 rounded-xl p-5">
+            <p className="text-sm text-gray-600 leading-relaxed">Bhairav Painting Service proper surface preparation, crack repair, waterproofing (agar zarurat ho) aur premium painting systems ke through <strong className="text-gray-900">long-lasting residential painting solutions</strong> provide karta hai — Mumbai, Thane, Bhiwandi aur Kalyan mein.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* PROPERTY TYPE SERVICES */}
+      <section className="py-16 px-4 bg-gray-50">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-orange-500 text-xs font-bold uppercase tracking-widest mb-2">Property Types</p>
+          <h2 className="text-3xl font-black text-gray-900 mb-3">Residential Painting for Every Home Type</h2>
+          <p className="text-gray-500 mb-8 text-sm">Har ghar ka painting requirement alag hota hai — size, condition aur family needs ke hisaab se solution alag hoga.</p>
+          <div className="space-y-4">
+            {[
+              { title: "1 BHK Flat Painting", icon: "🏠", desc: "Compact flats ke liye fast execution, furniture protection aur minimum disruption ke saath complete interior repainting. 2-3 din mein complete. Living room + bedroom + kitchen + bathroom walls.", tag: "2–3 Days" },
+              { title: "2 BHK Flat Painting", icon: "🏡", desc: "Mumbai aur Thane mein sabse common residential painting requirement. Living room, 2 bedrooms, kitchen aur ceiling ke liye complete painting solutions — putty, primer aur premium paint.", tag: "3–5 Days" },
+              { title: "3 BHK Apartment Painting", icon: "🏢", desc: "Large apartments ke liye premium finishes, accent walls aur complete interior painting with proper surface preparation. Designer walls bhi available — accent walls, texture finishes.", tag: "5–7 Days" },
+              { title: "Villa & Bungalow Painting", icon: "🏛️", desc: "Luxury homes ke liye interior, exterior, balcony, compound wall aur premium weather-resistant coatings. Multiple floors, custom colour schemes aur premium paint brands.", tag: "7–15 Days" },
+              { title: "Independent House Painting", icon: "🏘️", desc: "Complete house repainting including interior rooms, exterior walls, gates, railings aur boundary walls. Old houses ke liye proper surface treatment aur crack repair bhi.", tag: "5–10 Days" },
+              { title: "Rental Flat Repainting", icon: "🔑", desc: "Quick turnaround painting taaki property jaldi rent par ya resale ke liye ready ho sake. Economical paint options, fast drying aur minimum disruption.", tag: "1–3 Days" },
+            ].map((s, i) => (
+              <div key={i} className="bg-white border border-gray-100 rounded-2xl p-5 shadow-sm flex gap-4 items-start">
+                <span className="text-3xl shrink-0">{s.icon}</span>
+                <div className="flex-1">
+                  <div className="flex items-center gap-3 mb-2 flex-wrap">
+                    <h3 className="font-black text-base text-gray-900">{s.title}</h3>
+                    <span className="bg-orange-100 text-orange-600 text-xs font-bold px-3 py-0.5 rounded-full">{s.tag}</span>
+                  </div>
+                  <p className="text-sm text-gray-600 leading-relaxed">{s.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ROOM BY ROOM */}
+      <section className="py-16 px-4 bg-white">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-orange-500 text-xs font-bold uppercase tracking-widest mb-2">Room-by-Room Guide</p>
+          <h2 className="text-3xl font-black text-gray-900 mb-3">Room-by-Room Painting Solutions</h2>
+          <p className="text-gray-500 mb-8 text-sm">Har room ka environment alag hota hai — isliye same paint har jagah suitable nahi hota.</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {[
+              { icon: "🛋️", room: "Living Room", paint: "Asian Paints Royale / Berger Silk", desc: "Elegant colours aur premium washable finishes jo guests par achha first impression create kare. Smooth finish, stain resistant." },
+              { icon: "🛏️", room: "Bedroom", paint: "Low-VOC Smooth Finish", desc: "Low-odour, smooth finish aur relaxing colour combinations for comfortable living. Primer + 2 coats premium paint." },
+              { icon: "🍳", room: "Kitchen", paint: "Stain-Resistant Enamel", desc: "Grease aur daily cleaning handle karne wala easy-to-clean paint system. Semi-gloss ya enamel finish recommended." },
+              { icon: "🧒", room: "Kids Room", paint: "Low VOC Washable Paint", desc: "Bright colours, low VOC paints aur washable finishes. Child-safe, easy to clean, durable against scribbles." },
+              { icon: "⬆️", room: "Ceiling", paint: "White Ceiling Paint", desc: "Crack repair, stain blocking primer aur uniform matte finish for clean-looking ceilings. Yellow stains bhi cover hote hain." },
+              { icon: "🚿", room: "Bathroom & Wet Areas", paint: "Moisture-Resistant Paint", desc: "Moisture resistant, anti-fungal coating jo bathroom walls ko damp aur mold se protect kare." },
+            ].map((r, i) => (
+              <div key={i} className="bg-gray-50 border border-gray-100 rounded-2xl p-5">
+                <span className="text-3xl mb-3 block">{r.icon}</span>
+                <h3 className="font-black text-sm text-gray-900 mb-1">{r.room}</h3>
+                <p className="text-xs text-orange-600 font-semibold mb-2">Recommended: {r.paint}</p>
+                <p className="text-xs text-gray-600 leading-relaxed">{r.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* INTERIOR PROBLEMS */}
+      <section className="py-16 px-4 bg-gray-50">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-orange-500 text-xs font-bold uppercase tracking-widest mb-2">Interior Solutions</p>
+          <h2 className="text-3xl font-black text-gray-900 mb-3">Interior Painting Problems We Solve</h2>
+          <p className="text-gray-500 mb-8 text-sm">Residential painting sirf colour change karna nahi hota — proper surface treatment zaroori hai.</p>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 mb-8">
+            {["Paint Peeling","Damp Walls","Ceiling Stains","Hairline Cracks","Uneven Old Paint","Nail Holes","Smoke Stains","Kitchen Grease Marks","Faded Colours","Poor Previous Finish"].map((p, i) => (
+              <div key={i} className="bg-white border border-gray-100 rounded-xl p-3 text-center">
+                <span className="text-orange-500 font-bold text-xs">✓</span>
+                <p className="text-xs text-gray-700 font-semibold mt-1">{p}</p>
+              </div>
+            ))}
+          </div>
+          <div className="bg-blue-950 text-white rounded-2xl p-6">
+            <p className="text-sm leading-relaxed">Har project <strong className="text-orange-400">proper inspection aur surface preparation</strong> ke baad start kiya jata hai. Cracks fill kiye jaate hain, damp walls treat ki jaati hain, aur proper primer lagaya jaata hai — tabhi painting shuru hoti hai. Isliye hamara finish long-lasting hota hai.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* EXTERIOR SOLUTIONS */}
+      <section className="py-16 px-4 bg-white">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-orange-500 text-xs font-bold uppercase tracking-widest mb-2">Exterior Painting</p>
+          <h2 className="text-3xl font-black text-gray-900 mb-3">Exterior Home Painting Solutions</h2>
+          <p className="text-gray-500 mb-6 text-sm">Exterior walls continuously rain, sunlight aur pollution face karti hain — proper weather-resistant coating zaroori hai.</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
+            <div>
+              <p className="text-xs font-bold text-gray-900 uppercase tracking-widest mb-3">What We Cover</p>
+              <ul className="space-y-2">
+                {["Exterior wall cleaning & preparation","Crack filling with polymer compound","Waterproof primer application","Weatherproof exterior coating (2 coats)","Balcony wall painting","Compound wall & boundary painting","Gate & grill painting (enamel)"].map((s, i) => (
+                  <li key={i} className="text-sm text-gray-600 flex gap-2"><span className="text-orange-500 font-bold">✓</span>{s}</li>
+                ))}
+              </ul>
+            </div>
+            <div className="bg-gray-50 rounded-2xl p-5">
+              <p className="text-xs font-bold text-gray-900 uppercase tracking-widest mb-3">Best Products</p>
+              {[["Asian Paints Apex","Premium exterior — 5-7 year guarantee"],["Berger WeatherCoat","Weather & UV resistant"],["Nerolac Excel","Fungal resistant exterior coat"],["Dulux Weathershield","High-end weather protection"]].map(([brand, desc], i) => (
+                <div key={i} className="mb-3">
+                  <p className="text-xs font-bold text-gray-900">{brand}</p>
+                  <p className="text-xs text-gray-500">{desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* NEW FLAT VS REPAINT GUIDE */}
+      <section className="py-16 px-4 bg-gray-50">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-orange-500 text-xs font-bold uppercase tracking-widest mb-2">Painting Guide</p>
+          <h2 className="text-3xl font-black text-gray-900 mb-3">New Flat vs Repainting — What's Different?</h2>
+          <p className="text-gray-500 mb-8 text-sm">Har painting project same nahi hota — requirement ke hisaab se process aur cost dono alag hote hain.</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {[
+              { type: "New Flat", icon: "🏗️", color: "border-blue-200 bg-blue-50", tag: "bg-blue-100 text-blue-700", steps: ["Builder wall correction","Putty touch-up","Primer application","Premium 2-coat finish","Final inspection"] },
+              { type: "Repainting", icon: "🔄", color: "border-orange-200 bg-orange-50", tag: "bg-orange-100 text-orange-700", steps: ["Old paint assessment","Surface cleaning","Crack & hole repair","Fresh putty + primer","New colour application"] },
+              { type: "Rental Flat", icon: "🔑", color: "border-green-200 bg-green-50", tag: "bg-green-100 text-green-700", steps: ["Fast execution","Economical paints","Basic surface prep","Quick dry finish","Ready to rent in 2-3 days"] },
+              { type: "Luxury Home", icon: "✨", color: "border-purple-200 bg-purple-50", tag: "bg-purple-100 text-purple-700", steps: ["Premium paint brands","Designer accent walls","Texture finishes","Custom colour scheme","Extended warranty"] },
+            ].map((g, i) => (
+              <div key={i} className={`border ${g.color} rounded-2xl p-5`}>
+                <span className="text-3xl mb-2 block">{g.icon}</span>
+                <span className={`inline-block text-xs font-bold px-3 py-1 rounded-full mb-3 ${g.tag}`}>{g.type}</span>
+                <ul className="space-y-1.5">
+                  {g.steps.map((s, j) => (
+                    <li key={j} className="text-xs text-gray-700 flex gap-2"><span className="text-orange-400">✓</span>{s}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* 4. WHY CHOOSE US */}
       <section className="py-20 bg-white">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -350,31 +511,36 @@ export default function ResidentialPaintingPage() {
       </section>
 
       {/* 12. AREAS WE SERVE */}
-      <section className="py-16 bg-white">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <span className="inline-block rounded-full border border-gray-300 px-4 py-1 text-xs font-semibold uppercase tracking-widest" style={{color:"#6b7280"}}>Service Areas</span>
-          <h2 className="mt-3 text-3xl font-black sm:text-4xl" style={{color:"#111827"}}>
-            Areas <span className="text-orange-500">We Serve</span>
-          </h2>
-          <p className="mt-3 text-sm" style={{color:"#6b7280"}}>Residential painting services across Mumbai Metropolitan Region.</p>
-          <div className="mt-6 flex flex-wrap gap-3">
-            {areas.map((area) => (
-              <span key={area} className="flex items-center gap-2 rounded-full bg-[#1B2B8A] px-5 py-2.5 text-sm font-semibold text-white">
-                <MapPin className="h-4 w-4" />{area}
-              </span>
+      <section className="py-16 px-4 bg-white">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-orange-500 text-xs font-bold uppercase tracking-widest mb-2">Service Areas</p>
+          <h2 className="text-3xl font-black text-gray-900 mb-8">Residential Painting Services Near You</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-8">
+            {[
+              { city: "Residential Painting in Bhiwandi", desc: "Bhiwandi hamara primary service area hai — 200+ residential projects complete kiye hain. 1BHK, 2BHK, 3BHK flats, independent houses aur villas ke liye interior aur exterior painting available hai. Same-day site visit possible hai Bhiwandi ke liye. MIDC area ke residential quarters bhi cover kiye jaate hain." },
+              { city: "Residential Painting in Thane", desc: "Thane city mein Ghodbunder Road, Majiwada, Manpada, Kolshet aur Pokhran Road areas mein residential painting available hai. High-rise apartments aur villas dono ke liye service available hai. Free site visit with same-day quotation — call ya WhatsApp karo." },
+              { city: "Residential Painting in Mumbai", desc: "Mumbai ke saare areas mein residential painting — Andheri, Borivali, Dadar, Bandra, Chembur, Mulund aur Vikhroli. Old buildings mein surface preparation aur crack treatment ke saath repainting. Free site visit available — same-day response guaranteed." },
+              { city: "Residential Painting in Kalyan & Dombivli", desc: "Kalyan East, Kalyan West, Dombivli East aur West mein residential painting services. 1BHK se 4BHK tak saare flat sizes cover kiye jaate hain. Rental flat repainting, new flat painting aur full home repainting — sab available hai free site visit ke saath." },
+              { city: "Residential Painting in Navi Mumbai", desc: "Navi Mumbai ke saare sectors — Vashi, Kharghar, Belapur, Airoli, Nerul aur Panvel mein residential painting. Premium apartments, villas aur independent houses ke liye interior aur exterior painting. Free inspection available." },
+              { city: "Residential Painting in Kasheli & Kalher", desc: "Kasheli, Kalher, Kongaon aur Bhiwandi ke outer residential areas mein bhi painting available hai. Independent homes aur society flats dono cover kiye jaate hain. Call ya WhatsApp karo — same-day response guaranteed." },
+            ].map((a, i) => (
+              <div key={i} className="bg-gray-50 border border-gray-100 rounded-2xl p-5">
+                <h3 className="font-black text-sm text-gray-900 mb-2">📍 {a.city}</h3>
+                <p className="text-xs text-gray-600 leading-relaxed">{a.desc}</p>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
       {/* 13. GEO PARAGRAPH */}
-      <section className="py-16 bg-gray-50">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <h2 className="text-2xl font-black sm:text-3xl" style={{color:"#111827"}}>
+      <section className="py-16 px-4 bg-gray-50">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-2xl font-black text-gray-900 mb-4">
             Residential Painting Contractor in <span className="text-orange-500">Mumbai, Thane & Bhiwandi</span>
           </h2>
-          <p className="mt-4 text-sm leading-relaxed" style={{color:"#4b5563"}}>
-            Bhairav Painting Service has been providing professional residential painting services across Mumbai, Thane, Bhiwandi, Kalyan and Navi Mumbai for over 47 years. We specialise in flat painting, apartment repainting, villa painting and society painting across the Mumbai Metropolitan Region. Our team of trained painters handles every project with owner supervision — ensuring quality workmanship, timely completion and complete site cleanup. Whether you need a fresh coat for your 1BHK in Bhiwandi, a full repainting for your 3BHK in Thane, or interior painting for your villa in Kalyan — Bhairav Painting Service delivers reliable, professional results at competitive rates. Contact us today for a free site visit and quotation.
+          <p className="text-sm leading-relaxed text-gray-600">
+            Bhairav Painting Service 47+ saal se Mumbai, Thane, Bhiwandi, Kalyan aur Navi Mumbai mein professional residential painting services provide kar raha hai. Hum flat painting, apartment repainting, villa painting aur society painting mein specialise karte hain. Har project owner-supervised hota hai — quality workmanship, timely completion aur complete site cleanup guaranteed. Chahe aapko Bhiwandi mein 1BHK ka fresh coat chahiye, Thane mein 3BHK ka full repaint, ya Kalyan mein villa ki interior painting — Bhairav Painting Service reliable aur professional results deliver karta hai competitive rates pe. Free site visit ke liye call ya WhatsApp karo.
           </p>
         </div>
       </section>
