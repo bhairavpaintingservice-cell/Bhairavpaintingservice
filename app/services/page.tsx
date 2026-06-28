@@ -263,6 +263,38 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      {/* WHO WE WORK WITH */}
+      <section className="py-20" style={{backgroundColor:"#1B2B8A"}}>
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <span className="inline-block rounded-full border border-white/30 px-4 py-1 text-xs font-semibold uppercase tracking-widest text-blue-200">Who We Work With</span>
+          <h2 className="mt-3 text-3xl font-black text-white sm:text-4xl">Who We Work With</h2>
+          <p className="mt-3 text-sm text-blue-200 max-w-xl">We work with homeowners, businesses and professionals across Mumbai, Thane & Bhiwandi.</p>
+          <div className="mt-10 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+            {[
+              { icon: "🏗️", label: "Builders & Developers", desc: "New construction & handover painting" },
+              { icon: "🏛️", label: "Architects", desc: "Spec-based premium finish execution" },
+              { icon: "🛋️", label: "Interior Designers", desc: "Custom colours & texture finishes" },
+              { icon: "🏘️", label: "Housing Societies", desc: "Complete exterior repainting projects" },
+              { icon: "🏭", label: "Factories & Warehouses", desc: "Industrial coatings & large areas" },
+              { icon: "🏢", label: "Corporate Offices", desc: "Off-hours commercial painting" },
+            ].map((item, i) => (
+              <div key={i} className="rounded-xl p-4 text-center" style={{backgroundColor:"rgba(255,255,255,0.1)"}}>
+                <span className="text-3xl">{item.icon}</span>
+                <p className="mt-2 text-xs font-bold text-white">{item.label}</p>
+                <p className="mt-1 text-xs text-blue-200">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-8 text-center">
+            <a href="https://wa.me/919158800517?text=Hi%2C%20I%20want%20to%20discuss%20a%20painting%20project." target="_blank" rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-lg px-8 py-3 text-sm font-bold text-white"
+              style={{backgroundColor:"#25D366"}}>
+              <MessageCircle className="h-4 w-4" /> Discuss Your Project
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* LOCAL CONTENT */}
       <section className="py-20 bg-gray-50">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
