@@ -94,6 +94,7 @@ const faqs = [
 const relatedServices = [
   { title: "Building Painting", href: "/services/building", image: "/images/building/service-exterior-building.jpg" },
   { title: "Exterior Painting", href: "/services/exterior", image: "/images/exterior-new.jpg" },
+  { title: "Waterproofing", href: "/services/waterproofing", image: "/images/waterproofing.jpg" },
   { title: "Designer & Texture Painting", href: "/services/designer/texture", image: "/images/texture.webp" },
   { title: "Residential Painting", href: "/services/residential", image: "/images/residential.webp" },
 ]
