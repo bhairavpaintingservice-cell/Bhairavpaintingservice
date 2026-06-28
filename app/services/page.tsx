@@ -339,6 +339,49 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      {/* WATERPROOFING HIGHLIGHT */}
+      <section className="py-16 bg-white">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="rounded-2xl overflow-hidden">
+            <div className="grid grid-cols-1 lg:grid-cols-2">
+              <div className="p-8 lg:p-12" style={{backgroundColor:"#1B2B8A"}}>
+                <span className="inline-block rounded-full border border-white/30 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-blue-200">Most Urgent Service</span>
+                <h2 className="mt-3 text-2xl font-black text-white sm:text-3xl">Roof Leaking? Wall Seepage? Damp Problems?</h2>
+                <p className="mt-3 text-sm text-blue-200 leading-relaxed">Water damage gets worse every day it is left untreated. A small leak today can cause major structural damage within one monsoon season. Get it fixed before it costs more.</p>
+                <ul className="mt-5 space-y-2">
+                  {["Terrace & Roof Waterproofing", "Wall Seepage Treatment", "Bathroom Waterproofing", "Basement Waterproofing", "Dr Fixit & Asian Paints SmartCare Products", "Permanent Solutions — Not Temporary Fixes"].map((pt, i) => (
+                    <li key={i} className="flex items-center gap-2 text-xs text-white">
+                      <CheckCircle className="h-3.5 w-3.5 text-orange-400 shrink-0" />{pt}
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-6 flex flex-col sm:flex-row gap-3">
+                  <a href="https://wa.me/919158800517?text=Hi%2C%20I%20have%20a%20water%20leakage%20problem.%20I%20need%20waterproofing%20inspection." target="_blank" rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-2 rounded-lg px-6 py-3 text-sm font-bold text-white"
+                    style={{backgroundColor:"#25D366"}}>
+                    <MessageCircle className="h-4 w-4" /> Book Free Inspection
+                  </a>
+                  <Link href="/services/waterproofing"
+                    className="flex items-center justify-center gap-2 rounded-lg border-2 border-white px-6 py-3 text-sm font-bold text-white hover:bg-white/10 transition-colors">
+                    Learn More →
+                  </Link>
+                </div>
+              </div>
+              <div className="relative min-h-64">
+                <Image src="/images/waterproofing.jpg" alt="Waterproofing services Mumbai" fill className="object-cover" />
+                <div className="absolute inset-0 flex items-center justify-center" style={{backgroundColor:"rgba(0,0,0,0.3)"}}>
+                  <div className="text-center p-6">
+                    <p className="text-4xl font-black text-white">Same Day</p>
+                    <p className="text-lg font-bold text-orange-400">Site Visit Available</p>
+                    <p className="mt-2 text-xs text-white/80">Call or WhatsApp now for urgent waterproofing inspection</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* COMPARISON SECTION */}
       <section className="py-20 bg-white">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
