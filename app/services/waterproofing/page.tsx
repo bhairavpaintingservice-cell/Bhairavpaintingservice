@@ -467,6 +467,34 @@ export default function WaterproofingPage() {
         </div>
       </section>
 
+      {/* HIDDEN COST */}
+      <section className="py-16 px-4 bg-red-950 text-white">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-red-400 text-xs font-bold uppercase tracking-widest mb-2">Important</p>
+          <h2 className="text-3xl font-black text-white mb-3">The Hidden Cost of Ignoring Waterproofing</h2>
+          <p className="text-red-200 mb-10 text-sm">Waterproofing delay karna short-term mein paisa bachata hai — lekin long-term mein bohot zyada expensive ho jaata hai.</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {[
+              { icon: "🏗️", title: "Structural Damage", desc: "Water seepage steel reinforcement ko rust karta hai. Rusty steel expands karke concrete crack karta hai — structural integrity compromise hoti hai. Repair cost: ₹50,000 – ₹5,00,000+" },
+              { icon: "🎨", title: "Repeated Paint Damage", desc: "Damp walls pe paint 6-12 months mein peel hoti hai. Baar baar repaint karne ka kharcha waterproofing se kahin zyada ho jaata hai over 5 years." },
+              { icon: "🦠", title: "Mold & Health Hazard", desc: "Damp walls mold aur fungus grow karte hain jo respiratory problems, allergies aur skin issues cause karta hai — especially children ke liye dangerous." },
+              { icon: "💡", title: "Electrical Hazard", desc: "Ceiling leakage electrical fittings, wiring aur switchboards ko wet kar sakti hai — short circuit aur fire risk create hota hai." },
+              { icon: "🏘️", title: "Neighbor Disputes", desc: "Bathroom ya terrace leakage neeche wale flat ko damage karti hai — legal disputes, compensation claims aur society committee complaints." },
+              { icon: "📉", title: "Property Value Drop", desc: "Damp walls, stained ceilings aur peeling paint property ki resale value 10-20% tak reduce kar sakte hain. Buyers ye dekh ke offer down karte hain." },
+            ].map((c, i) => (
+              <div key={i} className="bg-white/10 rounded-2xl p-5 border border-red-800">
+                <span className="text-3xl mb-3 block">{c.icon}</span>
+                <h3 className="font-black text-white text-sm mb-2">{c.title}</h3>
+                <p className="text-red-200 text-xs leading-relaxed">{c.desc}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-8 bg-white/10 rounded-2xl p-6 border border-red-800">
+            <p className="text-sm text-white leading-relaxed"><strong className="text-orange-400">Bottom line:</strong> Mumbai, Thane aur Bhiwandi mein ek terrace waterproofing ka kharcha ₹20,000–₹80,000 tak ho sakta hai. Lekin agar ignore kiya toh ceiling repair, paint, structural damage aur neighbor compensation mila ke ₹2,00,000–₹10,00,000+ tak ja sakta hai. <strong className="text-orange-400">Prevention hamesha cure se sasta hai.</strong></p>
+          </div>
+        </div>
+      </section>
+
       {/* CASE STUDY */}
       <section className="py-16 px-4 bg-blue-950 text-white">
         <div className="max-w-5xl mx-auto">
