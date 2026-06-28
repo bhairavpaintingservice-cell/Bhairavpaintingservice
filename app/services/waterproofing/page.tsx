@@ -621,53 +621,42 @@ export default function WaterproofingPage() {
         </div>
       </section>
 
-      {/* MONSOON PLANNING */}
-      <section className="py-16 px-4 bg-blue-950 text-white">
+      {/* MAINTENANCE GUIDE */}
+      <section className="py-16 px-4 bg-white">
         <div className="max-w-5xl mx-auto">
-          <p className="text-orange-400 text-xs font-bold uppercase tracking-widest mb-2">Seasonal Guide</p>
-          <h2 className="text-3xl font-black text-white mb-3">Monsoon Waterproofing Planning — Mumbai, Thane & Bhiwandi</h2>
-          <p className="text-blue-200 mb-10 text-sm">Mumbai mein monsoon June se September tak rehta hai. Sahi planning se aap leakage aur damage se bach sakte hain.</p>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-10">
-            <div className="bg-white/10 rounded-2xl p-6 border border-blue-800">
-              <p className="text-orange-400 font-black text-sm mb-1">🌤️ Pre-Monsoon</p>
-              <p className="text-blue-200 text-xs mb-4">March — May</p>
-              <ul className="space-y-2">
-                {["Full terrace inspection","Crack identification & mapping","Drain & pipe cleaning","Waterproofing treatment","Parapet joint sealing","Terrace water ponding test"].map((s,i) => <li key={i} className="text-xs text-white/80 flex gap-2"><span className="text-orange-400">✓</span>{s}</li>)}
-              </ul>
-              <div className="mt-4 bg-orange-500/20 rounded-lg p-3">
-                <p className="text-xs text-orange-300 font-bold">Best Time to Waterproof</p>
-                <p className="text-xs text-white/70 mt-1">Surface dry rehta hai — membrane properly cure hoti hai. Monsoon se pehle 4-6 weeks ka time ideal hai.</p>
+          <p className="text-orange-500 text-xs font-bold uppercase tracking-widest mb-2">Maintenance Guide</p>
+          <h2 className="text-3xl font-black text-gray-900 mb-3">Waterproofing Maintenance Guide</h2>
+          <p className="text-gray-500 mb-10 text-sm">Waterproofing ek baar karne ke baad maintain karna zarroori hai — sahi maintenance se life 2x ho jaati hai.</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-8">
+            {[
+              { icon: "🔍", freq: "Every 6 Months", title: "Visual Inspection", tasks: ["Terrace surface check — cracks, bubbles", "Drain aur gutter check", "Parapet joint condition", "Exterior wall cracks monitor", "Damp patches on interior walls"] },
+              { icon: "🧹", freq: "Before Monsoon", title: "Pre-Monsoon Prep", tasks: ["Terrace drain clear karo", "Moss aur algae remove karo", "Hairline cracks seal karo", "Parapet joints reseal karo", "Waterproof coating condition check"] },
+              { icon: "📋", freq: "Every Year", title: "Annual Inspection", tasks: ["Professional site inspection book karo", "Waterproof layer condition assess", "Crack mapping update karo", "Coating reapplication check", "Written inspection report"] },
+              { icon: "🔧", freq: "As Needed", title: "Crack Monitoring", tasks: ["Hairline cracks monitor karo", "Agar crack badh raha hai — immediately repair", "Crack width measure karo", "New cracks document karo", "Professional opinion lo growing cracks pe"] },
+              { icon: "💧", freq: "Post Monsoon", title: "Drainage Check", tasks: ["All drains clear hain check karo", "Water ponding spots identify karo", "Slope adequate hai verify karo", "Downpipes check karo", "Waterlogging areas note karo"] },
+              { icon: "🔄", freq: "Every 5-7 Years", title: "Recoating Guide", tasks: ["Terrace — liquid membrane recoat", "Exterior walls — weather coat refresh", "Bathroom — reseal joints", "Damp areas — anti-damp repaint", "Full professional assessment"] },
+            ].map((m, i) => (
+              <div key={i} className="bg-gray-50 border border-gray-100 rounded-2xl p-5">
+                <div className="flex items-center gap-3 mb-3">
+                  <span className="text-2xl">{m.icon}</span>
+                  <div>
+                    <span className="bg-orange-100 text-orange-600 text-xs font-bold px-2 py-0.5 rounded-full block mb-1">{m.freq}</span>
+                    <h3 className="font-black text-sm text-gray-900">{m.title}</h3>
+                  </div>
+                </div>
+                <ul className="space-y-1">
+                  {m.tasks.map((t, j) => (
+                    <li key={j} className="text-xs text-gray-600 flex gap-2">
+                      <span className="text-orange-400 shrink-0">✓</span>{t}
+                    </li>
+                  ))}
+                </ul>
               </div>
-            </div>
-            <div className="bg-white/10 rounded-2xl p-6 border border-blue-800">
-              <p className="text-blue-300 font-black text-sm mb-1">🌧️ During Monsoon</p>
-              <p className="text-blue-200 text-xs mb-4">June — September</p>
-              <ul className="space-y-2">
-                {["Monitor terrace drainage","Check for new leakage points","Emergency leak repair available","Temporary waterproofing possible","Document damage for post-monsoon repair","Same-day emergency visits"].map((s,i) => <li key={i} className="text-xs text-white/80 flex gap-2"><span className="text-blue-400">•</span>{s}</li>)}
-              </ul>
-              <div className="mt-4 bg-blue-500/20 rounded-lg p-3">
-                <p className="text-xs text-blue-300 font-bold">Emergency Available</p>
-                <p className="text-xs text-white/70 mt-1">Active leakage ke liye same-day emergency visit available hai — call +91 91588 00517.</p>
-              </div>
-            </div>
-            <div className="bg-white/10 rounded-2xl p-6 border border-blue-800">
-              <p className="text-green-400 font-black text-sm mb-1">☀️ Post-Monsoon</p>
-              <p className="text-blue-200 text-xs mb-4">October — November</p>
-              <ul className="space-y-2">
-                {["Full damage assessment","Permanent crack repair","Waterproofing treatment","Damp wall treatment","Exterior repainting","Annual maintenance check"].map((s,i) => <li key={i} className="text-xs text-white/80 flex gap-2"><span className="text-green-400">✓</span>{s}</li>)}
-              </ul>
-              <div className="mt-4 bg-green-500/20 rounded-lg p-3">
-                <p className="text-xs text-green-300 font-bold">Post-Monsoon Priority</p>
-                <p className="text-xs text-white/70 mt-1">Monsoon ke baad surface dry hone ke baad permanent treatment karna sabse effective hota hai.</p>
-              </div>
-            </div>
+            ))}
           </div>
-          <div className="bg-white/10 rounded-2xl p-6 border border-blue-800">
-            <h3 className="text-white font-black text-base mb-4">Mumbai Climate & Waterproofing — What You Need to Know</h3>
-            <div className="grid sm:grid-cols-2 gap-4 text-xs text-white/80">
-              <p>Mumbai mein annual rainfall 2,400mm+ hoti hai — India ke wettest cities mein se ek. Is wajah se Mumbai, Thane aur Bhiwandi ki buildings ko high-grade waterproofing ki zaroorat hoti hai jo standard cities se zyada durable ho.</p>
-              <p>Coastal proximity ki wajah se salt-laden air bhi building materials ko corrode karta hai. Premium waterproofing systems jo UV resistance aur salt resistance dono provide karte hain woh Mumbai ke liye best hain — Dr Fixit, Asian Paints SmartCare aur PU-based systems.</p>
-            </div>
+          <div className="bg-blue-950 text-white rounded-2xl p-6">
+            <h3 className="font-black text-white text-base mb-3">💡 Bhairav Annual Maintenance Plan</h3>
+            <p className="text-blue-200 text-sm leading-relaxed">Hum existing clients ke liye annual waterproofing inspection service provide karte hain — free site visit + written inspection report + maintenance recommendations. Agar koi issue mila toh same visit mein quote provide karte hain. Call ya WhatsApp karo annual inspection book karne ke liye.</p>
           </div>
         </div>
       </section>
