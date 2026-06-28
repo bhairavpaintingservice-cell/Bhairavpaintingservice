@@ -280,6 +280,53 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      {/* COMPARISON SECTION */}
+      <section className="py-20 bg-white">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <span className="inline-block rounded-full border border-gray-300 px-4 py-1 text-xs font-semibold uppercase tracking-widest" style={{color:"#6b7280"}}>Why Professional Painting?</span>
+          <h2 className="mt-3 text-3xl font-black sm:text-4xl" style={{color:"#1B2B8A"}}>Professional Painter vs Local Painter</h2>
+          <p className="mt-3 text-sm max-w-xl" style={{color:"#6b7280"}}>Understanding the difference helps you make the right decision for your property.</p>
+          <div className="mt-10 overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
+            <table className="w-full text-sm">
+              <thead>
+                <tr>
+                  <th className="px-6 py-4 text-left text-xs font-bold uppercase tracking-wider bg-gray-50" style={{color:"#6b7280"}}>Factor</th>
+                  <th className="px-6 py-4 text-center text-xs font-bold uppercase tracking-wider text-white" style={{backgroundColor:"#1B2B8A"}}>Bhairav Painting Service</th>
+                  <th className="px-6 py-4 text-center text-xs font-bold uppercase tracking-wider bg-red-50" style={{color:"#dc2626"}}>Local / Unknown Painter</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  { factor: "Surface Preparation", pro: "✅ Full prep — crack filling, putty, primer", local: "❌ Often skipped to save time" },
+                  { factor: "Paint Brands", pro: "✅ Asian Paints, Berger, Nerolac, Dulux", local: "❌ Unbranded or low-grade paint" },
+                  { factor: "Written Quotation", pro: "✅ Detailed written quote before work", local: "❌ Verbal quote, hidden charges later" },
+                  { factor: "Workmanship Warranty", pro: "✅ Defects rectified at no cost", local: "❌ No warranty on labour" },
+                  { factor: "Paint Consumption", pro: "✅ Correct coats as per specification", local: "❌ Diluted paint, fewer coats" },
+                  { factor: "Finish Quality", pro: "✅ Smooth, even, professional finish", local: "❌ Uneven texture, brush marks" },
+                  { factor: "Durability", pro: "✅ 5–8 years with correct system", local: "❌ Peeling within 1–2 years" },
+                  { factor: "Project Timeline", pro: "✅ Timeline committed and followed", local: "❌ Delays common, no accountability" },
+                  { factor: "Owner Supervision", pro: "✅ Every project owner supervised", local: "❌ Labour only, no supervision" },
+                  { factor: "GST Invoice", pro: "✅ GST registered, proper invoice", local: "❌ No GST, no accountability" },
+                ].map((row, i) => (
+                  <tr key={i} className={i % 2 === 0 ? "bg-white" : "bg-gray-50"}>
+                    <td className="px-6 py-3 font-semibold text-xs" style={{color:"#374151"}}>{row.factor}</td>
+                    <td className="px-6 py-3 text-xs text-center" style={{color:"#15803d"}}>{row.pro}</td>
+                    <td className="px-6 py-3 text-xs text-center" style={{color:"#dc2626"}}>{row.local}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <div className="mt-8 text-center">
+            <a href="https://wa.me/919158800517?text=Hi%2C%20I%20want%20a%20free%20site%20visit%20from%20Bhairav%20Painting%20Service." target="_blank" rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-lg px-8 py-3 text-sm font-bold text-white"
+              style={{backgroundColor:"#25D366"}}>
+              <MessageCircle className="h-4 w-4" /> Book Free Site Visit
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="py-20 bg-white">
         <div className="mx-auto max-w-4xl px-6 lg:px-8">
