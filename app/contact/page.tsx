@@ -142,9 +142,13 @@ export default function ContactPage() {
                 <div className="mt-4 grid grid-cols-2 gap-2">
                   {[
                     { label: "Residential", msg: "Hi, I need Residential Painting quote." },
+                    { label: "Interior", msg: "Hi, I need Interior Painting quote." },
+                    { label: "Exterior", msg: "Hi, I need Exterior Painting quote." },
                     { label: "Commercial", msg: "Hi, I need Commercial Painting quote." },
-                    { label: "Waterproofing", msg: "Hi, I need Waterproofing quote." },
                     { label: "Building", msg: "Hi, I need Building Painting quote." },
+                    { label: "Waterproofing", msg: "Hi, I need Waterproofing quote." },
+                    { label: "Designer & Texture", msg: "Hi, I need Designer & Texture Painting quote." },
+                    { label: "Wood & Metal", msg: "Hi, I need Wood & Metal Painting quote." },
                   ].map((item, i) => (
                     <a key={i} href={`https://wa.me/919158800517?text=${encodeURIComponent(item.msg)}`} target="_blank" rel="noopener noreferrer"
                       className="flex items-center justify-center gap-1.5 rounded-lg py-2 text-xs font-semibold text-white"
