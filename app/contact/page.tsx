@@ -123,15 +123,7 @@ export default function ContactPage() {
                   </div>
                 </a>
 
-                <div className="flex items-center gap-4 rounded-xl border border-gray-200 bg-white p-4 shadow-sm">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full" style={{backgroundColor:"#f0f4ff"}}>
-                    <Clock className="h-5 w-5" style={{color:"#1B2B8A"}} />
-                  </div>
-                  <div>
-                    <p className="text-xs font-semibold uppercase tracking-wide" style={{color:"#6b7280"}}>Business Hours</p>
-                    <p className="font-bold text-sm" style={{color:"#1B2B8A"}}>All Days: 8AM – 7PM</p>
-                  </div>
-                </div>
+
 
                 <div className="flex items-center gap-4 rounded-xl border border-gray-200 bg-white p-4 shadow-sm">
                   <div className="flex h-10 w-10 items-center justify-center rounded-full" style={{backgroundColor:"#f0f4ff"}}>
