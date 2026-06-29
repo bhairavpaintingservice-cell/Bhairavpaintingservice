@@ -156,7 +156,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold uppercase tracking-wide" style={{color:"#6b7280"}}>Service Areas</p>
-                    <p className="font-bold text-sm" style={{color:"#1B2B8A"}}>{serviceAreas.join(" · ")}</p>
+                    <p className="font-bold text-sm" style={{color:"#1B2B8A"}}>Mumbai · Thane · Bhiwandi · Kalyan · Navi Mumbai · Dombivli · Kasheli · Kalher · Andheri · Vasai · Virar</p>
                   </div>
                 </div>
               </div>
