@@ -6,14 +6,14 @@ import { useState } from "react"
 import { Phone, MessageCircle, CheckCircle, MapPin, ChevronDown } from "lucide-react"
 
 const serviceCards = [
-  { title: "1 BHK Painting", desc: "Complete 1BHK flat painting — walls, ceiling, doors & windows. Quick completion.", icon: "🏠", image: "/images/residential/res-1bhk.jpg" },
-  { title: "2 BHK Painting", desc: "Professional 2BHK painting with quality finish. Interior + ceiling included.", icon: "🏠", image: "/images/residential/res-2bhk.jpg" },
-  { title: "3 BHK Painting", desc: "Full 3BHK flat painting. Surface prep, putty, primer & final coat.", icon: "🏠", image: "/images/residential/res-3bhk.jpg" },
-  { title: "Flat Repainting", desc: "Refresh your old flat with new colours. Crack filling & putty included.", icon: "🖌️", image: "/images/residential/res-flat.jpg" },
-  { title: "New Flat Painting", desc: "First-time painting for newly constructed flats. Premium finish guaranteed.", icon: "✨", image: "/images/residential/res-new-flat.jpg" },
-  { title: "Villa Painting", desc: "Complete interior & exterior painting for villas & bungalows.", icon: "🏡", image: "/images/residential/res-villa.jpg" },
-  { title: "Society Painting", desc: "Large-scale society & housing complex painting. Minimal resident disruption.", icon: "🏢", image: "/images/residential/res-society.jpg" },
-  { title: "Rental Flat Painting", desc: "Quick, clean painting for rental flats. Ready for new tenants fast.", icon: "🔑", image: "/images/residential/res-rental.jpg" },
+  { title: "1 BHK Painting", desc: "Complete 1BHK flat painting — walls, ceiling, doors & windows. Quick completion.", icon: "🏠", image: "/images/residential/res-1bhk.jpg", wa: "Hi%2C%20I%20need%20quote%20for%201%20BHK%20Flat%20Painting.%20Please%20share%20your%20availability%20for%20a%20free%20site%20visit.%20%F0%9F%93%8D%20My%20location%3A" },
+  { title: "2 BHK Painting", desc: "Professional 2BHK painting with quality finish. Interior + ceiling included.", icon: "🏠", image: "/images/residential/res-2bhk.jpg", wa: "Hi%2C%20I%20need%20quote%20for%202%20BHK%20Flat%20Painting.%20Please%20share%20your%20availability%20for%20a%20free%20site%20visit.%20%F0%9F%93%8D%20My%20location%3A" },
+  { title: "3 BHK Painting", desc: "Full 3BHK flat painting. Surface prep, putty, primer & final coat.", icon: "🏠", image: "/images/residential/res-3bhk.jpg", wa: "Hi%2C%20I%20need%20quote%20for%203%20BHK%20Flat%20Painting.%20Please%20share%20your%20availability%20for%20a%20free%20site%20visit.%20%F0%9F%93%8D%20My%20location%3A" },
+  { title: "Flat Repainting", desc: "Refresh your old flat with new colours. Crack filling & putty included.", icon: "🖌️", image: "/images/residential/res-flat.jpg", wa: "Hi%2C%20I%20need%20quote%20for%20Flat%20Repainting.%20Please%20share%20your%20availability%20for%20a%20free%20site%20visit.%20%F0%9F%93%8D%20My%20location%3A" },
+  { title: "New Flat Painting", desc: "First-time painting for newly constructed flats. Premium finish guaranteed.", icon: "✨", image: "/images/residential/res-new-flat.jpg", wa: "Hi%2C%20I%20need%20quote%20for%20New%20Flat%20Painting.%20Please%20share%20your%20availability%20for%20a%20free%20site%20visit.%20%F0%9F%93%8D%20My%20location%3A" },
+  { title: "Villa Painting", desc: "Complete interior & exterior painting for villas & bungalows.", icon: "🏡", image: "/images/residential/res-villa.jpg", wa: "Hi%2C%20I%20need%20quote%20for%20Villa%20Painting.%20Please%20share%20your%20availability%20for%20a%20free%20site%20visit.%20%F0%9F%93%8D%20My%20location%3A" },
+  { title: "Society Painting", desc: "Large-scale society & housing complex painting. Minimal resident disruption.", icon: "🏢", image: "/images/residential/res-society.jpg", wa: "Hi%2C%20I%20need%20quote%20for%20Society%20Painting.%20Please%20share%20your%20availability%20for%20a%20free%20site%20visit.%20%F0%9F%93%8D%20My%20location%3A" },
+  { title: "Rental Flat Painting", desc: "Quick, clean painting for rental flats. Ready for new tenants fast.", icon: "🔑", image: "/images/residential/res-rental.jpg", wa: "Hi%2C%20I%20need%20quote%20for%20Rental%20Flat%20Painting.%20Please%20share%20your%20availability%20for%20a%20free%20site%20visit.%20%F0%9F%93%8D%20My%20location%3A" },
 ]
 
 const whyUs = [
@@ -162,10 +162,10 @@ export default function ResidentialPaintingPage() {
                   <h3 className="font-bold text-sm mb-1" style={{color:"#1B2B8A"}}>{s.title}</h3>
                   <p className="text-xs mb-3" style={{color:"#6b7280"}}>{s.desc}</p>
                   <div className="grid grid-cols-2 gap-2">
-                    <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20Residential%20Painting%20quote" className="flex items-center justify-center gap-1 bg-green-500 hover:bg-green-600 text-white text-xs font-bold py-2 rounded-lg transition">
+                    <a href={`https://wa.me/919158800517?text=${s.wa}`} className="flex items-center justify-center gap-1 bg-green-500 hover:bg-green-600 text-white text-xs font-bold py-2 rounded-lg transition">
                       💬 WhatsApp
                     </a>
-                    <a href="#contact" className="flex items-center justify-center bg-white border border-gray-200 hover:border-orange-400 text-gray-700 text-xs font-bold py-2 rounded-lg transition">
+                    <a href={`https://wa.me/919158800517?text=${s.wa}`} className="flex items-center justify-center bg-white border border-gray-200 hover:border-orange-400 text-gray-700 text-xs font-bold py-2 rounded-lg transition">
                       Free Quote
                     </a>
                   </div>
