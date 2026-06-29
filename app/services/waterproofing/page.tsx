@@ -134,6 +134,22 @@ const projects = [
 
 export default function WaterproofingPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null)
+  const [area, setArea] = useState("")
+
+  const shareLocation = () => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (pos) => {
+          const lat = pos.coords.latitude.toFixed(5)
+          const lng = pos.coords.longitude.toFixed(5)
+          setArea(`${lat}, ${lng}`)
+        },
+        () => alert("Location access denied. Please type your area.")
+      )
+    } else {
+      alert("Location not supported on this browser.")
+    }
+  }
 
   return (
     <main className="font-sans">
@@ -837,7 +853,13 @@ export default function WaterproofingPage() {
             </div>
             <div>
               <label className="block text-xs font-bold text-orange-200 uppercase tracking-widest mb-1">Your Area / Location</label>
-              <input type="text" placeholder="e.g. Bhiwandi, Thane, Kalyan..." className="w-full rounded-lg px-4 py-3 text-sm focus:outline-none bg-white text-gray-800" />
+              <div className="flex gap-2">
+                <input type="text" placeholder="e.g. Bhiwandi, Thane, Kalyan..." value={area} onChange={(e) => setArea(e.target.value)} className="flex-1 rounded-lg px-4 py-3 text-sm focus:outline-none bg-white text-gray-800" />
+                <button type="button" onClick={shareLocation} className="shrink-0 bg-white text-orange-600 font-bold text-xs px-3 py-2 rounded-lg hover:bg-orange-50 transition flex items-center gap-1" title="Share My Location">
+                  📍 Location
+                </button>
+              </div>
+              <p className="text-orange-200/70 text-xs mt-1">📍 button se apni exact location share karo</p>
             </div>
             <div>
               <label className="block text-xs font-bold text-orange-200 uppercase tracking-widest mb-1">When Do You Need Work?</label>
