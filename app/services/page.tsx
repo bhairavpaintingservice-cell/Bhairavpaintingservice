@@ -271,17 +271,19 @@ export default function ServicesPage() {
           <p className="mt-3 text-sm text-blue-200 max-w-xl">We work with homeowners, businesses and professionals across Mumbai, Thane & Bhiwandi.</p>
           <div className="mt-10 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
             {[
-              { icon: "🏗️", label: "Builders & Developers", desc: "New construction & handover painting" },
-              { icon: "🏛️", label: "Architects", desc: "Spec-based premium finish execution" },
-              { icon: "🛋️", label: "Interior Designers", desc: "Custom colours & texture finishes" },
-              { icon: "🏘️", label: "Housing Societies", desc: "Complete exterior repainting projects" },
-              { icon: "🏭", label: "Factories & Warehouses", desc: "Industrial coatings & large areas" },
-              { icon: "🏢", label: "Corporate Offices", desc: "Off-hours commercial painting" },
+              { img: "/images/workwith-builders.jpg", label: "Builders & Developers", desc: "New construction & handover painting" },
+              { img: "/images/workwith-architects.jpg", label: "Architects", desc: "Spec-based premium finish execution" },
+              { img: "/images/workwith-interior.jpg", label: "Interior Designers", desc: "Custom colours & texture finishes" },
+              { img: "/images/workwith-society.jpg", label: "Housing Societies", desc: "Complete exterior repainting projects" },
+              { img: "/images/workwith-factory.jpg", label: "Factories & Warehouses", desc: "Industrial coatings & large areas" },
+              { img: "/images/workwith-office.jpg", label: "Corporate Offices", desc: "Off-hours commercial painting" },
             ].map((item, i) => (
-              <div key={i} className="rounded-xl p-4 text-center" style={{backgroundColor:"rgba(255,255,255,0.1)"}}>
-                <span className="text-3xl">{item.icon}</span>
-                <p className="mt-2 text-xs font-bold text-white">{item.label}</p>
-                <p className="mt-1 text-xs text-blue-200">{item.desc}</p>
+              <div key={i} className="overflow-hidden rounded-xl">
+                <div className="relative h-28"><Image src={item.img} alt={item.label} fill className="object-cover" /></div>
+                <div className="p-3 text-center" style={{backgroundColor:"rgba(255,255,255,0.1)"}}>
+                  <p className="text-xs font-bold text-white">{item.label}</p>
+                  <p className="mt-0.5 text-xs text-blue-200">{item.desc}</p>
+                </div>
               </div>
             ))}
           </div>
