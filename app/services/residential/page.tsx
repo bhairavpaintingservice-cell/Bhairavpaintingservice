@@ -188,17 +188,23 @@ export default function ResidentialPaintingPage() {
           <p className="text-sm leading-relaxed text-gray-600 mb-8">Mumbai, Thane, Bhiwandi, Kalyan aur Navi Mumbai mein ghar ki walls sirf time ke saath purani nahi hoti, balki humidity, monsoon, seepage aur daily wear & tear ki wajah se bhi damage hone lagti hain. Paint peeling, damp patches, ceiling stains aur wall cracks gradually home ki appearance aur protection dono ko affect karte hain.</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
             {[
-              { icon: "🎨", title: "Paint Peeling", desc: "Interior walls par paint peel hone lagta hai — poor surface prep ya moisture ki wajah se." },
-              { icon: "💧", title: "Damp Patches & Fungus", desc: "Monsoon ke baad walls pe dark patches aur fungus develop ho jaate hain." },
-              { icon: "🟡", title: "Ceiling Water Stains", desc: "Ceiling par yellow water stains — terrace leakage ya bathroom seepage ki wajah se." },
-              { icon: "🧱", title: "Wall Cracks", desc: "Repainting ke baad bhi cracks wapas aa jaate hain — proper treatment zaroori hai." },
-              { icon: "🏠", title: "Outdated Look", desc: "Ghar ka colour aur finish outdated lag raha hai — fresh look chahiye." },
-              { icon: "🔑", title: "New Flat / Rental Ready", desc: "Naya flat possession ke baad premium finish ya rental ke liye repaint karna." },
+              { icon: "🎨", title: "Paint Peeling", desc: "Interior walls par paint peel hone lagta hai — poor surface prep ya moisture ki wajah se.", img: "/images/residential/problems/paint-peeling.jpg" },
+              { icon: "💧", title: "Damp Patches & Fungus", desc: "Monsoon ke baad walls pe dark patches aur fungus develop ho jaate hain.", img: "/images/residential/problems/damp-patches.jpg" },
+              { icon: "🟡", title: "Ceiling Water Stains", desc: "Ceiling par yellow water stains — terrace leakage ya bathroom seepage ki wajah se.", img: "/images/residential/problems/ceiling-stains.jpg" },
+              { icon: "🧱", title: "Wall Cracks", desc: "Repainting ke baad bhi cracks wapas aa jaate hain — proper treatment zaroori hai.", img: "/images/residential/problems/wall-cracks.jpg" },
+              { icon: "🏠", title: "Outdated Look", desc: "Ghar ka colour aur finish outdated lag raha hai — fresh look chahiye.", img: "/images/residential/problems/outdated-look.jpg" },
+              { icon: "🔑", title: "New Flat / Rental Ready", desc: "Naya flat possession ke baad premium finish ya rental ke liye repaint karna.", img: "/images/residential/problems/new-flat-rental.jpg" },
             ].map((p, i) => (
-              <div key={i} className="flex gap-4 bg-gray-50 border border-gray-100 rounded-xl p-4">
-                <span className="text-2xl shrink-0">{p.icon}</span>
-                <div>
-                  <h3 className="font-bold text-sm text-gray-900 mb-1">{p.title}</h3>
+              <div key={i} className="group overflow-hidden bg-white border border-gray-100 rounded-xl shadow-sm hover:shadow-md transition">
+                <div className="relative h-40 overflow-hidden">
+                  <img src={p.img} alt={`${p.title} - Residential painting problem Mumbai Thane Bhiwandi`} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy"/>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"/>
+                  <div className="absolute bottom-3 left-3 flex items-center gap-2">
+                    <span className="text-xl">{p.icon}</span>
+                    <h3 className="font-bold text-sm text-white">{p.title}</h3>
+                  </div>
+                </div>
+                <div className="p-4">
                   <p className="text-xs text-gray-500">{p.desc}</p>
                 </div>
               </div>
