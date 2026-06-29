@@ -1,397 +1,251 @@
 "use client"
 
 import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Phone, Mail, MapPin, Clock, Send, CheckCircle } from "lucide-react"
+import { Phone, Mail, MapPin, Clock, MessageCircle, CheckCircle, Send } from "lucide-react"
 import emailjs from "@emailjs/browser"
-
-const contactInfo = [
-  {
-    icon: Phone,
-    title: "Phone",
-    value: "+91 9158800517",
-    href: "tel:+919158800517",
-  },
-  {
-    icon: Mail,
-    title: "Email",
-    value: "Bhairavpaintingservice@gmail.com",
-    href: "mailto:Bhairavpaintingservice@gmail.com",
-  },
-  {
-    icon: MapPin,
-    title: "Location",
-    value: "Mumbai, Maharashtra, India",
-    href: null,
-  },
-  {
-    icon: Clock,
-    title: "Business Hours",
-    value: "Mon-Sat: 8AM - 7PM",
-    href: null,
-  },
-]
 
 const services = [
   "Residential Painting",
+  "Interior Painting",
+  "Exterior Painting",
   "Commercial Painting",
-  "Building & Exterior Painting",
-  "Designer & Textured Painting",
+  "Building & Society Painting",
+  "Waterproofing",
+  "Designer & Texture Painting",
+  "Wood & Metal Painting",
+]
+
+const serviceAreas = [
+  "Mumbai", "Thane", "Bhiwandi", "Kalyan", "Navi Mumbai", "Dombivli"
 ]
 
 export default function ContactPage() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    service: "",
-    message: "",
-  })
+  const [formData, setFormData] = useState({ name: "", phone: "", email: "", service: "", area: "", message: "" })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
 
-  // const handleSubmit = async (e: React.FormEvent) => {
-  //   e.preventDefault()
-  //   setIsSubmitting(true)
-    
-  //   // Simulate form submission
-  //   await new Promise((resolve) => setTimeout(resolve, 1500))
-    
-  //   setIsSubmitting(false)
-  //   setIsSubmitted(true)
-  //   setFormData({ name: "", email: "", phone: "", service: "", message: "" })
-  // }
-
-  const handleSubmit = async (e) => {
-  e.preventDefault()
-  setIsSubmitting(true)
-
-  try {
-    await emailjs.send(
-      "service_2zy0x0p",
-      "template_zlc9l99",
-      {
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+    try {
+      await emailjs.send("service_2zy0x0p", "template_zlc9l99", {
         name: formData.name,
         phone: formData.phone,
         email: formData.email,
         service: formData.service,
         message: formData.message,
-      },
-      "vLWZyTtI0Jyri4AH"
-    )
-
-    setIsSubmitted(true)
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      service: "",
-      message: "",
-    })
-  } catch (error) {
-    console.error("FAILED...", error)
-    alert("Something went wrong")
+      }, "vLWZyTtI0Jyri4AH")
+      setIsSubmitted(true)
+      setFormData({ name: "", phone: "", email: "", service: "", area: "", message: "" })
+    } catch (error) {
+      alert("Something went wrong. Please WhatsApp or call us directly.")
+    }
+    setIsSubmitting(false)
   }
 
-  setIsSubmitting(false)
-}
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
-  ) => {
-    setFormData((prev) => ({
-      ...prev,
-      [e.target.name]: e.target.value,
-    }))
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }))
   }
 
   return (
-    <div className="flex flex-col">
-      {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-secondary">
+    <main>
+      {/* HERO */}
+      <section className="pt-32 pb-16" style={{backgroundColor:"#1B2B8A"}}>
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <p className="text-sm font-medium uppercase tracking-widest text-muted-foreground">
-              Get In Touch
-            </p>
-            <h1 className="mt-2 font-serif text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
-              Contact Us
-            </h1>
-            <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
-              Ready to transform your space? Get in touch with us for a free consultation 
-              and quote. We&apos;re here to answer your questions and help bring your vision to life.
-            </p>
+          <div className="max-w-2xl">
+            <span className="inline-block rounded-full border border-white/30 px-4 py-1 text-xs font-semibold uppercase tracking-widest text-blue-200">Contact Us</span>
+            <h1 className="mt-4 text-4xl font-black text-white sm:text-5xl">Get a Free Quote Today</h1>
+            <p className="mt-4 text-lg text-blue-200">Call, WhatsApp or fill the form below — we respond within 30 minutes during business hours. Free site visit for all enquiries.</p>
+            <div className="mt-6 flex flex-wrap gap-3">
+              {["Free Site Visit","Written Quotation","No Hidden Charges","Owner Supervised"].map((b, i) => (
+                <span key={i} className="flex items-center gap-1.5 rounded-full bg-white/10 px-3 py-1.5 text-xs font-semibold text-white">
+                  <CheckCircle className="h-3.5 w-3.5 text-orange-400" />{b}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section className="py-24 bg-background">
+      {/* TRUST BAR */}
+      <section className="bg-orange-500 py-6">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
-            {/* Contact Form */}
+          <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-white/30 text-center text-white">
+            <div className="px-4 py-2"><p className="text-xl font-black">47+</p><p className="text-xs font-semibold mt-0.5">Years Experience</p></div>
+            <div className="px-4 py-2"><p className="text-xl font-black">500+</p><p className="text-xs font-semibold mt-0.5">Projects Completed</p></div>
+            <div className="px-4 py-2"><p className="text-xl font-black">100%</p><p className="text-xs font-semibold mt-0.5">Owner Supervised</p></div>
+            <div className="px-4 py-2"><p className="text-xl font-black">Free</p><p className="text-xs font-semibold mt-0.5">Site Inspection</p></div>
+          </div>
+        </div>
+      </section>
+
+      {/* CONTACT SECTION */}
+      <section className="py-20 bg-gray-50">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+
+            {/* LEFT - Contact Info */}
             <div>
-              <h2 className="font-serif text-2xl font-bold tracking-tight text-foreground">
-                Request a Free Quote
-              </h2>
-              <p className="mt-2 text-muted-foreground">
-                Fill out the form below and we&apos;ll get back to you within 24 hours.
-              </p>
+              <span className="inline-block rounded-full border border-gray-300 px-4 py-1 text-xs font-semibold uppercase tracking-widest" style={{color:"#6b7280"}}>Reach Us</span>
+              <h2 className="mt-3 text-3xl font-black sm:text-4xl" style={{color:"#1B2B8A"}}>Contact Bhairav Painting Service</h2>
+              <p className="mt-3 text-sm leading-relaxed" style={{color:"#6b7280"}}>We serve Mumbai, Thane, Bhiwandi, Kalyan, Navi Mumbai and Dombivli. Call or WhatsApp for fastest response.</p>
 
-              {isSubmitted ? (
-                <Card className="mt-8 border-0 bg-secondary">
-                  <CardContent className="p-8 text-center">
-                    <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-foreground">
-                      <CheckCircle className="h-8 w-8 text-primary-foreground" />
-                    </div>
-                    <h3 className="mt-6 font-semibold text-foreground text-lg">
-                      Thank You!
-                    </h3>
-                    <p className="mt-2 text-muted-foreground">
-                      Your message has been received. We&apos;ll get back to you within 24 hours.
-                    </p>
-                    <Button
-                      className="mt-6"
-                      onClick={() => setIsSubmitted(false)}
-                    >
-                      Send Another Message
-                    </Button>
-                  </CardContent>
-                </Card>
-              ) : (
-                <form onSubmit={handleSubmit} className="mt-8 space-y-6">
-                  <div className="grid gap-6 sm:grid-cols-2">
-                    <div>
-                      <label
-                        htmlFor="name"
-                        className="block text-sm font-medium text-foreground mb-2"
-                      >
-                        Full Name *
-                      </label>
-                      <Input
-                        id="name"
-                        name="name"
-                        type="text"
-                        required
-                        value={formData.name}
-                        onChange={handleChange}
-                        placeholder="Your name"
-                      />
-                    </div>
-                    <div>
-                      <label
-                        htmlFor="phone"
-                        className="block text-sm font-medium text-foreground mb-2"
-                      >
-                        Phone Number *
-                      </label>
-                      <Input
-                        id="phone"
-                        name="phone"
-                        type="tel"
-                        required
-                        value={formData.phone}
-                        onChange={handleChange}
-                        placeholder="+91 9876543210"
-                      />
-                    </div>
+              <div className="mt-8 space-y-4">
+                <a href="tel:+919158800517" className="flex items-center gap-4 rounded-xl border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md transition-shadow">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full" style={{backgroundColor:"#f0f4ff"}}>
+                    <Phone className="h-5 w-5" style={{color:"#1B2B8A"}} />
                   </div>
-
                   <div>
-                    <label
-                      htmlFor="email"
-                      className="block text-sm font-medium text-foreground mb-2"
-                    >
-                      Email Address
-                    </label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      placeholder="your@email.com"
-                    />
+                    <p className="text-xs font-semibold uppercase tracking-wide" style={{color:"#6b7280"}}>Call Us</p>
+                    <p className="font-bold text-sm" style={{color:"#1B2B8A"}}>+91 9158800517</p>
                   </div>
+                </a>
 
+                <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20a%20painting%20quote." target="_blank" rel="noopener noreferrer"
+                  className="flex items-center gap-4 rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow"
+                  style={{backgroundColor:"#25D366"}}>
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/20">
+                    <MessageCircle className="h-5 w-5 text-white" />
+                  </div>
                   <div>
-                    <label
-                      htmlFor="service"
-                      className="block text-sm font-medium text-foreground mb-2"
-                    >
-                      Service Interested In
-                    </label>
-                    <select
-                      id="service"
-                      name="service"
-                      value={formData.service}
-                      onChange={handleChange}
-                      className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-                    >
-                      <option value="">Select a service</option>
-                      {services.map((service) => (
-                        <option key={service} value={service}>
-                          {service}
-                        </option>
-                      ))}
-                    </select>
+                    <p className="text-xs font-semibold uppercase tracking-wide text-white/80">WhatsApp</p>
+                    <p className="font-bold text-sm text-white">+91 9158800517</p>
                   </div>
+                </a>
 
+                <a href="mailto:Bhairavpaintingservice@gmail.com" className="flex items-center gap-4 rounded-xl border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md transition-shadow">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full" style={{backgroundColor:"#f0f4ff"}}>
+                    <Mail className="h-5 w-5" style={{color:"#1B2B8A"}} />
+                  </div>
                   <div>
-                    <label
-                      htmlFor="message"
-                      className="block text-sm font-medium text-foreground mb-2"
-                    >
-                      Project Details *
-                    </label>
-                    <Textarea
-                      id="message"
-                      name="message"
-                      required
-                      value={formData.message}
-                      onChange={handleChange}
-                      placeholder="Tell us about your project - property type, approximate area, specific requirements..."
-                      rows={5}
-                    />
+                    <p className="text-xs font-semibold uppercase tracking-wide" style={{color:"#6b7280"}}>Email</p>
+                    <p className="font-bold text-sm" style={{color:"#1B2B8A"}}>Bhairavpaintingservice@gmail.com</p>
                   </div>
+                </a>
 
-                  <Button type="submit" size="lg" disabled={isSubmitting} className="w-full sm:w-auto">
-                    {isSubmitting ? (
-                      "Sending..."
-                    ) : (
-                      <>
-                        <Send className="mr-2 h-4 w-4" />
-                        Send Message
-                      </>
-                    )}
-                  </Button>
-                </form>
-              )}
-            </div>
-
-            {/* Contact Info */}
-            <div>
-              <h2 className="font-serif text-2xl font-bold tracking-tight text-foreground">
-                Contact Information
-              </h2>
-              <p className="mt-2 text-muted-foreground">
-                Reach out directly or visit us during business hours.
-              </p>
-
-              <div className="mt-8 space-y-6">
-                {contactInfo.map((item) => (
-                  <div key={item.title} className="flex gap-4">
-                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-secondary">
-                      <item.icon className="h-6 w-6 text-foreground" />
-                    </div>
-                    <div>
-                      <h3 className="font-medium text-foreground">{item.title}</h3>
-                      {item.href ? (
-                        <a
-                          href={item.href}
-                          className="text-muted-foreground hover:text-foreground transition-colors"
-                        >
-                          {item.value}
-                        </a>
-                      ) : (
-                        <p className="text-muted-foreground">{item.value}</p>
-                      )}
-                    </div>
+                <div className="flex items-center gap-4 rounded-xl border border-gray-200 bg-white p-4 shadow-sm">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full" style={{backgroundColor:"#f0f4ff"}}>
+                    <Clock className="h-5 w-5" style={{color:"#1B2B8A"}} />
                   </div>
-                ))}
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-wide" style={{color:"#6b7280"}}>Business Hours</p>
+                    <p className="font-bold text-sm" style={{color:"#1B2B8A"}}>All Days: 8AM – 7PM</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-4 rounded-xl border border-gray-200 bg-white p-4 shadow-sm">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full" style={{backgroundColor:"#f0f4ff"}}>
+                    <MapPin className="h-5 w-5" style={{color:"#1B2B8A"}} />
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-wide" style={{color:"#6b7280"}}>Service Areas</p>
+                    <p className="font-bold text-sm" style={{color:"#1B2B8A"}}>{serviceAreas.join(" · ")}</p>
+                  </div>
+                </div>
               </div>
 
-              {/* Quick Contact Card */}
-              <Card className="mt-12 border-0 bg-foreground">
-                <CardContent className="p-8">
-                  <h3 className="font-semibold text-primary-foreground text-lg">
-                    Prefer to call?
-                  </h3>
-                  <p className="mt-2 text-primary-foreground/80 text-sm">
-                    Speak directly with Bhairav for immediate assistance with your project.
-                  </p>
-                  <Button
-                    asChild
-                    size="lg"
-                    className="mt-6 w-full bg-primary-foreground text-foreground hover:bg-primary-foreground/90"
-                  >
-                    <a href="tel:+919158800517" className="flex items-center justify-center gap-2">
-                      <Phone className="h-5 w-5" />
-                      +91 9158800517
+              {/* Quick WhatsApp CTA by service */}
+              <div className="mt-8 rounded-xl p-6" style={{backgroundColor:"#1B2B8A"}}>
+                <h3 className="font-bold text-sm text-white">Quick WhatsApp by Service</h3>
+                <div className="mt-4 grid grid-cols-2 gap-2">
+                  {[
+                    { label: "Residential", msg: "Hi, I need Residential Painting quote." },
+                    { label: "Commercial", msg: "Hi, I need Commercial Painting quote." },
+                    { label: "Waterproofing", msg: "Hi, I need Waterproofing quote." },
+                    { label: "Building", msg: "Hi, I need Building Painting quote." },
+                  ].map((item, i) => (
+                    <a key={i} href={`https://wa.me/919158800517?text=${encodeURIComponent(item.msg)}`} target="_blank" rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-1.5 rounded-lg py-2 text-xs font-semibold text-white"
+                      style={{backgroundColor:"#25D366"}}>
+                      <MessageCircle className="h-3 w-3" /> {item.label}
                     </a>
-                  </Button>
-                </CardContent>
-              </Card>
-
-              {/* Map Placeholder */}
-              <div className="mt-8 aspect-video rounded-lg bg-muted flex items-center justify-center">
-                <div className="text-center p-8">
-                  <MapPin className="h-12 w-12 text-muted-foreground mx-auto" />
-                  <p className="mt-4 text-muted-foreground">
-                    Serving all areas of Mumbai, Maharashtra
-                  </p>
+                  ))}
                 </div>
               </div>
             </div>
+
+            {/* RIGHT - Form */}
+            <div className="rounded-2xl bg-white border border-gray-200 p-8 shadow-sm">
+              <h3 className="font-black text-xl" style={{color:"#1B2B8A"}}>Request a Free Quote</h3>
+              <p className="mt-1 text-xs" style={{color:"#6b7280"}}>Fill the form — we will call or WhatsApp you within 30 minutes.</p>
+
+              {isSubmitted ? (
+                <div className="mt-8 text-center py-12">
+                  <CheckCircle className="h-16 w-16 text-green-500 mx-auto" />
+                  <h4 className="mt-4 font-black text-xl" style={{color:"#1B2B8A"}}>Thank You!</h4>
+                  <p className="mt-2 text-sm" style={{color:"#6b7280"}}>We have received your enquiry. Our team will contact you within 30 minutes.</p>
+                  <a href="https://wa.me/919158800517?text=Hi%2C%20I%20just%20submitted%20a%20quote%20request." target="_blank" rel="noopener noreferrer"
+                    className="mt-6 inline-flex items-center gap-2 rounded-lg px-6 py-3 text-sm font-bold text-white"
+                    style={{backgroundColor:"#25D366"}}>
+                    <MessageCircle className="h-4 w-4" /> Also WhatsApp Us
+                  </a>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="mt-6 space-y-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="text-xs font-semibold" style={{color:"#374151"}}>Full Name *</label>
+                      <input name="name" value={formData.name} onChange={handleChange} required placeholder="Your name"
+                        className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2.5 text-sm outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500" />
+                    </div>
+                    <div>
+                      <label className="text-xs font-semibold" style={{color:"#374151"}}>Phone Number *</label>
+                      <input name="phone" value={formData.phone} onChange={handleChange} required placeholder="+91 XXXXX XXXXX" type="tel"
+                        className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2.5 text-sm outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500" />
+                    </div>
+                  </div>
+                  <div>
+                    <label className="text-xs font-semibold" style={{color:"#374151"}}>Email (Optional)</label>
+                    <input name="email" value={formData.email} onChange={handleChange} placeholder="your@email.com" type="email"
+                      className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2.5 text-sm outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500" />
+                  </div>
+                  <div>
+                    <label className="text-xs font-semibold" style={{color:"#374151"}}>Service Required *</label>
+                    <select name="service" value={formData.service} onChange={handleChange} required
+                      className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2.5 text-sm outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500">
+                      <option value="">Select a service</option>
+                      {services.map((s) => <option key={s} value={s}>{s}</option>)}
+                    </select>
+                  </div>
+                  <div>
+                    <label className="text-xs font-semibold" style={{color:"#374151"}}>Your Area</label>
+                    <select name="area" value={formData.area} onChange={handleChange}
+                      className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2.5 text-sm outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500">
+                      <option value="">Select your area</option>
+                      {serviceAreas.map((a) => <option key={a} value={a}>{a}</option>)}
+                    </select>
+                  </div>
+                  <div>
+                    <label className="text-xs font-semibold" style={{color:"#374151"}}>Message / Additional Details</label>
+                    <textarea name="message" value={formData.message} onChange={handleChange} rows={3} placeholder="Tell us about your project — area size, type of painting, timeline..."
+                      className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2.5 text-sm outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 resize-none" />
+                  </div>
+                  <button type="submit" disabled={isSubmitting}
+                    className="w-full flex items-center justify-center gap-2 rounded-lg py-3 text-sm font-bold text-white disabled:opacity-70 transition-colors"
+                    style={{backgroundColor:"#1B2B8A"}}>
+                    {isSubmitting ? "Sending..." : <><Send className="h-4 w-4" /> Send Enquiry</>}
+                  </button>
+                  <p className="text-center text-xs" style={{color:"#9ca3af"}}>Or WhatsApp directly: <a href="https://wa.me/919158800517" target="_blank" rel="noopener noreferrer" className="font-semibold" style={{color:"#25D366"}}>+91 9158800517</a></p>
+                </form>
+              )}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="py-24 bg-secondary">
+      {/* MAP PLACEHOLDER */}
+      <section className="py-12 bg-white">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="text-center">
-            <p className="text-sm font-medium uppercase tracking-widest text-muted-foreground">
-              FAQ
-            </p>
-            <h2 className="mt-2 font-serif text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              Frequently Asked Questions
-            </h2>
-          </div>
-
-          <div className="mt-16 grid gap-8 md:grid-cols-2">
-            <div>
-              <h3 className="font-semibold text-foreground">
-                How do I get a quote?
-              </h3>
-              <p className="mt-2 text-muted-foreground">
-                Fill out our contact form or call us directly. We&apos;ll schedule a free 
-                site visit to assess your requirements and provide a detailed quote.
-              </p>
-            </div>
-            <div>
-              <h3 className="font-semibold text-foreground">
-                What areas do you serve?
-              </h3>
-              <p className="mt-2 text-muted-foreground">
-                We serve all areas of Mumbai including Andheri, Bandra, Juhu, Powai, 
-                Lower Parel, Worli, and surrounding regions.
-              </p>
-            </div>
-            <div>
-              <h3 className="font-semibold text-foreground">
-                What brands of paint do you use?
-              </h3>
-              <p className="mt-2 text-muted-foreground">
-                We use premium brands like Asian Paints, Berger, Nerolac, and others 
-                based on your preference and budget.
-              </p>
-            </div>
-            <div>
-              <h3 className="font-semibold text-foreground">
-                Do you offer any warranty?
-              </h3>
-              <p className="mt-2 text-muted-foreground">
-                Yes, we provide a quality guarantee on all our work. The specific 
-                warranty terms depend on the type of paint and service chosen.
-              </p>
-            </div>
+          <h2 className="text-2xl font-black mb-6" style={{color:"#1B2B8A"}}>Our Service Areas</h2>
+          <div className="rounded-2xl overflow-hidden border border-gray-200 shadow-sm">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d241317.11609823277!2d72.74109995709657!3d19.08219783958221!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c6306644edc1%3A0x5da4ed8f8d648c69!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1699000000000!5m2!1sen!2sin"
+              width="100%" height="350" style={{border:0}} allowFullScreen loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade" title="Bhairav Painting Service Area Map">
+            </iframe>
           </div>
         </div>
       </section>
-    </div>
+    </main>
   )
 }
