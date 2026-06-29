@@ -180,19 +180,23 @@ export default function AboutPage() {
           <h2 className="mt-3 text-3xl font-black sm:text-4xl" style={{color:"#1B2B8A"}}>Our Services</h2>
           <div className="mt-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
             {[
-              { label: "Residential Painting", href: "/services/residential" },
-              { label: "Interior Painting", href: "/services/interior" },
-              { label: "Exterior Painting", href: "/services/exterior" },
-              { label: "Commercial Painting", href: "/services/commercial" },
-              { label: "Building & Society", href: "/services/building" },
-              { label: "Waterproofing", href: "/services/waterproofing" },
-              { label: "Designer & Texture", href: "/services/designer/texture" },
-              { label: "Wood & Metal Painting", href: "/services/residential" },
+              { label: "Residential Painting", href: "/services/residential", img: "/images/residential.webp" },
+              { label: "Interior Painting", href: "/services/interior", img: "/images/interior-painting.jpg" },
+              { label: "Exterior Painting", href: "/services/exterior", img: "/images/exterior-new.jpg" },
+              { label: "Commercial Painting", href: "/services/commercial", img: "/images/commercial.webp" },
+              { label: "Building & Society", href: "/services/building", img: "/images/portfolio-building.webp" },
+              { label: "Waterproofing", href: "/services/waterproofing", img: "/images/waterproofing.jpg" },
+              { label: "Designer & Texture", href: "/services/designer/texture", img: "/images/texture.webp" },
+              { label: "Wood & Metal Painting", href: "/services/residential", img: "/images/wood-metal-painting.jpg" },
             ].map((item, i) => (
-              <Link key={i} href={item.href}
-                className="flex items-center gap-2 rounded-xl border border-gray-200 bg-gray-50 p-4 text-sm font-semibold shadow-sm hover:shadow-md transition-shadow"
-                style={{color:"#1B2B8A"}}>
-                <CheckCircle className="h-4 w-4 text-orange-500 shrink-0" />{item.label}
+              <Link key={i} href={item.href} className="overflow-hidden rounded-xl shadow-sm group">
+                <div className="relative h-32">
+                  <Image src={item.img} alt={item.label} fill className="object-cover group-hover:scale-105 transition-transform duration-300" />
+                  <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors" />
+                  <div className="absolute inset-0 flex items-end p-3">
+                    <p className="font-bold text-xs text-white">{item.label}</p>
+                  </div>
+                </div>
               </Link>
             ))}
           </div>
