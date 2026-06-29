@@ -93,7 +93,11 @@ export default function ResidentialPaintingPage() {
 
   const handleSubmit = () => {
     if (!form.name || !form.phone) { alert("Please enter your name and phone number."); return }
-    const msg = `Hi, I need a Residential Painting quote.%0AName: ${encodeURIComponent(form.name)}%0APhone: ${encodeURIComponent(form.phone)}%0AService: ${encodeURIComponent(form.service || "Not specified")}%0AArea: ${encodeURIComponent(form.area || "Not specified")}%0AMessage: ${encodeURIComponent(form.message || "-")}`
+    const isCoords = form.area && form.area.match(/^-?\d+\.\d+,\s*-?\d+\.\d+$/)
+    const locationText = isCoords
+      ? `📍 My Location: https://maps.google.com/?q=${form.area.replace(" ","")}`
+      : `Area: ${form.area || "Not specified"}`
+    const msg = `Hi, I need a Residential Painting quote.%0AName: ${encodeURIComponent(form.name)}%0APhone: ${encodeURIComponent(form.phone)}%0AService: ${encodeURIComponent(form.service || "Not specified")}%0A${encodeURIComponent(locationText)}%0AMessage: ${encodeURIComponent(form.message || "-")}`
     window.open(`https://wa.me/919158800517?text=${msg}`, "_blank")
   }
 
@@ -612,8 +616,25 @@ export default function ResidentialPaintingPage() {
                   <option value="">Select Service</option>
                   {serviceOptions.map((opt) => <option key={opt} value={opt}>{opt}</option>)}
                 </select></div>
-              <div><label className="block text-xs font-bold uppercase tracking-wide text-white/80 mb-1">Your Area</label>
-                <input type="text" placeholder="e.g. Bhiwandi, Thane" value={form.area} onChange={(e) => setForm({...form,area:e.target.value})} className="w-full rounded-lg bg-white px-4 py-3 text-sm outline-none" style={{color:"#111827"}} /></div>
+              <div><label className="block text-xs font-bold uppercase tracking-wide text-white/80 mb-1">Your Area / Location</label>
+                <div className="flex gap-2">
+                  <input type="text" placeholder="e.g. Bhiwandi, Thane" value={form.area} onChange={(e) => setForm({...form,area:e.target.value})} className="flex-1 rounded-lg bg-white px-4 py-3 text-sm outline-none" style={{color:"#111827"}} />
+                  <button type="button" onClick={() => {
+                    if(navigator.geolocation) {
+                      navigator.geolocation.getCurrentPosition((pos) => {
+                        const lat = pos.coords.latitude.toFixed(5)
+                        const lng = pos.coords.longitude.toFixed(5)
+                        setForm({...form, area: `${lat}, ${lng}`})
+                      }, () => alert("Location access denied. Please type your area."))
+                    } else {
+                      alert("Location not supported on this browser.")
+                    }
+                  }} className="shrink-0 bg-white text-orange-600 font-bold text-xs px-3 py-2 rounded-lg hover:bg-orange-50 transition flex items-center gap-1" title="Share My Location">
+                    📍 Location
+                  </button>
+                </div>
+                <p className="text-white/60 text-xs mt-1">📍 button se apni exact location share karo</p>
+              </div>
             </div>
             <div className="mt-4"><label className="block text-xs font-bold uppercase tracking-wide text-white/80 mb-1">Message (Optional)</label>
               <textarea rows={3} placeholder="Tell us about your project..." value={form.message} onChange={(e) => setForm({...form,message:e.target.value})} className="w-full rounded-lg bg-white px-4 py-3 text-sm outline-none resize-none" style={{color:"#111827"}} /></div>
