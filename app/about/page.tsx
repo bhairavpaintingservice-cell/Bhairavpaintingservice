@@ -38,9 +38,7 @@ export default function AboutPage() {
                 </a>
               </div>
             </div>
-            <div className="relative h-80 lg:h-96 rounded-2xl overflow-hidden">
-              <Image src="/images/founder.jpg" alt="Bhairav Painting Service" fill className="object-cover" />
-            </div>
+
           </div>
         </div>
       </section>
