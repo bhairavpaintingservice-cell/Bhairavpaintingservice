@@ -77,15 +77,44 @@ export default function ContactPage() {
       {/* HERO */}
       <section className="pt-32 pb-16" style={{backgroundColor:"#1B2B8A"}}>
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="max-w-2xl">
-            <span className="inline-block rounded-full border border-white/30 px-4 py-1 text-xs font-semibold uppercase tracking-widest text-blue-200">Contact Us</span>
-            <h1 className="mt-4 text-4xl font-black text-white sm:text-5xl">Get a Free Quote Today</h1>
-            <p className="mt-4 text-lg text-blue-200">Call, WhatsApp or fill the form below — we respond within 30 minutes during business hours. Free site visit for all enquiries.</p>
-            <div className="mt-6 flex flex-wrap gap-3">
-              {["Free Site Visit","Written Quotation","No Hidden Charges","Owner Supervised"].map((b, i) => (
-                <span key={i} className="flex items-center gap-1.5 rounded-full bg-white/10 px-3 py-1.5 text-xs font-semibold text-white">
-                  <CheckCircle className="h-3.5 w-3.5 text-orange-400" />{b}
-                </span>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <span className="inline-block rounded-full border border-white/30 px-4 py-1 text-xs font-semibold uppercase tracking-widest text-blue-200">Contact Us</span>
+              <h1 className="mt-4 text-4xl font-black text-white sm:text-5xl leading-tight">Need Professional Painting Services?</h1>
+              <p className="mt-2 text-2xl font-bold text-orange-400">Book Your Free Site Inspection Today.</p>
+              <p className="mt-3 text-base text-blue-200">Get a written quote within 30 minutes. Call, WhatsApp or fill the form — we respond fast.</p>
+              <div className="mt-6 flex flex-wrap gap-3">
+                {["Free Site Visit","Written Quotation","No Hidden Charges","Owner Supervised","Same Day Response","Free Colour Consultation"].map((b, i) => (
+                  <span key={i} className="flex items-center gap-1.5 rounded-full bg-white/10 px-3 py-1.5 text-xs font-semibold text-white">
+                    <CheckCircle className="h-3.5 w-3.5 text-orange-400" />{b}
+                  </span>
+                ))}
+              </div>
+              <div className="mt-8 flex flex-col sm:flex-row gap-3">
+                <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20a%20free%20site%20visit." target="_blank" rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 rounded-lg px-6 py-3 text-sm font-bold text-white"
+                  style={{backgroundColor:"#25D366"}}>
+                  <MessageCircle className="h-4 w-4" /> WhatsApp Now
+                </a>
+                <a href="tel:+919158800517"
+                  className="flex items-center justify-center gap-2 rounded-lg border-2 border-white px-6 py-3 text-sm font-bold text-white hover:bg-white/10 transition-colors">
+                  <Phone className="h-4 w-4" /> Call: +91 9158800517
+                </a>
+              </div>
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              {[
+                { num: "47+", label: "Years Experience" },
+                { num: "500+", label: "Projects Completed" },
+                { num: "100%", label: "Owner Supervised" },
+                { num: "30 Min", label: "Response Time" },
+                { num: "Free", label: "Site Inspection" },
+                { num: "★★★★★", label: "Rated by Customers" },
+              ].map((item, i) => (
+                <div key={i} className="rounded-xl p-4 text-center" style={{backgroundColor:"rgba(255,255,255,0.1)"}}>
+                  <p className="text-2xl font-black text-white">{item.num}</p>
+                  <p className="mt-1 text-xs text-blue-200">{item.label}</p>
+                </div>
               ))}
             </div>
           </div>
