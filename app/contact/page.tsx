@@ -133,6 +133,67 @@ export default function ContactPage() {
         </div>
       </section>
 
+      {/* WHY CONTACT US */}
+      <section className="py-16 bg-white">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <span className="inline-block rounded-full border border-gray-300 px-4 py-1 text-xs font-semibold uppercase tracking-widest" style={{color:"#6b7280"}}>Why Choose Us</span>
+              <h2 className="mt-3 text-3xl font-black sm:text-4xl" style={{color:"#1B2B8A"}}>Why Choose Bhairav Painting Service?</h2>
+              <p className="mt-3 text-sm" style={{color:"#6b7280"}}>Trusted by 500+ customers across Mumbai, Thane & Bhiwandi for 47+ years.</p>
+              <ul className="mt-6 space-y-3">
+                {[
+                  "47+ Years of Painting Experience",
+                  "Premium Paint Brands — Asian Paints, Berger, Nerolac, Dulux",
+                  "Skilled & Trained Painters",
+                  "Daily Site Supervision by Owner",
+                  "Written Quotation — No Hidden Charges",
+                  "Clean Work Process — Furniture Protected",
+                  "Surface Preparation Included",
+                  "On-Time Project Completion",
+                ].map((pt, i) => (
+                  <li key={i} className="flex items-start gap-2 text-sm" style={{color:"#374151"}}>
+                    <CheckCircle className="h-4 w-4 text-orange-500 shrink-0 mt-0.5" />{pt}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* EMERGENCY SECTION */}
+            <div className="rounded-2xl p-8" style={{backgroundColor:"#1B2B8A"}}>
+              <span className="inline-block rounded-full border border-white/30 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-orange-400">Urgent?</span>
+              <h3 className="mt-3 text-2xl font-black text-white">Need Urgent Painting?</h3>
+              <p className="mt-2 text-sm text-blue-200">We handle urgent requests for all these situations:</p>
+              <ul className="mt-5 space-y-3">
+                {[
+                  "Moving into a New Home",
+                  "Builder Handover Deadline",
+                  "Commercial Office Reopening",
+                  "Pre-Wedding or Event Painting",
+                  "Society Urgent Repainting",
+                  "Roof Leakage — Emergency Waterproofing",
+                ].map((pt, i) => (
+                  <li key={i} className="flex items-center gap-2 text-sm text-white">
+                    <CheckCircle className="h-4 w-4 text-orange-400 shrink-0" />{pt}
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-6 flex flex-col gap-3">
+                <a href="tel:+919158800517"
+                  className="flex items-center justify-center gap-2 rounded-lg border-2 border-white px-6 py-3 text-sm font-bold text-white hover:bg-white/10 transition-colors">
+                  <Phone className="h-4 w-4" /> Call Now for Urgent Help
+                </a>
+                <a href="https://wa.me/919158800517?text=Hi%2C%20I%20have%20an%20urgent%20painting%20requirement.%20Please%20contact%20me." target="_blank" rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 rounded-lg px-6 py-3 text-sm font-bold text-white"
+                  style={{backgroundColor:"#25D366"}}>
+                  <MessageCircle className="h-4 w-4" /> WhatsApp for Urgent
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CONTACT SECTION */}
       <section className="py-20 bg-gray-50">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
