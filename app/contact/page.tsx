@@ -406,6 +406,64 @@ export default function ContactPage() {
         </div>
       </section>
 
+      {/* QUICK WHATSAPP BY SERVICE - CARDS */}
+      <section className="py-20 bg-gray-50">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <span className="inline-block rounded-full border border-gray-300 px-4 py-1 text-xs font-semibold uppercase tracking-widest" style={{color:"#6b7280"}}>Quick Contact</span>
+          <h2 className="mt-3 text-3xl font-black sm:text-4xl" style={{color:"#1B2B8A"}}>WhatsApp by Service</h2>
+          <p className="mt-3 text-sm max-w-xl" style={{color:"#6b7280"}}>Click any service to directly WhatsApp us with a pre-filled message.</p>
+          <div className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-4">
+            {[
+              { icon: "🏠", label: "Residential", msg: "Hi, I need Residential Painting quote. Please contact me." },
+              { icon: "🎨", label: "Interior", msg: "Hi, I need Interior Painting quote. Please contact me." },
+              { icon: "🏗️", label: "Exterior", msg: "Hi, I need Exterior Painting quote. Please contact me." },
+              { icon: "🏢", label: "Commercial", msg: "Hi, I need Commercial Painting quote. Please contact me." },
+              { icon: "🏘️", label: "Building", msg: "Hi, I need Building & Society Painting quote. Please contact me." },
+              { icon: "💧", label: "Waterproofing", msg: "Hi, I need Waterproofing quote. Please contact me." },
+              { icon: "✨", label: "Designer & Texture", msg: "Hi, I need Designer & Texture Painting quote. Please contact me." },
+              { icon: "🪵", label: "Wood & Metal", msg: "Hi, I need Wood & Metal Painting quote. Please contact me." },
+            ].map((item, i) => (
+              <a key={i} href={`https://wa.me/919158800517?text=${encodeURIComponent(item.msg)}`} target="_blank" rel="noopener noreferrer"
+                className="flex flex-col items-center justify-center gap-2 rounded-xl border border-gray-200 bg-white p-5 shadow-sm hover:shadow-md transition-shadow text-center">
+                <span className="text-3xl">{item.icon}</span>
+                <p className="font-bold text-sm" style={{color:"#1B2B8A"}}>{item.label}</p>
+                <span className="flex items-center gap-1 rounded-full px-3 py-1 text-xs font-semibold text-white" style={{backgroundColor:"#25D366"}}>
+                  <MessageCircle className="h-3 w-3" /> WhatsApp
+                </span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SERVICE AREAS SEO */}
+      <section className="py-20" style={{backgroundColor:"#1B2B8A"}}>
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <span className="inline-block rounded-full border border-white/30 px-4 py-1 text-xs font-semibold uppercase tracking-widest text-blue-200">Service Areas</span>
+          <h2 className="mt-3 text-3xl font-black text-white sm:text-4xl">Painting Contractor Across Mumbai Region</h2>
+          <p className="mt-3 text-sm text-blue-200 max-w-2xl">Bhairav Painting Service operates as a professional painting contractor across the Mumbai metropolitan region — serving residential, commercial and industrial clients.</p>
+          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {[
+              { city: "Painting Services in Mumbai", desc: "Residential, commercial and building painting across all Mumbai areas including Andheri, Borivali, Dadar, Chembur and Mulund." },
+              { city: "Painting Services in Navi Mumbai", desc: "Professional painting in Vashi, Kharghar, Nerul, Panvel and surrounding Navi Mumbai areas." },
+              { city: "Painting Services in Thane", desc: "Complete painting services for homes, offices, societies and commercial spaces across Thane." },
+              { city: "Painting Services in Bhiwandi", desc: "Warehouse, factory and commercial painting specialists in Bhiwandi industrial zone." },
+              { city: "Painting Services in Kalyan", desc: "Residential and society painting across Kalyan and Dombivli areas." },
+              { city: "Painting Services in Vasai & Virar", desc: "Residential and exterior painting services in Vasai, Virar and surrounding areas." },
+            ].map((item, i) => (
+              <div key={i} className="rounded-xl p-5" style={{backgroundColor:"rgba(255,255,255,0.08)"}}>
+                <h3 className="font-bold text-sm text-white">{item.city}</h3>
+                <p className="mt-2 text-xs leading-relaxed text-blue-200">{item.desc}</p>
+                <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20painting%20services.%20Please%20contact%20me." target="_blank" rel="noopener noreferrer"
+                  className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-orange-400">
+                  <MessageCircle className="h-3 w-3" /> Get Free Quote →
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* MAP PLACEHOLDER */}
       <section className="py-12 bg-white">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
