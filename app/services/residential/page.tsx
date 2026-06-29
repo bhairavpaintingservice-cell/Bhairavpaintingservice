@@ -150,14 +150,25 @@ export default function ResidentialPaintingPage() {
           <p className="mt-3 max-w-xl text-sm" style={{color:"#6b7280"}}>From 1BHK flats to large villas — we handle all types of residential painting across Mumbai & Bhiwandi.</p>
           <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {serviceCards.map((s) => (
-              <div key={s.title} className="rounded-xl bg-white border border-gray-100 overflow-hidden hover:shadow-md transition-shadow">
-                <div className="relative h-40 w-full">
-                  <Image src={s.image} alt={s.title} fill className="object-cover" />
+              <div key={s.title} className="group rounded-xl bg-white border border-gray-100 overflow-hidden hover:shadow-md transition-shadow">
+                <div className="relative h-40 w-full overflow-hidden">
+                  <Image src={s.image} alt={`${s.title} in Mumbai Thane Bhiwandi - Bhairav Painting Service`} fill className="object-cover group-hover:scale-105 transition-transform duration-300" />
+                  <div className="absolute inset-0 bg-[#1B2B8A]/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <span className="bg-orange-500 text-white px-3 py-1.5 rounded-lg text-xs font-bold">View More →</span>
+                  </div>
                 </div>
-                <div className="p-5">
+                <div className="p-4">
                   <div className="text-2xl mb-2">{s.icon}</div>
-                  <h3 className="font-bold text-sm" style={{color:"#1B2B8A"}}>{s.title}</h3>
-                  <p className="mt-1 text-xs" style={{color:"#6b7280"}}>{s.desc}</p>
+                  <h3 className="font-bold text-sm mb-1" style={{color:"#1B2B8A"}}>{s.title}</h3>
+                  <p className="text-xs mb-3" style={{color:"#6b7280"}}>{s.desc}</p>
+                  <div className="grid grid-cols-2 gap-2">
+                    <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20Residential%20Painting%20quote" className="flex items-center justify-center gap-1 bg-green-500 hover:bg-green-600 text-white text-xs font-bold py-2 rounded-lg transition">
+                      💬 WhatsApp
+                    </a>
+                    <a href="#contact" className="flex items-center justify-center bg-white border border-gray-200 hover:border-orange-400 text-gray-700 text-xs font-bold py-2 rounded-lg transition">
+                      Free Quote
+                    </a>
+                  </div>
                 </div>
               </div>
             ))}
