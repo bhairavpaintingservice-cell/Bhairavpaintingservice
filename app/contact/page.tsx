@@ -16,13 +16,34 @@ const services = [
 ]
 
 const serviceAreas = [
-  "Mumbai", "Thane", "Bhiwandi", "Kalyan", "Navi Mumbai", "Dombivli"
+  "Mumbai", "Thane", "Bhiwandi", "Kalyan", "Navi Mumbai", "Dombivli",
+  "Kasheli", "Kalher", "Andheri", "Vasai", "Virar"
 ]
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({ name: "", phone: "", email: "", service: "", area: "", message: "" })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [location, setLocation] = useState<{lat: number, lng: number} | null>(null)
+  const [locationLoading, setLocationLoading] = useState(false)
+
+  const getLocation = () => {
+    if (!navigator.geolocation) {
+      alert("Geolocation is not supported by your browser.")
+      return
+    }
+    setLocationLoading(true)
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        setLocation({ lat: position.coords.latitude, lng: position.coords.longitude })
+        setLocationLoading(false)
+      },
+      () => {
+        alert("Unable to get location. Please allow location access.")
+        setLocationLoading(false)
+      }
+    )
+  }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -37,6 +58,10 @@ export default function ContactPage() {
       }, "vLWZyTtI0Jyri4AH")
       setIsSubmitted(true)
       setFormData({ name: "", phone: "", email: "", service: "", area: "", message: "" })
+      // Open WhatsApp with location if available
+      const locationText = location ? `\n📍 My Location: https://maps.google.com/?q=${location.lat},${location.lng}` : ""
+      const waMsg = encodeURIComponent(`Hi, I submitted a quote request for ${formData.service} in ${formData.area}.${locationText}`)
+      window.open(`https://wa.me/919158800517?text=${waMsg}`, "_blank")
     } catch (error) {
       alert("Something went wrong. Please WhatsApp or call us directly.")
     }
@@ -210,6 +235,18 @@ export default function ContactPage() {
                       <option value="">Select your area</option>
                       {serviceAreas.map((a) => <option key={a} value={a}>{a}</option>)}
                     </select>
+                  </div>
+                  <div>
+                    <label className="text-xs font-semibold" style={{color:"#374151"}}>Share Your Location (Optional)</label>
+                    <button type="button" onClick={getLocation}
+                      className="mt-1 w-full flex items-center justify-center gap-2 rounded-lg border border-gray-300 px-3 py-2.5 text-sm font-semibold transition-colors hover:bg-gray-50"
+                      style={{color: location ? "#15803d" : "#1B2B8A"}}>
+                      <MapPin className="h-4 w-4" />
+                      {locationLoading ? "Getting location..." : location ? `📍 Location captured (${location.lat.toFixed(4)}, ${location.lng.toFixed(4)})` : "📍 Click to share my location"}
+                    </button>
+                    {location && (
+                      <p className="mt-1 text-xs" style={{color:"#15803d"}}>✅ Your location will be sent with the enquiry so we can reach you easily.</p>
+                    )}
                   </div>
                   <div>
                     <label className="text-xs font-semibold" style={{color:"#374151"}}>Message / Additional Details</label>
