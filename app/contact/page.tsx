@@ -356,6 +356,56 @@ export default function ContactPage() {
         </div>
       </section>
 
+      {/* PROCESS */}
+      <section className="py-20 bg-gray-50">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <span className="inline-block rounded-full border border-gray-300 px-4 py-1 text-xs font-semibold uppercase tracking-widest" style={{color:"#6b7280"}}>How It Works</span>
+          <h2 className="mt-3 text-3xl font-black sm:text-4xl" style={{color:"#1B2B8A"}}>From First Call to Final Handover</h2>
+          <div className="mt-10 grid grid-cols-1 sm:grid-cols-5 gap-4">
+            {[
+              { step: "01", title: "Contact Us", desc: "Call, WhatsApp or fill the form. We respond within 30 minutes." },
+              { step: "02", title: "Free Site Visit", desc: "Our team visits your property at no charge to assess the scope." },
+              { step: "03", title: "Written Quotation", desc: "Detailed quote with scope, materials, timeline — no hidden costs." },
+              { step: "04", title: "Painting Starts", desc: "Surface preparation, primer, and premium paint applied correctly." },
+              { step: "05", title: "Final Inspection", desc: "Owner walkthrough, snag fixing and project handover." },
+            ].map((item, i) => (
+              <div key={i} className="flex flex-col items-center text-center">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full text-white font-black text-sm" style={{backgroundColor:"#1B2B8A"}}>{item.step}</div>
+                <h3 className="mt-3 font-bold text-sm" style={{color:"#1B2B8A"}}>{item.title}</h3>
+                <p className="mt-1 text-xs leading-relaxed" style={{color:"#6b7280"}}>{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-20 bg-white">
+        <div className="mx-auto max-w-4xl px-6 lg:px-8">
+          <span className="inline-block rounded-full border border-gray-300 px-4 py-1 text-xs font-semibold uppercase tracking-widest" style={{color:"#6b7280"}}>FAQ</span>
+          <h2 className="mt-3 text-3xl font-black sm:text-4xl" style={{color:"#1B2B8A"}}>Frequently Asked Questions</h2>
+          <div className="mt-8 space-y-4">
+            {[
+              { q: "How much does painting cost?", a: "Cost depends on area size, surface condition, paint brand and number of coats. We provide a free site visit and written quotation — no hidden charges." },
+              { q: "How long does painting take?", a: "A standard 2BHK takes 5–7 days including surface preparation, putty, primer and two finish coats. Larger projects are discussed during site visit." },
+              { q: "Which paint brands do you use?", a: "We use Asian Paints, Berger, Nerolac and Dulux — premium branded paints only. No local or unbranded products." },
+              { q: "Do you provide materials or only labour?", a: "Both options available — Material + Labour (we arrange everything) or Labour Only (you supply paint). Discussed during quotation." },
+              { q: "Do you offer waterproofing?", a: "Yes — terrace waterproofing, wall seepage treatment, bathroom waterproofing and basement waterproofing using Dr Fixit and Asian Paints SmartCare products." },
+              { q: "Is the site visit really free?", a: "Yes — 100% free. No charges for site visit or quotation. No obligation to proceed." },
+              { q: "Do you work on Sundays?", a: "Yes — we work all days including Sundays for residential projects. Commercial projects can also be scheduled on weekends." },
+              { q: "Which areas do you serve?", a: "Mumbai, Thane, Bhiwandi, Kalyan, Navi Mumbai, Dombivli, Kasheli, Kalher, Andheri, Vasai and Virar." },
+              { q: "Do you provide warranty?", a: "Yes — any defect due to our workmanship is rectified at no extra cost. Paint manufacturer warranty applies separately." },
+              { q: "How do I book a site visit?", a: "Call +91 9158800517, WhatsApp us, or fill the form on this page. We will confirm your site visit within 30 minutes." },
+            ].map((faq, i) => (
+              <div key={i} className="rounded-xl border border-gray-200 p-5">
+                <p className="font-bold text-sm" style={{color:"#1B2B8A"}}>Q: {faq.q}</p>
+                <p className="mt-2 text-sm leading-relaxed" style={{color:"#6b7280"}}>{faq.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* MAP PLACEHOLDER */}
       <section className="py-12 bg-white">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
