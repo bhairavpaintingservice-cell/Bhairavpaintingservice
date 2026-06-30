@@ -5,16 +5,17 @@ import type { Metadata } from "next"
 
 export const metadata: Metadata = {
   title: "Project Gallery | Bhairav Painting Service",
-  description: "Browse our commercial painting project gallery — Office, Showroom, Warehouse, Restaurant, Retail Chain & Co-working space photos across Mumbai, Thane & Bhiwandi.",
+  description: "Browse our painting project gallery — Residential, Interior, Building, Exterior, Commercial, Designer & Texture, Waterproofing photos across Mumbai, Thane & Bhiwandi.",
 }
 
 const galleries = [
-  { title: "Office Painting", img: "/images/commercial/commercial-office.jpg", href: "/gallery/office-painting", count: "6 Photos" },
-  { title: "Shop & Showroom Painting", img: "/images/commercial/commercial-showroom.jpg", href: "/gallery/showroom-painting", count: "6 Photos" },
-  { title: "Warehouse & Factory Painting", img: "/images/commercial/commercial-warehouse.jpg", href: "/gallery/warehouse-painting", count: "6 Photos" },
-  { title: "Restaurant & Hotel Painting", img: "/images/commercial/commercial-restaurant.jpg", href: "/gallery/restaurant-painting", count: "6 Photos" },
-  { title: "Retail Chain Painting", img: "/images/commercial/commercial-retail.jpg", href: "/gallery/retail-painting", count: "6 Photos" },
-  { title: "Co-working & Business Centers", img: "/images/commercial/commercial-coworking.jpg", href: "/gallery/coworking-painting", count: "6 Photos" },
+  { title: "Residential Painting", img: "/images/residential.webp", href: "/services/residential", count: "Quality painting for homes, societies & housing complexes" },
+  { title: "Interior Painting", img: "/images/interior-painting.jpg", href: "/services/interior", count: "Modern wall painting for rooms, halls & flats" },
+  { title: "Building Painting", img: "/images/portfolio-building.webp", href: "/services/building", count: "Complete building painting for societies & complexes" },
+  { title: "Exterior Painting", img: "/images/exterior-new.jpg", href: "/services/exterior", count: "Weather-resistant exterior painting solutions" },
+  { title: "Commercial Painting", img: "/images/commercial.webp", href: "/gallery/commercial", count: "Office, showroom & commercial space painting" },
+  { title: "Designer Wall & Texture Painting", img: "/images/texture.webp", href: "/services/designer/texture", count: "Custom designer wall art & premium texture finishes" },
+  { title: "Waterproofing", img: "/images/waterproofing.jpg", href: "/services/waterproofing", count: "Complete waterproofing for terrace, bathroom & exterior walls" },
 ]
 
 export default function GalleryPage() {
@@ -25,7 +26,7 @@ export default function GalleryPage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8 text-center">
           <span className="inline-block rounded-full border border-white/30 px-4 py-1 text-xs font-semibold uppercase tracking-widest text-blue-200">Project Gallery</span>
           <h1 className="mt-4 text-4xl font-black text-white sm:text-5xl">Our Project Gallery</h1>
-          <p className="mt-4 text-lg text-blue-200 max-w-2xl mx-auto">Browse photos from our completed commercial painting projects across Mumbai, Thane & Bhiwandi.</p>
+          <p className="mt-4 text-lg text-blue-200 max-w-2xl mx-auto">Browse photos from our completed painting projects across Mumbai, Thane & Bhiwandi.</p>
         </div>
       </section>
 
@@ -45,7 +46,7 @@ export default function GalleryPage() {
       <section className="py-20 bg-gray-50">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <span className="inline-block rounded-full border border-gray-300 px-4 py-1 text-xs font-semibold uppercase tracking-widest" style={{color:"#6b7280"}}>Browse by Category</span>
-          <h2 className="mt-3 text-3xl font-black sm:text-4xl" style={{color:"#1B2B8A"}}>Commercial Project Galleries</h2>
+          <h2 className="mt-3 text-3xl font-black sm:text-4xl" style={{color:"#1B2B8A"}}>All Project Galleries</h2>
           <p className="mt-3 text-sm max-w-xl" style={{color:"#6b7280"}}>Click any category to view photos from that type of project.</p>
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {galleries.map((g, i) => (
