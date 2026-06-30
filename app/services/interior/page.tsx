@@ -383,6 +383,179 @@ export default function InteriorPaintingPage() {
         </div>
       </section>
 
+      {/* COMMON PROBLEMS */}
+      <section className="py-16 px-4 bg-white">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-orange-500 text-xs font-bold uppercase tracking-widest mb-2">Problems We Solve</p>
+          <h2 className="text-3xl font-black text-gray-900 mb-3">Common Interior Wall Problems We Solve</h2>
+          <p className="text-gray-500 mb-8 text-sm">Interior painting sirf colour change karna nahi hota. Proper surface treatment ke bina paint 1-2 saal mein fail ho jaata hai.</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            {[
+              { problem: "Hairline Cracks", icon: "🧱", cause: "Settlement, temperature changes ya poor plastering.", solution: "Crack filler + polymer putty + primer before painting." },
+              { problem: "Damp & Wet Walls", icon: "💧", cause: "Terrace leakage, bathroom seepage ya exterior moisture.", solution: "Source treatment + anti-damp primer + waterproof paint." },
+              { problem: "Peeling Paint", icon: "🎨", cause: "Poor surface prep, moisture ya low-quality previous paint.", solution: "Full scraping + sanding + fresh putty + primer + paint." },
+              { problem: "Uneven & Rough Walls", icon: "📐", cause: "Old distemper, poor plastering ya multiple paint layers.", solution: "Sanding + levelling putty + smooth primer coat." },
+              { problem: "Water & Yellow Ceiling Stains", icon: "🟡", cause: "Terrace leakage ya bathroom seepage above.", solution: "Stain block primer + waterproof ceiling paint." },
+              { problem: "Nail Holes & Surface Damage", icon: "🔩", cause: "Previous fixtures, furniture marks ya accidental damage.", solution: "Hole filling compound + sanding + touch-up painting." },
+              { problem: "Old Distemper Walls", icon: "🏚️", cause: "Older homes with chalk-based distemper paint.", solution: "Full distemper removal + wall sealer + fresh putty + paint." },
+              { problem: "Poor Previous Paint Job", icon: "😤", cause: "Brushmarks, uneven finish, colour inconsistency.", solution: "Light sanding + primer + 2 smooth coats premium paint." },
+            ].map((p, i) => (
+              <div key={i} className="bg-gray-50 border border-gray-100 rounded-xl p-5">
+                <div className="flex items-center gap-3 mb-3">
+                  <span className="text-2xl">{p.icon}</span>
+                  <h3 className="font-black text-sm text-gray-900">{p.problem}</h3>
+                </div>
+                <p className="text-xs text-red-500 mb-1"><strong>Cause:</strong> {p.cause}</p>
+                <p className="text-xs text-green-600"><strong>Solution:</strong> {p.solution}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SURFACE PREPARATION */}
+      <section className="py-16 px-4 bg-blue-950 text-white">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-orange-400 text-xs font-bold uppercase tracking-widest mb-2">Why It Matters</p>
+          <h2 className="text-3xl font-black text-white mb-3">Why Proper Surface Preparation Matters</h2>
+          <p className="text-blue-200 mb-8 text-sm">90% of paint failures happen because of poor surface preparation — not poor paint quality.</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-8">
+            {[
+              { step: "Wall Inspection", icon: "🔍", desc: "Cracks, damp patches, nail holes aur uneven surfaces identify kiye jaate hain pehle. Bina inspection ke painting shuru nahi hoti." },
+              { step: "Crack & Hole Filling", icon: "🧱", desc: "Polymer crack filler se saare cracks seal kiye jaate hain. Nail holes aur damage bhi fill hoti hai — walls smooth ho jaati hain." },
+              { step: "Sanding & Smoothing", icon: "📐", desc: "Old paint, rough surfaces aur putty joints sand kiye jaate hain — final paint ko smooth surface milti hai." },
+              { step: "Putty Application", icon: "🪣", desc: "Wall putty 1-2 coats mein apply hoti hai. Putty walls ko level karti hai aur paint ko proper grip deti hai." },
+              { step: "Primer Coat", icon: "🖌️", desc: "Primer paint adhesion improve karta hai, stains block karta hai aur final colour more vibrant aata hai." },
+              { step: "Final Paint Coats", icon: "✅", desc: "2 coats premium emulsion for smooth, durable finish. Each coat proper drying time ke baad apply hoti hai." },
+            ].map((s, i) => (
+              <div key={i} className="bg-white/10 border border-white/20 rounded-xl p-5">
+                <span className="text-2xl mb-2 block">{s.icon}</span>
+                <h3 className="font-black text-sm text-white mb-2">{s.step}</h3>
+                <p className="text-xs text-blue-200 leading-relaxed">{s.desc}</p>
+              </div>
+            ))}
+          </div>
+          <div className="bg-white/10 rounded-xl p-5 border border-white/20">
+            <p className="text-sm text-white leading-relaxed">Bhairav Painting Service har project mein <strong className="text-orange-400">complete surface preparation</strong> karta hai — inspection se lekar primer tak. Isliye hamara paint 5-7 saal tak fresh rehta hai.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* PAINT FINISH GUIDE */}
+      <section className="py-16 px-4 bg-gray-50">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-orange-500 text-xs font-bold uppercase tracking-widest mb-2">Paint Finish Guide</p>
+          <h2 className="text-3xl font-black text-gray-900 mb-3">Choosing the Right Paint Finish</h2>
+          <p className="text-gray-500 mb-8 text-sm">Sahi finish choose karna utna hi important hai jitna sahi colour — durability aur appearance dono affect hoti hai.</p>
+          <div className="overflow-x-auto rounded-2xl border border-gray-100 shadow-sm mb-6">
+            <table className="w-full text-xs">
+              <thead style={{background:"#1B2B8A"}} className="text-white">
+                <tr>
+                  <th className="px-4 py-3 text-left font-bold">Finish Type</th>
+                  <th className="px-4 py-3 text-left font-bold">Best For</th>
+                  <th className="px-4 py-3 text-left font-bold">Washable</th>
+                  <th className="px-4 py-3 text-left font-bold">Sheen Level</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  ["Matte / Flat", "Bedrooms, low-traffic areas", "Limited", "None"],
+                  ["Luxury Matte", "Living rooms, bedrooms", "Yes", "Subtle"],
+                  ["Soft Sheen / Eggshell", "Living rooms, hallways", "Yes", "Low"],
+                  ["Silk / Satin", "Living rooms, bedrooms", "Yes", "Medium"],
+                  ["Washable Emulsion", "Kids rooms, kitchens", "High", "Low-Medium"],
+                  ["Semi-Gloss", "Kitchens, bathrooms, trim", "High", "High"],
+                  ["Premium Emulsion", "All rooms — best quality", "High", "Soft"],
+                ].map(([finish, bestFor, washable, sheen], i) => (
+                  <tr key={i} className={i % 2 === 0 ? "bg-white" : "bg-gray-50"}>
+                    <td className="px-4 py-3 font-bold text-gray-900">{finish}</td>
+                    <td className="px-4 py-3 text-gray-600">{bestFor}</td>
+                    <td className="px-4 py-3 text-gray-600">{washable}</td>
+                    <td className="px-4 py-3 text-gray-600">{sheen}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <div className="grid sm:grid-cols-3 gap-4">
+            {[
+              { brand: "Asian Paints Royale", use: "Premium interiors — smooth luxury finish", icon: "⭐" },
+              { brand: "Berger Silk / Breatheasy", use: "Low-VOC, healthy indoor air quality", icon: "🌿" },
+              { brand: "Nerolac Impressions", use: "Budget premium — excellent coverage", icon: "💰" },
+              { brand: "Dulux Velvet Touch", use: "Ultra smooth finish for luxury homes", icon: "✨" },
+              { brand: "JSW Aster", use: "Eco-friendly, washable premium paint", icon: "🌱" },
+              { brand: "Indigo Paints", use: "Superior coverage, unique finishes", icon: "🎨" },
+            ].map((b, i) => (
+              <div key={i} className="bg-white border border-gray-100 rounded-xl p-4 shadow-sm">
+                <span className="text-xl mb-1 block">{b.icon}</span>
+                <p className="font-bold text-xs text-gray-900">{b.brand}</p>
+                <p className="text-xs text-gray-500 mt-1">{b.use}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* COST FACTORS */}
+      <section className="py-16 px-4 bg-white">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-orange-500 text-xs font-bold uppercase tracking-widest mb-2">Cost Guide</p>
+          <h2 className="text-3xl font-black text-gray-900 mb-3">Interior Painting Cost Factors</h2>
+          <p className="text-gray-500 mb-8 text-sm">Painting cost quote karne se pehle ye factors matter karte hain — site visit ke baad exact quote milta hai.</p>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6">
+            {[
+              { factor: "Total Wall Area", icon: "📐", desc: "Larger area = more material + labour" },
+              { factor: "Surface Condition", icon: "🧱", desc: "Cracks, damp, old distemper = more prep work" },
+              { factor: "Putty Layers", icon: "🪣", desc: "1 coat vs 2 coat putty affects cost" },
+              { factor: "Primer Type", icon: "🖌️", desc: "Standard vs stain-block vs damp-proof primer" },
+              { factor: "Paint Brand", icon: "🎨", desc: "Economy vs premium vs luxury brand" },
+              { factor: "Number of Coats", icon: "🔢", desc: "2 coats standard; dark colours may need 3" },
+              { factor: "Ceiling Painting", icon: "⬆️", desc: "Ceiling adds area + height difficulty" },
+              { factor: "Woodwork & Doors", icon: "🚪", desc: "Doors, windows, grills — enamel paint" },
+            ].map((f, i) => (
+              <div key={i} className="bg-gray-50 border border-gray-100 rounded-xl p-4 text-center">
+                <span className="text-2xl mb-2 block">{f.icon}</span>
+                <p className="font-bold text-xs text-gray-900 mb-1">{f.factor}</p>
+                <p className="text-xs text-gray-500">{f.desc}</p>
+              </div>
+            ))}
+          </div>
+          <div className="bg-orange-50 border border-orange-100 rounded-xl p-5">
+            <p className="text-sm text-gray-600 leading-relaxed"><strong className="text-gray-900">Free Site Visit:</strong> Bhairav Painting Service free site inspection provide karta hai — wall area measure karna, surface condition assess karna, aur written quotation dena. Call ya WhatsApp karo — no obligation.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* COMPLETE GUIDE */}
+      <section className="py-16 px-4 bg-gray-50">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-orange-500 text-xs font-bold uppercase tracking-widest mb-2">Complete Guide</p>
+          <h2 className="text-3xl font-black text-gray-900 mb-6">Complete Home Interior Painting Guide</h2>
+          <div className="space-y-6 text-sm leading-relaxed text-gray-600">
+            <div>
+              <h3 className="font-black text-base text-gray-900 mb-2">What is Interior Painting?</h3>
+              <p>Interior painting covers all internal walls, ceilings, doors, windows and woodwork of a home. It involves surface preparation, putty application, priming and two or more coats of premium emulsion paint. Professional interior painting is not only about changing colours — it repairs wall damage, removes old peeling paint, treats damp patches and delivers a smooth, durable finish that lasts 5–7 years.</p>
+            </div>
+            <div>
+              <h3 className="font-black text-base text-gray-900 mb-2">Who Needs Interior Painting?</h3>
+              <p>Interior painting is needed by homeowners who want to refresh their living space, repair damaged walls, modernise outdated interiors, or prepare a newly purchased apartment for occupation. Rental property owners repaint between tenants to increase rental value. Homeowners repaint before festivals, family events or after completing renovation work. New flat owners paint after builder handover to achieve the premium finish they desire.</p>
+            </div>
+            <div>
+              <h3 className="font-black text-base text-gray-900 mb-2">Interior Painting in Mumbai, Thane & Bhiwandi</h3>
+              <p>Homes in Mumbai, Thane and Bhiwandi face specific challenges — high humidity during monsoon causes damp patches and paint peeling, dust from busy roads settles on walls, and the high-rise apartment lifestyle means painting must be done without disrupting daily routines. Bhairav Painting Service has 47+ years of experience working specifically in this region — understanding local climate, building types and resident needs. We work in occupied homes with minimum disruption, protect furniture and flooring, and complete work within the promised timeline.</p>
+            </div>
+            <div>
+              <h3 className="font-black text-base text-gray-900 mb-2">How Long Does Interior Painting Take?</h3>
+              <p>A 1BHK flat typically takes 2–3 days including surface preparation and painting. A 2BHK takes 3–5 days and a 3BHK takes 5–7 days. Villas and larger homes take 7–15 days. Timeline depends on surface condition — heavily damaged or damp walls need additional preparation time. We provide realistic timelines before starting work — no surprises.</p>
+            </div>
+            <div>
+              <h3 className="font-black text-base text-gray-900 mb-2">Material + Labour vs Labour Only</h3>
+              <p>Bhairav Painting Service offers both options. Material + Labour means we supply all paints, putty, primer and materials — you don't need to purchase anything separately. Labour Only means you provide the materials and we provide the skilled workforce. Both options are available — discuss during the free site visit to choose what works best for your budget and requirements.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="py-20 bg-white">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
