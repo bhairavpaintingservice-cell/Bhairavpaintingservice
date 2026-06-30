@@ -566,6 +566,110 @@ export default function ResidentialPaintingPage() {
         </div>
       </section>
 
+      {/* PAINT SELECTION GUIDE */}
+      <section className="py-16 px-4 bg-white">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-orange-500 text-xs font-bold uppercase tracking-widest mb-2">Paint Guide</p>
+          <h2 className="text-3xl font-black text-gray-900 mb-3">Choosing the Right Paint for Every Room</h2>
+          <p className="text-gray-500 mb-8 text-sm">Every room inside a home has different lighting, moisture levels and daily usage. Choosing the right paint finish improves durability, appearance and long-term maintenance.</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {[
+              { room: "Living Room", icon: "🛋️", paint: "Premium Washable Luxury Emulsion", desc: "Smooth and elegant finish. Washable surface for easy cleaning of marks and stains." },
+              { room: "Bedroom", icon: "🛏️", paint: "Low-Odour Matte / Soft Sheen", desc: "Calm and relaxing atmosphere. Low VOC for better indoor air quality." },
+              { room: "Kitchen", icon: "🍳", paint: "Stain-Resistant Washable Paint", desc: "Handles grease and regular cleaning. Semi-gloss or enamel finish recommended." },
+              { room: "Bathroom", icon: "🚿", paint: "Moisture-Resistant + Anti-Fungal", desc: "Prevents damp patches and mold growth in wet areas." },
+              { room: "Kids Room", icon: "🧒", paint: "Low VOC Washable Paint", desc: "Easy to clean after drawings and stains. Child-safe and durable." },
+              { room: "Exterior Walls", icon: "🏠", paint: "Weather-Resistant Exterior Paint", desc: "Withstands heavy rain, humidity and sunlight. UV resistant for long life." },
+            ].map((r, i) => (
+              <div key={i} className="bg-gray-50 border border-gray-100 rounded-xl p-5">
+                <span className="text-2xl mb-2 block">{r.icon}</span>
+                <h3 className="font-black text-sm text-gray-900 mb-1">{r.room}</h3>
+                <p className="text-xs text-orange-600 font-semibold mb-2">{r.paint}</p>
+                <p className="text-xs text-gray-500">{r.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* HOW OFTEN REPAINT */}
+      <section className="py-16 px-4 bg-gray-50">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-orange-500 text-xs font-bold uppercase tracking-widest mb-2">Repainting Guide</p>
+          <h2 className="text-3xl font-black text-gray-900 mb-3">How Often Should You Repaint Your Home?</h2>
+          <p className="text-gray-500 mb-8 text-sm">Early repainting prevents expensive wall repairs in the future.</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+            {[
+              { type: "Interior Walls", freq: "Every 5–7 Years", icon: "🏠", desc: "Depending on wall condition and paint quality used." },
+              { type: "Exterior Walls", freq: "Every 4–6 Years", icon: "🌧️", desc: "Due to sun exposure, pollution and monsoon rain." },
+              { type: "Rental Flats", freq: "After Every Tenant", icon: "🔑", desc: "Fresh paint increases rental value and attracts tenants faster." },
+              { type: "Luxury Homes", freq: "Periodic Touch-ups", icon: "✨", desc: "To maintain premium finishes and appearance." },
+            ].map((r, i) => (
+              <div key={i} className="bg-white border border-gray-100 rounded-xl p-5 text-center shadow-sm">
+                <span className="text-3xl mb-2 block">{r.icon}</span>
+                <h3 className="font-black text-sm text-gray-900 mb-1">{r.type}</h3>
+                <p className="text-orange-500 font-bold text-sm mb-2">{r.freq}</p>
+                <p className="text-xs text-gray-500">{r.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* COMMON MISTAKES */}
+      <section className="py-16 px-4 bg-blue-950 text-white">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-orange-400 text-xs font-bold uppercase tracking-widest mb-2">Avoid These</p>
+          <h2 className="text-3xl font-black text-white mb-3">Common Mistakes Homeowners Make Before Painting</h2>
+          <p className="text-blue-200 mb-8 text-sm">Many homeowners unknowingly reduce the life of their new paint by skipping proper preparation.</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+            {[
+              { mistake: "Painting Over Damp Walls", fix: "Treat moisture source first — then paint." },
+              { mistake: "Ignoring Wall Cracks", fix: "Fill and seal all cracks before painting." },
+              { mistake: "Choosing Paint Only by Price", fix: "Quality paint lasts 2x longer — saves money." },
+              { mistake: "Skipping Primer", fix: "Primer improves adhesion and finish quality." },
+              { mistake: "Hiring Untrained Painters", fix: "Experience matters — poor work means early peeling." },
+              { mistake: "Wrong Finish for Kitchen/Bathroom", fix: "Use moisture-resistant paint in wet areas." },
+            ].map((m, i) => (
+              <div key={i} className="bg-white/10 border border-white/20 rounded-xl p-4">
+                <p className="text-red-400 font-bold text-xs mb-1">❌ {m.mistake}</p>
+                <p className="text-green-400 text-xs">✓ {m.fix}</p>
+              </div>
+            ))}
+          </div>
+          <div className="bg-white/10 rounded-xl p-5 border border-white/20">
+            <p className="text-sm text-blue-100 leading-relaxed">Professional inspection before painting helps avoid these costly mistakes. Bhairav Painting Service provides <strong className="text-white">free site visit + surface assessment</strong> before every project — no charges, no obligation.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* MAINTENANCE GUIDE */}
+      <section className="py-16 px-4 bg-white">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-orange-500 text-xs font-bold uppercase tracking-widest mb-2">Maintenance Guide</p>
+          <h2 className="text-3xl font-black text-gray-900 mb-3">Residential Painting Maintenance Guide</h2>
+          <p className="text-gray-500 mb-8 text-sm">After painting, proper maintenance helps keep walls looking fresh for years.</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+            {[
+              { tip: "Clean stains with a soft damp cloth", icon: "🧽" },
+              { tip: "Fix water leakage immediately", icon: "💧" },
+              { tip: "Avoid drilling unnecessary holes", icon: "🔩" },
+              { tip: "Repair cracks before repainting", icon: "🧱" },
+              { tip: "Schedule periodic exterior wall inspection", icon: "🔍" },
+              { tip: "Use mild cleaners — avoid harsh chemicals", icon: "🧴" },
+            ].map((t, i) => (
+              <div key={i} className="flex gap-3 bg-gray-50 border border-gray-100 rounded-xl p-4">
+                <span className="text-2xl shrink-0">{t.icon}</span>
+                <p className="text-sm text-gray-700 font-medium">{t.tip}</p>
+              </div>
+            ))}
+          </div>
+          <div className="bg-orange-50 border border-orange-100 rounded-xl p-5">
+            <p className="text-sm text-gray-600 leading-relaxed">Regular maintenance extends paint life and reduces future repair costs. <strong className="text-gray-900">Bhairav Painting Service</strong> provides annual inspection and touch-up services for existing clients — call or WhatsApp to schedule.</p>
+          </div>
+        </div>
+      </section>
+
       {/* 14. FAQ */}
       <section className="py-20 bg-white">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
