@@ -522,13 +522,12 @@ export default function ResidentialPaintingPage() {
           <p className="text-gray-500 mb-8 text-sm">Early repainting prevents expensive wall repairs in the future.</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
             {[
-              { type: "Interior Walls", freq: "Every 5–7 Years", icon: "🏠", desc: "Depending on wall condition and paint quality used." },
-              { type: "Exterior Walls", freq: "Every 4–6 Years", icon: "🌧️", desc: "Due to sun exposure, pollution and monsoon rain." },
-              { type: "Rental Flats", freq: "After Every Tenant", icon: "🔑", desc: "Fresh paint increases rental value and attracts tenants faster." },
-              { type: "Luxury Homes", freq: "Periodic Touch-ups", icon: "✨", desc: "To maintain premium finishes and appearance." },
+              { type: "Interior Walls", freq: "Every 5–7 Years", desc: "Depending on wall condition and paint quality used." },
+              { type: "Exterior Walls", freq: "Every 4–6 Years", desc: "Due to sun exposure, pollution and monsoon rain." },
+              { type: "Rental Flats", freq: "After Every Tenant", desc: "Fresh paint increases rental value and attracts tenants faster." },
+              { type: "Luxury Homes", freq: "Periodic Touch-ups", desc: "To maintain premium finishes and appearance." },
             ].map((r, i) => (
               <div key={i} className="bg-white border border-gray-100 rounded-xl p-5 text-center shadow-sm">
-                <span className="text-3xl mb-2 block">{r.icon}</span>
                 <h3 className="font-black text-sm text-gray-900 mb-1">{r.type}</h3>
                 <p className="text-orange-500 font-bold text-sm mb-2">{r.freq}</p>
                 <p className="text-xs text-gray-500">{r.desc}</p>
