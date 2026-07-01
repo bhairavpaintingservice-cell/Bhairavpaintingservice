@@ -199,6 +199,9 @@ export default function ResidentialPaintingPage() {
                 <div className="relative h-40 overflow-hidden">
                   <img src={p.img} alt={`${p.title} - Residential painting problem Mumbai Thane Bhiwandi`} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy"/>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"/>
+                  <div className="absolute inset-0 bg-[#1B2B8A]/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <span className="bg-orange-500 text-white px-3 py-1.5 rounded-lg text-xs font-bold">View More →</span>
+                  </div>
                   <div className="absolute bottom-3 left-3 flex items-center gap-2">
                     <span className="text-xl">{p.icon}</span>
                     <h3 className="font-bold text-sm text-white">{p.title}</h3>
@@ -372,9 +375,12 @@ export default function ResidentialPaintingPage() {
           <p className="mt-3 text-sm" style={{color:"#6b7280"}}>Real residential painting projects completed across Mumbai, Thane & Bhiwandi.</p>
           <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {beforeAfter.map((item, i) => (
-              <div key={i} className="overflow-hidden rounded-xl bg-white shadow-sm">
+              <div key={i} className="group overflow-hidden rounded-xl bg-white shadow-sm">
                 <div className="relative h-52">
-                  <Image src={item.image} alt={`${item.property} painting ${item.location}`} fill className="object-cover" />
+                  <Image src={item.image} alt={`${item.property} painting ${item.location}`} fill className="object-cover group-hover:scale-105 transition-transform duration-300" />
+                  <div className="absolute inset-0 bg-[#1B2B8A]/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <span className="bg-orange-500 text-white px-3 py-1.5 rounded-lg text-xs font-bold">View More →</span>
+                  </div>
                 </div>
                 <div className="p-4">
                   <p className="font-bold text-sm" style={{color:"#1B2B8A"}}>{item.property} — {item.location}</p>
