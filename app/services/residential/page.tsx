@@ -251,15 +251,14 @@ export default function ResidentialPaintingPage() {
           <p className="text-gray-500 mb-8 text-sm">Har room ka environment alag hota hai — isliye same paint har jagah suitable nahi hota.</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {[
-              { icon: "🛋️", room: "Living Room", paint: "Asian Paints Royale / Berger Silk", desc: "Elegant colours aur premium washable finishes jo guests par achha first impression create kare. Smooth finish, stain resistant." },
-              { icon: "🛏️", room: "Bedroom", paint: "Low-VOC Smooth Finish", desc: "Low-odour, smooth finish aur relaxing colour combinations for comfortable living. Primer + 2 coats premium paint." },
-              { icon: "🍳", room: "Kitchen", paint: "Stain-Resistant Enamel", desc: "Grease aur daily cleaning handle karne wala easy-to-clean paint system. Semi-gloss ya enamel finish recommended." },
-              { icon: "🧒", room: "Kids Room", paint: "Low VOC Washable Paint", desc: "Bright colours, low VOC paints aur washable finishes. Child-safe, easy to clean, durable against scribbles." },
-              { icon: "⬆️", room: "Ceiling", paint: "White Ceiling Paint", desc: "Crack repair, stain blocking primer aur uniform matte finish for clean-looking ceilings. Yellow stains bhi cover hote hain." },
-              { icon: "🚿", room: "Bathroom & Wet Areas", paint: "Moisture-Resistant Paint", desc: "Moisture resistant, anti-fungal coating jo bathroom walls ko damp aur mold se protect kare." },
+              { room: "Living Room", paint: "Asian Paints Royale / Berger Silk", desc: "Elegant colours aur premium washable finishes jo guests par achha first impression create kare. Smooth finish, stain resistant." },
+              { room: "Bedroom", paint: "Low-VOC Smooth Finish", desc: "Low-odour, smooth finish aur relaxing colour combinations for comfortable living. Primer + 2 coats premium paint." },
+              { room: "Kitchen", paint: "Stain-Resistant Enamel", desc: "Grease aur daily cleaning handle karne wala easy-to-clean paint system. Semi-gloss ya enamel finish recommended." },
+              { room: "Kids Room", paint: "Low VOC Washable Paint", desc: "Bright colours, low VOC paints aur washable finishes. Child-safe, easy to clean, durable against scribbles." },
+              { room: "Ceiling", paint: "White Ceiling Paint", desc: "Crack repair, stain blocking primer aur uniform matte finish for clean-looking ceilings. Yellow stains bhi cover hote hain." },
+              { room: "Bathroom & Wet Areas", paint: "Moisture-Resistant Paint", desc: "Moisture resistant, anti-fungal coating jo bathroom walls ko damp aur mold se protect kare." },
             ].map((r, i) => (
               <div key={i} className="bg-gray-50 border border-gray-100 rounded-2xl p-5">
-                <span className="text-3xl mb-3 block">{r.icon}</span>
                 <h3 className="font-black text-sm text-gray-900 mb-1">{r.room}</h3>
                 <p className="text-xs text-orange-600 font-semibold mb-2">Recommended: {r.paint}</p>
                 <p className="text-xs text-gray-600 leading-relaxed">{r.desc}</p>
