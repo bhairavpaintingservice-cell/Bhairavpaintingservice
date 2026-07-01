@@ -222,24 +222,21 @@ export default function ResidentialPaintingPage() {
           <p className="text-orange-500 text-xs font-bold uppercase tracking-widest mb-2">Property Types</p>
           <h2 className="text-3xl font-black text-gray-900 mb-3">Residential Painting for Every Home Type</h2>
           <p className="text-gray-500 mb-8 text-sm">Har ghar ka painting requirement alag hota hai — size, condition aur family needs ke hisaab se solution alag hoga.</p>
-          <div className="space-y-4">
+          <div className="divide-y divide-gray-100 border border-gray-100 rounded-2xl overflow-hidden bg-white">
             {[
-              { title: "1 BHK Flat Painting", icon: "🏠", desc: "Compact flats ke liye fast execution, furniture protection aur minimum disruption ke saath complete interior repainting. 2-3 din mein complete. Living room + bedroom + kitchen + bathroom walls.", tag: "2–3 Days" },
-              { title: "2 BHK Flat Painting", icon: "🏡", desc: "Mumbai aur Thane mein sabse common residential painting requirement. Living room, 2 bedrooms, kitchen aur ceiling ke liye complete painting solutions — putty, primer aur premium paint.", tag: "3–5 Days" },
-              { title: "3 BHK Apartment Painting", icon: "🏢", desc: "Large apartments ke liye premium finishes, accent walls aur complete interior painting with proper surface preparation. Designer walls bhi available — accent walls, texture finishes.", tag: "5–7 Days" },
-              { title: "Villa & Bungalow Painting", icon: "🏛️", desc: "Luxury homes ke liye interior, exterior, balcony, compound wall aur premium weather-resistant coatings. Multiple floors, custom colour schemes aur premium paint brands.", tag: "7–15 Days" },
-              { title: "Independent House Painting", icon: "🏘️", desc: "Complete house repainting including interior rooms, exterior walls, gates, railings aur boundary walls. Old houses ke liye proper surface treatment aur crack repair bhi.", tag: "5–10 Days" },
-              { title: "Rental Flat Repainting", icon: "🔑", desc: "Quick turnaround painting taaki property jaldi rent par ya resale ke liye ready ho sake. Economical paint options, fast drying aur minimum disruption.", tag: "1–3 Days" },
+              { title: "1 BHK Flat Painting", desc: "Compact flats ke liye fast execution, furniture protection aur minimum disruption ke saath complete interior repainting. 2-3 din mein complete. Living room + bedroom + kitchen + bathroom walls.", tag: "2–3 Days" },
+              { title: "2 BHK Flat Painting", desc: "Mumbai aur Thane mein sabse common residential painting requirement. Living room, 2 bedrooms, kitchen aur ceiling ke liye complete painting solutions — putty, primer aur premium paint.", tag: "3–5 Days" },
+              { title: "3 BHK Apartment Painting", desc: "Large apartments ke liye premium finishes, accent walls aur complete interior painting with proper surface preparation. Designer walls bhi available — accent walls, texture finishes.", tag: "5–7 Days" },
+              { title: "Villa & Bungalow Painting", desc: "Luxury homes ke liye interior, exterior, balcony, compound wall aur premium weather-resistant coatings. Multiple floors, custom colour schemes aur premium paint brands.", tag: "7–15 Days" },
+              { title: "Independent House Painting", desc: "Complete house repainting including interior rooms, exterior walls, gates, railings aur boundary walls. Old houses ke liye proper surface treatment aur crack repair bhi.", tag: "5–10 Days" },
+              { title: "Rental Flat Repainting", desc: "Quick turnaround painting taaki property jaldi rent par ya resale ke liye ready ho sake. Economical paint options, fast drying aur minimum disruption.", tag: "1–3 Days" },
             ].map((s, i) => (
-              <div key={i} className="bg-white border border-gray-100 rounded-2xl p-5 shadow-sm flex gap-4 items-start">
-                <span className="text-3xl shrink-0">{s.icon}</span>
+              <div key={i} className="flex items-start justify-between gap-4 px-5 py-4 hover:bg-gray-50 transition-colors">
                 <div className="flex-1">
-                  <div className="flex items-center gap-3 mb-2 flex-wrap">
-                    <h3 className="font-black text-base text-gray-900">{s.title}</h3>
-                    <span className="bg-orange-100 text-orange-600 text-xs font-bold px-3 py-0.5 rounded-full">{s.tag}</span>
-                  </div>
-                  <p className="text-sm text-gray-600 leading-relaxed">{s.desc}</p>
+                  <h3 className="font-bold text-sm text-gray-900 mb-1">{s.title}</h3>
+                  <p className="text-xs text-gray-500 leading-relaxed">{s.desc}</p>
                 </div>
+                <span className="shrink-0 bg-orange-100 text-orange-600 text-xs font-bold px-3 py-1 rounded-full whitespace-nowrap">{s.tag}</span>
               </div>
             ))}
           </div>
