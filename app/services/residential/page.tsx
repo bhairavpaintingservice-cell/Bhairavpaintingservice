@@ -158,7 +158,7 @@ export default function ResidentialPaintingPage() {
                 <div className="relative h-40 w-full overflow-hidden">
                   <Image src={s.image} alt={`${s.title} in Mumbai Thane Bhiwandi - Bhairav Painting Service`} fill className="object-cover group-hover:scale-105 transition-transform duration-300" />
                   <div className="absolute inset-0 bg-[#1B2B8A]/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <span className="bg-orange-500 text-white px-3 py-1.5 rounded-lg text-xs font-bold">View More →</span>
+                    <a href="#contact" className="bg-orange-500 text-white px-3 py-1.5 rounded-lg text-xs font-bold">View More →</a>
                   </div>
                 </div>
                 <div className="p-4">
@@ -200,7 +200,7 @@ export default function ResidentialPaintingPage() {
                   <img src={p.img} alt={`${p.title} - Residential painting problem Mumbai Thane Bhiwandi`} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy"/>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"/>
                   <div className="absolute inset-0 bg-[#1B2B8A]/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <span className="bg-orange-500 text-white px-3 py-1.5 rounded-lg text-xs font-bold">View More →</span>
+                    <a href="#contact" className="bg-orange-500 text-white px-3 py-1.5 rounded-lg text-xs font-bold">View More →</a>
                   </div>
                   <div className="absolute bottom-3 left-3 flex items-center gap-2">
                     <span className="text-xl">{p.icon}</span>
@@ -379,7 +379,7 @@ export default function ResidentialPaintingPage() {
                 <div className="relative h-52">
                   <Image src={item.image} alt={`${item.property} painting ${item.location}`} fill className="object-cover group-hover:scale-105 transition-transform duration-300" />
                   <div className="absolute inset-0 bg-[#1B2B8A]/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <span className="bg-orange-500 text-white px-3 py-1.5 rounded-lg text-xs font-bold">View More →</span>
+                    <a href="#contact" className="bg-orange-500 text-white px-3 py-1.5 rounded-lg text-xs font-bold">View More →</a>
                   </div>
                 </div>
                 <div className="p-4">
