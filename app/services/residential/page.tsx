@@ -276,7 +276,7 @@ export default function ResidentialPaintingPage() {
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-5xl mx-auto">
           <p className="text-orange-500 text-xs font-bold uppercase tracking-widest mb-2">Interior Solutions</p>
-          <h2 className="text-3xl font-black text-gray-900 mb-3">Interior Painting Problems We Solve</h2>
+          <h2 className="text-3xl font-black text-gray-900 mb-3">Residential Painting Problems We Solve</h2>
           <p className="text-gray-500 mb-8 text-sm">Residential painting sirf colour change karna nahi hota — proper surface treatment zaroori hai.</p>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 mb-8">
             {["Paint Peeling","Damp Walls","Ceiling Stains","Hairline Cracks","Uneven Old Paint","Nail Holes","Smoke Stains","Kitchen Grease Marks","Faded Colours","Poor Previous Finish"].map((p, i) => (
