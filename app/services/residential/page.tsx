@@ -302,13 +302,12 @@ export default function ResidentialPaintingPage() {
           <p className="text-gray-500 mb-8 text-sm">Har painting project same nahi hota — requirement ke hisaab se process aur cost dono alag hote hain.</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {[
-              { type: "New Flat", icon: "🏗️", color: "border-blue-200 bg-blue-50", tag: "bg-blue-100 text-blue-700", steps: ["Builder wall correction","Putty touch-up","Primer application","Premium 2-coat finish","Final inspection"] },
-              { type: "Repainting", icon: "🔄", color: "border-orange-200 bg-orange-50", tag: "bg-orange-100 text-orange-700", steps: ["Old paint assessment","Surface cleaning","Crack & hole repair","Fresh putty + primer","New colour application"] },
-              { type: "Rental Flat", icon: "🔑", color: "border-green-200 bg-green-50", tag: "bg-green-100 text-green-700", steps: ["Fast execution","Economical paints","Basic surface prep","Quick dry finish","Ready to rent in 2-3 days"] },
-              { type: "Luxury Home", icon: "✨", color: "border-purple-200 bg-purple-50", tag: "bg-purple-100 text-purple-700", steps: ["Premium paint brands","Designer accent walls","Texture finishes","Custom colour scheme","Extended warranty"] },
+              { type: "New Flat", color: "border-blue-200 bg-blue-50", tag: "bg-blue-100 text-blue-700", steps: ["Builder wall correction","Putty touch-up","Primer application","Premium 2-coat finish","Final inspection"] },
+              { type: "Repainting", color: "border-orange-200 bg-orange-50", tag: "bg-orange-100 text-orange-700", steps: ["Old paint assessment","Surface cleaning","Crack & hole repair","Fresh putty + primer","New colour application"] },
+              { type: "Rental Flat", color: "border-green-200 bg-green-50", tag: "bg-green-100 text-green-700", steps: ["Fast execution","Economical paints","Basic surface prep","Quick dry finish","Ready to rent in 2-3 days"] },
+              { type: "Luxury Home", color: "border-purple-200 bg-purple-50", tag: "bg-purple-100 text-purple-700", steps: ["Premium paint brands","Designer accent walls","Texture finishes","Custom colour scheme","Extended warranty"] },
             ].map((g, i) => (
               <div key={i} className={`border ${g.color} rounded-2xl p-5`}>
-                <span className="text-3xl mb-2 block">{g.icon}</span>
                 <span className={`inline-block text-xs font-bold px-3 py-1 rounded-full mb-3 ${g.tag}`}>{g.type}</span>
                 <ul className="space-y-1.5">
                   {g.steps.map((s, j) => (
