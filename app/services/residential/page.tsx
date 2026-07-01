@@ -251,17 +251,21 @@ export default function ResidentialPaintingPage() {
           <p className="text-gray-500 mb-8 text-sm">Har room ka environment alag hota hai — isliye same paint har jagah suitable nahi hota.</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {[
-              { room: "Living Room", paint: "Asian Paints Royale / Berger Silk", desc: "Elegant colours aur premium washable finishes jo guests par achha first impression create kare. Smooth finish, stain resistant." },
-              { room: "Bedroom", paint: "Low-VOC Smooth Finish", desc: "Low-odour, smooth finish aur relaxing colour combinations for comfortable living. Primer + 2 coats premium paint." },
-              { room: "Kitchen", paint: "Stain-Resistant Enamel", desc: "Grease aur daily cleaning handle karne wala easy-to-clean paint system. Semi-gloss ya enamel finish recommended." },
-              { room: "Kids Room", paint: "Low VOC Washable Paint", desc: "Bright colours, low VOC paints aur washable finishes. Child-safe, easy to clean, durable against scribbles." },
-              { room: "Ceiling", paint: "White Ceiling Paint", desc: "Crack repair, stain blocking primer aur uniform matte finish for clean-looking ceilings. Yellow stains bhi cover hote hain." },
-              { room: "Bathroom & Wet Areas", paint: "Moisture-Resistant Paint", desc: "Moisture resistant, anti-fungal coating jo bathroom walls ko damp aur mold se protect kare." },
+              { room: "Living Room", paint: "Asian Paints Royale / Berger Silk", desc: "Elegant colours aur premium washable finishes jo guests par achha first impression create kare. Smooth finish, stain resistant.", img: "/images/residential/room-living.jpg" },
+              { room: "Bedroom", paint: "Low-VOC Smooth Finish", desc: "Low-odour, smooth finish aur relaxing colour combinations for comfortable living. Primer + 2 coats premium paint.", img: "/images/residential/room-bedroom.jpg" },
+              { room: "Kitchen", paint: "Stain-Resistant Enamel", desc: "Grease aur daily cleaning handle karne wala easy-to-clean paint system. Semi-gloss ya enamel finish recommended.", img: "/images/residential/room-kitchen.jpg" },
+              { room: "Kids Room", paint: "Low VOC Washable Paint", desc: "Bright colours, low VOC paints aur washable finishes. Child-safe, easy to clean, durable against scribbles.", img: "/images/residential/room-kids.jpg" },
+              { room: "Ceiling", paint: "White Ceiling Paint", desc: "Crack repair, stain blocking primer aur uniform matte finish for clean-looking ceilings. Yellow stains bhi cover hote hain.", img: "/images/residential/room-ceiling.jpg" },
+              { room: "Bathroom & Wet Areas", paint: "Moisture-Resistant Paint", desc: "Moisture resistant, anti-fungal coating jo bathroom walls ko damp aur mold se protect kare.", img: "/images/residential/room-bathroom.jpg" },
             ].map((r, i) => (
-              <div key={i} className="bg-gray-50 border border-gray-100 rounded-2xl p-5">
-                <h3 className="font-black text-sm text-gray-900 mb-1">{r.room}</h3>
-                <p className="text-xs text-orange-600 font-semibold mb-2">Recommended: {r.paint}</p>
-                <p className="text-xs text-gray-600 leading-relaxed">{r.desc}</p>
+              <div key={i} className="relative rounded-2xl overflow-hidden h-56 group">
+                <img src={r.img} alt={r.room} className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-4">
+                  <h3 className="font-black text-sm text-white mb-0.5">{r.room}</h3>
+                  <p className="text-xs text-orange-300 font-semibold mb-1">Recommended: {r.paint}</p>
+                  <p className="text-xs text-white/80 leading-relaxed">{r.desc}</p>
+                </div>
               </div>
             ))}
           </div>
