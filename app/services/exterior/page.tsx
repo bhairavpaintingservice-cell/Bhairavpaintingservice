@@ -338,6 +338,206 @@ export default function ExteriorPaintingPage() {
         </div>
       </section>
 
+      {/* COMMON PROBLEMS */}
+      <section className="py-16 px-4 bg-white">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-orange-500 text-xs font-bold uppercase tracking-widest mb-2">Problems We Solve</p>
+          <h2 className="text-3xl font-black text-gray-900 mb-3">Common Exterior Wall Problems We Solve</h2>
+          <p className="text-gray-500 mb-8 text-sm">Mumbai, Thane aur Bhiwandi ki buildings ke exterior walls monsoon, heat aur pollution se constantly damage hote hain. Proper treatment ke bina yeh problems badh jaati hain.</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            {[
+              { problem: "Rain Damage & Water Seepage", icon: "🌧️", cause: "Heavy monsoon rain cracks ke through seep karta hai — damp interior walls aur ceiling stains.", solution: "Crack filling + waterproof primer + weatherproof exterior coat." },
+              { problem: "UV Fading & Colour Loss", icon: "☀️", cause: "Direct sunlight se paint pigments fade hote hain — walls dull aur patchy dikhte hain.", solution: "UV resistant exterior paint — Asian Paints Apex ya Berger WeatherCoat." },
+              { problem: "Paint Peeling & Flaking", icon: "🎨", cause: "Poor surface prep, moisture ya aged paint jo bond loose kar deta hai.", solution: "Full scraping + crack repair + primer + fresh weatherproof coat." },
+              { problem: "Wall Cracks", icon: "🧱", cause: "Settlement, thermal expansion aur old plaster ki wajah se cracks develop hote hain.", solution: "Polymer crack filler + flexible primer + elastomeric coating." },
+              { problem: "Algae & Fungal Growth", icon: "🌿", cause: "Humid Mumbai climate mein green/black algae walls pe grow karta hai.", solution: "Anti-fungal wash + algae-resistant exterior paint." },
+              { problem: "Efflorescence (White Deposits)", icon: "⬜", cause: "Salt minerals water ke saath surface pe aate hain — white chalky patches.", solution: "Efflorescence treatment + waterproof primer + exterior paint." },
+              { problem: "Dust & Pollution Stains", icon: "🏭", cause: "Mumbai ki heavy traffic se dust aur pollution walls pe settle ho jaata hai.", solution: "Power washing + dirt-repellent exterior coating." },
+              { problem: "Old Textured Finish Damage", icon: "🏚️", cause: "Old sand texture ya rough finish jo time ke saath crack ya fall hone lagti hai.", solution: "Old texture removal + smooth primer + fresh weatherproof finish." },
+            ].map((p, i) => (
+              <div key={i} className="bg-gray-50 border border-gray-100 rounded-xl p-5">
+                <div className="flex items-center gap-3 mb-3">
+                  <span className="text-2xl">{p.icon}</span>
+                  <h3 className="font-black text-sm text-gray-900">{p.problem}</h3>
+                </div>
+                <p className="text-xs text-red-500 mb-1"><strong>Cause:</strong> {p.cause}</p>
+                <p className="text-xs text-green-600"><strong>Solution:</strong> {p.solution}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SURFACE PREPARATION */}
+      <section className="py-16 px-4 bg-blue-950 text-white">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-orange-400 text-xs font-bold uppercase tracking-widest mb-2">Why It Matters</p>
+          <h2 className="text-3xl font-black text-white mb-3">Why Proper Surface Preparation Matters</h2>
+          <p className="text-blue-200 mb-8 text-sm">Exterior painting mein 80% quality surface preparation se aati hai — paint se nahi. Poor prep = paint fails in 1-2 years.</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-8">
+            {[
+              { step: "Surface Inspection", icon: "🔍", desc: "Cracks, algae, peeling paint, efflorescence aur moisture entry points identify kiye jaate hain. Bina proper inspection ke painting nahi shuru hoti." },
+              { step: "Cleaning & Washing", icon: "🧹", desc: "Old dust, algae aur loose paint high-pressure washing ya manual scraping se remove ki jaati hai — fresh surface tayyar hoti hai." },
+              { step: "Crack Filling", icon: "🧱", desc: "Saare cracks polymer filler se seal kiye jaate hain. Cracks ke through paani andar nahi aa sakta — waterproofing improve hoti hai." },
+              { step: "Anti-Fungal Treatment", icon: "🌿", desc: "Algae aur fungus prone areas pe anti-fungal solution apply hota hai — future growth prevent hoti hai." },
+              { step: "Primer Application", icon: "🖌️", desc: "Weatherproof primer paint adhesion improve karta hai, moisture barrier banata hai aur final colour vibrant aata hai." },
+              { step: "2 Coat Exterior Paint", icon: "✅", desc: "Premium weatherproof exterior paint 2 coats mein apply hoti hai — UV resistance, rain protection aur 5-7 year durability." },
+            ].map((s, i) => (
+              <div key={i} className="bg-white/10 border border-white/20 rounded-xl p-5">
+                <span className="text-2xl mb-2 block">{s.icon}</span>
+                <h3 className="font-black text-sm text-white mb-2">{s.step}</h3>
+                <p className="text-xs text-blue-200 leading-relaxed">{s.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* PAINT FINISH GUIDE */}
+      <section className="py-16 px-4 bg-gray-50">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-orange-500 text-xs font-bold uppercase tracking-widest mb-2">Paint Finish Guide</p>
+          <h2 className="text-3xl font-black text-gray-900 mb-3">Choosing the Right Exterior Paint Finish</h2>
+          <p className="text-gray-500 mb-8 text-sm">Mumbai ke climate ke hisaab se sahi exterior finish choose karna important hai — durability 2x ho jaati hai.</p>
+          <div className="overflow-x-auto rounded-2xl border border-gray-100 shadow-sm mb-6">
+            <table className="w-full text-xs">
+              <thead style={{background:"#1B2B8A"}} className="text-white">
+                <tr>
+                  <th className="px-4 py-3 text-left font-bold">Finish Type</th>
+                  <th className="px-4 py-3 text-left font-bold">Best For</th>
+                  <th className="px-4 py-3 text-left font-bold">Rain Resistance</th>
+                  <th className="px-4 py-3 text-left font-bold">Lifespan</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  ["Exterior Emulsion", "General exterior walls", "Good", "3–5 years"],
+                  ["Weatherproof Paint", "Mumbai monsoon areas", "Excellent", "5–7 years"],
+                  ["Elastomeric Coating", "Cracked walls, movement areas", "Excellent", "7–10 years"],
+                  ["Texture Finish", "Decorative + protection", "Good", "5–8 years"],
+                  ["Acrylic Finish", "Smooth modern look", "Good", "4–6 years"],
+                  ["Anti-Fungal Coat", "Humid, shaded walls", "Very Good", "5–7 years"],
+                ].map(([finish, bestFor, rain, life], i) => (
+                  <tr key={i} className={i % 2 === 0 ? "bg-white" : "bg-gray-50"}>
+                    <td className="px-4 py-3 font-bold text-gray-900">{finish}</td>
+                    <td className="px-4 py-3 text-gray-600">{bestFor}</td>
+                    <td className="px-4 py-3 text-gray-600">{rain}</td>
+                    <td className="px-4 py-3 text-orange-600 font-semibold">{life}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <div className="grid sm:grid-cols-3 gap-4">
+            {[
+              { brand: "Asian Paints Apex", use: "Best selling weatherproof — 7 year guarantee", icon: "⭐" },
+              { brand: "Berger WeatherCoat", use: "Excellent rain + UV resistance", icon: "🌧️" },
+              { brand: "Nerolac Excel", use: "Anti-fungal + weatherproof combo", icon: "🌿" },
+              { brand: "Dulux Weathershield", use: "Premium — extreme weather protection", icon: "✨" },
+              { brand: "JSW Aster Exterior", use: "Eco-friendly weatherproof coating", icon: "🌱" },
+              { brand: "Indigo Exterior", use: "Superior coverage + UV protection", icon: "🎨" },
+            ].map((b, i) => (
+              <div key={i} className="bg-white border border-gray-100 rounded-xl p-4 shadow-sm">
+                <span className="text-xl mb-1 block">{b.icon}</span>
+                <p className="font-bold text-xs text-gray-900">{b.brand}</p>
+                <p className="text-xs text-gray-500 mt-1">{b.use}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* LOCAL CLIMATE */}
+      <section className="py-16 px-4 bg-white">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-orange-500 text-xs font-bold uppercase tracking-widest mb-2">Local Expertise</p>
+          <h2 className="text-3xl font-black text-gray-900 mb-3">Why Mumbai's Climate Demands Special Exterior Painting</h2>
+          <p className="text-gray-500 mb-8 text-sm">Mumbai, Thane aur Bhiwandi ka climate exterior walls ke liye India ke sabse challenging environments mein se ek hai.</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-6">
+            {[
+              { icon: "🌧️", factor: "Heavy Monsoon Rain", stat: "2,500mm+/year", desc: "Mumbai annually 2,500mm+ rainfall receive karta hai. Exterior walls pe extreme water pressure aata hai — poor painting 1 monsoon mein fail ho jaati hai." },
+              { icon: "💧", factor: "High Humidity", stat: "80–95%", desc: "Monsoon ke dauran humidity 80-95% tak rehti hai. Humid conditions mein algae aur fungus tezi se grow karte hain — anti-fungal coatings zaroori hain." },
+              { icon: "☀️", factor: "Extreme UV", stat: "300+ sunny days", desc: "300+ sunny days ke saath UV radiation paint pigments ko fade karta hai. UV resistant coatings long-term colour retain karte hain." },
+              { icon: "🌊", factor: "Coastal Salt Air", stat: "Mumbai coast", desc: "Coastal areas mein salt-laden air concrete aur steel ko corrode karta hai — weather resistant coatings specially formulated honi chahiye." },
+              { icon: "🔄", factor: "Thermal Cycling", stat: "20°C–40°C", desc: "Temperature extremes se concrete expand aur contract karta hai — elastomeric coatings is movement ko handle kar sakte hain bina cracking ke." },
+              { icon: "🏭", factor: "Dust & Pollution", stat: "High traffic areas", desc: "Mumbai ki heavy traffic dust aur pollution produce karta hai jo walls pe settle hoti hai. Dirt-repellent coatings cleaning frequency reduce karte hain." },
+            ].map((c, i) => (
+              <div key={i} className="bg-gray-50 border border-gray-100 rounded-2xl p-5">
+                <span className="text-3xl mb-2 block">{c.icon}</span>
+                <div className="flex items-center gap-2 mb-2">
+                  <h3 className="font-black text-sm text-gray-900">{c.factor}</h3>
+                  <span className="bg-orange-100 text-orange-600 text-xs font-bold px-2 py-0.5 rounded-full">{c.stat}</span>
+                </div>
+                <p className="text-xs text-gray-600 leading-relaxed">{c.desc}</p>
+              </div>
+            ))}
+          </div>
+          <div className="bg-blue-950 text-white rounded-2xl p-6">
+            <p className="text-sm leading-relaxed"><strong className="text-orange-400">Waterproofing + Painting:</strong> Exterior painting aur waterproofing dono ek saath karna cost-effective hai. Jab hum exterior paint karte hain, us time crack filling aur waterproof primer apply karna painting ki durability 2x kar deta hai. Bhairav Painting Service dono services ek hi visit mein provide karta hai — no separate contractors needed.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* COST FACTORS */}
+      <section className="py-16 px-4 bg-gray-50">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-orange-500 text-xs font-bold uppercase tracking-widest mb-2">Cost Guide</p>
+          <h2 className="text-3xl font-black text-gray-900 mb-3">Factors That Affect Exterior Painting Cost</h2>
+          <p className="text-gray-500 mb-8 text-sm">Site visit ke baad exact quote milta hai — yeh factors cost determine karte hain.</p>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6">
+            {[
+              { factor: "Total Wall Area", icon: "📐", desc: "Exterior sq ft measurement" },
+              { factor: "Surface Condition", icon: "🧱", desc: "Cracks, algae, old paint condition" },
+              { factor: "Building Height", icon: "🏢", desc: "Higher floors = scaffolding cost" },
+              { factor: "Scaffolding", icon: "🏗️", desc: "Required for G+2 and above" },
+              { factor: "Paint Brand", icon: "🎨", desc: "Economy vs premium vs luxury" },
+              { factor: "Waterproofing", icon: "💧", desc: "If crack filling + waterproof primer needed" },
+              { factor: "Number of Coats", icon: "🔢", desc: "Standard 2 coats vs additional coat" },
+              { factor: "Surface Prep Level", icon: "🔧", desc: "Algae removal, old paint scraping" },
+            ].map((f, i) => (
+              <div key={i} className="bg-white border border-gray-100 rounded-xl p-4 text-center shadow-sm">
+                <span className="text-2xl mb-2 block">{f.icon}</span>
+                <p className="font-bold text-xs text-gray-900 mb-1">{f.factor}</p>
+                <p className="text-xs text-gray-500">{f.desc}</p>
+              </div>
+            ))}
+          </div>
+          <div className="bg-orange-50 border border-orange-100 rounded-xl p-5">
+            <p className="text-sm text-gray-600 leading-relaxed"><strong className="text-gray-900">Free Site Visit:</strong> Bhairav Painting Service free exterior inspection provide karta hai — wall area measure karna, surface condition assess karna, scaffolding requirement estimate karna aur written quotation dena. Call ya WhatsApp karo — no obligation.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* COMPLETE GUIDE */}
+      <section className="py-16 px-4 bg-white">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-orange-500 text-xs font-bold uppercase tracking-widest mb-2">Complete Guide</p>
+          <h2 className="text-3xl font-black text-gray-900 mb-6">Complete Guide to Exterior Home Painting</h2>
+          <div className="space-y-6 text-sm leading-relaxed text-gray-600">
+            <div>
+              <h3 className="font-black text-base text-gray-900 mb-2">What is Exterior Painting?</h3>
+              <p>Exterior painting covers all outer walls of a home or building — facade walls, compound walls, balcony walls, parapet walls and boundary walls. It involves thorough surface preparation, crack filling, application of weatherproof primer and two or more coats of premium exterior paint. Professional exterior painting not only improves appearance but provides critical protection against rain, UV radiation, humidity, algae and pollution — extending the structural life of the building.</p>
+            </div>
+            <div>
+              <h3 className="font-black text-base text-gray-900 mb-2">When Should You Repaint Exterior Walls?</h3>
+              <p>Exterior walls in Mumbai, Thane and Bhiwandi typically need repainting every 4–6 years. Signs that repainting is needed include visible paint peeling or flaking, colour fading, cracks appearing on exterior surfaces, green or black algae growth, white salt deposits (efflorescence) or damp patches appearing on interior walls after rain. Early repainting prevents more expensive structural repairs.</p>
+            </div>
+            <div>
+              <h3 className="font-black text-base text-gray-900 mb-2">When is Waterproofing Also Needed?</h3>
+              <p>If your exterior walls show active water seepage, damp interior walls after rain, terrace leakage or visible cracks that allow water entry — waterproofing treatment is needed before repainting. Simply painting over a seeping wall will not solve the problem — the paint will peel within one monsoon season. Bhairav Painting Service assesses waterproofing needs during the free site visit and recommends a combined painting + waterproofing solution where needed.</p>
+            </div>
+            <div>
+              <h3 className="font-black text-base text-gray-900 mb-2">Best Time for Exterior Painting in Mumbai</h3>
+              <p>October to May is the best season for exterior painting in Mumbai and surrounding areas. Dry weather allows paint to cure properly and bond strongly with the surface. Pre-monsoon painting (March–May) provides full protection before the rain season. Monsoon painting (June–September) is not recommended for large projects — however, emergency repairs and touch-ups are possible with fast-dry materials.</p>
+            </div>
+            <div>
+              <h3 className="font-black text-base text-gray-900 mb-2">Exterior Painting Maintenance Tips</h3>
+              <p>After exterior painting, annual inspection of walls for new cracks, algae growth and paint condition helps catch problems early. Clear roof drains and gutters before monsoon to prevent water pooling. If minor cracks appear, seal them promptly before they expand. Wash exterior walls annually with a soft brush and mild cleaner to remove dust and pollution deposits. Schedule a professional inspection every 2-3 years for buildings above G+3 height.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="py-20 bg-white">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">

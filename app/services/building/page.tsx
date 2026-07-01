@@ -390,6 +390,123 @@ export default function BuildingPaintingPage() {
         </div>
       </section>
 
+      {/* SCOPE OF WORK */}
+      <section className="py-16 px-4 bg-white">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-orange-500 text-xs font-bold uppercase tracking-widest mb-2">Scope of Work</p>
+          <h2 className="text-3xl font-black text-gray-900 mb-3">Typical Building Painting Scope</h2>
+          <p className="text-gray-500 mb-8 text-sm">Society committees aur builders ke liye clear scope of work — kya hoga, kis order mein aur kya result milega.</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+            {[
+              { step: "01", title: "Site Inspection", desc: "Full building inspection — cracks, algae, old paint condition, waterproofing needs aur area measurement. Written inspection report diya jaata hai." },
+              { step: "02", title: "Surface Cleaning", desc: "High-pressure washing ya manual scraping se old paint, dust, algae aur loose plaster remove kiya jaata hai." },
+              { step: "03", title: "Crack Repair", desc: "Saare hairline cracks aur structural cracks polymer filler se seal kiye jaate hain — paani andar nahi aa sakta." },
+              { step: "04", title: "Surface Preparation", desc: "Sanding, putty application aur smoothing for uniform surface. Proper prep se paint 2x zyada chalti hai." },
+              { step: "05", title: "Primer Application", desc: "Weatherproof primer coat apply hoti hai — paint adhesion improve hoti hai aur moisture barrier ban jaata hai." },
+              { step: "06", title: "Exterior Paint Coats", desc: "Premium branded exterior paint — 2 coats minimum. UV resistant aur weatherproof formula for Mumbai monsoon." },
+              { step: "07", title: "Common Area Painting", desc: "Staircase, lobby, parking, terrace parapet aur compound wall — complete common area coverage." },
+              { step: "08", title: "Final Inspection & Handover", desc: "Joint inspection with society representative — patches, uniformity aur finish quality check. Written completion certificate." },
+            ].map((s, i) => (
+              <div key={i} className="flex gap-4 bg-gray-50 border border-gray-100 rounded-xl p-5">
+                <span className="text-3xl font-black text-orange-200 shrink-0">{s.step}</span>
+                <div>
+                  <h3 className="font-black text-sm text-gray-900 mb-1">{s.title}</h3>
+                  <p className="text-xs text-gray-500 leading-relaxed">{s.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SAFETY & SITE MANAGEMENT */}
+      <section className="py-16 px-4 bg-blue-950 text-white">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-orange-400 text-xs font-bold uppercase tracking-widest mb-2">Safety First</p>
+          <h2 className="text-3xl font-black text-white mb-3">How We Manage Large Society Projects Safely</h2>
+          <p className="text-blue-200 mb-8 text-sm">Large building projects mein safety aur site management utna hi important hai jitna painting quality — residents ki safety hamari responsibility hai.</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-8">
+            {[
+              { icon: "🚧", title: "Safety Barricading", desc: "Painting zones ke around proper barricading set ki jaati hai — residents aur pedestrians ko scaffold area se door rakha jaata hai." },
+              { icon: "🏗️", title: "Scaffolding Inspection", desc: "Scaffolding proper certified standards ke according set hoti hai. Daily inspection by supervisor before work starts." },
+              { icon: "🧹", title: "Daily Site Cleanup", desc: "Har din kaam khatam hone ke baad complete site cleanup — paint drips, material waste aur tools properly stored kiye jaate hain." },
+              { icon: "🏘️", title: "Resident Safety", desc: "Residents ko advance notice diya jaata hai. Windows aur balconies cover kiye jaate hain — daily life minimum impact hota hai." },
+              { icon: "🚗", title: "Parking Protection", desc: "Parked vehicles paint drips se protect kiye jaate hain — covers lagaye jaate hain scaffolding ke neeche wali jagah pe." },
+              { icon: "👷", title: "Dedicated Supervisor", desc: "Har project pe dedicated supervisor assigned hota hai jo daily progress track karta hai aur society committee ko updates deta hai." },
+            ].map((s, i) => (
+              <div key={i} className="bg-white/10 border border-white/20 rounded-xl p-5">
+                <span className="text-3xl mb-3 block">{s.icon}</span>
+                <h3 className="font-black text-sm text-white mb-2">{s.title}</h3>
+                <p className="text-xs text-blue-200 leading-relaxed">{s.desc}</p>
+              </div>
+            ))}
+          </div>
+          <div className="bg-white/10 rounded-xl p-5 border border-white/20">
+            <p className="text-sm text-white leading-relaxed">Bhairav Painting Service ke saath society committee ko koi tension nahi — <strong className="text-orange-400">hum residents ke saath coordinate karte hain, safety ensure karte hain, aur daily updates dete hain</strong> jab tak project complete na ho jaye.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* QUALITY CHECKLIST */}
+      <section className="py-16 px-4 bg-white">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-orange-500 text-xs font-bold uppercase tracking-widest mb-2">Quality Assurance</p>
+          <h2 className="text-3xl font-black text-gray-900 mb-3">Before We Handover — Quality Checklist</h2>
+          <p className="text-gray-500 mb-8 text-sm">Koi bhi project handover nahi hota jab tak yeh sab points check na ho jaayein.</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
+            {[
+              "Uniform paint finish — no streaks or brush marks",
+              "No visible patches or colour variation",
+              "All crack repairs checked and sealed",
+              "Common areas — staircase, lobby, parking clean",
+              "Paint drips removed from windows and floors",
+              "Scaffolding removed and area cleared",
+              "Final walkthrough with society representative",
+              "Written completion certificate provided",
+              "Client approval before final payment",
+              "Warranty documentation handed over",
+            ].map((item, i) => (
+              <div key={i} className="flex gap-3 bg-green-50 border border-green-100 rounded-xl p-4">
+                <span className="text-green-500 font-black text-sm shrink-0">✓</span>
+                <p className="text-sm text-gray-700">{item}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* OWNER SUPERVISION */}
+      <section className="py-16 px-4 bg-gray-50">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-orange-500 text-xs font-bold uppercase tracking-widest mb-2">Our USP</p>
+          <h2 className="text-3xl font-black text-gray-900 mb-6">Why Every Project is Owner Supervised</h2>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-8">
+            <div className="space-y-5 text-sm leading-relaxed text-gray-600">
+              <p>Most painting contractors assign a foreman or team leader to manage projects while the owner focuses on getting new business. This means quality decisions are made by workers — not by the person accountable for the result.</p>
+              <p>At Bhairav Painting Service, <strong className="text-gray-900">every project is personally supervised by the owner</strong>. This means faster decisions on site, direct communication with the society committee, immediate resolution of any issues, and consistent quality from day one to handover.</p>
+              <p>For housing societies and builders, this makes a critical difference. When a committee member has a concern — they can speak directly to the decision-maker, not to a middleman. Problems that would take days to resolve through a contractor chain get fixed within hours on site.</p>
+            </div>
+            <div className="space-y-4">
+              {[
+                { icon: "⚡", title: "Faster Decisions On Site", desc: "Owner is present — no waiting for approvals from someone who is not there." },
+                { icon: "🎯", title: "Better Quality Control", desc: "Owner personally checks each stage — surface prep, primer, coats and finish." },
+                { icon: "📞", title: "Direct Communication", desc: "Society secretary talks directly to owner — not to a supervisor or worker." },
+                { icon: "🔗", title: "No Subcontractor Confusion", desc: "We use our own trained team — no outsourced labour who do not know our standards." },
+                { icon: "✅", title: "Accountability Till Handover", desc: "Owner is responsible until final inspection and written approval by committee." },
+              ].map((p, i) => (
+                <div key={i} className="flex gap-3 bg-white border border-gray-100 rounded-xl p-4 shadow-sm">
+                  <span className="text-2xl shrink-0">{p.icon}</span>
+                  <div>
+                    <h3 className="font-bold text-sm text-gray-900 mb-1">{p.title}</h3>
+                    <p className="text-xs text-gray-500">{p.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="py-20 bg-gray-50">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
