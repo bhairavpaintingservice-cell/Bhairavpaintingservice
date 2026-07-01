@@ -129,6 +129,36 @@ export default function DesignerTexturePage() {
         </div>
       </section>
 
+      {/* COMMON PROBLEMS / WHY DESIGNER WALLS */}
+      <section className="py-16 px-4 bg-white">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-orange-500 text-xs font-bold uppercase tracking-widest mb-2">Why Designer Walls</p>
+          <h2 className="text-3xl font-black text-gray-900 mb-4">Plain Walls Ho Gayi Boring? Yahan Se Shuru Karo</h2>
+          <p className="text-sm leading-relaxed text-gray-600 mb-8">Bahut sare beautifully painted interiors bhi plain lagte hain kyunki har wall same colour aur same finish mein hoti hai. Modern homes aur commercial spaces ko sirf ek feature wall chahiye hoti hai jo poore room ka look badal de — bina full renovation kiye. Log usually humse tab contact karte hain jab unhe:</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+            {[
+              { icon: "🛋️", title: "Plain Living Room", desc: "Living room ko premium space mein transform karna hai." },
+              { icon: "📺", title: "TV Unit Wall", desc: "Stylish TV unit feature wall chahiye." },
+              { icon: "🛏️", title: "Master Bedroom", desc: "Bedroom mein elegance add karna hai." },
+              { icon: "🏢", title: "Office Reception", desc: "Reception & conference room ko modernise karna hai." },
+              { icon: "🍽️", title: "Restaurant / Café", desc: "Ambience improve karke customer experience better banana hai." },
+              { icon: "🛍️", title: "Retail Showroom", desc: "Eye-catching showroom design chahiye." },
+            ].map((p, i) => (
+              <div key={i} className="bg-gray-50 border border-gray-100 rounded-xl p-5 flex gap-3 items-start">
+                <span className="text-2xl shrink-0">{p.icon}</span>
+                <div>
+                  <h3 className="font-bold text-sm text-gray-900">{p.title}</h3>
+                  <p className="text-xs text-gray-500 mt-1">{p.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="bg-orange-50 border border-orange-100 rounded-xl p-5">
+            <p className="text-sm text-gray-600 leading-relaxed">Designer wall painting aur texture finishes ek simple tareeka hai unique interior create karne ka — bina poora ghar ya office repaint kiye, sirf apni property ka visual appeal badhaakar.</p>
+          </div>
+        </div>
+      </section>
+
       {/* DESIGNER SERVICES */}
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-5xl mx-auto">
@@ -314,6 +344,33 @@ export default function DesignerTexturePage() {
         </div>
       </section>
 
+
+      {/* CHOOSING THE RIGHT FINISH */}
+      <section className="py-16 px-4 bg-gray-50">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-orange-500 text-xs font-bold uppercase tracking-widest mb-2">Decision Guide</p>
+          <h2 className="text-3xl font-black text-gray-900 mb-3">Apni Space Ke Liye Sahi Finish Kaise Chuney</h2>
+          <p className="text-gray-500 mb-8 text-sm">Har space ka design goal alag hota hai — room size, lighting aur furniture ke hisaab se hum right finish recommend karte hain.</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {[
+              { icon: "🖌️", title: "Accent Walls", desc: "Modern living rooms aur bedrooms ke liye ideal." },
+              { icon: "✨", title: "Feature Walls", desc: "TV units aur entrance areas ke liye best." },
+              { icon: "🥇", title: "Metallic Finishes", desc: "Luxury homes, offices aur hotels ke liye suitable." },
+              { icon: "🪨", title: "Stone & Rustic Textures", desc: "Contemporary aur industrial interiors ke liye perfect." },
+              { icon: "🎨", title: "Stencil Designs", desc: "Kids rooms, cafés aur creative spaces ke liye great." },
+              { icon: "🎭", title: "Combination Finishes", desc: "Premium residential aur commercial interiors ke liye recommended." },
+            ].map((g, i) => (
+              <div key={i} className="bg-gray-50 border border-gray-100 rounded-xl p-5 flex gap-3 items-start">
+                <span className="text-2xl shrink-0">{g.icon}</span>
+                <div>
+                  <h3 className="font-bold text-sm text-gray-900">{g.title}</h3>
+                  <p className="text-xs text-gray-500 mt-1">{g.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* FAQ */}
       <section className="py-16 px-4 bg-white">
