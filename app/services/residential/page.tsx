@@ -386,34 +386,7 @@ export default function ResidentialPaintingPage() {
         </div>
       </section>
 
-      {/* 7. RECENT PROJECTS */}
-      <section className="py-20 bg-white">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <span className="inline-block rounded-full border border-gray-300 px-4 py-1 text-xs font-semibold uppercase tracking-widest" style={{color:"#6b7280"}}>Recent Work</span>
-          <h2 className="mt-3 text-3xl font-black sm:text-4xl" style={{color:"#111827"}}>
-            Recent Residential <span className="text-orange-500">Projects</span>
-          </h2>
-          <p className="mt-3 text-sm" style={{color:"#6b7280"}}>Real projects completed by our team with full details.</p>
-          <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
-            {recentProjects.map((p, i) => (
-              <div key={i} className="overflow-hidden rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-                <div className="relative h-48">
-                  <Image src={p.image} alt={`${p.service} ${p.location}`} fill className="object-cover" />
-                </div>
-                <div className="p-5 bg-white">
-                  <h3 className="font-bold text-sm" style={{color:"#1B2B8A"}}>{p.property} — {p.location}</h3>
-                  <div className="mt-3 space-y-1.5">
-                    <div className="flex items-center gap-2 text-xs" style={{color:"#6b7280"}}><MapPin className="h-3.5 w-3.5 text-orange-500" /><span>Location: {p.location}</span></div>
-                    <div className="flex items-center gap-2 text-xs" style={{color:"#6b7280"}}><CheckCircle className="h-3.5 w-3.5 text-orange-500" /><span>Property: {p.property}</span></div>
-                    <div className="flex items-center gap-2 text-xs" style={{color:"#6b7280"}}><CheckCircle className="h-3.5 w-3.5 text-orange-500" /><span>Service: {p.service}</span></div>
 
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* 8. REVIEWS */}
       <section className="py-20 bg-gray-50">
