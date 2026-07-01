@@ -539,31 +539,7 @@ export default function ResidentialPaintingPage() {
         </div>
       </section>
 
-      {/* PAINT SELECTION GUIDE */}
-      <section className="py-16 px-4 bg-white">
-        <div className="max-w-5xl mx-auto">
-          <p className="text-orange-500 text-xs font-bold uppercase tracking-widest mb-2">Paint Guide</p>
-          <h2 className="text-3xl font-black text-gray-900 mb-3">Choosing the Right Paint for Every Room</h2>
-          <p className="text-gray-500 mb-8 text-sm">Every room inside a home has different lighting, moisture levels and daily usage. Choosing the right paint finish improves durability, appearance and long-term maintenance.</p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {[
-              { room: "Living Room", icon: "🛋️", paint: "Premium Washable Luxury Emulsion", desc: "Smooth and elegant finish. Washable surface for easy cleaning of marks and stains." },
-              { room: "Bedroom", icon: "🛏️", paint: "Low-Odour Matte / Soft Sheen", desc: "Calm and relaxing atmosphere. Low VOC for better indoor air quality." },
-              { room: "Kitchen", icon: "🍳", paint: "Stain-Resistant Washable Paint", desc: "Handles grease and regular cleaning. Semi-gloss or enamel finish recommended." },
-              { room: "Bathroom", icon: "🚿", paint: "Moisture-Resistant + Anti-Fungal", desc: "Prevents damp patches and mold growth in wet areas." },
-              { room: "Kids Room", icon: "🧒", paint: "Low VOC Washable Paint", desc: "Easy to clean after drawings and stains. Child-safe and durable." },
-              { room: "Exterior Walls", icon: "🏠", paint: "Weather-Resistant Exterior Paint", desc: "Withstands heavy rain, humidity and sunlight. UV resistant for long life." },
-            ].map((r, i) => (
-              <div key={i} className="bg-gray-50 border border-gray-100 rounded-xl p-5">
-                <span className="text-2xl mb-2 block">{r.icon}</span>
-                <h3 className="font-black text-sm text-gray-900 mb-1">{r.room}</h3>
-                <p className="text-xs text-orange-600 font-semibold mb-2">{r.paint}</p>
-                <p className="text-xs text-gray-500">{r.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+
 
       {/* HOW OFTEN REPAINT */}
       <section className="py-16 px-4 bg-gray-50">
