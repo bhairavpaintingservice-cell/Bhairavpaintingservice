@@ -177,6 +177,34 @@ export default function ExteriorPaintingPage() {
         </div>
       </section>
 
+      {/* WHAT WE COVER & BEST PRODUCTS */}
+      <section className="py-16 px-4 bg-white">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-orange-500 text-xs font-bold uppercase tracking-widest mb-2">Exterior Painting</p>
+          <h2 className="text-3xl font-black text-gray-900 mb-3">Exterior Home Painting Solutions</h2>
+          <p className="text-gray-500 mb-6 text-sm">Exterior walls continuously rain, sunlight aur pollution face karti hain — proper weather-resistant coating zaroori hai.</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
+            <div>
+              <p className="text-xs font-bold text-gray-900 uppercase tracking-widest mb-3">What We Cover</p>
+              <ul className="space-y-2">
+                {["Exterior wall cleaning & preparation","Crack filling with polymer compound","Waterproof primer application","Weatherproof exterior coating (2 coats)","Balcony wall painting","Compound wall & boundary painting","Gate & grill painting (enamel)"].map((s, i) => (
+                  <li key={i} className="text-sm text-gray-600 flex gap-2"><span className="text-orange-500 font-bold">✓</span>{s}</li>
+                ))}
+              </ul>
+            </div>
+            <div className="bg-gray-50 rounded-2xl p-5">
+              <p className="text-xs font-bold text-gray-900 uppercase tracking-widest mb-3">Best Products</p>
+              {[["Asian Paints Apex","Premium exterior — 5-7 year guarantee"],["Berger WeatherCoat","Weather & UV resistant"],["Nerolac Excel","Fungal resistant exterior coat"],["Dulux Weathershield","High-end weather protection"]].map(([brand, desc], i) => (
+                <div key={i} className="mb-3">
+                  <p className="text-xs font-bold text-gray-900">{brand}</p>
+                  <p className="text-xs text-gray-500">{desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* WHY CHOOSE US */}
       <section className="py-20 bg-white">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
