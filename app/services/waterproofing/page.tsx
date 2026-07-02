@@ -183,6 +183,9 @@ export default function WaterproofingPage() {
             <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20Waterproofing%20quote" className="bg-green-500 hover:bg-green-600 text-white font-bold px-7 py-3 rounded-lg flex items-center gap-2 transition">
               <MessageCircle size={16} /> WhatsApp
             </a>
+            <a href="/gallery/waterproofing" className="border-2 border-white text-white font-bold px-7 py-3 rounded-lg flex items-center gap-2 hover:bg-white/10 transition">
+              View Gallery →
+            </a>
           </div>
           <a href="tel:+919158800517" className="inline-block text-orange-400 font-black text-2xl mb-8 hover:text-orange-300 transition">+91 91588 00517</a>
           <div className="flex justify-center gap-10 flex-wrap">
