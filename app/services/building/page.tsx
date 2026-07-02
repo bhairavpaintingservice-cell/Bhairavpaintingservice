@@ -6,16 +6,16 @@ import { useState } from "react"
 import { Phone, MessageCircle, CheckCircle, MapPin, ChevronDown } from "lucide-react"
 
 const servicesIncluded = [
-  { title: "Exterior Building Painting", img: "/images/building/service-exterior-building.jpg" },
-  { title: "Society Repainting", img: "/images/building/service-society-repainting.jpg" },
-  { title: "Waterproofing", img: "/images/building/service-waterproofing.jpg" },
-  { title: "Crack Filling", img: "/images/building/service-crack-filling.jpg" },
-  { title: "Terrace Coating", img: "/images/building/service-terrace-coating.jpg" },
-  { title: "Staircase Painting", img: "/images/building/service-staircase-painting.jpg" },
-  { title: "Parking Area Painting", img: "/images/building/service-parking-area.jpg" },
-  { title: "Common Area Painting", img: "/images/building/service-common-area.jpg" },
-  { title: "Compound Wall Painting", img: "/images/building/service-compound-wall.jpg" },
-  { title: "Metal Railing Painting", img: "/images/building/service-metal-railing.jpg" },
+  { title: "Exterior Building Painting", img: "/images/building/service-exterior-building.jpg", gallery: "/gallery/exterior-building-painting" },
+  { title: "Society Repainting", img: "/images/building/service-society-repainting.jpg", gallery: "/gallery/society-repainting" },
+  { title: "Waterproofing", img: "/images/building/service-waterproofing.jpg", gallery: "/gallery/waterproofing-building" },
+  { title: "Crack Filling", img: "/images/building/service-crack-filling.jpg", gallery: "/gallery/crack-filling" },
+  { title: "Terrace Coating", img: "/images/building/service-terrace-coating.jpg", gallery: "/gallery/terrace-coating" },
+  { title: "Staircase Painting", img: "/images/building/service-staircase-painting.jpg", gallery: "/gallery/staircase-painting" },
+  { title: "Parking Area Painting", img: "/images/building/service-parking-area.jpg", gallery: "/gallery/parking-area-painting" },
+  { title: "Common Area Painting", img: "/images/building/service-common-area.jpg", gallery: "/gallery/common-area-painting" },
+  { title: "Compound Wall Painting", img: "/images/building/service-compound-wall.jpg", gallery: "/gallery/compound-wall-painting" },
+  { title: "Metal Railing Painting", img: "/images/building/service-metal-railing.jpg", gallery: "/gallery/metal-railing-painting" },
 ]
 
 const whoFor = [
@@ -324,7 +324,7 @@ export default function BuildingPaintingPage() {
                     <Image src={p.after} alt={`After building painting - ${p.title} by Bhairav Painting Service Mumbai Thane Bhiwandi`} fill className="object-cover group-hover:scale-105 transition-transform duration-300"/>
                     <span style={{position:"absolute", top:"6px", left:"6px", background:"#f97316", color:"#fff", fontSize:"9px", fontWeight:"700", padding:"2px 6px", borderRadius:"4px"}}>AFTER</span>
                     <div className="absolute inset-0 bg-[#1B2B8A]/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                      <span className="bg-orange-500 text-white px-3 py-1.5 rounded-lg text-xs font-bold">View More →</span>
+                      <a href={p.gallery} className="bg-orange-500 text-white px-3 py-1.5 rounded-lg text-xs font-bold">View More →</a>
                     </div>
                   </div>
                 </div>
