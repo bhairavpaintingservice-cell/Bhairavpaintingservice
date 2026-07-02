@@ -6,14 +6,14 @@ import { useState } from "react"
 import { Phone, MessageCircle, CheckCircle, MapPin, ChevronDown } from "lucide-react"
 
 const serviceCards = [
-  { title: "Bedroom Painting", desc: "Smooth wall painting for bedrooms. Any colour, any finish.", image: "/images/interior/card-bedroom.jpg" },
-  { title: "Living Room Painting", desc: "Premium finish for halls & living rooms. Accent walls available.", image: "/images/interior/ba-living-room2.jpg" },
-  { title: "Kitchen Painting", desc: "Moisture-resistant paint for kitchens. Easy clean finish.", image: "/images/interior/card-kitchen.jpg" },
-  { title: "Dining Room Painting", desc: "Elegant finish for dining areas & connected spaces.", image: "/images/interior/card-dining.jpg" },
-  { title: "Study Room Painting", desc: "Calm, focused colour schemes for study & work rooms.", image: "/images/interior/card-study.jpg" },
-  { title: "Kids Room Painting", desc: "Fun, safe paints for children's rooms & nurseries.", image: "/images/interior/card-kids.jpg" },
-  { title: "Pooja Room Painting", desc: "Auspicious colours & clean finish for pooja & prayer rooms.", image: "/images/interior/card-pooja.jpg" },
-  { title: "Ceiling & Staircase", desc: "Ceiling painting, staircase walls & corridor painting.", image: "/images/interior/card-staircase.jpg" },
+  { title: "Bedroom Painting", desc: "Smooth wall painting for bedrooms. Any colour, any finish.", image: "/images/interior/card-bedroom.jpg", gallery: "/gallery/bedroom-painting" },
+  { title: "Living Room Painting", desc: "Premium finish for halls & living rooms. Accent walls available.", image: "/images/interior/ba-living-room2.jpg", gallery: "/gallery/living-room-painting" },
+  { title: "Kitchen Painting", desc: "Moisture-resistant paint for kitchens. Easy clean finish.", image: "/images/interior/card-kitchen.jpg", gallery: "/gallery/kitchen-painting" },
+  { title: "Dining Room Painting", desc: "Elegant finish for dining areas & connected spaces.", image: "/images/interior/card-dining.jpg", gallery: "/gallery/dining-room-painting" },
+  { title: "Study Room Painting", desc: "Calm, focused colour schemes for study & work rooms.", image: "/images/interior/card-study.jpg", gallery: "/gallery/study-room-painting" },
+  { title: "Kids Room Painting", desc: "Fun, safe paints for children's rooms & nurseries.", image: "/images/interior/card-kids.jpg", gallery: "/gallery/kids-room-painting" },
+  { title: "Pooja Room Painting", desc: "Auspicious colours & clean finish for pooja & prayer rooms.", image: "/images/interior/card-pooja.jpg", gallery: "/gallery/pooja-room-painting" },
+  { title: "Ceiling & Staircase", desc: "Ceiling painting, staircase walls & corridor painting.", image: "/images/interior/card-staircase.jpg", gallery: "/gallery/ceiling-staircase-painting" },
 ]
 
 const whoFor = [
@@ -160,10 +160,7 @@ export default function InteriorPaintingPage() {
                 <div className="relative h-52 overflow-hidden">
                   <Image src={item.image} alt={item.title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <a href="/gallery/interior" className="bg-white text-xs font-bold px-3 py-1.5 rounded-full" style={{color:"#1B2B8A"}}>View More →</a>
-                  </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <span className="bg-orange-500 text-white px-4 py-2 rounded-lg text-sm font-bold">View More →</span>
+                    <a href="/gallery/interior" className="bg-orange-500 text-white px-3 py-1.5 rounded-lg text-xs font-bold">View More →</a>
                   </div>
                 </div>
                 <div className="p-4">
@@ -200,9 +197,12 @@ export default function InteriorPaintingPage() {
           <p className="mt-3 text-sm" style={{color:"#6b7280"}}>Complete interior painting for every room — across Mumbai, Thane & Bhiwandi.</p>
           <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {serviceCards.map((s, i) => (
-              <div key={i} className="overflow-hidden rounded-xl bg-white border border-gray-100 hover:shadow-md transition-shadow">
+              <div key={i} className="group overflow-hidden rounded-xl bg-white border border-gray-100 hover:shadow-md transition-shadow">
                 <div className="relative h-36">
-                  <Image src={s.image} alt={s.title} fill className="object-cover" />
+                  <Image src={s.image} alt={s.title} fill className="object-cover group-hover:scale-105 transition-transform duration-300" />
+                  <div className="absolute inset-0 bg-[#1B2B8A]/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <a href={s.gallery} className="bg-orange-500 text-white px-3 py-1.5 rounded-lg text-xs font-bold">View More →</a>
+                  </div>
                 </div>
                 <div className="p-4">
                   <h3 className="font-bold text-sm" style={{color:"#1B2B8A"}}>{s.title}</h3>
