@@ -4,27 +4,28 @@ import { MessageCircle, Phone, ArrowLeft } from "lucide-react"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Exterior Painting Gallery | Bhairav Painting Service",
-  description: "View our Exterior Painting project photos — house, villa, society, builders work across Mumbai, Thane & Bhiwandi.",
+  title: "Waterproofing Gallery | Bhairav Painting Service",
+  description: "View our Waterproofing project photos — terrace, roof, bathroom, basement across Mumbai, Thane & Bhiwandi.",
 }
 
 const images = [
-  { src: "/images/exterior/house.jpg", alt: "House Exterior Painting" },
-  { src: "/images/exterior/villa.jpg", alt: "Villa Exterior Painting" },
-  { src: "/images/exterior/society.jpg", alt: "Society Exterior Painting" },
-  { src: "/images/exterior/builders.jpg", alt: "Builders Exterior Work" },
-  { src: "/images/exterior/commercial.jpg", alt: "Commercial Exterior" },
-  { src: "/images/exterior/new-construction.jpg", alt: "New Construction Painting" },
-  { src: "/images/exterior/renovation.jpg", alt: "Renovation Painting" },
-  { src: "/images/exterior/ba-1.jpg", alt: "Before After 1" },
-  { src: "/images/exterior/ba-2.jpg", alt: "Before After 2" },
-  { src: "/images/exterior/ba-3.jpg", alt: "Before After 3" },
-  { src: "/images/exterior/ba-4.jpg", alt: "Before After 4" },
-  { src: "/images/exterior/ba-5.jpg", alt: "Before After 5" },
-  { src: "/images/exterior/ba-6.jpg", alt: "Before After 6" },
+  { src: "/images/waterproofing/waterproof-project-roof.jpg", alt: "Roof Waterproofing" },
+  { src: "/images/waterproofing/waterproof-project-terrace.jpg", alt: "Terrace Waterproofing" },
+  { src: "/images/waterproofing/waterproof-project-bathroom.jpg", alt: "Bathroom Waterproofing" },
+  { src: "/images/waterproofing/waterproof-basement.jpg", alt: "Basement Waterproofing" },
+  { src: "/images/waterproofing/waterproof-exterior.jpg", alt: "Exterior Waterproofing" },
+  { src: "/images/waterproofing/waterproof-project-wall.jpg", alt: "Wall Waterproofing" },
+  { src: "/images/waterproofing/waterproof-before-leakage.jpg", alt: "Before - Leakage" },
+  { src: "/images/waterproofing/waterproof-after.jpg", alt: "After Waterproofing" },
+  { src: "/images/waterproofing/p1-before.jpg", alt: "Project 1 Before" },
+  { src: "/images/waterproofing/p1-after.jpg", alt: "Project 1 After" },
+  { src: "/images/waterproofing/p2-before.jpg", alt: "Project 2 Before" },
+  { src: "/images/waterproofing/p2-after.jpg", alt: "Project 2 After" },
+  { src: "/images/waterproofing/p3-before.jpg", alt: "Project 3 Before" },
+  { src: "/images/waterproofing/p3-after.jpg", alt: "Project 3 After" },
 ]
 
-export default function ExteriorGalleryPage() {
+export default function WaterproofingGalleryPage() {
   return (
     <main>
       <section className="pt-32 pb-12" style={{ backgroundColor: "#1B2B8A" }}>
@@ -32,8 +33,8 @@ export default function ExteriorGalleryPage() {
           <Link href="/gallery" className="inline-flex items-center gap-1.5 text-sm font-semibold text-blue-200 hover:text-white transition-colors">
             <ArrowLeft className="h-4 w-4" /> Back to Gallery
           </Link>
-          <h1 className="mt-4 text-3xl font-black text-white sm:text-4xl">Exterior Painting Gallery</h1>
-          <p className="mt-2 text-blue-200 text-sm">House, villa, society & builder exterior painting across Mumbai, Thane & Bhiwandi.</p>
+          <h1 className="mt-4 text-3xl font-black text-white sm:text-4xl">Waterproofing Gallery</h1>
+          <p className="mt-2 text-blue-200 text-sm">Terrace, roof, bathroom & basement waterproofing projects across Mumbai, Thane & Bhiwandi.</p>
         </div>
       </section>
 
@@ -49,9 +50,9 @@ export default function ExteriorGalleryPage() {
             ))}
           </div>
           <div className="mt-10 rounded-xl bg-white border border-gray-200 p-6 text-center">
-            <p className="text-sm text-gray-500">More photos coming soon. Want to see exterior painting examples in person?</p>
+            <p className="text-sm text-gray-500">More photos coming soon. Want to see waterproofing examples in person?</p>
             <div className="mt-4">
-              <Link href="/services/exterior" className="text-sm font-semibold" style={{ color: "#1B2B8A" }}>View Exterior Painting Service Details →</Link>
+              <Link href="/services/waterproofing" className="text-sm font-semibold" style={{ color: "#1B2B8A" }}>View Waterproofing Service Details →</Link>
             </div>
           </div>
         </div>
@@ -59,10 +60,10 @@ export default function ExteriorGalleryPage() {
 
       <section className="py-16" style={{ backgroundColor: "#1B2B8A" }}>
         <div className="mx-auto max-w-4xl px-6 lg:px-8 text-center">
-          <h2 className="text-2xl font-black text-white sm:text-3xl">Want Exterior Painting for Your Property?</h2>
+          <h2 className="text-2xl font-black text-white sm:text-3xl">Leakage Problem? Get It Fixed Today!</h2>
           <p className="mt-3 text-blue-200 text-sm">Get a free site visit and written quotation today.</p>
           <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
-            <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20a%20quote%20for%20Exterior%20Painting." target="_blank" rel="noopener noreferrer"
+            <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20a%20quote%20for%20Waterproofing." target="_blank" rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 rounded-lg px-6 py-3 text-sm font-bold text-white"
               style={{ backgroundColor: "#25D366" }}>
               <MessageCircle className="h-4 w-4" /> WhatsApp Us

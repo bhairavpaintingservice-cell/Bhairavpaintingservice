@@ -4,27 +4,24 @@ import { MessageCircle, Phone, ArrowLeft } from "lucide-react"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Exterior Painting Gallery | Bhairav Painting Service",
-  description: "View our Exterior Painting project photos — house, villa, society, builders work across Mumbai, Thane & Bhiwandi.",
+  title: "Building Painting Gallery | Bhairav Painting Service",
+  description: "View our Building & Society painting project photos across Mumbai, Thane & Bhiwandi. Common areas, staircase, parking, compound wall.",
 }
 
 const images = [
-  { src: "/images/exterior/house.jpg", alt: "House Exterior Painting" },
-  { src: "/images/exterior/villa.jpg", alt: "Villa Exterior Painting" },
-  { src: "/images/exterior/society.jpg", alt: "Society Exterior Painting" },
-  { src: "/images/exterior/builders.jpg", alt: "Builders Exterior Work" },
-  { src: "/images/exterior/commercial.jpg", alt: "Commercial Exterior" },
-  { src: "/images/exterior/new-construction.jpg", alt: "New Construction Painting" },
-  { src: "/images/exterior/renovation.jpg", alt: "Renovation Painting" },
-  { src: "/images/exterior/ba-1.jpg", alt: "Before After 1" },
-  { src: "/images/exterior/ba-2.jpg", alt: "Before After 2" },
-  { src: "/images/exterior/ba-3.jpg", alt: "Before After 3" },
-  { src: "/images/exterior/ba-4.jpg", alt: "Before After 4" },
-  { src: "/images/exterior/ba-5.jpg", alt: "Before After 5" },
-  { src: "/images/exterior/ba-6.jpg", alt: "Before After 6" },
+  { src: "/images/building/service-exterior-building.jpg", alt: "Building Exterior Painting" },
+  { src: "/images/building/service-society-repainting.jpg", alt: "Society Repainting" },
+  { src: "/images/building/service-common-area.jpg", alt: "Common Area Painting" },
+  { src: "/images/building/service-staircase-painting.jpg", alt: "Staircase Painting" },
+  { src: "/images/building/service-parking-area.jpg", alt: "Parking Area Painting" },
+  { src: "/images/building/service-compound-wall.jpg", alt: "Compound Wall Painting" },
+  { src: "/images/building/service-metal-railing.jpg", alt: "Metal Railing Painting" },
+  { src: "/images/building/service-crack-filling.jpg", alt: "Crack Filling Work" },
+  { src: "/images/building/service-terrace-coating.jpg", alt: "Terrace Coating" },
+  { src: "/images/building/service-waterproofing.jpg", alt: "Building Waterproofing" },
 ]
 
-export default function ExteriorGalleryPage() {
+export default function BuildingGalleryPage() {
   return (
     <main>
       <section className="pt-32 pb-12" style={{ backgroundColor: "#1B2B8A" }}>
@@ -32,8 +29,8 @@ export default function ExteriorGalleryPage() {
           <Link href="/gallery" className="inline-flex items-center gap-1.5 text-sm font-semibold text-blue-200 hover:text-white transition-colors">
             <ArrowLeft className="h-4 w-4" /> Back to Gallery
           </Link>
-          <h1 className="mt-4 text-3xl font-black text-white sm:text-4xl">Exterior Painting Gallery</h1>
-          <p className="mt-2 text-blue-200 text-sm">House, villa, society & builder exterior painting across Mumbai, Thane & Bhiwandi.</p>
+          <h1 className="mt-4 text-3xl font-black text-white sm:text-4xl">Building Painting Gallery</h1>
+          <p className="mt-2 text-blue-200 text-sm">Society, common areas, staircase, parking & building exterior painting projects.</p>
         </div>
       </section>
 
@@ -49,9 +46,9 @@ export default function ExteriorGalleryPage() {
             ))}
           </div>
           <div className="mt-10 rounded-xl bg-white border border-gray-200 p-6 text-center">
-            <p className="text-sm text-gray-500">More photos coming soon. Want to see exterior painting examples in person?</p>
+            <p className="text-sm text-gray-500">More photos coming soon. Want to see building painting examples in person?</p>
             <div className="mt-4">
-              <Link href="/services/exterior" className="text-sm font-semibold" style={{ color: "#1B2B8A" }}>View Exterior Painting Service Details →</Link>
+              <Link href="/services/building" className="text-sm font-semibold" style={{ color: "#1B2B8A" }}>View Building Painting Service Details →</Link>
             </div>
           </div>
         </div>
@@ -59,10 +56,10 @@ export default function ExteriorGalleryPage() {
 
       <section className="py-16" style={{ backgroundColor: "#1B2B8A" }}>
         <div className="mx-auto max-w-4xl px-6 lg:px-8 text-center">
-          <h2 className="text-2xl font-black text-white sm:text-3xl">Want Exterior Painting for Your Property?</h2>
+          <h2 className="text-2xl font-black text-white sm:text-3xl">Want Building Painting for Your Society?</h2>
           <p className="mt-3 text-blue-200 text-sm">Get a free site visit and written quotation today.</p>
           <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
-            <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20a%20quote%20for%20Exterior%20Painting." target="_blank" rel="noopener noreferrer"
+            <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20a%20quote%20for%20Building%20Painting." target="_blank" rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 rounded-lg px-6 py-3 text-sm font-bold text-white"
               style={{ backgroundColor: "#25D366" }}>
               <MessageCircle className="h-4 w-4" /> WhatsApp Us

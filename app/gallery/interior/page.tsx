@@ -5,23 +5,39 @@ import type { Metadata } from "next"
 
 export const metadata: Metadata = {
   title: "Interior Painting Gallery | Bhairav Painting Service",
-  description: "View our Interior Painting project photos across Mumbai, Thane & Bhiwandi. 47+ years experience, premium paint brands, owner supervised.",
+  description: "View our Interior Painting project photos — living rooms, bedrooms, kitchens, kids rooms across Mumbai, Thane & Bhiwandi.",
 }
 
 const images = [
-  "/images/gallery-interior.jpg",
+  { src: "/images/interior/ba-living-room.jpg", alt: "Living Room Painting" },
+  { src: "/images/interior/ba-living-room2.jpg", alt: "Living Room After" },
+  { src: "/images/interior/ba-hall.jpg", alt: "Hall Painting" },
+  { src: "/images/interior/ba-bedroom-old.jpg", alt: "Bedroom Before" },
+  { src: "/images/interior/ba-bedroom2.jpg", alt: "Bedroom After" },
+  { src: "/images/interior/ba-kitchen-old.jpg", alt: "Kitchen Painting" },
+  { src: "/images/interior/ba-new-flat.jpg", alt: "New Flat Interior" },
+  { src: "/images/interior/card-bedroom.jpg", alt: "Bedroom Painting" },
+  { src: "/images/interior/card-dining.jpg", alt: "Dining Area Painting" },
+  { src: "/images/interior/card-kids.jpg", alt: "Kids Room Painting" },
+  { src: "/images/interior/card-kitchen.jpg", alt: "Kitchen Painting" },
+  { src: "/images/interior/card-pooja.jpg", alt: "Pooja Room Painting" },
+  { src: "/images/interior/card-staircase.jpg", alt: "Staircase Painting" },
+  { src: "/images/interior/card-study.jpg", alt: "Study Room Painting" },
+  { src: "/images/interior/project-bhiwandi.jpg", alt: "Bhiwandi Project" },
+  { src: "/images/interior/project-kalyan.jpg", alt: "Kalyan Project" },
+  { src: "/images/interior/project-thane.jpg", alt: "Thane Project" },
 ]
 
-export default function GalleryPage() {
+export default function InteriorGalleryPage() {
   return (
     <main>
-      <section className="pt-32 pb-12" style={{backgroundColor:"#1B2B8A"}}>
+      <section className="pt-32 pb-12" style={{ backgroundColor: "#1B2B8A" }}>
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <Link href="/gallery" className="inline-flex items-center gap-1.5 text-sm font-semibold text-blue-200 hover:text-white transition-colors">
             <ArrowLeft className="h-4 w-4" /> Back to Gallery
           </Link>
           <h1 className="mt-4 text-3xl font-black text-white sm:text-4xl">Interior Painting Gallery</h1>
-          <p className="mt-2 text-blue-200 text-sm">Photos from our interior painting projects across Mumbai, Thane & Bhiwandi.</p>
+          <p className="mt-2 text-blue-200 text-sm">Living rooms, bedrooms, kitchens, kids rooms & more across Mumbai, Thane & Bhiwandi.</p>
         </div>
       </section>
 
@@ -29,28 +45,30 @@ export default function GalleryPage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {images.map((img, i) => (
-              <div key={i} className="overflow-hidden rounded-xl shadow-sm">
+              <div key={i} className="overflow-hidden rounded-xl shadow-sm group">
                 <div className="relative h-64">
-                  <Image src={img} alt={`Interior Painting project ${i + 1}`} fill className="object-cover hover:scale-105 transition-transform duration-300" />
+                  <Image src={img.src} alt={img.alt} fill className="object-cover group-hover:scale-105 transition-transform duration-300" />
                 </div>
               </div>
             ))}
           </div>
           <div className="mt-10 rounded-xl bg-white border border-gray-200 p-6 text-center">
-            <p className="text-sm" style={{color:"#6b7280"}}>More photos coming soon.</p>
-            <Link href="/services/interior" className="mt-2 inline-block text-sm font-semibold" style={{color:"#1B2B8A"}}>View Interior Painting Service Details →</Link>
+            <p className="text-sm text-gray-500">More photos coming soon. Want to see interior painting examples in person?</p>
+            <div className="mt-4">
+              <Link href="/services/interior" className="text-sm font-semibold" style={{ color: "#1B2B8A" }}>View Interior Painting Service Details →</Link>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="py-16" style={{backgroundColor:"#1B2B8A"}}>
+      <section className="py-16" style={{ backgroundColor: "#1B2B8A" }}>
         <div className="mx-auto max-w-4xl px-6 lg:px-8 text-center">
-          <h2 className="text-2xl font-black text-white">Want Interior Painting for Your Property?</h2>
+          <h2 className="text-2xl font-black text-white sm:text-3xl">Want Interior Painting for Your Home?</h2>
           <p className="mt-3 text-blue-200 text-sm">Get a free site visit and written quotation today.</p>
           <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
             <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20a%20quote%20for%20Interior%20Painting." target="_blank" rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 rounded-lg px-6 py-3 text-sm font-bold text-white"
-              style={{backgroundColor:"#25D366"}}>
+              style={{ backgroundColor: "#25D366" }}>
               <MessageCircle className="h-4 w-4" /> WhatsApp Us
             </a>
             <a href="tel:+919158800517"
