@@ -6,14 +6,14 @@ import { useState } from "react"
 import { Phone, MessageCircle, CheckCircle, MapPin, ChevronDown } from "lucide-react"
 
 const serviceCards = [
-  { title: "1 BHK Painting", desc: "Complete 1BHK flat painting — walls, ceiling, doors & windows. Quick completion.", icon: "🏠", image: "/images/residential/res-1bhk.jpg", wa: "Hi%2C%20I%20need%20quote%20for%201%20BHK%20Flat%20Painting.%20Please%20share%20your%20availability%20for%20a%20free%20site%20visit.%20%F0%9F%93%8D%20My%20location%3A" },
-  { title: "2 BHK Painting", desc: "Professional 2BHK painting with quality finish. Interior + ceiling included.", icon: "🏠", image: "/images/residential/res-2bhk.jpg", wa: "Hi%2C%20I%20need%20quote%20for%202%20BHK%20Flat%20Painting.%20Please%20share%20your%20availability%20for%20a%20free%20site%20visit.%20%F0%9F%93%8D%20My%20location%3A" },
-  { title: "3 BHK Painting", desc: "Full 3BHK flat painting. Surface prep, putty, primer & final coat.", icon: "🏠", image: "/images/residential/res-3bhk.jpg", wa: "Hi%2C%20I%20need%20quote%20for%203%20BHK%20Flat%20Painting.%20Please%20share%20your%20availability%20for%20a%20free%20site%20visit.%20%F0%9F%93%8D%20My%20location%3A" },
-  { title: "Flat Repainting", desc: "Refresh your old flat with new colours. Crack filling & putty included.", icon: "🖌️", image: "/images/residential/res-flat.jpg", wa: "Hi%2C%20I%20need%20quote%20for%20Flat%20Repainting.%20Please%20share%20your%20availability%20for%20a%20free%20site%20visit.%20%F0%9F%93%8D%20My%20location%3A" },
-  { title: "New Flat Painting", desc: "First-time painting for newly constructed flats. Premium finish guaranteed.", icon: "✨", image: "/images/residential/res-new-flat.jpg", wa: "Hi%2C%20I%20need%20quote%20for%20New%20Flat%20Painting.%20Please%20share%20your%20availability%20for%20a%20free%20site%20visit.%20%F0%9F%93%8D%20My%20location%3A" },
-  { title: "Villa Painting", desc: "Complete interior & exterior painting for villas & bungalows.", icon: "🏡", image: "/images/residential/res-villa.jpg", wa: "Hi%2C%20I%20need%20quote%20for%20Villa%20Painting.%20Please%20share%20your%20availability%20for%20a%20free%20site%20visit.%20%F0%9F%93%8D%20My%20location%3A" },
-  { title: "Society Painting", desc: "Large-scale society & housing complex painting. Minimal resident disruption.", icon: "🏢", image: "/images/residential/res-society.jpg", wa: "Hi%2C%20I%20need%20quote%20for%20Society%20Painting.%20Please%20share%20your%20availability%20for%20a%20free%20site%20visit.%20%F0%9F%93%8D%20My%20location%3A" },
-  { title: "Rental Flat Painting", desc: "Quick, clean painting for rental flats. Ready for new tenants fast.", icon: "🔑", image: "/images/residential/res-rental.jpg", wa: "Hi%2C%20I%20need%20quote%20for%20Rental%20Flat%20Painting.%20Please%20share%20your%20availability%20for%20a%20free%20site%20visit.%20%F0%9F%93%8D%20My%20location%3A" },
+  { title: "1 BHK Painting", desc: "Complete 1BHK flat painting — walls, ceiling, doors & windows. Quick completion.", icon: "🏠", image: "/images/residential/res-1bhk.jpg", gallery: "/gallery/1bhk-painting", wa: "Hi%2C%20I%20need%20quote%20for%201%20BHK%20Flat%20Painting.%20Please%20share%20your%20availability%20for%20a%20free%20site%20visit.%20%F0%9F%93%8D%20My%20location%3A" },
+  { title: "2 BHK Painting", desc: "Professional 2BHK painting with quality finish. Interior + ceiling included.", icon: "🏠", image: "/images/residential/res-2bhk.jpg", gallery: "/gallery/2bhk-painting", wa: "Hi%2C%20I%20need%20quote%20for%202%20BHK%20Flat%20Painting.%20Please%20share%20your%20availability%20for%20a%20free%20site%20visit.%20%F0%9F%93%8D%20My%20location%3A" },
+  { title: "3 BHK Painting", desc: "Full 3BHK flat painting. Surface prep, putty, primer & final coat.", icon: "🏠", image: "/images/residential/res-3bhk.jpg", gallery: "/gallery/3bhk-painting", wa: "Hi%2C%20I%20need%20quote%20for%203%20BHK%20Flat%20Painting.%20Please%20share%20your%20availability%20for%20a%20free%20site%20visit.%20%F0%9F%93%8D%20My%20location%3A" },
+  { title: "Flat Repainting", desc: "Refresh your old flat with new colours. Crack filling & putty included.", icon: "🖌️", image: "/images/residential/res-flat.jpg", gallery: "/gallery/flat-repainting", wa: "Hi%2C%20I%20need%20quote%20for%20Flat%20Repainting.%20Please%20share%20your%20availability%20for%20a%20free%20site%20visit.%20%F0%9F%93%8D%20My%20location%3A" },
+  { title: "New Flat Painting", desc: "First-time painting for newly constructed flats. Premium finish guaranteed.", icon: "✨", image: "/images/residential/res-new-flat.jpg", gallery: "/gallery/new-flat-painting", wa: "Hi%2C%20I%20need%20quote%20for%20New%20Flat%20Painting.%20Please%20share%20your%20availability%20for%20a%20free%20site%20visit.%20%F0%9F%93%8D%20My%20location%3A" },
+  { title: "Villa Painting", desc: "Complete interior & exterior painting for villas & bungalows.", icon: "🏡", image: "/images/residential/res-villa.jpg", gallery: "/gallery/villa-painting", wa: "Hi%2C%20I%20need%20quote%20for%20Villa%20Painting.%20Please%20share%20your%20availability%20for%20a%20free%20site%20visit.%20%F0%9F%93%8D%20My%20location%3A" },
+  { title: "Society Painting", desc: "Large-scale society & housing complex painting. Minimal resident disruption.", icon: "🏢", image: "/images/residential/res-society.jpg", gallery: "/gallery/society-painting", wa: "Hi%2C%20I%20need%20quote%20for%20Society%20Painting.%20Please%20share%20your%20availability%20for%20a%20free%20site%20visit.%20%F0%9F%93%8D%20My%20location%3A" },
+  { title: "Rental Flat Painting", desc: "Quick, clean painting for rental flats. Ready for new tenants fast.", icon: "🔑", image: "/images/residential/res-rental.jpg", gallery: "/gallery/rental-flat-painting", wa: "Hi%2C%20I%20need%20quote%20for%20Rental%20Flat%20Painting.%20Please%20share%20your%20availability%20for%20a%20free%20site%20visit.%20%F0%9F%93%8D%20My%20location%3A" },
 ]
 
 const whyUs = [
@@ -158,7 +158,7 @@ export default function ResidentialPaintingPage() {
                 <div className="relative h-40 w-full overflow-hidden">
                   <Image src={s.image} alt={`${s.title} in Mumbai Thane Bhiwandi - Bhairav Painting Service`} fill className="object-cover group-hover:scale-105 transition-transform duration-300" />
                   <div className="absolute inset-0 bg-[#1B2B8A]/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <a href="/gallery/residential" className="bg-orange-500 text-white px-3 py-1.5 rounded-lg text-xs font-bold">View More →</a>
+                    <a href={s.gallery} className="bg-orange-500 text-white px-3 py-1.5 rounded-lg text-xs font-bold">View More →</a>
                   </div>
                 </div>
                 <div className="p-4">
@@ -200,7 +200,7 @@ export default function ResidentialPaintingPage() {
                   <img src={p.img} alt={`${p.title} - Residential painting problem Mumbai Thane Bhiwandi`} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy"/>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"/>
                   <div className="absolute inset-0 bg-[#1B2B8A]/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <a href="/gallery/residential" className="bg-orange-500 text-white px-3 py-1.5 rounded-lg text-xs font-bold">View More →</a>
+                    <a href={s.gallery} className="bg-orange-500 text-white px-3 py-1.5 rounded-lg text-xs font-bold">View More →</a>
                   </div>
                   <div className="absolute bottom-3 left-3 flex items-center gap-2">
                     <span className="text-xl">{p.icon}</span>
@@ -379,7 +379,7 @@ export default function ResidentialPaintingPage() {
                 <div className="relative h-52">
                   <Image src={item.image} alt={`${item.property} painting ${item.location}`} fill className="object-cover group-hover:scale-105 transition-transform duration-300" />
                   <div className="absolute inset-0 bg-[#1B2B8A]/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <a href="/gallery/residential" className="bg-orange-500 text-white px-3 py-1.5 rounded-lg text-xs font-bold">View More →</a>
+                    <a href={s.gallery} className="bg-orange-500 text-white px-3 py-1.5 rounded-lg text-xs font-bold">View More →</a>
                   </div>
                 </div>
                 <div className="p-4">
