@@ -134,6 +134,9 @@ export default function ExteriorPaintingPage() {
                 <div className="relative h-52 overflow-hidden">
                   <Image src={item.image} alt={item.title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
                   <div className="absolute inset-0 bg-[#1B2B8A]/55 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <a href="/gallery/exterior" className="bg-white text-xs font-bold px-3 py-1.5 rounded-full" style={{color:"#1B2B8A"}}>View More →</a>
+                  </div>
+                  <div className="absolute inset-0 bg-[#1B2B8A]/55 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                     <span className="bg-orange-500 text-white px-4 py-2 rounded-lg text-sm font-bold">View More →</span>
                   </div>
                 </div>
