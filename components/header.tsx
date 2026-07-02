@@ -16,7 +16,6 @@ const services = [
 ]
 
 const navigation = [
-  { name: "Home", href: "/" },
   { name: "About Us", href: "/about" },
   { name: "Contact", href: "/contact" },
   { name: "Gallery", href: "/gallery" },
