@@ -44,13 +44,13 @@ const processSteps = [
 ]
 
 const beforeAfter = [
-  { image: "/images/interior/card-bedroom.jpg", title: "Bedroom Painting", sub: "Full Interior Repainting" },
-  { image: "/images/interior/card-kitchen.jpg", title: "Kitchen Painting", sub: "Complete Kitchen Makeover" },
-  { image: "/images/interior/card-dining.jpg", title: "Dining Room Painting", sub: "Full Interior Painting" },
-  { image: "/images/interior/card-study.jpg", title: "Study Room Painting", sub: "Complete Room Makeover" },
-  { image: "/images/interior/card-kids.jpg", title: "Kids Room Painting", sub: "Themed Wall Art & Painting" },
-  { image: "/images/interior/card-pooja.jpg", title: "Pooja Room Painting", sub: "Complete Pooja Room Makeover" },
-  { image: "/images/interior/card-staircase.jpg", title: "Staircase Painting", sub: "Full Staircase Repainting" },
+  { image: "/images/interior/card-bedroom.jpg", title: "Bedroom Painting", sub: "Full Interior Repainting", gallery: "/gallery/bedroom-painting" },
+  { image: "/images/interior/card-kitchen.jpg", title: "Kitchen Painting", sub: "Complete Kitchen Makeover", gallery: "/gallery/kitchen-painting" },
+  { image: "/images/interior/card-dining.jpg", title: "Dining Room Painting", sub: "Full Interior Painting", gallery: "/gallery/dining-room-painting" },
+  { image: "/images/interior/card-study.jpg", title: "Study Room Painting", sub: "Complete Room Makeover", gallery: "/gallery/study-room-painting" },
+  { image: "/images/interior/card-kids.jpg", title: "Kids Room Painting", sub: "Themed Wall Art & Painting", gallery: "/gallery/kids-room-painting" },
+  { image: "/images/interior/card-pooja.jpg", title: "Pooja Room Painting", sub: "Complete Pooja Room Makeover", gallery: "/gallery/pooja-room-painting" },
+  { image: "/images/interior/card-staircase.jpg", title: "Staircase Painting", sub: "Full Staircase Repainting", gallery: "/gallery/ceiling-staircase-painting" },
 ]
 
 const recentProjects = [
@@ -159,7 +159,9 @@ export default function InteriorPaintingPage() {
               <div key={i} className="overflow-hidden rounded-xl bg-white shadow-sm group">
                 <div className="relative h-52 overflow-hidden">
                   <Image src={item.image} alt={item.title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
-
+                  <div className="absolute inset-0 bg-[#1B2B8A]/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <a href={item.gallery} className="bg-orange-500 text-white px-3 py-1.5 rounded-lg text-xs font-bold">View More →</a>
+                  </div>
                 </div>
                 <div className="p-4">
                   <p className="font-bold text-sm" style={{color:"#1B2B8A"}}>{item.title}</p>
