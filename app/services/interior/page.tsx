@@ -159,9 +159,7 @@ export default function InteriorPaintingPage() {
               <div key={i} className="overflow-hidden rounded-xl bg-white shadow-sm group">
                 <div className="relative h-52 overflow-hidden">
                   <Image src={item.image} alt={item.title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <a href="/gallery/interior" className="bg-orange-500 text-white px-3 py-1.5 rounded-lg text-xs font-bold">View More →</a>
-                  </div>
+
                 </div>
                 <div className="p-4">
                   <p className="font-bold text-sm" style={{color:"#1B2B8A"}}>{item.title}</p>
