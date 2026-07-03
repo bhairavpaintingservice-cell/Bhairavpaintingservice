@@ -155,12 +155,14 @@ export default function ResidentialPaintingPage() {
           <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {serviceCards.map((s) => (
               <div key={s.title} className="group rounded-xl bg-white border border-gray-100 overflow-hidden hover:shadow-md transition-shadow">
+                <a href={s.gallery} className="block">
                 <div className="relative h-40 w-full overflow-hidden">
                   <Image src={s.image} alt={`${s.title} in Mumbai Thane Bhiwandi - Bhairav Painting Service`} fill className="object-cover group-hover:scale-105 transition-transform duration-300" />
                   <div className="absolute inset-0 bg-[#1B2B8A]/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <a href={s.gallery} className="bg-orange-500 text-white px-3 py-1.5 rounded-lg text-xs font-bold">View More →</a>
+                    <span className="bg-orange-500 text-white px-3 py-1.5 rounded-lg text-xs font-bold">View More →</span>
                   </div>
                 </div>
+                </a>
                 <div className="p-4">
                   <div className="text-2xl mb-2">{s.icon}</div>
                   <h3 className="font-bold text-sm mb-1" style={{color:"#1B2B8A"}}>{s.title}</h3>
