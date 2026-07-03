@@ -7,11 +7,11 @@ import { Phone, MessageCircle, CheckCircle, MapPin, ChevronDown } from "lucide-r
 
 const beforeAfter = [
   { image: "/images/exterior/ba-5.jpg", title: "House Exterior — Bhiwandi", sub: "Full Exterior Repaint", gallery: "/gallery/house-exterior-painting" },
-  { image: "/images/exterior/ba-2.jpg", title: "Building — Thane", sub: "Society Exterior Painting", gallery: "/gallery/society-exterior-painting" },
-  { image: "/images/exterior/ba-3.jpg", title: "Villa — Kalyan", sub: "Weather-Resistant Coating", gallery: "/gallery/villa-bungalow-exterior" },
-  { image: "/images/exterior/ba-4.jpg", title: "Apartment — Mumbai", sub: "High-Rise Exterior", gallery: "/gallery/exterior-building-painting" },
+  { image: "/images/exterior/ba-6.jpg", title: "Building — Thane", sub: "Society Exterior Painting", gallery: "/gallery/society-exterior-painting" },
+  { image: "/images/exterior/ba-4.jpg", title: "Villa — Kalyan", sub: "Weather-Resistant Coating", gallery: "/gallery/villa-bungalow-exterior" },
+  { image: "/images/exterior/ba-2.jpg", title: "Apartment — Mumbai", sub: "High-Rise Exterior", gallery: "/gallery/exterior-building-painting" },
   { image: "/images/exterior/ba-1.jpg", title: "Bungalow — Navi Mumbai", sub: "Complete Exterior Makeover", gallery: "/gallery/villa-bungalow-exterior" },
-  { image: "/images/exterior/ba-6.jpg", title: "Society — Dombivli", sub: "Multi-Building Project", gallery: "/gallery/society-exterior-painting" },
+  { image: "/images/exterior/ba-3.jpg", title: "Society — Dombivli", sub: "Multi-Building Project", gallery: "/gallery/society-exterior-painting" },
 ]
 
 const whoFor = [
