@@ -141,6 +141,9 @@ export default function BuildingPaintingPage() {
               <div key={i} className="group relative overflow-hidden rounded-xl shadow-sm border border-gray-100">
                 <img src={s.img} alt={`${s.title} Mumbai Thane Bhiwandi`} loading="lazy" className="w-full h-36 object-cover group-hover:scale-105 transition-transform duration-300" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+                <div className="absolute inset-0 bg-[#1B2B8A]/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <a href={s.gallery} className="bg-orange-500 text-white px-3 py-1.5 rounded-lg text-xs font-bold">View More →</a>
+                </div>
                 <div className="absolute bottom-0 left-0 right-0 p-3 flex items-end gap-2">
                   <CheckCircle className="h-4 w-4 text-orange-400 shrink-0 mb-0.5" />
                   <span className="text-white text-xs font-bold leading-tight">{s.title}</span>
