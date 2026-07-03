@@ -6,12 +6,12 @@ import { useState } from "react"
 import { Phone, MessageCircle, CheckCircle, MapPin, ChevronDown } from "lucide-react"
 
 const beforeAfter = [
-  { image: "/images/exterior/ba-1.jpg", title: "House Exterior — Bhiwandi", sub: "Full Exterior Repaint" },
-  { image: "/images/exterior/ba-2.jpg", title: "Building — Thane", sub: "Society Exterior Painting" },
-  { image: "/images/exterior/ba-3.jpg", title: "Villa — Kalyan", sub: "Weather-Resistant Coating" },
-  { image: "/images/exterior/ba-4.jpg", title: "Apartment — Mumbai", sub: "High-Rise Exterior" },
-  { image: "/images/exterior/ba-5.jpg", title: "Bungalow — Navi Mumbai", sub: "Complete Exterior Makeover" },
-  { image: "/images/exterior/ba-6.jpg", title: "Society — Dombivli", sub: "Multi-Building Project" },
+  { image: "/images/exterior/ba-1.jpg", title: "House Exterior — Bhiwandi", sub: "Full Exterior Repaint", gallery: "/gallery/house-exterior-painting" },
+  { image: "/images/exterior/ba-2.jpg", title: "Building — Thane", sub: "Society Exterior Painting", gallery: "/gallery/society-exterior-painting" },
+  { image: "/images/exterior/ba-3.jpg", title: "Villa — Kalyan", sub: "Weather-Resistant Coating", gallery: "/gallery/villa-bungalow-exterior" },
+  { image: "/images/exterior/ba-4.jpg", title: "Apartment — Mumbai", sub: "High-Rise Exterior", gallery: "/gallery/exterior-building-painting" },
+  { image: "/images/exterior/ba-5.jpg", title: "Bungalow — Navi Mumbai", sub: "Complete Exterior Makeover", gallery: "/gallery/villa-bungalow-exterior" },
+  { image: "/images/exterior/ba-6.jpg", title: "Society — Dombivli", sub: "Multi-Building Project", gallery: "/gallery/society-exterior-painting" },
 ]
 
 const whoFor = [
@@ -133,11 +133,8 @@ export default function ExteriorPaintingPage() {
               <div key={i} className="overflow-hidden rounded-xl bg-white shadow-sm group">
                 <div className="relative h-52 overflow-hidden">
                   <Image src={item.image} alt={item.title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
-                  <div className="absolute inset-0 bg-[#1B2B8A]/55 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <a href="/gallery/exterior" className="bg-white text-xs font-bold px-3 py-1.5 rounded-full" style={{color:"#1B2B8A"}}>View More →</a>
-                  </div>
-                  <div className="absolute inset-0 bg-[#1B2B8A]/55 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <span className="bg-orange-500 text-white px-4 py-2 rounded-lg text-sm font-bold">View More →</span>
+                  <div className="absolute inset-0 bg-[#1B2B8A]/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <a href={item.gallery} className="bg-orange-500 text-white px-3 py-1.5 rounded-lg text-xs font-bold">View More →</a>
                   </div>
                 </div>
                 <div className="p-4"><p className="font-bold text-sm" style={{color:"#1B2B8A"}}>{item.title}</p><p className="mt-1 text-xs" style={{color:"#6b7280"}}>{item.sub}</p></div>
