@@ -1,23 +1,11 @@
 import type { Metadata } from 'next'
-import { Inter, Playfair_Display } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
 
-const inter = Inter({ 
-  subsets: ["latin"],
-  variable: '--font-inter',
-  display: 'swap',
-  preload: false,
-})
-
-const playfair = Playfair_Display({ 
-  subsets: ["latin"],
-  variable: '--font-playfair',
-  display: 'swap',
-  preload: false,
-})
+const inter = { variable: '--font-inter', className: 'font-inter' }
+const playfair = { variable: '--font-playfair', className: 'font-playfair' }
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://bhairavpaintingservice.vercel.app'),
