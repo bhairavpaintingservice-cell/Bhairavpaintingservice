@@ -11,7 +11,7 @@ const servicesIncluded = [
   { title: "Waterproofing", img: "/images/building/service-waterproofing.jpg", gallery: "/gallery/waterproofing-building" },
   { title: "Crack Filling", img: "/images/building/service-crack-filling.jpg", gallery: "/gallery/crack-filling" },
   { title: "Terrace Coating", img: "/images/building/service-terrace-coating.jpg", gallery: "/gallery/terrace-coating" },
-  { title: "Staircase Painting", img: "/images/building/service-staircase-painting.jpg", gallery: "/gallery/staircase-painting" },
+  { title: "Staircase Painting", img: "/images/building/service-staircase-painting.jpg", gallery: "/gallery/ceiling-staircase-painting" },
   { title: "Parking Area Painting", img: "/images/building/service-parking-area.jpg", gallery: "/gallery/parking-area-painting" },
   { title: "Common Area Painting", img: "/images/building/service-common-area.jpg", gallery: "/gallery/common-area-painting" },
   { title: "Compound Wall Painting", img: "/images/building/service-compound-wall.jpg", gallery: "/gallery/compound-wall-painting" },
