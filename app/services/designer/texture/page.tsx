@@ -2,15 +2,16 @@
 
 import { useState } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { Phone, MessageCircle, ChevronDown, CheckCircle, Star, Clock, Award, Shield } from "lucide-react"
 import type { Metadata } from "next"
 
 const designerServices = [
-  { icon: "🎨", title: "Stencil Wall Design", desc: "Custom stencil patterns on feature walls. Geometric, floral, abstract — any design.", tag: "Most Popular", location: "Thane", img: "/images/designer/stencil-wall.jpg" },
-  { icon: "🖌️", title: "Accent Wall", desc: "Bold single-wall colour or finish to create a focal point in any room.", tag: "Trending", location: "Bhiwandi", img: "/images/designer/accent-wall.jpg" },
-  { icon: "✨", title: "Feature Wall", desc: "Full feature wall treatment — combination of colour, texture & design.", tag: "Premium", location: "Mumbai", img: "/images/designer/feature-wall.jpg" },
-  { icon: "🥇", title: "Metallic Designer Wall", desc: "Gold, silver & copper metallic finishes for a luxury statement wall.", tag: "Luxury", location: "Navi Mumbai", img: "/images/designer/metallic-wall.jpg" },
-  { icon: "🎭", title: "Combination Finish", desc: "Mix of texture + stencil or designer print + solid colour. Custom-designed to your taste.", tag: "Custom", location: "Navi Mumbai", img: "/images/designer/combination-finish.jpg" },
+  { icon: "🎨", title: "Stencil Wall Design", desc: "Custom stencil patterns on feature walls. Geometric, floral, abstract — any design.", tag: "Most Popular", location: "Thane", img: "/images/designer/stencil-wall.jpg", gallery: "/gallery/designer-texture" },
+  { icon: "🖌️", title: "Accent Wall", desc: "Bold single-wall colour or finish to create a focal point in any room.", tag: "Trending", location: "Bhiwandi", img: "/images/designer/accent-wall.jpg", gallery: "/gallery/designer-texture" },
+  { icon: "✨", title: "Feature Wall", desc: "Full feature wall treatment — combination of colour, texture & design.", tag: "Premium", location: "Mumbai", img: "/images/designer/feature-wall.jpg", gallery: "/gallery/designer-texture" },
+  { icon: "🥇", title: "Metallic Designer Wall", desc: "Gold, silver & copper metallic finishes for a luxury statement wall.", tag: "Luxury", location: "Navi Mumbai", img: "/images/designer/metallic-wall.jpg", gallery: "/gallery/designer-texture" },
+  { icon: "🎭", title: "Combination Finish", desc: "Mix of texture + stencil or designer print + solid colour. Custom-designed to your taste.", tag: "Custom", location: "Navi Mumbai", img: "/images/designer/combination-finish.jpg", gallery: "/gallery/designer-texture" },
 ]
 
 const textureTypes = [
@@ -169,7 +170,12 @@ export default function DesignerTexturePage() {
             {designerServices.map(s => (
               <div key={s.title} className="bg-white border rounded-xl overflow-hidden hover:border-orange-400 hover:-translate-y-1 transition-all shadow-sm">
                 {s.img ? (
-                  <img src={s.img} alt={`${s.title} - Designer Wall Painting Mumbai Thane Bhiwandi`} title={s.title} loading="lazy" className="w-full h-44 object-cover" />
+                  <a href={s.gallery} className="block relative h-44 group overflow-hidden">
+                    <Image src={s.img} alt={`${s.title} - Designer Wall Painting Mumbai Thane Bhiwandi`} fill className="object-cover group-hover:scale-105 transition-transform duration-300" />
+                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                      <span className="bg-white text-xs font-bold px-3 py-1.5 rounded-full" style={{color:"#1B2B8A"}}>View More →</span>
+                    </div>
+                  </a>
                 ) : (
                   <div className="w-full h-44 bg-gray-100 flex items-center justify-center text-4xl">{s.icon}</div>
                 )}
