@@ -203,7 +203,12 @@ export default function DesignerTexturePage() {
             {textureTypes.map(t => (
               <div key={t.title} className="bg-gray-50 border rounded-xl overflow-hidden hover:border-orange-400 transition shadow-sm">
                 {t.img ? (
-                  <img src={t.img} alt={`${t.title} - Texture Painting Mumbai Thane Bhiwandi`} title={t.title} loading="lazy" className="w-full h-40 object-cover" />
+                  <a href="/gallery/designer-texture" className="block relative h-40 group overflow-hidden">
+                    <Image src={t.img} alt={`${t.title} - Texture Painting Mumbai Thane Bhiwandi`} fill className="object-cover group-hover:scale-105 transition-transform duration-300" />
+                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                      <span className="bg-white text-xs font-bold px-3 py-1.5 rounded-full" style={{color:"#1B2B8A"}}>View More →</span>
+                    </div>
+                  </a>
                 ) : (
                   <div className="w-full h-40 bg-gray-100 flex items-center justify-center text-3xl">{t.icon}</div>
                 )}
