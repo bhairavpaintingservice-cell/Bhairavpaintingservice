@@ -7,18 +7,18 @@ import { Phone, MessageCircle, ChevronDown, CheckCircle, Star, Clock, Award, Shi
 import type { Metadata } from "next"
 
 const designerServices = [
-  { icon: "🎨", title: "Stencil Wall Design", desc: "Custom stencil patterns on feature walls. Geometric, floral, abstract — any design.", tag: "Most Popular", location: "Thane", img: "/images/designer/stencil-wall.jpg", gallery: "/gallery/designer-texture" },
-  { icon: "🖌️", title: "Accent Wall", desc: "Bold single-wall colour or finish to create a focal point in any room.", tag: "Trending", location: "Bhiwandi", img: "/images/designer/accent-wall.jpg", gallery: "/gallery/designer-texture" },
-  { icon: "✨", title: "Feature Wall", desc: "Full feature wall treatment — combination of colour, texture & design.", tag: "Premium", location: "Mumbai", img: "/images/designer/feature-wall.jpg", gallery: "/gallery/designer-texture" },
-  { icon: "🥇", title: "Metallic Designer Wall", desc: "Gold, silver & copper metallic finishes for a luxury statement wall.", tag: "Luxury", location: "Navi Mumbai", img: "/images/designer/metallic-wall.jpg", gallery: "/gallery/designer-texture" },
-  { icon: "🎭", title: "Combination Finish", desc: "Mix of texture + stencil or designer print + solid colour. Custom-designed to your taste.", tag: "Custom", location: "Navi Mumbai", img: "/images/designer/combination-finish.jpg", gallery: "/gallery/designer-texture" },
+  { icon: "🎨", title: "Stencil Wall Design", desc: "Custom stencil patterns on feature walls. Geometric, floral, abstract — any design.", tag: "Most Popular", location: "Thane", img: "/images/designer/stencil-wall.jpg", gallery: "/gallery/stencil-wall" },
+  { icon: "🖌️", title: "Accent Wall", desc: "Bold single-wall colour or finish to create a focal point in any room.", tag: "Trending", location: "Bhiwandi", img: "/images/designer/accent-wall.jpg", gallery: "/gallery/accent-wall" },
+  { icon: "✨", title: "Feature Wall", desc: "Full feature wall treatment — combination of colour, texture & design.", tag: "Premium", location: "Mumbai", img: "/images/designer/feature-wall.jpg", gallery: "/gallery/feature-wall" },
+  { icon: "🥇", title: "Metallic Designer Wall", desc: "Gold, silver & copper metallic finishes for a luxury statement wall.", tag: "Luxury", location: "Navi Mumbai", img: "/images/designer/metallic-wall.jpg", gallery: "/gallery/metallic-wall" },
+  { icon: "🎭", title: "Combination Finish", desc: "Mix of texture + stencil or designer print + solid colour. Custom-designed to your taste.", tag: "Custom", location: "Navi Mumbai", img: "/images/designer/combination-finish.jpg", gallery: "/gallery/combination-finish" },
 ]
 
 const textureTypes = [
-  { icon: "🏖️", title: "Sand Texture", desc: "Grainy sand-effect finish that adds warmth & depth to walls. Popular for living rooms & bedrooms.", tag: "Most Popular", img: "/images/designer/texture-sand.jpg" },
-  { icon: "🧽", title: "Sponge Texture", desc: "Soft sponge-dabbed pattern giving walls a rich, layered look. Great for bedrooms & feature walls.", tag: "Budget-Friendly", img: "/images/designer/texture-sponge.jpg" },
-  { icon: "🪨", title: "Rustic / Stone Texture", desc: "Earthy stone or brick-effect finish for a raw, natural look. Perfect for accent walls & TV walls.", tag: "Trending", img: "/images/designer/texture-rustic.jpg" },
-  { icon: "✨", title: "Metallic Texture", desc: "Shiny metallic finish — gold, silver, copper tones. Adds glamour & elegance to living rooms.", tag: "Luxury", img: "/images/designer/texture-metallic.jpg" },
+  { icon: "🏖️", gallery: "/gallery/sand-texture", title: "Sand Texture", desc: "Grainy sand-effect finish that adds warmth & depth to walls. Popular for living rooms & bedrooms.", tag: "Most Popular", img: "/images/designer/texture-sand.jpg" },
+  { icon: "🧽", gallery: "/gallery/sponge-texture", title: "Sponge Texture", desc: "Soft sponge-dabbed pattern giving walls a rich, layered look. Great for bedrooms & feature walls.", tag: "Budget-Friendly", img: "/images/designer/texture-sponge.jpg" },
+  { icon: "🪨", gallery: "/gallery/rustic-stone-texture", title: "Rustic / Stone Texture", desc: "Earthy stone or brick-effect finish for a raw, natural look. Perfect for accent walls & TV walls.", tag: "Trending", img: "/images/designer/texture-rustic.jpg" },
+  { icon: "✨", gallery: "/gallery/metallic-texture", title: "Metallic Texture", desc: "Shiny metallic finish — gold, silver, copper tones. Adds glamour & elegance to living rooms.", tag: "Luxury", img: "/images/designer/texture-metallic.jpg" },
 ]
 
 
@@ -203,7 +203,7 @@ export default function DesignerTexturePage() {
             {textureTypes.map(t => (
               <div key={t.title} className="bg-gray-50 border rounded-xl overflow-hidden hover:border-orange-400 transition shadow-sm">
                 {t.img ? (
-                  <a href="/gallery/designer-texture" className="block relative h-40 group overflow-hidden">
+                  <a href={t.gallery || "/gallery/designer-texture"} className="block relative h-40 group overflow-hidden">
                     <Image src={t.img} alt={`${t.title} - Texture Painting Mumbai Thane Bhiwandi`} fill className="object-cover group-hover:scale-105 transition-transform duration-300" />
                     <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                       <span className="bg-white text-xs font-bold px-3 py-1.5 rounded-full" style={{color:"#1B2B8A"}}>View More →</span>
