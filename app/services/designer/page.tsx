@@ -716,7 +716,7 @@ footer { background: #1a0e02; color: #c8b888; padding: 40px 24px 20px; }
       <a href="https://bhairavpainting.vercel.app/services/interior">Interior Painting</a>
       <a href="https://bhairavpainting.vercel.app/services/building">Building Painting</a>
       <a href="https://bhairavpainting.vercel.app/services/commercial">Commercial Painting</a>
-      <a href="https://bhairavpainting.vercel.app/services/texture-designer">Designer Wall & Texture</a>
+      <a href="https://bhairavpainting.vercel.app/services/designer/texture-designer">Designer Wall & Texture</a>
       <a href="https://bhairavpainting.vercel.app/services/waterproofing">Waterproofing</a>
     </div>
     <div className="footer-col">
