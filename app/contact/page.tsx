@@ -228,13 +228,13 @@ export default function ContactPage() {
                   </div>
                 </a>
 
-                <a href="mailto:Bhairavpaintingservice@gmail.com" className="flex items-center gap-4 rounded-xl border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md transition-shadow">
+                <a href="mailto:bhairavpaintingservice@gmail.com" className="flex items-center gap-4 rounded-xl border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md transition-shadow">
                   <div className="flex h-10 w-10 items-center justify-center rounded-full" style={{backgroundColor:"#f0f4ff"}}>
                     <Mail className="h-5 w-5" style={{color:"#1B2B8A"}} />
                   </div>
                   <div>
                     <p className="text-xs font-semibold uppercase tracking-wide" style={{color:"#6b7280"}}>Email</p>
-                    <p className="font-bold text-sm" style={{color:"#1B2B8A"}}>Bhairavpaintingservice@gmail.com</p>
+                    <p className="font-bold text-sm" style={{color:"#1B2B8A"}}>bhairavpaintingservice@gmail.com</p>
                   </div>
                 </a>
 
