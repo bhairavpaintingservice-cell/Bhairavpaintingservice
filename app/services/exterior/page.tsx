@@ -63,7 +63,7 @@ const relatedServices = [
   { title: "Residential Painting", href: "/services/residential", image: "/images/residential.jpg" },
   { title: "Interior Painting", href: "/services/interior", image: "/images/interior/ba-living-room.jpg" },
   { title: "Waterproofing", href: "/services/waterproofing", image: "/images/interior/waterproofing.jpg" },
-  { title: "Texture Painting", href: "/services/texture", image: "/images/texture.jpg" },
+  { title: "Texture Painting", href: "/services/designer/texture", image: "/images/texture.jpg" },
   { title: "Commercial Painting", href: "/services/commercial", image: "/images/commercial.jpg" },
 ]
 
