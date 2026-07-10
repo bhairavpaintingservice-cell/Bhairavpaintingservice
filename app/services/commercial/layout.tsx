@@ -53,7 +53,7 @@ const localBusinessSchema = {
   "image": "https://bhairavpaintingservice.vercel.app/images/logo.png",
   "url": "https://bhairavpaintingservice.vercel.app",
   "telephone": "+919158800517",
-  "email": "Bhairavpaintingservice@gmail.com",
+  "email": "bhairavpaintingservice@gmail.com",
   "description": "Professional commercial painting contractor with 47+ years experience serving Mumbai, Thane, Bhiwandi and Kalyan.",
   "foundingDate": "1977",
   "address": {
