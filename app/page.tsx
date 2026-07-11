@@ -162,7 +162,7 @@ export default function HomePage() {
               <p className="mt-1 text-sm font-semibold">Projects Completed</p>
             </div>
             <div className="px-4">
-              <p className="text-4xl font-black">8</p>
+              <p className="text-4xl font-black">7</p>
               <p className="mt-1 text-sm font-semibold">Service Types</p>
             </div>
             <div className="px-4">
