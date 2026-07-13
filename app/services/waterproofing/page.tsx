@@ -219,10 +219,10 @@ export default function WaterproofingPage() {
           <div style={{display:"grid", gridTemplateColumns:"repeat(3, 1fr)", gap:"20px"}} className="mt-8">
             {projects.map((p, i) => (
               <div key={i} className="group rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition" style={{background:"#1B2B8A"}}>
-                <div style={{position:"relative"}}>
-                  <a href={p.gallery || "/gallery/waterproofing"} className="absolute top-2 right-2 z-10 bg-white text-xs font-bold px-3 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity" style={{color:"#1B2B8A"}}>View More →</a>
-                </div>
-                <div style={{display:"grid", gridTemplateColumns:"1fr 1fr"}}>
+                <div style={{position:"relative", display:"grid", gridTemplateColumns:"1fr 1fr"}}>
+                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10" style={{pointerEvents:"none"}}>
+                    <a href={p.gallery || "/gallery/waterproofing"} className="bg-white text-xs font-bold px-4 py-2 rounded-full" style={{color:"#1B2B8A", pointerEvents:"all"}}>View More →</a>
+                  </div>
                   <div style={{position:"relative", height:"160px"}}>
                     <img src={p.before} alt={`Before waterproofing - ${p.title} Mumbai Thane Bhiwandi`} style={{width:"100%", height:"100%", objectFit:"cover"}} loading="lazy"/>
                     <span style={{position:"absolute", top:"6px", left:"6px", background:"rgba(0,0,0,0.75)", color:"#fff", fontSize:"9px", fontWeight:"700", padding:"2px 6px", borderRadius:"4px"}}>BEFORE</span>
