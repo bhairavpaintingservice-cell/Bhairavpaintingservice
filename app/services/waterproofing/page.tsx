@@ -219,6 +219,9 @@ export default function WaterproofingPage() {
           <div style={{display:"grid", gridTemplateColumns:"repeat(3, 1fr)", gap:"20px"}} className="mt-8">
             {projects.map((p, i) => (
               <div key={i} className="group rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition" style={{background:"#1B2B8A"}}>
+                <div style={{position:"relative"}}>
+                  <a href="/gallery/waterproofing" className="absolute top-2 right-2 z-10 bg-white text-xs font-bold px-3 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity" style={{color:"#1B2B8A"}}>View More →</a>
+                </div>
                 <div style={{display:"grid", gridTemplateColumns:"1fr 1fr"}}>
                   <div style={{position:"relative", height:"160px"}}>
                     <img src={p.before} alt={`Before waterproofing - ${p.title} Mumbai Thane Bhiwandi`} style={{width:"100%", height:"100%", objectFit:"cover"}} loading="lazy"/>
