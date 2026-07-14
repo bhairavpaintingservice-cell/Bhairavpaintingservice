@@ -72,9 +72,26 @@ const serviceAreas = [
   { area: "Dombivli", types: "Residential, Society, Exterior" },
 ]
 
+
+const schemaData = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Painting Services",
+  "description": "Complete painting services — residential, commercial, waterproofing and designer finishes.",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Bhairav Painting Service",
+    "telephone": "+919158800517",
+    "areaServed": ["Mumbai", "Thane", "Bhiwandi", "Kalyan", "Navi Mumbai"]
+  },
+  "areaServed": ["Mumbai", "Thane", "Bhiwandi", "Kalyan", "Navi Mumbai"]
+}
+
 export default function ServicesPage() {
   return (
     <main>
+
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />
       {/* HERO */}
       <section className="pt-32 pb-16" style={{backgroundColor:"#1B2B8A"}}>
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
