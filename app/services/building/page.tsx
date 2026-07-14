@@ -92,6 +92,21 @@ const relatedServices = [
 
 const serviceOptions = ["Society Exterior Painting", "Building Repainting", "Waterproofing", "Common Area Painting", "New Construction Painting", "Other"]
 
+
+const schemaData = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Building & Society Painting",
+  "description": "Complete building and housing society painting services across Mumbai, Thane & Bhiwandi.",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Bhairav Painting Service",
+    "telephone": "+919158800517",
+    "areaServed": ["Mumbai", "Thane", "Bhiwandi", "Kalyan", "Navi Mumbai"]
+  },
+  "areaServed": ["Mumbai", "Thane", "Bhiwandi", "Kalyan", "Navi Mumbai"]
+}
+
 export default function BuildingPaintingPage() {
   const [form, setForm] = useState({ name: "", phone: "", service: "", area: "", message: "" })
   const [openFaq, setOpenFaq] = useState<number | null>(null)
