@@ -75,6 +75,21 @@ const faqs = [
 
 const areas = ["Mumbai", "Thane", "Bhiwandi", "Kalyan", "Navi Mumbai", "Dombivli", "Vasai", "Andheri", "Kasheli", "Kalher"]
 
+
+const schemaData = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Designer & Texture Painting",
+  "description": "Premium designer wall and texture painting finishes for homes and offices in Mumbai.",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Bhairav Painting Service",
+    "telephone": "+919158800517",
+    "areaServed": ["Mumbai", "Thane", "Bhiwandi", "Kalyan", "Navi Mumbai"]
+  },
+  "areaServed": ["Mumbai", "Thane", "Bhiwandi", "Kalyan", "Navi Mumbai"]
+}
+
 export default function DesignerTexturePage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null)
 
