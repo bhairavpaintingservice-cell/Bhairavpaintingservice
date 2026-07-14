@@ -8,9 +8,30 @@ export const metadata: Metadata = {
   description: "Bhairav Painting Service — a family legacy since 1979. 47+ years of trusted painting experience across Mumbai, Thane & Bhiwandi. Three generations of quality, honesty and craftsmanship.",
 }
 
+
+const schemaData = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Bhairav Painting Service",
+  "description": "Professional painting contractor in Mumbai, Thane & Bhiwandi. 47+ years experience.",
+  "telephone": "+919158800517",
+  "email": "bhairavpaintingservice@gmail.com",
+  "url": "https://bhairavpaintingservice.vercel.app",
+  "foundingDate": "1979",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Bhiwandi",
+    "addressRegion": "Maharashtra",
+    "addressCountry": "IN"
+  },
+  "areaServed": ["Mumbai", "Thane", "Bhiwandi", "Kalyan", "Navi Mumbai", "Dombivli"]
+}
+
 export default function AboutPage() {
   return (
     <main>
+
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />
       {/* HERO */}
       <section className="pt-32 pb-16" style={{backgroundColor:"#1B2B8A"}}>
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
