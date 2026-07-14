@@ -132,6 +132,21 @@ const projects = [
   { before: "/images/waterproofing/p7-before.jpg", after: "/images/waterproofing/p7-after.jpg", title: "Seepage Repair", gallery: "/gallery/seepage-repair", scope: "Interior Walls • Anti-Seepage • 2 Days", problem: "Corner and floor junction seepage causing mold growth.", solution: "Anti-seepage treatment + tile joint sealing + anti-fungal coat." },
 ]
 
+
+const schemaData = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Waterproofing Services",
+  "description": "Professional waterproofing for terrace, bathroom, walls and basement in Mumbai region.",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Bhairav Painting Service",
+    "telephone": "+919158800517",
+    "areaServed": ["Mumbai", "Thane", "Bhiwandi", "Kalyan", "Navi Mumbai"]
+  },
+  "areaServed": ["Mumbai", "Thane", "Bhiwandi", "Kalyan", "Navi Mumbai"]
+}
+
 export default function WaterproofingPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null)
   const [area, setArea] = useState("")
