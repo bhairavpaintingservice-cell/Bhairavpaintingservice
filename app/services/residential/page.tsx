@@ -87,6 +87,21 @@ const serviceOptions = [
   "Society Painting", "Rental Flat Painting", "Other"
 ]
 
+
+const schemaData = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Residential Painting",
+  "description": "Professional residential painting services for homes, apartments and societies in Mumbai.",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Bhairav Painting Service",
+    "telephone": "+919158800517",
+    "areaServed": ["Mumbai", "Thane", "Bhiwandi", "Kalyan", "Navi Mumbai"]
+  },
+  "areaServed": ["Mumbai", "Thane", "Bhiwandi", "Kalyan", "Navi Mumbai"]
+}
+
 export default function ResidentialPaintingPage() {
   const [form, setForm] = useState({ name: "", phone: "", service: "", area: "", message: "" })
   const [openFaq, setOpenFaq] = useState<number | null>(null)
