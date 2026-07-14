@@ -84,6 +84,21 @@ const faqs = [
 
 const serviceOptions = ["House Exterior Painting", "Building Exterior", "Society Painting", "Villa & Bungalow Exterior", "New Construction Painting", "Compound Wall Painting", "Exterior Repainting", "Other"]
 
+
+const schemaData = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Exterior Painting",
+  "description": "Weatherproof exterior painting services for homes and buildings in Mumbai region.",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Bhairav Painting Service",
+    "telephone": "+919158800517",
+    "areaServed": ["Mumbai", "Thane", "Bhiwandi", "Kalyan", "Navi Mumbai"]
+  },
+  "areaServed": ["Mumbai", "Thane", "Bhiwandi", "Kalyan", "Navi Mumbai"]
+}
+
 export default function ExteriorPaintingPage() {
   const [form, setForm] = useState({ name: "", phone: "", service: "", area: "", message: "" })
   const [openFaq, setOpenFaq] = useState<number | null>(null)
