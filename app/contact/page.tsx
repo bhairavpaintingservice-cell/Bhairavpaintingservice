@@ -20,6 +20,15 @@ const serviceAreas = [
   "Kasheli", "Kalher", "Andheri", "Vasai", "Virar"
 ]
 
+
+const schemaData = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "name": "Contact Bhairav Painting Service",
+  "description": "Contact us for free site visit and painting quote across Mumbai, Thane & Bhiwandi.",
+  "url": "https://bhairavpaintingservice.vercel.app/contact"
+}
+
 export default function ContactPage() {
   const [formData, setFormData] = useState({ name: "", phone: "", email: "", service: "", area: "", message: "" })
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -74,6 +83,8 @@ export default function ContactPage() {
 
   return (
     <main>
+
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />
       {/* HERO */}
       <section className="pt-32 pb-16" style={{backgroundColor:"#1B2B8A"}}>
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
