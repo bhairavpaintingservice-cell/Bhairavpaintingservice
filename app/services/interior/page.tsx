@@ -100,6 +100,21 @@ const faqs = [
 
 const serviceOptions = ["Bedroom Painting", "Living Room Painting", "Kitchen Painting", "Dining Room Painting", "Study Room Painting", "Kids Room Painting", "Pooja Room Painting", "Complete Home Interior", "New Flat Interior", "Rental Flat Interior", "Other"]
 
+
+const schemaData = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Interior Painting",
+  "description": "Expert interior painting for bedrooms, living rooms, kitchens across Mumbai and Thane.",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Bhairav Painting Service",
+    "telephone": "+919158800517",
+    "areaServed": ["Mumbai", "Thane", "Bhiwandi", "Kalyan", "Navi Mumbai"]
+  },
+  "areaServed": ["Mumbai", "Thane", "Bhiwandi", "Kalyan", "Navi Mumbai"]
+}
+
 export default function InteriorPaintingPage() {
   const [form, setForm] = useState({ name: "", phone: "", service: "", area: "", message: "" })
   const [openFaq, setOpenFaq] = useState<number | null>(null)
