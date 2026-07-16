@@ -5,7 +5,23 @@ import type { Metadata } from "next"
 
 export const metadata: Metadata = {
   title: "About Us | Bhairav Painting Service — Trusted Painting Experts Since 1979",
-  description: "Bhairav Painting Service — a family legacy since 1979. 47+ years of trusted painting experience across Mumbai, Thane & Bhiwandi. Three generations of quality, honesty and craftsmanship.",
+  description: "Bhairav Painting Service — a family legacy since 1979. 47+ years of trusted painting experience across Mumbai, Thane & Bhiwandi. Three generations of quality, honesty and craftsmanship.",,
+  openGraph: {
+    title: "About Us | Bhairav Painting Service — Trusted Since 1979",
+    description: "A family legacy since 1979. 47+ years of trusted painting experience across Mumbai, Thane & Bhiwandi. Three generations of quality, honesty and craftsmanship.",
+    url: "https://bhairavpaintingservice.vercel.app/about",
+    siteName: "Bhairav Painting Service",
+    images: [{ url: "https://bhairavpaintingservice.vercel.app/images/hero-painting.jpg", width: 900, height: 600 }],
+    locale: "en_IN",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Us | Bhairav Painting Service — Trusted Since 1979",
+    description: "A family legacy since 1979. 47+ years of trusted painting experience across Mumbai, Thane & Bhiwandi. Three generations of quality, honesty and craftsmanship.",
+    images: ["https://bhairavpaintingservice.vercel.app/images/hero-painting.jpg"],
+  },
+
 }
 
 
