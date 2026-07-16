@@ -5,7 +5,23 @@ import type { Metadata } from "next"
 
 export const metadata: Metadata = {
   title: "Project Gallery | Bhairav Painting Service",
-  description: "Browse our painting project gallery — Residential, Interior, Building, Exterior, Commercial, Designer & Texture, Waterproofing photos across Mumbai, Thane & Bhiwandi.",
+  description: "Browse our painting project gallery — Residential, Interior, Building, Exterior, Commercial, Designer & Texture, Waterproofing photos across Mumbai, Thane & Bhiwandi.",,
+  openGraph: {
+    title: "Project Gallery | Bhairav Painting Service",
+    description: "Browse our painting project gallery — residential, commercial, building, waterproofing and designer texture painting photos across Mumbai, Thane & Bhiwandi.",
+    url: "https://bhairavpaintingservice.vercel.app/gallery",
+    siteName: "Bhairav Painting Service",
+    images: [{ url: "https://bhairavpaintingservice.vercel.app/images/hero-painting.jpg", width: 900, height: 600 }],
+    locale: "en_IN",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Project Gallery | Bhairav Painting Service",
+    description: "Browse our painting project gallery — residential, commercial, building, waterproofing and designer texture painting photos across Mumbai, Thane & Bhiwandi.",
+    images: ["https://bhairavpaintingservice.vercel.app/images/hero-painting.jpg"],
+  },
+
 }
 
 const galleries = [
