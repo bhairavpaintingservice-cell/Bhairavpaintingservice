@@ -5,7 +5,23 @@ import type { Metadata } from "next"
 
 export const metadata: Metadata = {
   title: "Professional Painting Services in Mumbai, Thane & Navi Mumbai | Bhairav Painting Service",
-  description: "Complete painting services — residential, interior, exterior, commercial, building, waterproofing, texture and wood painting. 47+ years experience. Free site visit across Mumbai, Thane, Bhiwandi & Kalyan.",
+  description: "Complete painting services — residential, interior, exterior, commercial, building, waterproofing, texture and wood painting. 47+ years experience. Free site visit across Mumbai, Thane, Bhiwandi & Kalyan.",,
+  openGraph: {
+    title: "Painting Services in Mumbai, Thane & Bhiwandi | Bhairav Painting Service",
+    description: "Complete painting services — residential, interior, exterior, commercial, building, waterproofing and designer finishes. 47+ years experience. Free site visit.",
+    url: "https://bhairavpaintingservice.vercel.app/services",
+    siteName: "Bhairav Painting Service",
+    images: [{ url: "https://bhairavpaintingservice.vercel.app/images/hero-painting.jpg", width: 900, height: 600 }],
+    locale: "en_IN",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Painting Services in Mumbai, Thane & Bhiwandi | Bhairav Painting Service",
+    description: "Complete painting services — residential, interior, exterior, commercial, building, waterproofing and designer finishes. 47+ years experience. Free site visit.",
+    images: ["https://bhairavpaintingservice.vercel.app/images/hero-painting.jpg"],
+  },
+
 }
 
 const services = [
