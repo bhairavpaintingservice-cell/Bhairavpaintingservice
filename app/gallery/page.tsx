@@ -34,9 +34,24 @@ const galleries = [
   { title: "Waterproofing", img: "/images/waterproofing.jpg", href: "/services/waterproofing", count: "Complete waterproofing for terrace, bathroom & exterior walls" },
 ]
 
+
+const gallerySchema = {
+  "@context": "https://schema.org",
+  "@type": "ImageGallery",
+  "name": "Bhairav Painting Service Project Gallery",
+  "description": "Photos from residential, commercial, building, waterproofing and designer painting projects across Mumbai, Thane & Bhiwandi.",
+  "url": "https://bhairavpaintingservice.vercel.app/gallery",
+  "author": {
+    "@type": "LocalBusiness",
+    "name": "Bhairav Painting Service",
+    "telephone": "+919158800517"
+  }
+}
+
 export default function GalleryPage() {
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(gallerySchema) }} />
       {/* HERO */}
       <section className="pt-32 pb-16" style={{backgroundColor:"#1B2B8A"}}>
         <div className="mx-auto max-w-7xl px-6 lg:px-8 text-center">
