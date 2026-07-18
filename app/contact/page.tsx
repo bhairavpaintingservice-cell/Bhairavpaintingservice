@@ -219,7 +219,7 @@ export default function ContactPage() {
               <div className="mt-8 space-y-4">
                 <a href="tel:+919158800517" className="flex items-center gap-4 rounded-xl border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md transition-shadow">
                   <div className="flex h-10 w-10 items-center justify-center rounded-full" style={{backgroundColor:"#f0f4ff"}}>
-                    <Phone className="h-5 w-5" style={{color:"#1B2B8A"}} />
+                    <Phone className="h-5 w-5" aria-label="Phone" style={{color:"#1B2B8A"}} />
                   </div>
                   <div>
                     <p className="text-xs font-semibold uppercase tracking-wide" style={{color:"#6b7280"}}>Call Us</p>
@@ -231,7 +231,7 @@ export default function ContactPage() {
                   className="flex items-center gap-4 rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow"
                   style={{backgroundColor:"#25D366"}}>
                   <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/20">
-                    <MessageCircle className="h-5 w-5 text-white" />
+                    <MessageCircle className="h-5 w-5 text-white" aria-label="WhatsApp" />
                   </div>
                   <div>
                     <p className="text-xs font-semibold uppercase tracking-wide text-white/80">WhatsApp</p>
@@ -241,7 +241,7 @@ export default function ContactPage() {
 
                 <a href="mailto:bhairavpaintingservice@gmail.com" className="flex items-center gap-4 rounded-xl border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md transition-shadow">
                   <div className="flex h-10 w-10 items-center justify-center rounded-full" style={{backgroundColor:"#f0f4ff"}}>
-                    <Mail className="h-5 w-5" style={{color:"#1B2B8A"}} />
+                    <Mail className="h-5 w-5" aria-label="Email" style={{color:"#1B2B8A"}} />
                   </div>
                   <div>
                     <p className="text-xs font-semibold uppercase tracking-wide" style={{color:"#6b7280"}}>Email</p>
@@ -253,7 +253,7 @@ export default function ContactPage() {
 
                 <div className="flex items-center gap-4 rounded-xl border border-gray-200 bg-white p-4 shadow-sm">
                   <div className="flex h-10 w-10 items-center justify-center rounded-full" style={{backgroundColor:"#f0f4ff"}}>
-                    <MapPin className="h-5 w-5" style={{color:"#1B2B8A"}} />
+                    <MapPin className="h-5 w-5" aria-label="Location" style={{color:"#1B2B8A"}} />
                   </div>
                   <div>
                     <p className="text-xs font-semibold uppercase tracking-wide" style={{color:"#6b7280"}}>Service Areas</p>
