@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { useRouter } from "next/navigation"
 import { Phone, Mail, MapPin, Clock, MessageCircle, CheckCircle, Send } from "lucide-react"
 import emailjs from "@emailjs/browser"
 
@@ -30,6 +31,7 @@ const schemaData = {
 }
 
 export default function ContactPage() {
+  const router = useRouter()
   const [formData, setFormData] = useState({ name: "", phone: "", email: "", service: "", area: "", message: "" })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
@@ -65,8 +67,8 @@ export default function ContactPage() {
         service: formData.service,
         message: formData.message,
       }, "vLWZyTtI0Jyri4AH")
-      setIsSubmitted(true)
       setFormData({ name: "", phone: "", email: "", service: "", area: "", message: "" })
+      router.push("/thank-you")
       // Open WhatsApp with location if available
       const locationText = location ? `\n📍 My Location: https://maps.google.com/?q=${location.lat},${location.lng}` : ""
       const waMsg = encodeURIComponent(`Hi, I submitted a quote request for ${formData.service} in ${formData.area}.${locationText}`)
