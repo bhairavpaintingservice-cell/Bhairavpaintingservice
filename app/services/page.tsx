@@ -5,7 +5,7 @@ import type { Metadata } from "next"
 
 export const metadata: Metadata = {
   title: "Professional Painting Services in Mumbai, Thane & Navi Mumbai | Bhairav Painting Service",
-  description: "Complete painting services — residential, interior, exterior, commercial, building, waterproofing, texture and wood painting. 47+ years experience. Free site visit across Mumbai, Thane, Bhiwandi & Kalyan.",,
+  description: "Complete painting services — residential, interior, exterior, commercial, building, waterproofing, texture and wood painting. 47+ years experience. Free site visit across Mumbai, Thane, Bhiwandi & Kalyan.",
   openGraph: {
     title: "Painting Services in Mumbai, Thane & Bhiwandi | Bhairav Painting Service",
     description: "Complete painting services — residential, interior, exterior, commercial, building, waterproofing and designer finishes. 47+ years experience. Free site visit.",
