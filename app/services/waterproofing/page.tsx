@@ -1,6 +1,7 @@
 "use client"
 
-import { useState } from "react"
+import { useState }
+import { useRouter } from "next/navigation" from "react"
 import Link from "next/link"
 import { Phone, MessageCircle, ChevronDown, CheckCircle, Shield, Star, Clock, Award } from "lucide-react"
 
@@ -148,6 +149,7 @@ const schemaData = {
 }
 
 export default function WaterproofingPage() {
+  const router = useRouter()
   const [openFaq, setOpenFaq] = useState<number | null>(null)
   const [area, setArea] = useState("")
 
@@ -897,9 +899,14 @@ export default function WaterproofingPage() {
               <textarea placeholder="e.g. Terrace leakage, bathroom seepage, damp walls..." rows={3} className="w-full rounded-lg px-4 py-3 text-sm focus:outline-none bg-white text-gray-800 resize-none" />
             </div>
             <div className="md:col-span-2">
-              <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20Waterproofing%20quote" className="block w-full bg-blue-900 hover:bg-blue-800 text-white font-bold py-4 rounded-lg text-center transition text-lg">
+              <button
+                onClick={() => {
+                  window.open("https://wa.me/919158800517?text=Hi%2C%20I%20need%20Waterproofing%20quote", "_blank")
+                  router.push("/thank-you")
+                }}
+                className="block w-full bg-blue-900 hover:bg-blue-800 text-white font-bold py-4 rounded-lg text-center transition text-lg cursor-pointer">
                 🚀 Send Enquiry on WhatsApp
-              </a>
+              </button>
             </div>
           </div>
         </div>
