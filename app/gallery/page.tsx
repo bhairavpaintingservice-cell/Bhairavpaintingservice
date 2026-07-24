@@ -5,7 +5,7 @@ import type { Metadata } from "next"
 
 export const metadata: Metadata = {
   title: "Project Gallery | Bhairav Painting Service",
-  description: "Browse our painting project gallery — Residential, Interior, Building, Exterior, Commercial, Designer & Texture, Waterproofing photos across Mumbai, Thane & Bhiwandi.",,
+  description: "Browse our painting project gallery — Residential, Interior, Building, Exterior, Commercial, Designer & Texture, Waterproofing photos across Mumbai, Thane & Bhiwandi.",
   openGraph: {
     title: "Project Gallery | Bhairav Painting Service",
     description: "Browse our painting project gallery — residential, commercial, building, waterproofing and designer texture painting photos across Mumbai, Thane & Bhiwandi.",
