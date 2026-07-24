@@ -22,7 +22,7 @@ export default function ThankYouPage() {
         <div className="mx-auto max-w-2xl px-6 text-center">
           <div className="rounded-2xl bg-white p-10 shadow-lg border border-gray-100">
             <CheckCircle className="h-20 w-20 text-green-500 mx-auto" />
-            <h1 className="mt-6 text-3xl font-black" style={{color:"#1B2B8A"}}>Thank You!</h1>
+            <h1 className="mt-6 text-3xl font-black" style={{color:"#1B2B8A"}}>Thank You for Choosing Bhairav Painting Service!</h1>
             <p className="mt-3 text-lg font-semibold" style={{color:"#374151"}}>Your enquiry has been received.</p>
             <p className="mt-2 text-sm" style={{color:"#6b7280"}}>Our team will call or WhatsApp you within 30 minutes to confirm your free site visit.</p>
 
