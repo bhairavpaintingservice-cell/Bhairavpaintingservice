@@ -103,6 +103,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-JP7MH6N3NC"></script>
+        <script dangerouslySetInnerHTML={{__html: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-JP7MH6N3NC');
+        `}} />
+      </head>
       <body className={`${inter.variable} ${playfair.variable} font-sans antialiased`}>
         <Header />
         <main className="pt-16">
