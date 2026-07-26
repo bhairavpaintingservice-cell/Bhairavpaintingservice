@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 
 export async function GET() {
-  const baseUrl = 'https://bhairavpainting.vercel.app'
+  const baseUrl = 'https://bhairavpaintingservice.vercel.app'
   const today = new Date().toISOString().split('T')[0]
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
