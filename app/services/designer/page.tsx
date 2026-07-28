@@ -212,15 +212,15 @@ footer { background: #1a0e02; color: #c8b888; padding: 40px 24px 20px; }
 
 {/* NAVBAR */}
 <nav>
-  <a href="https://bhairavpainting.vercel.app/" className="logo">
-    <img src="https://bhairavpainting.vercel.app/images/logo-icon.png" alt="Bhairav Painting" height="40" />
+  <a href="https://bhairavpaintingservice.vercel.app/" className="logo">
+    <img src="https://bhairavpaintingservice.vercel.app/images/logo-icon.png" alt="Bhairav Painting" height="40" />
     <span>BHAIRAV PAINTING SERVICES</span>
   </a>
   <ul className="nav-links">
-    <li><a href="https://bhairavpainting.vercel.app/">Home</a></li>
-    <li><a href="https://bhairavpainting.vercel.app/services">Services</a></li>
-    <li><a href="https://bhairavpainting.vercel.app/about">About Us</a></li>
-    <li><a href="https://bhairavpainting.vercel.app/contact">Contact</a></li>
+    <li><a href="https://bhairavpaintingservice.vercel.app/">Home</a></li>
+    <li><a href="https://bhairavpaintingservice.vercel.app/services">Services</a></li>
+    <li><a href="https://bhairavpaintingservice.vercel.app/about">About Us</a></li>
+    <li><a href="https://bhairavpaintingservice.vercel.app/contact">Contact</a></li>
   </ul>
   <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20Designer%20Wall%20or%20Texture%20Painting" className="nav-cta">WhatsApp Us</a>
 </nav>
@@ -712,20 +712,20 @@ footer { background: #1a0e02; color: #c8b888; padding: 40px 24px 20px; }
     </div>
     <div className="footer-col">
       <h4>Our Services</h4>
-      <a href="https://bhairavpainting.vercel.app/services/residential">Residential Painting</a>
-      <a href="https://bhairavpainting.vercel.app/services/interior">Interior Painting</a>
-      <a href="https://bhairavpainting.vercel.app/services/building">Building Painting</a>
-      <a href="https://bhairavpainting.vercel.app/services/commercial">Commercial Painting</a>
-      <a href="https://bhairavpainting.vercel.app/services/designer/texture-designer">Designer Wall & Texture</a>
-      <a href="https://bhairavpainting.vercel.app/services/waterproofing">Waterproofing</a>
+      <a href="https://bhairavpaintingservice.vercel.app/services/residential">Residential Painting</a>
+      <a href="https://bhairavpaintingservice.vercel.app/services/interior">Interior Painting</a>
+      <a href="https://bhairavpaintingservice.vercel.app/services/building">Building Painting</a>
+      <a href="https://bhairavpaintingservice.vercel.app/services/commercial">Commercial Painting</a>
+      <a href="https://bhairavpaintingservice.vercel.app/services/designer/texture-designer">Designer Wall & Texture</a>
+      <a href="https://bhairavpaintingservice.vercel.app/services/waterproofing">Waterproofing</a>
     </div>
     <div className="footer-col">
       <h4>Quick Links</h4>
-      <a href="https://bhairavpainting.vercel.app/">Home</a>
-      <a href="https://bhairavpainting.vercel.app/services">Services</a>
-      <a href="https://bhairavpainting.vercel.app/gallery">Gallery</a>
-      <a href="https://bhairavpainting.vercel.app/about">About</a>
-      <a href="https://bhairavpainting.vercel.app/contact">Contact</a>
+      <a href="https://bhairavpaintingservice.vercel.app/">Home</a>
+      <a href="https://bhairavpaintingservice.vercel.app/services">Services</a>
+      <a href="https://bhairavpaintingservice.vercel.app/gallery">Gallery</a>
+      <a href="https://bhairavpaintingservice.vercel.app/about">About</a>
+      <a href="https://bhairavpaintingservice.vercel.app/contact">Contact</a>
     </div>
     <div className="footer-col">
       <h4>Service Areas</h4>
