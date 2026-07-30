@@ -259,7 +259,8 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold uppercase tracking-wide" style={{color:"#6b7280"}}>Service Areas</p>
-                    <p className="font-bold text-sm" style={{color:"#1B2B8A"}}>Mumbai · Thane · Bhiwandi · Kalyan · Navi Mumbai · Dombivli · Kasheli · Kalher · Andheri · Vasai · Virar</p>
+                    <p className="font-bold text-sm" style={{color:"#1B2B8A"}}>Shop No. 03, H. No. 167/4, Gr. Floor, Near Devji Nagar Bus Stop, Opp Muthoot Finance, Narpoli, Bhiwandi - 421302, Maharashtra</p>
+                    <p className="text-xs mt-1" style={{color:"#6b7280"}}>Serving: Mumbai · Thane · Bhiwandi · Kalyan · Navi Mumbai · Dombivli</p>
                   </div>
                 </div>
               </div>
