@@ -44,7 +44,7 @@ export default function PrivacyPolicyPage() {
           <div>
             <h2 className="text-lg font-bold mb-3" style={{color:"#1B2B8A"}}>Contact Us</h2>
             <p>Bhairav Painting Service</p>
-            <p>Bhiwandi, Maharashtra, India</p>
+            <p>Shop No. 03, H. No. 167/4, Gr. Floor, Near Devji Nagar Bus Stop, Opp Muthoot Finance, Narpoli, Bhiwandi - 421302, Maharashtra</p>
             <p>Phone: <a href="tel:+919158800517" className="underline" style={{color:"#1B2B8A"}}>+91 9158800517</a></p>
             <p>Email: <a href="mailto:bhairavpaintingservice@gmail.com" className="underline" style={{color:"#1B2B8A"}}>bhairavpaintingservice@gmail.com</a></p>
           </div>
