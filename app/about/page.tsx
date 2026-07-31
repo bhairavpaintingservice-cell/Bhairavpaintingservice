@@ -254,6 +254,7 @@ export default function AboutPage() {
               <Phone className="h-5 w-5" /> Call: +91 9158800517
             </a>
           </div>
+          <p className="mt-6 text-xs text-blue-200 opacity-80">📍 Shop No. 03, H. No. 167/4, Gr. Floor, Near Devji Nagar Bus Stop, Opp Muthoot Finance, Narpoli, Bhiwandi - 421302, Maharashtra</p>
         </div>
       </section>
     </main>
