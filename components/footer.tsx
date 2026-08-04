@@ -90,6 +90,11 @@ export function Footer() {
         </div>
         <div className="mt-12 border-t border-white/10 pt-8 text-center">
           <p className="text-sm text-white/50">© 2026 Bhairav Painting Service. All rights reserved. | Bhiwandi, Maharashtra</p>
+          <div className="mt-3 flex items-center justify-center gap-4 text-xs text-white/50">
+            <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <span>|</span>
+            <Link href="/terms-and-conditions" className="hover:text-white transition-colors">Terms & Conditions</Link>
+          </div>
         </div>
       </div>
     </footer>
