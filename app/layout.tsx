@@ -81,7 +81,7 @@ const schemaMarkup = {
     "latitude": "19.3024",
     "longitude": "73.0596"
   },
-  "areaServed": ["Mumbai", "Bhiwandi", "Thane", "Virar", "Vasai", "Mira Road", "Borivali", "Nalasopara"],
+  "areaServed": ["Mumbai", "Bhiwandi", "Thane", "Kalyan", "Navi Mumbai", "Virar", "Vasai", "Borivali", "Dombivli"],
   "serviceType": [
     "Interior Painting",
     "Exterior Painting",
