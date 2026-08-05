@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/services/commercial' },
   title: "Commercial Painting Services in Mumbai, Thane & Bhiwandi | Bhairav Painting Service",
   description: "Professional commercial painting for offices, shops, showrooms, warehouses & restaurants. Off-hours scheduling, owner supervised, 47+ years experience. Free site visit.",
   keywords: [
