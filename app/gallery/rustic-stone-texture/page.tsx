@@ -4,6 +4,7 @@ import { MessageCircle, Phone, ArrowLeft } from "lucide-react"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/gallery/rustic-stone-texture' },
   title: "Rustic Stone Texture Gallery | Bhairav Painting Service",
   description: "View our Rustic Stone Texture project photos across Mumbai, Thane & Bhiwandi.",
 }
