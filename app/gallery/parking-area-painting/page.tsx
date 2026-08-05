@@ -4,6 +4,7 @@ import { MessageCircle, Phone, ArrowLeft } from "lucide-react"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/gallery/parking-area-painting' },
   title: "Parking Area Painting Gallery | Bhairav Painting Service",
   description: "View our Parking Area Painting project photos across Mumbai, Thane & Bhiwandi.",
 }
