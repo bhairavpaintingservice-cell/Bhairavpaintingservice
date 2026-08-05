@@ -4,6 +4,7 @@ import { MessageCircle, Phone, ArrowLeft } from "lucide-react"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/gallery/waterproofing-building' },
   title: "Waterproofing Building Gallery | Bhairav Painting Service",
   description: "View our Waterproofing Building project photos across Mumbai, Thane & Bhiwandi.",
 }
