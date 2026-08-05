@@ -4,6 +4,7 @@ import { MessageCircle, Phone, ArrowLeft } from "lucide-react"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/gallery/weather-resistant-coating' },
   title: "Weather-Resistant Coating Gallery | Bhairav Painting Service",
   description: "View our Weather-Resistant Coating Gallery project photos across Mumbai, Thane & Bhiwandi.",
 }
