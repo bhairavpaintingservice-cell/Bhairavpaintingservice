@@ -114,9 +114,7 @@ export default function HomePage() {
           </div>
           <h1 className="text-4xl font-black text-white sm:text-5xl lg:text-6xl leading-tight">
             Trusted Painting Services In
-          </h1>
-          <h1 className="text-4xl font-black text-orange-500 sm:text-5xl lg:text-6xl mt-2 leading-tight">
-            Mumbai, Thane & Bhiwandi
+            <span className="block text-orange-500 mt-2">Mumbai, Thane & Bhiwandi</span>
           </h1>
           <p className="mt-6 text-lg text-white/75 max-w-2xl mx-auto">
             Interior, Exterior, Texture & Designer Painting — Professional work with Owner Supervision. Free Site Visit Available!
