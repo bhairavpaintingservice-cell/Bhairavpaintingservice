@@ -4,6 +4,7 @@ import { MessageCircle, Phone, ArrowLeft } from "lucide-react"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/gallery/living-room-painting' },
   title: "Living Room Painting Gallery | Bhairav Painting Service",
   description: "View our Living Room Painting project photos across Mumbai, Thane & Bhiwandi.",
 }
