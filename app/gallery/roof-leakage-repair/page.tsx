@@ -4,6 +4,7 @@ import { MessageCircle, Phone, ArrowLeft } from "lucide-react"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/gallery/roof-leakage-repair' },
   title: "Roof Leakage Repair Gallery | Bhairav Painting Service",
   description: "View our Roof Leakage Repair project photos across Mumbai, Thane & Bhiwandi.",
 }
