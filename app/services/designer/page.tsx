@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/services/designer' },
   title: "Designer Wall Painting & Texture Finishes in Mumbai, Thane & Bhiwandi | Bhairav Painting Service",
   description:
     "Designer Wall Painting & Texture Finishes in Mumbai, Thane & Bhiwandi — Stencil designs, accent walls, feature walls, sand & rustic textures. 47+ years experience. Free site visit. Call +91 9158800517.",
