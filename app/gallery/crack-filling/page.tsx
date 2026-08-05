@@ -4,6 +4,7 @@ import { MessageCircle, Phone, ArrowLeft } from "lucide-react"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/gallery/crack-filling' },
   title: "Crack Filling Gallery | Bhairav Painting Service",
   description: "View our Crack Filling project photos across Mumbai, Thane & Bhiwandi.",
 }
