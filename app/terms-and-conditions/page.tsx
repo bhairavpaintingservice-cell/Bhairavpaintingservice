@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/terms-and-conditions' },
   title: "Terms & Conditions | Bhairav Painting Service",
   description: "Terms & Conditions for Bhairav Painting Service — service engagement, quotations, payments and liability terms.",
 }
