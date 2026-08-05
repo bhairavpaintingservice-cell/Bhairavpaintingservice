@@ -4,6 +4,7 @@ import { MessageCircle, Phone, ImageIcon, ArrowLeft } from "lucide-react"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/gallery/commercial' },
   title: "Commercial Painting Gallery | Bhairav Painting Service",
   description: "Browse our commercial painting project gallery — Office, Showroom, Warehouse, Restaurant, Retail Chain & Co-working space photos.",
 }
