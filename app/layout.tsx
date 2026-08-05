@@ -9,7 +9,8 @@ const playfair = { variable: '--font-playfair', className: 'font-playfair' }
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://bhairavpaintingservice.vercel.app'),
-  title: 'Bhairav Painting Service | Mumbai & Bhiwandi',
+  alternates: { canonical: '/' },
+  title: 'Bhairav Painting Service | Mumbai, Thane & Bhiwandi',
   description: 'Trusted painting contractors in Mumbai & Bhiwandi. Residential, Commercial & Texture painting. 47+ years experience. Free site visit!',
   keywords: [
     'painting service mumbai',
@@ -18,8 +19,8 @@ export const metadata: Metadata = {
     'exterior painting mumbai',
     'texture paint contractor mumbai',
     'commercial painting borivali',
-    'interior painting mira road',
-    'building painting nalasopara',
+    'interior painting thane',
+    'building painting kalyan',
     'painter near me mumbai',
     'bhairav painting service'
   ],
@@ -28,7 +29,7 @@ export const metadata: Metadata = {
     follow: true,
   },
   openGraph: {
-    title: 'Bhairav Painting Service | Mumbai & Bhiwandi',
+    title: 'Bhairav Painting Service | Mumbai, Thane & Bhiwandi',
     description: 'Professional painting services — Residential, Commercial, Exterior & Designer finishes. 47+ years experience.',
     url: 'https://bhairavpaintingservice.vercel.app',
     siteName: 'Bhairav Painting Service',
@@ -45,7 +46,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Bhairav Painting Service | Mumbai & Bhiwandi',
+    title: 'Bhairav Painting Service | Mumbai, Thane & Bhiwandi',
     description: 'Professional painting services — Residential, Commercial, Exterior & Designer finishes. 47+ years experience.',
     images: ['/og-image.jpg'],
   },
