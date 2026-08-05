@@ -4,6 +4,7 @@ import { MessageCircle, Phone, ArrowLeft } from "lucide-react"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/gallery/damp-wall-treatment' },
   title: "Damp Wall Treatment Gallery | Bhairav Painting Service",
   description: "View our Damp Wall Treatment project photos across Mumbai, Thane & Bhiwandi.",
 }
