@@ -4,6 +4,7 @@ import { MessageCircle, Phone, ArrowLeft } from "lucide-react"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/gallery/seepage-repair' },
   title: "Seepage Repair Gallery | Bhairav Painting Service",
   description: "View our Seepage Repair project photos across Mumbai, Thane & Bhiwandi.",
 }
