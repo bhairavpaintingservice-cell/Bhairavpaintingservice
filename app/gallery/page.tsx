@@ -4,6 +4,7 @@ import { MessageCircle, Phone, ImageIcon } from "lucide-react"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/gallery' },
   title: "Project Gallery | Bhairav Painting Service",
   description: "Browse our painting project gallery — Residential, Interior, Building, Exterior, Commercial, Designer & Texture, Waterproofing photos across Mumbai, Thane & Bhiwandi.",
   openGraph: {
