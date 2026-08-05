@@ -4,6 +4,7 @@ import { MessageCircle, Phone, ArrowLeft } from "lucide-react"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/gallery/stencil-wall' },
   title: "Stencil Wall Design Gallery | Bhairav Painting Service",
   description: "View our Stencil Wall Design project photos across Mumbai, Thane & Bhiwandi.",
 }
