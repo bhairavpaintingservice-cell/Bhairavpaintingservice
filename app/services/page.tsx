@@ -4,6 +4,7 @@ import { CheckCircle, MessageCircle, Phone } from "lucide-react"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/services' },
   title: "Professional Painting Services in Mumbai, Thane & Navi Mumbai | Bhairav Painting Service",
   description: "Complete painting services — residential, interior, exterior, commercial, building, waterproofing, texture and wood painting. 47+ years experience. Free site visit across Mumbai, Thane, Bhiwandi & Kalyan.",
   openGraph: {
