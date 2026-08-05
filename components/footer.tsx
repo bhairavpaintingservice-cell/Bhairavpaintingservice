@@ -18,6 +18,8 @@ const quickLinks = [
   { name: "Gallery", href: "/gallery" },
   { name: "About Us", href: "/about" },
   { name: "Contact", href: "/contact" },
+  { name: "Privacy Policy", href: "/privacy-policy" },
+  { name: "Terms & Conditions", href: "/terms-and-conditions" },
   { name: "Sitemap", href: "/sitemap.xml" },
 ]
 
@@ -49,10 +51,11 @@ export function Footer() {
                 <MessageCircle className="h-4 w-4 text-orange-400 shrink-0" />WhatsApp: 9158800517
               </a>
               <a href="mailto:bhairavpaintingservice@gmail.com" className="flex items-center gap-3 text-sm text-white/80 hover:text-white transition-colors">
-                <Mail className="h-4 w-4 text-orange-400 shrink-0" />bhairavpaintingservice@gmail.com
+                <Mail className="h-4 w-4 text-orange-400 shrink-0" /><span dangerouslySetInnerHTML={{ __html: "&#98;&#104;&#97;&#105;&#114;&#97;&#118;&#112;&#97;&#105;&#110;&#116;&#105;&#110;&#103;&#115;&#101;&#114;&#118;&#105;&#99;&#101;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;" }} />
               </a>
-              <div className="flex items-center gap-3 text-sm text-white/80">
-                <MapPin className="h-4 w-4 text-orange-400 shrink-0" />Bhiwandi, Maharashtra
+              <div className="flex items-start gap-3 text-sm text-white/80">
+                <MapPin className="h-4 w-4 text-orange-400 shrink-0 mt-0.5" />
+                <span>Shop No. 03, H. No. 167/4, Gr. Floor, Near Devji Nagar Bus Stop, Opp Muthoot Finance, Narpoli, Bhiwandi - 421302, Maharashtra</span>
               </div>
               <div className="flex items-center gap-3 text-sm text-white/80">
                 <Clock className="h-4 w-4 text-orange-400 shrink-0" />All Days
@@ -90,11 +93,6 @@ export function Footer() {
         </div>
         <div className="mt-12 border-t border-white/10 pt-8 text-center">
           <p className="text-sm text-white/50">© 2026 Bhairav Painting Service. All rights reserved. | Bhiwandi, Maharashtra</p>
-          <div className="mt-3 flex items-center justify-center gap-4 text-xs text-white/50">
-            <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
-            <span>|</span>
-            <Link href="/terms-and-conditions" className="hover:text-white transition-colors">Terms & Conditions</Link>
-          </div>
         </div>
       </div>
     </footer>
