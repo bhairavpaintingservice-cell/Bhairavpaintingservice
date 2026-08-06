@@ -59,6 +59,14 @@ export default function ContactPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
+
+    // WhatsApp + redirect always happen, regardless of email success/failure
+    const locationText = location ? `\n📍 My Location: https://maps.google.com/?q=${location.lat},${location.lng}` : ""
+    const waMsg = encodeURIComponent(`Hi, I submitted a quote request for ${formData.service} in ${formData.area}.${locationText}`)
+    window.open(`https://wa.me/919158800517?text=${waMsg}`, "_blank")
+    router.push("/thank-you")
+
+    // Email is best-effort backup notification — failure here should never block the customer
     try {
       await emailjs.send("service_2zy0x0p", "template_zlc9l99", {
         name: formData.name,
@@ -66,16 +74,12 @@ export default function ContactPage() {
         email: formData.email,
         service: formData.service,
         message: formData.message,
-      }, "vLWZyTtI0Jyri4AH")
-      setFormData({ name: "", phone: "", email: "", service: "", area: "", message: "" })
-      router.push("/thank-you")
-      // Open WhatsApp with location if available
-      const locationText = location ? `\n📍 My Location: https://maps.google.com/?q=${location.lat},${location.lng}` : ""
-      const waMsg = encodeURIComponent(`Hi, I submitted a quote request for ${formData.service} in ${formData.area}.${locationText}`)
-      window.open(`https://wa.me/919158800517?text=${waMsg}`, "_blank")
+      }, "2kuEYhZq2BXEVfMap")
     } catch (error) {
-      alert("Something went wrong. Please WhatsApp or call us directly.")
+      console.error("EmailJS notification failed (non-blocking):", error)
     }
+
+    setFormData({ name: "", phone: "", email: "", service: "", area: "", message: "" })
     setIsSubmitting(false)
   }
 
