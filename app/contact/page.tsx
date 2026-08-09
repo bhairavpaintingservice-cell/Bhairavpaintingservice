@@ -157,7 +157,7 @@ export default function ContactPage() {
             <div>
               <span className="inline-block rounded-full border border-gray-300 px-4 py-1 text-xs font-semibold uppercase tracking-widest" style={{color:"#6b7280"}}>Why Choose Us</span>
               <h2 className="mt-3 text-3xl font-black sm:text-4xl" style={{color:"#1B2B8A"}}>Why Choose Bhairav Painting Service?</h2>
-              <p className="mt-3 text-sm" style={{color:"#6b7280"}}>Trusted by 500+ customers across Mumbai, Thane & Bhiwandi for 47+ years.</p>
+              <p className="mt-3 text-sm" style={{color:"#6b7280"}}>500+ Projects Completed across Mumbai, Thane & Bhiwandi in 47+ years.</p>
               <ul className="mt-6 space-y-3">
                 {[
                   "47+ Years of Painting Experience",
