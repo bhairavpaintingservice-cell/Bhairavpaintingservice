@@ -19,7 +19,6 @@ const projects = [
     id: 1,
     title: "Modern Living Room",
     category: "residential",
-    location: "Andheri West",
     image: "/images/residential.webp",
     description: "Complete interior transformation with warm neutral tones",
   },
@@ -27,7 +26,6 @@ const projects = [
     id: 2,
     title: "Master Bedroom Suite",
     category: "residential",
-    location: "Bandra",
     image: "/images/portfolio-bedroom.webp",
     description: "Elegant grey palette creating a serene atmosphere",
   },
@@ -35,7 +33,6 @@ const projects = [
     id: 3,
     title: "Corporate Office",
     category: "commercial",
-    location: "Lower Parel",
     image: "/images/commercial.webp",
     description: "Professional office space with clean white finish",
   },
@@ -43,7 +40,6 @@ const projects = [
     id: 4,
     title: "Tech Startup Office",
     category: "commercial",
-    location: "Powai",
     image: "/images/portfolio-office.webp",
     description: "Modern open-plan workspace transformation",
   },
@@ -51,7 +47,6 @@ const projects = [
     id: 5,
     title: "Residential Building",
     category: "exterior",
-    location: "Juhu",
     image: "/images/exterior.jpg",
     description: "Full exterior repaint with weather-resistant finish",
   },
@@ -59,7 +54,6 @@ const projects = [
     id: 6,
     title: "Apartment Complex",
     category: "exterior",
-    location: "Malad",
     image: "/images/portfolio-building.webp",
     description: "Large-scale exterior project with waterproofing",
   },
@@ -67,7 +61,6 @@ const projects = [
     id: 7,
     title: "Textured Feature Wall",
     category: "designer",
-    location: "Worli",
     image: "/images/texture.webp",
     description: "Custom textured accent wall with metallic finish",
   },
@@ -75,7 +68,6 @@ const projects = [
     id: 8,
     title: "Artistic Accent Wall",
     category: "designer",
-    location: "Khar",
     image: "/images/portfolio-accent.webp",
     description: "Designer textured wall with warm earth tones",
   },
@@ -145,9 +137,6 @@ export default function PortfolioPage() {
                 />
                 <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/70 transition-colors duration-300" />
                 <div className="absolute inset-0 p-6 flex flex-col justify-end opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <span className="text-xs font-medium uppercase tracking-wider text-primary-foreground/70">
-                    {project.location}
-                  </span>
                   <h3 className="mt-1 text-lg font-semibold text-primary-foreground">
                     {project.title}
                   </h3>
