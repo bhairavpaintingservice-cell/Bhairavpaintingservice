@@ -59,16 +59,6 @@ const recentProjects = [
   { image: "/images/interior/project-kalyan.jpg", location: "Kalyan", property: "2BHK New Flat", area: "950 sq ft", service: "First-Time Interior", paint: "Nerolac Impressions" },
 ]
 
-const reviews = [
-  { name: "Verified Customer", loc: "Bhiwandi", text: "Hamare 2BHK flat ka complete interior painting Bhairav Painting Service ne kiya. Walls me kaafi cracks the jinko pehle repair kiya gaya, uske baad putty aur painting hui. Furniture ko proper cover kiya gaya aur daily cleanup bhi kiya gaya. Final finish smooth aur premium lag rahi hai." },
-  { name: "Verified Customer", loc: "Thane", text: "Bedroom, living room aur kitchen ka interior repaint karwaya tha. Colour selection me guidance mili aur har room ka finish uniform raha. Kaam ke dauran ghar me rehna bhi comfortable tha kyunki team ne cleanliness maintain rakhi." },
-  { name: "Verified Customer", loc: "Kalyan", text: "Naye 3BHK flat ke possession ke baad interior painting karwani thi. Site visit ke baad detailed quotation diya gaya aur jo commitment kiya tha usi hisab se kaam complete hua. Paint finish, edge work aur wall preparation sab professional level ka tha." },
-  { name: "Verified Customer", loc: "Mumbai", text: "Owner ne khud site inspect ki aur pura project monitor kiya. Crack filling, putty work aur painting sab systematic tareeke se hua. Ghar ka interior pehle se kaafi bright aur fresh lag raha hai. Quality aur pricing dono se satisfied hu." },
-  { name: "Verified Customer", loc: "Navi Mumbai", text: "Rental flat ko tenants ke liye ready karna tha. Bhairav Painting Service ne short timeline me pura interior repaint complete kiya. Walls clean aur fresh dikhne lagi aur property ka overall appearance improve ho gaya. Fast aur reliable service." },
-  { name: "Verified Customer", loc: "Dombivli", text: "Kitchen aur dining area me moisture ke marks the. Team ne surface prepare karke proper paint system use kiya. Finishing smooth hai aur room pehle se zyada clean aur modern lag raha hai. Workmanship impressive thi." },
-  { name: "Verified Customer", loc: "Vasai", text: "Interior painting ke saath ceiling painting bhi karwayi thi. Team punctual thi, daily progress update milta tha aur completion ke baad complete cleanup kiya gaya. Har room me finishing consistent hai aur result expected se better mila." },
-  { name: "Verified Customer", loc: "Virar", text: "Poore ghar ka interior renovation project tha jisme wall preparation, putty aur painting include tha. Material quality achhi thi aur workers experienced lage. Project schedule ke andar complete hua aur final outcome bahut professional dikh raha hai." },
-]
 
 const areas = ["Mumbai", "Thane", "Bhiwandi", "Kalyan", "Navi Mumbai", "Dombivli", "Kasheli", "Kalher", "Andheri", "Vasai", "Virar"]
 
@@ -288,25 +278,6 @@ export default function InteriorPaintingPage() {
                     <div className="flex items-center gap-2 text-xs" style={{color:"#6b7280"}}><CheckCircle className="h-3.5 w-3.5 text-orange-500" /><span>Service: {p.service}</span></div>
                   </div>
                 </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* REVIEWS */}
-      <section className="py-20 bg-gray-50">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <span className="inline-block rounded-full border border-gray-300 px-4 py-1 text-xs font-semibold uppercase tracking-widest" style={{color:"#6b7280"}}>Customer Reviews</span>
-          <h2 className="mt-3 text-3xl font-black sm:text-4xl" style={{color:"#1B2B8A"}}>What Our Customers Say</h2>
-          <p className="mt-3 text-sm" style={{color:"#6b7280"}}>Real reviews from homeowners across Mumbai, Thane & Bhiwandi.</p>
-          <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {reviews.map((r, i) => (
-              <div key={i} className="rounded-xl bg-white p-6 border-l-4 border-orange-500 shadow-sm">
-                <div className="flex gap-0.5">{[...Array(5)].map((_, j) => <span key={j} className="text-orange-500 text-lg">★</span>)}</div>
-                <p className="mt-3 text-xs italic" style={{color:"#4b5563"}}>"{r.text}"</p>
-                <p className="mt-4 font-bold text-sm" style={{color:"#111827"}}>{r.name}</p>
-                <p className="text-xs" style={{color:"#9ca3af"}}>{r.loc}</p>
               </div>
             ))}
           </div>
