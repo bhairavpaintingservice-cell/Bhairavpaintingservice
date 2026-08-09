@@ -50,13 +50,6 @@ const recentProjects = [
   { image: "/images/exterior/ba-5.jpg", location: "Kalyan", property: "Villa", area: "2500 sq ft", service: "Exterior + Compound" },
 ]
 
-const reviews = [
-  { name: "Verified Customer", loc: "Thane", text: "Building ka exterior painting Bhairav Painting Service ne kiya. Scaffolding se lekar final coat tak sab kuch professional tha. Paint quality achhi thi aur finish long-lasting lag rahi hai." },
-  { name: "Verified Customer", loc: "Bhiwandi", text: "Hamare ghar ka exterior bahut kharab ho gaya tha — cracks, seepage sab tha. Bhairav Painting ne pehle repair kiya, phir weatherproof paint lagaya. Ab bilkul naya lag raha hai." },
-  { name: "Verified Customer", loc: "Kalyan", text: "Society committee ke behalf pe contact kiya tha. 3 buildings ka exterior tha. Team ne time pe complete kiya aur residents ko minimum inconvenience hua. Highly recommended." },
-  { name: "Verified Customer", loc: "Navi Mumbai", text: "Villa ka exterior painting + compound wall sab karwaya. Owner ne personally visit kiya aur quality check kiya. Final result expectations se better tha. Will definitely hire again." },
-]
-
 const areas = ["Mumbai", "Thane", "Bhiwandi", "Kalyan", "Navi Mumbai", "Dombivli", "Kasheli", "Kalher", "Andheri", "Vasai", "Virar"]
 
 const relatedServices = [
@@ -283,24 +276,6 @@ export default function ExteriorPaintingPage() {
                     <div className="flex items-center gap-2 text-xs" style={{color:"#6b7280"}}><CheckCircle className="h-3.5 w-3.5 text-orange-500" />Service: {p.service}</div>
                   </div>
                 </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* REVIEWS */}
-      <section className="py-20 bg-gray-50">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <span className="inline-block rounded-full border border-gray-300 px-4 py-1 text-xs font-semibold uppercase tracking-widest" style={{color:"#6b7280"}}>Customer Reviews</span>
-          <h2 className="mt-3 text-3xl font-black sm:text-4xl" style={{color:"#1B2B8A"}}>What Our Customers Say</h2>
-          <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {reviews.map((r, i) => (
-              <div key={i} className="rounded-xl bg-white p-6 border-l-4 border-orange-500 shadow-sm">
-                <div className="flex gap-0.5">{[...Array(5)].map((_,j)=><span key={j} className="text-orange-500 text-lg">★</span>)}</div>
-                <p className="mt-3 text-xs italic" style={{color:"#4b5563"}}>"{r.text}"</p>
-                <p className="mt-4 font-bold text-sm" style={{color:"#111827"}}>{r.name}</p>
-                <p className="text-xs" style={{color:"#9ca3af"}}>{r.loc}</p>
               </div>
             ))}
           </div>
