@@ -71,7 +71,7 @@ const relatedServices = [
 ]
 
 const faqs = [
-  { q: "What is the cost of interior painting in Mumbai?", a: "Interior painting cost starts from Rs.8 to Rs.25 per sq ft depending on wall condition, paint brand and area size. Free site visit and written quotation available — no hidden charges." },
+  { q: "What is the cost of interior painting in Mumbai?", a: "Interior painting cost depends on wall condition, paint brand and area size — so it varies project to project. We offer a free site visit and written quotation with no hidden charges, so you get an accurate price for your specific home." },
   { q: "How long does interior painting take for a 2BHK?", a: "A standard 2BHK interior painting takes 3 to 4 days depending on wall condition and scope of work." },
   { q: "Which paint brands do you use for interiors?", a: "We use Asian Paints, Berger, Nerolac and Dulux for interior work. We recommend the right product based on surface type and budget." },
   { q: "How many coats of paint are required for interior walls?", a: "Minimum 2 coats of paint after putty and primer are recommended for a smooth, long-lasting interior finish." },
