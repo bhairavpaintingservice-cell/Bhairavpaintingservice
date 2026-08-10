@@ -7,7 +7,7 @@ import { Phone, MessageCircle, ChevronDown, CheckCircle, Shield, Star, Clock, Aw
 
 const services = [
   {
-    icon: "🏠", title: "Terrace Waterproofing", desc: "Complete terrace waterproofing with membrane coating. Monsoon-ready solution.", tag: "Starts ₹45/sq ft",
+    icon: "🏠", title: "Terrace Waterproofing", desc: "Complete terrace waterproofing with membrane coating. Monsoon-ready solution.", tag: "Free Site Visit & Quote",
     what: "Terrace leakage Mumbai, Thane aur Bhiwandi mein sabse common problem hai. Monsoon mein terrace slab ke cracks aur aged waterproof layer se paani andar seep karta hai — top floor ceiling stains, damp walls aur structural damage hota hai. Timely waterproofing se yeh sab roka ja sakta hai.",
     signs: ["Ceiling stains in top floor flat", "Damp walls after rain", "Paint peeling from ceiling", "Moss or algae on terrace"],
     process: ["Surface inspection & crack mapping", "Crack filling with polymer compound", "Waterproof membrane application (Dr Fixit)", "Protective coating", "Water ponding test"],
@@ -565,7 +565,7 @@ export default function WaterproofingPage() {
         <div className="max-w-5xl mx-auto">
           <p className="text-orange-400 text-xs font-bold uppercase tracking-widest mb-2">Seasonal Guide</p>
           <h2 className="text-3xl font-black text-white mb-3">Monsoon Waterproofing Planning — Mumbai & Thane</h2>
-          <p className="text-blue-200 mb-10 text-sm">Mumbai mein monsoon June se September tak rehta hai. Pre-monsoon preparation se aap ₹50,000+ ki repair cost bachaa sakte hain.</p>
+          <p className="text-blue-200 mb-10 text-sm">Mumbai mein monsoon June se September tak rehta hai. Pre-monsoon preparation se aap bhaari repair cost bachaa sakte hain.</p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-10">
             {[
               {
@@ -640,7 +640,7 @@ export default function WaterproofingPage() {
           <p className="text-red-200 mb-10 text-sm">Waterproofing delay karna short-term mein paisa bachata hai — lekin long-term mein bohot zyada expensive ho jaata hai.</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {[
-              { icon: "🏗️", title: "Structural Damage", desc: "Water seepage steel reinforcement ko rust karta hai. Rusty steel expands karke concrete crack karta hai — structural integrity compromise hoti hai. Repair cost: ₹50,000 – ₹5,00,000+" },
+              { icon: "🏗️", title: "Structural Damage", desc: "Water seepage steel reinforcement ko rust karta hai. Rusty steel expands karke concrete crack karta hai — structural integrity compromise hoti hai. Repair cost significantly zyada ho jaata hai agar ignore kiya jaaye." },
               { icon: "🎨", title: "Repeated Paint Damage", desc: "Damp walls pe paint 6-12 months mein peel hoti hai. Baar baar repaint karne ka kharcha waterproofing se kahin zyada ho jaata hai over 5 years." },
               { icon: "🦠", title: "Mold & Health Hazard", desc: "Damp walls mold aur fungus grow karte hain jo respiratory problems, allergies aur skin issues cause karta hai — especially children ke liye dangerous." },
               { icon: "💡", title: "Electrical Hazard", desc: "Ceiling leakage electrical fittings, wiring aur switchboards ko wet kar sakti hai — short circuit aur fire risk create hota hai." },
@@ -655,7 +655,7 @@ export default function WaterproofingPage() {
             ))}
           </div>
           <div className="mt-8 bg-white/10 rounded-2xl p-6 border border-red-800">
-            <p className="text-sm text-white leading-relaxed"><strong className="text-orange-400">Bottom line:</strong> Mumbai, Thane aur Bhiwandi mein ek terrace waterproofing ka kharcha ₹20,000–₹80,000 tak ho sakta hai. Lekin agar ignore kiya toh ceiling repair, paint, structural damage aur neighbor compensation mila ke ₹2,00,000–₹10,00,000+ tak ja sakta hai. <strong className="text-orange-400">Prevention hamesha cure se sasta hai.</strong></p>
+            <p className="text-sm text-white leading-relaxed"><strong className="text-orange-400">Bottom line:</strong> Mumbai, Thane aur Bhiwandi mein terrace waterproofing ka kharcha ignore karne ke baad hone waale ceiling repair, paint, structural damage aur neighbor compensation ke total kharche se kaafi kam hota hai. <strong className="text-orange-400">Prevention hamesha cure se sasta hai.</strong> Free site visit lekar exact quotation le sakte hain.</p>
           </div>
         </div>
       </section>
