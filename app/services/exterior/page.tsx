@@ -26,11 +26,11 @@ const whoFor = [
 
 const serviceCards = [
   { image: "/images/exterior/house.jpg", title: "House Exterior Painting", desc: "Complete house exterior — walls, plinth, parapet & compound.", gallery: "/gallery/house-exterior-painting" },
-  { image: "/images/exterior/society.jpg", title: "Building Exterior", desc: "High-rise & multi-storey building exterior painting with scaffolding.", gallery: "/gallery/building-exterior-painting" },
+  { image: "/images/exterior/society.jpg", title: "Building Exterior", desc: "High-rise & multi-storey building exterior painting with scaffolding.", gallery: "/gallery/exterior-building-painting" },
   { image: "/images/exterior/ba-2.jpg", title: "Society Painting", desc: "Complete housing society exterior. Minimal disruption to residents.", gallery: "/gallery/society-exterior-painting" },
   { image: "/images/exterior/villa.jpg", title: "Villa & Bungalow", desc: "Premium exterior finish for villas & bungalows. Durable results.", gallery: "/gallery/villa-bungalow-exterior" },
   { image: "/images/exterior/ba-3.jpg", title: "Weather-Resistant Coating", desc: "Special paint for Mumbai monsoon — prevents peeling & seepage.", gallery: "/gallery/weather-resistant-coating" },
-  { image: "/images/exterior/ba-4.jpg", title: "Compound Wall Painting", desc: "Boundary walls, compound walls & gate painting.", gallery: "/gallery/compound-wall-exterior" },
+  { image: "/images/exterior/ba-4.jpg", title: "Compound Wall Painting", desc: "Boundary walls, compound walls & gate painting.", gallery: "/gallery/compound-wall-painting" },
   { image: "/images/exterior/new-construction.jpg", title: "New Construction Painting", desc: "First-time exterior painting for newly constructed buildings.", gallery: "/gallery/new-construction-exterior" },
   { image: "/images/exterior/renovation.jpg", title: "Exterior Repainting", desc: "Old exterior renovation — crack repair, putty & fresh paint.", gallery: "/gallery/exterior-repainting" },
 ]
