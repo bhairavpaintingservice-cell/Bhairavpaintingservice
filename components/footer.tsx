@@ -1,6 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
-import { Phone, Mail, MapPin, MessageCircle, Clock } from "lucide-react"
+import { Phone, Mail, MapPin, MessageCircle, Clock, Facebook } from "lucide-react"
 import ProtectedEmailLink from "@/components/protected-email-link"
 
 const services = [
@@ -61,6 +61,13 @@ export function Footer() {
               <div className="flex items-center gap-3 text-sm text-white/80">
                 <Clock className="h-4 w-4 text-orange-400 shrink-0" />All Days
               </div>
+            </div>
+            <div className="mt-6">
+              <a href="https://www.facebook.com/profile.php?id=61589093235759" target="_blank" rel="noopener noreferrer"
+                aria-label="Bhairav Painting Service on Facebook"
+                className="inline-flex items-center justify-center h-9 w-9 rounded-full bg-white/10 text-white hover:bg-orange-500 transition-colors">
+                <Facebook className="h-4 w-4" />
+              </a>
             </div>
           </div>
           <div>
