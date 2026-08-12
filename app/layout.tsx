@@ -69,6 +69,7 @@ const schemaMarkup = {
   "url": "https://bhairavpaintingservice.vercel.app",
   "telephone": "+919158800517",
   "email": "bhairavpaintingservice@gmail.com",
+  "sameAs": ["https://www.facebook.com/profile.php?id=61589093235759"],
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Shop No. 03, H. No. 167/4, Gr. floor, Near Devji Nagar Bus Stop, Opp. Muthoot Finance, Narpoli",
