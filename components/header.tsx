@@ -3,7 +3,8 @@
 import Link from "next/link"
 import Image from "next/image"
 import { useState } from "react"
-import { Menu, X, MessageCircle, ChevronDown } from "lucide-react"
+import { Menu, X, MessageCircle, ChevronDown, Mail } from "lucide-react"
+import ProtectedEmailLink from "@/components/protected-email-link"
 
 const services = [
   { name: "Residential Painting", href: "/services/residential" },
@@ -64,7 +65,10 @@ export function Header() {
             <Link key={item.name} href={item.href} className="text-sm font-medium text-gray-700 transition-colors hover:text-[#1B2B8A]">{item.name}</Link>
           ))}
         </div>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+        <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:items-center lg:gap-3">
+          <ProtectedEmailLink ariaLabel="Email us" className="flex items-center justify-center rounded-lg border border-gray-300 p-2 text-gray-600 hover:border-[#1B2B8A] hover:text-[#1B2B8A] transition-colors">
+            <Mail className="h-4 w-4" />
+          </ProtectedEmailLink>
           <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20a%20painting%20quote" target="_blank" rel="noopener noreferrer"
             className="flex items-center gap-2 rounded-lg bg-orange-500 px-4 py-2 text-sm font-semibold text-white hover:bg-orange-600 transition-colors">
             <MessageCircle className="h-4 w-4" /> WhatsApp Us
@@ -100,11 +104,14 @@ export function Header() {
                     <Link key={item.name} href={item.href} className="-mx-3 block rounded-lg px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50" onClick={() => setMobileMenuOpen(false)}>{item.name}</Link>
                   ))}
                 </div>
-                <div className="py-6">
+                <div className="py-6 flex flex-col gap-3">
                   <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20a%20painting%20quote" target="_blank" rel="noopener noreferrer"
                     className="flex items-center justify-center gap-2 rounded-lg bg-orange-500 px-4 py-3 text-sm font-semibold text-white">
                     <MessageCircle className="h-4 w-4" /> WhatsApp Us
                   </a>
+                  <ProtectedEmailLink className="flex items-center justify-center gap-2 rounded-lg border-2 border-[#1B2B8A] px-4 py-3 text-sm font-semibold text-[#1B2B8A]">
+                    <Mail className="h-4 w-4" /> Email Us
+                  </ProtectedEmailLink>
                 </div>
               </div>
             </div>
