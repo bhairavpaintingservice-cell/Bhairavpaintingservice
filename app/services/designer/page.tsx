@@ -708,7 +708,7 @@ footer { background: #1a0e02; color: #c8b888; padding: 40px 24px 20px; }
       <h4>BHAIRAV PAINTING SERVICES</h4>
       <p>Professional painting contractor — designer wall, texture & waterproofing services across Bhiwandi, Mumbai, Thane, Kalyan & beyond. 47+ years experience.</p>
       <a href="tel:+919158800517">+91 9158800517</a>
-      <a href="mailto:bhairavpaintingservice@gmail.com">bhairavpaintingservice@gmail.com</a>
+      <a href="mailto:bhairavpaintingservice@gmail.com"><span dangerouslySetInnerHTML={{ __html: "&#98;&#104;&#97;&#105;&#114;&#97;&#118;&#112;&#97;&#105;&#110;&#116;&#105;&#110;&#103;&#115;&#101;&#114;&#118;&#105;&#99;&#101;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;" }} /></a>
       <p>Bhiwandi, Maharashtra</p>
     </div>
     <div className="footer-col">
