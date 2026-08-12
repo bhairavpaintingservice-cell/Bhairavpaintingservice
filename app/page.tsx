@@ -4,6 +4,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { useState } from "react"
 import { Phone, MessageCircle, CheckCircle, MapPin } from "lucide-react"
+import ProtectedEmailLink from "@/components/protected-email-link"
 
 const services = [
   { title: "Residential Painting", description: "Quality painting for homes, societies & housing complexes. Clean, professional finish.", image: "/images/residential.webp", href: "/services/residential" },
@@ -394,10 +395,9 @@ export default function HomePage() {
                 className="flex items-center justify-center gap-2 rounded-lg border-2 border-white px-6 py-3 text-sm font-bold text-white hover:bg-white/10 transition-colors">
                 <Phone className="h-5 w-5" /> Call: 9158800517
               </a>
-              <a href="mailto:bhairavpaintingservice@gmail.com"
-                className="flex items-center justify-center gap-2 rounded-lg border-2 border-white px-6 py-3 text-sm font-bold text-white hover:bg-white/10 transition-colors">
+              <ProtectedEmailLink className="flex items-center justify-center gap-2 rounded-lg border-2 border-white px-6 py-3 text-sm font-bold text-white hover:bg-white/10 transition-colors">
                 📧 Email Us
-              </a>
+              </ProtectedEmailLink>
             </div>
           </div>
 
