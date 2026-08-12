@@ -10,7 +10,7 @@ function buildEmail() {
   return `${PARTS[0]}@${PARTS[1]}.${PARTS[2]}`
 }
 
-export default function ProtectedEmailLink({ className, style, children }: { className?: string; style?: React.CSSProperties; children?: React.ReactNode }) {
+export default function ProtectedEmailLink({ className, style, children, ariaLabel }: { className?: string; style?: React.CSSProperties; children?: React.ReactNode; ariaLabel?: string }) {
   const [email, setEmail] = useState<string | null>(null)
 
   useEffect(() => {
@@ -20,11 +20,11 @@ export default function ProtectedEmailLink({ className, style, children }: { cla
 
   if (!email) {
     // Placeholder shown briefly before JS runs / to bots that don't execute JS
-    return <span className={className} style={style}>{children ?? "Email Us"}</span>
+    return <span className={className} style={style} aria-label={ariaLabel}>{children ?? "Email Us"}</span>
   }
 
   return (
-    <a href={`mailto:${email}`} className={className} style={style}>
+    <a href={`mailto:${email}`} className={className} style={style} aria-label={ariaLabel}>
       {children ?? email}
     </a>
   )
