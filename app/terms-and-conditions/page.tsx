@@ -70,7 +70,7 @@ export default function TermsAndConditionsPage() {
             <p>Bhairav Painting Service</p>
             <p>Shop No. 03, H. No. 167/4, Gr. Floor, Near Devji Nagar Bus Stop, Opp Muthoot Finance, Narpoli, Bhiwandi - 421302, Maharashtra</p>
             <p>Phone: <a href="tel:+919158800517" className="underline" style={{color:"#1B2B8A"}}>+91 9158800517</a></p>
-            <p>Email: <a href="mailto:bhairavpaintingservice@gmail.com" className="underline" style={{color:"#1B2B8A"}}>bhairavpaintingservice@gmail.com</a></p>
+            <p>Email: <a href="mailto:bhairavpaintingservice@gmail.com" className="underline" style={{color:"#1B2B8A"}}><span dangerouslySetInnerHTML={{ __html: "&#98;&#104;&#97;&#105;&#114;&#97;&#118;&#112;&#97;&#105;&#110;&#116;&#105;&#110;&#103;&#115;&#101;&#114;&#118;&#105;&#99;&#101;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;" }} /></a></p>
           </div>
 
         </div>
