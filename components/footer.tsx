@@ -1,6 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
-import { Phone, Mail, MapPin, MessageCircle, Clock, Facebook, Instagram } from "lucide-react"
+import { Phone, Mail, MapPin, MessageCircle, Clock, Facebook, Instagram, Youtube } from "lucide-react"
 import ProtectedEmailLink from "@/components/protected-email-link"
 
 const services = [
@@ -72,6 +72,11 @@ export function Footer() {
                 aria-label="Bhairav Painting Service on Instagram"
                 className="inline-flex items-center justify-center h-9 w-9 rounded-full bg-white/10 text-white hover:bg-orange-500 transition-colors">
                 <Instagram className="h-4 w-4" />
+              </a>
+              <a href="https://www.youtube.com/@BhaviravEnterprise" target="_blank" rel="noopener noreferrer"
+                aria-label="Bhairav Painting Service on YouTube"
+                className="inline-flex items-center justify-center h-9 w-9 rounded-full bg-white/10 text-white hover:bg-orange-500 transition-colors">
+                <Youtube className="h-4 w-4" />
               </a>
             </div>
           </div>
