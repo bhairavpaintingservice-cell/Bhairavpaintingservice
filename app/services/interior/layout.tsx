@@ -2,10 +2,10 @@ import type { Metadata } from "next"
 
 export const metadata: Metadata = {
   alternates: { canonical: '/services/interior' },
-  title: "Interior Painting Services in Mumbai, Thane & Bhiwandi | Bhairav Painting Service",
+  title: "Interior Painting Services Mumbai | Bhairav Painting",
   description: "Expert interior painting for bedrooms, living rooms, kitchens and bathrooms. Premium branded paints, surface preparation included. Free site visit across Mumbai & Thane.",
   openGraph: {
-    title: "Interior Painting Services in Mumbai, Thane & Bhiwandi | Bhairav Painting Service",
+    title: "Interior Painting Services Mumbai | Bhairav Painting",
     description: "Expert interior painting for bedrooms, living rooms, kitchens and bathrooms. Premium branded paints, surface preparation included. Free site visit across Mumbai & Thane.",
     url: "https://bhairavpaintingservice.vercel.app/services/interior",
     siteName: "Bhairav Painting Service",
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Interior Painting Services in Mumbai, Thane & Bhiwandi | Bhairav Painting Service",
+    title: "Interior Painting Services Mumbai | Bhairav Painting",
     description: "Expert interior painting for bedrooms, living rooms, kitchens and bathrooms. Premium branded paints, surface preparation included. Free site visit across Mumbai & Thane.",
     images: ["https://bhairavpaintingservice.vercel.app/images/interior-painting.jpg"],
   },
