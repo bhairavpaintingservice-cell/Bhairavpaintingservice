@@ -613,7 +613,7 @@ export default function InteriorPaintingPage() {
               <div><label className="block text-xs font-bold uppercase tracking-wide text-white/80 mb-1">Phone Number *</label>
                 <input type="tel" placeholder="+91 XXXXX XXXXX" value={form.phone} onChange={(e) => setForm({...form,phone:e.target.value})} className="w-full rounded-lg bg-white px-4 py-3 text-sm outline-none" style={{color:"#111827"}} /></div>
               <div><label className="block text-xs font-bold uppercase tracking-wide text-white/80 mb-1">Service Type</label>
-                <select value={form.service} onChange={(e) => setForm({...form,service:e.target.value})} className="w-full rounded-lg bg-white px-4 py-3 text-sm outline-none" style={{color:"#111827"}}>
+                <select aria-label="Service Type" value={form.service} onChange={(e) => setForm({...form,service:e.target.value})} className="w-full rounded-lg bg-white px-4 py-3 text-sm outline-none" style={{color:"#111827"}}>
                   <option value="">Select Service</option>
                   {serviceOptions.map((opt) => <option key={opt} value={opt}>{opt}</option>)}
                 </select></div>
