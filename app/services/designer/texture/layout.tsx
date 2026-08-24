@@ -2,10 +2,10 @@ import type { Metadata } from "next"
 
 export const metadata: Metadata = {
   alternates: { canonical: '/services/designer/texture' },
-  title: "Designer & Texture Painting in Mumbai, Thane & Bhiwandi | Bhairav Painting Service",
+  title: "Designer & Texture Painting Mumbai | Bhairav Painting",
   description: "Premium designer wall and texture painting finishes — stencil, metallic, sand texture. Custom finishes for homes and offices across Mumbai & Thane.",
   openGraph: {
-    title: "Designer & Texture Painting in Mumbai, Thane & Bhiwandi | Bhairav Painting Service",
+    title: "Designer & Texture Painting Mumbai | Bhairav Painting",
     description: "Premium designer wall and texture painting finishes — stencil, metallic, sand texture. Custom finishes for homes and offices across Mumbai & Thane.",
     url: "https://bhairavpaintingservice.vercel.app/services/designer/texture",
     siteName: "Bhairav Painting Service",
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Designer & Texture Painting in Mumbai, Thane & Bhiwandi | Bhairav Painting Service",
+    title: "Designer & Texture Painting Mumbai | Bhairav Painting",
     description: "Premium designer wall and texture painting finishes — stencil, metallic, sand texture. Custom finishes for homes and offices across Mumbai & Thane.",
     images: ["https://bhairavpaintingservice.vercel.app/images/texture.webp"],
   },
