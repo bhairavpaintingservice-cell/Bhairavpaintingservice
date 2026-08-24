@@ -37,7 +37,7 @@ export default function HomeQuoteForm() {
         </div>
         <div>
           <label className="block text-xs font-bold uppercase tracking-wide text-white/80 mb-1">Service Required</label>
-          <select value={form.service} onChange={(e) => setForm({ ...form, service: e.target.value })}
+          <select aria-label="Service Required" value={form.service} onChange={(e) => setForm({ ...form, service: e.target.value })}
             className="w-full rounded-lg bg-white px-4 py-3 text-sm text-gray-900 outline-none focus:ring-2 focus:ring-orange-300">
             <option value="">Select Service</option>
             {serviceOptions.map((opt) => <option key={opt} value={opt}>{opt}</option>)}
