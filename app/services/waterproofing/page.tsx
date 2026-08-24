@@ -863,7 +863,7 @@ export default function WaterproofingPage() {
             </div>
             <div>
               <label className="block text-xs font-bold text-orange-200 uppercase tracking-widest mb-1">Waterproofing Type</label>
-              <select className="w-full rounded-lg px-4 py-3 text-sm focus:outline-none bg-white text-gray-800">
+              <select aria-label="Waterproofing Type" className="w-full rounded-lg px-4 py-3 text-sm focus:outline-none bg-white text-gray-800">
                 <option>Select Type</option>
                 <option>Terrace Waterproofing</option>
                 <option>Roof Leakage Repair</option>
@@ -886,7 +886,7 @@ export default function WaterproofingPage() {
             </div>
             <div>
               <label className="block text-xs font-bold text-orange-200 uppercase tracking-widest mb-1">When Do You Need Work?</label>
-              <select className="w-full rounded-lg px-4 py-3 text-sm focus:outline-none bg-white text-gray-800">
+              <select aria-label="When Do You Need Work" className="w-full rounded-lg px-4 py-3 text-sm focus:outline-none bg-white text-gray-800">
                 <option>Select Urgency</option>
                 <option>🚨 Urgent — Leaking Now</option>
                 <option>Within This Week</option>
