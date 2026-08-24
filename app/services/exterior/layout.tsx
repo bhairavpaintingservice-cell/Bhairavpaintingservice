@@ -2,10 +2,10 @@ import type { Metadata } from "next"
 
 export const metadata: Metadata = {
   alternates: { canonical: '/services/exterior' },
-  title: "Exterior Painting Services in Mumbai, Thane & Bhiwandi | Bhairav Painting Service",
+  title: "Exterior Painting Services Mumbai | Bhairav Painting",
   description: "Weatherproof exterior painting for homes and buildings. Monsoon-ready paint systems, crack repair included. Free site visit across Mumbai, Thane & Bhiwandi.",
   openGraph: {
-    title: "Exterior Painting Services in Mumbai, Thane & Bhiwandi | Bhairav Painting Service",
+    title: "Exterior Painting Services Mumbai | Bhairav Painting",
     description: "Weatherproof exterior painting for homes and buildings. Monsoon-ready paint systems, crack repair included. Free site visit across Mumbai, Thane & Bhiwandi.",
     url: "https://bhairavpaintingservice.vercel.app/services/exterior",
     siteName: "Bhairav Painting Service",
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Exterior Painting Services in Mumbai, Thane & Bhiwandi | Bhairav Painting Service",
+    title: "Exterior Painting Services Mumbai | Bhairav Painting",
     description: "Weatherproof exterior painting for homes and buildings. Monsoon-ready paint systems, crack repair included. Free site visit across Mumbai, Thane & Bhiwandi.",
     images: ["https://bhairavpaintingservice.vercel.app/images/exterior-new.jpg"],
   },
