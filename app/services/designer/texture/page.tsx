@@ -473,7 +473,7 @@ export default function DesignerTexturePage() {
             </div>
             <div>
               <label className="block text-xs font-bold text-orange-200 uppercase tracking-widest mb-1">Service Type</label>
-              <select className="w-full rounded-lg px-4 py-3 text-sm focus:outline-none bg-white text-gray-800">
+              <select aria-label="Service Type" className="w-full rounded-lg px-4 py-3 text-sm focus:outline-none bg-white text-gray-800">
                 <option>Select Service</option>
                 <option>Stencil Wall Design</option>
                 <option>Accent Wall</option>
