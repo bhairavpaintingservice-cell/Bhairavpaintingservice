@@ -5,7 +5,7 @@ import type { Metadata } from "next"
 
 export const metadata: Metadata = {
   alternates: { canonical: '/about' },
-  title: "About Us | Bhairav Painting Service — Trusted Painting Experts Since 1979",
+  title: "About Us | Bhairav Painting Service - Since 1979",
   description: "Bhairav Painting Service — a family legacy since 1979. 47+ years of trusted painting experience across Mumbai, Thane & Bhiwandi. Three generations of quality, honesty and craftsmanship.",
   openGraph: {
     title: "About Us | Bhairav Painting Service — Trusted Since 1979",
