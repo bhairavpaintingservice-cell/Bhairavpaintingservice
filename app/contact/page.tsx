@@ -331,7 +331,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <label className="text-xs font-semibold" style={{color:"#374151"}}>Service Required *</label>
-                    <select name="service" value={formData.service} onChange={handleChange} required
+                    <select aria-label="Service Required" name="service" value={formData.service} onChange={handleChange} required
                       className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2.5 text-sm outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500">
                       <option value="">Select a service</option>
                       {services.map((s) => <option key={s} value={s}>{s}</option>)}
@@ -339,7 +339,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <label className="text-xs font-semibold" style={{color:"#374151"}}>Your Area</label>
-                    <select name="area" value={formData.area} onChange={handleChange}
+                    <select aria-label="Your Area" name="area" value={formData.area} onChange={handleChange}
                       className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2.5 text-sm outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500">
                       <option value="">Select your area</option>
                       {serviceAreas.map((a) => <option key={a} value={a}>{a}</option>)}
