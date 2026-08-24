@@ -3,7 +3,7 @@ import ProtectedEmailLink from "@/components/protected-email-link";
 
 export const metadata: Metadata = {
   alternates: { canonical: '/services/designer' },
-  title: "Designer Wall Painting & Texture Finishes in Mumbai, Thane & Bhiwandi | Bhairav Painting Service",
+  title: "Designer Wall & Texture Painting Mumbai | Bhairav Painting",
   description:
     "Designer Wall Painting & Texture Finishes in Mumbai, Thane & Bhiwandi — Stencil designs, accent walls, feature walls, sand & rustic textures. 47+ years experience. Free site visit. Call +91 9158800517.",
 };
