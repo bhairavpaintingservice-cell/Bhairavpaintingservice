@@ -2,10 +2,10 @@ import type { Metadata } from "next"
 
 export const metadata: Metadata = {
   alternates: { canonical: '/services/waterproofing' },
-  title: "Waterproofing Services in Mumbai, Thane & Bhiwandi | Bhairav Painting Service",
+  title: "Waterproofing Services Mumbai | Bhairav Painting",
   description: "Stop roof leaks, wall seepage and damp problems. Dr Fixit, Asian Paints SmartCare products used. Same day site visit available across Mumbai, Thane & Bhiwandi.",
   openGraph: {
-    title: "Waterproofing Services in Mumbai, Thane & Bhiwandi | Bhairav Painting Service",
+    title: "Waterproofing Services Mumbai | Bhairav Painting",
     description: "Stop roof leaks, wall seepage and damp problems. Dr Fixit, Asian Paints SmartCare products used. Same day site visit available across Mumbai, Thane & Bhiwandi.",
     url: "https://bhairavpaintingservice.vercel.app/services/waterproofing",
     siteName: "Bhairav Painting Service",
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Waterproofing Services in Mumbai, Thane & Bhiwandi | Bhairav Painting Service",
+    title: "Waterproofing Services Mumbai | Bhairav Painting",
     description: "Stop roof leaks, wall seepage and damp problems. Dr Fixit, Asian Paints SmartCare products used. Same day site visit available across Mumbai, Thane & Bhiwandi.",
     images: ["https://bhairavpaintingservice.vercel.app/images/waterproofing.jpg"],
   },
