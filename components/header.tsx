@@ -36,7 +36,7 @@ export function Header() {
           </Link>
         </div>
         <div className="flex lg:hidden">
-          <button type="button" className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700" onClick={() => setMobileMenuOpen(true)}>
+          <button type="button" aria-label="Open main menu" className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700" onClick={() => setMobileMenuOpen(true)}>
             <Menu className="h-6 w-6" />
           </button>
         </div>
@@ -86,7 +86,7 @@ export function Header() {
                 <Image src="/images/logo-icon.png" alt="Bhairav Painting Services" width={36} height={36} className="h-9 w-9 object-contain" />
                 <span className="text-sm font-black text-black">BHAIRAV PAINTING SERVICES</span>
               </Link>
-              <button type="button" className="-m-2.5 rounded-md p-2.5 text-gray-700" onClick={() => setMobileMenuOpen(false)}>
+              <button type="button" aria-label="Close menu" className="-m-2.5 rounded-md p-2.5 text-gray-700" onClick={() => setMobileMenuOpen(false)}>
                 <X className="h-6 w-6" />
               </button>
             </div>
