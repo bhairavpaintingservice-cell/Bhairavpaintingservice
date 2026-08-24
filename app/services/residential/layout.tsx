@@ -2,10 +2,10 @@ import type { Metadata } from "next"
 
 export const metadata: Metadata = {
   alternates: { canonical: '/services/residential' },
-  title: "Residential Painting Services in Mumbai, Thane & Bhiwandi | Bhairav Painting Service",
+  title: "Residential Painting Services Mumbai | Bhairav Painting",
   description: "Professional residential painting for homes, apartments and societies. 47+ years experience, premium paints, owner supervised. Free site visit across Mumbai, Thane & Bhiwandi.",
   openGraph: {
-    title: "Residential Painting Services in Mumbai, Thane & Bhiwandi | Bhairav Painting Service",
+    title: "Residential Painting Services Mumbai | Bhairav Painting",
     description: "Professional residential painting for homes, apartments and societies. 47+ years experience, premium paints, owner supervised. Free site visit across Mumbai, Thane & Bhiwandi.",
     url: "https://bhairavpaintingservice.vercel.app/services/residential",
     siteName: "Bhairav Painting Service",
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Residential Painting Services in Mumbai, Thane & Bhiwandi | Bhairav Painting Service",
+    title: "Residential Painting Services Mumbai | Bhairav Painting",
     description: "Professional residential painting for homes, apartments and societies. 47+ years experience, premium paints, owner supervised. Free site visit across Mumbai, Thane & Bhiwandi.",
     images: ["https://bhairavpaintingservice.vercel.app/images/residential.webp"],
   },
