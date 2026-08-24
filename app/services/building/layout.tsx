@@ -2,10 +2,10 @@ import type { Metadata } from "next"
 
 export const metadata: Metadata = {
   alternates: { canonical: '/services/building' },
-  title: "Building & Society Painting in Mumbai, Thane & Bhiwandi | Bhairav Painting Service",
+  title: "Building & Society Painting Mumbai | Bhairav Painting",
   description: "Complete building and housing society painting services. Scaffolding, waterproofing and common area painting included. Free site visit across Mumbai region.",
   openGraph: {
-    title: "Building & Society Painting in Mumbai, Thane & Bhiwandi | Bhairav Painting Service",
+    title: "Building & Society Painting Mumbai | Bhairav Painting",
     description: "Complete building and housing society painting services. Scaffolding, waterproofing and common area painting included. Free site visit across Mumbai region.",
     url: "https://bhairavpaintingservice.vercel.app/services/building",
     siteName: "Bhairav Painting Service",
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Building & Society Painting in Mumbai, Thane & Bhiwandi | Bhairav Painting Service",
+    title: "Building & Society Painting Mumbai | Bhairav Painting",
     description: "Complete building and housing society painting services. Scaffolding, waterproofing and common area painting included. Free site visit across Mumbai region.",
     images: ["https://bhairavpaintingservice.vercel.app/images/portfolio-building.webp"],
   },
