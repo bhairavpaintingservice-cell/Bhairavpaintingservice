@@ -681,7 +681,7 @@ footer { background: #1a0e02; color: #c8b888; padding: 40px 24px 20px; }
       <div className="form-row"><input type="text" placeholder="Your Name *" /></div>
       <div className="form-row"><input type="tel" placeholder="Phone Number *" /></div>
       <div className="form-row">
-        <select>
+        <select aria-label="Service Type">
           <option value="">Select Service Type</option>
           <option>Stencil Wall Design</option>
           <option>Accent Wall</option>
