@@ -2,10 +2,10 @@ import type { Metadata } from "next"
 
 export const metadata: Metadata = {
   alternates: { canonical: '/portfolio' },
-  title: "Our Portfolio | Bhairav Painting Service - Mumbai, Thane & Bhiwandi",
+  title: "Our Portfolio | Bhairav Painting Service",
   description: "Browse our portfolio of completed residential, commercial, exterior and designer painting projects across Mumbai, Thane & Bhiwandi.",
   openGraph: {
-    title: "Our Portfolio | Bhairav Painting Service - Mumbai, Thane & Bhiwandi",
+    title: "Our Portfolio | Bhairav Painting Service",
     description: "Browse our portfolio of completed residential, commercial, exterior and designer painting projects across Mumbai, Thane & Bhiwandi.",
     url: "https://bhairavpaintingservice.vercel.app/portfolio",
     siteName: "Bhairav Painting Service",
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Our Portfolio | Bhairav Painting Service - Mumbai, Thane & Bhiwandi",
+    title: "Our Portfolio | Bhairav Painting Service",
     description: "Browse our portfolio of completed residential, commercial, exterior and designer painting projects across Mumbai, Thane & Bhiwandi.",
   },
 }
