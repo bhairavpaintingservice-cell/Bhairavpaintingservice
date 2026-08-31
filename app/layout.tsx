@@ -3,6 +3,7 @@ import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
+import CallTracker from '@/components/call-tracker'
 
 const inter = { variable: '--font-inter', className: 'font-inter' }
 const playfair = { variable: '--font-playfair', className: 'font-playfair' }
@@ -121,6 +122,7 @@ export default function RootLayout({
         {/* Google Tag Manager noscript */}
         <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K58KMSPL" height="0" width="0" style={{display:"none", visibility:"hidden"}}></iframe></noscript>
         <Header />
+        <CallTracker />
         <main className="pt-16">
           {children}
         </main>
