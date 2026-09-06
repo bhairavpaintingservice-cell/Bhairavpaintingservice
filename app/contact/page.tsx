@@ -61,6 +61,18 @@ export default function ContactPage() {
     e.preventDefault()
     setIsSubmitting(true)
 
+    // Lead form conversion tracking (GTM/Google Ads/Facebook Pixel)
+    if (typeof window !== "undefined") {
+      ;(window as any).dataLayer = (window as any).dataLayer || []
+      ;(window as any).dataLayer.push({
+        event: "generate_lead",
+        form_name: "contact_page",
+        service: formData.service,
+        area: formData.area,
+        page_path: window.location.pathname,
+      })
+    }
+
     // WhatsApp + redirect always happen, regardless of email success/failure
     const locationText = location ? `\n📍 My Location: https://maps.google.com/?q=${location.lat},${location.lng}` : ""
     const waMsg = encodeURIComponent(`Hi, I submitted a quote request for ${formData.service} in ${formData.area}.${locationText}`)
