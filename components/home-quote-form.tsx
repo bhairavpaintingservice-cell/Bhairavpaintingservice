@@ -7,6 +7,12 @@ const serviceOptions = [
   "Commercial Painting", "Texture Painting", "Waterproofing", "Designer Wall Painting", "Other (Please Specify)",
 ]
 
+declare global {
+  interface Window {
+    dataLayer: any[]
+  }
+}
+
 export default function HomeQuoteForm() {
   const [form, setForm] = useState({ name: "", phone: "", service: "", area: "", message: "" })
 
@@ -15,6 +21,17 @@ export default function HomeQuoteForm() {
       alert("Please enter your name and phone number.")
       return
     }
+
+    // Lead form conversion tracking (GTM/Google Ads/Facebook Pixel)
+    window.dataLayer = window.dataLayer || []
+    window.dataLayer.push({
+      event: "generate_lead",
+      form_name: "homepage_quote_form",
+      service: form.service,
+      area: form.area,
+      page_path: window.location.pathname,
+    })
+
     const msg = `Hi, I need a painting quote.%0AName: ${encodeURIComponent(form.name)}%0APhone: ${encodeURIComponent(form.phone)}%0AService: ${encodeURIComponent(form.service || "Not specified")}%0AArea: ${encodeURIComponent(form.area || "Not specified")}%0AMessage: ${encodeURIComponent(form.message || "-")}`
     window.open(`https://wa.me/919158800517?text=${msg}`, "_blank")
   }
