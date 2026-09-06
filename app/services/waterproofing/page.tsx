@@ -901,6 +901,10 @@ export default function WaterproofingPage() {
             <div className="md:col-span-2">
               <button
                 onClick={() => {
+                  if (typeof window !== "undefined") {
+                    (window as any).dataLayer = (window as any).dataLayer || []
+                    ;(window as any).dataLayer.push({ event: "generate_lead", form_name: "waterproofing_service_page", page_path: window.location.pathname })
+                  }
                   window.open("https://wa.me/919158800517?text=Hi%2C%20I%20need%20Waterproofing%20quote", "_blank")
                   router.push("/thank-you")
                 }}
