@@ -119,6 +119,11 @@ const faqs = [
   { q: "Mumbai me waterproofing service available hai?", a: "Haan, Mumbai ke multiple areas me waterproofing services available hain — Andheri, Navi Mumbai, Thane, Bhiwandi aur surrounding areas." },
   { q: "Thane, Bhiwandi aur Kalyan me waterproofing service milti hai?", a: "Haan, hum Thane, Bhiwandi, Kalyan, Navi Mumbai, Dombivli, Vasai aur nearby locations me services provide karte hain. Free site visit available hai." },
   { q: "Waterproofing quotation kaise milega?", a: "Phone, WhatsApp (+91 9158800517) ya website enquiry form ke through free quotation request kar sakte hain. Same day response guaranteed." },
+  { q: "Pre-monsoon waterproofing kab karani chahiye?", a: "Pre-monsoon waterproofing April-May mein karana best hai — rain shuru hone se pehle. Ye ek zaruri waterproofing service hai jo terrace, roof aur exterior walls ko rain damage se bachaati hai. Kalyan, Thane aur Bhiwandi mein bhi yeh service available hai." },
+  { q: "Wall crack ya seepage repair kaise hoti hai?", a: "Wall crack repair aur seepage repair (Mumbai, Kalyan, Thane sab jagah available) mein pehle crack ko clean karke seal kiya jata hai, phir waterproof coating lagai jaati hai. Monsoon crack filling aur wall moisture repair dono is process ka hissa hain." },
+  { q: "Terrace waterproofing monsoon ke liye kitni zaruri hai?", a: "Bahut zaruri hai. Terrace waterproofing (Thane, Mumbai) rain damage se bachaati hai — bina waterproofing ke terrace pe leakage aur cracks bahut jaldi ban jaate hain. Pre-monsoon terrace painting ke saath karwana best result deta hai." },
+  { q: "Building aur exterior waterproofing monsoon season mein kaise hoti hai?", a: "Building waterproofing (Thane) aur exterior waterproofing monsoon se pehle karwane se poore season mein leakage-free rehta hai. Navi Mumbai mein bhi yeh service available hai." },
+  { q: "Monsoon ke baad fungal growth ya seepage ka kya solution hai?", a: "Monsoon anti-fungal treatment aur waterproof coating service se fungal growth aur leakage dono control hote hain. Monsoon seepage repair (Mumbai, Thane) turant book kar sakte hain." },
 ]
 
 const areas = ["Mumbai", "Thane", "Bhiwandi", "Kalyan", "Navi Mumbai", "Dombivli", "Kasheli", "Kalher", "Andheri", "Vasai", "Virar", "Ulhasnagar"]
