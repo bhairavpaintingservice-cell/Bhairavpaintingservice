@@ -73,6 +73,9 @@ const faqs = [
   { q: "Do you provide warranty on exterior painting?", a: "Yes — workmanship warranty included. Any defect due to our work is rectified at no extra cost." },
   { q: "Do you handle large society contracts?", a: "Yes. We regularly handle large society and building exterior projects across Mumbai, Thane and Bhiwandi." },
   { q: "Can exterior painting prevent water leakage?", a: "Weatherproof exterior paint helps prevent surface water penetration. For serious seepage, we also offer waterproofing treatment." },
+  { q: "Do you have exterior painters in Mumbai, Thane and Bhiwandi?", a: "Yes, our exterior house painters cover Mumbai, Thane, Bhiwandi and Kasheli. We handle building and exterior painting services for homes, villas and societies across the region." },
+  { q: "Do you offer monsoon-ready or rain-proof exterior coating?", a: "Yes. Our weatherproof exterior painters use monsoon-proof, rain-resistant exterior coating that protects walls from water penetration during heavy rain — ideal for exterior wall coating before monsoon." },
+  { q: "When should exterior painting be done before monsoon?", a: "Pre-monsoon exterior painting is best done in April-May, before the rains start, so the coating fully cures and protects the walls through the monsoon season." },
 ]
 
 const serviceOptions = ["House Exterior Painting", "Building Exterior", "Society Painting", "Villa & Bungalow Exterior", "New Construction Painting", "Compound Wall Painting", "Exterior Repainting", "Other"]
