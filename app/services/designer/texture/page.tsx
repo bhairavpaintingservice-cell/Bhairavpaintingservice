@@ -74,6 +74,7 @@ const faqs = [
   { q: "Kya aap Bhiwandi aur Mumbai mein designer texture painting services dete hain?", a: "Haan, hamare designer texture wall experts aur wall texture experts Bhiwandi, Mumbai, Thane sab jagah designer aur textured painting services dete hain. Premium texture painters aur decorative wall painting experts ki team available hai." },
   { q: "Kya monsoon mein bhi texture ya designer wall painting ho sakti hai?", a: "Haan, hum rain-proof aur rain-resistant texture coating use karte hain jo monsoon mein bhi durable rehti hai. Pre-monsoon texture painting recommend karte hain best long-term result ke liye." },
   { q: "Modern aur luxury texture finishes kya options hain?", a: "Luxury texture painting services aur modern designer wall finish options mein Royal Play, metallic texture, sponge texture aur stencil designs shamil hain — apni space ke hisab se choose kar sakte hain." },
+  { q: "Agar wall damaged ho toh designer texture se pehle repair hoti hai kya?", a: "Haan, hum wall repair contractors ki tarah pehle Mumbai mein damaged surface ko repair karte hain, phir usi wall pe designer texture ya wall painting apply karte hain — smooth aur long-lasting finish ke liye." },
 ]
 
 const areas = ["Mumbai", "Thane", "Bhiwandi", "Kalyan", "Navi Mumbai", "Dombivli", "Vasai", "Andheri", "Kasheli", "Kalher"]
