@@ -79,6 +79,8 @@ const faqs = [
   { q: "Is putty necessary before interior painting?", a: "Yes. Putty fills minor surface imperfections and creates a smooth base for paint — it significantly improves the final finish quality." },
   { q: "Can wall cracks be repaired before painting?", a: "Yes. Crack filling is included in our standard interior painting process — we fill all cracks before applying putty and paint." },
   { q: "Which paint is washable for interior walls?", a: "Asian Paints Royale, Berger Easy Clean, and Nerolac Impressions are washable interior paints — ideal for kitchens, kids rooms and high-traffic areas." },
+  { q: "Do you provide interior house painters in Vasai and Thane?", a: "Yes, our interior house painters cover Vasai, Thane and nearby areas along with Bhiwandi, Kalyan and Navi Mumbai." },
+  { q: "Does monsoon affect interior walls?", a: "Yes, monsoon humidity can cause interior wall dampness and peeling. We offer monsoon interior wall treatment to protect walls affected by seepage before repainting." },
   { q: "Do you move furniture before painting?", a: "Yes. We shift and cover all furniture with protective sheets before starting work — and put everything back after completion." },
   { q: "Do you work on weekends?", a: "Yes. We work all days including Saturdays and Sundays to suit your schedule and minimise disruption." },
   { q: "How often should interior walls be repainted?", a: "Interior walls generally need repainting every 4 to 6 years depending on paint quality, humidity, and wear." },
