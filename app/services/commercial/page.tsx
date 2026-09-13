@@ -89,6 +89,8 @@ const faqs = [
   { q: "Is the team owner supervised?", a: "Yes — every commercial project is personally supervised by the owner." },
   { q: "Is there a minimum project size for commercial painting?", a: "No — we handle everything from a single cabin to large multi-floor offices and warehouses." },
   { q: "What areas do you cover for commercial painting?", a: "Mumbai, Thane, Bhiwandi, Kalyan, Navi Mumbai, Dombivli, Vasai, Virar, Andheri, Kasheli & Kalher." },
+  { q: "Are you commercial painting contractors in Bhiwandi and Mumbai?", a: "Yes, we are commercial painting contractors serving Bhiwandi, Mumbai and surrounding areas, including office painting service for corporate spaces." },
+  { q: "Do you offer pre-monsoon or rain-proof commercial painting?", a: "Yes, pre-monsoon commercial painting with rain-proof coatings is available for shops, offices and warehouses across Mumbai — recommended before the monsoon season begins." },
 ]
 
 const relatedServices = [
