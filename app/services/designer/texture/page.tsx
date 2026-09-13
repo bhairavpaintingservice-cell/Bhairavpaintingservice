@@ -71,6 +71,9 @@ const faqs = [
   { q: "Texture painting ka cost kitna hota hai?", a: "Texture painting ka cost finish type, area aur material ke hisab se vary karta hai. Free site visit ke baad exact written quote milta hai." },
   { q: "Designer wall painting ka cost kitna hai?", a: "Design complexity, stencil type aur area ke hisab se cost vary karti hai. Free consultation ke baad quote confirm hota hai." },
   { q: "Kya aap Asian Paints texture use karte hain?", a: "Haan, Asian Paints, Berger aur premium texture brands use karte hain — quality materials se hi kaam karte hain." },
+  { q: "Kya aap Bhiwandi aur Mumbai mein designer texture painting services dete hain?", a: "Haan, hamare designer texture wall experts aur wall texture experts Bhiwandi, Mumbai, Thane sab jagah designer aur textured painting services dete hain. Premium texture painters aur decorative wall painting experts ki team available hai." },
+  { q: "Kya monsoon mein bhi texture ya designer wall painting ho sakti hai?", a: "Haan, hum rain-proof aur rain-resistant texture coating use karte hain jo monsoon mein bhi durable rehti hai. Pre-monsoon texture painting recommend karte hain best long-term result ke liye." },
+  { q: "Modern aur luxury texture finishes kya options hain?", a: "Luxury texture painting services aur modern designer wall finish options mein Royal Play, metallic texture, sponge texture aur stencil designs shamil hain — apni space ke hisab se choose kar sakte hain." },
 ]
 
 const areas = ["Mumbai", "Thane", "Bhiwandi", "Kalyan", "Navi Mumbai", "Dombivli", "Vasai", "Andheri", "Kasheli", "Kalher"]
