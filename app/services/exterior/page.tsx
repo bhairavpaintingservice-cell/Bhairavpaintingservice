@@ -76,6 +76,8 @@ const faqs = [
   { q: "Do you have exterior painters in Mumbai, Thane and Bhiwandi?", a: "Yes, our exterior house painters cover Mumbai, Thane, Bhiwandi and Kasheli. We handle building and exterior painting services for homes, villas and societies across the region." },
   { q: "Do you offer monsoon-ready or rain-proof exterior coating?", a: "Yes. Our weatherproof exterior painters use monsoon-proof, rain-resistant exterior coating that protects walls from water penetration during heavy rain — ideal for exterior wall coating before monsoon." },
   { q: "When should exterior painting be done before monsoon?", a: "Pre-monsoon exterior painting is best done in April-May, before the rains start, so the coating fully cures and protects the walls through the monsoon season." },
+  { q: "Do you have exterior painters across Navi Mumbai, Kalyan, Dombivli and Kasheli?", a: "Yes, our exterior painters cover Navi Mumbai, Kalyan, Dombivli, Kasheli, Thane and Bhiwandi — exterior wall painting and exterior painting service is available across all these areas." },
+  { q: "Do you handle exterior wall repair and gate or railing painting?", a: "Yes, exterior wall repair painting contractors on our team also handle gate and railing painting as part of complete exterior projects." },
 ]
 
 const serviceOptions = ["House Exterior Painting", "Building Exterior", "Society Painting", "Villa & Bungalow Exterior", "New Construction Painting", "Compound Wall Painting", "Exterior Repainting", "Other"]
