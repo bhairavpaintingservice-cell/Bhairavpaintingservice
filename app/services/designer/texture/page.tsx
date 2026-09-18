@@ -75,6 +75,8 @@ const faqs = [
   { q: "Kya monsoon mein bhi texture ya designer wall painting ho sakti hai?", a: "Haan, hum rain-proof aur rain-resistant texture coating use karte hain jo monsoon mein bhi durable rehti hai. Pre-monsoon texture painting recommend karte hain best long-term result ke liye." },
   { q: "Modern aur luxury texture finishes kya options hain?", a: "Luxury texture painting services aur modern designer wall finish options mein Royal Play, metallic texture, sponge texture aur stencil designs shamil hain — apni space ke hisab se choose kar sakte hain." },
   { q: "Agar wall damaged ho toh designer texture se pehle repair hoti hai kya?", a: "Haan, hum wall repair contractors ki tarah pehle Mumbai mein damaged surface ko repair karte hain, phir usi wall pe designer texture ya wall painting apply karte hain — smooth aur long-lasting finish ke liye." },
+  { q: "Texture painting service kin areas mein available hai?", a: "Texture painting Thane, Dombivli, Kasheli, Kalyan, Navi Mumbai aur Kalher — sab jagah available hai, designer painting Thane bhi isi team se hoti hai." },
+  { q: "Metallic ya modern wall painting finishes bhi milte hain?", a: "Haan, metallic wall finish aur modern wall painting services dono available hain — Mumbai mein designer wall painting projects mein yeh popular choices hain." },
 ]
 
 const areas = ["Mumbai", "Thane", "Bhiwandi", "Kalyan", "Navi Mumbai", "Dombivli", "Vasai", "Andheri", "Kasheli", "Kalher"]
