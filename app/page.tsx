@@ -81,6 +81,8 @@ const faqs = [
   { q: "Kin areas mein service available hai?", a: "Bhiwandi, Thane, Kalyan, Dombivli, Navi Mumbai, Mumbai, Kasheli, Kalher, Andheri, Vasai aur Virar mein professional painting services available hain." },
   { q: "Kya societies aur builder projects bhi lete hain?", a: "Haan! Societies, builder projects aur large commercial projects ke liye special teams available hain." },
   { q: "Emergency painting service available hai?", a: "Haan! Emergency situations mein jaldi service provide karne ki koshish karte hain. Call ya WhatsApp karein — hum response denge." },
+  { q: "Kasheli aur Kalher mein bhi painters available hain?", a: "Haan, painters Kasheli aur Kalher dono jagah available hain — Kalyan ke best painters ki tarah hi wahi quality standard maintain karte hain." },
+  { q: "Kya old wall repaint aur flat painting bhi karte hain, deep cleaning ke saath?", a: "Haan, old wall repaint, flat painting service Mumbai mein, aur deep cleaning painting service available hai — residential complex painting Thane mein bhi ye service milti hai." },
 ]
 
 export default function HomePage() {
