@@ -129,6 +129,10 @@ const faqs = [
   { q: "Monsoon ke baad rain damage wall repair kaise hoti hai?", a: "Rain damage wall repair mein pehle damaged area ko clean-repair kiya jata hai, phir rain-proof wall repair service se protective coating lagai jaati hai — Mumbai mein yeh service turant available hai." },
   { q: "Pre-monsoon painting services kaha kaha available hain aur kya kya cover hota hai?", a: "Pre-monsoon painting Kalyan, Navi Mumbai aur Kasheli mein available hai — jisme wall painting, wall treatment, gate painting aur scaffolding-based exterior work bhi shamil hai." },
   { q: "Monsoon season mein wall painting aur base coat services kaha available hain?", a: "Monsoon wall painting aur base coat service Thane, Bhiwandi, Dombivli aur Mumbai mein available hai — chhote flats se lekar bade complexes tak sab cover karte hain." },
+  { q: "Waterproofing se pehle putty aur primer preparation bhi hoti hai kya?", a: "Haan, primer coating aur putty work services waterproofing process ka standard hissa hain — wall primer application ke baad hi final base coat aur waterproof layer lagai jaati hai." },
+  { q: "Kya aap Bhiwandi, Thane aur Kasheli mein crack repair karte hain?", a: "Haan, crack repair painting service Bhiwandi, Thane aur Kasheli — teeno jagah available hai. Building crack repair Mumbai mein bhi karte hain, chahe residential ho ya society level." },
+  { q: "Weatherproof ya rain-proof coating kya options hain?", a: "Weather-resistant coating aur rain-proof painting service Mumbai mein available hai — walls aur buildings dono ke liye long-lasting weatherproof solutions dete hain." },
+  { q: "Waterproofing aur dampness repair contractors Kalyan, Thane, Mumbai mein milte hain kya?", a: "Haan, wall dampness repair Kalyan mein, proofing service Thane mein aur proofing contractors Mumbai mein available hain — terrace coating service bhi isi ke saath cover hoti hai." },
 ]
 
 const areas = ["Mumbai", "Thane", "Bhiwandi", "Kalyan", "Navi Mumbai", "Dombivli", "Kasheli", "Kalher", "Andheri", "Vasai", "Virar", "Ulhasnagar"]
