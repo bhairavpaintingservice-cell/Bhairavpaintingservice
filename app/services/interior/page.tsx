@@ -88,6 +88,7 @@ const faqs = [
   { q: "Can interior painting be done in an occupied flat?", a: "Yes. We work room by room with furniture protection and daily cleanup — minimal disruption to your daily routine." },
   { q: "Do you provide warranty on interior painting work?", a: "Yes — workmanship warranty included. Any defect due to our work is rectified at no extra cost." },
   { q: "How do I book a free site visit for interior painting?", a: "Simply call or WhatsApp us at +91 9158800517. We will schedule a free visit at your convenient time — no charges, no obligation." },
+  { q: "Do you provide interior painting in Kalyan, Thane and Bhiwandi?", a: "Yes, interior painting services cover Kalyan, Thane and Bhiwandi along with the rest of our service area." },
 ]
 
 const serviceOptions = ["Bedroom Painting", "Living Room Painting", "Kitchen Painting", "Dining Room Painting", "Study Room Painting", "Kids Room Painting", "Pooja Room Painting", "Complete Home Interior", "New Flat Interior", "Rental Flat Interior", "Other"]
