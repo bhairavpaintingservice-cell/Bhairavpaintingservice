@@ -32,7 +32,7 @@ export default function GalleryPage() {
             {images.map((img, i) => (
               <div key={i} className="overflow-hidden rounded-xl shadow-sm">
                 <div className="relative h-64">
-                  <Image src={img} alt={`Waterproofing project ${i + 1}`} fill className="object-cover hover:scale-105 transition-transform duration-300" />
+                  <Image src={img} alt={`Waterproofing project ${i + 1}`} fill className="object-cover hover:scale-105 transition-transform duration-300" sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw" />
                 </div>
               </div>
             ))}
