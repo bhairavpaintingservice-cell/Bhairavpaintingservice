@@ -149,7 +149,7 @@ export default function ExteriorPaintingPage() {
             {beforeAfter.map((item, i) => (
               <div key={i} className="overflow-hidden rounded-xl bg-white shadow-sm group">
                 <div className="relative h-52 overflow-hidden">
-                  <Image src={item.image} alt={item.title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <Image src={item.image} alt={item.title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw" />
                   <div className="absolute inset-0 bg-[#1B2B8A]/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                     <a href={item.gallery} className="bg-orange-500 text-white px-3 py-1.5 rounded-lg text-xs font-bold">View More →</a>
                   </div>
@@ -169,7 +169,7 @@ export default function ExteriorPaintingPage() {
           <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
             {whoFor.map((item, i) => (
               <div key={i} className="overflow-hidden rounded-xl bg-white border border-gray-100 hover:shadow-md transition-shadow">
-                <div className="relative h-28"><Image src={item.image} alt={item.title} fill className="object-cover" /></div>
+                <div className="relative h-28"><Image src={item.image} alt={item.title} fill className="object-cover" sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw" /></div>
                 <div className="p-3"><p className="font-bold text-sm" style={{color:"#1B2B8A"}}>{item.title}</p><p className="text-xs mt-1" style={{color:"#6b7280"}}>{item.desc}</p></div>
               </div>
             ))}
@@ -187,7 +187,7 @@ export default function ExteriorPaintingPage() {
             {serviceCards.map((s, i) => (
               <div key={i} className="group overflow-hidden rounded-xl bg-white border border-gray-100 hover:shadow-md transition-shadow">
                 <div className="relative h-36">
-                  <Image src={s.image} alt={s.title} fill className="object-cover group-hover:scale-105 transition-transform duration-300" />
+                  <Image src={s.image} alt={s.title} fill className="object-cover group-hover:scale-105 transition-transform duration-300" sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw" />
                   <div className="absolute inset-0 bg-[#1B2B8A]/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                     <a href={s.gallery} className="bg-orange-500 text-white px-3 py-1.5 rounded-lg text-xs font-bold">View More →</a>
                   </div>
@@ -275,7 +275,7 @@ export default function ExteriorPaintingPage() {
           <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
             {recentProjects.map((p, i) => (
               <div key={i} className="overflow-hidden rounded-xl border border-gray-100 shadow-sm">
-                <div className="relative h-48"><Image src={p.image} alt={p.service} fill className="object-cover" /></div>
+                <div className="relative h-48"><Image src={p.image} alt={p.service} fill className="object-cover" sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw" /></div>
                 <div className="p-5">
                   <h3 className="font-bold text-sm" style={{color:"#1B2B8A"}}>{p.property} — {p.location}</h3>
                   <div className="mt-3 space-y-1.5">
@@ -597,7 +597,7 @@ export default function ExteriorPaintingPage() {
           <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
             {relatedServices.map((s,i)=>(
               <Link key={i} href={s.href} className="overflow-hidden rounded-xl bg-white border-2 border-gray-100 hover:border-orange-400 transition-colors text-center">
-                <div className="relative h-24"><Image src={s.image} alt={s.title} fill className="object-cover"/></div>
+                <div className="relative h-24"><Image src={s.image} alt={s.title} fill className="object-cover" sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw"/></div>
                 <div className="p-3"><span className="text-xs font-bold" style={{color:"#1B2B8A"}}>{s.title}</span></div>
               </Link>
             ))}
