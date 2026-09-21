@@ -192,7 +192,7 @@ export default function DesignerTexturePage() {
               <div key={s.title} className="bg-white border rounded-xl overflow-hidden hover:border-orange-400 hover:-translate-y-1 transition-all shadow-sm">
                 {s.img ? (
                   <a href={s.gallery} className="block relative h-44 group overflow-hidden">
-                    <Image src={s.img} alt={`${s.title} - Designer Wall Painting Mumbai Thane Bhiwandi`} fill className="object-cover group-hover:scale-105 transition-transform duration-300" />
+                    <Image src={s.img} alt={`${s.title} - Designer Wall Painting Mumbai Thane Bhiwandi`} fill className="object-cover group-hover:scale-105 transition-transform duration-300" sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw" />
                     <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                       <span className="bg-white text-xs font-bold px-3 py-1.5 rounded-full" style={{color:"#1B2B8A"}}>View More →</span>
                     </div>
@@ -225,7 +225,7 @@ export default function DesignerTexturePage() {
               <div key={t.title} className="bg-gray-50 border rounded-xl overflow-hidden hover:border-orange-400 transition shadow-sm">
                 {t.img ? (
                   <a href={t.gallery || "/gallery/designer-texture"} className="block relative h-40 group overflow-hidden">
-                    <Image src={t.img} alt={`${t.title} - Texture Painting Mumbai Thane Bhiwandi`} fill className="object-cover group-hover:scale-105 transition-transform duration-300" />
+                    <Image src={t.img} alt={`${t.title} - Texture Painting Mumbai Thane Bhiwandi`} fill className="object-cover group-hover:scale-105 transition-transform duration-300" sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw" />
                     <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                       <span className="bg-white text-xs font-bold px-3 py-1.5 rounded-full" style={{color:"#1B2B8A"}}>View More →</span>
                     </div>
