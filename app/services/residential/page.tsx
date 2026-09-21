@@ -179,7 +179,7 @@ export default function ResidentialPaintingPage() {
               <div key={s.title} className="group rounded-xl bg-white border border-gray-100 overflow-hidden hover:shadow-md transition-shadow">
                 <a href={s.gallery} className="block">
                 <div className="relative h-40 w-full overflow-hidden">
-                  <Image src={s.image} alt={`${s.title} in Mumbai Thane Bhiwandi - Bhairav Painting Service`} fill className="object-cover group-hover:scale-105 transition-transform duration-300" />
+                  <Image src={s.image} alt={`${s.title} in Mumbai Thane Bhiwandi - Bhairav Painting Service`} fill className="object-cover group-hover:scale-105 transition-transform duration-300" sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw" />
                   <div className="absolute inset-0 bg-[#1B2B8A]/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                     <span className="bg-orange-500 text-white px-3 py-1.5 rounded-lg text-xs font-bold">View More →</span>
                   </div>
@@ -399,7 +399,7 @@ export default function ResidentialPaintingPage() {
             {beforeAfter.map((item, i) => (
               <div key={i} className="group overflow-hidden rounded-xl bg-white shadow-sm">
                 <div className="relative h-52">
-                  <Image src={item.image} alt={`${item.property} painting ${item.location}`} fill className="object-cover group-hover:scale-105 transition-transform duration-300" />
+                  <Image src={item.image} alt={`${item.property} painting ${item.location}`} fill className="object-cover group-hover:scale-105 transition-transform duration-300" sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw" />
 
                 </div>
                 <div className="p-4">
