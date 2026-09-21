@@ -39,7 +39,7 @@ export default function CommercialGalleryPage() {
             {galleries.map((g, i) => (
               <Link key={i} href={g.href} className="overflow-hidden rounded-xl shadow-sm group block">
                 <div className="relative h-56">
-                  <Image src={g.img} alt={g.title} fill className="object-cover group-hover:scale-105 transition-transform duration-300" />
+                  <Image src={g.img} alt={g.title} fill className="object-cover group-hover:scale-105 transition-transform duration-300" sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw" />
                   <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors flex items-center justify-center">
                     <span className="rounded-full bg-white px-5 py-2.5 text-sm font-bold flex items-center gap-2" style={{color:"#1B2B8A"}}>
                       <ImageIcon className="h-4 w-4" /> View Gallery
