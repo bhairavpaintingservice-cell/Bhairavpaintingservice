@@ -162,7 +162,7 @@ export default function CommercialPaintingPage() {
               return (
               <div key={i} className="overflow-hidden rounded-xl shadow-sm flex flex-col">
                 <div className="relative h-44 group">
-                  <Image src={s.img} alt={s.title} fill className="object-cover" />
+                  <Image src={s.img} alt={s.title} fill className="object-cover" sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw" />
                   <Link href={s.gallery} className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity">
                     <span className="rounded-full bg-white px-4 py-2 text-xs font-bold" style={{color:"#1B2B8A"}}>View More →</span>
                   </Link>
@@ -207,7 +207,7 @@ export default function CommercialPaintingPage() {
               const quoteMsg = encodeURIComponent(`Hi, I want a free site visit for ${w.title}. Please contact me.`)
               return (
               <div key={i} className="overflow-hidden rounded-xl border border-gray-100 shadow-sm flex flex-col">
-                <div className="relative h-36"><Image src={w.img} alt={w.title} fill className="object-cover" /></div>
+                <div className="relative h-36"><Image src={w.img} alt={w.title} fill className="object-cover" sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw" /></div>
                 <div className="p-4 flex items-center justify-between gap-3 flex-1" style={{backgroundColor:"#1B2B8A"}}>
                   <div className="flex-1 min-w-0">
                     <h3 className="font-bold text-sm text-white">{w.title}</h3>
@@ -275,7 +275,7 @@ export default function CommercialPaintingPage() {
               { img: "/images/commercial/industry-complex.jpg", label: "Commercial Complexes", desc: "Exterior facades & common areas" },
             ].map((item, i) => (
               <div key={i} className="overflow-hidden rounded-xl shadow-sm flex flex-col">
-                <div className="relative h-28"><Image src={item.img} alt={item.label} fill className="object-cover" /></div>
+                <div className="relative h-28"><Image src={item.img} alt={item.label} fill className="object-cover" sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw" /></div>
                 <div className="p-3 flex items-center justify-between gap-2 flex-1" style={{backgroundColor:"#1B2B8A"}}>
                   <div className="flex-1 min-w-0">
                     <p className="text-xs font-bold text-white">{item.label}</p>
@@ -346,7 +346,7 @@ export default function CommercialPaintingPage() {
               const quoteMsg = encodeURIComponent(`Hi, I want a free site visit for ${p.type}. Please contact me.`)
               return (
               <div key={i} className="overflow-hidden rounded-xl shadow-sm flex flex-col">
-                <div className="relative h-48"><Image src={p.image} alt={p.title} fill className="object-cover" /></div>
+                <div className="relative h-48"><Image src={p.image} alt={p.title} fill className="object-cover" sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw" /></div>
                 <div className="p-4 flex items-center justify-between gap-3 flex-1" style={{backgroundColor:"#1B2B8A"}}>
                   <div className="flex-1 min-w-0">
                     <h3 className="font-bold text-sm text-white">{p.title}</h3>
@@ -691,7 +691,7 @@ export default function CommercialPaintingPage() {
                 { img: "/images/commercial/builder-handover.jpg", label: "Commercial Handover" },
               ].map((item, i) => (
                 <div key={i} className="overflow-hidden rounded-xl" style={{backgroundColor:"rgba(255,255,255,0.1)"}}>
-                  <div className="relative h-28"><Image src={item.img} alt={item.label} fill className="object-cover" /></div>
+                  <div className="relative h-28"><Image src={item.img} alt={item.label} fill className="object-cover" sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw" /></div>
                   <p className="py-2 px-3 text-xs font-semibold text-white text-center">{item.label}</p>
                 </div>
               ))}
@@ -731,7 +731,7 @@ export default function CommercialPaintingPage() {
                 { title: "Restaurant & Hotel Painting", img: "/images/commercial/challenge-restaurant.jpg", desc: "Restaurants operate in high-humidity environments where kitchen steam, grease and regular cleaning affect paint performance. We select washable, moisture-resistant paint systems that improve durability and hygiene while keeping the space attractive." },
               ].map((item, i) => (
                 <div key={i} className="overflow-hidden rounded-xl border border-gray-200 shadow-sm">
-                  <div className="relative h-40"><Image src={item.img} alt={item.title} fill className="object-cover" /></div>
+                  <div className="relative h-40"><Image src={item.img} alt={item.title} fill className="object-cover" sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw" /></div>
                   <div className="p-4">
                     <h3 className="font-bold text-sm" style={{color:"#1B2B8A"}}>{item.title}</h3>
                     <p className="mt-1 text-xs leading-relaxed" style={{color:"#6b7280"}}>{item.desc}</p>
@@ -943,7 +943,7 @@ export default function CommercialPaintingPage() {
           <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-4">
             {relatedServices.map((s, i) => (
               <Link key={i} href={s.href} className="overflow-hidden rounded-xl bg-white border-2 border-gray-100 hover:border-orange-400 transition-colors text-center">
-                <div className="relative h-24"><Image src={s.image} alt={s.title} fill className="object-cover"/></div>
+                <div className="relative h-24"><Image src={s.image} alt={s.title} fill className="object-cover" sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw"/></div>
                 <div className="p-3"><span className="text-xs font-bold" style={{color:"#1B2B8A"}}>{s.title}</span></div>
               </Link>
             ))}
