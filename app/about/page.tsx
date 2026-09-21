@@ -227,7 +227,7 @@ export default function AboutPage() {
             ].map((item, i) => (
               <Link key={i} href={item.href} className="overflow-hidden rounded-xl shadow-sm group">
                 <div className="relative h-32">
-                  <Image src={item.img} alt={item.label} fill className="object-cover group-hover:scale-105 transition-transform duration-300" />
+                  <Image src={item.img} alt={item.label} fill className="object-cover group-hover:scale-105 transition-transform duration-300" sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw" />
                   <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors" />
                   <div className="absolute inset-0 flex items-end p-3">
                     <p className="font-bold text-xs text-white">{item.label}</p>
