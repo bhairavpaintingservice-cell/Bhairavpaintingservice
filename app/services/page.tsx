@@ -181,7 +181,7 @@ export default function ServicesPage() {
               return (
                 <div key={i} className="overflow-hidden rounded-xl shadow-sm flex flex-col">
                   <Link href={s.href} className="relative h-44 block group">
-                    <Image src={s.img} alt={s.title + " in Mumbai"} fill className="object-cover" />
+                    <Image src={s.img} alt={s.title + " in Mumbai"} fill className="object-cover" sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw" />
                     <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity">
                       <span className="rounded-full bg-white px-4 py-2 text-xs font-bold" style={{color:"#1B2B8A"}}>View Service →</span>
                     </div>
@@ -313,7 +313,7 @@ export default function ServicesPage() {
               { img: "/images/workwith-office.jpg", label: "Corporate Offices", desc: "Off-hours commercial painting" },
             ].map((item, i) => (
               <div key={i} className="overflow-hidden rounded-xl">
-                <div className="relative h-28"><Image src={item.img} alt={item.label} fill className="object-cover" /></div>
+                <div className="relative h-28"><Image src={item.img} alt={item.label} fill className="object-cover" sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw" /></div>
                 <div className="p-3 text-center" style={{backgroundColor:"rgba(255,255,255,0.1)"}}>
                   <p className="text-xs font-bold text-white">{item.label}</p>
                   <p className="mt-0.5 text-xs text-blue-200">{item.desc}</p>
@@ -404,7 +404,7 @@ export default function ServicesPage() {
                 </div>
               </div>
               <div className="relative min-h-64">
-                <Image src="/images/waterproofing.jpg" alt="Waterproofing services Mumbai" fill className="object-cover" />
+                <Image src="/images/waterproofing.jpg" alt="Waterproofing services Mumbai" fill className="object-cover" sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw" />
                 <div className="absolute inset-0 flex items-center justify-center" style={{backgroundColor:"rgba(0,0,0,0.3)"}}>
                   <div className="text-center p-6">
                     <p className="text-4xl font-black text-white">Same Day</p>
