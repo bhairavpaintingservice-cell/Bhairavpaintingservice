@@ -170,7 +170,7 @@ export default function InteriorPaintingPage() {
             {beforeAfter.map((item, i) => (
               <div key={i} className="overflow-hidden rounded-xl bg-white shadow-sm group">
                 <div className="relative h-52 overflow-hidden">
-                  <Image src={item.image} alt={item.title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <Image src={item.image} alt={item.title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw" />
                   <div className="absolute inset-0 bg-[#1B2B8A]/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                     <a href={item.gallery} className="bg-orange-500 text-white px-3 py-1.5 rounded-lg text-xs font-bold">View More →</a>
                   </div>
@@ -211,7 +211,7 @@ export default function InteriorPaintingPage() {
             {serviceCards.map((s, i) => (
               <div key={i} className="group overflow-hidden rounded-xl bg-white border border-gray-100 hover:shadow-md transition-shadow">
                 <div className="relative h-36">
-                  <Image src={s.image} alt={s.title} fill className="object-cover group-hover:scale-105 transition-transform duration-300" />
+                  <Image src={s.image} alt={s.title} fill className="object-cover group-hover:scale-105 transition-transform duration-300" sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw" />
                   <div className="absolute inset-0 bg-[#1B2B8A]/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                     <a href={s.gallery} className="bg-orange-500 text-white px-3 py-1.5 rounded-lg text-xs font-bold">View More →</a>
                   </div>
@@ -274,7 +274,7 @@ export default function InteriorPaintingPage() {
             {recentProjects.map((p, i) => (
               <div key={i} className="overflow-hidden rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
                 <div className="relative h-48">
-                  <Image src={p.image} alt={`${p.service} ${p.location}`} fill className="object-cover" />
+                  <Image src={p.image} alt={`${p.service} ${p.location}`} fill className="object-cover" sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw" />
                 </div>
                 <div className="p-5 bg-white">
                   <h3 className="font-bold text-sm" style={{color:"#1B2B8A"}}>{p.property} — {p.location}</h3>
@@ -585,7 +585,7 @@ export default function InteriorPaintingPage() {
             {relatedServices.map((s, i) => (
               <Link key={i} href={s.href} className="overflow-hidden rounded-xl bg-white border-2 border-gray-100 hover:border-orange-400 transition-colors text-center">
                 <div className="relative h-24">
-                  <Image src={s.image} alt={s.title} fill className="object-cover" />
+                  <Image src={s.image} alt={s.title} fill className="object-cover" sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw" />
                 </div>
                 <div className="p-3">
                   <span className="text-xs font-bold" style={{color:"#1B2B8A"}}>{s.title}</span>
