@@ -198,7 +198,7 @@ export default function HomePage() {
             {services.map((service) => (
               <div key={service.title} className="overflow-hidden rounded-xl bg-white shadow-sm hover:shadow-md transition-shadow">
                 <div className="relative h-52">
-                  <Image src={service.image} alt={service.title} fill className="object-cover" />
+                  <Image src={service.image} alt={service.title} fill sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw" className="object-cover" />
                 </div>
                 <div className="p-6">
                   <h3 className="text-lg font-bold text-[#1B2B8A]">{service.title}</h3>
@@ -273,7 +273,7 @@ export default function HomePage() {
           <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {projects.map((project) => (
               <div key={project.title} className="group relative h-60 overflow-hidden rounded-xl">
-                <Image src={project.image} alt={project.title} fill className="object-cover transition-transform duration-500 group-hover:scale-105" />
+                <Image src={project.image} alt={project.title} fill sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw" className="object-cover transition-transform duration-500 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                 <div className="absolute bottom-4 left-4">
                   <p className="text-lg font-bold text-white">{project.title}</p>
