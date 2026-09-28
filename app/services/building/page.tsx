@@ -54,7 +54,7 @@ const projects = [
   { before: "/images/building/projects/p6-before.jpg", after: "/images/building/projects/p6-after.jpg", title: "High-Rise Building Exterior — Mumbai", type: "Commercial Complex", scope: "Exterior + Staircase + Common Areas", brand: "Berger WeatherCoat", duration: "30 Days" },
 ]
 
-const areas = ["Bhiwandi", "Thane", "Kalyan", "Dombivli", "Navi Mumbai", "Mumbai", "Kasheli"]
+const areas = ["All of Maharashtra", "Bhiwandi", "Thane", "Kalyan", "Dombivli", "Navi Mumbai", "Mumbai", "Kasheli"]
 
 const processSteps = [
   { num: "1", title: "Free Site Visit", desc: "We assess building condition & give honest scope advice" },
@@ -71,12 +71,12 @@ const faqs = [
   { q: "Will residents be disturbed during the work?", a: "We plan scaffolding & work schedule to minimize resident disruption. External work is done during daytime hours only. We coordinate with the society secretary for any specific requirements." },
   { q: "What is the approximate cost for building painting?", a: "Cost depends on building size, surface condition, paint brand chosen & scope of work. After a free site visit, we provide an accurate itemized quote. We offer both budget & premium paint options." },
   { q: "Do you provide a warranty on building painting?", a: "Yes — we provide a quality guarantee on all work. Warranty period depends on paint brand & type selected. Premium exterior paints come with manufacturer warranty of 7 to 10 years." },
-  { q: "How many years experience do you have?", a: "Bhairav Painting Service has 47+ years of combined experience in residential, society & commercial painting projects across Mumbai, Thane, Kalyan & Bhiwandi." },
+  { q: "How many years experience do you have?", a: "Bhairav Painting Service has 47+ years of combined experience in residential, society & commercial painting projects across Maharashtra, including Mumbai, Thane, Kalyan & Bhiwandi." },
   { q: "Do you handle painting for builders during construction handover?", a: "Yes, we work with builders & developers for new construction painting before handover to residents. We can coordinate with construction timelines." },
   { q: "What paint brands do you use?", a: "We use only branded premium paints — Asian Paints, Berger, Nerolac, Dulux & Indigo. Society can choose based on budget & preference." },
   { q: "Can you fix water seepage before painting?", a: "Yes, we identify seepage sources and apply waterproofing treatment before painting to ensure the new paint job lasts longer without damp patches reappearing." },
   { q: "Do you provide material or do we need to arrange paint?", a: "We provide both material and labour as part of our service. The society doesn't need to separately arrange or purchase paint." },
-  { q: "Which areas do you serve for building painting?", a: "We serve Bhiwandi, Thane, Kalyan, Dombivli, Navi Mumbai, Mumbai & Kasheli for building & society painting projects." },
+  { q: "Which areas do you serve for building painting?", a: "We now offer building and society painting services across all of Maharashtra, with strong local presence in Bhiwandi, Thane, Kalyan, Dombivli, Navi Mumbai, Mumbai & Kasheli." },
   { q: "How do you ensure minimal disruption to residents?", a: "We plan work zone-by-zone, use proper scaffolding safety measures, and communicate the schedule in advance through the society secretary so residents know what to expect." },
 ]
 
@@ -97,14 +97,14 @@ const schemaData = {
   "@context": "https://schema.org",
   "@type": "Service",
   "name": "Building & Society Painting",
-  "description": "Complete building and housing society painting services across Mumbai, Thane & Bhiwandi.",
+  "description": "Complete building and housing society painting services across Maharashtra, including Mumbai, Thane & Bhiwandi.",
   "provider": {
     "@type": "LocalBusiness",
     "name": "Bhairav Painting Service",
     "telephone": "+919158800517",
-    "areaServed": ["Mumbai", "Thane", "Bhiwandi", "Kalyan", "Navi Mumbai"]
+    "areaServed": ["Maharashtra", "Mumbai", "Thane", "Bhiwandi", "Kalyan", "Navi Mumbai"]
   },
-  "areaServed": ["Mumbai", "Thane", "Bhiwandi", "Kalyan", "Navi Mumbai"]
+  "areaServed": ["Maharashtra", "Mumbai", "Thane", "Bhiwandi", "Kalyan", "Navi Mumbai"]
 }
 
 export default function BuildingPaintingPage() {
@@ -172,7 +172,7 @@ export default function BuildingPaintingPage() {
           </div>
           <div className="mt-8 rounded-xl bg-blue-50 border border-blue-100 p-6">
             <p className="text-sm leading-relaxed text-gray-600">
-              Bhairav Painting Service provides a complete range of building painting and maintenance services for housing societies, apartment complexes and commercial buildings across Mumbai, Thane, Bhiwandi and Kalyan. Our building painting services include <strong className="text-gray-900">exterior building painting, society repainting, waterproofing, crack filling, terrace coating, staircase painting, parking area painting, common area painting, compound wall painting and metal railing painting</strong> — all managed by our experienced team under direct owner supervision. We handle projects of all sizes, from G+4 societies to large multi-tower complexes with hundreds of flats.
+              Bhairav Painting Service provides a complete range of building painting and maintenance services for housing societies, apartment complexes and commercial buildings across Maharashtra, including Mumbai, Thane, Bhiwandi and Kalyan. Our building painting services include <strong className="text-gray-900">exterior building painting, society repainting, waterproofing, crack filling, terrace coating, staircase painting, parking area painting, common area painting, compound wall painting and metal railing painting</strong> — all managed by our experienced team under direct owner supervision. We handle projects of all sizes, from G+4 societies to large multi-tower complexes with hundreds of flats.
             </p>
           </div>
         </div>
@@ -376,7 +376,7 @@ export default function BuildingPaintingPage() {
             {areas.map((a) => <span key={a} className="flex items-center gap-2 rounded-full bg-[#1B2B8A] px-5 py-2.5 text-sm font-semibold text-white"><MapPin className="h-4 w-4"/>{a}</span>)}
           </div>
           <div className="mt-8 rounded-xl border-l-4 border-orange-500 bg-white p-6">
-            <p className="text-sm leading-relaxed" style={{color:"#4b5563"}}><strong style={{color:"#111827"}}>Bhairav Painting Service</strong> provides building painting, society painting, exterior painting, waterproofing and common area painting services in <strong style={{color:"#111827"}}>Mumbai, Thane, Bhiwandi, Kalyan, Dombivli, Navi Mumbai</strong> and nearby areas. With <strong style={{color:"#111827"}}>47+ years of experience</strong>, we help housing societies, apartment complexes, builders and commercial properties maintain attractive and long-lasting exteriors.</p>
+            <p className="text-sm leading-relaxed" style={{color:"#4b5563"}}><strong style={{color:"#111827"}}>Bhairav Painting Service</strong> now provides building painting, society painting, exterior painting, waterproofing and common area painting services across <strong style={{color:"#111827"}}>Maharashtra</strong> — including <strong style={{color:"#111827"}}>Mumbai, Thane, Bhiwandi, Kalyan, Dombivli, Navi Mumbai</strong> and nearby areas. With <strong style={{color:"#111827"}}>47+ years of experience</strong>, we help housing societies, apartment complexes, builders and commercial properties maintain attractive and long-lasting exteriors.</p>
           </div>
         </div>
       </section>
@@ -581,7 +581,7 @@ export default function BuildingPaintingPage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="text-center">
             <h2 className="text-3xl font-black text-white sm:text-4xl">Society Secretary? Let's Talk.</h2>
-            <p className="mt-3 text-white/85 text-sm">Free site visit. AGM-ready quotation. No obligation. We serve Mumbai, Thane, Kalyan, Bhiwandi & surrounding areas.</p>
+            <p className="mt-3 text-white/85 text-sm">Free site visit. AGM-ready quotation. No obligation. We now serve all of Maharashtra, with strong presence in Mumbai, Thane, Kalyan, Bhiwandi & surrounding areas.</p>
             <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
               <a href="tel:+919158800517" className="flex items-center justify-center gap-2 rounded-lg border-2 border-white bg-white px-6 py-3 text-sm font-bold text-orange-500"><Phone className="h-5 w-5"/>Call Now</a>
               <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20a%20quotation%20for%20society%20building%20painting" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 rounded-lg border-2 border-white px-6 py-3 text-sm font-bold text-white"><MessageCircle className="h-5 w-5"/>WhatsApp for Quote</a>
