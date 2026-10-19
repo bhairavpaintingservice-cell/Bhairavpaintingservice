@@ -90,7 +90,7 @@ const schemaData = {
   "provider": {
     "@type": "LocalBusiness",
     "name": "Bhairav Painting Service",
-    "telephone": "+919158800517",
+    "telephone": ["+919158800517", "+917387272917"],
     "areaServed": ["Mumbai", "Thane", "Bhiwandi", "Kalyan", "Navi Mumbai"]
   },
   "areaServed": ["Mumbai", "Thane", "Bhiwandi", "Kalyan", "Navi Mumbai"]
@@ -127,6 +127,9 @@ export default function DesignerTexturePage() {
             </a>
             <a href="tel:+919158800517" className="bg-orange-500 hover:bg-orange-600 text-white font-bold px-7 py-3 rounded-lg flex items-center gap-2 transition">
               <Phone size={16} /> Call: 9158800517
+            </a>
+      <a href="tel:+917387272917" className="bg-orange-500 hover:bg-orange-600 text-white font-bold px-7 py-3 rounded-lg flex items-center gap-2 transition">
+              <Phone size={16} /> Call: 7387272917
             </a>
           </div>
           <div className="flex justify-center gap-10 flex-wrap">
@@ -460,7 +463,10 @@ export default function DesignerTexturePage() {
         <p className="text-orange-100 mb-8">Serving Mumbai, Thane, Bhiwandi, Kalyan &amp; Navi Mumbai. Free site visit — no obligation.</p>
         <div className="flex gap-4 justify-center flex-wrap mb-10">
           <a href="tel:+919158800517" className="bg-white text-orange-600 font-bold px-8 py-3 rounded-lg flex items-center gap-2 hover:bg-orange-50 transition">
-            <Phone size={18} /> Call Now
+            <Phone size={18} /> Call Now: 9158800517
+          </a>
+      <a href="tel:+917387272917" className="bg-white text-orange-600 font-bold px-8 py-3 rounded-lg flex items-center gap-2 hover:bg-orange-50 transition">
+            <Phone size={18} /> Call Now: 7387272917
           </a>
           <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20Designer%20Wall%20or%20Texture%20Painting%20quote" className="border-2 border-white text-white font-bold px-8 py-3 rounded-lg flex items-center gap-2 hover:bg-white hover:text-orange-600 transition">
             <MessageCircle size={18} /> WhatsApp Now
@@ -516,6 +522,7 @@ export default function DesignerTexturePage() {
       {/* Floating Buttons */}
       <a href="https://wa.me/919158800517" target="_blank" rel="noopener noreferrer" className="fixed bottom-24 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-green-500 text-white shadow-lg"><MessageCircle className="h-7 w-7"/></a>
       <a href="tel:+919158800517" className="fixed bottom-6 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-red-500 text-white shadow-lg"><Phone className="h-7 w-7"/></a>
+      <a href="tel:+917387272917" className="fixed bottom-[10.5rem] right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-red-500 text-white shadow-lg"><Phone className="h-7 w-7"/></a>
     </main>
   )
 }
