@@ -37,7 +37,12 @@ export default function ThankYouPage() {
                 <a href="tel:+919158800517"
                   className="flex items-center justify-center gap-2 rounded-lg border-2 px-6 py-3 text-sm font-bold"
                   style={{borderColor:"#1B2B8A", color:"#1B2B8A"}}>
-                  <Phone className="h-4 w-4" /> Call Now
+                  <Phone className="h-4 w-4" /> Call Now: 9158800517
+                </a>
+      <a href="tel:+917387272917"
+                  className="flex items-center justify-center gap-2 rounded-lg border-2 px-6 py-3 text-sm font-bold"
+                  style={{borderColor:"#1B2B8A", color:"#1B2B8A"}}>
+                  <Phone className="h-4 w-4" /> Call Now: 7387272917
                 </a>
               </div>
             </div>
