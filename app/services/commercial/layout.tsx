@@ -39,7 +39,7 @@ const serviceSchema = {
   "provider": {
     "@type": "LocalBusiness",
     "name": "Bhairav Painting Service",
-    "telephone": "+919158800517",
+    "telephone": ["+919158800517", "+917387272917"],
     "areaServed": ["Mumbai", "Thane", "Bhiwandi", "Kalyan", "Navi Mumbai"]
   },
   "serviceType": "Commercial Painting",
@@ -53,7 +53,7 @@ const localBusinessSchema = {
   "name": "Bhairav Painting Service",
   "image": "https://bhairavpaintingservice.vercel.app/images/logo.png",
   "url": "https://bhairavpaintingservice.vercel.app",
-  "telephone": "+919158800517",
+  "telephone": ["+919158800517", "+917387272917"],
   "email": "bhairavpaintingservice@gmail.com",
   "description": "Professional commercial painting contractor with 47+ years experience serving Mumbai, Thane, Bhiwandi and Kalyan.",
   "foundingDate": "1977",
