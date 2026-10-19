@@ -78,7 +78,7 @@ const faqs = [
   { q: "Do you paint ceilings too?", a: "Yes. Ceiling painting is included in our standard flat painting service. White or colour — as per your preference." },
   { q: "Do you work on weekends?", a: "Yes. We work all days including weekends to suit your schedule and minimize disruption." },
   { q: "What areas do you cover for residential painting?", a: "We serve Mumbai, Thane, Bhiwandi, Kalyan and Navi Mumbai for all residential painting work." },
-  { q: "How do I book a free site visit?", a: "Simply call us on +91 9158800517 or WhatsApp us. We will schedule a free visit at your convenient time — no charges, no obligation." },
+  { q: "How do I book a free site visit?", a: "Simply call us on +91 9158800517 or +91 7387272917, or WhatsApp us. We will schedule a free visit at your convenient time — no charges, no obligation." },
   { q: "Ghar khali karna padega painting ke liye?", a: "Nahi, ghar khali karna zaroori nahi. Hum ek ek room ka kaam karte hain aur furniture cover karke kaam karte hain taaki aap ghar mein rehte hue painting karwa sako. Agar aap chahein toh ghar khali karke bhi kaam karwa sakte hain — dono options available hain." },
   { q: "Paint finish options kaunse available hain?", a: "Hum multiple finish options provide karte hain — Matte, Silk, Semi-Gloss aur Gloss. Bedroom ke liye matte, living room ke liye silk aur kitchen/bathroom ke liye semi-gloss best rehta hai." },
   { q: "Interior paint kitne saal tak chalta hai?", a: "Achi quality paint aur proper application se interior paint 5-7 saal tak chalta hai. Asian Paints, Berger ya Nerolac ke premium range 8-10 saal tak bhi chal sakti hai." },
@@ -99,7 +99,7 @@ const schemaData = {
   "provider": {
     "@type": "LocalBusiness",
     "name": "Bhairav Painting Service",
-    "telephone": "+919158800517",
+    "telephone": ["+919158800517", "+917387272917"],
     "areaServed": ["Mumbai", "Thane", "Bhiwandi", "Kalyan", "Navi Mumbai"]
   },
   "areaServed": ["Mumbai", "Thane", "Bhiwandi", "Kalyan", "Navi Mumbai"]
@@ -653,7 +653,10 @@ export default function ResidentialPaintingPage() {
             <p className="mt-3 text-white/85 text-sm">Serving Mumbai, Thane, Bhiwandi, Kalyan & Navi Mumbai. Free site visit — no obligation.</p>
             <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
               <a href="tel:+919158800517" className="flex items-center justify-center gap-2 rounded-lg border-2 border-white bg-white px-6 py-3 text-sm font-bold text-orange-500 hover:bg-white/90 transition-colors">
-                <Phone className="h-5 w-5" /> Call Now
+                <Phone className="h-5 w-5" /> Call Now: 9158800517
+              </a>
+      <a href="tel:+917387272917" className="flex items-center justify-center gap-2 rounded-lg border-2 border-white bg-white px-6 py-3 text-sm font-bold text-orange-500 hover:bg-white/90 transition-colors">
+                <Phone className="h-5 w-5" /> Call Now: 7387272917
               </a>
               <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20a%20Residential%20Painting%20quote" target="_blank" rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 rounded-lg border-2 border-white px-6 py-3 text-sm font-bold text-white hover:bg-white/10 transition-colors">
@@ -709,6 +712,10 @@ export default function ResidentialPaintingPage() {
       </a>
       <a href="tel:+919158800517"
         className="fixed bottom-6 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-red-500 text-white shadow-lg hover:bg-red-600 transition-colors">
+        <Phone className="h-7 w-7" />
+      </a>
+      <a href="tel:+917387272917"
+        className="fixed bottom-[10.5rem] right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-red-500 text-white shadow-lg hover:bg-red-600 transition-colors">
         <Phone className="h-7 w-7" />
       </a>
 
