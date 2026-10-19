@@ -118,7 +118,7 @@ const faqs = [
   { q: "Kya aap residential aur commercial waterproofing karte hain?", a: "Haan, homes, societies, offices, shops aur commercial properties ke projects handle kiye jate hain — Mumbai, Thane, Bhiwandi aur Kalyan me." },
   { q: "Mumbai me waterproofing service available hai?", a: "Haan, Mumbai ke multiple areas me waterproofing services available hain — Andheri, Navi Mumbai, Thane, Bhiwandi aur surrounding areas." },
   { q: "Thane, Bhiwandi aur Kalyan me waterproofing service milti hai?", a: "Haan, hum Thane, Bhiwandi, Kalyan, Navi Mumbai, Dombivli, Vasai aur nearby locations me services provide karte hain. Free site visit available hai." },
-  { q: "Waterproofing quotation kaise milega?", a: "Phone, WhatsApp (+91 9158800517) ya website enquiry form ke through free quotation request kar sakte hain. Same day response guaranteed." },
+  { q: "Waterproofing quotation kaise milega?", a: "Phone (+91 9158800517 / +91 7387272917), WhatsApp (+91 9158800517) ya website enquiry form ke through free quotation request kar sakte hain. Same day response guaranteed." },
   { q: "Pre-monsoon waterproofing kab karani chahiye?", a: "Pre-monsoon waterproofing April-May mein karana best hai — rain shuru hone se pehle. Ye ek zaruri waterproofing service hai jo terrace, roof aur exterior walls ko rain damage se bachaati hai. Kalyan, Thane aur Bhiwandi mein bhi yeh service available hai." },
   { q: "Wall crack ya seepage repair kaise hoti hai?", a: "Wall crack repair aur seepage repair (Mumbai, Kalyan, Thane sab jagah available) mein pehle crack ko clean karke seal kiya jata hai, phir waterproof coating lagai jaati hai. Monsoon crack filling aur wall moisture repair dono is process ka hissa hain." },
   { q: "Terrace waterproofing monsoon ke liye kitni zaruri hai?", a: "Bahut zaruri hai. Terrace waterproofing (Thane, Mumbai) rain damage se bachaati hai — bina waterproofing ke terrace pe leakage aur cracks bahut jaldi ban jaate hain. Pre-monsoon terrace painting ke saath karwana best result deta hai." },
@@ -156,7 +156,7 @@ const schemaData = {
   "provider": {
     "@type": "LocalBusiness",
     "name": "Bhairav Painting Service",
-    "telephone": "+919158800517",
+    "telephone": ["+919158800517", "+917387272917"],
     "areaServed": ["Mumbai", "Thane", "Bhiwandi", "Kalyan", "Navi Mumbai"]
   },
   "areaServed": ["Mumbai", "Thane", "Bhiwandi", "Kalyan", "Navi Mumbai"]
@@ -209,7 +209,10 @@ export default function WaterproofingPage() {
           </div>
           <div className="flex gap-3 justify-center flex-wrap mb-6">
             <a href="tel:+919158800517" className="bg-orange-500 hover:bg-orange-600 text-white font-bold px-7 py-3 rounded-lg flex items-center gap-2 transition">
-              <Phone size={16} /> Call Now
+              <Phone size={16} /> Call Now: 9158800517
+            </a>
+      <a href="tel:+917387272917" className="bg-orange-500 hover:bg-orange-600 text-white font-bold px-7 py-3 rounded-lg flex items-center gap-2 transition">
+              <Phone size={16} /> Call Now: 7387272917
             </a>
             <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20Waterproofing%20quote" className="bg-green-500 hover:bg-green-600 text-white font-bold px-7 py-3 rounded-lg flex items-center gap-2 transition">
               <MessageCircle size={16} /> WhatsApp
@@ -218,7 +221,7 @@ export default function WaterproofingPage() {
               View Gallery →
             </a>
           </div>
-          <a href="tel:+919158800517" className="inline-block text-orange-400 font-black text-2xl mb-8 hover:text-orange-300 transition">+91 91588 00517</a>
+          <a href="tel:+919158800517" className="inline-block text-orange-400 font-black text-2xl mb-8 hover:text-orange-300 transition">+91 91588 00517</a> / <a href="tel:+917387272917" className="inline-block text-orange-400 font-black text-2xl mb-8 hover:text-orange-300 transition">+91 73872 72917</a>
           <div className="flex justify-center gap-10 flex-wrap">
             {[["47+", "Years Experience"], ["500+", "Projects Done"], ["Free", "Site Visit"], ["Same Day", "Response"]].map(([val, label]) => (
               <div key={label} className="text-center">
@@ -641,7 +644,8 @@ export default function WaterproofingPage() {
           <div className="bg-white/10 rounded-2xl p-6 border border-white/20">
             <h3 className="font-black text-white text-base mb-3">🚨 Emergency Leakage During Monsoon?</h3>
             <p className="text-blue-200 text-sm leading-relaxed mb-4">Agar monsoon mein active leakage hai — paani tap kar raha hai — toh hum same-day emergency site visit karte hain Mumbai, Thane aur Bhiwandi mein. Temporary seal laga ke aage permanent repair schedule karte hain.</p>
-            <a href="tel:+919158800517" className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold px-6 py-3 rounded-lg text-sm transition">📞 Call Now — Emergency Visit</a>
+            <a href="tel:+919158800517" className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold px-6 py-3 rounded-lg text-sm transition">📞 Call 9158800517 — Emergency Visit</a>
+      <a href="tel:+917387272917" className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold px-6 py-3 rounded-lg text-sm transition">📞 Call 7387272917 — Emergency Visit</a>
           </div>
         </div>
       </section>
@@ -858,7 +862,10 @@ export default function WaterproofingPage() {
         <p className="text-orange-100 mb-8">Serving Mumbai, Thane, Bhiwandi, Kalyan & Navi Mumbai. Free site visit — no obligation.</p>
         <div className="flex gap-4 justify-center flex-wrap mb-10">
           <a href="tel:+919158800517" className="bg-white text-orange-600 font-bold px-8 py-3 rounded-lg flex items-center gap-2 hover:bg-orange-50 transition">
-            <Phone size={18} /> Call Now
+            <Phone size={18} /> Call Now: 9158800517
+          </a>
+      <a href="tel:+917387272917" className="bg-white text-orange-600 font-bold px-8 py-3 rounded-lg flex items-center gap-2 hover:bg-orange-50 transition">
+            <Phone size={18} /> Call Now: 7387272917
           </a>
           <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20Waterproofing%20quote" className="border-2 border-white text-white font-bold px-8 py-3 rounded-lg flex items-center gap-2 hover:bg-white hover:text-orange-600 transition">
             <MessageCircle size={18} /> WhatsApp Now
@@ -933,6 +940,7 @@ export default function WaterproofingPage() {
       {/* Floating Buttons */}
       <a href="https://wa.me/919158800517" target="_blank" rel="noopener noreferrer" className="fixed bottom-24 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-green-500 text-white shadow-lg"><MessageCircle className="h-7 w-7"/></a>
       <a href="tel:+919158800517" className="fixed bottom-6 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-red-500 text-white shadow-lg"><Phone className="h-7 w-7"/></a>
+      <a href="tel:+917387272917" className="fixed bottom-[10.5rem] right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-red-500 text-white shadow-lg"><Phone className="h-7 w-7"/></a>
     </main>
   )
 }
