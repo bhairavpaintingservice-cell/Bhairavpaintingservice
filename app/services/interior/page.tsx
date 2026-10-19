@@ -87,7 +87,7 @@ const faqs = [
   { q: "Do you provide material or only labour?", a: "Both options — Material + Labour (we arrange everything) or Labour Only (you buy paint, we provide skilled manpower)." },
   { q: "Can interior painting be done in an occupied flat?", a: "Yes. We work room by room with furniture protection and daily cleanup — minimal disruption to your daily routine." },
   { q: "Do you provide warranty on interior painting work?", a: "Yes — workmanship warranty included. Any defect due to our work is rectified at no extra cost." },
-  { q: "How do I book a free site visit for interior painting?", a: "Simply call or WhatsApp us at +91 9158800517. We will schedule a free visit at your convenient time — no charges, no obligation." },
+  { q: "How do I book a free site visit for interior painting?", a: "Simply call us on +91 9158800517 or +91 7387272917, or WhatsApp us. We will schedule a free visit at your convenient time — no charges, no obligation." },
   { q: "Do you provide interior painting in Kalyan, Thane and Bhiwandi?", a: "Yes, interior painting services cover Kalyan, Thane and Bhiwandi along with the rest of our service area." },
 ]
 
@@ -102,7 +102,7 @@ const schemaData = {
   "provider": {
     "@type": "LocalBusiness",
     "name": "Bhairav Painting Service",
-    "telephone": "+919158800517",
+    "telephone": ["+919158800517", "+917387272917"],
     "areaServed": ["Mumbai", "Thane", "Bhiwandi", "Kalyan", "Navi Mumbai"]
   },
   "areaServed": ["Mumbai", "Thane", "Bhiwandi", "Kalyan", "Navi Mumbai"]
@@ -143,6 +143,9 @@ export default function InteriorPaintingPage() {
             </a>
             <a href="tel:+919158800517" className="flex items-center justify-center gap-2 rounded-lg border-2 border-white px-8 py-4 text-base font-bold text-white hover:bg-white/10 transition-colors">
               <Phone className="h-5 w-5" /> Call Now: 9158800517
+            </a>
+      <a href="tel:+917387272917" className="flex items-center justify-center gap-2 rounded-lg border-2 border-white px-8 py-4 text-base font-bold text-white hover:bg-white/10 transition-colors">
+              <Phone className="h-5 w-5" /> Call Now: 7387272917
             </a>
           </div>
         </div>
@@ -604,7 +607,10 @@ export default function InteriorPaintingPage() {
             <p className="mt-3 text-white/85 text-sm">Serving Mumbai, Thane, Bhiwandi, Kalyan & Navi Mumbai. Free site visit — no obligation.</p>
             <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
               <a href="tel:+919158800517" className="flex items-center justify-center gap-2 rounded-lg border-2 border-white bg-white px-6 py-3 text-sm font-bold text-orange-500 hover:bg-white/90 transition-colors">
-                <Phone className="h-5 w-5" /> Call Now
+                <Phone className="h-5 w-5" /> Call Now: 9158800517
+              </a>
+      <a href="tel:+917387272917" className="flex items-center justify-center gap-2 rounded-lg border-2 border-white bg-white px-6 py-3 text-sm font-bold text-orange-500 hover:bg-white/90 transition-colors">
+                <Phone className="h-5 w-5" /> Call Now: 7387272917
               </a>
               <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20an%20Interior%20Painting%20quote" target="_blank" rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 rounded-lg border-2 border-white px-6 py-3 text-sm font-bold text-white hover:bg-white/10 transition-colors">
@@ -643,6 +649,10 @@ export default function InteriorPaintingPage() {
       </a>
       <a href="tel:+919158800517"
         className="fixed bottom-6 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-red-500 text-white shadow-lg hover:bg-red-600 transition-colors">
+        <Phone className="h-7 w-7" />
+      </a>
+      <a href="tel:+917387272917"
+        className="fixed bottom-[10.5rem] right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-red-500 text-white shadow-lg hover:bg-red-600 transition-colors">
         <Phone className="h-7 w-7" />
       </a>
     </div>
