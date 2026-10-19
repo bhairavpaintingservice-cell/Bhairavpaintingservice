@@ -68,7 +68,7 @@ const schemaMarkup = {
   "name": "Bhairav Painting Service",
   "description": "Professional painting services in Mumbai & Bhiwandi — Residential, Commercial, Exterior & Texture painting.",
   "url": "https://bhairavpaintingservice.vercel.app",
-  "telephone": "+919158800517",
+  "telephone": ["+919158800517", "+917387272917"],
   "email": "bhairavpaintingservice@gmail.com",
   "sameAs": ["https://www.facebook.com/profile.php?id=61589093235759", "https://www.instagram.com/bhairavpaintingservice/", "https://www.youtube.com/@BhaviravEnterprise", "https://www.linkedin.com/in/bhavirav-enterprise-918a36369/", "https://x.com/bhairavpainting"],
   "address": {
