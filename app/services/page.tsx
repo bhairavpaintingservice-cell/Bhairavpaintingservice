@@ -98,7 +98,7 @@ const schemaData = {
   "provider": {
     "@type": "LocalBusiness",
     "name": "Bhairav Painting Service",
-    "telephone": "+919158800517",
+    "telephone": ["+919158800517", "+917387272917"],
     "areaServed": ["Mumbai", "Thane", "Bhiwandi", "Kalyan", "Navi Mumbai"]
   },
   "areaServed": ["Mumbai", "Thane", "Bhiwandi", "Kalyan", "Navi Mumbai"]
@@ -125,6 +125,10 @@ export default function ServicesPage() {
               <a href="tel:+919158800517"
                 className="flex items-center justify-center gap-2 rounded-lg border-2 border-white px-8 py-4 text-base font-bold text-white hover:bg-white/10 transition-colors">
                 <Phone className="h-5 w-5" /> Call: +91 9158800517
+              </a>
+      <a href="tel:+917387272917"
+                className="flex items-center justify-center gap-2 rounded-lg border-2 border-white px-8 py-4 text-base font-bold text-white hover:bg-white/10 transition-colors">
+                <Phone className="h-5 w-5" /> Call: +91 7387272917
               </a>
             </div>
             <div className="mt-8 flex flex-wrap gap-4">
