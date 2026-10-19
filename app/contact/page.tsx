@@ -130,6 +130,10 @@ export default function ContactPage() {
                   className="flex items-center justify-center gap-2 rounded-lg border-2 border-white px-6 py-3 text-sm font-bold text-white hover:bg-white/10 transition-colors">
                   <Phone className="h-4 w-4" /> Call: +91 9158800517
                 </a>
+      <a href="tel:+917387272917"
+                  className="flex items-center justify-center gap-2 rounded-lg border-2 border-white px-6 py-3 text-sm font-bold text-white hover:bg-white/10 transition-colors">
+                  <Phone className="h-4 w-4" /> Call: +91 7387272917
+                </a>
               </div>
             </div>
             <div className="grid grid-cols-2 gap-4">
@@ -211,7 +215,11 @@ export default function ContactPage() {
               <div className="mt-6 flex flex-col gap-3">
                 <a href="tel:+919158800517"
                   className="flex items-center justify-center gap-2 rounded-lg border-2 border-white px-6 py-3 text-sm font-bold text-white hover:bg-white/10 transition-colors">
-                  <Phone className="h-4 w-4" /> Call Now for Urgent Help
+                  <Phone className="h-4 w-4" /> Call 9158800517 for Urgent Help
+                </a>
+      <a href="tel:+917387272917"
+                  className="flex items-center justify-center gap-2 rounded-lg border-2 border-white px-6 py-3 text-sm font-bold text-white hover:bg-white/10 transition-colors">
+                  <Phone className="h-4 w-4" /> Call 7387272917 for Urgent Help
                 </a>
                 <a href="https://wa.me/919158800517?text=Hi%2C%20I%20have%20an%20urgent%20painting%20requirement.%20Please%20contact%20me." target="_blank" rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2 rounded-lg px-6 py-3 text-sm font-bold text-white"
@@ -436,7 +444,7 @@ export default function ContactPage() {
               { q: "Do you work on Sundays?", a: "Yes — we work all days including Sundays for residential projects. Commercial projects can also be scheduled on weekends." },
               { q: "Which areas do you serve?", a: "Mumbai, Thane, Bhiwandi, Kalyan, Navi Mumbai, Dombivli, Kasheli, Kalher, Andheri, Vasai and Virar." },
               { q: "Do you provide warranty?", a: "Yes — any defect due to our workmanship is rectified at no extra cost. Paint manufacturer warranty applies separately." },
-              { q: "How do I book a site visit?", a: "Call +91 9158800517, WhatsApp us, or fill the form on this page. We will confirm your site visit within 30 minutes." },
+              { q: "How do I book a site visit?", a: "Call +91 9158800517 or +91 7387272917, WhatsApp us, or fill the form on this page. We will confirm your site visit within 30 minutes." },
             ].map((faq, i) => (
               <div key={i} className="rounded-xl border border-gray-200 p-5">
                 <p className="font-bold text-sm" style={{color:"#1B2B8A"}}>Q: {faq.q}</p>
