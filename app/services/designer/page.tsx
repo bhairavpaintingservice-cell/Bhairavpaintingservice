@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/services/designer' },
   title: "Designer Wall & Texture Painting Mumbai | Bhairav Painting",
   description:
-    "Designer Wall Painting & Texture Finishes in Mumbai, Thane & Bhiwandi — Stencil designs, accent walls, feature walls, sand & rustic textures. 47+ years experience. Free site visit. Call +91 9158800517.",
+    "Designer Wall Painting & Texture Finishes in Mumbai, Thane & Bhiwandi — Stencil designs, accent walls, feature walls, sand & rustic textures. 47+ years experience. Free site visit. Call +91 9158800517 / +91 7387272917.",
 };
 
 export default function TextureDesignerPage() {
@@ -235,6 +235,7 @@ footer { background: #1a0e02; color: #c8b888; padding: 40px 24px 20px; }
   <div className="hero-btns">
     <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20Designer%20Wall%20or%20Texture%20Painting%20quote" className="btn-primary">Get Free Quote on WhatsApp</a>
     <a href="tel:+919158800517" className="btn-secondary">📞 Call: 9158800517</a>
+      <a href="tel:+917387272917" className="btn-secondary">📞 Call: 7387272917</a>
   </div>
   <div className="hero-tags">
     <span>Free Site Visit</span>
@@ -673,7 +674,8 @@ footer { background: #1a0e02; color: #c8b888; padding: 40px 24px 20px; }
     <h2>Ready to Transform Your Walls?</h2>
     <p>Free site visit & finish samples shown at your home. Mumbai, Thane, Bhiwandi & nearby areas covered.</p>
     <div className="cta-btns">
-      <a href="tel:+919158800517" className="btn-white">📞 Call Now</a>
+      <a href="tel:+919158800517" className="btn-white">📞 Call Now: 9158800517</a>
+      <a href="tel:+917387272917" className="btn-white">📞 Call Now: 7387272917</a>
       <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20Designer%20Wall%20or%20Texture%20Painting%20quote" className="btn-outline-white">💬 WhatsApp Now</a>
     </div>
     <div className="form-box">
@@ -708,7 +710,7 @@ footer { background: #1a0e02; color: #c8b888; padding: 40px 24px 20px; }
     <div className="footer-col">
       <h4>BHAIRAV PAINTING SERVICES</h4>
       <p>Professional painting contractor — designer wall, texture & waterproofing services across Bhiwandi, Mumbai, Thane, Kalyan & beyond. 47+ years experience.</p>
-      <a href="tel:+919158800517">+91 9158800517</a>
+      <a href="tel:+919158800517">+91 9158800517</a> / <a href="tel:+917387272917">+91 7387272917</a>
       <ProtectedEmailLink />
       <p>Bhiwandi, Maharashtra</p>
     </div>
