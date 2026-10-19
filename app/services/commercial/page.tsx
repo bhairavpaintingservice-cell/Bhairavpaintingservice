@@ -131,6 +131,7 @@ export default function CommercialPaintingPage() {
           <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
             <a href="#contact" className="flex items-center justify-center gap-2 rounded-lg bg-orange-500 px-8 py-4 text-base font-bold text-white hover:bg-orange-600 transition-colors"><MessageCircle className="h-5 w-5" /> Get Free Quote</a>
             <a href="tel:+919158800517" className="flex items-center justify-center gap-2 rounded-lg border-2 border-white px-8 py-4 text-base font-bold text-white hover:bg-white/10 transition-colors"><Phone className="h-5 w-5" /> Call Now: 9158800517</a>
+      <a href="tel:+917387272917" className="flex items-center justify-center gap-2 rounded-lg border-2 border-white px-8 py-4 text-base font-bold text-white hover:bg-white/10 transition-colors"><Phone className="h-5 w-5" /> Call Now: 7387272917</a>
           </div>
         </div>
       </section>
@@ -911,6 +912,10 @@ export default function CommercialPaintingPage() {
               className="flex items-center justify-center gap-2 rounded-lg border-2 border-white px-8 py-4 text-base font-bold text-white hover:bg-white/10 transition-colors">
               <Phone className="h-5 w-5" /> Call: +91 9158800517
             </a>
+      <a href="tel:+917387272917"
+              className="flex items-center justify-center gap-2 rounded-lg border-2 border-white px-8 py-4 text-base font-bold text-white hover:bg-white/10 transition-colors">
+              <Phone className="h-5 w-5" /> Call: +91 7387272917
+            </a>
           </div>
           <p className="mt-6 text-xs text-blue-200 opacity-80">📍 Shop No. 03, H. No. 167/4, Gr. Floor, Near Devji Nagar Bus Stop, Opp Muthoot Finance, Narpoli, Bhiwandi - 421302, Maharashtra</p>
         </div>
@@ -958,7 +963,8 @@ export default function CommercialPaintingPage() {
             <h2 className="text-3xl font-black text-white sm:text-4xl">Get a Free Commercial Painting Quote</h2>
             <p className="mt-3 text-white/85 text-sm">Free site visit • Written quotation • Off-hours scheduling available</p>
             <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
-              <a href="tel:+919158800517" className="flex items-center justify-center gap-2 rounded-lg border-2 border-white bg-white px-6 py-3 text-sm font-bold text-orange-500"><Phone className="h-5 w-5"/>Call Now</a>
+              <a href="tel:+919158800517" className="flex items-center justify-center gap-2 rounded-lg border-2 border-white bg-white px-6 py-3 text-sm font-bold text-orange-500"><Phone className="h-5 w-5"/>Call Now: 9158800517</a>
+      <a href="tel:+917387272917" className="flex items-center justify-center gap-2 rounded-lg border-2 border-white bg-white px-6 py-3 text-sm font-bold text-orange-500"><Phone className="h-5 w-5"/>Call Now: 7387272917</a>
               <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20a%20quotation%20for%20commercial%20painting" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 rounded-lg border-2 border-white px-6 py-3 text-sm font-bold text-white"><MessageCircle className="h-5 w-5"/>WhatsApp Now</a>
             </div>
           </div>
@@ -1081,6 +1087,7 @@ export default function CommercialPaintingPage() {
 
       <a href="https://wa.me/919158800517" target="_blank" rel="noopener noreferrer" className="fixed bottom-24 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-green-500 text-white shadow-lg"><MessageCircle className="h-7 w-7"/></a>
       <a href="tel:+919158800517" className="fixed bottom-6 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-red-500 text-white shadow-lg"><Phone className="h-7 w-7"/></a>
+      <a href="tel:+917387272917" className="fixed bottom-[10.5rem] right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-red-500 text-white shadow-lg"><Phone className="h-7 w-7"/></a>
     </div>
   )
 }
