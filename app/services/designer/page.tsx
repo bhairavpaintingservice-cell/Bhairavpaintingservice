@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ProtectedEmailLink from "@/components/protected-email-link";
+import DesignerQuoteForm from "@/components/designer-quote-form";
 
 export const metadata: Metadata = {
   alternates: { canonical: '/services/designer' },
@@ -678,29 +679,7 @@ footer { background: #1a0e02; color: #c8b888; padding: 40px 24px 20px; }
       <a href="tel:+917387272917" className="btn-white">📞 Call Now: 7387272917</a>
       <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20Designer%20Wall%20or%20Texture%20Painting%20quote" className="btn-outline-white">💬 WhatsApp Now</a>
     </div>
-    <div className="form-box">
-      <h3>📋 Free Quote — Fill Below</h3>
-      <div className="form-row"><input type="text" placeholder="Your Name *" /></div>
-      <div className="form-row"><input type="tel" placeholder="Phone Number *" /></div>
-      <div className="form-row">
-        <select aria-label="Service Type">
-          <option value="">Select Service Type</option>
-          <option>Stencil Wall Design</option>
-          <option>Accent Wall</option>
-          <option>Feature Wall</option>
-          <option>Metallic Designer Wall</option>
-          <option>Combination Finish</option>
-          <option>Sand Texture</option>
-          <option>Sponge Texture</option>
-          <option>Rustic / Stone Texture</option>
-          <option>Metallic Texture</option>
-          <option>Not Sure — Need Guidance</option>
-        </select>
-      </div>
-      <div className="form-row"><input type="text" placeholder="Your Area (e.g. Bhiwandi, Thane)" /></div>
-      <div className="form-row"><textarea placeholder="Message (Optional)"></textarea></div>
-      <button className="form-submit">🚀 Send Enquiry on WhatsApp</button>
-    </div>
+    <DesignerQuoteForm />
   </div>
 </section>
 

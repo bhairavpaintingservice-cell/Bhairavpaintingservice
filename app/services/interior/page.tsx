@@ -1,5 +1,6 @@
 "use client"
 
+import { pushLeadEvent } from "@/components/call-tracker"
 import Image from "next/image"
 import Link from "next/link"
 import { useState } from "react"
@@ -114,10 +115,7 @@ export default function InteriorPaintingPage() {
 
   const handleSubmit = () => {
     if (!form.name || !form.phone) { alert("Please enter your name and phone number."); return }
-    if (typeof window !== "undefined") {
-      (window as any).dataLayer = (window as any).dataLayer || []
-      ;(window as any).dataLayer.push({ event: "generate_lead", form_name: "interior_service_page", service: form.service, area: form.area, page_path: window.location.pathname })
-    }
+    pushLeadEvent("interior_service_page", { service: form.service, area: form.area })
     const msg = `Hi, I need an Interior Painting quote.%0AName: ${encodeURIComponent(form.name)}%0APhone: ${encodeURIComponent(form.phone)}%0AService: ${encodeURIComponent(form.service || "Not specified")}%0AArea: ${encodeURIComponent(form.area || "Not specified")}%0AMessage: ${encodeURIComponent(form.message || "-")}`
     window.open(`https://wa.me/919158800517?text=${msg}`, "_blank")
   }

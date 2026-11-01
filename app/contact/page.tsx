@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation"
 import { Phone, Mail, MapPin, Clock, MessageCircle, CheckCircle, Send } from "lucide-react"
 import emailjs from "@emailjs/browser"
 import ProtectedEmailLink from "@/components/protected-email-link"
-import { getGoogleAdsClickIds } from "@/components/call-tracker"
+import { getGoogleAdsClickIds, pushLeadEvent } from "@/components/call-tracker"
 const services = [
   "Residential Painting",
   "Interior Painting",
@@ -61,33 +61,20 @@ export default function ContactPage() {
     e.preventDefault()
     setIsSubmitting(true)
 
-      // Capture Google Ads click IDs
-    const ids = getGoogleAdsClickIds()
+    // Lead form conversion tracking (click IDs are attached inside pushLeadEvent)
+    pushLeadEvent("contact_page", { service: formData.service, area: formData.area }, true)
 
-    // Lead form conversion tracking
-    if (typeof window !== "undefined") {
-      ;(window as any).dataLayer = (window as any).dataLayer || []
-
-      ;(window as any).dataLayer.push({
-        event: "generate_lead",
-        form_name: "contact_page",
-        service: formData.service,
-        area: formData.area,
-        page_path: window.location.pathname,
-        ...ids,
-      })
-
-      // Track WhatsApp opened from contact form
-      ;(window as any).dataLayer.push({
-        event: "whatsapp_click",
-        page_path: window.location.pathname,
-        ...ids,
-      })
-    }
+    // Track WhatsApp opened from contact form (source tells it apart from plain link clicks)
+    ;(window as any).dataLayer.push({
+      event: "whatsapp_click",
+      page_path: window.location.pathname,
+      source: "form_submit",
+      ...getGoogleAdsClickIds(),
+    })
 
     // WhatsApp + redirect
     const locationText = location ? `\n📍 My Location: https://maps.google.com/?q=${location.lat},${location.lng}` : ""
-    const waMsg = encodeURIComponent(`Hi, I submitted a quote request for ${formData.service} in ${formData.area}.${locationText}`)
+    const waMsg = encodeURIComponent(`Hi, I need a painting quote.\nName: ${formData.name}\nPhone: ${formData.phone}\nService: ${formData.service || "Not specified"}\nArea: ${formData.area || "Not specified"}\nMessage: ${formData.message || "-"}${locationText}`)
     window.open(`https://wa.me/919158800517?text=${waMsg}`, "_blank")
     router.push("/thank-you")
           // Email is best-effort backup notification

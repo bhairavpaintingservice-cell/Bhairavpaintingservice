@@ -1,5 +1,6 @@
 "use client"
 
+import { pushLeadEvent } from "@/components/call-tracker"
 import Image from "next/image"
 import Link from "next/link"
 import { useState } from "react"
@@ -111,10 +112,7 @@ export default function ResidentialPaintingPage() {
 
   const handleSubmit = () => {
     if (!form.name || !form.phone) { alert("Please enter your name and phone number."); return }
-    if (typeof window !== "undefined") {
-      (window as any).dataLayer = (window as any).dataLayer || []
-      ;(window as any).dataLayer.push({ event: "generate_lead", form_name: "residential_service_page", service: form.service, area: form.area, page_path: window.location.pathname })
-    }
+    pushLeadEvent("residential_service_page", { service: form.service, area: form.area })
     const isCoords = form.area && form.area.match(/^-?\d+\.\d+,\s*-?\d+\.\d+$/)
     const locationText = isCoords
       ? `📍 My Location: https://maps.google.com/?q=${form.area.replace(" ","")}`

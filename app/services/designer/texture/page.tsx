@@ -1,5 +1,6 @@
 "use client"
 
+import { pushLeadEvent } from "@/components/call-tracker"
 import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
@@ -98,6 +99,20 @@ const schemaData = {
 
 export default function DesignerTexturePage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null)
+  const [form, setForm] = useState({ name: "", phone: "", service: "", area: "", message: "" })
+
+  const handleSubmit = () => {
+    if (!form.name.trim() || !form.phone.trim()) {
+      alert("Please enter your name and phone number.")
+      return
+    }
+    const service = form.service && !form.service.startsWith("Select") ? form.service : "Not specified"
+    pushLeadEvent("designer_texture_service_page", { service, area: form.area })
+    const msg = encodeURIComponent(
+      `Hi, I need Designer Wall or Texture Painting quote.\nName: ${form.name}\nPhone: ${form.phone}\nService: ${service}\nArea: ${form.area || "Not specified"}\nMessage: ${form.message || "-"}`
+    )
+    window.open(`https://wa.me/919158800517?text=${msg}`, "_blank")
+  }
 
   return (
     <main className="font-sans">
@@ -477,15 +492,15 @@ export default function DesignerTexturePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <label className="block text-xs font-bold text-orange-200 uppercase tracking-widest mb-1">Your Name *</label>
-              <input type="text" placeholder="Enter your name" className="w-full rounded-lg px-4 py-3 text-sm focus:outline-none bg-white text-gray-800" />
+              <input type="text" placeholder="Enter your name" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} className="w-full rounded-lg px-4 py-3 text-sm focus:outline-none bg-white text-gray-800" />
             </div>
             <div>
               <label className="block text-xs font-bold text-orange-200 uppercase tracking-widest mb-1">Phone Number *</label>
-              <input type="tel" placeholder="+91 XXXXX XXXXX" className="w-full rounded-lg px-4 py-3 text-sm focus:outline-none bg-white text-gray-800" />
+              <input type="tel" placeholder="+91 XXXXX XXXXX" value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} className="w-full rounded-lg px-4 py-3 text-sm focus:outline-none bg-white text-gray-800" />
             </div>
             <div>
               <label className="block text-xs font-bold text-orange-200 uppercase tracking-widest mb-1">Service Type</label>
-              <select aria-label="Service Type" className="w-full rounded-lg px-4 py-3 text-sm focus:outline-none bg-white text-gray-800">
+              <select aria-label="Service Type" value={form.service} onChange={(e) => setForm({ ...form, service: e.target.value })} className="w-full rounded-lg px-4 py-3 text-sm focus:outline-none bg-white text-gray-800">
                 <option>Select Service</option>
                 <option>Stencil Wall Design</option>
                 <option>Accent Wall</option>
@@ -501,19 +516,20 @@ export default function DesignerTexturePage() {
             </div>
             <div>
               <label className="block text-xs font-bold text-orange-200 uppercase tracking-widest mb-1">Your Area</label>
-              <input type="text" placeholder="e.g. Bhiwandi, Thane, Kalyan..." className="w-full rounded-lg px-4 py-3 text-sm focus:outline-none bg-white text-gray-800" />
+              <input type="text" placeholder="e.g. Bhiwandi, Thane, Kalyan..." value={form.area} onChange={(e) => setForm({ ...form, area: e.target.value })} className="w-full rounded-lg px-4 py-3 text-sm focus:outline-none bg-white text-gray-800" />
             </div>
             <div className="md:col-span-2">
               <label className="block text-xs font-bold text-orange-200 uppercase tracking-widest mb-1">Message (Optional)</label>
-              <textarea placeholder="e.g. Bedroom accent wall, living room texture..." rows={3} className="w-full rounded-lg px-4 py-3 text-sm focus:outline-none bg-white text-gray-800 resize-none" />
+              <textarea placeholder="e.g. Bedroom accent wall, living room texture..." rows={3} value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} className="w-full rounded-lg px-4 py-3 text-sm focus:outline-none bg-white text-gray-800 resize-none" />
             </div>
             <div className="md:col-span-2">
-              <a
-                href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20Designer%20Wall%20or%20Texture%20Painting%20quote"
-                className="block w-full bg-blue-900 hover:bg-blue-800 text-white font-bold py-4 rounded-lg text-center transition text-lg"
+              <button
+                type="button"
+                onClick={handleSubmit}
+                className="block w-full bg-blue-900 hover:bg-blue-800 text-white font-bold py-4 rounded-lg text-center transition text-lg cursor-pointer"
               >
                 🚀 Send Enquiry on WhatsApp
-              </a>
+              </button>
             </div>
           </div>
         </div>

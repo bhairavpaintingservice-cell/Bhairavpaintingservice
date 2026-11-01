@@ -3,17 +3,19 @@
 import Link from "next/link"
 import { CheckCircle, MessageCircle, Phone, Home } from "lucide-react"
 import { useEffect } from "react"
+import { consumeLeadFlag, getGoogleAdsClickIds } from "@/components/call-tracker"
 
 export default function ThankYouPage() {
   useEffect(() => {
-    // Fire GTM conversion event
-    if (typeof window !== "undefined" && (window as any).dataLayer) {
-      (window as any).dataLayer.push({
-        event: "form_submission",
-        event_category: "Contact",
-        event_label: "Quote Request",
-      })
-    }
+    // Fire only once, right after a real form submission (not on refresh or direct visit)
+    if (!consumeLeadFlag()) return
+    ;(window as any).dataLayer = (window as any).dataLayer || []
+    ;(window as any).dataLayer.push({
+      event: "form_submission",
+      event_category: "Contact",
+      event_label: "Quote Request",
+      ...getGoogleAdsClickIds(),
+    })
   }, [])
 
   return (

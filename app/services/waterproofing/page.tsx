@@ -1,5 +1,6 @@
 "use client"
 
+import { pushLeadEvent } from "@/components/call-tracker"
 import { useState } from "react"
 import { useRouter } from "next/navigation"
 import Link from "next/link"
@@ -166,6 +167,29 @@ export default function WaterproofingPage() {
   const router = useRouter()
   const [openFaq, setOpenFaq] = useState<number | null>(null)
   const [area, setArea] = useState("")
+  const [name, setName] = useState("")
+  const [phone, setPhone] = useState("")
+  const [wpType, setWpType] = useState("")
+  const [urgency, setUrgency] = useState("")
+  const [details, setDetails] = useState("")
+
+  const handleSubmit = () => {
+    if (!name.trim() || !phone.trim()) {
+      alert("Please enter your name and phone number.")
+      return
+    }
+    const pick = (v: string) => (v && !v.startsWith("Select") ? v : "Not specified")
+    pushLeadEvent("waterproofing_service_page", { service: pick(wpType), area }, true)
+    const isCoords = area && /^-?\d+\.\d+,\s*-?\d+\.\d+$/.test(area)
+    const locationText = isCoords
+      ? `My Location: https://maps.google.com/?q=${area.replace(" ", "")}`
+      : `Area: ${area || "Not specified"}`
+    const msg = encodeURIComponent(
+      `Hi, I need a Waterproofing quote.\nName: ${name}\nPhone: ${phone}\nType: ${pick(wpType)}\n${locationText}\nUrgency: ${pick(urgency)}\nDetails: ${details || "-"}`
+    )
+    window.open(`https://wa.me/919158800517?text=${msg}`, "_blank")
+    router.push("/thank-you")
+  }
 
   const shareLocation = () => {
     if (navigator.geolocation) {
@@ -876,15 +900,15 @@ export default function WaterproofingPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <label className="block text-xs font-bold text-orange-200 uppercase tracking-widest mb-1">Your Name *</label>
-              <input type="text" placeholder="Enter your name" className="w-full rounded-lg px-4 py-3 text-sm focus:outline-none bg-white text-gray-800" />
+              <input type="text" placeholder="Enter your name" value={name} onChange={(e) => setName(e.target.value)} className="w-full rounded-lg px-4 py-3 text-sm focus:outline-none bg-white text-gray-800" />
             </div>
             <div>
               <label className="block text-xs font-bold text-orange-200 uppercase tracking-widest mb-1">Phone Number *</label>
-              <input type="tel" placeholder="+91 XXXXX XXXXX" className="w-full rounded-lg px-4 py-3 text-sm focus:outline-none bg-white text-gray-800" />
+              <input type="tel" placeholder="+91 XXXXX XXXXX" value={phone} onChange={(e) => setPhone(e.target.value)} className="w-full rounded-lg px-4 py-3 text-sm focus:outline-none bg-white text-gray-800" />
             </div>
             <div>
               <label className="block text-xs font-bold text-orange-200 uppercase tracking-widest mb-1">Waterproofing Type</label>
-              <select aria-label="Waterproofing Type" className="w-full rounded-lg px-4 py-3 text-sm focus:outline-none bg-white text-gray-800">
+              <select aria-label="Waterproofing Type" value={wpType} onChange={(e) => setWpType(e.target.value)} className="w-full rounded-lg px-4 py-3 text-sm focus:outline-none bg-white text-gray-800">
                 <option>Select Type</option>
                 <option>Terrace Waterproofing</option>
                 <option>Roof Leakage Repair</option>
@@ -907,7 +931,7 @@ export default function WaterproofingPage() {
             </div>
             <div>
               <label className="block text-xs font-bold text-orange-200 uppercase tracking-widest mb-1">When Do You Need Work?</label>
-              <select aria-label="When Do You Need Work" className="w-full rounded-lg px-4 py-3 text-sm focus:outline-none bg-white text-gray-800">
+              <select aria-label="When Do You Need Work" value={urgency} onChange={(e) => setUrgency(e.target.value)} className="w-full rounded-lg px-4 py-3 text-sm focus:outline-none bg-white text-gray-800">
                 <option>Select Urgency</option>
                 <option>🚨 Urgent — Leaking Now</option>
                 <option>Within This Week</option>
@@ -917,18 +941,11 @@ export default function WaterproofingPage() {
             </div>
             <div className="md:col-span-2">
               <label className="block text-xs font-bold text-orange-200 uppercase tracking-widest mb-1">Describe the Problem (Optional)</label>
-              <textarea placeholder="e.g. Terrace leakage, bathroom seepage, damp walls..." rows={3} className="w-full rounded-lg px-4 py-3 text-sm focus:outline-none bg-white text-gray-800 resize-none" />
+              <textarea placeholder="e.g. Terrace leakage, bathroom seepage, damp walls..." rows={3} value={details} onChange={(e) => setDetails(e.target.value)} className="w-full rounded-lg px-4 py-3 text-sm focus:outline-none bg-white text-gray-800 resize-none" />
             </div>
             <div className="md:col-span-2">
               <button
-                onClick={() => {
-                  if (typeof window !== "undefined") {
-                    (window as any).dataLayer = (window as any).dataLayer || []
-                    ;(window as any).dataLayer.push({ event: "generate_lead", form_name: "waterproofing_service_page", page_path: window.location.pathname })
-                  }
-                  window.open("https://wa.me/919158800517?text=Hi%2C%20I%20need%20Waterproofing%20quote", "_blank")
-                  router.push("/thank-you")
-                }}
+                onClick={handleSubmit}
                 className="block w-full bg-blue-900 hover:bg-blue-800 text-white font-bold py-4 rounded-lg text-center transition text-lg cursor-pointer">
                 🚀 Send Enquiry on WhatsApp
               </button>
