@@ -1,11 +1,11 @@
-"use client"
+  "use client"
 
 import { useState } from "react"
 import { useRouter } from "next/navigation"
 import { Phone, Mail, MapPin, Clock, MessageCircle, CheckCircle, Send } from "lucide-react"
 import emailjs from "@emailjs/browser"
 import ProtectedEmailLink from "@/components/protected-email-link"
-
+import { getGoogleAdsClickIds } from "@/components/call-tracker"
 const services = [
   "Residential Painting",
   "Interior Painting",
@@ -61,25 +61,36 @@ export default function ContactPage() {
     e.preventDefault()
     setIsSubmitting(true)
 
-    // Lead form conversion tracking (GTM/Google Ads/Facebook Pixel)
+      // Capture Google Ads click IDs
+    const ids = getGoogleAdsClickIds()
+
+    // Lead form conversion tracking
     if (typeof window !== "undefined") {
       ;(window as any).dataLayer = (window as any).dataLayer || []
+
       ;(window as any).dataLayer.push({
         event: "generate_lead",
         form_name: "contact_page",
         service: formData.service,
         area: formData.area,
         page_path: window.location.pathname,
+        ...ids,
+      })
+
+      // Track WhatsApp opened from contact form
+      ;(window as any).dataLayer.push({
+        event: "whatsapp_click",
+        page_path: window.location.pathname,
+        ...ids,
       })
     }
 
-    // WhatsApp + redirect always happen, regardless of email success/failure
+    // WhatsApp + redirect
     const locationText = location ? `\n📍 My Location: https://maps.google.com/?q=${location.lat},${location.lng}` : ""
     const waMsg = encodeURIComponent(`Hi, I submitted a quote request for ${formData.service} in ${formData.area}.${locationText}`)
     window.open(`https://wa.me/919158800517?text=${waMsg}`, "_blank")
     router.push("/thank-you")
-
-    // Email is best-effort backup notification — failure here should never block the customer
+          // Email is best-effort backup notification
     try {
       await emailjs.send("service_2zy0x0p", "template_zlc9l99", {
         name: formData.name,
@@ -102,7 +113,6 @@ export default function ContactPage() {
 
   return (
     <main>
-
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />
       {/* HERO */}
       <section className="pt-32 pb-16" style={{backgroundColor:"#1B2B8A"}}>
