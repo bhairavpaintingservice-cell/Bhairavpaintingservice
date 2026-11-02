@@ -1,6 +1,6 @@
 "use client"
 
-import { pushLeadEvent } from "@/components/call-tracker"
+import { pushLeadEvent, pushWhatsAppFormEvent } from "@/components/call-tracker"
 import { useState } from "react"
 import { useRouter } from "next/navigation"
 import Link from "next/link"
@@ -187,6 +187,7 @@ export default function WaterproofingPage() {
     const msg = encodeURIComponent(
       `Hi, I need a Waterproofing quote.\nName: ${name}\nPhone: ${phone}\nType: ${pick(wpType)}\n${locationText}\nUrgency: ${pick(urgency)}\nDetails: ${details || "-"}`
     )
+    pushWhatsAppFormEvent("waterproofing_service_page")
     window.open(`https://wa.me/919158800517?text=${msg}`, "_blank")
     router.push("/thank-you")
   }

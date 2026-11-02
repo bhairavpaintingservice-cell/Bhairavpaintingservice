@@ -1,6 +1,6 @@
 "use client"
 
-import { pushLeadEvent } from "@/components/call-tracker"
+import { pushLeadEvent, pushWhatsAppFormEvent } from "@/components/call-tracker"
 import Image from "next/image"
 import Link from "next/link"
 import { useState } from "react"
@@ -118,6 +118,7 @@ export default function ResidentialPaintingPage() {
       ? `📍 My Location: https://maps.google.com/?q=${form.area.replace(" ","")}`
       : `Area: ${form.area || "Not specified"}`
     const msg = `Hi, I need a Residential Painting quote.%0AName: ${encodeURIComponent(form.name)}%0APhone: ${encodeURIComponent(form.phone)}%0AService: ${encodeURIComponent(form.service || "Not specified")}%0A${encodeURIComponent(locationText)}%0AMessage: ${encodeURIComponent(form.message || "-")}`
+    pushWhatsAppFormEvent("residential_service_page")
     window.open(`https://wa.me/919158800517?text=${msg}`, "_blank")
   }
 

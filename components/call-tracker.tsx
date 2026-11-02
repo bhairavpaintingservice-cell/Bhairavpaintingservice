@@ -23,6 +23,15 @@ const STORAGE_DAYS = 90
 const LEAD_FLAG_KEY = "bps_lead_pending"
 const CLICK_ID_KEYS: (keyof ClickIds)[] = ["gclid", "gbraid", "wbraid"]
 
+// Blocks accidental double-click duplicates (same event + same key within 3 seconds)
+const recentEvents: Record<string, number> = {}
+function isDuplicate(key: string, windowMs = 3000) {
+  const now = Date.now()
+  if (recentEvents[key] && now - recentEvents[key] < windowMs) return true
+  recentEvents[key] = now
+  return false
+}
+
 export function getGoogleAdsClickIds(): ClickIds {
   if (typeof window === "undefined") return {}
 
@@ -74,6 +83,7 @@ export function pushLeadEvent(
   expectThankYou = false
 ) {
   if (typeof window === "undefined") return
+  if (isDuplicate("lead:" + formName)) return
 
   window.dataLayer = window.dataLayer || []
   window.dataLayer.push({
@@ -89,6 +99,22 @@ export function pushLeadEvent(
       sessionStorage.setItem(LEAD_FLAG_KEY, "1")
     } catch {}
   }
+}
+
+// whatsapp_click for forms that open WhatsApp with window.open (CallTracker only sees <a> clicks).
+// source: "form_submit" lets GTM tell it apart from plain WhatsApp link clicks (source: "link").
+export function pushWhatsAppFormEvent(formName: string) {
+  if (typeof window === "undefined") return
+  if (isDuplicate("wa:" + formName)) return
+
+  window.dataLayer = window.dataLayer || []
+  window.dataLayer.push({
+    event: "whatsapp_click",
+    form_name: formName,
+    page_path: window.location.pathname,
+    source: "form_submit",
+    ...getGoogleAdsClickIds(),
+  })
 }
 
 // Returns true only once after a real form submission (blocks refresh / direct-visit duplicates)

@@ -67,6 +67,7 @@ export default function ContactPage() {
     // Track WhatsApp opened from contact form (source tells it apart from plain link clicks)
     ;(window as any).dataLayer.push({
       event: "whatsapp_click",
+      form_name: "contact_page",
       page_path: window.location.pathname,
       source: "form_submit",
       ...getGoogleAdsClickIds(),

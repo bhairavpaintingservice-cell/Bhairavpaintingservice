@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { pushLeadEvent } from "@/components/call-tracker"
+import { pushLeadEvent, pushWhatsAppFormEvent } from "@/components/call-tracker"
 
 const serviceOptions = [
   "Stencil Wall Design", "Accent Wall", "Feature Wall", "Metallic Designer Wall", "Combination Finish",
@@ -20,6 +20,7 @@ export default function DesignerQuoteForm() {
     const msg = encodeURIComponent(
       `Hi, I need Designer Wall or Texture Painting quote.\nName: ${form.name}\nPhone: ${form.phone}\nService: ${form.service || "Not specified"}\nArea: ${form.area || "Not specified"}\nMessage: ${form.message || "-"}`
     )
+    pushWhatsAppFormEvent("designer_service_page")
     window.open(`https://wa.me/919158800517?text=${msg}`, "_blank")
   }
 

@@ -1,6 +1,6 @@
 "use client"
 
-import { pushLeadEvent } from "@/components/call-tracker"
+import { pushLeadEvent, pushWhatsAppFormEvent } from "@/components/call-tracker"
 import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
@@ -111,6 +111,7 @@ export default function DesignerTexturePage() {
     const msg = encodeURIComponent(
       `Hi, I need Designer Wall or Texture Painting quote.\nName: ${form.name}\nPhone: ${form.phone}\nService: ${service}\nArea: ${form.area || "Not specified"}\nMessage: ${form.message || "-"}`
     )
+    pushWhatsAppFormEvent("designer_texture_service_page")
     window.open(`https://wa.me/919158800517?text=${msg}`, "_blank")
   }
 
