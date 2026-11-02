@@ -23,9 +23,9 @@ const STORAGE_DAYS = 90
 const LEAD_FLAG_KEY = "bps_lead_pending"
 const CLICK_ID_KEYS: (keyof ClickIds)[] = ["gclid", "gbraid", "wbraid"]
 
-// Blocks accidental double-click duplicates (same event + same key within 3 seconds)
+// Blocks accidental double-click duplicates (same event + same form within 15 seconds)
 const recentEvents: Record<string, number> = {}
-function isDuplicate(key: string, windowMs = 3000) {
+function isDuplicate(key: string, windowMs = 15000) {
   const now = Date.now()
   if (recentEvents[key] && now - recentEvents[key] < windowMs) return true
   recentEvents[key] = now
