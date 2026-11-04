@@ -179,7 +179,7 @@ export default function WaterproofingPage() {
       return
     }
     const pick = (v: string) => (v && !v.startsWith("Select") ? v : "Not specified")
-    pushLeadEvent("waterproofing_service_page", { service: pick(wpType), area }, true, phone)
+    pushLeadEvent("waterproofing_service_page", { service: pick(wpType), area }, true, { phone, name, service: wpType, location: area })
     const isCoords = area && /^-?\d+\.\d+,\s*-?\d+\.\d+$/.test(area)
     const locationText = isCoords
       ? `My Location: https://maps.google.com/?q=${area.replace(" ", "")}`

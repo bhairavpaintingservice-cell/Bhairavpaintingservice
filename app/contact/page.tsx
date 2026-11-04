@@ -62,7 +62,7 @@ export default function ContactPage() {
     setIsSubmitting(true)
 
     // Lead form conversion tracking (click IDs are attached inside pushLeadEvent)
-    pushLeadEvent("contact_page", { service: formData.service, area: formData.area }, true, formData.phone)
+    pushLeadEvent("contact_page", { service: formData.service, area: formData.area }, true, { phone: formData.phone, name: formData.name, service: formData.service, location: formData.area })
 
     // Track WhatsApp opened from contact form (source tells it apart from plain link clicks)
     ;(window as any).dataLayer.push({

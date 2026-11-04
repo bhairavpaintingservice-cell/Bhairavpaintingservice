@@ -75,22 +75,41 @@ export function getGoogleAdsClickIds(): ClickIds {
   }
 }
 
+type LeadContact = {
+  phone: string
+  name?: string
+  service?: string
+  location?: string
+}
+
+function newEventId(): string {
+  try {
+    if (typeof crypto !== "undefined" && typeof crypto.randomUUID === "function") return crypto.randomUUID()
+  } catch {}
+  return `${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 12)}`
+}
+
 // Single place for the generate_lead event. Pass expectThankYou=true only when the form
 // redirects to /thank-you, so the thank-you page fires form_submission once per real lead.
+// Pass contact (phone, name, service, location) so the lead is also saved to Google Sheets
+// through our own server. Each genuine submission gets one unique event_id.
 export function pushLeadEvent(
   formName: string,
   extra: Record<string, unknown> = {},
   expectThankYou = false,
-  phone?: string
+  contact?: LeadContact
 ) {
   if (typeof window === "undefined") return
   if (isDuplicate("lead:" + formName)) return
+
+  const eventId = newEventId()
 
   window.dataLayer = window.dataLayer || []
   window.dataLayer.push({
     event: "generate_lead",
     form_name: formName,
     page_path: window.location.pathname,
+    event_id: eventId,
     ...extra,
     ...getGoogleAdsClickIds(),
   })
@@ -101,28 +120,56 @@ export function pushLeadEvent(
     } catch {}
   }
 
-  // Customer phone goes only to our own server (never into dataLayer / GA4)
-  if (phone) saveClickIdsToServer(formName, phone)
+  // Customer details go only to our own server (never into dataLayer / GA4)
+  if (contact?.phone) saveLeadToServer(formName, contact, eventId)
 }
 
-// Sends phone + click IDs to /api/save-click-id (server -> Google Apps Script -> Google Sheet).
-// Fire-and-forget: a failure here never affects the customer's enquiry.
-function saveClickIdsToServer(formName: string, phone: string) {
+function toLocationText(area?: string): string {
+  const text = (area || "").trim()
+  if (/^-?\d+\.\d+,\s*-?\d+\.\d+$/.test(text)) return `https://maps.google.com/?q=${text.replace(/\s/g, "")}`
+  return text
+}
+
+function cleanSelect(value?: string): string {
+  const text = (value || "").trim()
+  return /^select/i.test(text) || text === "Not specified" ? "" : text
+}
+
+// Sends the lead to /api/save-click-id (server -> Google Apps Script -> Google Sheet).
+// Fire-and-forget: a failure never affects the enquiry or the WhatsApp redirect.
+// One retry on a network or server error, with the SAME event_id so it can never double-save.
+function saveLeadToServer(formName: string, contact: LeadContact, eventId: string) {
   try {
     const ids = getGoogleAdsClickIds()
-    if (!ids.gclid && !ids.gbraid && !ids.wbraid) return
+    const body = JSON.stringify({
+      phone: contact.phone,
+      name: (contact.name || "").trim(),
+      service: cleanSelect(contact.service),
+      location: toLocationText(contact.location),
+      form_name: formName,
+      page_path: window.location.pathname,
+      event_id: eventId,
+      gclid: ids.gclid || "",
+      gbraid: ids.gbraid || "",
+      wbraid: ids.wbraid || "",
+    })
 
-    fetch("/api/save-click-id", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        phone,
-        ...ids,
-        form_name: formName,
-        page_path: window.location.pathname,
-      }),
-      keepalive: true,
-    }).catch(() => {})
+    const send = (retry: boolean) => {
+      const again = () => {
+        if (retry) setTimeout(() => send(false), 2000)
+      }
+      fetch("/api/save-click-id", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body,
+        keepalive: true,
+      })
+        .then((res) => {
+          if (res.status === 500 || res.status === 502 || res.status === 504) again()
+        })
+        .catch(again)
+    }
+    send(true)
   } catch {}
 }
 

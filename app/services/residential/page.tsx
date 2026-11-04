@@ -112,7 +112,7 @@ export default function ResidentialPaintingPage() {
 
   const handleSubmit = () => {
     if (!form.name || !form.phone) { alert("Please enter your name and phone number."); return }
-    pushLeadEvent("residential_service_page", { service: form.service, area: form.area }, false, form.phone)
+    pushLeadEvent("residential_service_page", { service: form.service, area: form.area }, false, { phone: form.phone, name: form.name, service: form.service, location: form.area })
     const isCoords = form.area && form.area.match(/^-?\d+\.\d+,\s*-?\d+\.\d+$/)
     const locationText = isCoords
       ? `📍 My Location: https://maps.google.com/?q=${form.area.replace(" ","")}`
