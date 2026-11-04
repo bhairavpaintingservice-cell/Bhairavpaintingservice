@@ -80,7 +80,8 @@ export function getGoogleAdsClickIds(): ClickIds {
 export function pushLeadEvent(
   formName: string,
   extra: Record<string, unknown> = {},
-  expectThankYou = false
+  expectThankYou = false,
+  phone?: string
 ) {
   if (typeof window === "undefined") return
   if (isDuplicate("lead:" + formName)) return
@@ -99,6 +100,30 @@ export function pushLeadEvent(
       sessionStorage.setItem(LEAD_FLAG_KEY, "1")
     } catch {}
   }
+
+  // Customer phone goes only to our own server (never into dataLayer / GA4)
+  if (phone) saveClickIdsToServer(formName, phone)
+}
+
+// Sends phone + click IDs to /api/save-click-id (server -> Google Apps Script -> Google Sheet).
+// Fire-and-forget: a failure here never affects the customer's enquiry.
+function saveClickIdsToServer(formName: string, phone: string) {
+  try {
+    const ids = getGoogleAdsClickIds()
+    if (!ids.gclid && !ids.gbraid && !ids.wbraid) return
+
+    fetch("/api/save-click-id", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        phone,
+        ...ids,
+        form_name: formName,
+        page_path: window.location.pathname,
+      }),
+      keepalive: true,
+    }).catch(() => {})
+  } catch {}
 }
 
 // whatsapp_click for forms that open WhatsApp with window.open (CallTracker only sees <a> clicks).

@@ -107,7 +107,7 @@ export default function DesignerTexturePage() {
       return
     }
     const service = form.service && !form.service.startsWith("Select") ? form.service : "Not specified"
-    pushLeadEvent("designer_texture_service_page", { service, area: form.area })
+    pushLeadEvent("designer_texture_service_page", { service, area: form.area }, false, form.phone)
     const msg = encodeURIComponent(
       `Hi, I need Designer Wall or Texture Painting quote.\nName: ${form.name}\nPhone: ${form.phone}\nService: ${service}\nArea: ${form.area || "Not specified"}\nMessage: ${form.message || "-"}`
     )

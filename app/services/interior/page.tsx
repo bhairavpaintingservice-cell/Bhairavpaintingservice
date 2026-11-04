@@ -115,7 +115,7 @@ export default function InteriorPaintingPage() {
 
   const handleSubmit = () => {
     if (!form.name || !form.phone) { alert("Please enter your name and phone number."); return }
-    pushLeadEvent("interior_service_page", { service: form.service, area: form.area })
+    pushLeadEvent("interior_service_page", { service: form.service, area: form.area }, false, form.phone)
     const msg = `Hi, I need an Interior Painting quote.%0AName: ${encodeURIComponent(form.name)}%0APhone: ${encodeURIComponent(form.phone)}%0AService: ${encodeURIComponent(form.service || "Not specified")}%0AArea: ${encodeURIComponent(form.area || "Not specified")}%0AMessage: ${encodeURIComponent(form.message || "-")}`
     pushWhatsAppFormEvent("interior_service_page")
     window.open(`https://wa.me/919158800517?text=${msg}`, "_blank")

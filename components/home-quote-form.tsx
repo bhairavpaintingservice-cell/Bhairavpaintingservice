@@ -23,7 +23,7 @@ export default function HomeQuoteForm() {
     }
 
     // Lead form conversion tracking (click IDs are attached inside pushLeadEvent)
-    pushLeadEvent("homepage_quote_form", { service: form.service, area: form.area })
+    pushLeadEvent("homepage_quote_form", { service: form.service, area: form.area }, false, form.phone)
 
     // WhatsApp opened from homepage form (source tells it apart from plain link clicks)
     window.dataLayer = window.dataLayer || []
