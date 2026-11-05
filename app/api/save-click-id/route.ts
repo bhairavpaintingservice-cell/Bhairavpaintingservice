@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server"
 import { randomUUID } from "crypto"
+import { ATTRIBUTION_PAYLOAD_KEYS, deriveSheetFields } from "@/lib/attribution"
 
 // Sends a website lead (phone, name, service, location + Google Ads click IDs) to the
 // Google Apps Script web app, which creates / updates the lead in Google Sheets.
@@ -113,6 +114,16 @@ export async function POST(request: Request) {
   if (recent.size > 500) recent.clear()
   recent.set(dedupeKey, now)
 
+  // Lead attribution (latest touch + first_ prefixed first touch): plain text only, length limited
+  const attribution: Record<string, string> = {}
+  for (const key of ATTRIBUTION_PAYLOAD_KEYS) {
+    const long = key.endsWith("landing_page") || key.endsWith("referrer")
+    attribution[key] = cleanText(data?.[key], long ? 300 : 100)
+  }
+
+  // The Apps Script fills LEAD TYPE / TRAFFIC SOURCE / TRAFFIC MEDIUM from these three names
+  const sheetFields = deriveSheetFields(attribution)
+
   const payload = {
     secret,
     phone,
@@ -126,6 +137,8 @@ export async function POST(request: Request) {
     gclid: cleanClickId(data?.gclid),
     gbraid: cleanClickId(data?.gbraid),
     wbraid: cleanClickId(data?.wbraid),
+    ...attribution,
+    ...sheetFields,
   }
 
   const controller = new AbortController()

@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation"
 import { Phone, Mail, MapPin, Clock, MessageCircle, CheckCircle, Send } from "lucide-react"
 import emailjs from "@emailjs/browser"
 import ProtectedEmailLink from "@/components/protected-email-link"
-import { getGoogleAdsClickIds, pushLeadEvent } from "@/components/call-tracker"
+import { pushLeadEvent, pushWhatsAppFormEvent } from "@/components/call-tracker"
 const services = [
   "Residential Painting",
   "Interior Painting",
@@ -65,13 +65,7 @@ export default function ContactPage() {
     pushLeadEvent("contact_page", { service: formData.service, area: formData.area }, true, { phone: formData.phone, name: formData.name, service: formData.service, location: formData.area })
 
     // Track WhatsApp opened from contact form (source tells it apart from plain link clicks)
-    ;(window as any).dataLayer.push({
-      event: "whatsapp_click",
-      form_name: "contact_page",
-      page_path: window.location.pathname,
-      source: "form_submit",
-      ...getGoogleAdsClickIds(),
-    })
+    pushWhatsAppFormEvent("contact_page")
 
     // WhatsApp + redirect
     const locationText = location ? `\n📍 My Location: https://maps.google.com/?q=${location.lat},${location.lng}` : ""

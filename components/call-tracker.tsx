@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect } from "react"
+import { captureAttribution, getAttributionEventParams, getAttributionFields } from "@/lib/attribution"
 
 declare global {
   interface Window {
@@ -110,6 +111,7 @@ export function pushLeadEvent(
     form_name: formName,
     page_path: window.location.pathname,
     event_id: eventId,
+    ...getAttributionEventParams(),
     ...extra,
     ...getGoogleAdsClickIds(),
   })
@@ -152,6 +154,7 @@ function saveLeadToServer(formName: string, contact: LeadContact, eventId: strin
       gclid: ids.gclid || "",
       gbraid: ids.gbraid || "",
       wbraid: ids.wbraid || "",
+      ...getAttributionFields(),
     })
 
     const send = (retry: boolean) => {
@@ -185,6 +188,7 @@ export function pushWhatsAppFormEvent(formName: string) {
     form_name: formName,
     page_path: window.location.pathname,
     source: "form_submit",
+    ...getAttributionEventParams(),
     ...getGoogleAdsClickIds(),
   })
 }
@@ -203,6 +207,7 @@ export function consumeLeadFlag(): boolean {
 export default function CallTracker() {
   useEffect(() => {
     getGoogleAdsClickIds()
+    captureAttribution()
 
     const lastFired: Record<string, number> = {}
     function shouldFire(key: string) {
@@ -236,6 +241,7 @@ export default function CallTracker() {
           page_path: window.location.pathname,
           link_text: linkText,
           source: "link",
+          ...getAttributionEventParams(),
           ...ids,
         })
       }
@@ -246,6 +252,7 @@ export default function CallTracker() {
           page_path: window.location.pathname,
           link_text: linkText,
           source: "link",
+          ...getAttributionEventParams(),
           ...ids,
         })
       }
