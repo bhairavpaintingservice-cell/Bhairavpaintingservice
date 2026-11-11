@@ -2,12 +2,6 @@ import { NextResponse } from "next/server"
 import { randomUUID } from "crypto"
 import { ATTRIBUTION_PAYLOAD_KEYS, deriveSheetFields } from "@/lib/attribution"
 
-// Sends a website lead (phone, name, service, location + Google Ads click IDs) to the
-// Google Apps Script web app, which creates / updates the lead in Google Sheets.
-// Secrets stay on the server: BPS_APPS_SCRIPT_URL and BPS_API_SECRET (never NEXT_PUBLIC_).
-// The browser ignores this endpoint's response, so a failure here never blocks an enquiry
-// or the WhatsApp redirect.
-
 export const runtime = "nodejs"
 export const dynamic = "force-dynamic"
 
@@ -25,7 +19,6 @@ function reply(body: Record<string, unknown>, status = 200) {
   return NextResponse.json(body, { status })
 }
 
-// Always a 10 digit Indian mobile number (accepts +91 / 91 / 0 prefixes)
 function normalizePhone(value: unknown): string | null {
   let digits = String(value ?? "").replace(/\D/g, "")
   if (digits.length === 12 && digits.startsWith("91")) digits = digits.slice(2)
@@ -37,8 +30,6 @@ function cleanClickId(value: unknown): string {
   return typeof value === "string" && CLICK_ID_PATTERN.test(value) ? value : ""
 }
 
-// Plain text only: strips control characters, limits length, and stops a leading = + - @
-// from being treated as a formula when the value is written into Google Sheets.
 function cleanText(value: unknown, max: number): string {
   const text = String(value ?? "")
     .replace(/[\u0000-\u001F\u007F]/g, " ")
@@ -79,7 +70,7 @@ export async function POST(request: Request) {
   if (tooManyRequests(ip)) return reply({ success: false, message: "Too many requests" }, 429)
 
   const length = Number(request.headers.get("content-length") || 0)
-  if (length > 4000) return reply({ success: false, message: "Request too large" }, 413)
+  if (length > 6000) return reply({ success: false, message: "Request too large" }, 413)
 
   let data: any
   try {
@@ -105,8 +96,8 @@ export async function POST(request: Request) {
     typeof data?.event_id === "string" && EVENT_ID_PATTERN.test(data.event_id) ? data.event_id : ""
   const eventId = clientEventId || randomUUID()
 
-  // Same event_id (a retry or double request) is never sent twice
-  const dedupeKey = clientEventId ? `event:${clientEventId}` : `lead:${phone}:${formName}`
+  // Only event_id deduplicates. A new event from the same phone is a new enquiry.
+  const dedupeKey = `event:${eventId}`
   const now = Date.now()
   if (recent.has(dedupeKey) && now - (recent.get(dedupeKey) as number) < DEDUPE_MS) {
     return reply({ success: true, message: "Lead already synced" })
@@ -114,22 +105,24 @@ export async function POST(request: Request) {
   if (recent.size > 500) recent.clear()
   recent.set(dedupeKey, now)
 
-  // Lead attribution (latest touch + first_ prefixed first touch): plain text only, length limited
   const attribution: Record<string, string> = {}
   for (const key of ATTRIBUTION_PAYLOAD_KEYS) {
     const long = key.endsWith("landing_page") || key.endsWith("referrer")
-    attribution[key] = cleanText(data?.[key], long ? 300 : 100)
+    attribution[key] = cleanText(data?.[key], long ? 300 : 150)
   }
 
-  // The Apps Script fills LEAD TYPE / TRAFFIC SOURCE / TRAFFIC MEDIUM from these three names
   const sheetFields = deriveSheetFields(attribution)
 
   const payload = {
     secret,
     phone,
     name: cleanText(data?.name, 100),
-    service: cleanText(data?.service ?? data?.service_name, 100),
-    location: cleanText(data?.location, 200),
+    service: cleanText(data?.service ?? data?.service_name, 150),
+    location: cleanText(data?.location, 250),
+    message: cleanText(
+      data?.message ?? data?.requirement ?? data?.details ?? data?.notes ?? data?.description,
+      1000
+    ),
     source: "website_form",
     form_name: formName,
     page_path: pagePath,
