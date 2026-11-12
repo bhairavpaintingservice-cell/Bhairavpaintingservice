@@ -230,11 +230,13 @@ export async function POST(request: Request) {
     if (!response.ok || result?.success !== true) {
       recent.delete(dedupeKey)
 
-      console.error(
-        "save-click-id: Apps Script sync failed, status",
-        response.status
-      )
-
+     console.error(
+  "save-click-id: Apps Script sync failed",
+  {
+    status: response.status,
+    response: result,
+  }
+)
       return reply({
         success: false,
         message: "Lead sync failed"
