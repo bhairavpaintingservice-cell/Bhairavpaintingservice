@@ -16,7 +16,7 @@ export default function DesignerQuoteForm() {
       alert("Please enter your name and phone number.")
       return
     }
-    pushLeadEvent("designer_service_page", { service: form.service || "Not specified", area: form.area }, false, { phone: form.phone, name: form.name, service: form.service, location: form.area })
+    pushLeadEvent("designer_service_page", { service: form.service || "Not specified", area: form.area }, false, { phone: form.phone, name: form.name, service: form.service, location: form.area, message: form.message })
     const msg = encodeURIComponent(
       `Hi, I need Designer Wall or Texture Painting quote.\nName: ${form.name}\nPhone: ${form.phone}\nService: ${form.service || "Not specified"}\nArea: ${form.area || "Not specified"}\nMessage: ${form.message || "-"}`
     )
