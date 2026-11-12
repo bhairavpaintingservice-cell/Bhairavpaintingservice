@@ -179,9 +179,10 @@ function saveLeadToServer(
       wbraid: ids.wbraid || "",
 
       ...getAttributionFields(),
-    })
 // Landing page = page where enquiry was submitted
 landing_page: window.location.origin + window.location.pathname,
+      })
+    
     const send = (retry: boolean) => {
       const again = () => {
         if (retry) setTimeout(() => send(false), 2000)
