@@ -1,4 +1,5 @@
-import { NextRequest, NextResponse } from "next/server"
+import { after, NextRequest, NextResponse } from "next/server"
+import { syncEnquiryToSheet } from "@/lib/whatsapp-sheet-sync"
 import {
   hasSeen,
   markSeen,
@@ -14,6 +15,8 @@ import {
 
 export const runtime = "nodejs"
 export const dynamic = "force-dynamic"
+// The Google Sheet sync runs after the 200 response, so allow it time to finish.
+export const maxDuration = 30
 
 const MAX_BODY_BYTES = 1_000_000
 
@@ -53,8 +56,13 @@ async function handleIncomingMessage(message: IncomingMessage) {
     displayPhoneNumber: message.displayPhoneNumber,
   })
 
-  // Final stage (later): save the lead to Google Sheets here,
-  // de-duplicating by message.messageId.
+  // Save the customer's enquiry to Google Sheets (text messages only).
+  // This runs AFTER the 200 response is sent, so Meta is never kept waiting
+  // and an Apps Script problem can never break the webhook. The Apps Script
+  // itself skips customers / message IDs that are already in the sheet.
+  if (message.type === "text" && message.text) {
+    after(() => syncEnquiryToSheet(message))
+  }
 }
 
 async function handleStatusUpdate(status: StatusUpdate) {
