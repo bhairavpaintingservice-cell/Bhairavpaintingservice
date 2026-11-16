@@ -1,8 +1,18 @@
+
 import { createHash, createHmac, timingSafeEqual } from "crypto"
 
 // ---------------------------------------------------------------------------
 // Types
 // ---------------------------------------------------------------------------
+
+export type WhatsAppReferral = {
+  sourceUrl: string
+  sourceType: string
+  sourceId: string
+  headline: string
+  body: string
+  ctwaClid: string
+}
 
 export type IncomingMessage = {
   messageId: string
@@ -10,15 +20,16 @@ export type IncomingMessage = {
   customerName: string
   type: string
   text: string
-  timestamp: string // unix seconds, exactly as Meta sent it
-  timestampIso: string // same moment as ISO string ("" if invalid)
+  timestamp: string
+  timestampIso: string
   phoneNumberId: string
   displayPhoneNumber: string
+  referral?: WhatsAppReferral
 }
 
 export type StatusUpdate = {
   messageId: string
-  status: string // sent | delivered | read | failed
+  status: string
   recipientId: string
   timestamp: string
   timestampIso: string
@@ -36,10 +47,6 @@ export type ParsedWebhook = {
 // Security helpers
 // ---------------------------------------------------------------------------
 
-/**
- * Verifies Meta's X-Hub-Signature-256 header.
- * Must be given the EXACT raw request bytes (not re-serialised JSON).
- */
 export function verifySignature(
   rawBody: Buffer,
   header: string | null,
@@ -58,7 +65,6 @@ export function verifySignature(
   )
 }
 
-/** Constant-time string compare (hashes first so length does not leak). */
 export function safeEqual(a: string, b: string): boolean {
   const ha = createHash("sha256").update(a).digest()
   const hb = createHash("sha256").update(b).digest()
@@ -67,11 +73,6 @@ export function safeEqual(a: string, b: string): boolean {
 
 // ---------------------------------------------------------------------------
 // Duplicate protection (best effort, in memory)
-//
-// Meta may deliver the same event more than once. We remember WhatsApp
-// message IDs for 24 hours and skip repeats. This memory is per serverless
-// instance, so the final, reliable de-duplication must also happen when we
-// write to Google Sheets (by WhatsApp message ID).
 // ---------------------------------------------------------------------------
 
 const SEEN_TTL_MS = 24 * 60 * 60 * 1000
@@ -87,6 +88,7 @@ function prune(now: number) {
 
   if (seen.size > SEEN_MAX) {
     let toDrop = seen.size - SEEN_MAX
+
     for (const key of seen.keys()) {
       seen.delete(key)
       if (--toDrop <= 0) break
@@ -106,7 +108,7 @@ export function markSeen(key: string) {
 }
 
 export const messageKey = (id: string) => `msg:${id}`
-// A message goes sent -> delivered -> read, so status is part of the key.
+
 export const statusKey = (id: string, status: string) =>
   `status:${id}:${status}`
 
@@ -135,6 +137,7 @@ function str(value: unknown, max: number): string {
 function toIso(unixSeconds: string): string {
   const n = Number(unixSeconds)
   if (!Number.isFinite(n) || n <= 0) return ""
+
   const date = new Date(n * 1000)
   return Number.isNaN(date.getTime()) ? "" : date.toISOString()
 }
@@ -144,7 +147,40 @@ export function maskPhone(phone: string): string {
   return `${"*".repeat(phone.length - 4)}${phone.slice(-4)}`
 }
 
-function extractText(message: Record<string, unknown>, type: string): string {
+// ---------------------------------------------------------------------------
+// WhatsApp referral attribution
+// ---------------------------------------------------------------------------
+
+function extractReferral(
+  message: Record<string, unknown>
+): WhatsAppReferral | undefined {
+  if (!isRecord(message.referral)) return undefined
+
+  const referral = message.referral
+
+  const result: WhatsAppReferral = {
+    sourceUrl: str(referral.source_url, 1000),
+    sourceType: str(referral.source_type, 100),
+    sourceId: str(referral.source_id, 200),
+    headline: str(referral.headline, 500),
+    body: str(referral.body, 1000),
+    ctwaClid: str(referral.ctwa_clid, 500),
+  }
+
+  // Do not attach an empty referral object.
+  const hasData = Object.values(result).some(Boolean)
+
+  return hasData ? result : undefined
+}
+
+// ---------------------------------------------------------------------------
+// Message text extraction
+// ---------------------------------------------------------------------------
+
+function extractText(
+  message: Record<string, unknown>,
+  type: string
+): string {
   const part = (key: string): Record<string, unknown> => {
     const value = message[key]
     return isRecord(value) ? value : {}
@@ -153,23 +189,30 @@ function extractText(message: Record<string, unknown>, type: string): string {
   switch (type) {
     case "text":
       return str(part("text").body, 4096)
+
     case "image":
     case "video":
     case "document":
       return str(part(type).caption, 1024)
+
     case "button":
       return str(part("button").text, 200)
+
     case "interactive": {
       const interactive = part("interactive")
+
       const reply = isRecord(interactive.button_reply)
         ? interactive.button_reply
         : isRecord(interactive.list_reply)
           ? interactive.list_reply
           : {}
+
       return str(reply.title, 200)
     }
+
     case "reaction":
       return str(part("reaction").emoji, 20)
+
     default:
       return ""
   }
@@ -180,7 +223,10 @@ function extractText(message: Record<string, unknown>, type: string): string {
 // ---------------------------------------------------------------------------
 
 export function parseWebhookPayload(payload: unknown): ParsedWebhook {
-  const result: ParsedWebhook = { messages: [], statuses: [] }
+  const result: ParsedWebhook = {
+    messages: [],
+    statuses: [],
+  }
 
   if (
     !isRecord(payload) ||
@@ -203,27 +249,41 @@ export function parseWebhookPayload(payload: unknown): ParsedWebhook {
       }
 
       const value = change.value
-      const metadata = isRecord(value.metadata) ? value.metadata : {}
+
+      const metadata = isRecord(value.metadata)
+        ? value.metadata
+        : {}
+
       const phoneNumberId = str(metadata.phone_number_id, 40)
       const displayPhoneNumber = str(metadata.display_phone_number, 40)
 
       // wa_id -> profile name
       const names = new Map<string, string>()
+
       if (Array.isArray(value.contacts)) {
         for (const contact of value.contacts) {
           if (!isRecord(contact)) continue
+
           const waId = str(contact.wa_id, 40)
-          const profile = isRecord(contact.profile) ? contact.profile : {}
-          if (waId) names.set(waId, str(profile.name, 100))
+
+          const profile = isRecord(contact.profile)
+            ? contact.profile
+            : {}
+
+          if (waId) {
+            names.set(waId, str(profile.name, 100))
+          }
         }
       }
 
+      // Incoming messages
       if (Array.isArray(value.messages)) {
         for (const raw of value.messages) {
           if (!isRecord(raw)) continue
 
           const messageId = str(raw.id, 200)
           const from = str(raw.from, 40)
+
           if (!messageId || !from) continue
 
           const type = str(raw.type, 30) || "unknown"
@@ -239,19 +299,25 @@ export function parseWebhookPayload(payload: unknown): ParsedWebhook {
             timestampIso: toIso(timestamp),
             phoneNumberId,
             displayPhoneNumber,
+
+            // Captures Meta referral details when provided.
+            referral: extractReferral(raw),
           })
         }
       }
 
+      // Message status updates
       if (Array.isArray(value.statuses)) {
         for (const raw of value.statuses) {
           if (!isRecord(raw)) continue
 
           const messageId = str(raw.id, 200)
           const status = str(raw.status, 30)
+
           if (!messageId || !status) continue
 
           const timestamp = str(raw.timestamp, 20)
+
           const firstError =
             Array.isArray(raw.errors) && isRecord(raw.errors[0])
               ? raw.errors[0]
@@ -264,11 +330,15 @@ export function parseWebhookPayload(payload: unknown): ParsedWebhook {
             timestamp,
             timestampIso: toIso(timestamp),
             phoneNumberId,
+
             errorCode:
               firstError && typeof firstError.code === "number"
                 ? firstError.code
                 : undefined,
-            errorTitle: firstError ? str(firstError.title, 200) : undefined,
+
+            errorTitle: firstError
+              ? str(firstError.title, 200)
+              : undefined,
           })
         }
       }
