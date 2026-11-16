@@ -1,25 +1,9 @@
-import type { IncomingMessage } from "@/lib/whatsapp-webhook"
 
-// ---------------------------------------------------------------------------
-// Sends an incoming WhatsApp text enquiry to the "BPS WhatsApp CRM" Google
-// Apps Script, which saves it to the QUALIFIED_LEAD_DATA sheet.
-//
-// The Apps Script decides whether the customer is new: it skips a message if
-// the phone number (last 10 digits) or the WhatsApp message ID (EVENT_ID)
-// already exists in the sheet, so only the first enquiry per customer is saved.
-//
-// Environment variables (Vercel):
-//   BPS_WHATSAPP_APPS_SCRIPT_URL  the Apps Script web app (/exec) URL
-//   BPS_WHATSAPP_SECRET           shared secret, must match the Script Property
-//                                 of the same name in the Apps Script
-//
-// Nothing in this file logs the URL, the secret, the full phone number or the
-// customer's message text.
-// ---------------------------------------------------------------------------
+import type { IncomingMessage } from "@/lib/whatsapp-webhook"
 
 const REQUEST_TIMEOUT_MS = 8000
 const RETRY_DELAY_MS = 1000
-const MAX_ATTEMPTS = 2 // first try + one retry for temporary failures
+const MAX_ATTEMPTS = 2
 const MAX_MESSAGE_LENGTH = 1000
 
 type Outcome =
@@ -32,10 +16,9 @@ function log(event: string, data: Record<string, unknown> = {}) {
   )
 }
 
-const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
+const sleep = (ms: number) =>
+  new Promise((resolve) => setTimeout(resolve, ms))
 
-// Same cleaning rules as the website lead route: no control characters, single
-// spaces, and a leading ' so Google Sheets never treats text as a formula.
 function cleanForSheet(value: string, max: number): string {
   const text = value
     .replace(/[\u0000-\u001F\u007F]/g, " ")
@@ -46,14 +29,54 @@ function cleanForSheet(value: string, max: number): string {
   return /^[=+\-@]/.test(text) ? "'" + text : text
 }
 
-export function buildSheetPayload(message: IncomingMessage, secret: string) {
+function getReferralAttribution(message: IncomingMessage) {
+  const referral = message.referral
+
+  if (!referral) return {}
+
+  const sourceUrl = referral.sourceUrl.toLowerCase()
+  const sourceType = referral.sourceType.toLowerCase()
+
+  let source = ""
+  let medium = ""
+
+  if (sourceUrl.includes("instagram.com")) {
+    source = "Instagram"
+    medium = "paid_social"
+  } else if (
+    sourceUrl.includes("facebook.com") ||
+    sourceUrl.includes("fb.com")
+  ) {
+    source = "Facebook"
+    medium = "paid_social"
+  } else if (sourceType.includes("ad")) {
+    source = "Meta Ads"
+    medium = "paid_social"
+  }
+
+  return {
+    traffic_source: source,
+    traffic_medium: medium,
+    lead_source: source,
+    lead_medium: medium,
+    referrer: referral.sourceUrl,
+    campaign_id: referral.sourceId,
+  }
+}
+
+export function buildSheetPayload(
+  message: IncomingMessage,
+  secret: string
+) {
   return {
     secret,
-    phone: message.from.replace(/\D/g, ""), // customer WhatsApp number
-    event_id: message.messageId, // original WhatsApp message ID (wamid)
+    phone: message.from.replace(/\D/g, ""),
+    event_id: message.messageId,
     message: cleanForSheet(message.text, MAX_MESSAGE_LENGTH),
-    // Original WhatsApp timestamp in unix seconds, as the Apps Script expects.
-    timestamp: /^\d{1,12}$/.test(message.timestamp) ? message.timestamp : "",
+    timestamp: /^\d{1,12}$/.test(message.timestamp)
+      ? message.timestamp
+      : "",
+    ...getReferralAttribution(message),
   }
 }
 
@@ -63,11 +86,12 @@ async function postOnce(
   payload: ReturnType<typeof buildSheetPayload>
 ): Promise<Outcome> {
   const controller = new AbortController()
-  const timer = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS)
+  const timer = setTimeout(
+    () => controller.abort(),
+    REQUEST_TIMEOUT_MS
+  )
 
   try {
-    // Apps Script web apps answer a POST with a redirect to the result page,
-    // so redirects must be followed.
     const response = await fetch(url, {
       method: "POST",
       headers: { "Content-Type": "text/plain;charset=utf-8" },
@@ -78,11 +102,12 @@ async function postOnce(
     })
 
     const text = await response.text()
-
     let result: Record<string, unknown> | null = null
+
     try {
       const parsed = JSON.parse(text)
-      result = parsed && typeof parsed === "object" ? parsed : null
+      result =
+        parsed && typeof parsed === "object" ? parsed : null
     } catch {
       result = null
     }
@@ -98,8 +123,6 @@ async function postOnce(
       }
     }
 
-    // The script answers HTTP 200 with success:false for rejected requests
-    // (wrong secret, missing fields...). Retrying would not help.
     const scriptMessage =
       typeof result?.message === "string"
         ? result.message.split(secret).join("[redacted]").slice(0, 120)
@@ -109,7 +132,10 @@ async function postOnce(
       ok: false,
       status: response.status,
       reason: scriptMessage || "bad_response",
-      retryable: result === null || response.status >= 500 || response.status === 429,
+      retryable:
+        result === null ||
+        response.status >= 500 ||
+        response.status === 429,
     }
   } catch (error) {
     return {
@@ -125,10 +151,6 @@ async function postOnce(
   }
 }
 
-/**
- * Never throws. Failures are logged and the enquiry is simply not saved; the
- * WhatsApp webhook has already answered Meta with 200 by the time this runs.
- */
 export async function syncEnquiryToSheet(
   message: IncomingMessage
 ): Promise<void> {
@@ -137,7 +159,9 @@ export async function syncEnquiryToSheet(
     const secret = process.env.BPS_WHATSAPP_SECRET
 
     if (!url || !secret || !url.startsWith("https://")) {
-      log("sheet_sync_config_missing", { messageId: message.messageId })
+      log("sheet_sync_config_missing", {
+        messageId: message.messageId,
+      })
       return
     }
 
