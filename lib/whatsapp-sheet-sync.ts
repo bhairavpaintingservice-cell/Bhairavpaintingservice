@@ -10,6 +10,29 @@ type Outcome =
   | { ok: true; duplicate: boolean; enquiryNumber?: number }
   | { ok: false; reason: string; status?: number; retryable: boolean }
 
+const SOURCE_CODES = {
+  BPS_SRC_GBP: {
+    source: "Google",
+    medium: "Organic",
+  },
+  BPS_SRC_GADS: {
+    source: "Google",
+    medium: "CPC",
+  },
+  BPS_SRC_WEB: {
+    source: "Website",
+    medium: "Website",
+  },
+  BPS_SRC_IG: {
+    source: "Instagram",
+    medium: "Social",
+  },
+  BPS_SRC_FB: {
+    source: "Facebook",
+    medium: "Social",
+  },
+} as const
+
 function log(event: string, data: Record<string, unknown> = {}) {
   console.log(
     JSON.stringify({ source: "whatsapp-sheet-sync", event, ...data })
@@ -29,23 +52,49 @@ function cleanForSheet(value: string, max: number): string {
   return /^[=+\-@]/.test(text) ? "'" + text : text
 }
 
+function detectSourceCode(messageText: string) {
+  const upperText = messageText.toUpperCase()
+
+  for (const [code, attribution] of Object.entries(SOURCE_CODES)) {
+    if (upperText.includes(code)) {
+      const cleanMessage = messageText
+        .replace(new RegExp(code, "gi"), "")
+        .replace(/\s+/g, " ")
+        .trim()
+
+      return {
+        attribution,
+        cleanMessage,
+        detectedCode: code,
+      }
+    }
+  }
+
+  return {
+    attribution: null,
+    cleanMessage: messageText,
+    detectedCode: null,
+  }
+}
+
 function getReferralAttribution(message: IncomingMessage) {
   const referral = message.referral
 
   if (!referral) return {}
 
-  const sourceUrl = referral.sourceUrl.toLowerCase()
-  const sourceType = referral.sourceType.toLowerCase()
+  const sourceUrl = referral.sourceUrl || ""
+  const lowerUrl = sourceUrl.toLowerCase()
+  const sourceType = (referral.sourceType || "").toLowerCase()
 
   let source = ""
   let medium = ""
 
-  if (sourceUrl.includes("instagram.com")) {
+  if (lowerUrl.includes("instagram.com")) {
     source = "Instagram"
     medium = "paid_social"
   } else if (
-    sourceUrl.includes("facebook.com") ||
-    sourceUrl.includes("fb.com")
+    lowerUrl.includes("facebook.com") ||
+    lowerUrl.includes("fb.com")
   ) {
     source = "Facebook"
     medium = "paid_social"
@@ -54,13 +103,15 @@ function getReferralAttribution(message: IncomingMessage) {
     medium = "paid_social"
   }
 
+  if (!source) return {}
+
   return {
     traffic_source: source,
     traffic_medium: medium,
     lead_source: source,
     lead_medium: medium,
-    referrer: referral.sourceUrl,
-    campaign_id: referral.sourceId,
+    referrer: sourceUrl,
+    campaign_id: referral.sourceId || "",
   }
 }
 
@@ -68,15 +119,33 @@ export function buildSheetPayload(
   message: IncomingMessage,
   secret: string
 ) {
+  const originalMessage = message.text || ""
+  const detected = detectSourceCode(originalMessage)
+
+  const codeAttribution = detected.attribution
+    ? {
+        traffic_source: detected.attribution.source,
+        traffic_medium: detected.attribution.medium,
+        lead_source: detected.attribution.source,
+        lead_medium: detected.attribution.medium,
+      }
+    : {}
+
+  const referralAttribution = getReferralAttribution(message)
+
   return {
     secret,
     phone: message.from.replace(/\D/g, ""),
     event_id: message.messageId,
-    message: cleanForSheet(message.text, MAX_MESSAGE_LENGTH),
+    message: cleanForSheet(
+      detected.cleanMessage,
+      MAX_MESSAGE_LENGTH
+    ),
     timestamp: /^\d{1,12}$/.test(message.timestamp)
       ? message.timestamp
       : "",
-    ...getReferralAttribution(message),
+    ...referralAttribution,
+    ...codeAttribution,
   }
 }
 
@@ -174,6 +243,12 @@ export async function syncEnquiryToSheet(
       })
       return
     }
+
+    log("source_attribution_detected", {
+      messageId: message.messageId,
+      source: payload.traffic_source || "Unknown",
+      medium: payload.traffic_medium || "Unknown",
+    })
 
     for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
       const outcome = await postOnce(url, secret, payload)
