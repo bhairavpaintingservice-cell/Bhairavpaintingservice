@@ -5,13 +5,10 @@ import { createHash, createHmac, timingSafeEqual } from "crypto"
 // Types
 // ---------------------------------------------------------------------------
 
-export type WhatsAppReferral = {
-  sourceUrl: string
-  sourceType: string
-  sourceId: string
-  headline: string
-  body: string
-  ctwaClid: string
+export type WhatsAppAttribution = {
+  source: string
+  medium: string
+  sourceCode: string
 }
 
 export type IncomingMessage = {
@@ -24,7 +21,15 @@ export type IncomingMessage = {
   timestampIso: string
   phoneNumberId: string
   displayPhoneNumber: string
-  referral?: WhatsAppReferral
+  referral?: {
+    sourceUrl: string
+    sourceType: string
+    sourceId: string
+    headline: string
+    body: string
+    ctwaClid: string
+  }
+  attribution?: WhatsAppAttribution
 }
 
 export type StatusUpdate = {
@@ -72,7 +77,7 @@ export function safeEqual(a: string, b: string): boolean {
 }
 
 // ---------------------------------------------------------------------------
-// Duplicate protection (best effort, in memory)
+// Duplicate protection
 // ---------------------------------------------------------------------------
 
 const SEEN_TTL_MS = 24 * 60 * 60 * 1000
@@ -113,7 +118,7 @@ export const statusKey = (id: string, status: string) =>
   `status:${id}:${status}`
 
 // ---------------------------------------------------------------------------
-// Small utilities
+// Utilities
 // ---------------------------------------------------------------------------
 
 function isRecord(value: unknown): value is Record<string, unknown> {
@@ -148,17 +153,54 @@ export function maskPhone(phone: string): string {
 }
 
 // ---------------------------------------------------------------------------
-// WhatsApp referral attribution
+// BPS source-code attribution
+// ---------------------------------------------------------------------------
+
+function extractAttribution(text: string): WhatsAppAttribution | undefined {
+  const match = /\bBPS_SRC_(GBP|GADS|WEB|IG|FB)\b/i.exec(text)
+
+  if (!match) return undefined
+
+  const code = match[1].toUpperCase()
+
+  const sources: Record<string, { source: string; medium: string }> = {
+    GBP: { source: "Google", medium: "organic" },
+    GADS: { source: "Google", medium: "cpc" },
+    WEB: { source: "Website", medium: "referral" },
+    IG: { source: "Instagram", medium: "social" },
+    FB: { source: "Facebook", medium: "social" },
+  }
+
+  const result = sources[code]
+
+  if (!result) return undefined
+
+  return {
+    source: result.source,
+    medium: result.medium,
+    sourceCode: `BPS_SRC_${code}`,
+  }
+}
+
+function removeAttributionCode(text: string): string {
+  return text
+    .replace(/\s*\(?BPS_SRC_(GBP|GADS|WEB|IG|FB)\)?\s*/gi, " ")
+    .replace(/\s+/g, " ")
+    .trim()
+}
+
+// ---------------------------------------------------------------------------
+// Referral information from Meta
 // ---------------------------------------------------------------------------
 
 function extractReferral(
   message: Record<string, unknown>
-): WhatsAppReferral | undefined {
+): IncomingMessage["referral"] {
   if (!isRecord(message.referral)) return undefined
 
   const referral = message.referral
 
-  const result: WhatsAppReferral = {
+  const result = {
     sourceUrl: str(referral.source_url, 1000),
     sourceType: str(referral.source_type, 100),
     sourceId: str(referral.source_id, 200),
@@ -167,10 +209,7 @@ function extractReferral(
     ctwaClid: str(referral.ctwa_clid, 500),
   }
 
-  // Do not attach an empty referral object.
-  const hasData = Object.values(result).some(Boolean)
-
-  return hasData ? result : undefined
+  return Object.values(result).some(Boolean) ? result : undefined
 }
 
 // ---------------------------------------------------------------------------
@@ -219,14 +258,11 @@ function extractText(
 }
 
 // ---------------------------------------------------------------------------
-// Payload parser
+// Webhook parser
 // ---------------------------------------------------------------------------
 
 export function parseWebhookPayload(payload: unknown): ParsedWebhook {
-  const result: ParsedWebhook = {
-    messages: [],
-    statuses: [],
-  }
+  const result: ParsedWebhook = { messages: [], statuses: [] }
 
   if (
     !isRecord(payload) ||
@@ -249,15 +285,11 @@ export function parseWebhookPayload(payload: unknown): ParsedWebhook {
       }
 
       const value = change.value
-
-      const metadata = isRecord(value.metadata)
-        ? value.metadata
-        : {}
+      const metadata = isRecord(value.metadata) ? value.metadata : {}
 
       const phoneNumberId = str(metadata.phone_number_id, 40)
       const displayPhoneNumber = str(metadata.display_phone_number, 40)
 
-      // wa_id -> profile name
       const names = new Map<string, string>()
 
       if (Array.isArray(value.contacts)) {
@@ -265,18 +297,12 @@ export function parseWebhookPayload(payload: unknown): ParsedWebhook {
           if (!isRecord(contact)) continue
 
           const waId = str(contact.wa_id, 40)
+          const profile = isRecord(contact.profile) ? contact.profile : {}
 
-          const profile = isRecord(contact.profile)
-            ? contact.profile
-            : {}
-
-          if (waId) {
-            names.set(waId, str(profile.name, 100))
-          }
+          if (waId) names.set(waId, str(profile.name, 100))
         }
       }
 
-      // Incoming messages
       if (Array.isArray(value.messages)) {
         for (const raw of value.messages) {
           if (!isRecord(raw)) continue
@@ -289,24 +315,30 @@ export function parseWebhookPayload(payload: unknown): ParsedWebhook {
           const type = str(raw.type, 30) || "unknown"
           const timestamp = str(raw.timestamp, 20)
 
+          const originalText = extractText(raw, type)
+          const attribution = extractAttribution(originalText)
+
           result.messages.push({
             messageId,
             from,
             customerName: names.get(from) ?? "",
             type,
-            text: extractText(raw, type),
+
+            // Tracking code is removed from saved customer notes.
+            text: attribution
+              ? removeAttributionCode(originalText)
+              : originalText,
+
             timestamp,
             timestampIso: toIso(timestamp),
             phoneNumberId,
             displayPhoneNumber,
-
-            // Captures Meta referral details when provided.
             referral: extractReferral(raw),
+            attribution,
           })
         }
       }
 
-      // Message status updates
       if (Array.isArray(value.statuses)) {
         for (const raw of value.statuses) {
           if (!isRecord(raw)) continue
