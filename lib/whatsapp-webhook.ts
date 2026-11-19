@@ -15,7 +15,6 @@ export interface IncomingMessage {
   timestampIso: string
   phoneNumberId: string
   displayPhoneNumber: string
-  referral?: Record<string, unknown>
 }
 
 export interface StatusUpdate {
@@ -30,7 +29,7 @@ export interface StatusUpdate {
 }
 
 // ---------------------------------------------------------------------------
-// Security: Constant-time comparison
+// Security
 // ---------------------------------------------------------------------------
 
 export function safeEqual(a: string, b: string): boolean {
@@ -45,7 +44,7 @@ export function safeEqual(a: string, b: string): boolean {
 }
 
 // ---------------------------------------------------------------------------
-// WhatsApp webhook signature verification
+// WhatsApp signature verification
 // ---------------------------------------------------------------------------
 
 export function verifySignature(
@@ -123,7 +122,7 @@ export function statusKey(
 }
 
 // ---------------------------------------------------------------------------
-// Phone number masking for safe logs
+// Phone number masking
 // ---------------------------------------------------------------------------
 
 export function maskPhone(phone: string): string {
@@ -169,7 +168,7 @@ function timestampToIso(timestamp: string): string {
 }
 
 // ---------------------------------------------------------------------------
-// Extract text from WhatsApp messages
+// Extract WhatsApp message text
 // ---------------------------------------------------------------------------
 
 function extractMessageText(message: Record<string, any>): string {
@@ -198,7 +197,7 @@ function extractMessageText(message: Record<string, any>): string {
 }
 
 // ---------------------------------------------------------------------------
-// Parse Meta WhatsApp webhook payload
+// Parse Meta webhook payload
 // ---------------------------------------------------------------------------
 
 export function parseWebhookPayload(payload: unknown): {
@@ -269,9 +268,6 @@ export function parseWebhookPayload(payload: unknown): {
           timestampIso: timestampToIso(timestamp),
           phoneNumberId,
           displayPhoneNumber,
-          ...(message.referral
-            ? { referral: asObject(message.referral) }
-            : {}),
         })
       }
 
