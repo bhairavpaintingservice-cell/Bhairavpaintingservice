@@ -1,288 +1,321 @@
 
-import type { IncomingMessage } from "@/lib/whatsapp-webhook"
+import { createHmac, timingSafeEqual } from "node:crypto"
 
-const REQUEST_TIMEOUT_MS = 8000
-const RETRY_DELAY_MS = 1000
-const MAX_ATTEMPTS = 2
-const MAX_MESSAGE_LENGTH = 1000
+// ---------------------------------------------------------------------------
+// Types
+// ---------------------------------------------------------------------------
 
-type Outcome =
-  | { ok: true; duplicate: boolean; enquiryNumber?: number }
-  | { ok: false; reason: string; status?: number; retryable: boolean }
-
-const SOURCE_CODES = {
-  BPS_SRC_GBP: {
-    source: "Google",
-    medium: "Organic",
-  },
-  BPS_SRC_GADS: {
-    source: "Google",
-    medium: "CPC",
-  },
-  BPS_SRC_WEB: {
-    source: "Website",
-    medium: "Website",
-  },
-  BPS_SRC_IG: {
-    source: "Instagram",
-    medium: "Social",
-  },
-  BPS_SRC_FB: {
-    source: "Facebook",
-    medium: "Social",
-  },
-} as const
-
-function log(event: string, data: Record<string, unknown> = {}) {
-  console.log(
-    JSON.stringify({ source: "whatsapp-sheet-sync", event, ...data })
-  )
+export interface IncomingMessage {
+  messageId: string
+  from: string
+  customerName: string
+  type: string
+  text: string
+  timestamp: string
+  timestampIso: string
+  phoneNumberId: string
+  displayPhoneNumber: string
+  referral?: Record<string, unknown>
 }
 
-const sleep = (ms: number) =>
-  new Promise((resolve) => setTimeout(resolve, ms))
-
-function cleanForSheet(value: string, max: number): string {
-  const text = value
-    .replace(/[\u0000-\u001F\u007F]/g, " ")
-    .replace(/\s+/g, " ")
-    .trim()
-    .slice(0, max)
-
-  return /^[=+\-@]/.test(text) ? "'" + text : text
+export interface StatusUpdate {
+  messageId: string
+  status: string
+  recipientId: string
+  timestamp: string
+  timestampIso: string
+  phoneNumberId: string
+  errorCode?: string
+  errorTitle?: string
 }
 
-function detectSourceCode(messageText: string) {
-  const upperText = messageText.toUpperCase()
+// ---------------------------------------------------------------------------
+// Security: Constant-time comparison
+// ---------------------------------------------------------------------------
 
-  for (const [code, attribution] of Object.entries(SOURCE_CODES)) {
-    if (upperText.includes(code)) {
-      const cleanMessage = messageText
-        .replace(new RegExp(code, "gi"), "")
-        .replace(/\s+/g, " ")
-        .trim()
+export function safeEqual(a: string, b: string): boolean {
+  const bufferA = Buffer.from(a, "utf8")
+  const bufferB = Buffer.from(b, "utf8")
 
-      return {
-        attribution,
-        cleanMessage,
-        detectedCode: code,
-      }
+  if (bufferA.length !== bufferB.length) {
+    return false
+  }
+
+  return timingSafeEqual(bufferA, bufferB)
+}
+
+// ---------------------------------------------------------------------------
+// WhatsApp webhook signature verification
+// ---------------------------------------------------------------------------
+
+export function verifySignature(
+  rawBody: Buffer,
+  signature: string | null,
+  appSecret: string
+): boolean {
+  if (!signature || !appSecret) {
+    return false
+  }
+
+  const expectedSignature =
+    "sha256=" +
+    createHmac("sha256", appSecret)
+      .update(rawBody)
+      .digest("hex")
+
+  return safeEqual(signature, expectedSignature)
+}
+
+// ---------------------------------------------------------------------------
+// Duplicate event protection
+// ---------------------------------------------------------------------------
+
+const SEEN_TTL = 24 * 60 * 60 * 1000
+const MAX_SEEN = 5000
+
+const seenEvents = new Map<string, number>()
+
+function cleanSeenEvents() {
+  const now = Date.now()
+
+  for (const [key, timestamp] of seenEvents) {
+    if (now - timestamp > SEEN_TTL) {
+      seenEvents.delete(key)
     }
   }
 
-  return {
-    attribution: null,
-    cleanMessage: messageText,
-    detectedCode: null,
+  while (seenEvents.size > MAX_SEEN) {
+    const oldestKey = seenEvents.keys().next().value
+
+    if (!oldestKey) break
+
+    seenEvents.delete(oldestKey)
   }
 }
 
-function getReferralAttribution(message: IncomingMessage) {
-  const referral = message.referral
+export function hasSeen(key: string): boolean {
+  const timestamp = seenEvents.get(key)
 
-  if (!referral) return {}
+  if (!timestamp) return false
 
-  const sourceUrl = referral.sourceUrl || ""
-  const lowerUrl = sourceUrl.toLowerCase()
-  const sourceType = (referral.sourceType || "").toLowerCase()
+  if (Date.now() - timestamp > SEEN_TTL) {
+    seenEvents.delete(key)
+    return false
+  }
 
-  let source = ""
-  let medium = ""
+  return true
+}
 
-  if (lowerUrl.includes("instagram.com")) {
-    source = "Instagram"
-    medium = "paid_social"
-  } else if (
-    lowerUrl.includes("facebook.com") ||
-    lowerUrl.includes("fb.com")
+export function markSeen(key: string): void {
+  cleanSeenEvents()
+  seenEvents.set(key, Date.now())
+}
+
+export function messageKey(messageId: string): string {
+  return `message:${messageId}`
+}
+
+export function statusKey(
+  messageId: string,
+  status: string
+): string {
+  return `status:${messageId}:${status}`
+}
+
+// ---------------------------------------------------------------------------
+// Phone number masking for safe logs
+// ---------------------------------------------------------------------------
+
+export function maskPhone(phone: string): string {
+  if (!phone) return ""
+
+  if (phone.length <= 4) {
+    return "****"
+  }
+
+  return `${"*".repeat(phone.length - 4)}${phone.slice(-4)}`
+}
+
+// ---------------------------------------------------------------------------
+// Payload parsing helpers
+// ---------------------------------------------------------------------------
+
+function asObject(value: unknown): Record<string, any> {
+  if (
+    value !== null &&
+    typeof value === "object" &&
+    !Array.isArray(value)
   ) {
-    source = "Facebook"
-    medium = "paid_social"
-  } else if (sourceType.includes("ad")) {
-    source = "Meta Ads"
-    medium = "paid_social"
+    return value as Record<string, any>
   }
 
-  if (!source) return {}
+  return {}
+}
 
-  return {
-    traffic_source: source,
-    traffic_medium: medium,
-    lead_source: source,
-    lead_medium: medium,
-    referrer: sourceUrl,
-    campaign_id: referral.sourceId || "",
+function asString(value: unknown): string {
+  return typeof value === "string" || typeof value === "number"
+    ? String(value)
+    : ""
+}
+
+function timestampToIso(timestamp: string): string {
+  const seconds = Number(timestamp)
+
+  if (!Number.isFinite(seconds) || seconds <= 0) {
+    return ""
+  }
+
+  return new Date(seconds * 1000).toISOString()
+}
+
+// ---------------------------------------------------------------------------
+// Extract text from WhatsApp messages
+// ---------------------------------------------------------------------------
+
+function extractMessageText(message: Record<string, any>): string {
+  const type = asString(message.type)
+
+  switch (type) {
+    case "text":
+      return asString(message.text?.body)
+
+    case "button":
+      return asString(message.button?.text)
+
+    case "interactive": {
+      const interactive = asObject(message.interactive)
+
+      return (
+        asString(interactive.button_reply?.title) ||
+        asString(interactive.list_reply?.title) ||
+        ""
+      )
+    }
+
+    default:
+      return ""
   }
 }
 
-export function buildSheetPayload(
-  message: IncomingMessage,
-  secret: string
-) {
-  const originalMessage = message.text || ""
-  const detected = detectSourceCode(originalMessage)
+// ---------------------------------------------------------------------------
+// Parse Meta WhatsApp webhook payload
+// ---------------------------------------------------------------------------
 
-  // FIX: Use attribution already extracted by whatsapp-webhook.ts.
-  // Fall back to detecting a code in the message for compatibility.
-  const attribution = message.attribution ?? detected.attribution
+export function parseWebhookPayload(payload: unknown): {
+  messages: IncomingMessage[]
+  statuses: StatusUpdate[]
+} {
+  const messages: IncomingMessage[] = []
+  const statuses: StatusUpdate[] = []
 
-  const codeAttribution = attribution
-    ? {
-        traffic_source: attribution.source,
-        traffic_medium: attribution.medium,
-        lead_source: attribution.source,
-        lead_medium: attribution.medium,
+  const root = asObject(payload)
+  const entries = Array.isArray(root.entry) ? root.entry : []
+
+  for (const entryValue of entries) {
+    const entry = asObject(entryValue)
+    const changes = Array.isArray(entry.changes)
+      ? entry.changes
+      : []
+
+    for (const changeValue of changes) {
+      const change = asObject(changeValue)
+      const value = asObject(change.value)
+      const metadata = asObject(value.metadata)
+
+      const phoneNumberId = asString(metadata.phone_number_id)
+      const displayPhoneNumber = asString(
+        metadata.display_phone_number
+      )
+
+      const contacts = Array.isArray(value.contacts)
+        ? value.contacts
+        : []
+
+      const contactNames = new Map<string, string>()
+
+      for (const contactValue of contacts) {
+        const contact = asObject(contactValue)
+        const profile = asObject(contact.profile)
+
+        const waId = asString(contact.wa_id)
+        const name = asString(profile.name)
+
+        if (waId && name) {
+          contactNames.set(waId, name)
+        }
       }
-    : {}
 
-  const referralAttribution = getReferralAttribution(message)
+      const incoming = Array.isArray(value.messages)
+        ? value.messages
+        : []
 
-  return {
-    secret,
-    phone: message.from.replace(/\D/g, ""),
-    event_id: message.messageId,
-    message: cleanForSheet(
-      detected.cleanMessage,
-      MAX_MESSAGE_LENGTH
-    ),
-    timestamp: /^\d{1,12}$/.test(message.timestamp)
-      ? message.timestamp
-      : "",
-    ...referralAttribution,
-    ...codeAttribution,
-  }
-}
+      for (const messageValue of incoming) {
+        const message = asObject(messageValue)
 
-async function postOnce(
-  url: string,
-  secret: string,
-  payload: ReturnType<typeof buildSheetPayload>
-): Promise<Outcome> {
-  const controller = new AbortController()
-  const timer = setTimeout(
-    () => controller.abort(),
-    REQUEST_TIMEOUT_MS
-  )
+        const messageId = asString(message.id)
+        const from = asString(message.from)
+        const timestamp = asString(message.timestamp)
+        const type = asString(message.type)
 
-  try {
-    const response = await fetch(url, {
-      method: "POST",
-      headers: { "Content-Type": "text/plain;charset=utf-8" },
-      body: JSON.stringify(payload),
-      redirect: "follow",
-      cache: "no-store",
-      signal: controller.signal,
-    })
+        if (!messageId || !from) continue
 
-    const text = await response.text()
-    let result: Record<string, unknown> | null = null
-
-    try {
-      const parsed = JSON.parse(text)
-      result =
-        parsed && typeof parsed === "object" ? parsed : null
-    } catch {
-      result = null
-    }
-
-    if (response.ok && result?.success === true) {
-      return {
-        ok: true,
-        duplicate: result.duplicate === true,
-        enquiryNumber:
-          typeof result.enquiry_number === "number"
-            ? result.enquiry_number
-            : undefined,
-      }
-    }
-
-    const scriptMessage =
-      typeof result?.message === "string"
-        ? result.message.split(secret).join("[redacted]").slice(0, 120)
-        : ""
-
-    return {
-      ok: false,
-      status: response.status,
-      reason: scriptMessage || "bad_response",
-      retryable:
-        result === null ||
-        response.status >= 500 ||
-        response.status === 429,
-    }
-  } catch (error) {
-    return {
-      ok: false,
-      reason:
-        error instanceof Error && error.name === "AbortError"
-          ? "timeout"
-          : "network_error",
-      retryable: true,
-    }
-  } finally {
-    clearTimeout(timer)
-  }
-}
-
-export async function syncEnquiryToSheet(
-  message: IncomingMessage
-): Promise<void> {
-  try {
-    const url = process.env.BPS_WHATSAPP_APPS_SCRIPT_URL
-    const secret = process.env.BPS_WHATSAPP_SECRET
-
-    if (!url || !secret || !url.startsWith("https://")) {
-      log("sheet_sync_config_missing", {
-        messageId: message.messageId,
-      })
-      return
-    }
-
-    const payload = buildSheetPayload(message, secret)
-
-    if (!payload.phone || !payload.event_id) {
-      log("sheet_sync_skipped", {
-        messageId: message.messageId,
-        reason: "missing_phone_or_id",
-      })
-      return
-    }
-
-    log("source_attribution_detected", {
-      messageId: message.messageId,
-      source: payload.traffic_source || "Unknown",
-      medium: payload.traffic_medium || "Unknown",
-    })
-
-    for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
-      const outcome = await postOnce(url, secret, payload)
-
-      if (outcome.ok) {
-        log("sheet_sync_ok", {
-          messageId: message.messageId,
-          duplicate: outcome.duplicate,
-          enquiryNumber: outcome.enquiryNumber,
-          attempt,
+        messages.push({
+          messageId,
+          from,
+          customerName: contactNames.get(from) || "",
+          type,
+          text: extractMessageText(message),
+          timestamp,
+          timestampIso: timestampToIso(timestamp),
+          phoneNumberId,
+          displayPhoneNumber,
+          ...(message.referral
+            ? { referral: asObject(message.referral) }
+            : {}),
         })
-        return
       }
 
-      log("sheet_sync_failed", {
-        messageId: message.messageId,
-        attempt,
-        status: outcome.status,
-        reason: outcome.reason,
-        willRetry: outcome.retryable && attempt < MAX_ATTEMPTS,
-      })
+      const statusUpdates = Array.isArray(value.statuses)
+        ? value.statuses
+        : []
 
-      if (!outcome.retryable || attempt === MAX_ATTEMPTS) return
+      for (const statusValue of statusUpdates) {
+        const status = asObject(statusValue)
+        const messageId = asString(status.id)
+        const statusName = asString(status.status)
+        const recipientId = asString(status.recipient_id)
+        const timestamp = asString(status.timestamp)
 
-      await sleep(RETRY_DELAY_MS)
+        if (!messageId || !statusName) continue
+
+        const errors = Array.isArray(status.errors)
+          ? status.errors
+          : []
+
+        const firstError = asObject(errors[0])
+        const errorData = asObject(firstError.error_data)
+
+        statuses.push({
+          messageId,
+          status: statusName,
+          recipientId,
+          timestamp,
+          timestampIso: timestampToIso(timestamp),
+          phoneNumberId,
+          ...(firstError.code !== undefined
+            ? { errorCode: asString(firstError.code) }
+            : {}),
+          ...(firstError.title || errorData.details
+            ? {
+                errorTitle: asString(
+                  firstError.title || errorData.details
+                ),
+              }
+            : {}),
+        })
+      }
     }
-  } catch (error) {
-    log("sheet_sync_error", {
-      messageId: message.messageId,
-      error: error instanceof Error ? error.name : "unknown",
-    })
   }
+
+  return { messages, statuses }
 }
