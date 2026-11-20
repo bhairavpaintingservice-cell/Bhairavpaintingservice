@@ -31,7 +31,7 @@ export default function ThankYouPage() {
             <div className="mt-8 rounded-xl p-5" style={{backgroundColor:"#f0f4ff"}}>
               <p className="text-sm font-semibold" style={{color:"#1B2B8A"}}>Need faster response?</p>
               <div className="mt-3 flex flex-col sm:flex-row gap-3 justify-center">
-                <a href="https://wa.me/919158800517?text=Hi%2C%20I%20just%20submitted%20a%20quote%20request." target="_blank" rel="noopener noreferrer"
+                <a href="https://wa.me/919158800517?text=Hi%2C%20I%20just%20submitted%20a%20quote%20request.%20%5BBPS_SRC_WEB%5D" target="_blank" rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2 rounded-lg px-6 py-3 text-sm font-bold text-white"
                   style={{backgroundColor:"#25D366"}}>
                   <MessageCircle className="h-4 w-4" /> WhatsApp Us Now

@@ -113,7 +113,7 @@ export default function CommercialPaintingPage() {
   const handleSubmit = () => {
     if (!form.name || !form.phone) { alert("Please enter your name and phone number."); return }
     pushLeadEvent("commercial_service_page", { service: form.service, area: form.area }, false, { phone: form.phone, name: form.name, service: form.service, location: form.area, message: form.message })
-    const msg = `Hi, I need a Commercial Painting quote.%0AName: ${encodeURIComponent(form.name)}%0APhone: ${encodeURIComponent(form.phone)}%0AService: ${encodeURIComponent(form.service || "Not specified")}%0AArea: ${encodeURIComponent(form.area || "Not specified")}%0AMessage: ${encodeURIComponent(form.message || "-")}`
+    const msg = `Hi, I need a Commercial Painting quote.%0AName: ${encodeURIComponent(form.name)}%0APhone: ${encodeURIComponent(form.phone)}%0AService: ${encodeURIComponent(form.service || "Not specified")}%0AArea: ${encodeURIComponent(form.area || "Not specified")}%0AMessage: ${encodeURIComponent(form.message || "-")}%0A%5BBPS_SRC_WEB%5D`
     pushWhatsAppFormEvent("commercial_service_page")
     window.open(`https://wa.me/919158800517?text=${msg}`, "_blank")
   }
@@ -155,8 +155,8 @@ export default function CommercialPaintingPage() {
           <p className="mt-3 text-sm max-w-xl" style={{color:"#6b7280"}}>From single offices to multi-location retail chains — scheduled around your business hours.</p>
           <div className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {serviceCards.map((s, i) => {
-              const waMsg = encodeURIComponent(`Hi, I need a quote for ${s.title}. Please contact me.`)
-              const quoteMsg = encodeURIComponent(`Hi, I want a free site visit for ${s.title}. Please contact me.`)
+              const waMsg = encodeURIComponent(`Hi, I need a quote for ${s.title}. Please contact me. [BPS_SRC_WEB]`)
+              const quoteMsg = encodeURIComponent(`Hi, I want a free site visit for ${s.title}. Please contact me. [BPS_SRC_WEB]`)
               const waUrl = `https://wa.me/919158800517?text=${waMsg}`
               const quoteUrl = `https://wa.me/919158800517?text=${quoteMsg}`
               return (
@@ -203,8 +203,8 @@ export default function CommercialPaintingPage() {
           <h2 className="mt-3 text-3xl font-black sm:text-4xl" style={{color:"#1B2B8A"}}>Built for Business Owners</h2>
           <div className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {whoFor.map((w, i) => {
-              const waMsg = encodeURIComponent(`Hi, I need a quote for ${w.title}. Please contact me.`)
-              const quoteMsg = encodeURIComponent(`Hi, I want a free site visit for ${w.title}. Please contact me.`)
+              const waMsg = encodeURIComponent(`Hi, I need a quote for ${w.title}. Please contact me. [BPS_SRC_WEB]`)
+              const quoteMsg = encodeURIComponent(`Hi, I want a free site visit for ${w.title}. Please contact me. [BPS_SRC_WEB]`)
               return (
               <div key={i} className="overflow-hidden rounded-xl border border-gray-100 shadow-sm flex flex-col">
                 <div className="relative h-36"><Image src={w.img} alt={w.title} fill className="object-cover" sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw" /></div>
@@ -282,12 +282,12 @@ export default function CommercialPaintingPage() {
                     <p className="text-xs mt-0.5 text-blue-200">{item.desc}</p>
                   </div>
                   <div className="flex flex-col gap-1.5 shrink-0">
-                    <a href={`https://wa.me/919158800517?text=${encodeURIComponent('Hi, I need painting for ' + item.label + '. Please contact me.')}`} target="_blank" rel="noopener noreferrer"
+                    <a href={`https://wa.me/919158800517?text=${encodeURIComponent('Hi, I need painting for ' + item.label + '. Please contact me. [BPS_SRC_WEB]')}`} target="_blank" rel="noopener noreferrer"
                       className="flex items-center justify-center gap-1 rounded-lg px-2 py-1.5 text-xs font-semibold text-white"
                       style={{backgroundColor:"#25D366"}}>
                       <MessageCircle className="h-3 w-3" /> WhatsApp
                     </a>
-                    <a href={`https://wa.me/919158800517?text=${encodeURIComponent('Hi, I want a free site visit for ' + item.label + ' painting.')}`} target="_blank" rel="noopener noreferrer"
+                    <a href={`https://wa.me/919158800517?text=${encodeURIComponent('Hi, I want a free site visit for ' + item.label + ' painting. [BPS_SRC_WEB]')}`} target="_blank" rel="noopener noreferrer"
                       className="flex items-center justify-center rounded-lg px-2 py-1.5 text-xs font-semibold bg-white"
                       style={{color:"#1B2B8A"}}>
                       Free Quote
@@ -342,8 +342,8 @@ export default function CommercialPaintingPage() {
           <p className="mt-3 text-sm max-w-xl" style={{color:"#6b7280"}}>A look at some of our recent commercial painting work across Mumbai, Thane & Bhiwandi.</p>
           <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {commercialProjects.map((p, i) => {
-              const waMsg = encodeURIComponent(`Hi, I need a quote for ${p.type} similar to your ${p.title} project.`)
-              const quoteMsg = encodeURIComponent(`Hi, I want a free site visit for ${p.type}. Please contact me.`)
+              const waMsg = encodeURIComponent(`Hi, I need a quote for ${p.type} similar to your ${p.title} project. [BPS_SRC_WEB]`)
+              const quoteMsg = encodeURIComponent(`Hi, I want a free site visit for ${p.type}. Please contact me. [BPS_SRC_WEB]`)
               return (
               <div key={i} className="overflow-hidden rounded-xl shadow-sm flex flex-col">
                 <div className="relative h-48"><Image src={p.image} alt={p.title} fill className="object-cover" sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw" /></div>
@@ -675,7 +675,7 @@ export default function CommercialPaintingPage() {
                   </li>
                 ))}
               </ul>
-              <a href="https://wa.me/919158800517?text=Hi%2C%20I%20am%20a%20builder%20and%20need%20commercial%20painting%20for%20my%20project." target="_blank" rel="noopener noreferrer"
+              <a href="https://wa.me/919158800517?text=Hi%2C%20I%20am%20a%20builder%20and%20need%20commercial%20painting%20for%20my%20project.%20%5BBPS_SRC_WEB%5D" target="_blank" rel="noopener noreferrer"
                 className="mt-8 inline-flex items-center gap-2 rounded-lg px-6 py-3 text-sm font-bold text-white"
                 style={{backgroundColor:"#25D366"}}>
                 <MessageCircle className="h-4 w-4" /> WhatsApp for Builder Enquiry
@@ -820,7 +820,7 @@ export default function CommercialPaintingPage() {
                   </li>
                 ))}
               </ul>
-              <a href="https://wa.me/919158800517?text=Hi%2C%20I%20want%20to%20discuss%20commercial%20painting%20with%20zero%20disruption." target="_blank" rel="noopener noreferrer"
+              <a href="https://wa.me/919158800517?text=Hi%2C%20I%20want%20to%20discuss%20commercial%20painting%20with%20zero%20disruption.%20%5BBPS_SRC_WEB%5D" target="_blank" rel="noopener noreferrer"
                 className="mt-8 flex items-center justify-center gap-2 rounded-lg px-6 py-3 text-sm font-bold text-white"
                 style={{backgroundColor:"#25D366"}}>
                 <MessageCircle className="h-4 w-4" /> Discuss Your Project
@@ -847,7 +847,7 @@ export default function CommercialPaintingPage() {
                   </li>
                 ))}
               </ul>
-              <a href="https://wa.me/919158800517?text=Hi%2C%20I%20want%20to%20hire%20a%20commercial%20painting%20contractor.%20Please%20share%20details." target="_blank" rel="noopener noreferrer"
+              <a href="https://wa.me/919158800517?text=Hi%2C%20I%20want%20to%20hire%20a%20commercial%20painting%20contractor.%20Please%20share%20details.%20%5BBPS_SRC_WEB%5D" target="_blank" rel="noopener noreferrer"
                 className="mt-5 flex items-center justify-center gap-2 rounded-lg py-2.5 text-xs font-bold text-white"
                 style={{backgroundColor:"#25D366"}}>
                 <MessageCircle className="h-3.5 w-3.5" /> WhatsApp Us
@@ -866,7 +866,7 @@ export default function CommercialPaintingPage() {
                   </li>
                 ))}
               </ul>
-              <a href="https://wa.me/919158800517?text=Hi%2C%20I%20want%20a%20quotation%20for%20commercial%20painting.%20Please%20contact%20me." target="_blank" rel="noopener noreferrer"
+              <a href="https://wa.me/919158800517?text=Hi%2C%20I%20want%20a%20quotation%20for%20commercial%20painting.%20Please%20contact%20me.%20%5BBPS_SRC_WEB%5D" target="_blank" rel="noopener noreferrer"
                 className="mt-5 flex items-center justify-center gap-2 rounded-lg py-2.5 text-xs font-bold text-white"
                 style={{backgroundColor:"#25D366"}}>
                 <MessageCircle className="h-3.5 w-3.5" /> Get Free Quote
@@ -885,7 +885,7 @@ export default function CommercialPaintingPage() {
                   </li>
                 ))}
               </ul>
-              <a href="https://wa.me/919158800517?text=Hi%2C%20I%20want%20to%20discuss%20a%20commercial%20painting%20project." target="_blank" rel="noopener noreferrer"
+              <a href="https://wa.me/919158800517?text=Hi%2C%20I%20want%20to%20discuss%20a%20commercial%20painting%20project.%20%5BBPS_SRC_WEB%5D" target="_blank" rel="noopener noreferrer"
                 className="mt-5 flex items-center justify-center gap-2 rounded-lg py-2.5 text-xs font-bold"
                 style={{backgroundColor:"#f97316", color:"white"}}>
                 <MessageCircle className="h-3.5 w-3.5" /> Discuss Your Project
@@ -902,7 +902,7 @@ export default function CommercialPaintingPage() {
           <h2 className="text-3xl font-black text-white sm:text-4xl">Need Painting Without Interrupting Your Business?</h2>
           <p className="mt-4 text-blue-200 text-sm max-w-2xl mx-auto">We work around your schedule — evenings, weekends, or phased room-by-room. Zero disruption to your operations.</p>
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="https://wa.me/919158800517?text=Hi%2C%20I%20want%20to%20schedule%20a%20free%20site%20visit%20for%20commercial%20painting." target="_blank" rel="noopener noreferrer"
+            <a href="https://wa.me/919158800517?text=Hi%2C%20I%20want%20to%20schedule%20a%20free%20site%20visit%20for%20commercial%20painting.%20%5BBPS_SRC_WEB%5D" target="_blank" rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 rounded-lg px-8 py-4 text-base font-bold text-white transition-colors"
               style={{backgroundColor:"#25D366"}}>
               <MessageCircle className="h-5 w-5" /> Schedule FREE Site Visit
@@ -964,7 +964,7 @@ export default function CommercialPaintingPage() {
             <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
               <a href="tel:+919158800517" className="flex items-center justify-center gap-2 rounded-lg border-2 border-white bg-white px-6 py-3 text-sm font-bold text-orange-500"><Phone className="h-5 w-5"/>Call Now: 9158800517</a>
       <a href="tel:+917387272917" className="flex items-center justify-center gap-2 rounded-lg border-2 border-white bg-white px-6 py-3 text-sm font-bold text-orange-500"><Phone className="h-5 w-5"/>Call Now: 7387272917</a>
-              <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20a%20quotation%20for%20commercial%20painting" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 rounded-lg border-2 border-white px-6 py-3 text-sm font-bold text-white"><MessageCircle className="h-5 w-5"/>WhatsApp Now</a>
+              <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20a%20quotation%20for%20commercial%20painting%20%5BBPS_SRC_WEB%5D" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 rounded-lg border-2 border-white px-6 py-3 text-sm font-bold text-white"><MessageCircle className="h-5 w-5"/>WhatsApp Now</a>
             </div>
           </div>
           <div className="mt-12 mx-auto max-w-2xl rounded-2xl bg-orange-600 p-8">
@@ -1084,7 +1084,7 @@ export default function CommercialPaintingPage() {
         </div>
       </section>
 
-      <a href="https://wa.me/919158800517" target="_blank" rel="noopener noreferrer" className="fixed bottom-24 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-green-500 text-white shadow-lg"><MessageCircle className="h-7 w-7"/></a>
+      <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20a%20quotation%20for%20commercial%20painting%20%5BBPS_SRC_WEB%5D" target="_blank" rel="noopener noreferrer" className="fixed bottom-24 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-green-500 text-white shadow-lg"><MessageCircle className="h-7 w-7"/></a>
       <a href="tel:+919158800517" className="fixed bottom-6 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-red-500 text-white shadow-lg"><Phone className="h-7 w-7"/></a>
       <a href="tel:+917387272917" className="fixed bottom-[10.5rem] right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-red-500 text-white shadow-lg"><Phone className="h-7 w-7"/></a>
     </div>

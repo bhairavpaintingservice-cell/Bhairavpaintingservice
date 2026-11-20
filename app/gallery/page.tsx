@@ -107,7 +107,7 @@ export default function GalleryPage() {
           <h2 className="text-2xl font-black text-white sm:text-3xl">Want Your Project Featured Here?</h2>
           <p className="mt-3 text-blue-200 text-sm">Get a free site visit and start your painting project today.</p>
           <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
-            <a href="https://wa.me/919158800517?text=Hi%2C%20I%20want%20a%20painting%20quote." target="_blank" rel="noopener noreferrer"
+            <a href="https://wa.me/919158800517?text=Hi%2C%20I%20want%20a%20painting%20quote.%20%5BBPS_SRC_WEB%5D" target="_blank" rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 rounded-lg px-6 py-3 text-sm font-bold text-white"
               style={{backgroundColor:"#25D366"}}>
               <MessageCircle className="h-4 w-4" /> WhatsApp Us

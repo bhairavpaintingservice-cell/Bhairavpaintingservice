@@ -109,7 +109,7 @@ export default function DesignerTexturePage() {
     const service = form.service && !form.service.startsWith("Select") ? form.service : "Not specified"
     pushLeadEvent("designer_texture_service_page", { service, area: form.area }, false, { phone: form.phone, name: form.name, service, location: form.area, message: form.message })
     const msg = encodeURIComponent(
-      `Hi, I need Designer Wall or Texture Painting quote.\nName: ${form.name}\nPhone: ${form.phone}\nService: ${service}\nArea: ${form.area || "Not specified"}\nMessage: ${form.message || "-"}`
+      `Hi, I need Designer Wall or Texture Painting quote.\nName: ${form.name}\nPhone: ${form.phone}\nService: ${service}\nArea: ${form.area || "Not specified"}\nMessage: ${form.message || "-"}\n[BPS_SRC_WEB]`
     )
     pushWhatsAppFormEvent("designer_texture_service_page")
     window.open(`https://wa.me/919158800517?text=${msg}`, "_blank")
@@ -138,7 +138,7 @@ export default function DesignerTexturePage() {
             ))}
           </div>
           <div className="flex gap-3 justify-center flex-wrap mb-10">
-            <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20Designer%20Wall%20or%20Texture%20Painting%20quote" className="bg-green-500 hover:bg-green-600 text-white font-bold px-7 py-3 rounded-lg flex items-center gap-2 transition">
+            <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20Designer%20Wall%20or%20Texture%20Painting%20quote%20%5BBPS_SRC_WEB%5D" className="bg-green-500 hover:bg-green-600 text-white font-bold px-7 py-3 rounded-lg flex items-center gap-2 transition">
               <MessageCircle size={16} /> Get Free Quote on WhatsApp
             </a>
             <a href="tel:+919158800517" className="bg-orange-500 hover:bg-orange-600 text-white font-bold px-7 py-3 rounded-lg flex items-center gap-2 transition">
@@ -484,7 +484,7 @@ export default function DesignerTexturePage() {
       <a href="tel:+917387272917" className="bg-white text-orange-600 font-bold px-8 py-3 rounded-lg flex items-center gap-2 hover:bg-orange-50 transition">
             <Phone size={18} /> Call Now: 7387272917
           </a>
-          <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20Designer%20Wall%20or%20Texture%20Painting%20quote" className="border-2 border-white text-white font-bold px-8 py-3 rounded-lg flex items-center gap-2 hover:bg-white hover:text-orange-600 transition">
+          <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20Designer%20Wall%20or%20Texture%20Painting%20quote%20%5BBPS_SRC_WEB%5D" className="border-2 border-white text-white font-bold px-8 py-3 rounded-lg flex items-center gap-2 hover:bg-white hover:text-orange-600 transition">
             <MessageCircle size={18} /> WhatsApp Now
           </a>
         </div>
@@ -537,7 +537,7 @@ export default function DesignerTexturePage() {
       </section>
 
       {/* Floating Buttons */}
-      <a href="https://wa.me/919158800517" target="_blank" rel="noopener noreferrer" className="fixed bottom-24 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-green-500 text-white shadow-lg"><MessageCircle className="h-7 w-7"/></a>
+      <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20Designer%20Wall%20or%20Texture%20Painting%20quote%20%5BBPS_SRC_WEB%5D" target="_blank" rel="noopener noreferrer" className="fixed bottom-24 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-green-500 text-white shadow-lg"><MessageCircle className="h-7 w-7"/></a>
       <a href="tel:+919158800517" className="fixed bottom-6 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-red-500 text-white shadow-lg"><Phone className="h-7 w-7"/></a>
       <a href="tel:+917387272917" className="fixed bottom-[10.5rem] right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-red-500 text-white shadow-lg"><Phone className="h-7 w-7"/></a>
     </main>

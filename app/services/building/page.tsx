@@ -115,7 +115,7 @@ export default function BuildingPaintingPage() {
   const handleSubmit = () => {
     if (!form.name || !form.phone) { alert("Please enter your name and phone number."); return }
     pushLeadEvent("building_service_page", { service: form.service, area: form.area }, false, { phone: form.phone, name: form.name, service: form.service, location: form.area, message: form.message })
-    const msg = `Hi, I need a Building/Society Painting quote.%0AName: ${encodeURIComponent(form.name)}%0APhone: ${encodeURIComponent(form.phone)}%0AService: ${encodeURIComponent(form.service || "Not specified")}%0AArea: ${encodeURIComponent(form.area || "Not specified")}%0AMessage: ${encodeURIComponent(form.message || "-")}`
+    const msg = `Hi, I need a Building/Society Painting quote.%0AName: ${encodeURIComponent(form.name)}%0APhone: ${encodeURIComponent(form.phone)}%0AService: ${encodeURIComponent(form.service || "Not specified")}%0AArea: ${encodeURIComponent(form.area || "Not specified")}%0AMessage: ${encodeURIComponent(form.message || "-")}%0A%5BBPS_SRC_WEB%5D`
     pushWhatsAppFormEvent("building_service_page")
     window.open(`https://wa.me/919158800517?text=${msg}`, "_blank")
   }
@@ -585,7 +585,7 @@ export default function BuildingPaintingPage() {
             <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
               <a href="tel:+919158800517" className="flex items-center justify-center gap-2 rounded-lg border-2 border-white bg-white px-6 py-3 text-sm font-bold text-orange-500"><Phone className="h-5 w-5"/>Call Now: 9158800517</a>
       <a href="tel:+917387272917" className="flex items-center justify-center gap-2 rounded-lg border-2 border-white bg-white px-6 py-3 text-sm font-bold text-orange-500"><Phone className="h-5 w-5"/>Call Now: 7387272917</a>
-              <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20a%20quotation%20for%20society%20building%20painting" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 rounded-lg border-2 border-white px-6 py-3 text-sm font-bold text-white"><MessageCircle className="h-5 w-5"/>WhatsApp for Quote</a>
+              <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20a%20quotation%20for%20society%20building%20painting%20%5BBPS_SRC_WEB%5D" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 rounded-lg border-2 border-white px-6 py-3 text-sm font-bold text-white"><MessageCircle className="h-5 w-5"/>WhatsApp for Quote</a>
             </div>
           </div>
           <div className="mt-12 mx-auto max-w-2xl rounded-2xl bg-orange-600 p-8">
@@ -607,7 +607,7 @@ export default function BuildingPaintingPage() {
         </div>
       </section>
 
-      <a href="https://wa.me/919158800517" target="_blank" rel="noopener noreferrer" className="fixed bottom-24 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-green-500 text-white shadow-lg"><MessageCircle className="h-7 w-7"/></a>
+      <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20a%20quotation%20for%20society%20building%20painting%20%5BBPS_SRC_WEB%5D" target="_blank" rel="noopener noreferrer" className="fixed bottom-24 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-green-500 text-white shadow-lg"><MessageCircle className="h-7 w-7"/></a>
       <a href="tel:+919158800517" className="fixed bottom-6 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-red-500 text-white shadow-lg"><Phone className="h-7 w-7"/></a>
       <a href="tel:+917387272917" className="fixed bottom-[10.5rem] right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-red-500 text-white shadow-lg"><Phone className="h-7 w-7"/></a>
     </div>
