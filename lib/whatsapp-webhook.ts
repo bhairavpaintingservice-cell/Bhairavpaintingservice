@@ -5,6 +5,17 @@ import { createHmac, timingSafeEqual } from "node:crypto"
 // Types
 // ---------------------------------------------------------------------------
 
+// Meta sends this only for messages that started from a Click-to-WhatsApp ad.
+// Ordinary wa.me links from the website never carry it.
+export interface MessageReferral {
+  sourceUrl: string
+  sourceId: string
+  sourceType: string
+  ctwaClid: string
+  headline: string
+  body: string
+}
+
 export interface IncomingMessage {
   messageId: string
   from: string
@@ -15,6 +26,7 @@ export interface IncomingMessage {
   timestampIso: string
   phoneNumberId: string
   displayPhoneNumber: string
+  referral?: MessageReferral
 }
 
 export interface StatusUpdate {
@@ -258,6 +270,19 @@ export function parseWebhookPayload(payload: unknown): {
 
         if (!messageId || !from) continue
 
+        const referralRaw = asObject(message.referral)
+        const referral: MessageReferral | undefined =
+          Object.keys(referralRaw).length > 0
+            ? {
+                sourceUrl: asString(referralRaw.source_url),
+                sourceId: asString(referralRaw.source_id),
+                sourceType: asString(referralRaw.source_type),
+                ctwaClid: asString(referralRaw.ctwa_clid),
+                headline: asString(referralRaw.headline),
+                body: asString(referralRaw.body),
+              }
+            : undefined
+
         messages.push({
           messageId,
           from,
@@ -268,6 +293,7 @@ export function parseWebhookPayload(payload: unknown): {
           timestampIso: timestampToIso(timestamp),
           phoneNumberId,
           displayPhoneNumber,
+          ...(referral ? { referral } : {}),
         })
       }
 

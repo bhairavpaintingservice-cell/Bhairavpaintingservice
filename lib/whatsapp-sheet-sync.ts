@@ -58,7 +58,7 @@ function detectSourceCode(messageText: string) {
   for (const [code, attribution] of Object.entries(SOURCE_CODES)) {
     if (upperText.includes(code)) {
       const cleanMessage = messageText
-        .replace(new RegExp(code, "gi"), "")
+        .replace(new RegExp("\\[?" + code + "\\]?", "gi"), "")
         .replace(/\s+/g, " ")
         .trim()
 
@@ -75,6 +75,18 @@ function detectSourceCode(messageText: string) {
     cleanMessage: messageText,
     detectedCode: null,
   }
+}
+
+// Website quote forms build a fixed multi-line message:
+//   "Hi, I need ... quote." / "Name: ..." / "Phone: ..."
+// That structure only comes from our website forms, so it identifies the
+// website without any tracking code in the customer's message.
+const FORM_MESSAGE_PATTERN =
+  /^\s*Hi, I need [^\n]{2,80}? quote\.?[ \t]*\r?\n\s*Name:[^\n]*\r?\n\s*Phone:/i
+
+function detectFormMessage(messageText: string) {
+  if (!FORM_MESSAGE_PATTERN.test(messageText)) return null
+  return { source: "Website", medium: "Website" }
 }
 
 function getReferralAttribution(message: IncomingMessage) {
@@ -133,6 +145,30 @@ export function buildSheetPayload(
 
   const referralAttribution = getReferralAttribution(message)
 
+  // Order of trust: explicit code > Meta ad referral > website form structure.
+  // Anything we cannot identify stays blank (never guessed as Website).
+  const formMatch =
+    !detected.attribution && !referralAttribution.traffic_source
+      ? detectFormMessage(originalMessage)
+      : null
+
+  const formAttribution = formMatch
+    ? {
+        traffic_source: formMatch.source,
+        traffic_medium: formMatch.medium,
+        lead_source: formMatch.source,
+        lead_medium: formMatch.medium,
+      }
+    : {}
+
+  const attributionMethod = detected.attribution
+    ? "code"
+    : referralAttribution.traffic_source
+      ? "meta_referral"
+      : formMatch
+        ? "form_structure"
+        : ""
+
   return {
     secret,
     phone: message.from.replace(/\D/g, ""),
@@ -144,8 +180,14 @@ export function buildSheetPayload(
     timestamp: /^\d{1,12}$/.test(message.timestamp)
       ? message.timestamp
       : "",
+    ...formAttribution,
     ...referralAttribution,
     ...codeAttribution,
+    // Extra info only; the Apps Script ignores fields it does not know.
+    attribution_method: attributionMethod,
+    ...(message.referral?.ctwaClid
+      ? { ctwa_clid: message.referral.ctwaClid }
+      : {}),
   }
 }
 
@@ -248,6 +290,7 @@ export async function syncEnquiryToSheet(
       messageId: message.messageId,
       source: payload.traffic_source || "Unknown",
       medium: payload.traffic_medium || "Unknown",
+      method: payload.attribution_method || "none",
     })
 
     for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
