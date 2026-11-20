@@ -297,28 +297,6 @@ export default function CallTracker() {
           ...getAttributionEventParams(),
           ...ids,
         })
-
-        // Count the click on our server too (no phone number, no personal data)
-        try {
-          const clickBody = JSON.stringify({
-            page_path: window.location.pathname,
-            link_text: linkText,
-            ...getAttributionEventParams(),
-          })
-          if (typeof navigator.sendBeacon === "function") {
-            navigator.sendBeacon(
-              "/api/wa-click",
-              new Blob([clickBody], { type: "application/json" })
-            )
-          } else {
-            fetch("/api/wa-click", {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: clickBody,
-              keepalive: true,
-            }).catch(() => {})
-          }
-        } catch {}
       }
     }
 
