@@ -69,7 +69,7 @@ export default function ContactPage() {
 
     // WhatsApp + redirect
     const locationText = location ? `\n📍 My Location: https://maps.google.com/?q=${location.lat},${location.lng}` : ""
-    const waMsg = encodeURIComponent(`Hi, I need a painting quote.\nName: ${formData.name}\nPhone: ${formData.phone}\nService: ${formData.service || "Not specified"}\nArea: ${formData.area || "Not specified"}\nMessage: ${formData.message || "-"}${locationText}\n[BPS_SRC_WEB]`)
+    const waMsg = encodeURIComponent(`Hi, I need a painting quote.\nName: ${formData.name}\nPhone: ${formData.phone}\nService: ${formData.service || "Not specified"}\nArea: ${formData.area || "Not specified"}\nMessage: ${formData.message || "-"}${locationText}`)
     window.open(`https://wa.me/919158800517?text=${waMsg}`, "_blank")
     router.push("/thank-you")
           // Email is best-effort backup notification
@@ -113,7 +113,7 @@ export default function ContactPage() {
                 ))}
               </div>
               <div className="mt-8 flex flex-col sm:flex-row gap-3">
-                <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20a%20free%20site%20visit.%20%5BBPS_SRC_WEB%5D" target="_blank" rel="noopener noreferrer"
+                <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20a%20free%20site%20visit." target="_blank" rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2 rounded-lg px-6 py-3 text-sm font-bold text-white"
                   style={{backgroundColor:"#25D366"}}>
                   <MessageCircle className="h-4 w-4" /> WhatsApp Now
@@ -213,7 +213,7 @@ export default function ContactPage() {
                   className="flex items-center justify-center gap-2 rounded-lg border-2 border-white px-6 py-3 text-sm font-bold text-white hover:bg-white/10 transition-colors">
                   <Phone className="h-4 w-4" /> Call 7387272917 for Urgent Help
                 </a>
-                <a href="https://wa.me/919158800517?text=Hi%2C%20I%20have%20an%20urgent%20painting%20requirement.%20Please%20contact%20me.%20%5BBPS_SRC_WEB%5D" target="_blank" rel="noopener noreferrer"
+                <a href="https://wa.me/919158800517?text=Hi%2C%20I%20have%20an%20urgent%20painting%20requirement.%20Please%20contact%20me." target="_blank" rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2 rounded-lg px-6 py-3 text-sm font-bold text-white"
                   style={{backgroundColor:"#25D366"}}>
                   <MessageCircle className="h-4 w-4" /> WhatsApp for Urgent
@@ -256,7 +256,7 @@ export default function ContactPage() {
                   </div>
                 </a>
 
-                <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20a%20painting%20quote.%20%5BBPS_SRC_WEB%5D" target="_blank" rel="noopener noreferrer"
+                <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20a%20painting%20quote." target="_blank" rel="noopener noreferrer"
                   className="flex items-center gap-4 rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow"
                   style={{backgroundColor:"#25D366"}}>
                   <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/20">
@@ -306,7 +306,7 @@ export default function ContactPage() {
                     { label: "Designer & Texture", msg: "Hi, I need Designer & Texture Painting quote." },
                     { label: "Wood & Metal", msg: "Hi, I need Wood & Metal Painting quote." },
                   ].map((item, i) => (
-                    <a key={i} href={`https://wa.me/919158800517?text=${encodeURIComponent(item.msg + " [BPS_SRC_WEB]")}`} target="_blank" rel="noopener noreferrer"
+                    <a key={i} href={`https://wa.me/919158800517?text=${encodeURIComponent(item.msg)}`} target="_blank" rel="noopener noreferrer"
                       className="flex items-center justify-center gap-1.5 rounded-lg py-2 text-xs font-semibold text-white"
                       style={{backgroundColor:"#25D366"}}>
                       <MessageCircle className="h-3 w-3" /> {item.label}
@@ -326,7 +326,7 @@ export default function ContactPage() {
                   <CheckCircle className="h-16 w-16 text-green-500 mx-auto" />
                   <h4 className="mt-4 font-black text-xl" style={{color:"#1B2B8A"}}>Thank You!</h4>
                   <p className="mt-2 text-sm" style={{color:"#6b7280"}}>We have received your enquiry. Our team will contact you within 30 minutes.</p>
-                  <a href="https://wa.me/919158800517?text=Hi%2C%20I%20just%20submitted%20a%20quote%20request.%20%5BBPS_SRC_WEB%5D" target="_blank" rel="noopener noreferrer"
+                  <a href="https://wa.me/919158800517?text=Hi%2C%20I%20just%20submitted%20a%20quote%20request." target="_blank" rel="noopener noreferrer"
                     className="mt-6 inline-flex items-center gap-2 rounded-lg px-6 py-3 text-sm font-bold text-white"
                     style={{backgroundColor:"#25D366"}}>
                     <MessageCircle className="h-4 w-4" /> Also WhatsApp Us
@@ -389,7 +389,7 @@ export default function ContactPage() {
                     style={{backgroundColor:"#1B2B8A"}}>
                     {isSubmitting ? "Sending..." : <><Send className="h-4 w-4" /> Send Enquiry</>}
                   </button>
-                  <p className="text-center text-xs" style={{color:"#9ca3af"}}>Or WhatsApp directly: <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20a%20painting%20quote.%20%5BBPS_SRC_WEB%5D" target="_blank" rel="noopener noreferrer" className="font-semibold" style={{color:"#25D366"}}>+91 9158800517</a></p>
+                  <p className="text-center text-xs" style={{color:"#9ca3af"}}>Or WhatsApp directly: <a href="https://wa.me/919158800517" target="_blank" rel="noopener noreferrer" className="font-semibold" style={{color:"#25D366"}}>+91 9158800517</a></p>
                 </form>
               )}
             </div>
@@ -464,7 +464,7 @@ export default function ContactPage() {
               { icon: "✨", label: "Designer & Texture", msg: "Hi, I need Designer & Texture Painting quote. Please contact me." },
               { icon: "🪵", label: "Wood & Metal", msg: "Hi, I need Wood & Metal Painting quote. Please contact me." },
             ].map((item, i) => (
-              <a key={i} href={`https://wa.me/919158800517?text=${encodeURIComponent(item.msg + " [BPS_SRC_WEB]")}`} target="_blank" rel="noopener noreferrer"
+              <a key={i} href={`https://wa.me/919158800517?text=${encodeURIComponent(item.msg)}`} target="_blank" rel="noopener noreferrer"
                 className="flex flex-col items-center justify-center gap-2 rounded-xl border border-gray-200 bg-white p-5 shadow-sm hover:shadow-md transition-shadow text-center">
                 <span className="text-3xl">{item.icon}</span>
                 <p className="font-bold text-sm" style={{color:"#1B2B8A"}}>{item.label}</p>
@@ -495,7 +495,7 @@ export default function ContactPage() {
               <div key={i} className="rounded-xl p-5" style={{backgroundColor:"rgba(255,255,255,0.08)"}}>
                 <h3 className="font-bold text-sm text-white">{item.city}</h3>
                 <p className="mt-2 text-xs leading-relaxed text-blue-200">{item.desc}</p>
-                <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20painting%20services.%20Please%20contact%20me.%20%5BBPS_SRC_WEB%5D" target="_blank" rel="noopener noreferrer"
+                <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20painting%20services.%20Please%20contact%20me." target="_blank" rel="noopener noreferrer"
                   className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-orange-400">
                   <MessageCircle className="h-3 w-3" /> Get Free Quote →
                 </a>

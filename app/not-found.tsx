@@ -19,7 +19,7 @@ export default function NotFound() {
           <Home className="h-4 w-4" /> Back to Home
         </Link>
         <a
-          href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20a%20painting%20quote.%20%5BBPS_SRC_WEB%5D"
+          href="https://wa.me/919158800517"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center justify-center gap-2 rounded-full bg-green-500 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-green-600 transition-colors"

@@ -28,7 +28,7 @@ export default function HomeQuoteForm() {
     // WhatsApp opened from homepage form (source tells it apart from plain link clicks)
     pushWhatsAppFormEvent("homepage_quote_form")
 
-    const msg = `Hi, I need a painting quote.%0AName: ${encodeURIComponent(form.name)}%0APhone: ${encodeURIComponent(form.phone)}%0AService: ${encodeURIComponent(form.service || "Not specified")}%0AArea: ${encodeURIComponent(form.area || "Not specified")}%0AMessage: ${encodeURIComponent(form.message || "-")}%0A%5BBPS_SRC_WEB%5D`
+    const msg = `Hi, I need a painting quote.%0AName: ${encodeURIComponent(form.name)}%0APhone: ${encodeURIComponent(form.phone)}%0AService: ${encodeURIComponent(form.service || "Not specified")}%0AArea: ${encodeURIComponent(form.area || "Not specified")}%0AMessage: ${encodeURIComponent(form.message || "-")}`
     window.open(`https://wa.me/919158800517?text=${msg}`, "_blank")
   }
 

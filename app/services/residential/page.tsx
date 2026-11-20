@@ -117,7 +117,7 @@ export default function ResidentialPaintingPage() {
     const locationText = isCoords
       ? `📍 My Location: https://maps.google.com/?q=${form.area.replace(" ","")}`
       : `Area: ${form.area || "Not specified"}`
-    const msg = `Hi, I need a Residential Painting quote.%0AName: ${encodeURIComponent(form.name)}%0APhone: ${encodeURIComponent(form.phone)}%0AService: ${encodeURIComponent(form.service || "Not specified")}%0A${encodeURIComponent(locationText)}%0AMessage: ${encodeURIComponent(form.message || "-")}%0A%5BBPS_SRC_WEB%5D`
+    const msg = `Hi, I need a Residential Painting quote.%0AName: ${encodeURIComponent(form.name)}%0APhone: ${encodeURIComponent(form.phone)}%0AService: ${encodeURIComponent(form.service || "Not specified")}%0A${encodeURIComponent(locationText)}%0AMessage: ${encodeURIComponent(form.message || "-")}`
     pushWhatsAppFormEvent("residential_service_page")
     window.open(`https://wa.me/919158800517?text=${msg}`, "_blank")
   }
@@ -145,7 +145,7 @@ export default function ResidentialPaintingPage() {
             <a href="#contact" className="flex items-center justify-center gap-2 rounded-lg bg-orange-500 px-8 py-4 text-base font-bold text-white hover:bg-orange-600 transition-colors">
               <MessageCircle className="h-5 w-5" /> Get Free Quote
             </a>
-            <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20a%20Residential%20Painting%20quote%20%5BBPS_SRC_WEB%5D" target="_blank" rel="noopener noreferrer"
+            <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20a%20Residential%20Painting%20quote" target="_blank" rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 rounded-lg border-2 border-white px-8 py-4 text-base font-bold text-white hover:bg-white/10 transition-colors">
               <MessageCircle className="h-5 w-5" /> WhatsApp Now
             </a>
@@ -189,10 +189,10 @@ export default function ResidentialPaintingPage() {
                   <h3 className="font-bold text-sm mb-1" style={{color:"#1B2B8A"}}>{s.title}</h3>
                   <p className="text-xs mb-3" style={{color:"#6b7280"}}>{s.desc}</p>
                   <div className="grid grid-cols-2 gap-2">
-                    <a href={`https://wa.me/919158800517?text=${s.wa}%20%5BBPS_SRC_WEB%5D`} className="flex items-center justify-center gap-1 bg-green-500 hover:bg-green-600 text-white text-xs font-bold py-2 rounded-lg transition">
+                    <a href={`https://wa.me/919158800517?text=${s.wa}`} className="flex items-center justify-center gap-1 bg-green-500 hover:bg-green-600 text-white text-xs font-bold py-2 rounded-lg transition">
                       💬 WhatsApp
                     </a>
-                    <a href={`https://wa.me/919158800517?text=${s.wa}%20%5BBPS_SRC_WEB%5D`} className="flex items-center justify-center bg-white border border-gray-200 hover:border-orange-400 text-gray-700 text-xs font-bold py-2 rounded-lg transition">
+                    <a href={`https://wa.me/919158800517?text=${s.wa}`} className="flex items-center justify-center bg-white border border-gray-200 hover:border-orange-400 text-gray-700 text-xs font-bold py-2 rounded-lg transition">
                       Free Quote
                     </a>
                   </div>
@@ -657,7 +657,7 @@ export default function ResidentialPaintingPage() {
       <a href="tel:+917387272917" className="flex items-center justify-center gap-2 rounded-lg border-2 border-white bg-white px-6 py-3 text-sm font-bold text-orange-500 hover:bg-white/90 transition-colors">
                 <Phone className="h-5 w-5" /> Call Now: 7387272917
               </a>
-              <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20a%20Residential%20Painting%20quote%20%5BBPS_SRC_WEB%5D" target="_blank" rel="noopener noreferrer"
+              <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20a%20Residential%20Painting%20quote" target="_blank" rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 rounded-lg border-2 border-white px-6 py-3 text-sm font-bold text-white hover:bg-white/10 transition-colors">
                 <MessageCircle className="h-5 w-5" /> WhatsApp Now
               </a>
@@ -705,7 +705,7 @@ export default function ResidentialPaintingPage() {
       </section>
 
       {/* FLOATING BUTTONS */}
-      <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20a%20Residential%20Painting%20quote%20%5BBPS_SRC_WEB%5D" target="_blank" rel="noopener noreferrer"
+      <a href="https://wa.me/919158800517" target="_blank" rel="noopener noreferrer"
         className="fixed bottom-24 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-green-500 text-white shadow-lg hover:bg-green-600 transition-colors">
         <MessageCircle className="h-7 w-7" />
       </a>

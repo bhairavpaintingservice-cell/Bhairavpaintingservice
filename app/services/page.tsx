@@ -117,7 +117,7 @@ export default function ServicesPage() {
             <h1 className="mt-4 text-4xl font-black text-white sm:text-5xl leading-tight">Professional Painting Services in Mumbai, Thane & Navi Mumbai</h1>
             <p className="mt-4 text-lg text-blue-200 max-w-2xl">Bhairav Painting Service provides residential, interior, exterior, commercial, building, waterproofing and designer texture painting across Mumbai, Thane, Bhiwandi, Kalyan and Navi Mumbai. Every project includes free site inspection, surface preparation, premium branded paints and owner-supervised execution.</p>
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
-              <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20a%20painting%20quote.%20Please%20contact%20me.%20%5BBPS_SRC_WEB%5D" target="_blank" rel="noopener noreferrer"
+              <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20a%20painting%20quote.%20Please%20contact%20me." target="_blank" rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 rounded-lg px-8 py-4 text-base font-bold text-white"
                 style={{backgroundColor:"#25D366"}}>
                 <MessageCircle className="h-5 w-5" /> Get Free Quote on WhatsApp
@@ -180,8 +180,8 @@ export default function ServicesPage() {
           <p className="mt-3 text-sm max-w-xl" style={{color:"#6b7280"}}>Click any service to learn more — or WhatsApp us directly for a free quote.</p>
           <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {services.map((s, i) => {
-              const waUrl = `https://wa.me/919158800517?text=${encodeURIComponent("Hi, I need a quote for " + s.title + ". Please contact me. [BPS_SRC_WEB]")}`
-              const quoteUrl = `https://wa.me/919158800517?text=${encodeURIComponent("Hi, I want a free site visit for " + s.title + ". Please contact me. [BPS_SRC_WEB]")}`
+              const waUrl = `https://wa.me/919158800517?text=${encodeURIComponent("Hi, I need a quote for " + s.title + ". Please contact me.")}`
+              const quoteUrl = `https://wa.me/919158800517?text=${encodeURIComponent("Hi, I want a free site visit for " + s.title + ". Please contact me.")}`
               return (
                 <div key={i} className="overflow-hidden rounded-xl shadow-sm flex flex-col">
                   <Link href={s.href} className="relative h-44 block group">
@@ -326,7 +326,7 @@ export default function ServicesPage() {
             ))}
           </div>
           <div className="mt-8 text-center">
-            <a href="https://wa.me/919158800517?text=Hi%2C%20I%20want%20to%20discuss%20a%20painting%20project.%20%5BBPS_SRC_WEB%5D" target="_blank" rel="noopener noreferrer"
+            <a href="https://wa.me/919158800517?text=Hi%2C%20I%20want%20to%20discuss%20a%20painting%20project." target="_blank" rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-lg px-8 py-3 text-sm font-bold text-white"
               style={{backgroundColor:"#25D366"}}>
               <MessageCircle className="h-4 w-4" /> Discuss Your Project
@@ -352,7 +352,7 @@ export default function ServicesPage() {
               <div key={i} className="rounded-xl bg-white border border-gray-200 p-6 shadow-sm">
                 <h3 className="font-bold text-base" style={{color:"#1B2B8A"}}>{item.city}</h3>
                 <p className="mt-2 text-xs leading-relaxed" style={{color:"#6b7280"}}>{item.desc}</p>
-                <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20painting%20services.%20Please%20contact%20me.%20%5BBPS_SRC_WEB%5D" target="_blank" rel="noopener noreferrer"
+                <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20painting%20services.%20Please%20contact%20me." target="_blank" rel="noopener noreferrer"
                   className="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold" style={{color:"#f97316"}}>
                   <MessageCircle className="h-3.5 w-3.5" /> Get Free Quote →
                 </a>
@@ -396,7 +396,7 @@ export default function ServicesPage() {
                   ))}
                 </ul>
                 <div className="mt-6 flex flex-col sm:flex-row gap-3">
-                  <a href="https://wa.me/919158800517?text=Hi%2C%20I%20have%20a%20water%20leakage%20problem.%20I%20need%20waterproofing%20inspection.%20%5BBPS_SRC_WEB%5D" target="_blank" rel="noopener noreferrer"
+                  <a href="https://wa.me/919158800517?text=Hi%2C%20I%20have%20a%20water%20leakage%20problem.%20I%20need%20waterproofing%20inspection." target="_blank" rel="noopener noreferrer"
                     className="flex items-center justify-center gap-2 rounded-lg px-6 py-3 text-sm font-bold text-white"
                     style={{backgroundColor:"#25D366"}}>
                     <MessageCircle className="h-4 w-4" /> Book Free Inspection
@@ -460,7 +460,7 @@ export default function ServicesPage() {
             </table>
           </div>
           <div className="mt-8 text-center">
-            <a href="https://wa.me/919158800517?text=Hi%2C%20I%20want%20a%20free%20site%20visit%20from%20Bhairav%20Painting%20Service.%20%5BBPS_SRC_WEB%5D" target="_blank" rel="noopener noreferrer"
+            <a href="https://wa.me/919158800517?text=Hi%2C%20I%20want%20a%20free%20site%20visit%20from%20Bhairav%20Painting%20Service." target="_blank" rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-lg px-8 py-3 text-sm font-bold text-white"
               style={{backgroundColor:"#25D366"}}>
               <MessageCircle className="h-4 w-4" /> Book Free Site Visit

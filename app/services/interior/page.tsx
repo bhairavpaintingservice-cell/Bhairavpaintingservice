@@ -116,7 +116,7 @@ export default function InteriorPaintingPage() {
   const handleSubmit = () => {
     if (!form.name || !form.phone) { alert("Please enter your name and phone number."); return }
    pushLeadEvent("interior_service_page", { service: form.service, area: form.area }, false, { phone: form.phone, name: form.name, service: form.service, location: form.area, message: form.message })
-    const msg = `Hi, I need an Interior Painting quote.%0AName: ${encodeURIComponent(form.name)}%0APhone: ${encodeURIComponent(form.phone)}%0AService: ${encodeURIComponent(form.service || "Not specified")}%0AArea: ${encodeURIComponent(form.area || "Not specified")}%0AMessage: ${encodeURIComponent(form.message || "-")}%0A%5BBPS_SRC_WEB%5D`
+    const msg = `Hi, I need an Interior Painting quote.%0AName: ${encodeURIComponent(form.name)}%0APhone: ${encodeURIComponent(form.phone)}%0AService: ${encodeURIComponent(form.service || "Not specified")}%0AArea: ${encodeURIComponent(form.area || "Not specified")}%0AMessage: ${encodeURIComponent(form.message || "-")}`
     pushWhatsAppFormEvent("interior_service_page")
     window.open(`https://wa.me/919158800517?text=${msg}`, "_blank")
   }
@@ -611,7 +611,7 @@ export default function InteriorPaintingPage() {
       <a href="tel:+917387272917" className="flex items-center justify-center gap-2 rounded-lg border-2 border-white bg-white px-6 py-3 text-sm font-bold text-orange-500 hover:bg-white/90 transition-colors">
                 <Phone className="h-5 w-5" /> Call Now: 7387272917
               </a>
-              <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20an%20Interior%20Painting%20quote%20%5BBPS_SRC_WEB%5D" target="_blank" rel="noopener noreferrer"
+              <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20an%20Interior%20Painting%20quote" target="_blank" rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 rounded-lg border-2 border-white px-6 py-3 text-sm font-bold text-white hover:bg-white/10 transition-colors">
                 <MessageCircle className="h-5 w-5" /> WhatsApp Now
               </a>
@@ -642,7 +642,7 @@ export default function InteriorPaintingPage() {
       </section>
 
       {/* FLOATING BUTTONS */}
-      <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20an%20Interior%20Painting%20quote%20%5BBPS_SRC_WEB%5D" target="_blank" rel="noopener noreferrer"
+      <a href="https://wa.me/919158800517" target="_blank" rel="noopener noreferrer"
         className="fixed bottom-24 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-green-500 text-white shadow-lg hover:bg-green-600 transition-colors">
         <MessageCircle className="h-7 w-7" />
       </a>

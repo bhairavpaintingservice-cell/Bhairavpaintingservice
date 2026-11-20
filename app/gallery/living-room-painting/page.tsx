@@ -44,7 +44,7 @@ export default function GalleryPage() {
         <div className="mx-auto max-w-4xl px-6 lg:px-8 text-center">
           <h2 className="text-2xl font-black text-white">Need Living Room Painting?</h2>
           <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
-            <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20Living%20Room%20Painting.%20%5BBPS_SRC_WEB%5D" target="_blank" rel="noopener noreferrer"
+            <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20Living%20Room%20Painting." target="_blank" rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 rounded-lg px-6 py-3 text-sm font-bold text-white" style={{backgroundColor:"#25D366"}}>
               <MessageCircle className="h-4 w-4" /> WhatsApp Us
             </a>

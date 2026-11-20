@@ -185,7 +185,7 @@ export default function WaterproofingPage() {
       ? `My Location: https://maps.google.com/?q=${area.replace(" ", "")}`
       : `Area: ${area || "Not specified"}`
     const msg = encodeURIComponent(
-      `Hi, I need a Waterproofing quote.\nName: ${name}\nPhone: ${phone}\nType: ${pick(wpType)}\n${locationText}\nUrgency: ${pick(urgency)}\nDetails: ${details || "-"}\n[BPS_SRC_WEB]`
+      `Hi, I need a Waterproofing quote.\nName: ${name}\nPhone: ${phone}\nType: ${pick(wpType)}\n${locationText}\nUrgency: ${pick(urgency)}\nDetails: ${details || "-"}`
     )
     pushWhatsAppFormEvent("waterproofing_service_page")
     window.open(`https://wa.me/919158800517?text=${msg}`, "_blank")
@@ -239,7 +239,7 @@ export default function WaterproofingPage() {
       <a href="tel:+917387272917" className="bg-orange-500 hover:bg-orange-600 text-white font-bold px-7 py-3 rounded-lg flex items-center gap-2 transition">
               <Phone size={16} /> Call Now: 7387272917
             </a>
-            <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20Waterproofing%20quote%20%5BBPS_SRC_WEB%5D" className="bg-green-500 hover:bg-green-600 text-white font-bold px-7 py-3 rounded-lg flex items-center gap-2 transition">
+            <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20Waterproofing%20quote" className="bg-green-500 hover:bg-green-600 text-white font-bold px-7 py-3 rounded-lg flex items-center gap-2 transition">
               <MessageCircle size={16} /> WhatsApp
             </a>
             <a href="/gallery/waterproofing" className="border-2 border-white text-white font-bold px-7 py-3 rounded-lg flex items-center gap-2 hover:bg-white/10 transition">
@@ -297,7 +297,7 @@ export default function WaterproofingPage() {
                   <p style={{fontSize:"11px", color:"#fca5a5", marginBottom:"2px"}}><strong>Problem:</strong> {p.problem}</p>
                   <p style={{fontSize:"11px", color:"#86efac", marginBottom:"12px"}}><strong>Solution:</strong> {p.solution}</p>
                   <div style={{display:"grid", gridTemplateColumns:"1fr 1fr", gap:"8px"}}>
-                    <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20Waterproofing%20quote%20%5BBPS_SRC_WEB%5D" style={{display:"flex", alignItems:"center", justifyContent:"center", gap:"6px", background:"#25D366", color:"#fff", fontSize:"11px", fontWeight:"700", padding:"8px", borderRadius:"8px", textDecoration:"none"}}>
+                    <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20Waterproofing%20quote" style={{display:"flex", alignItems:"center", justifyContent:"center", gap:"6px", background:"#25D366", color:"#fff", fontSize:"11px", fontWeight:"700", padding:"8px", borderRadius:"8px", textDecoration:"none"}}>
                       💬 WhatsApp
                     </a>
                     <a href="#contact" style={{display:"flex", alignItems:"center", justifyContent:"center", background:"#fff", color:"#1B2B8A", fontSize:"11px", fontWeight:"700", padding:"8px", borderRadius:"8px", textDecoration:"none"}}>
@@ -413,7 +413,7 @@ export default function WaterproofingPage() {
                   </div>
                 </div>
                 {/* CTA */}
-                <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20Waterproofing%20quote%20%5BBPS_SRC_WEB%5D" className="inline-block bg-[#1B2B8A] hover:bg-blue-900 text-white text-xs font-bold px-5 py-2.5 rounded-lg transition">Get Quote for This →</a>
+                <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20Waterproofing%20quote" className="inline-block bg-[#1B2B8A] hover:bg-blue-900 text-white text-xs font-bold px-5 py-2.5 rounded-lg transition">Get Quote for This →</a>
               </div>
             ))}
           </div>
@@ -892,7 +892,7 @@ export default function WaterproofingPage() {
       <a href="tel:+917387272917" className="bg-white text-orange-600 font-bold px-8 py-3 rounded-lg flex items-center gap-2 hover:bg-orange-50 transition">
             <Phone size={18} /> Call Now: 7387272917
           </a>
-          <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20Waterproofing%20quote%20%5BBPS_SRC_WEB%5D" className="border-2 border-white text-white font-bold px-8 py-3 rounded-lg flex items-center gap-2 hover:bg-white hover:text-orange-600 transition">
+          <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20Waterproofing%20quote" className="border-2 border-white text-white font-bold px-8 py-3 rounded-lg flex items-center gap-2 hover:bg-white hover:text-orange-600 transition">
             <MessageCircle size={18} /> WhatsApp Now
           </a>
         </div>
@@ -956,7 +956,7 @@ export default function WaterproofingPage() {
       </section>
 
       {/* Floating Buttons */}
-      <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20Waterproofing%20quote%20%5BBPS_SRC_WEB%5D" target="_blank" rel="noopener noreferrer" className="fixed bottom-24 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-green-500 text-white shadow-lg"><MessageCircle className="h-7 w-7"/></a>
+      <a href="https://wa.me/919158800517" target="_blank" rel="noopener noreferrer" className="fixed bottom-24 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-green-500 text-white shadow-lg"><MessageCircle className="h-7 w-7"/></a>
       <a href="tel:+919158800517" className="fixed bottom-6 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-red-500 text-white shadow-lg"><Phone className="h-7 w-7"/></a>
       <a href="tel:+917387272917" className="fixed bottom-[10.5rem] right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-red-500 text-white shadow-lg"><Phone className="h-7 w-7"/></a>
     </main>

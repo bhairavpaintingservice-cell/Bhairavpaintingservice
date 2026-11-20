@@ -65,7 +65,7 @@ export default function AboutPage() {
                 ))}
               </div>
               <div className="mt-8 flex flex-col sm:flex-row gap-3">
-                <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20a%20painting%20quote.%20%5BBPS_SRC_WEB%5D" target="_blank" rel="noopener noreferrer"
+                <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20a%20painting%20quote." target="_blank" rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2 rounded-lg px-6 py-3 text-sm font-bold text-white"
                   style={{backgroundColor:"#25D366"}}>
                   <MessageCircle className="h-4 w-4" /> WhatsApp Us
@@ -249,7 +249,7 @@ export default function AboutPage() {
           <h2 className="text-3xl font-black text-white sm:text-4xl">Let&apos;s Transform More Than Just Your Walls</h2>
           <p className="mt-4 text-blue-200 text-sm max-w-2xl mx-auto">When you choose Bhairav Painting Service, you&apos;re choosing a family legacy built on trust, strengthened through generations, and committed to delivering craftsmanship that lasts.</p>
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="https://wa.me/919158800517?text=Hi%2C%20I%20want%20a%20free%20site%20inspection.%20%5BBPS_SRC_WEB%5D" target="_blank" rel="noopener noreferrer"
+            <a href="https://wa.me/919158800517?text=Hi%2C%20I%20want%20a%20free%20site%20inspection." target="_blank" rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 rounded-lg px-8 py-4 text-base font-bold text-white"
               style={{backgroundColor:"#25D366"}}>
               <MessageCircle className="h-5 w-5" /> Get Free Site Inspection

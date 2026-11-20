@@ -69,7 +69,7 @@ export function Header() {
           <ProtectedEmailLink ariaLabel="Email us" className="flex items-center justify-center rounded-lg border border-gray-300 p-2 text-gray-600 hover:border-[#1B2B8A] hover:text-[#1B2B8A] transition-colors">
             <Mail className="h-4 w-4" />
           </ProtectedEmailLink>
-          <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20a%20painting%20quote%20%5BBPS_SRC_WEB%5D" target="_blank" rel="noopener noreferrer"
+          <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20a%20painting%20quote" target="_blank" rel="noopener noreferrer"
             className="flex items-center gap-2 rounded-lg bg-orange-500 px-4 py-2 text-sm font-semibold text-white hover:bg-orange-600 transition-colors">
             <MessageCircle className="h-4 w-4" /> WhatsApp Us
           </a>
@@ -105,7 +105,7 @@ export function Header() {
                   ))}
                 </div>
                 <div className="py-6 flex flex-col gap-3">
-                  <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20a%20painting%20quote%20%5BBPS_SRC_WEB%5D" target="_blank" rel="noopener noreferrer"
+                  <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20a%20painting%20quote" target="_blank" rel="noopener noreferrer"
                     className="flex items-center justify-center gap-2 rounded-lg bg-orange-500 px-4 py-3 text-sm font-semibold text-white">
                     <MessageCircle className="h-4 w-4" /> WhatsApp Us
                   </a>

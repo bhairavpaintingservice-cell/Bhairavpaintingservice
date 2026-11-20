@@ -106,7 +106,7 @@ export default function HomePage() {
           </p>
           <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20a%20free%20painting%20quote%20%5BBPS_SRC_WEB%5D"
+              href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20a%20free%20painting%20quote"
               target="_blank" rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 rounded-lg bg-orange-500 px-8 py-4 text-base font-bold text-white hover:bg-orange-600 transition-colors"
             >
@@ -378,7 +378,7 @@ export default function HomePage() {
             <h2 className="text-3xl font-black text-white sm:text-4xl">Book Your Free Painting Site Visit Today!</h2>
             <p className="mt-3 text-white/85">Get a free consultation & quote. No obligation. Call or WhatsApp us now!</p>
             <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
-              <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20a%20free%20site%20visit%20%5BBPS_SRC_WEB%5D" target="_blank" rel="noopener noreferrer"
+              <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20a%20free%20site%20visit" target="_blank" rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 rounded-lg border-2 border-white bg-white px-6 py-3 text-sm font-bold text-orange-500 hover:bg-white/90 transition-colors">
                 <MessageCircle className="h-5 w-5" /> WhatsApp Now
               </a>
@@ -402,7 +402,7 @@ export default function HomePage() {
       </section>
 
       {/* ── FLOATING BUTTONS ── */}
-      <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20a%20painting%20quote.%20%5BBPS_SRC_WEB%5D" target="_blank" rel="noopener noreferrer"
+      <a href="https://wa.me/919158800517" target="_blank" rel="noopener noreferrer"
         className="fixed bottom-24 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-green-500 text-white shadow-lg hover:bg-green-600 transition-colors"
         aria-label="WhatsApp">
         <MessageCircle className="h-7 w-7" />
