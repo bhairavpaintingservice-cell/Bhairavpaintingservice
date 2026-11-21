@@ -89,6 +89,19 @@ function detectFormMessage(messageText: string) {
   return { source: "Website", medium: "Website" }
 }
 
+// Google Business Profile link: its pre-filled message uses this natural
+// wording instead of a visible tracking code, e.g.
+//   "Hi, I found you on Google Maps. I need a painting quote."
+// If the customer edits the wording the match fails and the source stays blank.
+const GBP_WORDING_PATTERN =
+  /\bfound (?:you|bhairav painting service) on google maps\b/i
+
+function detectWordingMessage(messageText: string) {
+  if (!GBP_WORDING_PATTERN.test(messageText)) return null
+  // Same values as the BPS_SRC_GBP code above
+  return { source: "Google", medium: "Organic" }
+}
+
 function getReferralAttribution(message: IncomingMessage) {
   const referral = message.referral
 
@@ -147,17 +160,18 @@ export function buildSheetPayload(
 
   // Order of trust: explicit code > Meta ad referral > website form structure.
   // Anything we cannot identify stays blank (never guessed as Website).
-  const formMatch =
-    !detected.attribution && !referralAttribution.traffic_source
-      ? detectFormMessage(originalMessage)
-      : null
+  const canGuess = !detected.attribution && !referralAttribution.traffic_source
+  const formMatch = canGuess ? detectFormMessage(originalMessage) : null
+  const wordingMatch =
+    canGuess && !formMatch ? detectWordingMessage(originalMessage) : null
+  const guessedMatch = formMatch || wordingMatch
 
-  const formAttribution = formMatch
+  const formAttribution = guessedMatch
     ? {
-        traffic_source: formMatch.source,
-        traffic_medium: formMatch.medium,
-        lead_source: formMatch.source,
-        lead_medium: formMatch.medium,
+        traffic_source: guessedMatch.source,
+        traffic_medium: guessedMatch.medium,
+        lead_source: guessedMatch.source,
+        lead_medium: guessedMatch.medium,
       }
     : {}
 
@@ -167,7 +181,9 @@ export function buildSheetPayload(
       ? "meta_referral"
       : formMatch
         ? "form_structure"
-        : ""
+        : wordingMatch
+          ? "message_wording"
+          : ""
 
   return {
     secret,
