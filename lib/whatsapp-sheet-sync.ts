@@ -102,6 +102,21 @@ function detectWordingMessage(messageText: string) {
   return { source: "Google", medium: "Organic" }
 }
 
+// Website WhatsApp buttons end their pre-filled message with this natural phrase,
+// e.g. "Hi, I need an Exterior Painting quote. I saw this on your website."
+// It only proves the chat started from the website, not which channel brought
+// the visitor to the website (Ads, organic, Instagram...). So it sets the
+// CHANNEL field only and never guesses a traffic source.
+const WEBSITE_BUTTON_PATTERN = /\bI saw this on your website\b/i
+
+// Which website entry point produced this message? Empty when the message
+// itself does not prove it.
+function detectChannel(messageText: string): string {
+  if (FORM_MESSAGE_PATTERN.test(messageText)) return "Website Form"
+  if (WEBSITE_BUTTON_PATTERN.test(messageText)) return "Website WhatsApp"
+  return ""
+}
+
 function getReferralAttribution(message: IncomingMessage) {
   const referral = message.referral
 
@@ -175,6 +190,8 @@ export function buildSheetPayload(
       }
     : {}
 
+  const channel = detectChannel(originalMessage)
+
   const attributionMethod = detected.attribution
     ? "code"
     : referralAttribution.traffic_source
@@ -183,7 +200,9 @@ export function buildSheetPayload(
         ? "form_structure"
         : wordingMatch
           ? "message_wording"
-          : ""
+          : channel === "Website WhatsApp"
+            ? "website_wording"
+            : ""
 
   return {
     secret,
@@ -201,6 +220,7 @@ export function buildSheetPayload(
     ...codeAttribution,
     // Extra info only; the Apps Script ignores fields it does not know.
     attribution_method: attributionMethod,
+    ...(channel ? { channel } : {}),
     ...(message.referral?.ctwaClid
       ? { ctwa_clid: message.referral.ctwaClid }
       : {}),
