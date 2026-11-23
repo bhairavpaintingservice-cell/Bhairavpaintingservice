@@ -1,5 +1,6 @@
 
 import type { IncomingMessage } from "@/lib/whatsapp-webhook"
+import { WEBSITE_WHATSAPP_MESSAGES } from "@/lib/website-whatsapp-messages"
 
 const REQUEST_TIMEOUT_MS = 8000
 const RETRY_DELAY_MS = 1000
@@ -102,18 +103,37 @@ function detectWordingMessage(messageText: string) {
   return { source: "Google", medium: "Organic" }
 }
 
-// Website WhatsApp buttons end their pre-filled message with this natural phrase,
-// e.g. "Hi, I need an Exterior Painting quote. I saw this on your website."
-// It only proves the chat started from the website, not which channel brought
-// the visitor to the website (Ads, organic, Instagram...). So it sets the
-// CHANNEL field only and never guesses a traffic source.
-const WEBSITE_BUTTON_PATTERN = /\bI saw this on your website\b/i
+// Exact-match recognition of the website's own WhatsApp messages.
+// The list (lib/website-whatsapp-messages.ts) is generated from the website source and holds
+// only messages that are specific to one service or project. A message is recognised only when
+// it equals one of them after normalizing case, spaces and trailing punctuation. No fuzzy
+// matching: anything edited, extended or different stays unclassified (blank).
+// It sets CHANNEL only and never guesses a traffic source.
+function normalizeWebsiteMessage(text: string): string {
+  return text
+    .normalize("NFKC")
+    .toLowerCase()
+    .replace(/[\u2018\u2019]/g, "'")
+    .replace(/[\u201C\u201D]/g, '"')
+    .replace(/\s+/g, " ")
+    .trim()
+    .replace(/[.!?\s]+$/, "")
+}
+
+const WEBSITE_MESSAGE_SET = new Set(
+  WEBSITE_WHATSAPP_MESSAGES.map(normalizeWebsiteMessage)
+)
+
+function isApprovedWebsiteMessage(messageText: string): boolean {
+  const normalized = normalizeWebsiteMessage(messageText)
+  return normalized.length > 0 && WEBSITE_MESSAGE_SET.has(normalized)
+}
 
 // Which website entry point produced this message? Empty when the message
 // itself does not prove it.
 function detectChannel(messageText: string): string {
   if (FORM_MESSAGE_PATTERN.test(messageText)) return "Website Form"
-  if (WEBSITE_BUTTON_PATTERN.test(messageText)) return "Website WhatsApp"
+  if (isApprovedWebsiteMessage(messageText)) return "Website WhatsApp"
   return ""
 }
 
@@ -201,7 +221,7 @@ export function buildSheetPayload(
         : wordingMatch
           ? "message_wording"
           : channel === "Website WhatsApp"
-            ? "website_wording"
+            ? "website_exact_match"
             : ""
 
   return {
