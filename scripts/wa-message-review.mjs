@@ -28,6 +28,7 @@ export const APPROVED_SPECIFIC = [
   "hi, i need a quote for interior painting",
   "hi, i need a quote for new construction exterior painting",
   "hi, i need a quote for office painting",
+  "hi, i need a quote for painting my home",
   "hi, i need a quote for residential painting",
   "hi, i need a quote for restaurant painting",
   "hi, i need a quote for retail painting",
@@ -106,8 +107,11 @@ export const APPROVED_SPECIFIC = [
   "hi, i want a quotation for commercial painting. please contact me",
   "hi, i want to discuss a commercial painting project",
   "hi, i want to discuss commercial painting with zero disruption",
+  "hi, i want to discuss my painting requirement",
   "hi, i want to hire a commercial painting contractor. please share details",
   "hi, i want to schedule a free site visit for commercial painting",
+  "hi, i was looking for a page on your website and need a painting quote",
+  "hi, i would like to know more about your painting services",
 ]
 
 export const GENERIC_EXCLUDED = [

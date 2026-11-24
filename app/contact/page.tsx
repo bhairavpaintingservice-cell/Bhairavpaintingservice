@@ -389,7 +389,7 @@ export default function ContactPage() {
                     style={{backgroundColor:"#1B2B8A"}}>
                     {isSubmitting ? "Sending..." : <><Send className="h-4 w-4" /> Send Enquiry</>}
                   </button>
-                  <p className="text-center text-xs" style={{color:"#9ca3af"}}>Or WhatsApp directly: <a href="https://wa.me/919158800517" target="_blank" rel="noopener noreferrer" className="font-semibold" style={{color:"#25D366"}}>+91 9158800517</a></p>
+                  <p className="text-center text-xs" style={{color:"#9ca3af"}}>Or WhatsApp directly: <a href="https://wa.me/919158800517?text=Hi%2C%20I%20want%20to%20discuss%20my%20painting%20requirement." target="_blank" rel="noopener noreferrer" className="font-semibold" style={{color:"#25D366"}}>+91 9158800517</a></p>
                 </form>
               )}
             </div>

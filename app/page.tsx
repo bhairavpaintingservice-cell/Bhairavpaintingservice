@@ -402,7 +402,7 @@ export default function HomePage() {
       </section>
 
       {/* ── FLOATING BUTTONS ── */}
-      <a href="https://wa.me/919158800517" target="_blank" rel="noopener noreferrer"
+      <a href="https://wa.me/919158800517?text=Hi%2C%20I%20need%20a%20quote%20for%20painting%20my%20home." target="_blank" rel="noopener noreferrer"
         className="fixed bottom-24 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-green-500 text-white shadow-lg hover:bg-green-600 transition-colors"
         aria-label="WhatsApp">
         <MessageCircle className="h-7 w-7" />

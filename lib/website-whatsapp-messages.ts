@@ -26,6 +26,7 @@ export const WEBSITE_WHATSAPP_MESSAGES: readonly string[] = [
   "Hi, I need a quote for Interior Painting.",
   "Hi, I need a quote for New Construction Exterior Painting.",
   "Hi, I need a quote for Office Painting.",
+  "Hi, I need a quote for painting my home.",
   "Hi, I need a quote for Residential Painting.",
   "Hi, I need a quote for Restaurant Painting.",
   "Hi, I need a quote for Retail Painting.",
@@ -104,6 +105,9 @@ export const WEBSITE_WHATSAPP_MESSAGES: readonly string[] = [
   "Hi, I want a quotation for commercial painting. Please contact me.",
   "Hi, I want to discuss a commercial painting project.",
   "Hi, I want to discuss commercial painting with zero disruption.",
+  "Hi, I want to discuss my painting requirement.",
   "Hi, I want to hire a commercial painting contractor. Please share details.",
   "Hi, I want to schedule a free site visit for commercial painting.",
+  "Hi, I was looking for a page on your website and need a painting quote.",
+  "Hi, I would like to know more about your painting services.",
 ]
