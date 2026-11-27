@@ -4,6 +4,7 @@ import './globals.css'
 import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
 import CallTracker from '@/components/call-tracker'
+import CallNumber from '@/components/call-number'
 
 const inter = { variable: '--font-inter', className: 'font-inter' }
 const playfair = { variable: '--font-playfair', className: 'font-playfair' }
@@ -117,12 +118,24 @@ export default function RootLayout({
           gtag('js', new Date());
           gtag('config', 'G-JP7MH6N3NC');
         `}} />
+        {/* Google Ads website call conversion (phone snippet) - main number only.
+            The callback only stores the forwarding number; <CallNumber /> applies it after hydration. */}
+        <script dangerouslySetInnerHTML={{__html: `
+          gtag('config', 'AW-17375259261/_an5CJ3R5sAdEP3Uld1A', {
+            'phone_conversion_number': '9158800517',
+            'phone_conversion_callback': function (formatted_number, mobile_number) {
+              window.bpsCallNumber = { formatted: formatted_number, mobile: mobile_number };
+              if (window.bpsApplyCallNumber) window.bpsApplyCallNumber();
+            }
+          });
+        `}} />
       </head>
       <body className={`${inter.variable} ${playfair.variable} font-sans antialiased`}>
         {/* Google Tag Manager noscript */}
         <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K58KMSPL" height="0" width="0" style={{display:"none", visibility:"hidden"}}></iframe></noscript>
         <Header />
         <CallTracker />
+        <CallNumber />
         <main className="pt-16">
           {children}
         </main>
